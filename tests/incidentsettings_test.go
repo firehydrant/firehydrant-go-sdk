@@ -21,6 +21,7 @@ func TestIncidentSettings_ListCustomFieldDefinitions(t *testing.T) {
 	res, err := s.IncidentSettings.ListCustomFieldDefinitions(ctx)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.OrganizationsCustomFieldDefinitionEntity{}, res.OrganizationsCustomFieldDefinitionEntity)
 }
 
 func TestIncidentSettings_CreateCustomFieldDefinition(t *testing.T) {
@@ -36,6 +37,7 @@ func TestIncidentSettings_CreateCustomFieldDefinition(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.OrganizationsCustomFieldDefinitionEntity{}, res.OrganizationsCustomFieldDefinitionEntity)
 }
 
 func TestIncidentSettings_DeleteCustomFieldDefinition(t *testing.T) {
@@ -47,6 +49,7 @@ func TestIncidentSettings_DeleteCustomFieldDefinition(t *testing.T) {
 	res, err := s.IncidentSettings.DeleteCustomFieldDefinition(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.OrganizationsCustomFieldDefinitionEntity{}, res.OrganizationsCustomFieldDefinitionEntity)
 }
 
 func TestIncidentSettings_UpdateCustomFieldDefinition(t *testing.T) {
@@ -62,6 +65,7 @@ func TestIncidentSettings_GetCustomFieldSelectOptions(t *testing.T) {
 	res, err := s.IncidentSettings.ListSelectOptions(ctx, "<id>", nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.OrganizationsCustomFieldDefinitionEntity{}, res.OrganizationsCustomFieldDefinitionEntity)
 }
 
 func TestIncidentSettings_GetFormConfiguration(t *testing.T) {
@@ -84,6 +88,7 @@ func TestIncidentSettings_ListIncidentRoles(t *testing.T) {
 	res, err := s.IncidentSettings.ListRoles(ctx, nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IncidentRoleEntityPaginated{}, res.IncidentRoleEntityPaginated)
 }
 
 func TestIncidentSettings_CreateIncidentRole(t *testing.T) {
@@ -98,6 +103,7 @@ func TestIncidentSettings_CreateIncidentRole(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IncidentRoleEntity{}, res.IncidentRoleEntity)
 }
 
 func TestIncidentSettings_GetIncidentRole(t *testing.T) {
@@ -109,6 +115,7 @@ func TestIncidentSettings_GetIncidentRole(t *testing.T) {
 	res, err := s.IncidentSettings.GetIncidentRole(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IncidentRoleEntity{}, res.IncidentRoleEntity)
 }
 
 func TestIncidentSettings_DeleteIncidentRole(t *testing.T) {
@@ -120,6 +127,7 @@ func TestIncidentSettings_DeleteIncidentRole(t *testing.T) {
 	res, err := s.IncidentSettings.DeleteRole(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IncidentRoleEntity{}, res.IncidentRoleEntity)
 }
 
 func TestIncidentSettings_UpdateIncidentRole(t *testing.T) {
@@ -135,6 +143,7 @@ func TestIncidentSettings_ListIncidentTags(t *testing.T) {
 	res, err := s.IncidentSettings.ListIncidentTags(ctx, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.TagEntityPaginated{}, res.TagEntityPaginated)
 }
 
 func TestIncidentSettings_ValidateIncidentTags(t *testing.T) {
@@ -150,6 +159,7 @@ func TestIncidentSettings_ValidateIncidentTags(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.TagEntity{}, res.TagEntity)
 }
 
 func TestIncidentSettings_ListIncidentTypes(t *testing.T) {
@@ -161,6 +171,7 @@ func TestIncidentSettings_ListIncidentTypes(t *testing.T) {
 	res, err := s.IncidentSettings.ListIncidentTypes(ctx, nil, nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IncidentTypeEntityPaginated{}, res.IncidentTypeEntityPaginated)
 }
 
 func TestIncidentSettings_CreateIncidentType(t *testing.T) {
@@ -175,6 +186,7 @@ func TestIncidentSettings_CreateIncidentType(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IncidentTypeEntity{}, res.IncidentTypeEntity)
 }
 
 func TestIncidentSettings_GetIncidentType(t *testing.T) {
@@ -186,6 +198,7 @@ func TestIncidentSettings_GetIncidentType(t *testing.T) {
 	res, err := s.IncidentSettings.GetIncidentType(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IncidentTypeEntity{}, res.IncidentTypeEntity)
 }
 
 func TestIncidentSettings_ArchiveIncidentType(t *testing.T) {
@@ -197,6 +210,7 @@ func TestIncidentSettings_ArchiveIncidentType(t *testing.T) {
 	res, err := s.IncidentSettings.ArchiveIncidentType(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IncidentTypeEntity{}, res.IncidentTypeEntity)
 }
 
 func TestIncidentSettings_UpdateIncidentType(t *testing.T) {
@@ -211,6 +225,7 @@ func TestIncidentSettings_UpdateIncidentType(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IncidentTypeEntity{}, res.IncidentTypeEntity)
 }
 
 func TestIncidentSettings_CreateLifecycleMilestone(t *testing.T) {
@@ -226,6 +241,7 @@ func TestIncidentSettings_CreateLifecycleMilestone(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.LifecyclesPhaseEntityList{}, res.LifecyclesPhaseEntityList)
 }
 
 func TestIncidentSettings_DeleteLifecycleMilestone(t *testing.T) {
@@ -237,6 +253,7 @@ func TestIncidentSettings_DeleteLifecycleMilestone(t *testing.T) {
 	res, err := s.IncidentSettings.DeleteLifecycleMilestone(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.LifecyclesPhaseEntity{}, res.LifecyclesPhaseEntity)
 }
 
 func TestIncidentSettings_UpdateLifecycleMilestone(t *testing.T) {
@@ -248,6 +265,7 @@ func TestIncidentSettings_UpdateLifecycleMilestone(t *testing.T) {
 	res, err := s.IncidentSettings.UpdateLifecycleMilestone(ctx, "<id>", nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.LifecyclesPhaseEntity{}, res.LifecyclesPhaseEntity)
 }
 
 func TestIncidentSettings_ListLifecyclePhases(t *testing.T) {
@@ -259,6 +277,7 @@ func TestIncidentSettings_ListLifecyclePhases(t *testing.T) {
 	res, err := s.IncidentSettings.ListLifecyclePhases(ctx)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.LifecyclesPhaseEntityList{}, res.LifecyclesPhaseEntityList)
 }
 
 func TestIncidentSettings_ListPriorities(t *testing.T) {
@@ -270,6 +289,7 @@ func TestIncidentSettings_ListPriorities(t *testing.T) {
 	res, err := s.IncidentSettings.ListPriorities(ctx, nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.PriorityEntity{}, res.PriorityEntity)
 }
 
 func TestIncidentSettings_CreatePriority(t *testing.T) {
@@ -283,6 +303,7 @@ func TestIncidentSettings_CreatePriority(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.PriorityEntity{}, res.PriorityEntity)
 }
 
 func TestIncidentSettings_GetPriority(t *testing.T) {
@@ -294,6 +315,7 @@ func TestIncidentSettings_GetPriority(t *testing.T) {
 	res, err := s.IncidentSettings.GetPriority(ctx, "<value>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.PriorityEntity{}, res.PriorityEntity)
 }
 
 func TestIncidentSettings_DeletePriority(t *testing.T) {
@@ -305,6 +327,7 @@ func TestIncidentSettings_DeletePriority(t *testing.T) {
 	res, err := s.IncidentSettings.DeletePriority(ctx, "<value>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.PriorityEntity{}, res.PriorityEntity)
 }
 
 func TestIncidentSettings_UpdatePriority(t *testing.T) {
@@ -320,6 +343,7 @@ func TestIncidentSettings_ListSeverities(t *testing.T) {
 	res, err := s.IncidentSettings.ListSeverities(ctx, nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.SeverityEntityPaginated{}, res.SeverityEntityPaginated)
 }
 
 func TestIncidentSettings_CreateSeverity(t *testing.T) {
@@ -333,6 +357,7 @@ func TestIncidentSettings_CreateSeverity(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.SeverityEntity{}, res.SeverityEntity)
 }
 
 func TestIncidentSettings_GetSeverity(t *testing.T) {
@@ -344,6 +369,7 @@ func TestIncidentSettings_GetSeverity(t *testing.T) {
 	res, err := s.IncidentSettings.GetSeverity(ctx, "<value>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.SeverityEntity{}, res.SeverityEntity)
 }
 
 func TestIncidentSettings_DeleteSeverity(t *testing.T) {
@@ -355,6 +381,7 @@ func TestIncidentSettings_DeleteSeverity(t *testing.T) {
 	res, err := s.IncidentSettings.DeleteSeverity(ctx, "<value>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.SeverityEntity{}, res.SeverityEntity)
 }
 
 func TestIncidentSettings_UpdateSeverity(t *testing.T) {
@@ -370,6 +397,7 @@ func TestIncidentSettings_GetSeverityMatrix(t *testing.T) {
 	res, err := s.IncidentSettings.GetSeverityMatrix(ctx)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.SeverityMatrixSeverityMatrixEntity{}, res.SeverityMatrixSeverityMatrixEntity)
 }
 
 func TestIncidentSettings_UpdateSeverityMatrix(t *testing.T) {
@@ -389,6 +417,7 @@ func TestIncidentSettings_UpdateSeverityMatrix(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.SeverityMatrixSeverityMatrixEntity{}, res.SeverityMatrixSeverityMatrixEntity)
 }
 
 func TestIncidentSettings_ListSeverityMatrixConditions(t *testing.T) {
@@ -400,6 +429,7 @@ func TestIncidentSettings_ListSeverityMatrixConditions(t *testing.T) {
 	res, err := s.IncidentSettings.ListSeverityMatrixConditions(ctx, nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.SeverityMatrixConditionEntity{}, res.SeverityMatrixConditionEntity)
 }
 
 func TestIncidentSettings_CreateSeverityMatrixCondition(t *testing.T) {
@@ -413,6 +443,7 @@ func TestIncidentSettings_CreateSeverityMatrixCondition(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.SeverityMatrixConditionEntity{}, res.SeverityMatrixConditionEntity)
 }
 
 func TestIncidentSettings_GetSeverityMatrixCondition(t *testing.T) {
@@ -435,6 +466,7 @@ func TestIncidentSettings_DeleteSeverityMatrixCondition(t *testing.T) {
 	res, err := s.IncidentSettings.DeleteSeverityMatrixCondition(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.SeverityMatrixConditionEntity{}, res.SeverityMatrixConditionEntity)
 }
 
 func TestIncidentSettings_UpdateSeverityMatrixCondition(t *testing.T) {
@@ -450,6 +482,7 @@ func TestIncidentSettings_ListSeverityMatrixImpacts(t *testing.T) {
 	res, err := s.IncidentSettings.ListSeverityMatrixImpacts(ctx, nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.SeverityMatrixImpactEntity{}, res.SeverityMatrixImpactEntity)
 }
 
 func TestIncidentSettings_CreateSeverityMatrixImpact(t *testing.T) {
@@ -464,6 +497,7 @@ func TestIncidentSettings_CreateSeverityMatrixImpact(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.SeverityMatrixImpactEntity{}, res.SeverityMatrixImpactEntity)
 }
 
 func TestIncidentSettings_DeleteSeverityMatrixImpact(t *testing.T) {
@@ -475,6 +509,7 @@ func TestIncidentSettings_DeleteSeverityMatrixImpact(t *testing.T) {
 	res, err := s.IncidentSettings.DeleteSeverityMatrixImpact(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.SeverityMatrixImpactEntity{}, res.SeverityMatrixImpactEntity)
 }
 
 func TestIncidentSettings_UpdateSeverityMatrixImpact(t *testing.T) {
@@ -490,6 +525,7 @@ func TestIncidentSettings_ListTicketingPriorities(t *testing.T) {
 	res, err := s.IncidentSettings.ListTicketingPriorities(ctx)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.TicketingPriorityEntity{}, res.TicketingPriorityEntity)
 }
 
 func TestIncidentSettings_CreateTicketingPriority(t *testing.T) {
@@ -503,4 +539,5 @@ func TestIncidentSettings_CreateTicketingPriority(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.TicketingPriorityEntity{}, res.TicketingPriorityEntity)
 }

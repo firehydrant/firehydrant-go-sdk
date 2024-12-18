@@ -5,6 +5,7 @@ package tests
 import (
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
@@ -19,6 +20,7 @@ func TestProjectConfigurations_CreateTicketingProjectConfiguration(t *testing.T)
 	res, err := s.ProjectConfigurations.Create(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.TicketingProjectConfigEntity{}, res.TicketingProjectConfigEntity)
 }
 
 func TestProjectConfigurations_GetTicketingProjectConfig(t *testing.T) {
@@ -30,4 +32,5 @@ func TestProjectConfigurations_GetTicketingProjectConfig(t *testing.T) {
 	res, err := s.ProjectConfigurations.Get(ctx, "<id>", "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.TicketingProjectConfigEntity{}, res.TicketingProjectConfigEntity)
 }

@@ -32,9 +32,8 @@
 ## SDK Installation
 
 To add the SDK as a dependency to your project:
-
 ```bash
-go get github.com/speakeasy-sdks/firehydrant-go-sdk
+go get firehydrant
 ```
 <!-- End SDK Installation [installation] -->
 

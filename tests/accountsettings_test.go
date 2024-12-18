@@ -5,6 +5,7 @@ package tests
 import (
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"firehydrant/models/operations"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -20,6 +21,7 @@ func TestAccountSettings_GetAiPreferences(t *testing.T) {
 	res, err := s.AccountSettings.GetAiPreferences(ctx)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.AIEntitiesPreferencesEntity{}, res.AIEntitiesPreferencesEntity)
 }
 
 func TestAccountSettings_UpdateAiPreferences(t *testing.T) {
@@ -31,6 +33,7 @@ func TestAccountSettings_UpdateAiPreferences(t *testing.T) {
 	res, err := s.AccountSettings.UpdateAiPreferences(ctx, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.AIEntitiesPreferencesEntity{}, res.AIEntitiesPreferencesEntity)
 }
 
 func TestAccountSettings_VoteOnIncidentSummary(t *testing.T) {
@@ -66,6 +69,7 @@ func TestAccountSettings_ListEntitlements(t *testing.T) {
 	res, err := s.AccountSettings.ListEntitlements(ctx, nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.EntitlementEntityPaginated{}, res.EntitlementEntityPaginated)
 }
 
 func TestAccountSettings_APIPingNoAuth(t *testing.T) {
@@ -77,6 +81,7 @@ func TestAccountSettings_APIPingNoAuth(t *testing.T) {
 	res, err := s.AccountSettings.Ping(ctx)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.PongEntity{}, res.PongEntity)
 }
 
 func TestAccountSettings_GetSavedSearch(t *testing.T) {
@@ -88,6 +93,7 @@ func TestAccountSettings_GetSavedSearch(t *testing.T) {
 	res, err := s.AccountSettings.GetSavedSearch(ctx, operations.GetSavedSearchPathParamResourceTypeImpactAnalytics, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.SavedSearchEntity{}, res.SavedSearchEntity)
 }
 
 func TestAccountSettings_DeleteSavedSearch(t *testing.T) {

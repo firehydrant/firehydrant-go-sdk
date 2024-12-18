@@ -5,6 +5,7 @@ package tests
 import (
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"firehydrant/models/operations"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -20,6 +21,7 @@ func TestAlerts_ListAlerts(t *testing.T) {
 	res, err := s.Alerts.List(ctx, operations.ListAlertsRequest{})
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.AlertsAlertEntityPaginated{}, res.AlertsAlertEntityPaginated)
 }
 
 func TestAlerts_GetAlert(t *testing.T) {
@@ -31,6 +33,7 @@ func TestAlerts_GetAlert(t *testing.T) {
 	res, err := s.Alerts.Get(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.AlertsAlertEntity{}, res.AlertsAlertEntity)
 }
 
 func TestAlerts_ListIncidentAlerts(t *testing.T) {
@@ -42,6 +45,7 @@ func TestAlerts_ListIncidentAlerts(t *testing.T) {
 	res, err := s.Alerts.ListForIncident(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IncidentsAlertEntityPaginated{}, res.IncidentsAlertEntityPaginated)
 }
 
 func TestAlerts_CreateIncidentAlerts(t *testing.T) {
@@ -66,4 +70,5 @@ func TestAlerts_ListAlertProcessingLogs(t *testing.T) {
 	res, err := s.Alerts.ListProcessingLogs(ctx, operations.ListAlertProcessingLogsRequest{})
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.AlertsProcessingLogEntryEntityPaginated{}, res.AlertsProcessingLogEntryEntityPaginated)
 }

@@ -5,6 +5,7 @@ package tests
 import (
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"firehydrant/models/operations"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -20,6 +21,7 @@ func TestAwsConnections_ListAwsConnections(t *testing.T) {
 	res, err := s.AwsConnections.List(ctx, operations.ListAwsConnectionsRequest{})
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IntegrationsAwsConnectionEntityPaginated{}, res.IntegrationsAwsConnectionEntityPaginated)
 }
 
 func TestAwsConnections_GetAwsConnection(t *testing.T) {
@@ -31,4 +33,5 @@ func TestAwsConnections_GetAwsConnection(t *testing.T) {
 	res, err := s.AwsConnections.Get(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IntegrationsAwsConnectionEntity{}, res.IntegrationsAwsConnectionEntity)
 }

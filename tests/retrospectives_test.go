@@ -20,6 +20,7 @@ func TestRetrospectives_ListRetrospectiveQuestions(t *testing.T) {
 	res, err := s.Retrospectives.ListQuestions(ctx, nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.PostMortemsQuestionTypeEntityPaginated{}, res.PostMortemsQuestionTypeEntityPaginated)
 }
 
 func TestRetrospectives_UpdateRetrospectiveQuestions(t *testing.T) {
@@ -46,6 +47,7 @@ func TestRetrospectives_ListRetrospectiveReports(t *testing.T) {
 	res, err := s.Retrospectives.ListReports(ctx, nil, nil, nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.PostMortemsPostMortemReportEntityPaginated{}, res.PostMortemsPostMortemReportEntityPaginated)
 }
 
 func TestRetrospectives_CreateRetrospectiveReport(t *testing.T) {
@@ -59,6 +61,7 @@ func TestRetrospectives_CreateRetrospectiveReport(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.PostMortemsPostMortemReportEntity{}, res.PostMortemsPostMortemReportEntity)
 }
 
 func TestRetrospectives_GetPostMortemReport(t *testing.T) {
@@ -70,6 +73,7 @@ func TestRetrospectives_GetPostMortemReport(t *testing.T) {
 	res, err := s.Retrospectives.GetReport(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.PostMortemsPostMortemReportEntity{}, res.PostMortemsPostMortemReportEntity)
 }
 
 func TestRetrospectives_UpdatePostMortemReport(t *testing.T) {
@@ -87,6 +91,7 @@ func TestRetrospectives_UpdateRetrospectiveField(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.PostMortemsSectionFieldEntity{}, res.PostMortemsSectionFieldEntity)
 }
 
 func TestRetrospectives_PublishRetrospectiveReport(t *testing.T) {
@@ -102,6 +107,7 @@ func TestRetrospectives_ListRetrospectiveReportReasons(t *testing.T) {
 	res, err := s.Retrospectives.ListReportReasons(ctx, "<id>", nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.PostMortemsReasonEntityPaginated{}, res.PostMortemsReasonEntityPaginated)
 }
 
 func TestRetrospectives_CreateRetrospectiveReportReason(t *testing.T) {
@@ -115,6 +121,7 @@ func TestRetrospectives_CreateRetrospectiveReportReason(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.PostMortemsReasonEntity{}, res.PostMortemsReasonEntity)
 }
 
 func TestRetrospectives_UpdateRetrospectiveReportReasonOrder(t *testing.T) {
@@ -129,6 +136,7 @@ func TestRetrospectives_UpdateRetrospectiveReportReasonOrder(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.PostMortemsReasonEntity{}, res.PostMortemsReasonEntity)
 }
 
 func TestRetrospectives_DeleteRetrospectiveReason(t *testing.T) {
@@ -140,6 +148,7 @@ func TestRetrospectives_DeleteRetrospectiveReason(t *testing.T) {
 	res, err := s.Retrospectives.DeleteReason(ctx, "<id>", "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.PostMortemsReasonEntity{}, res.PostMortemsReasonEntity)
 }
 
 func TestRetrospectives_UpdateRetrospectiveReason(t *testing.T) {

@@ -23,6 +23,7 @@ func TestCatalogs_IngestCatalogData(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.ImportsImportEntity{}, res.ImportsImportEntity)
 }
 
 func TestCatalogs_RefreshCatalog(t *testing.T) {

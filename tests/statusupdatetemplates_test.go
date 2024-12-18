@@ -23,4 +23,5 @@ func TestStatusUpdateTemplates_CreateStatusUpdateTemplate(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.StatusUpdateTemplateEntity{}, res.StatusUpdateTemplateEntity)
 }

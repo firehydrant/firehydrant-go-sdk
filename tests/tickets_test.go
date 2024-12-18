@@ -21,6 +21,7 @@ func TestTickets_ListTickets(t *testing.T) {
 	res, err := s.Tickets.List(ctx, operations.ListTicketsRequest{})
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.TicketingTicketEntity{}, res.TicketingTicketEntity)
 }
 
 func TestTickets_CreateTicket(t *testing.T) {
@@ -34,6 +35,7 @@ func TestTickets_CreateTicket(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.TicketingTicketEntity{}, res.TicketingTicketEntity)
 }
 
 func TestTickets_DeleteTicket(t *testing.T) {

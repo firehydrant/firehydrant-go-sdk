@@ -21,6 +21,7 @@ func TestFunctionalities_ListFunctionalities(t *testing.T) {
 	res, err := s.Functionalities.List(ctx, operations.ListFunctionalitiesRequest{})
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.FunctionalityEntityPaginated{}, res.FunctionalityEntityPaginated)
 }
 
 func TestFunctionalities_CreateFunctionality(t *testing.T) {
@@ -34,6 +35,7 @@ func TestFunctionalities_CreateFunctionality(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.FunctionalityEntity{}, res.FunctionalityEntity)
 }
 
 func TestFunctionalities_GetFunctionality(t *testing.T) {
@@ -45,6 +47,7 @@ func TestFunctionalities_GetFunctionality(t *testing.T) {
 	res, err := s.Functionalities.Get(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.FunctionalityEntity{}, res.FunctionalityEntity)
 }
 
 func TestFunctionalities_DeleteFunctionality(t *testing.T) {
@@ -56,6 +59,7 @@ func TestFunctionalities_DeleteFunctionality(t *testing.T) {
 	res, err := s.Functionalities.Delete(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.FunctionalityEntity{}, res.FunctionalityEntity)
 }
 
 func TestFunctionalities_UpdateFunctionality(t *testing.T) {

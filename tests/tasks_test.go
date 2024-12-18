@@ -20,6 +20,7 @@ func TestTasks_ListChecklistTemplates(t *testing.T) {
 	res, err := s.Tasks.ListChecklistTemplates(ctx, nil, nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.ChecklistTemplateEntityPaginated{}, res.ChecklistTemplateEntityPaginated)
 }
 
 func TestTasks_CreateChecklistTemplate(t *testing.T) {
@@ -38,6 +39,7 @@ func TestTasks_CreateChecklistTemplate(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.ChecklistTemplateEntity{}, res.ChecklistTemplateEntity)
 }
 
 func TestTasks_DeleteChecklistTemplate(t *testing.T) {
@@ -49,6 +51,7 @@ func TestTasks_DeleteChecklistTemplate(t *testing.T) {
 	res, err := s.Tasks.DeleteChecklistTemplate(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.ChecklistTemplateEntity{}, res.ChecklistTemplateEntity)
 }
 
 func TestTasks_UpdateChecklistTemplate(t *testing.T) {
@@ -64,6 +67,7 @@ func TestTasks_ListIncidentTasks(t *testing.T) {
 	res, err := s.Tasks.ListForIncident(ctx, "<id>", nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.TaskEntityPaginated{}, res.TaskEntityPaginated)
 }
 
 func TestTasks_CreateIncidentTask(t *testing.T) {
@@ -77,6 +81,7 @@ func TestTasks_CreateIncidentTask(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.TaskEntity{}, res.TaskEntity)
 }
 
 func TestTasks_GetIncidentTask(t *testing.T) {
@@ -118,6 +123,7 @@ func TestTasks_ListTaskLists(t *testing.T) {
 	res, err := s.Tasks.ListTasks(ctx, nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.TaskListEntity{}, res.TaskListEntity)
 }
 
 func TestTasks_CreateTaskList(t *testing.T) {
@@ -139,6 +145,7 @@ func TestTasks_CreateTaskList(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.TaskListEntity{}, res.TaskListEntity)
 }
 
 func TestTasks_GetTaskList(t *testing.T) {
@@ -150,6 +157,7 @@ func TestTasks_GetTaskList(t *testing.T) {
 	res, err := s.Tasks.Get(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.TaskListEntity{}, res.TaskListEntity)
 }
 
 func TestTasks_UpdateTaskList(t *testing.T) {

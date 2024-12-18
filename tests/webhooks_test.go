@@ -20,6 +20,7 @@ func TestWebhooks_ListWebhooks(t *testing.T) {
 	res, err := s.Webhooks.List(ctx, nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.WebhooksEntitiesWebhookEntity{}, res.WebhooksEntitiesWebhookEntity)
 }
 
 func TestWebhooks_CreateWebhook(t *testing.T) {
@@ -33,6 +34,7 @@ func TestWebhooks_CreateWebhook(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.WebhooksEntitiesWebhookEntity{}, res.WebhooksEntitiesWebhookEntity)
 }
 
 func TestWebhooks_GetWebhook(t *testing.T) {
@@ -44,6 +46,7 @@ func TestWebhooks_GetWebhook(t *testing.T) {
 	res, err := s.Webhooks.Get(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.WebhooksEntitiesWebhookEntity{}, res.WebhooksEntitiesWebhookEntity)
 }
 
 func TestWebhooks_DeleteWebhook(t *testing.T) {

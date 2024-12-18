@@ -21,6 +21,7 @@ func TestChanges_ListChangeTypes(t *testing.T) {
 	res, err := s.Changes.ListTypes(ctx, nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.ChangeTypeEntityPaginated{}, res.ChangeTypeEntityPaginated)
 }
 
 func TestChanges_ListChanges(t *testing.T) {
@@ -47,6 +48,7 @@ func TestChanges_ListChangeEvents(t *testing.T) {
 	res, err := s.Changes.ListEvents(ctx, operations.ListChangeEventsRequest{})
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.ChangeEventSlimEntityPaginated{}, res.ChangeEventSlimEntityPaginated)
 }
 
 func TestChanges_CreateChangeEvent(t *testing.T) {
@@ -60,6 +62,7 @@ func TestChanges_CreateChangeEvent(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.ChangeEventEntity{}, res.ChangeEventEntity)
 }
 
 func TestChanges_GetChangeEvent(t *testing.T) {
@@ -71,6 +74,7 @@ func TestChanges_GetChangeEvent(t *testing.T) {
 	res, err := s.Changes.GetEvent(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.ChangeEventEntity{}, res.ChangeEventEntity)
 }
 
 func TestChanges_DeleteChangeEvent(t *testing.T) {
@@ -112,6 +116,7 @@ func TestChanges_ListChangeIdentities(t *testing.T) {
 	res, err := s.Changes.ListIdentities(ctx, "<id>", nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.ChangeIdentityEntityPaginated{}, res.ChangeIdentityEntityPaginated)
 }
 
 func TestChanges_CreateChangeIdentity(t *testing.T) {
@@ -126,6 +131,7 @@ func TestChanges_CreateChangeIdentity(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.ChangeIdentityEntity{}, res.ChangeIdentityEntity)
 }
 
 func TestChanges_DeleteChangeIdentity(t *testing.T) {
@@ -151,6 +157,7 @@ func TestChanges_UpdateChangeIdentity(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.ChangeIdentityEntity{}, res.ChangeIdentityEntity)
 }
 
 func TestChanges_GetScheduledMaintenance(t *testing.T) {
@@ -162,6 +169,7 @@ func TestChanges_GetScheduledMaintenance(t *testing.T) {
 	res, err := s.Changes.Get(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.ScheduledMaintenanceEntity{}, res.ScheduledMaintenanceEntity)
 }
 
 func TestChanges_UpdateScheduledMaintenance(t *testing.T) {

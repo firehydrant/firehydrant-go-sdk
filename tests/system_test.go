@@ -5,6 +5,7 @@ package tests
 import (
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
@@ -19,4 +20,5 @@ func TestSystem_APIPing(t *testing.T) {
 	res, err := s.System.Ping(ctx)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.PongEntity{}, res.PongEntity)
 }

@@ -15,5 +15,5 @@ targets:
         source: firehydrant-oas
         codeSamples:
             registry:
-                location: registry.speakeasyapi.dev/firehydrant/firehydrant/firehydrant-oas-code-samples
+                location: registry.speakeasyapi.dev/firehydrant/firehydrant/firehydrant-oas-go-code-samples
             blocking: false

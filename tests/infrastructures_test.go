@@ -5,6 +5,7 @@ package tests
 import (
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"firehydrant/models/operations"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -20,4 +21,5 @@ func TestInfrastructures_ListInfrastructures(t *testing.T) {
 	res, err := s.Infrastructures.List(ctx, operations.ListInfrastructuresRequest{})
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.InfrastructureSearchEntity{}, res.InfrastructureSearchEntity)
 }

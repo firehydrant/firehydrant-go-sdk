@@ -5,6 +5,7 @@ package tests
 import (
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"firehydrant/models/operations"
 	"firehydrant/types"
 	"github.com/stretchr/testify/assert"
@@ -24,6 +25,7 @@ func TestMetrics_GetV1MetricsMttx(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.MetricsMttxDataEntity{}, res.MetricsMttxDataEntity)
 }
 
 func TestMetrics_GetInfrastructureMetrics(t *testing.T) {
@@ -35,4 +37,5 @@ func TestMetrics_GetInfrastructureMetrics(t *testing.T) {
 	res, err := s.Metrics.GetInfrastructure(ctx, operations.PathParamInfraTypeFunctionalities, "<id>", nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.MetricsInfrastructureMetricsEntity{}, res.MetricsInfrastructureMetricsEntity)
 }

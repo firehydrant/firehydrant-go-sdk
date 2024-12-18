@@ -21,6 +21,7 @@ func TestTeams_ListSchedules(t *testing.T) {
 	res, err := s.Teams.ListSchedules(ctx, nil, nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.ScheduleEntityPaginated{}, res.ScheduleEntityPaginated)
 }
 
 func TestTeams_ListTeams(t *testing.T) {
@@ -32,6 +33,7 @@ func TestTeams_ListTeams(t *testing.T) {
 	res, err := s.Teams.List(ctx, operations.ListTeamsRequest{})
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.TeamEntityPaginated{}, res.TeamEntityPaginated)
 }
 
 func TestTeams_CreateTeam(t *testing.T) {
@@ -45,6 +47,7 @@ func TestTeams_CreateTeam(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.TeamEntity{}, res.TeamEntity)
 }
 
 func TestTeams_GetTeam(t *testing.T) {
@@ -56,6 +59,7 @@ func TestTeams_GetTeam(t *testing.T) {
 	res, err := s.Teams.Get(ctx, "<id>", nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.TeamEntity{}, res.TeamEntity)
 }
 
 func TestTeams_ArchiveTeam(t *testing.T) {
@@ -67,6 +71,7 @@ func TestTeams_ArchiveTeam(t *testing.T) {
 	res, err := s.Teams.Archive(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.TeamEntity{}, res.TeamEntity)
 }
 
 func TestTeams_UpdateTeam(t *testing.T) {

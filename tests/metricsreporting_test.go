@@ -80,6 +80,7 @@ func TestMetricsReporting_ListIncidentMetrics(t *testing.T) {
 	res, err := s.MetricsReporting.ListIncidentMetrics(ctx, operations.ListIncidentMetricsRequest{})
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.MetricsMetricsEntity{}, res.MetricsMetricsEntity)
 }
 
 func TestMetricsReporting_GetMilestoneFunnelMetrics(t *testing.T) {
@@ -91,6 +92,7 @@ func TestMetricsReporting_GetMilestoneFunnelMetrics(t *testing.T) {
 	res, err := s.MetricsReporting.GetMilestoneFunnelMetrics(ctx, operations.GetMilestoneFunnelMetricsRequest{})
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.MetricsMilestonesFunnelEntity{}, res.MetricsMilestonesFunnelEntity)
 }
 
 func TestMetricsReporting_ListRetrospectiveMetrics(t *testing.T) {
@@ -102,6 +104,7 @@ func TestMetricsReporting_ListRetrospectiveMetrics(t *testing.T) {
 	res, err := s.MetricsReporting.ListRetrospectives(ctx, nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.MetricsRetrospectiveEntity{}, res.MetricsRetrospectiveEntity)
 }
 
 func TestMetricsReporting_GetTicketFunnelMetrics(t *testing.T) {
@@ -113,6 +116,7 @@ func TestMetricsReporting_GetTicketFunnelMetrics(t *testing.T) {
 	res, err := s.MetricsReporting.GetTicketFunnel(ctx, operations.GetTicketFunnelMetricsRequest{})
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.MetricsTicketFunnelMetricsEntity{}, res.MetricsTicketFunnelMetricsEntity)
 }
 
 func TestMetricsReporting_ListUserInvolvementMetrics(t *testing.T) {
@@ -124,6 +128,7 @@ func TestMetricsReporting_ListUserInvolvementMetrics(t *testing.T) {
 	res, err := s.MetricsReporting.ListUserInvolvementMetrics(ctx, operations.ListUserInvolvementMetricsRequest{})
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.MetricsMetricsEntity{}, res.MetricsMetricsEntity)
 }
 
 func TestMetricsReporting_ListInfrastructureMetrics(t *testing.T) {
@@ -135,6 +140,7 @@ func TestMetricsReporting_ListInfrastructureMetrics(t *testing.T) {
 	res, err := s.MetricsReporting.ListInfrastructureMetrics(ctx, operations.InfraTypeServices, nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.MetricsInfrastructureListEntity{}, res.MetricsInfrastructureListEntity)
 }
 
 func TestMetricsReporting_GetMeanTimeReport(t *testing.T) {
@@ -146,6 +152,7 @@ func TestMetricsReporting_GetMeanTimeReport(t *testing.T) {
 	res, err := s.MetricsReporting.GetMeanTime(ctx, operations.GetMeanTimeReportRequest{})
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.ReportEntity{}, res.ReportEntity)
 }
 
 func TestMetricsReporting_ListSavedSearches(t *testing.T) {
@@ -159,6 +166,7 @@ func TestMetricsReporting_ListSavedSearches(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.SavedSearchEntity{}, res.SavedSearchEntity)
 }
 
 func TestMetricsReporting_CreateSavedSearch(t *testing.T) {
@@ -173,4 +181,5 @@ func TestMetricsReporting_CreateSavedSearch(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.SavedSearchEntity{}, res.SavedSearchEntity)
 }

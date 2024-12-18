@@ -131,6 +131,7 @@ func TestSignals_GetSignalIngestURL(t *testing.T) {
 	res, err := s.Signals.GetIngestURL(ctx, nil, nil, nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.SignalsAPIIngestKeyEntity{}, res.SignalsAPIIngestKeyEntity)
 }
 
 func TestSignals_ListSignalTransposers(t *testing.T) {

@@ -34,6 +34,7 @@ func TestIncidents_ListIncidents(t *testing.T) {
 	res, err := s.Incidents.List(ctx, operations.ListIncidentsRequest{})
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IncidentEntityPaginated{}, res.IncidentEntityPaginated)
 }
 
 func TestIncidents_CreateIncident(t *testing.T) {
@@ -47,6 +48,7 @@ func TestIncidents_CreateIncident(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IncidentEntity{}, res.IncidentEntity)
 }
 
 func TestIncidents_GetIncident(t *testing.T) {
@@ -58,6 +60,7 @@ func TestIncidents_GetIncident(t *testing.T) {
 	res, err := s.Incidents.Get(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IncidentEntity{}, res.IncidentEntity)
 }
 
 func TestIncidents_ArchiveIncident(t *testing.T) {
@@ -69,6 +72,7 @@ func TestIncidents_ArchiveIncident(t *testing.T) {
 	res, err := s.Incidents.Archive(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IncidentEntity{}, res.IncidentEntity)
 }
 
 func TestIncidents_UpdateIncident(t *testing.T) {
@@ -97,6 +101,7 @@ func TestIncidents_SetIncidentAlertAsPrimary(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IncidentsAlertEntity{}, res.IncidentsAlertEntity)
 }
 
 func TestIncidents_ListIncidentAttachments(t *testing.T) {
@@ -127,6 +132,7 @@ func TestIncidents_CreateIncidentAttachment(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IncidentAttachmentEntity{}, res.IncidentAttachmentEntity)
 }
 
 func TestIncidents_GetIncidentChannel(t *testing.T) {
@@ -138,6 +144,7 @@ func TestIncidents_GetIncidentChannel(t *testing.T) {
 	res, err := s.Incidents.GetChannel(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IncidentsChannelEntity{}, res.IncidentsChannelEntity)
 }
 
 func TestIncidents_CloseIncident(t *testing.T) {
@@ -149,6 +156,7 @@ func TestIncidents_CloseIncident(t *testing.T) {
 	res, err := s.Incidents.Close(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IncidentEntity{}, res.IncidentEntity)
 }
 
 func TestIncidents_ListIncidentEvents(t *testing.T) {
@@ -160,6 +168,7 @@ func TestIncidents_ListIncidentEvents(t *testing.T) {
 	res, err := s.Incidents.ListEvents(ctx, "<id>", nil, nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IncidentEventEntityPaginated{}, res.IncidentEventEntityPaginated)
 }
 
 func TestIncidents_GetIncidentEvent(t *testing.T) {
@@ -171,6 +180,7 @@ func TestIncidents_GetIncidentEvent(t *testing.T) {
 	res, err := s.Incidents.GetEvent(ctx, "<id>", "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IncidentEventEntity{}, res.IncidentEventEntity)
 }
 
 func TestIncidents_DeleteIncidentEvent(t *testing.T) {
@@ -182,6 +192,7 @@ func TestIncidents_DeleteIncidentEvent(t *testing.T) {
 	res, err := s.Incidents.DeleteEvent(ctx, "<id>", "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IncidentEventEntity{}, res.IncidentEventEntity)
 }
 
 func TestIncidents_UpdateIncidentEvent(t *testing.T) {
@@ -193,6 +204,7 @@ func TestIncidents_UpdateIncidentEvent(t *testing.T) {
 	res, err := s.Incidents.UpdateEvent(ctx, "<id>", "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IncidentEventEntity{}, res.IncidentEventEntity)
 }
 
 func TestIncidents_UpdateIncidentEventVotes(t *testing.T) {
@@ -206,6 +218,7 @@ func TestIncidents_UpdateIncidentEventVotes(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.VotesEntity{}, res.VotesEntity)
 }
 
 func TestIncidents_GetIncidentEventVoteStatus(t *testing.T) {
@@ -217,6 +230,7 @@ func TestIncidents_GetIncidentEventVoteStatus(t *testing.T) {
 	res, err := s.Incidents.GetEventVoteStatus(ctx, "<id>", "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.VotesEntity{}, res.VotesEntity)
 }
 
 func TestIncidents_CreateIncidentGenericChatMessage(t *testing.T) {
@@ -230,6 +244,7 @@ func TestIncidents_CreateIncidentGenericChatMessage(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.EventGenericChatMessageEntity{}, res.EventGenericChatMessageEntity)
 }
 
 func TestIncidents_DeleteIncidentChatMessage(t *testing.T) {
@@ -241,6 +256,7 @@ func TestIncidents_DeleteIncidentChatMessage(t *testing.T) {
 	res, err := s.Incidents.DeleteChatMessage(ctx, "<id>", "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.EventGenericChatMessageEntity{}, res.EventGenericChatMessageEntity)
 }
 
 func TestIncidents_UpdateIncidentChatMessage(t *testing.T) {
@@ -254,6 +270,7 @@ func TestIncidents_UpdateIncidentChatMessage(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.EventGenericChatMessageEntity{}, res.EventGenericChatMessageEntity)
 }
 
 func TestIncidents_UpdateIncidentImpacts(t *testing.T) {
@@ -273,6 +290,7 @@ func TestIncidents_ListIncidentImpact(t *testing.T) {
 	res, err := s.Incidents.ListImpact(ctx, "<id>", operations.PathParamTypeEnvironments)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IncidentImpactEntityPaginated{}, res.IncidentImpactEntityPaginated)
 }
 
 func TestIncidents_CreateIncidentImpact(t *testing.T) {
@@ -286,6 +304,7 @@ func TestIncidents_CreateIncidentImpact(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IncidentImpactEntity{}, res.IncidentImpactEntity)
 }
 
 func TestIncidents_DeleteIncidentImpact(t *testing.T) {
@@ -308,6 +327,7 @@ func TestIncidents_ListIncidentLinks(t *testing.T) {
 	res, err := s.Incidents.ListLinks(ctx, "<id>", nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.AttachmentsLinkEntityPaginated{}, res.AttachmentsLinkEntityPaginated)
 }
 
 func TestIncidents_CreateIncidentLink(t *testing.T) {
@@ -321,6 +341,7 @@ func TestIncidents_CreateIncidentLink(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.AttachmentsLinkEntity{}, res.AttachmentsLinkEntity)
 }
 
 func TestIncidents_UpdateIncidentLink(t *testing.T) {
@@ -347,6 +368,7 @@ func TestIncidents_ListIncidentMilestones(t *testing.T) {
 	res, err := s.Incidents.ListMilestones(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IncidentsMilestoneEntityPaginated{}, res.IncidentsMilestoneEntityPaginated)
 }
 
 func TestIncidents_UpdateIncidentMilestonesBulk(t *testing.T) {
@@ -365,6 +387,7 @@ func TestIncidents_UpdateIncidentMilestonesBulk(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IncidentsMilestoneEntityPaginated{}, res.IncidentsMilestoneEntityPaginated)
 }
 
 func TestIncidents_CreateIncidentNote(t *testing.T) {
@@ -378,6 +401,7 @@ func TestIncidents_CreateIncidentNote(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.EventNoteEntity{}, res.EventNoteEntity)
 }
 
 func TestIncidents_UpdateIncidentNote(t *testing.T) {
@@ -391,6 +415,7 @@ func TestIncidents_UpdateIncidentNote(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.EventNoteEntity{}, res.EventNoteEntity)
 }
 
 func TestIncidents_ListIncidentRelatedChanges(t *testing.T) {
@@ -402,6 +427,7 @@ func TestIncidents_ListIncidentRelatedChanges(t *testing.T) {
 	res, err := s.Incidents.ListRelatedChangeEvents(ctx, "<id>", nil, nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IncidentsRelatedChangeEventEntityPaginated{}, res.IncidentsRelatedChangeEventEntityPaginated)
 }
 
 func TestIncidents_CreateIncidentRelatedChange(t *testing.T) {
@@ -416,6 +442,7 @@ func TestIncidents_CreateIncidentRelatedChange(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IncidentsRelatedChangeEventEntity{}, res.IncidentsRelatedChangeEventEntity)
 }
 
 func TestIncidents_UpdateIncidentRelatedChangeEvent(t *testing.T) {
@@ -431,6 +458,7 @@ func TestIncidents_GetIncidentRelationships(t *testing.T) {
 	res, err := s.Incidents.GetRelationships(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IncidentsRelationshipsEntity{}, res.IncidentsRelationshipsEntity)
 }
 
 func TestIncidents_ResolveIncident(t *testing.T) {
@@ -442,6 +470,7 @@ func TestIncidents_ResolveIncident(t *testing.T) {
 	res, err := s.Incidents.Resolve(ctx, "<id>", nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IncidentEntity{}, res.IncidentEntity)
 }
 
 func TestIncidents_ListIncidentRoleAssignments(t *testing.T) {
@@ -453,6 +482,7 @@ func TestIncidents_ListIncidentRoleAssignments(t *testing.T) {
 	res, err := s.Incidents.ListRoleAssignments(ctx, "<id>", nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IncidentsRoleAssignmentEntityPaginated{}, res.IncidentsRoleAssignmentEntityPaginated)
 }
 
 func TestIncidents_CreateIncidentRoleAssignment(t *testing.T) {
@@ -467,6 +497,7 @@ func TestIncidents_CreateIncidentRoleAssignment(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IncidentsRoleAssignmentEntity{}, res.IncidentsRoleAssignmentEntity)
 }
 
 func TestIncidents_DeleteIncidentRoleAssignment(t *testing.T) {
@@ -478,6 +509,7 @@ func TestIncidents_DeleteIncidentRoleAssignment(t *testing.T) {
 	res, err := s.Incidents.DeleteRoleAssignment(ctx, "<id>", "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IncidentsRoleAssignmentEntity{}, res.IncidentsRoleAssignmentEntity)
 }
 
 func TestIncidents_GetSimilarIncidents(t *testing.T) {
@@ -500,6 +532,7 @@ func TestIncidents_ListIncidentStatusPages(t *testing.T) {
 	res, err := s.Incidents.ListStatusPages(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IncidentsStatusPageEntityPaginated{}, res.IncidentsStatusPageEntityPaginated)
 }
 
 func TestIncidents_CreateIncidentStatusPage(t *testing.T) {
@@ -514,6 +547,7 @@ func TestIncidents_CreateIncidentStatusPage(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IncidentsStatusPageEntity{}, res.IncidentsStatusPageEntity)
 }
 
 func TestIncidents_CreateIncidentTaskList(t *testing.T) {
@@ -527,6 +561,7 @@ func TestIncidents_CreateIncidentTaskList(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.TaskEntity{}, res.TaskEntity)
 }
 
 func TestIncidents_CreateIncidentTeamAssignment(t *testing.T) {
@@ -562,6 +597,7 @@ func TestIncidents_GetIncidentTranscript(t *testing.T) {
 	res, err := s.Incidents.GetTranscript(ctx, "<id>", nil, nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.PublicAPIV1IncidentsTranscriptEntity{}, res.PublicAPIV1IncidentsTranscriptEntity)
 }
 
 func TestIncidents_DeleteIncidentTranscript(t *testing.T) {
@@ -584,6 +620,7 @@ func TestIncidents_UnarchiveIncident(t *testing.T) {
 	res, err := s.Incidents.Unarchive(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IncidentEntity{}, res.IncidentEntity)
 }
 
 func TestIncidents_GetIncidentUserRole(t *testing.T) {
@@ -595,4 +632,5 @@ func TestIncidents_GetIncidentUserRole(t *testing.T) {
 	res, err := s.Incidents.GetUserRole(ctx, "<id>", "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IncidentsRoleAssignmentEntity{}, res.IncidentsRoleAssignmentEntity)
 }

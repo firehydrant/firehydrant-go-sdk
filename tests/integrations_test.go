@@ -5,6 +5,7 @@ package tests
 import (
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"firehydrant/models/operations"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -31,6 +32,7 @@ func TestIntegrations_ListAwsCloudtrailBatches(t *testing.T) {
 	res, err := s.Integrations.ListCloudtrailBatches(ctx, nil, nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IntegrationsAwsCloudtrailBatchEntityPaginated{}, res.IntegrationsAwsCloudtrailBatchEntityPaginated)
 }
 
 func TestIntegrations_UpdateAwsCloudTrailBatch(t *testing.T) {
@@ -90,6 +92,7 @@ func TestIntegrations_UpdateIntegrationFieldMap(t *testing.T) {
 	res, err := s.Integrations.UpdateFieldMap(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.FieldMappingFieldMapEntity{}, res.FieldMappingFieldMapEntity)
 }
 
 func TestIntegrations_GetIntegrationFieldMapAvailableFields(t *testing.T) {
@@ -101,6 +104,7 @@ func TestIntegrations_GetIntegrationFieldMapAvailableFields(t *testing.T) {
 	res, err := s.Integrations.GetFieldMapAvailableFields(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.FieldMappingMappableFieldEntity{}, res.FieldMappingMappableFieldEntity)
 }
 
 func TestIntegrations_ListSlackEmojiActions(t *testing.T) {
@@ -134,6 +138,7 @@ func TestIntegrations_GetStatuspageConnection(t *testing.T) {
 	res, err := s.Integrations.GetStatuspageConnection(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IntegrationsStatuspageConnectionEntity{}, res.IntegrationsStatuspageConnectionEntity)
 }
 
 func TestIntegrations_DeleteStatuspageConnection(t *testing.T) {
@@ -145,6 +150,7 @@ func TestIntegrations_DeleteStatuspageConnection(t *testing.T) {
 	res, err := s.Integrations.DeleteStatuspageConnection(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IntegrationsStatuspageConnectionEntity{}, res.IntegrationsStatuspageConnectionEntity)
 }
 
 func TestIntegrations_GetIntegration(t *testing.T) {
@@ -156,6 +162,7 @@ func TestIntegrations_GetIntegration(t *testing.T) {
 	res, err := s.Integrations.Get(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IntegrationsIntegrationEntity{}, res.IntegrationsIntegrationEntity)
 }
 
 func TestIntegrations_DeleteTicketingPriority(t *testing.T) {
@@ -167,6 +174,7 @@ func TestIntegrations_DeleteTicketingPriority(t *testing.T) {
 	res, err := s.Integrations.DeletePriority(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.TicketingPriorityEntity{}, res.TicketingPriorityEntity)
 }
 
 func TestIntegrations_UpdateTicketingPriority(t *testing.T) {
@@ -182,6 +190,7 @@ func TestIntegrations_ListTicketingProjects(t *testing.T) {
 	res, err := s.Integrations.ListProjects(ctx, operations.ListTicketingProjectsRequest{})
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.TicketingProjectsProjectListItemEntity{}, res.TicketingProjectsProjectListItemEntity)
 }
 
 func TestIntegrations_GetTicketingProjectConfigurationOptions(t *testing.T) {
@@ -215,6 +224,7 @@ func TestIntegrations_CreateTicketingProjectFieldMap(t *testing.T) {
 	res, err := s.Integrations.CreateFieldMap(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.TicketingProjectFieldMapEntity{}, res.TicketingProjectFieldMapEntity)
 }
 
 func TestIntegrations_GetTicketingProjectAvailableFields(t *testing.T) {
@@ -226,6 +236,7 @@ func TestIntegrations_GetTicketingProjectAvailableFields(t *testing.T) {
 	res, err := s.Integrations.GetAvailableFields(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.TicketingFieldMapsMappableFieldEntity{}, res.TicketingFieldMapsMappableFieldEntity)
 }
 
 func TestIntegrations_DeleteTicketingProjectFieldMap(t *testing.T) {
@@ -248,6 +259,7 @@ func TestIntegrations_UpdateTicketingProjectFieldMap(t *testing.T) {
 	res, err := s.Integrations.UpdateTicketingFieldMap(ctx, "<id>", "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.TicketingProjectFieldMapEntity{}, res.TicketingProjectFieldMapEntity)
 }
 
 func TestIntegrations_DeleteTicketingProjectConfig(t *testing.T) {
@@ -259,6 +271,7 @@ func TestIntegrations_DeleteTicketingProjectConfig(t *testing.T) {
 	res, err := s.Integrations.DeleteProjectConfig(ctx, "<id>", "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.TicketingProjectConfigEntity{}, res.TicketingProjectConfigEntity)
 }
 
 func TestIntegrations_GetTicket(t *testing.T) {
@@ -270,4 +283,5 @@ func TestIntegrations_GetTicket(t *testing.T) {
 	res, err := s.Integrations.GetTicket(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.TicketingTicketEntity{}, res.TicketingTicketEntity)
 }

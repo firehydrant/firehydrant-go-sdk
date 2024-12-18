@@ -21,6 +21,7 @@ func TestMaintenances_ListScheduledMaintenances(t *testing.T) {
 	res, err := s.Maintenances.List(ctx, nil, nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.ScheduledMaintenanceEntity{}, res.ScheduledMaintenanceEntity)
 }
 
 func TestMaintenances_CreateScheduledMaintenance(t *testing.T) {
@@ -36,6 +37,7 @@ func TestMaintenances_CreateScheduledMaintenance(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.ScheduledMaintenanceEntity{}, res.ScheduledMaintenanceEntity)
 }
 
 func TestMaintenances_DeleteScheduledMaintenance(t *testing.T) {

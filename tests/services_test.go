@@ -24,6 +24,7 @@ func TestServices_CreateServiceDependency(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.ServiceDependencyEntity{}, res.ServiceDependencyEntity)
 }
 
 func TestServices_GetServiceDependency(t *testing.T) {
@@ -35,6 +36,7 @@ func TestServices_GetServiceDependency(t *testing.T) {
 	res, err := s.Services.GetDependency(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.ServiceDependencyEntity{}, res.ServiceDependencyEntity)
 }
 
 func TestServices_DeleteServiceDependency(t *testing.T) {
@@ -46,6 +48,7 @@ func TestServices_DeleteServiceDependency(t *testing.T) {
 	res, err := s.Services.DeleteDependency(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.ServiceDependencyEntity{}, res.ServiceDependencyEntity)
 }
 
 func TestServices_UpdateServiceDependency(t *testing.T) {
@@ -61,6 +64,7 @@ func TestServices_ListServices(t *testing.T) {
 	res, err := s.Services.List(ctx, operations.ListServicesRequest{})
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.ServiceEntityPaginated{}, res.ServiceEntityPaginated)
 }
 
 func TestServices_CreateService(t *testing.T) {
@@ -74,6 +78,7 @@ func TestServices_CreateService(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.ServiceEntity{}, res.ServiceEntity)
 }
 
 func TestServices_CreateServiceLinks(t *testing.T) {
@@ -89,6 +94,11 @@ func TestServices_CreateServiceLinks(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, []components.ServiceLinkEntity{
+		components.ServiceLinkEntity{},
+		components.ServiceLinkEntity{},
+		components.ServiceLinkEntity{},
+	}, res.ServiceLinkEntities)
 }
 
 func TestServices_GetService(t *testing.T) {
@@ -100,6 +110,7 @@ func TestServices_GetService(t *testing.T) {
 	res, err := s.Services.Get(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.ServiceEntity{}, res.ServiceEntity)
 }
 
 func TestServices_DeleteService(t *testing.T) {
@@ -111,6 +122,7 @@ func TestServices_DeleteService(t *testing.T) {
 	res, err := s.Services.Delete(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.ServiceEntity{}, res.ServiceEntity)
 }
 
 func TestServices_UpdateService(t *testing.T) {
@@ -126,6 +138,7 @@ func TestServices_ListServiceAvailableDownstreamDependencies(t *testing.T) {
 	res, err := s.Services.GetAvailableDownstreamDependencies(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.ServiceEntityLite{}, res.ServiceEntityLite)
 }
 
 func TestServices_ListServiceAvailableUpstreamDependencies(t *testing.T) {
@@ -137,6 +150,7 @@ func TestServices_ListServiceAvailableUpstreamDependencies(t *testing.T) {
 	res, err := s.Services.ListAvailableUpstreamDependencies(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.ServiceEntityLite{}, res.ServiceEntityLite)
 }
 
 func TestServices_CreateServiceChecklistResponse(t *testing.T) {
@@ -162,6 +176,7 @@ func TestServices_GetServiceDependencies(t *testing.T) {
 	res, err := s.Services.ListDependencies(ctx, "<id>", nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.ServiceWithAllDependenciesEntity{}, res.ServiceWithAllDependenciesEntity)
 }
 
 func TestServices_DeleteServiceLink(t *testing.T) {
@@ -184,4 +199,9 @@ func TestServices_ListUserServices(t *testing.T) {
 	res, err := s.Services.ListForUser(ctx, "<id>", nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, []components.TeamEntityPaginated{
+		components.TeamEntityPaginated{},
+		components.TeamEntityPaginated{},
+		components.TeamEntityPaginated{},
+	}, res.TeamEntityPaginateds)
 }

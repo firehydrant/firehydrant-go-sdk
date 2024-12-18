@@ -5,6 +5,7 @@ package tests
 import (
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
@@ -19,6 +20,7 @@ func TestFireHydrantStatuspage_ListStatuspageConnections(t *testing.T) {
 	res, err := s.Integrations.Statuspage.ListConnections(ctx, nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IntegrationsStatuspageConnectionEntityPaginated{}, res.IntegrationsStatuspageConnectionEntityPaginated)
 }
 
 func TestFireHydrantStatuspage_ListStatuspagePages(t *testing.T) {

@@ -5,6 +5,7 @@ package tests
 import (
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
@@ -19,6 +20,7 @@ func TestAws_GetAwsCloudTrailBatch(t *testing.T) {
 	res, err := s.Integrations.Aws.GetCloudTrailBatch(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.IntegrationsAwsCloudtrailBatchEntity{}, res.IntegrationsAwsCloudtrailBatchEntity)
 }
 
 func TestAws_UpdateAwsConnection(t *testing.T) {

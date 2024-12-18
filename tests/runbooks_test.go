@@ -32,6 +32,7 @@ func TestRunbooks_ListRunbooks(t *testing.T) {
 	res, err := s.Runbooks.List(ctx, operations.ListRunbooksRequest{})
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.RunbookEntity{}, res.RunbookEntity)
 }
 
 func TestRunbooks_CreateRunbook(t *testing.T) {
@@ -46,6 +47,7 @@ func TestRunbooks_CreateRunbook(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.RunbookEntity{}, res.RunbookEntity)
 }
 
 func TestRunbooks_ListRunbookActions(t *testing.T) {
@@ -57,6 +59,7 @@ func TestRunbooks_ListRunbookActions(t *testing.T) {
 	res, err := s.Runbooks.ListActions(ctx, nil, nil, nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.RunbooksActionsEntityPaginated{}, res.RunbooksActionsEntityPaginated)
 }
 
 func TestRunbooks_ListRunbookExecutions(t *testing.T) {
@@ -68,6 +71,7 @@ func TestRunbooks_ListRunbookExecutions(t *testing.T) {
 	res, err := s.Runbooks.ListExecutions(ctx, nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.RunbooksExecutionEntityPaginated{}, res.RunbooksExecutionEntityPaginated)
 }
 
 func TestRunbooks_CreateRunbookExecution(t *testing.T) {
@@ -82,6 +86,7 @@ func TestRunbooks_CreateRunbookExecution(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.RunbooksExecutionEntity{}, res.RunbooksExecutionEntity)
 }
 
 func TestRunbooks_GetRunbookExecution(t *testing.T) {
@@ -93,6 +98,7 @@ func TestRunbooks_GetRunbookExecution(t *testing.T) {
 	res, err := s.Runbooks.GetExecution(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.RunbooksExecutionEntity{}, res.RunbooksExecutionEntity)
 }
 
 func TestRunbooks_UpdateRunbookExecutionStep(t *testing.T) {
@@ -106,6 +112,7 @@ func TestRunbooks_UpdateRunbookExecutionStep(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.RunbooksExecutionEntity{}, res.RunbooksExecutionEntity)
 }
 
 func TestRunbooks_GetRunbookExecutionStepScript(t *testing.T) {
@@ -117,6 +124,7 @@ func TestRunbooks_GetRunbookExecutionStepScript(t *testing.T) {
 	res, err := s.Runbooks.GetExecutionStepScript(ctx, "<id>", "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.RunbooksExecutionEntity{}, res.RunbooksExecutionEntity)
 }
 
 func TestRunbooks_UpdateRunbookExecutionStepScriptState(t *testing.T) {
@@ -128,6 +136,7 @@ func TestRunbooks_UpdateRunbookExecutionStepScriptState(t *testing.T) {
 	res, err := s.Runbooks.UpdateExecutionStepScriptState(ctx, "<id>", "<id>", "Mississippi")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.RunbooksExecutionEntity{}, res.RunbooksExecutionEntity)
 }
 
 func TestRunbooks_UpdateRunbookExecutionStepVotes(t *testing.T) {
@@ -141,6 +150,7 @@ func TestRunbooks_UpdateRunbookExecutionStepVotes(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.VotesEntity{}, res.VotesEntity)
 }
 
 func TestRunbooks_GetRunbookStepVoteStatus(t *testing.T) {
@@ -152,6 +162,7 @@ func TestRunbooks_GetRunbookStepVoteStatus(t *testing.T) {
 	res, err := s.Runbooks.GetStepVoteStatus(ctx, "<id>", "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.VotesEntity{}, res.VotesEntity)
 }
 
 func TestRunbooks_UpdateRunbookExecutionVotes(t *testing.T) {
@@ -165,6 +176,7 @@ func TestRunbooks_UpdateRunbookExecutionVotes(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.VotesEntity{}, res.VotesEntity)
 }
 
 func TestRunbooks_GetRunbookExecutionVoteStatus(t *testing.T) {
@@ -176,6 +188,7 @@ func TestRunbooks_GetRunbookExecutionVoteStatus(t *testing.T) {
 	res, err := s.Runbooks.GetExecutionVoteStatus(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.VotesEntity{}, res.VotesEntity)
 }
 
 func TestRunbooks_GetRunbookSelectOptions(t *testing.T) {
@@ -202,6 +215,7 @@ func TestRunbooks_GetRunbook(t *testing.T) {
 	res, err := s.Runbooks.Get(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.RunbookEntity{}, res.RunbookEntity)
 }
 
 func TestRunbooks_UpdateRunbook(t *testing.T) {
@@ -217,4 +231,5 @@ func TestRunbooks_DeleteRunbook(t *testing.T) {
 	res, err := s.Runbooks.Delete(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.RunbookEntity{}, res.RunbookEntity)
 }

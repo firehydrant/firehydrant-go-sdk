@@ -20,6 +20,7 @@ func TestEnvironments_ListEnvironments(t *testing.T) {
 	res, err := s.Environments.List(ctx, nil, nil, nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.EnvironmentEntryEntityPaginated{}, res.EnvironmentEntryEntityPaginated)
 }
 
 func TestEnvironments_CreateEnvironment(t *testing.T) {
@@ -33,6 +34,7 @@ func TestEnvironments_CreateEnvironment(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 201, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.EnvironmentEntryEntity{}, res.EnvironmentEntryEntity)
 }
 
 func TestEnvironments_GetEnvironment(t *testing.T) {
@@ -44,6 +46,7 @@ func TestEnvironments_GetEnvironment(t *testing.T) {
 	res, err := s.Environments.Get(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.EnvironmentEntryEntity{}, res.EnvironmentEntryEntity)
 }
 
 func TestEnvironments_DeleteEnvironment(t *testing.T) {
@@ -55,6 +58,7 @@ func TestEnvironments_DeleteEnvironment(t *testing.T) {
 	res, err := s.Environments.Delete(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.EnvironmentEntryEntity{}, res.EnvironmentEntryEntity)
 }
 
 func TestEnvironments_UpdateEnvironment(t *testing.T) {
@@ -68,4 +72,5 @@ func TestEnvironments_UpdateEnvironment(t *testing.T) {
 	})
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.EnvironmentEntryEntity{}, res.EnvironmentEntryEntity)
 }

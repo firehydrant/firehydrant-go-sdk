@@ -5,6 +5,7 @@ package tests
 import (
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
@@ -19,6 +20,7 @@ func TestUsers_GetCurrentUser(t *testing.T) {
 	res, err := s.Users.GetCurrent(ctx)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.CurrentUserEntity{}, res.CurrentUserEntity)
 }
 
 func TestUsers_ListUsers(t *testing.T) {
@@ -30,6 +32,7 @@ func TestUsers_ListUsers(t *testing.T) {
 	res, err := s.Users.List(ctx, nil, nil, nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.UserEntityPaginated{}, res.UserEntityPaginated)
 }
 
 func TestUsers_GetUser(t *testing.T) {
@@ -41,4 +44,5 @@ func TestUsers_GetUser(t *testing.T) {
 	res, err := s.Users.Get(ctx, "<id>")
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+	assert.Equal(t, &components.UserEntity{}, res.UserEntity)
 }
