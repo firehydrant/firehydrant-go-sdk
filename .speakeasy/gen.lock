@@ -5,8 +5,8 @@ management:
   docVersion: 0.0.1
   speakeasyVersion: 1.456.1
   generationVersion: 2.481.0
-  releaseVersion: 0.10.0
-  configChecksum: 4ffab67d0eb9862180b37340ac7cf05a
+  releaseVersion: 0.10.1
+  configChecksum: 6f45be700b7d0032e67712b09f44ed19
   repoURL: https://github.com/firehydrant/go-sdk.git
   installationURL: https://github.com/firehydrant/go-sdk
 features:
