@@ -24,17 +24,18 @@ Lists webhooks
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Webhooks.List(ctx, nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -80,18 +81,19 @@ Create a new webhook
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Webhooks.Create(ctx, components.PostV1Webhooks{
         URL: "https://woeful-yin.biz",
     })
@@ -138,17 +140,18 @@ Retrieve a specific webhook
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Webhooks.Get(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -193,17 +196,18 @@ Delete a specific webhook
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Webhooks.Delete(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -248,18 +252,19 @@ Update a specific webhook
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Webhooks.Update(ctx, "<id>", components.PatchV1WebhooksWebhookID{})
     if err != nil {
         log.Fatal(err)
@@ -305,17 +310,18 @@ List webhook deliveries
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Webhooks.ListDeliveries(ctx, "<id>")
     if err != nil {
         log.Fatal(err)

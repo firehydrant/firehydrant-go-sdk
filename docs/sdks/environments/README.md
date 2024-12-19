@@ -23,17 +23,18 @@ List all of the environments that have been added to the organiation
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Environments.List(ctx, nil, nil, nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -81,18 +82,19 @@ Creates an environment for the organization
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Environments.Create(ctx, components.PostV1Environments{
         Name: "<value>",
     })
@@ -139,17 +141,18 @@ Retrieves a single environment by ID
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Environments.Get(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -194,17 +197,18 @@ Archive an environment
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Environments.Delete(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -249,18 +253,19 @@ Update a environments attributes
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Environments.Update(ctx, "<id>", components.PatchV1EnvironmentsEnvironmentID{
         Name: "<value>",
     })

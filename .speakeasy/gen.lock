@@ -3,16 +3,18 @@ id: 39357612-0c85-4a96-a549-e2d920c4a065
 management:
   docChecksum: 2fb06b765049a3c17f320d8d880e596a
   docVersion: 0.0.1
-  speakeasyVersion: 1.435.1
-  generationVersion: 2.455.2
-  releaseVersion: 0.9.0
-  configChecksum: ebdc7fd3f93d2fe51dd727162dceff90
+  speakeasyVersion: 1.456.1
+  generationVersion: 2.481.0
+  releaseVersion: 0.10.0
+  configChecksum: 4ffab67d0eb9862180b37340ac7cf05a
+  repoURL: https://github.com/firehydrant/go-sdk.git
+  installationURL: https://github.com/firehydrant/go-sdk
 features:
   go:
     additionalDependencies: 0.1.0
     additionalProperties: 0.1.2
     constsAndDefaults: 0.1.6
-    core: 3.5.15
+    core: 3.6.2
     defaultEnabledRetries: 0.2.0
     envVarSecurityUsage: 0.3.2
     flattening: 2.81.1
@@ -26,9 +28,8 @@ features:
     nameOverrides: 2.81.2
     nullables: 0.1.0
     responseFormat: 0.1.2
-    retries: 2.83.0
+    retries: 2.83.1
     sdkHooks: 0.1.0
-    tests: 0.6.0
     uploadStreams: 0.1.0
 generatedFiles:
   - .gitattributes
@@ -2118,6 +2119,7 @@ generatedFiles:
   - integrations.go
   - internal/hooks/hooks.go
   - internal/utils/contenttype.go
+  - internal/utils/env.go
   - internal/utils/form.go
   - internal/utils/headers.go
   - internal/utils/json.go
@@ -2148,52 +2150,6 @@ generatedFiles:
   - system.go
   - tasks.go
   - teams.go
-  - tests/accountsettings_test.go
-  - tests/alerts_test.go
-  - tests/aws_test.go
-  - tests/awscloudtrailbatchevents_test.go
-  - tests/awsconnections_test.go
-  - tests/catalogs_test.go
-  - tests/changes_test.go
-  - tests/checklisttemplates_test.go
-  - tests/communication_test.go
-  - tests/confluence_test.go
-  - tests/conversations_test.go
-  - tests/environments_test.go
-  - tests/executions_test.go
-  - tests/files.go
-  - tests/firehydrantsignalsteams_test.go
-  - tests/firehydrantslack_test.go
-  - tests/firehydrantstatuspage_test.go
-  - tests/firehydrantticketing_test.go
-  - tests/functionalities_test.go
-  - tests/incidents_test.go
-  - tests/incidentsettings_test.go
-  - tests/infrastructures_test.go
-  - tests/integrations_test.go
-  - tests/list_test.go
-  - tests/maintenances_test.go
-  - tests/metrics_test.go
-  - tests/metricsreporting_test.go
-  - tests/oncallschedules_test.go
-  - tests/projectconfigurations_test.go
-  - tests/retrospectives_test.go
-  - tests/runbooks_test.go
-  - tests/scim_test.go
-  - tests/services_test.go
-  - tests/signals_test.go
-  - tests/slack_test.go
-  - tests/statuspages_test.go
-  - tests/statusupdatetemplates_test.go
-  - tests/system_test.go
-  - tests/tasks_test.go
-  - tests/teams_test.go
-  - tests/ticketing_test.go
-  - tests/ticketingpriorities_test.go
-  - tests/tickets_test.go
-  - tests/users_test.go
-  - tests/webhooks_test.go
-  - tests/zendesk_test.go
   - ticketing.go
   - ticketingpriorities.go
   - tickets.go

@@ -17,18 +17,19 @@ Update the given Statuspage integration connection.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Statuspage.UpdateConnection(ctx, "<id>", components.PatchV1IntegrationsStatuspageConnectionsConnectionID{})
     if err != nil {
         log.Fatal(err)

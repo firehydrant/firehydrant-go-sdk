@@ -17,18 +17,19 @@ Create a status update template for your organization
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.StatusUpdateTemplates.Create(ctx, components.PostV1StatusUpdateTemplates{
         Name: "<value>",
         Body: "<value>",

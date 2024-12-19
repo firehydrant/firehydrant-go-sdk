@@ -17,17 +17,18 @@ Simple endpoint to verify your API connection is working
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.System.Ping(ctx)
     if err != nil {
         log.Fatal(err)

@@ -7,7 +7,7 @@ import (
 )
 
 type UpdateStatusPageImageFile struct {
-	FileName string `multipartForm:"name=file"`
+	FileName string `multipartForm:"name=fileName"`
 	// This field accepts []byte data or io.Reader implementations, such as *os.File.
 	Content any `multipartForm:"content"`
 }
@@ -27,7 +27,7 @@ func (o *UpdateStatusPageImageFile) GetContent() any {
 }
 
 type UpdateStatusPageImageRequestBody struct {
-	File *UpdateStatusPageImageFile `multipartForm:"file"`
+	File *UpdateStatusPageImageFile `multipartForm:"file,name=file"`
 }
 
 func (o *UpdateStatusPageImageRequestBody) GetFile() *UpdateStatusPageImageFile {

@@ -43,17 +43,18 @@ List all available integrations
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Integrations.List(ctx)
     if err != nil {
         log.Fatal(err)
@@ -97,17 +98,18 @@ Lists CloudTrail batches for the authenticated organization.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Integrations.ListCloudtrailBatches(ctx, nil, nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -154,18 +156,19 @@ Update a CloudTrail batch with new information.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Integrations.UpdateCloudTrailBatch(ctx, "<id>", components.PatchV1IntegrationsAwsCloudtrailBatchesID{})
     if err != nil {
         log.Fatal(err)
@@ -211,17 +214,18 @@ List integration connections
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Integrations.ListConnections(ctx, nil)
     if err != nil {
         log.Fatal(err)
@@ -266,17 +270,18 @@ Create a new integration connection
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Integrations.CreateConnection(ctx, "<value>")
     if err != nil {
         log.Fatal(err)
@@ -321,17 +326,18 @@ Update an integration connection
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Integrations.UpdateConnection(ctx, "<value>", "<id>")
     if err != nil {
         log.Fatal(err)
@@ -377,17 +383,18 @@ Refresh an integration connection
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Integrations.RefreshConnection(ctx, "<value>", "<id>")
     if err != nil {
         log.Fatal(err)
@@ -433,17 +440,18 @@ Update field map
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Integrations.UpdateFieldMap(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -488,17 +496,18 @@ Get a description of the fields to which data can be mapped
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Integrations.GetFieldMapAvailableFields(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -543,17 +552,18 @@ Lists all slack emoji actions
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Integrations.ListEmojiActions(ctx, "<id>", nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -600,17 +610,18 @@ Get an integration status
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Integrations.GetStatus(ctx, "<value>")
     if err != nil {
         log.Fatal(err)
@@ -655,17 +666,18 @@ Retrieve the information about the Statuspage connection.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Integrations.GetStatuspageConnection(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -710,17 +722,18 @@ Deletes the given Statuspage integration connection.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Integrations.DeleteStatuspageConnection(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -765,17 +778,18 @@ Retrieve a single integration
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Integrations.Get(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -820,17 +834,18 @@ Delete a single ticketing priority by ID
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Integrations.DeletePriority(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -875,18 +890,19 @@ Update a single ticketing priority's attributes
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Integrations.UpdatePriority(ctx, "<id>", components.PatchV1TicketingPrioritiesID{})
     if err != nil {
         log.Fatal(err)
@@ -932,18 +948,19 @@ List all ticketing projects available to the organization
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Integrations.ListProjects(ctx, operations.ListTicketingProjectsRequest{})
     if err != nil {
         log.Fatal(err)
@@ -988,17 +1005,18 @@ List configuration options for a ticketing project
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Integrations.GetProjectConfigurationOptions(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -1043,17 +1061,18 @@ List configuration options for a ticketing project field
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Integrations.GetProjectFieldOptions(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
@@ -1099,17 +1118,18 @@ Creates field map for a ticketing project
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Integrations.CreateFieldMap(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -1154,17 +1174,18 @@ Returns metadata for the fields that are available for field mapping.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Integrations.GetAvailableFields(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -1209,17 +1230,18 @@ Archive field map for a ticketing project
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Integrations.DeleteFieldMap(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
@@ -1265,17 +1287,18 @@ Update field map for a ticketing project
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Integrations.UpdateTicketingFieldMap(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
@@ -1321,17 +1344,18 @@ Archive configuration for a ticketing project
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Integrations.DeleteProjectConfig(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
@@ -1377,17 +1401,18 @@ Retrieves a single ticket by ID
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Integrations.GetTicket(ctx, "<id>")
     if err != nil {
         log.Fatal(err)

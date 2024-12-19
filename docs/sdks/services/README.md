@@ -34,18 +34,19 @@ Creates a service dependency relationship between two services
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Services.CreateDependency(ctx, components.PostV1ServiceDependencies{
         ServiceID: "<id>",
         ConnectedServiceID: "<id>",
@@ -93,17 +94,18 @@ Retrieves a single service dependency by ID
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Services.GetDependency(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -148,17 +150,18 @@ Deletes a single service dependency
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Services.DeleteDependency(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -203,18 +206,19 @@ Update the notes of the service dependency
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Services.Update(ctx, "<id>", components.PatchV1ServiceDependenciesServiceDependencyID{})
     if err != nil {
         log.Fatal(err)
@@ -260,18 +264,19 @@ List all of the services that have been added to the organization.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Services.List(ctx, operations.ListServicesRequest{})
     if err != nil {
         log.Fatal(err)
@@ -316,18 +321,19 @@ Creates a service for the organization, you may also create or attach functional
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Services.Create(ctx, components.PostV1Services{
         Name: "<value>",
     })
@@ -375,18 +381,19 @@ Creates a service with the appropriate integration for each external service ID 
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Services.CreateLinks(ctx, components.PostV1ServicesServiceLinks{
         ExternalServiceIds: "<value>",
         ConnectionID: "<id>",
@@ -435,17 +442,18 @@ Retrieves a single service by ID
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Services.Get(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -490,17 +498,18 @@ Deletes the service from FireHydrant.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Services.Delete(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -547,18 +556,19 @@ Note: You may not remove or add individual label key/value pairs. You must inclu
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Services.Patch(ctx, "<id>", components.PatchV1ServicesServiceID{})
     if err != nil {
         log.Fatal(err)
@@ -604,17 +614,18 @@ Retrieves all services that are available to be downstream dependencies
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Services.GetAvailableDownstreamDependencies(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -659,17 +670,18 @@ Retrieves all services that are available to be upstream dependencies
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Services.ListAvailableUpstreamDependencies(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -714,18 +726,19 @@ Creates a response for a checklist item
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Services.CreateChecklistResponse(ctx, "<id>", "<id>", components.PostV1ServicesServiceIDChecklistResponseChecklistID{
         CheckID: "<id>",
         Status: true,
@@ -775,17 +788,18 @@ Retrieves a service's dependencies
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Services.ListDependencies(ctx, "<id>", nil)
     if err != nil {
         log.Fatal(err)
@@ -831,17 +845,18 @@ Deletes a service link from FireHydrant.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Services.DeleteLink(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
@@ -887,17 +902,18 @@ Retrieves a list of services owned by the teams a user is on
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Services.ListForUser(ctx, "<id>", nil, nil)
     if err != nil {
         log.Fatal(err)

@@ -27,17 +27,18 @@ SCIM endpoint that lists all Teams (Colloquial for Group in the SCIM protocol)
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Scim.ListGroups(ctx, nil, nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -84,18 +85,19 @@ SCIM endpoint to create a new Team (Colloquial for Group in the SCIM protocol). 
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Scim.Create(ctx, components.PostV1ScimV2Groups{
         DisplayName: "Maida.Schinner",
         Members: []components.Members{
@@ -150,17 +152,18 @@ SCIM endpoint that lists a Team (Colloquial for Group in the SCIM protocol)
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Scim.GetGroup(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -205,18 +208,19 @@ SCIM endpoint to update a Team (Colloquial for Group in the SCIM protocol). Any 
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Scim.UpdateGroup(ctx, "<id>", components.PutV1ScimV2GroupsID{
         DisplayName: "Alejandrin.Spinka",
         Members: []components.PutV1ScimV2GroupsIDMembers{
@@ -275,17 +279,18 @@ SCIM endpoint to delete a Team (Colloquial for Group in the SCIM protocol).
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Scim.DeleteGroup(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -330,17 +335,18 @@ SCIM endpoint that lists users. This endpoint will display a list of Users curre
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Scim.ListUsers(ctx, nil, nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -387,18 +393,19 @@ SCIM endpoint to create and provision a new User. This endpoint will provision t
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Scim.CreateUser(ctx, components.PostV1ScimV2Users{
         UserName: "Eleazar91",
         Name: components.Name{
@@ -459,17 +466,18 @@ SCIM endpoint that lists a User
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Scim.GetUser(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -514,18 +522,19 @@ PUT SCIM endpoint to update a User. This endpoint is used to replace a resource'
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Scim.ReplaceUser(ctx, "<id>", components.PutV1ScimV2UsersID{})
     if err != nil {
         log.Fatal(err)
@@ -571,17 +580,18 @@ SCIM endpoint to delete a User. This endpoint will deactivate a confirmed User r
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Scim.DeleteUser(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -626,18 +636,19 @@ PATCH SCIM endpoint to update a User. This endpoint is used to update a resource
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Scim.UpdateUser(ctx, "<id>", components.PatchV1ScimV2UsersID{
         Operations: []components.Operations{
             components.Operations{

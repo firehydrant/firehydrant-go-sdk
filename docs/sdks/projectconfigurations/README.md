@@ -18,17 +18,18 @@ Creates configuration for a ticketing project
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.ProjectConfigurations.Create(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -73,17 +74,18 @@ Retrieve configuration for a ticketing project
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.ProjectConfigurations.Get(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)

@@ -24,18 +24,19 @@ List all of the functionalities that have been added to the organiation
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Functionalities.List(ctx, operations.ListFunctionalitiesRequest{})
     if err != nil {
         log.Fatal(err)
@@ -80,18 +81,19 @@ Creates a functionality for the organization
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Functionalities.Create(ctx, components.PostV1Functionalities{
         Name: "<value>",
     })
@@ -138,17 +140,18 @@ Retrieves a single functionality by ID
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Functionalities.Get(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -193,17 +196,18 @@ Archive a functionality
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Functionalities.Delete(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -248,18 +252,19 @@ Update a functionalities attributes
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Functionalities.Update(ctx, "<id>", components.PatchV1FunctionalitiesFunctionalityID{})
     if err != nil {
         log.Fatal(err)
@@ -305,17 +310,18 @@ List services for a functionality
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Functionalities.ListServices(ctx, "<id>")
     if err != nil {
         log.Fatal(err)

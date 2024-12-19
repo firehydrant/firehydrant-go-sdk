@@ -34,17 +34,18 @@ Lists all change types
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Changes.ListTypes(ctx, nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -90,17 +91,18 @@ Lists all changes
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Changes.List(ctx, nil, nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -147,18 +149,19 @@ Create a new change entry
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Changes.Create(ctx, components.PostV1Changes{})
     if err != nil {
         log.Fatal(err)
@@ -204,18 +207,19 @@ List change events for the organization. Note: Not all information is included o
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Changes.ListEvents(ctx, operations.ListChangeEventsRequest{})
     if err != nil {
         log.Fatal(err)
@@ -260,18 +264,19 @@ Create a change event
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Changes.CreateEvent(ctx, components.ChangesEvents{
         Summary: "<value>",
     })
@@ -318,17 +323,18 @@ Retrieve a change event
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Changes.GetEvent(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -373,17 +379,18 @@ Delete a change event
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Changes.DeleteEvent(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -428,18 +435,19 @@ Update a change event
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Changes.UpdateEvent(ctx, "<id>", components.PatchV1ChangesEventsChangeEventID{})
     if err != nil {
         log.Fatal(err)
@@ -485,17 +493,18 @@ Archive a change entry
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Changes.Delete(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -540,18 +549,19 @@ Update a change entry
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Changes.Update(ctx, "<id>", components.PatchV1ChangesChangeID{})
     if err != nil {
         log.Fatal(err)
@@ -597,17 +607,18 @@ Retrieve all identities for the change
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Changes.ListIdentities(ctx, "<id>", nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -654,18 +665,19 @@ Create an identity for this change
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Changes.CreateIdentity(ctx, "<id>", components.PostV1ChangesChangeIDIdentities{
         Type: "<value>",
         Value: "<value>",
@@ -715,17 +727,18 @@ Delete an identity
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Changes.DeleteIdentity(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
@@ -772,18 +785,19 @@ Update an identity
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Changes.UpdateIdentity(ctx, "<id>", "<id>", components.PatchV1ChangesChangeIDIdentitiesIdentityID{
         Type: "<value>",
         Value: "<value>",
@@ -834,17 +848,18 @@ Fetch the details of a scheduled maintenance event.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Changes.Get(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -889,18 +904,19 @@ Change the conditions of a scheduled maintenance event, including updating any s
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Changes.UpdateScheduledMaintenance(ctx, "<id>", components.PatchV1ScheduledMaintenancesScheduledMaintenanceID{})
     if err != nil {
         log.Fatal(err)

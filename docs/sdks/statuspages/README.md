@@ -35,17 +35,18 @@ Remove a status page incident attached to an incident
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.StatusPages.DeleteIncident(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
@@ -91,18 +92,19 @@ Subscribe to status page updates
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.StatusPages.CreateSubscription(ctx, components.PostV1NuncSubscriptions{
         Email: "Kareem.Shields@hotmail.com",
     })
@@ -149,17 +151,18 @@ Unsubscribe from status page updates
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.StatusPages.DeleteSubscription(ctx, "<value>")
     if err != nil {
         log.Fatal(err)
@@ -204,17 +207,18 @@ Lists the information displayed as part of your FireHydrant hosted status pages.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.StatusPages.List(ctx)
     if err != nil {
         log.Fatal(err)
@@ -258,18 +262,19 @@ Create a new FireHydrant hosted status page for customer facing statuses.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.StatusPages.Create(ctx, operations.CreateStatusPageRequestBody{
         Domain: "baggy-pharmacopoeia.info",
         ConditionsNuncCondition: []string{
@@ -332,17 +337,18 @@ Retrieve the information displayed as part of your FireHydrant hosted status pag
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.StatusPages.Get(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -387,18 +393,19 @@ Update your company's information and other components in the specified FireHydr
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.StatusPages.Update(ctx, "<id>", operations.UpdateStatusPageRequestBody{
         ConditionsNuncCondition: []string{
             "<value>",
@@ -459,17 +466,18 @@ Delete a FireHydrant hosted status page, stopping updates of your incidents to i
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.StatusPages.Delete(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -514,18 +522,19 @@ Add a component group to be displayed on a FireHydrant status page
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.StatusPages.CreateComponentGroup(ctx, "<id>", operations.CreateStatusPageComponentGroupRequestBody{
         Name: "<value>",
     })
@@ -573,17 +582,18 @@ Delete a component group displayed on a FireHydrant status page
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.StatusPages.DeleteComponentGroup(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
@@ -629,17 +639,18 @@ Update a component group to be displayed on a FireHydrant status page
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.StatusPages.UpdateComponentGroup(ctx, "<id>", "<id>", nil)
     if err != nil {
         log.Fatal(err)
@@ -686,13 +697,15 @@ Add or replace an image attached to a FireHydrant status page
 package main
 
 import(
+	"context"
 	"firehydrant"
 	"os"
-	"context"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
@@ -702,7 +715,7 @@ func main() {
         panic(fileErr)
     }
 
-    ctx := context.Background()
+
     res, err := s.StatusPages.UpdateImage(ctx, "<id>", "<value>", nil)
     if err != nil {
         log.Fatal(err)
@@ -749,17 +762,18 @@ Delete an image attached to a FireHydrant status page
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.StatusPages.DeleteImage(ctx, "<id>", "<value>")
     if err != nil {
         log.Fatal(err)
@@ -805,17 +819,18 @@ Add a link to be displayed on a FireHydrant status page
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.StatusPages.CreateLink(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -860,17 +875,18 @@ Delete a link displayed on a FireHydrant status page
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.StatusPages.DeleteLink(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
@@ -916,18 +932,19 @@ Update a link to be displayed on a FireHydrant status page
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.StatusPages.UpdateLink(ctx, "<id>", "<id>", components.PatchV1NuncConnectionsNuncConnectionIDLinksLinkID{})
     if err != nil {
         log.Fatal(err)
@@ -974,17 +991,18 @@ Retrieves the list of subscribers for a status page.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.StatusPages.ListSubscribers(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -1029,18 +1047,19 @@ Subscribes a comma-separated string of emails to status page updates
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.StatusPages.CreateSubscribers(ctx, "<id>", operations.CreateStatusPageSubscribersRequestBody{
         Emails: "<value>",
     })
@@ -1088,17 +1107,18 @@ Unsubscribes one or more status page subscribers.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.StatusPages.DeleteSubscribers(ctx, "<id>", "<value>")
     if err != nil {
         log.Fatal(err)

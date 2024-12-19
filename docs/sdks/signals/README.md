@@ -45,18 +45,19 @@ Generate a report of grouped metrics for Signals alerts
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Signals.ListGroupedMetrics(ctx, operations.GetSignalGroupedMetricsRequest{})
     if err != nil {
         log.Fatal(err)
@@ -101,18 +102,19 @@ Get mean-time-to-acknowledged (MTTA) and mean-time-to-resolved (MTTR) metrics fo
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Signals.GetMttxAnalytics(ctx, operations.GetSignalsMttxAnalyticsRequest{})
     if err != nil {
         log.Fatal(err)
@@ -157,18 +159,19 @@ Generate a timeseries-based report of metrics for Signals alerts
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Signals.GetAnalyticsTimeseries(ctx, operations.GetSignalsAnalyticsTimeseriesRequest{})
     if err != nil {
         log.Fatal(err)
@@ -213,18 +216,19 @@ Debug a signal
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Signals.Debug(ctx, components.PostV1SignalsDebugger{
         Expression: "<value>",
         Signals: []components.Signals{
@@ -274,17 +278,18 @@ List all Signals email targets for a team.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Signals.ListEmailTargets(ctx, nil)
     if err != nil {
         log.Fatal(err)
@@ -329,18 +334,19 @@ Create a Signals email target for a team.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Signals.CreateEmailTarget(ctx, components.PostV1SignalsEmailTargets{
         Name: "<value>",
     })
@@ -387,17 +393,18 @@ Get a Signals email target by ID
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Signals.GetEmailTarget(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -442,17 +449,18 @@ Delete a Signals email target by ID
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Signals.DeleteEmailTarget(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -497,18 +505,19 @@ Update a Signals email target by ID
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Signals.UpdateEmailTarget(ctx, "<id>", components.PatchV1SignalsEmailTargetsID{})
     if err != nil {
         log.Fatal(err)
@@ -554,17 +563,18 @@ List event sources for signals
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Signals.ListEventSources(ctx, nil, nil, nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -612,17 +622,18 @@ Retrieve the url for ingesting signals for your organization
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Signals.GetIngestURL(ctx, nil, nil, nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -670,17 +681,18 @@ List signal transposers
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Signals.ListTransposers(ctx)
     if err != nil {
         log.Fatal(err)
@@ -724,17 +736,18 @@ List all Signals webhook targets.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Signals.ListWebhookTargets(ctx, nil, nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -781,18 +794,19 @@ Create a Signals webhook target.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Signals.CreateWebhookTarget(ctx, components.PostV1SignalsWebhookTargets{
         Name: "<value>",
         URL: "https://tasty-silk.info",
@@ -840,17 +854,18 @@ Get a Signals webhook target by ID
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Signals.GetWebhookTarget(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -895,17 +910,18 @@ Delete a Signals webhook target by ID
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Signals.DeleteWebhookTarget(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -950,18 +966,19 @@ Update a Signals webhook target by ID
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Signals.UpdateWebhookTarget(ctx, "<id>", components.PatchV1SignalsWebhookTargetsID{})
     if err != nil {
         log.Fatal(err)
@@ -1007,17 +1024,18 @@ List all Signals on-call schedules for the entire organization.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Signals.ListOnCall(ctx, nil)
     if err != nil {
         log.Fatal(err)
@@ -1062,17 +1080,18 @@ List all Signals escalation policies for a team.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Signals.ListEscalationPolicies(ctx, "<id>", nil, nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -1120,17 +1139,18 @@ Delete a Signals escalation policy by ID
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Signals.DeleteEscalationPolicy(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
@@ -1176,17 +1196,18 @@ Get a Signals on-call schedule by ID
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Signals.GetOnCallSchedule(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
@@ -1232,18 +1253,19 @@ Update a Signals on-call schedule by ID
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Signals.UpdateOnCallSchedule(ctx, "<id>", "<id>", components.PatchV1TeamsTeamIDOnCallSchedulesScheduleID{})
     if err != nil {
         log.Fatal(err)
@@ -1290,17 +1312,18 @@ List all Signals rules for a team.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Signals.ListRules(ctx, "<id>", nil, nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -1348,18 +1371,19 @@ Create a Signals rule for a team.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Signals.CreateRule(ctx, "<id>", components.PostV1TeamsTeamIDSignalRules{
         Name: "<value>",
         Expression: "<value>",
@@ -1410,17 +1434,18 @@ Get a Signals rule by ID.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Signals.GetRule(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
@@ -1466,17 +1491,18 @@ Delete a Signals rule by ID
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Signals.DeleteRule(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
@@ -1522,18 +1548,19 @@ Update a Signals rule by ID
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Signals.UpdateRule(ctx, "<id>", "<id>", components.PatchV1TeamsTeamIDSignalRulesID{})
     if err != nil {
         log.Fatal(err)

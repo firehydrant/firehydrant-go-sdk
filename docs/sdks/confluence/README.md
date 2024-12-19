@@ -17,17 +17,18 @@ Lists available space keys for the Confluence integration connection.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Confluence.ListSpaces(ctx, "<id>", nil)
     if err != nil {
         log.Fatal(err)

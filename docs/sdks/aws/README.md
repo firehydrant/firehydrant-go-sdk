@@ -18,17 +18,18 @@ Retrieve a single CloudTrail batch.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Integrations.Aws.GetCloudTrailBatch(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -73,18 +74,19 @@ Update the AWS connection with the provided data.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Integrations.Aws.UpdateConnection(ctx, "<id>", components.PatchV1IntegrationsAwsConnectionsID{})
     if err != nil {
         log.Fatal(err)

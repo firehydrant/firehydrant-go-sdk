@@ -9,11 +9,12 @@ import (
 )
 
 func main() {
+	ctx := context.Background()
+
 	s := firehydrant.New(
 		firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
 	)
 
-	ctx := context.Background()
 	res, err := s.AccountSettings.GetAiPreferences(ctx)
 	if err != nil {
 		log.Fatal(err)

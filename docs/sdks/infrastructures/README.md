@@ -17,18 +17,19 @@ Lists functionality, service and environment objects
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Infrastructures.List(ctx, operations.ListInfrastructuresRequest{})
     if err != nil {
         log.Fatal(err)

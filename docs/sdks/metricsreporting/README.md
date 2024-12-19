@@ -30,17 +30,18 @@ List all of the measurement definitions in the organization
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.MetricsReporting.ListMeasurementDefinitions(ctx, nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -86,18 +87,19 @@ Create a new measurement definition
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.MetricsReporting.CreateMeasurementDefinition(ctx, operations.CreateMeasurementDefinitionRequestBody{
         Name: "<value>",
         StartsAtMilestoneID: "<id>",
@@ -146,17 +148,18 @@ Retrieve a single measurement definition from its ID
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.MetricsReporting.GetMeasurementDefinition(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -201,17 +204,18 @@ Archives a measurement definition which will hide it from lists and metrics
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.MetricsReporting.DeleteMeasurementDefinition(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -256,17 +260,18 @@ Update a single measurement definition from its ID
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.MetricsReporting.UpdateMeasurementDefinition(ctx, "<id>", nil)
     if err != nil {
         log.Fatal(err)
@@ -312,18 +317,19 @@ Returns a report with time bucketed analytics data
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.MetricsReporting.ListIncidentMetrics(ctx, operations.ListIncidentMetricsRequest{})
     if err != nil {
         log.Fatal(err)
@@ -368,18 +374,19 @@ Returns a report with time bucketed milestone data
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.MetricsReporting.GetMilestoneFunnelMetrics(ctx, operations.GetMilestoneFunnelMetricsRequest{})
     if err != nil {
         log.Fatal(err)
@@ -424,17 +431,18 @@ Returns a report with retrospective analytics data
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.MetricsReporting.ListRetrospectives(ctx, nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -480,18 +488,19 @@ Returns a report with task and follow up creation and completion data
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.MetricsReporting.GetTicketFunnel(ctx, operations.GetTicketFunnelMetricsRequest{})
     if err != nil {
         log.Fatal(err)
@@ -536,18 +545,19 @@ Returns a report with time bucketed analytics data
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.MetricsReporting.ListUserInvolvementMetrics(ctx, operations.ListUserInvolvementMetricsRequest{})
     if err != nil {
         log.Fatal(err)
@@ -592,18 +602,19 @@ Returns metrics for all components of a given type
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.MetricsReporting.ListInfrastructureMetrics(ctx, operations.InfraTypeServices, nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -650,18 +661,19 @@ Returns a report with time bucketed analytics data
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.MetricsReporting.GetMeanTime(ctx, operations.GetMeanTimeReportRequest{})
     if err != nil {
         log.Fatal(err)
@@ -706,18 +718,19 @@ Lists save searches
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.MetricsReporting.ListSavedSearches(ctx, operations.ListSavedSearchesRequest{
         ResourceType: operations.ResourceTypeIncidentEvents,
     })
@@ -764,19 +777,20 @@ Create a new saved search for a particular resource type
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/operations"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.MetricsReporting.CreateSavedSearch(ctx, operations.PathParamResourceTypeTicketFollowUps, components.PostV1SavedSearchesResourceType{
         Name: "<value>",
         FilterValues: map[string]any{
