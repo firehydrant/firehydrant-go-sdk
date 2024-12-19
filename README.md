@@ -1,6 +1,6 @@
 <div align="center">
     <picture>
-        <img src="https://github.com/user-attachments/assets/708ff384-c842-4e04-a928-6a5fdce7e756" width="400">
+        <img src="https://github.com/user-attachments/assets/a908c3be-44bc-4ff6-a369-e510a6525e22" width="100">
     </picture>
    <p>Manage incidents from ring to retro</p>
 	<p>Developer-friendly & type-safe Go SDK specifically catered to leverage <strong>FireHydrant</strong> API.</p>
