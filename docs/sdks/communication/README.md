@@ -22,17 +22,18 @@ List all status update templates for your organization
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Communication.ListTemplates(ctx, nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -78,17 +79,18 @@ Get a single status update template by ID
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Communication.GetTemplate(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -133,17 +135,18 @@ Delete a single status update template
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Communication.DeleteStatusUpdateTemplate(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -188,18 +191,19 @@ Update a single status update template
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Communication.UpdateTemplate(ctx, "<id>", components.PatchV1StatusUpdateTemplatesStatusUpdateTemplateID{})
     if err != nil {
         log.Fatal(err)

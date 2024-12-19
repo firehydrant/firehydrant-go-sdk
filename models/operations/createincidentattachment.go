@@ -11,7 +11,7 @@ import (
 )
 
 type File struct {
-	FileName string `multipartForm:"name=file"`
+	FileName string `multipartForm:"name=fileName"`
 	// This field accepts []byte data or io.Reader implementations, such as *os.File.
 	Content any `multipartForm:"content"`
 }
@@ -57,7 +57,7 @@ func (e *VoteDirection) UnmarshalJSON(data []byte) error {
 }
 
 type CreateIncidentAttachmentRequestBody struct {
-	File          File           `multipartForm:"file"`
+	File          File           `multipartForm:"file,name=file"`
 	Description   *string        `multipartForm:"name=description"`
 	OccurredAt    *time.Time     `multipartForm:"name=occurred_at"`
 	VoteDirection *VoteDirection `multipartForm:"name=vote_direction"`

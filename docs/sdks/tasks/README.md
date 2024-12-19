@@ -32,17 +32,18 @@ List all of the checklist templates that have been added to the organization
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Tasks.ListChecklistTemplates(ctx, nil, nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -89,18 +90,19 @@ Creates a checklist template for the organization
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Tasks.CreateChecklistTemplate(ctx, components.PostV1ChecklistTemplates{
         Name: "<value>",
         Checks: []components.Checks{
@@ -153,17 +155,18 @@ Archive a checklist template
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Tasks.DeleteChecklistTemplate(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -208,18 +211,19 @@ Update a checklist templates attributes
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Tasks.UpdateChecklistTemplate(ctx, "<id>", components.PatchV1ChecklistTemplatesID{})
     if err != nil {
         log.Fatal(err)
@@ -265,17 +269,18 @@ Retrieve a list of all tasks for a specific incident
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Tasks.ListForIncident(ctx, "<id>", nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -322,18 +327,19 @@ Create a task
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Tasks.Create(ctx, "<id>", components.PostV1IncidentsIncidentIDTasks{
         Title: "<value>",
     })
@@ -381,17 +387,18 @@ Retrieve a single task for an incident
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Tasks.GetForIncident(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
@@ -437,17 +444,18 @@ Delete a task
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Tasks.Delete(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
@@ -493,18 +501,19 @@ Update a task's attributes
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Tasks.UpdateTask(ctx, "<id>", "<id>", components.PatchV1IncidentsIncidentIDTasksTaskID{})
     if err != nil {
         log.Fatal(err)
@@ -551,18 +560,19 @@ Convert a task to a follow-up
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Tasks.ConvertToFollowup(ctx, "<id>", "<id>", components.PostV1IncidentsIncidentIDTasksTaskIDConvert{})
     if err != nil {
         log.Fatal(err)
@@ -609,17 +619,18 @@ Lists all task lists for your organization
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Tasks.ListTasks(ctx, nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -665,18 +676,19 @@ Creates a new task list
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Tasks.CreateList(ctx, components.PostV1TaskLists{
         Name: "<value>",
         TaskListItems: []components.TaskListItems{
@@ -731,17 +743,18 @@ Retrieves a single task list by ID
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Tasks.Get(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -786,18 +799,19 @@ Updates a task list's attributes and task list items
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Tasks.Update(ctx, "<id>", components.PatchV1TaskListsTaskListID{})
     if err != nil {
         log.Fatal(err)

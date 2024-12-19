@@ -36,17 +36,18 @@ Please contact support to enable audit logging for your account.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Runbooks.ListAudits(ctx, nil, nil, nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -94,18 +95,19 @@ Lists all available runbooks.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Runbooks.List(ctx, operations.ListRunbooksRequest{})
     if err != nil {
         log.Fatal(err)
@@ -150,18 +152,19 @@ Create a new runbook for use with incidents.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Runbooks.Create(ctx, components.PostV1Runbooks{
         Name: "<value>",
         Type: components.PostV1RunbooksTypeIncident,
@@ -209,17 +212,18 @@ List all Runbook actions available through your connected integrations
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Runbooks.ListActions(ctx, nil, nil, nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -267,17 +271,18 @@ List all Runbook executions across all Runbooks
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Runbooks.ListExecutions(ctx, nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -323,18 +328,19 @@ Attaches a runbook to an incident and executes it
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Runbooks.CreateExecution(ctx, components.PostV1RunbooksExecutions{
         ExecuteFor: "<value>",
         RunbookID: "<id>",
@@ -382,17 +388,18 @@ Retrieve a runbook execution by ID
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Runbooks.GetExecution(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -437,18 +444,19 @@ Updates a runbook step execution, especially for changing the state of a step ex
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Runbooks.UpdateExecutionStep(ctx, "<id>", "<id>", components.PutV1RunbooksExecutionsExecutionIDStepsStepID{
         State: "South Carolina",
     })
@@ -497,17 +505,18 @@ Retrieves the bash script from a "script" step.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Runbooks.GetExecutionStepScript(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
@@ -553,17 +562,18 @@ Updates the execution's step.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Runbooks.UpdateExecutionStepScriptState(ctx, "<id>", "<id>", "Mississippi")
     if err != nil {
         log.Fatal(err)
@@ -610,18 +620,19 @@ Allows for upvoting or downvoting an event
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Runbooks.UpdateExecutionStepVotes(ctx, "<id>", "<id>", components.PatchV1RunbooksExecutionsExecutionIDStepsStepIDVotes{
         Direction: components.PatchV1RunbooksExecutionsExecutionIDStepsStepIDVotesDirectionUp,
     })
@@ -670,17 +681,18 @@ Returns the current vote counts for an object
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Runbooks.GetStepVoteStatus(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
@@ -726,18 +738,19 @@ Allows for upvoting or downvoting an event
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Runbooks.UpdateExecutionVotes(ctx, "<id>", components.PatchV1RunbooksExecutionsExecutionIDVotes{
         Direction: components.PatchV1RunbooksExecutionsExecutionIDVotesDirectionDig,
     })
@@ -785,17 +798,18 @@ Returns the current vote counts for an object
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Runbooks.GetExecutionVoteStatus(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -840,18 +854,19 @@ List select options for a runbook integration action field
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Runbooks.ListSelectOptions(ctx, operations.GetRunbookSelectOptionsRequest{
         IntegrationSlug: "<value>",
         ActionSlug: "<value>",
@@ -900,17 +915,18 @@ Get a runbook and all its configuration
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Runbooks.Get(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -957,18 +973,19 @@ about a runbook, including but not limited to the steps, environments, attachmen
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Runbooks.Update(ctx, "<id>", components.PutV1RunbooksRunbookID{})
     if err != nil {
         log.Fatal(err)
@@ -1014,17 +1031,18 @@ Delete a runbook and make it unavailable for any future incidents.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Runbooks.Delete(ctx, "<id>")
     if err != nil {
         log.Fatal(err)

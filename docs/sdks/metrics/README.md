@@ -18,19 +18,20 @@ Fetch infrastructure metrics based on custom query
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/types"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Metrics.GetMttx(ctx, operations.GetV1MetricsMttxRequest{
         StartDate: types.MustDateFromString("2024-12-27"),
         EndDate: types.MustDateFromString("2024-02-03"),
@@ -78,18 +79,19 @@ Return metrics for a specific component
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Metrics.GetInfrastructure(ctx, operations.PathParamInfraTypeFunctionalities, "<id>", nil, nil)
     if err != nil {
         log.Fatal(err)

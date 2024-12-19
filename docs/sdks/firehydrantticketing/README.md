@@ -18,17 +18,18 @@ Retrieve a single ticketing project by ID
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Integrations.Ticketing.GetProject(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -73,17 +74,18 @@ List all of the ticket tags in the organization
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Integrations.Ticketing.ListTags(ctx, nil)
     if err != nil {
         log.Fatal(err)

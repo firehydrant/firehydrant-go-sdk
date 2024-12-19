@@ -18,18 +18,19 @@ Lists the available and configured AWS integration connections for the authentic
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.AwsConnections.List(ctx, operations.ListAwsConnectionsRequest{})
     if err != nil {
         log.Fatal(err)
@@ -74,17 +75,18 @@ Retrieves the information about the AWS connection.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.AwsConnections.Get(ctx, "<id>")
     if err != nil {
         log.Fatal(err)

@@ -19,18 +19,19 @@ Creates a new slack emoji action
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Slack.CreateEmojiAction(ctx, "<id>", operations.CreateSlackEmojiActionRequestBody{
         EmojiName: "<value>",
     })
@@ -78,17 +79,18 @@ Updates a slack emoji action
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Slack.UpdateEmojiAction(ctx, "<id>", "<id>", nil)
     if err != nil {
         log.Fatal(err)
@@ -135,17 +137,18 @@ List Slack usergroups
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Slack.ListUsergroups(ctx)
     if err != nil {
         log.Fatal(err)

@@ -20,18 +20,19 @@ List all of the tickets that have been added to the organiation
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Tickets.List(ctx, operations.ListTicketsRequest{})
     if err != nil {
         log.Fatal(err)
@@ -76,18 +77,19 @@ Creates a ticket for a project
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Tickets.Create(ctx, components.PostV1TicketingTickets{
         Summary: "<value>",
     })
@@ -134,17 +136,18 @@ Delete a ticket
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Tickets.Delete(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -189,18 +192,19 @@ Update a ticket's attributes
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Tickets.Update(ctx, "<id>", components.PatchV1TicketingTicketsTicketID{})
     if err != nil {
         log.Fatal(err)

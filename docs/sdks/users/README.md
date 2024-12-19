@@ -21,17 +21,18 @@ Retrieve the current user
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Users.GetCurrent(ctx)
     if err != nil {
         log.Fatal(err)
@@ -75,17 +76,18 @@ Retrieve a list of all users in an organization
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Users.List(ctx, nil, nil, nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -133,17 +135,18 @@ Retrieve a single user by ID
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Users.Get(ctx, "<id>")
     if err != nil {
         log.Fatal(err)

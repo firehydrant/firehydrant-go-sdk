@@ -32,17 +32,18 @@ List the questions configured to be provided and filled out on each retrospectiv
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Retrospectives.ListQuestions(ctx, nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -88,18 +89,19 @@ Update the questions configured to be provided and filled out on future retrospe
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Retrospectives.UpdateQuestions(ctx, components.PutV1PostMortemsQuestions{})
     if err != nil {
         log.Fatal(err)
@@ -144,17 +146,18 @@ Get an incident retrospective question
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Retrospectives.GetQuestion(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -199,17 +202,18 @@ List all reports
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Retrospectives.ListReports(ctx, nil, nil, nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -257,18 +261,19 @@ Create a report
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Retrospectives.CreateReport(ctx, components.PostV1PostMortemsReports{
         IncidentID: "<id>",
     })
@@ -315,17 +320,18 @@ Get a report
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Retrospectives.GetReport(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -370,18 +376,19 @@ Update a report
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Retrospectives.UpdateReport(ctx, "<id>", components.PatchV1PostMortemsReportsReportID{})
     if err != nil {
         log.Fatal(err)
@@ -427,18 +434,19 @@ Update a field value on a post mortem report
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Retrospectives.UpdateField(ctx, "<id>", "<id>", components.PatchV1PostMortemsReportsReportIDFieldsFieldID{
         Value: "<value>",
     })
@@ -487,18 +495,19 @@ Marks an incident retrospective as published and emails all of the participants 
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Retrospectives.PublishReport(ctx, "<id>", components.PostV1PostMortemsReportsReportIDPublish{})
     if err != nil {
         log.Fatal(err)
@@ -545,17 +554,18 @@ List all contributing factors to an incident
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Retrospectives.ListReportReasons(ctx, "<id>", nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -602,18 +612,19 @@ Add a new contributing factor to an incident
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Retrospectives.CreateReason(ctx, "<id>", components.PostV1PostMortemsReportsReportIDReasons{
         Summary: "<value>",
     })
@@ -661,18 +672,19 @@ Reorder a contributing factor
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Retrospectives.UpdateReportReasonOrder(ctx, "<id>", components.PutV1PostMortemsReportsReportIDReasonsOrder{
         OldPosition: 868580,
         NewPosition: 521651,
@@ -721,17 +733,18 @@ Delete a contributing factor
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Retrospectives.DeleteReason(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
@@ -777,18 +790,19 @@ Update a contributing factor
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Retrospectives.UpdateReason(ctx, "<id>", "<id>", components.PatchV1PostMortemsReportsReportIDReasonsReasonID{})
     if err != nil {
         log.Fatal(err)

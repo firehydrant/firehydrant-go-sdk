@@ -18,18 +18,19 @@ Accepts catalog data in the configured format and asyncronously processes the da
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Services.Catalogs.Ingest(ctx, "<id>", components.PostV1CatalogsCatalogIDIngest{
         Encoding: components.EncodingApplicationJSON,
         Data: "<value>",
@@ -78,17 +79,18 @@ Schedules an async task to re-import catalog info and update catalog data accord
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Services.Catalogs.Refresh(ctx, "<id>")
     if err != nil {
         log.Fatal(err)

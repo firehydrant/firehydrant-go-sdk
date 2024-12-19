@@ -1,4 +1,4 @@
-speakeasyVersion: 1.435.1
+speakeasyVersion: 1.456.1
 sources:
     FireHydrant-OAS:
         sourceNamespace: fire-hydrant-oas
@@ -8,18 +8,20 @@ sources:
             - latest
     firehydrant-oas:
         sourceNamespace: firehydrant-oas
-        sourceRevisionDigest: sha256:f987be326ac23417400c5e13a4c9b4e41973f12c33bf73c36941527f9b4d75f7
-        sourceBlobDigest: sha256:e5611e93d696db2ca4d040d096bf1a801fae0048aecdde53f29830f79fb44c8b
+        sourceRevisionDigest: sha256:5af773bb182dcc72d646938139aceafdee1ee0f0b71854e720d9dcc2cdab4aa1
+        sourceBlobDigest: sha256:f6ffe4d71cbc8f195cf28218fe7c5a6212053a7fa58a4e0aa275374cfcf3c675
         tags:
             - latest
+            - speakeasy-sdk-regen-1734618295
+            - 0.0.1
 targets:
     fire-hydrant:
         source: firehydrant-oas
         sourceNamespace: firehydrant-oas
-        sourceRevisionDigest: sha256:f987be326ac23417400c5e13a4c9b4e41973f12c33bf73c36941527f9b4d75f7
-        sourceBlobDigest: sha256:e5611e93d696db2ca4d040d096bf1a801fae0048aecdde53f29830f79fb44c8b
-        codeSamplesNamespace: firehydrant-oas-code-samples
-        codeSamplesRevisionDigest: sha256:3673246d776dd3638fa000159a2e235af8c4eb72b02634bcb853dfd6e91d5338
+        sourceRevisionDigest: sha256:5af773bb182dcc72d646938139aceafdee1ee0f0b71854e720d9dcc2cdab4aa1
+        sourceBlobDigest: sha256:f6ffe4d71cbc8f195cf28218fe7c5a6212053a7fa58a4e0aa275374cfcf3c675
+        codeSamplesNamespace: firehydrant-oas-go-code-samples
+        codeSamplesRevisionDigest: sha256:776b4358c2ad66bf5b0f3b14ae9d934d384dad5a80e155d3dd11e7bcb34ab600
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
@@ -29,6 +31,7 @@ workflow:
                 - location: ./openapi.yaml
             overlays:
                 - location: .speakeasy/speakeasy-modifications-overlay.yaml
+                - location: errors-overlay.yaml
             registry:
                 location: registry.speakeasyapi.dev/firehydrant/firehydrant/firehydrant-oas
     targets:
@@ -37,5 +40,5 @@ workflow:
             source: firehydrant-oas
             codeSamples:
                 registry:
-                    location: registry.speakeasyapi.dev/firehydrant/firehydrant/firehydrant-oas-code-samples
+                    location: registry.speakeasyapi.dev/firehydrant/firehydrant/firehydrant-oas-go-code-samples
                 blocking: false

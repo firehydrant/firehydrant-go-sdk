@@ -25,17 +25,18 @@ Retrieves the current AI preferences
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.AccountSettings.GetAiPreferences(ctx)
     if err != nil {
         log.Fatal(err)
@@ -79,17 +80,18 @@ Updates the AI preferences
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.AccountSettings.UpdateAiPreferences(ctx, nil)
     if err != nil {
         log.Fatal(err)
@@ -134,18 +136,19 @@ Vote on an AI-generated incident summary
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.AccountSettings.VoteOnIncidentSummary(ctx, "<id>", "<id>", operations.VoteOnIncidentSummaryRequestBody{
         Direction: operations.DirectionDown,
     })
@@ -194,17 +197,18 @@ Get initial application configuration and settings
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.AccountSettings.GetBootstrap(ctx)
     if err != nil {
         log.Fatal(err)
@@ -248,17 +252,18 @@ Retrieve all entitlements
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.AccountSettings.ListEntitlements(ctx, nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -304,17 +309,18 @@ Simple endpoint to verify your API connection is working
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.AccountSettings.Ping(ctx)
     if err != nil {
         log.Fatal(err)
@@ -358,18 +364,19 @@ Retrieve a specific save search
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.AccountSettings.GetSavedSearch(ctx, operations.GetSavedSearchPathParamResourceTypeImpactAnalytics, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -415,18 +422,19 @@ Delete a specific saved search
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.AccountSettings.DeleteSavedSearch(ctx, operations.DeleteSavedSearchPathParamResourceTypeScheduledMaintenances, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -472,19 +480,20 @@ Update a specific saved search
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/operations"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.AccountSettings.UpdateSavedSearch(ctx, operations.UpdateSavedSearchPathParamResourceTypeTicketTasks, "<id>", components.PatchV1SavedSearchesResourceTypeSavedSearchID{})
     if err != nil {
         log.Fatal(err)

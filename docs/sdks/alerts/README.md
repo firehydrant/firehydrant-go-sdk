@@ -23,18 +23,19 @@ Retrieve all alerts from third parties
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Alerts.List(ctx, operations.ListAlertsRequest{})
     if err != nil {
         log.Fatal(err)
@@ -79,17 +80,18 @@ Retrieve a single alert
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Alerts.Get(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -134,17 +136,18 @@ List alerts that have been attached to an incident
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Alerts.ListForIncident(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -189,17 +192,18 @@ Add an alert to an incident. FireHydrant needs to have ingested the alert from a
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Alerts.Create(ctx, "<id>", []string{
         "<value>",
     })
@@ -247,18 +251,19 @@ Processing Log Entries for a specific alert
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Alerts.ListProcessingLogs(ctx, operations.ListAlertProcessingLogsRequest{})
     if err != nil {
         log.Fatal(err)

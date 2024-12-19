@@ -30,17 +30,18 @@ List all known schedules in FireHydrant as pulled from external sources
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Teams.ListSchedules(ctx, nil, nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -87,18 +88,19 @@ List all of the teams in the organization
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Teams.List(ctx, operations.ListTeamsRequest{})
     if err != nil {
         log.Fatal(err)
@@ -143,18 +145,19 @@ Create a new team
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Teams.Create(ctx, components.PostV1Teams{
         Name: "<value>",
     })
@@ -201,17 +204,18 @@ Retrieve a single team from its ID
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Teams.Get(ctx, "<id>", nil)
     if err != nil {
         log.Fatal(err)
@@ -257,17 +261,18 @@ Archives an team which will hide it from lists and metrics
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Teams.Archive(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -312,18 +317,19 @@ Update a single team from its ID
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Teams.Update(ctx, "<id>", components.PatchV1TeamsTeamID{})
     if err != nil {
         log.Fatal(err)
@@ -369,17 +375,18 @@ List all Signals on-call schedules for a team.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Teams.ListOnCallSchedules(ctx, "<id>", nil, nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -427,18 +434,19 @@ Create a Signals on-call schedule for a team.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Teams.CreateOnCallSchedule(ctx, "<id>", components.PostV1TeamsTeamIDOnCallSchedules{
         Name: "<value>",
         TimeZone: "America/Porto_Velho",
@@ -490,17 +498,18 @@ Get a Signals on-call shift by ID
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Teams.GetScheduleShift(ctx, "<id>", "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
@@ -547,17 +556,18 @@ Delete a Signals on-call shift by ID
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Teams.DeleteScheduleShift(ctx, "<id>", "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
@@ -604,18 +614,19 @@ Update a Signals on-call shift by ID
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Teams.UpdateScheduleShift(ctx, "<id>", "<id>", "<id>", components.PatchV1TeamsTeamIDOnCallSchedulesScheduleIDShiftsID{})
     if err != nil {
         log.Fatal(err)
@@ -663,18 +674,19 @@ Create a Signals escalation policy for a team.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Teams.CreateEscalationPolicy(ctx, "<id>", components.PostV1TeamsTeamIDEscalationPolicies{
         Name: "<value>",
         Steps: []components.PostV1TeamsTeamIDEscalationPoliciesSteps{
@@ -741,18 +753,19 @@ Update a Signals escalation policy by ID
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Teams.UpdateEscalationPolicy(ctx, "<id>", "<id>", components.PatchV1TeamsTeamIDEscalationPoliciesID{})
     if err != nil {
         log.Fatal(err)
@@ -799,18 +812,19 @@ Create a Signals on-call shift in a schedule.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Teams.CreateShift(ctx, "<id>", "<id>", components.PostV1TeamsTeamIDOnCallSchedulesScheduleIDShifts{
         StartTime: "<value>",
         EndTime: "<value>",

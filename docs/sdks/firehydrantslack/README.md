@@ -19,17 +19,18 @@ Retrieves a slack emoji action
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Integrations.Slack.GetEmojiAction(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
@@ -75,17 +76,18 @@ Deletes a slack emoji action
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Integrations.Slack.DeleteEmojiAction(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
@@ -131,17 +133,18 @@ List Slack workspaces for a connection
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Integrations.Slack.ListWorkspaces(ctx, "<id>")
     if err != nil {
         log.Fatal(err)

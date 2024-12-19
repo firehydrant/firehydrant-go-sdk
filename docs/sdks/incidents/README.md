@@ -70,17 +70,18 @@ Get the vote status for an AI-generated incident summary
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.GetAiSummaryVoteStatus(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
@@ -126,18 +127,19 @@ List all of the incidents in the organization
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.List(ctx, operations.ListIncidentsRequest{})
     if err != nil {
         log.Fatal(err)
@@ -182,18 +184,19 @@ Create a new incident
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.Create(ctx, components.PostV1Incidents{
         Name: "<value>",
     })
@@ -240,17 +243,18 @@ Retrieve a single incident from its ID
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.Get(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -295,17 +299,18 @@ Archives an incident which will hide it from lists and metrics
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.Archive(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -350,18 +355,19 @@ Updates an incident with provided parameters
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.Update(ctx, "<id>", components.PatchV1IncidentsIncidentID{})
     if err != nil {
         log.Fatal(err)
@@ -407,17 +413,18 @@ Remove an alert from an incident
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.DeleteAlert(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
@@ -463,18 +470,19 @@ Setting an alert as primary will overwrite milestone times in the FireHydrant in
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.SetAlertAsPrimary(ctx, "<id>", "<id>", components.PatchV1IncidentsIncidentIDAlertsIncidentAlertIDPrimary{
         Primary: false,
     })
@@ -523,17 +531,18 @@ List attachments for an incident
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.ListAttachments(ctx, "<id>", nil, nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -581,14 +590,16 @@ Allows adding image attachments to an incident
 package main
 
 import(
+	"context"
 	"firehydrant"
 	"os"
-	"context"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
@@ -598,7 +609,7 @@ func main() {
         panic(fileErr)
     }
 
-    ctx := context.Background()
+
     res, err := s.Incidents.CreateAttachment(ctx, "<id>", operations.CreateIncidentAttachmentRequestBody{
         File: operations.File{
             FileName: "example.file",
@@ -649,17 +660,18 @@ Gives chat channel information for the specified incident
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.GetChannel(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -704,17 +716,18 @@ Closes an incident and optionally close all children
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.Close(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -759,17 +772,18 @@ List all events for an incident. An event is a timeline entry. This can be filte
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.ListEvents(ctx, "<id>", nil, nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -817,17 +831,18 @@ Retrieve a single event for an incident
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.GetEvent(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
@@ -873,17 +888,18 @@ Delete a single event for an incident
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.DeleteEvent(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
@@ -929,17 +945,18 @@ Update a single event for an incident
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.UpdateEvent(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
@@ -985,18 +1002,19 @@ Allows for upvoting or downvoting an event
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.UpdateEventVotes(ctx, "<id>", "<id>", components.PatchV1IncidentsIncidentIDEventsEventIDVotes{
         Direction: components.DirectionDig,
     })
@@ -1045,17 +1063,18 @@ Returns the current vote counts for an object
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.GetEventVoteStatus(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
@@ -1101,18 +1120,19 @@ Create a new generic chat message on an incident timeline. These are independent
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.CreateGenericChatMessage(ctx, "<id>", components.PostV1IncidentsIncidentIDGenericChatMessages{
         Body: "<value>",
     })
@@ -1160,17 +1180,18 @@ Delete an existing generic chat message on an incident.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.DeleteChatMessage(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
@@ -1216,18 +1237,19 @@ Update an existing generic chat message on an incident.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.UpdateChatMessage(ctx, "<id>", "<id>", components.PatchV1IncidentsIncidentIDGenericChatMessagesMessageID{
         Body: "<value>",
     })
@@ -1283,18 +1305,19 @@ impacts will be added or updated, but no impacts will be removed.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.UpdateImpacts(ctx, "<id>", components.PutV1IncidentsIncidentIDImpact{})
     if err != nil {
         log.Fatal(err)
@@ -1347,18 +1370,19 @@ impacts will be added or updated, but no impacts will be removed.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.PartialUpdateImpacts(ctx, "<id>", components.PatchV1IncidentsIncidentIDImpact{})
     if err != nil {
         log.Fatal(err)
@@ -1404,18 +1428,19 @@ List impacted infrastructure on an incident by specifying type
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.ListImpact(ctx, "<id>", operations.PathParamTypeEnvironments)
     if err != nil {
         log.Fatal(err)
@@ -1461,19 +1486,20 @@ Add impacted infrastructure to an incident
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/operations"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.CreateImpact(ctx, "<id>", operations.CreateIncidentImpactPathParamTypeServices, components.PostV1IncidentsIncidentIDImpactType{
         ID: "<id>",
     })
@@ -1523,18 +1549,19 @@ Remove impacted infrastructure on an incident
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.DeleteImpact(ctx, "<id>", operations.DeleteIncidentImpactPathParamTypeServices, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -1582,17 +1609,18 @@ List all the editable, external incident links attached to an incident
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.ListLinks(ctx, "<id>", nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -1639,18 +1667,19 @@ Allows adding adhoc links to an incident as an attachment
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.CreateLink(ctx, "<id>", components.PostV1IncidentsIncidentIDLinks{
         Href: "<value>",
     })
@@ -1698,18 +1727,19 @@ Updates the external incident link attributes
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.UpdateLink(ctx, "<id>", "<id>", components.PutV1IncidentsIncidentIDLinksLinkID{})
     if err != nil {
         log.Fatal(err)
@@ -1756,17 +1786,18 @@ Deletes the external incident link
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.DeleteLink(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
@@ -1812,17 +1843,18 @@ List times and durations for each milestone on an incident
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.ListMilestones(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -1873,19 +1905,20 @@ not explicitly submitted or updated in this request.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/types"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.UpdateMilestonesBulk(ctx, "<id>", components.PutV1IncidentsIncidentIDMilestonesBulkUpdate{
         Milestones: []components.PutV1IncidentsIncidentIDMilestonesBulkUpdateMilestones{
             components.PutV1IncidentsIncidentIDMilestonesBulkUpdateMilestones{
@@ -1938,18 +1971,19 @@ Create a new note on for an incident. The visibility field on a note determines 
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.CreateNote(ctx, "<id>", components.PostV1IncidentsIncidentIDNotes{
         Body: "<value>",
     })
@@ -1997,18 +2031,19 @@ Updates the body of a note
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.UpdateNote(ctx, "<id>", "<id>", components.PatchV1IncidentsIncidentIDNotesNoteID{
         Body: "<value>",
     })
@@ -2057,17 +2092,18 @@ List related changes that have been attached to an incident
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.ListRelatedChangeEvents(ctx, "<id>", nil, nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -2115,18 +2151,19 @@ Add a related change to an incident. Changes added to an incident can be causes,
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.CreateRelatedChange(ctx, "<id>", components.PostV1IncidentsIncidentIDRelatedChangeEvents{
         ChangeEventID: "<id>",
         Type: components.PostV1IncidentsIncidentIDRelatedChangeEventsTypeFixed,
@@ -2176,18 +2213,19 @@ Update a change attached to an incident
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.UpdateRelatedChangeEvent(ctx, "<id>", "<id>", components.PatchV1IncidentsIncidentIDRelatedChangeEventsRelatedChangeEventID{})
     if err != nil {
         log.Fatal(err)
@@ -2235,17 +2273,18 @@ List any parent/child relationships for an incident
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.GetRelationships(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -2290,17 +2329,18 @@ Resolves a currently active incident
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.Resolve(ctx, "<id>", nil)
     if err != nil {
         log.Fatal(err)
@@ -2346,17 +2386,18 @@ Retrieve a list of all of the current role assignments for the incident
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.ListRoleAssignments(ctx, "<id>", nil)
     if err != nil {
         log.Fatal(err)
@@ -2402,18 +2443,19 @@ Assign a role to a user for this incident
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.CreateRoleAssignment(ctx, "<id>", components.PostV1IncidentsIncidentIDRoleAssignments{
         UserID: "<id>",
         IncidentRoleID: "<id>",
@@ -2462,17 +2504,18 @@ Unassign a role from a user
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.DeleteRoleAssignment(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
@@ -2518,17 +2561,18 @@ List similar incidents
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.ListSimilar(ctx, "<id>", nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -2575,17 +2619,18 @@ List status pages that are attached to an incident
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.ListStatusPages(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -2630,18 +2675,19 @@ Add a status page to an incident.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.AddStatusPage(ctx, "<id>", components.PostV1IncidentsIncidentIDStatusPages{
         IntegrationSlug: "<value>",
         IntegrationID: "<id>",
@@ -2690,18 +2736,19 @@ Add all tasks from list to incident
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.CreateTaskList(ctx, "<id>", components.PostV1IncidentsIncidentIDTaskLists{
         TaskListID: "<id>",
     })
@@ -2749,18 +2796,19 @@ Assign a team for this incident
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.CreateTeamAssignment(ctx, "<id>", components.PostV1IncidentsIncidentIDTeamAssignments{
         TeamID: "<id>",
     })
@@ -2808,17 +2856,18 @@ Unassign a team from an incident
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.DeleteTeamAssignment(ctx, "<id>", "<id>", nil)
     if err != nil {
         log.Fatal(err)
@@ -2865,17 +2914,18 @@ Retrieve the transcript for a specific incident
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.GetTranscript(ctx, "<id>", nil, nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -2923,17 +2973,18 @@ Delete a transcript from an incident
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.DeleteTranscript(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
@@ -2979,17 +3030,18 @@ Unarchives an incident
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.Unarchive(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
@@ -3034,17 +3086,18 @@ Retrieve a user with current roles for an incident
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Incidents.GetUserRole(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)

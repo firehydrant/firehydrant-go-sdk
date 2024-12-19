@@ -19,17 +19,18 @@ Lists all scheduled maintenance events
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Maintenances.List(ctx, nil, nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -76,19 +77,20 @@ Create a new scheduled maintenance event
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"firehydrant/types"
 	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Maintenances.Create(ctx, components.PostV1ScheduledMaintenances{
         Name: "<value>",
         StartsAt: types.MustTimeFromString("2023-04-18T00:41:46.120Z"),
@@ -138,17 +140,18 @@ Delete a scheduled maintenance event, preventing it from taking place.
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Maintenances.Delete(ctx, "<id>")
     if err != nil {
         log.Fatal(err)

@@ -17,17 +17,18 @@ Retrieves a single checklist template by ID
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.ChecklistTemplates.Get(ctx, "<id>")
     if err != nil {
         log.Fatal(err)

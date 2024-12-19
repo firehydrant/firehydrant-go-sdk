@@ -17,17 +17,18 @@ Terminates a runbook execution, preventing any further steps from being executed
 package main
 
 import(
-	"firehydrant"
 	"context"
+	"firehydrant"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := firehydrant.New(
         firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    ctx := context.Background()
     res, err := s.Runbooks.Executions.Delete(ctx, "<id>", "<value>")
     if err != nil {
         log.Fatal(err)
