@@ -3,7 +3,7 @@ speakeasyVersion: latest
 sources:
     firehydrant-oas:
         inputs:
-            - location: https://raw.githubusercontent.com/firehydrant/developers/main/docs/public/openapi3_doc.json
+            - location: ./.speakeasy/openapi.json
         registry:
             location: registry.speakeasyapi.dev/firehydrant/firehydrant/firehydrant-oas
 targets:
