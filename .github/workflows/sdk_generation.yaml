@@ -21,7 +21,7 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Developers repo
+      - name: Clone SDK repo
         uses: actions/checkout@v3
         
       - name: Set up SSH
@@ -39,14 +39,14 @@ jobs:
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
         run: |
-          git clone git@github.com:firehydrant/developers.git dev-repo
-          cd dev-repo
+          git clone git@github.com:firehydrant/developers.git /tmp/dev-repo
+          cd /tmp/dev-repo
           git checkout main
           
       - name: Copy OpenAPI spec
         run: |
           mkdir -p .speakeasy
-          cp dev-repo/docs/public/openapi3_doc.json ${GITHUB_WORKSPACE}/openapi.json
+          cp /tmp/dev-repo/docs/public/openapi3_doc.json ${GITHUB_WORKSPACE}/openapi.json
           
       - name: Generate SDK
         uses: speakeasy-api/sdk-generation-action@v15
