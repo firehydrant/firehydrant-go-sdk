@@ -44,5 +44,5 @@ jobs:
           mode: pr
           set_version: ${{ github.event.inputs.set_version }}
         env:
-          GITHUB_ACCESS_TOKEN: ${{ secrets.CROSS_REPO_TOKEN }}
-          SPEAKEASY_API_KEY: ${{ secrets.SPEAKEASY_API_KEY }}
+          github_access_token: ${{ secrets.CROSS_REPO_TOKEN }}
+          speakeasy_api_key: ${{ secrets.SPEAKEASY_API_KEY }}
