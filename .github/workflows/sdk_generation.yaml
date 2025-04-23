@@ -29,7 +29,7 @@ jobs:
         with:
           repository: firehydrant/developers
           path: 'dev-repo'
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.CROSS_REPO_TOKEN }}
           
       - name: Copy OpenAPI spec
         run: |
@@ -44,5 +44,5 @@ jobs:
       mode: pr
       set_version: ${{ github.event.inputs.set_version }}
     secrets:
-      github_access_token: ${{ secrets.GITHUB_TOKEN }}
+      github_access_token: ${{ secrets.CROSS_REPO_TOKEN }}
       speakeasy_api_key: ${{ secrets.SPEAKEASY_API_KEY }}
