@@ -30,6 +30,7 @@ jobs:
           repository: firehydrant/developers
           path: 'dev-repo'
           token: ${{ secrets.CROSS_REPO_TOKEN }}
+          ref: main
           
       - name: Copy OpenAPI spec
         run: |
