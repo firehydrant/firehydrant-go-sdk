@@ -33,6 +33,7 @@ jobs:
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
         run: |
+          ssh -T git@github.com
           git clone git@github.com:firehydrant/developers.git dev-repo
           cd dev-repo
           git checkout main
