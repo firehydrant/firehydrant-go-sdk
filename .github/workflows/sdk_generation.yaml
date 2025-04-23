@@ -35,7 +35,7 @@ jobs:
       - name: Copy OpenAPI spec
         run: |
           mkdir -p .speakeasy
-          cp dev-repo/docs/public/openapi3_doc.json .speakeasy/openapi.json
+          cp dev-repo/docs/public/openapi3_doc.json .openapi.json
 
   generate:
     needs: fetch_openapi
