@@ -30,9 +30,9 @@ jobs:
         run: |
           mkdir -p ~/.ssh
           ssh-keyscan github.com >> ~/.ssh/known_hosts
-          echo "${{ secrets.FH_OPS_SSH_KEY }}" > ~/.ssh/id_rsa
+          echo "${{ secrets.FH_OPS_SSH_KEY }}" | base64 -d > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+          eval "$(ssh-agent -s)"
           ssh-add ~/.ssh/id_rsa
           
       - name: Clone developers repo
