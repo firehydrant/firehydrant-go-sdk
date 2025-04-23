@@ -24,13 +24,24 @@ jobs:
       - name: Checkout SDK repo
         uses: actions/checkout@v3
         
-      - name: Checkout developers repo
-        uses: actions/checkout@v3
-        with:
-          repository: firehydrant/developers
-          path: 'dev-repo'
-          token: ${{ secrets.CROSS_REPO_TOKEN }}
-          ref: main
+      - name: Set up SSH
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          echo "${{ secrets.FH_OPS_SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+          ssh-add ~/.ssh/id_rsa
+          
+      - name: Clone developers repo
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+        run: |
+          git clone git@github.com:firehydrant/developers.git dev-repo
+          cd dev-repo
+          git checkout main
           
       - name: Copy OpenAPI spec
         run: |
