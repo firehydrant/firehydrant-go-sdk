@@ -20,8 +20,6 @@ permissions:
 jobs:
   fetch_openapi:
     runs-on: ubuntu-latest
-    outputs:
-      openapi_path: ${{ steps.save_openapi.outputs.openapi_path }}
     steps:
       - name: Checkout SDK repo
         uses: actions/checkout@v3
@@ -37,9 +35,6 @@ jobs:
         run: |
           mkdir -p .speakeasy
           cp dev-repo/docs/public/openapi3_doc.json .speakeasy/openapi.json
-          
-      - id: save_openapi
-        run: echo "openapi_path=.speakeasy/openapi.json" >> $GITHUB_OUTPUT
 
   generate:
     needs: fetch_openapi
@@ -48,7 +43,6 @@ jobs:
       force: ${{ github.event.inputs.force }}
       mode: pr
       set_version: ${{ github.event.inputs.set_version }}
-      openapi_path: ${{ needs.fetch_openapi.outputs.openapi_path }}
     secrets:
       github_access_token: ${{ secrets.GITHUB_TOKEN }}
       speakeasy_api_key: ${{ secrets.SPEAKEASY_API_KEY }}
