@@ -3,10 +3,7 @@ speakeasyVersion: latest
 sources:
     firehydrant-oas:
         inputs:
-            - location: ./openapi.yaml
-        overlays:
-            - location: .speakeasy/speakeasy-modifications-overlay.yaml
-            - location: errors-overlay.yaml
+            - location: ${GITHUB_WORKSPACE}/openapi.json
         registry:
             location: registry.speakeasyapi.dev/firehydrant/firehydrant/firehydrant-oas
 targets:
