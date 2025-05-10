@@ -7,9 +7,9 @@ import (
 )
 
 type UpdateIncidentLinkRequest struct {
-	LinkID                              string                                         `pathParam:"style=simple,explode=false,name=link_id"`
-	IncidentID                          string                                         `pathParam:"style=simple,explode=false,name=incident_id"`
-	PutV1IncidentsIncidentIDLinksLinkID components.PutV1IncidentsIncidentIDLinksLinkID `request:"mediaType=application/json"`
+	LinkID             string                        `pathParam:"style=simple,explode=false,name=link_id"`
+	IncidentID         string                        `pathParam:"style=simple,explode=false,name=incident_id"`
+	UpdateIncidentLink components.UpdateIncidentLink `request:"mediaType=application/json"`
 }
 
 func (o *UpdateIncidentLinkRequest) GetLinkID() string {
@@ -26,20 +26,9 @@ func (o *UpdateIncidentLinkRequest) GetIncidentID() string {
 	return o.IncidentID
 }
 
-func (o *UpdateIncidentLinkRequest) GetPutV1IncidentsIncidentIDLinksLinkID() components.PutV1IncidentsIncidentIDLinksLinkID {
+func (o *UpdateIncidentLinkRequest) GetUpdateIncidentLink() components.UpdateIncidentLink {
 	if o == nil {
-		return components.PutV1IncidentsIncidentIDLinksLinkID{}
+		return components.UpdateIncidentLink{}
 	}
-	return o.PutV1IncidentsIncidentIDLinksLinkID
-}
-
-type UpdateIncidentLinkResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-}
-
-func (o *UpdateIncidentLinkResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
+	return o.UpdateIncidentLink
 }

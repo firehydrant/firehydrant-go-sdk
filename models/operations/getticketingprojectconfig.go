@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type GetTicketingProjectConfigRequest struct {
 	TicketingProjectID string `pathParam:"style=simple,explode=false,name=ticketing_project_id"`
 	ConfigID           string `pathParam:"style=simple,explode=false,name=config_id"`
@@ -23,24 +19,4 @@ func (o *GetTicketingProjectConfigRequest) GetConfigID() string {
 		return ""
 	}
 	return o.ConfigID
-}
-
-type GetTicketingProjectConfigResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Retrieve configuration for a ticketing project
-	TicketingProjectConfigEntity *components.TicketingProjectConfigEntity
-}
-
-func (o *GetTicketingProjectConfigResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *GetTicketingProjectConfigResponse) GetTicketingProjectConfigEntity() *components.TicketingProjectConfigEntity {
-	if o == nil {
-		return nil
-	}
-	return o.TicketingProjectConfigEntity
 }

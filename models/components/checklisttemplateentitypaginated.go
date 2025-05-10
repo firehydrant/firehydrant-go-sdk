@@ -5,7 +5,7 @@ package components
 // ChecklistTemplateEntityPaginated model
 type ChecklistTemplateEntityPaginated struct {
 	Data       []ChecklistTemplateEntity `json:"data,omitempty"`
-	Pagination *PaginationEntity         `json:"pagination,omitempty"`
+	Pagination *NullablePaginationEntity `json:"pagination,omitempty"`
 }
 
 func (o *ChecklistTemplateEntityPaginated) GetData() []ChecklistTemplateEntity {
@@ -15,7 +15,7 @@ func (o *ChecklistTemplateEntityPaginated) GetData() []ChecklistTemplateEntity {
 	return o.Data
 }
 
-func (o *ChecklistTemplateEntityPaginated) GetPagination() *PaginationEntity {
+func (o *ChecklistTemplateEntityPaginated) GetPagination() *NullablePaginationEntity {
 	if o == nil {
 		return nil
 	}

@@ -4,14 +4,14 @@ package components
 
 // IncidentsRelationshipsEntity - Incidents_RelationshipsEntity model
 type IncidentsRelationshipsEntity struct {
-	Parent *PublicAPIV1IncidentsSuccinctEntity `json:"parent,omitempty"`
+	Parent *NullablePublicAPIV1IncidentsSuccinctEntity `json:"parent,omitempty"`
 	// The root incident's child incidents.
 	Children []PublicAPIV1IncidentsSuccinctEntity `json:"children,omitempty"`
 	// A list of incidents that share the root incident's parent.
 	Siblings []PublicAPIV1IncidentsSuccinctEntity `json:"siblings,omitempty"`
 }
 
-func (o *IncidentsRelationshipsEntity) GetParent() *PublicAPIV1IncidentsSuccinctEntity {
+func (o *IncidentsRelationshipsEntity) GetParent() *NullablePublicAPIV1IncidentsSuccinctEntity {
 	if o == nil {
 		return nil
 	}

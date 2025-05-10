@@ -8,19 +8,19 @@ import (
 	"fmt"
 )
 
-type CreateIncidentImpactPathParamType string
+type CreateIncidentImpactType string
 
 const (
-	CreateIncidentImpactPathParamTypeEnvironments    CreateIncidentImpactPathParamType = "environments"
-	CreateIncidentImpactPathParamTypeFunctionalities CreateIncidentImpactPathParamType = "functionalities"
-	CreateIncidentImpactPathParamTypeServices        CreateIncidentImpactPathParamType = "services"
-	CreateIncidentImpactPathParamTypeCustomers       CreateIncidentImpactPathParamType = "customers"
+	CreateIncidentImpactTypeEnvironments    CreateIncidentImpactType = "environments"
+	CreateIncidentImpactTypeFunctionalities CreateIncidentImpactType = "functionalities"
+	CreateIncidentImpactTypeServices        CreateIncidentImpactType = "services"
+	CreateIncidentImpactTypeCustomers       CreateIncidentImpactType = "customers"
 )
 
-func (e CreateIncidentImpactPathParamType) ToPointer() *CreateIncidentImpactPathParamType {
+func (e CreateIncidentImpactType) ToPointer() *CreateIncidentImpactType {
 	return &e
 }
-func (e *CreateIncidentImpactPathParamType) UnmarshalJSON(data []byte) error {
+func (e *CreateIncidentImpactType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -33,17 +33,17 @@ func (e *CreateIncidentImpactPathParamType) UnmarshalJSON(data []byte) error {
 	case "services":
 		fallthrough
 	case "customers":
-		*e = CreateIncidentImpactPathParamType(v)
+		*e = CreateIncidentImpactType(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for CreateIncidentImpactPathParamType: %v", v)
+		return fmt.Errorf("invalid value for CreateIncidentImpactType: %v", v)
 	}
 }
 
 type CreateIncidentImpactRequest struct {
-	IncidentID                          string                                         `pathParam:"style=simple,explode=false,name=incident_id"`
-	Type                                CreateIncidentImpactPathParamType              `pathParam:"style=simple,explode=false,name=type"`
-	PostV1IncidentsIncidentIDImpactType components.PostV1IncidentsIncidentIDImpactType `request:"mediaType=application/json"`
+	IncidentID           string                          `pathParam:"style=simple,explode=false,name=incident_id"`
+	Type                 CreateIncidentImpactType        `pathParam:"style=simple,explode=false,name=type"`
+	CreateIncidentImpact components.CreateIncidentImpact `request:"mediaType=application/json"`
 }
 
 func (o *CreateIncidentImpactRequest) GetIncidentID() string {
@@ -53,36 +53,16 @@ func (o *CreateIncidentImpactRequest) GetIncidentID() string {
 	return o.IncidentID
 }
 
-func (o *CreateIncidentImpactRequest) GetType() CreateIncidentImpactPathParamType {
+func (o *CreateIncidentImpactRequest) GetType() CreateIncidentImpactType {
 	if o == nil {
-		return CreateIncidentImpactPathParamType("")
+		return CreateIncidentImpactType("")
 	}
 	return o.Type
 }
 
-func (o *CreateIncidentImpactRequest) GetPostV1IncidentsIncidentIDImpactType() components.PostV1IncidentsIncidentIDImpactType {
+func (o *CreateIncidentImpactRequest) GetCreateIncidentImpact() components.CreateIncidentImpact {
 	if o == nil {
-		return components.PostV1IncidentsIncidentIDImpactType{}
+		return components.CreateIncidentImpact{}
 	}
-	return o.PostV1IncidentsIncidentIDImpactType
-}
-
-type CreateIncidentImpactResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Add impacted infrastructure to an incident
-	IncidentImpactEntity *components.IncidentImpactEntity
-}
-
-func (o *CreateIncidentImpactResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *CreateIncidentImpactResponse) GetIncidentImpactEntity() *components.IncidentImpactEntity {
-	if o == nil {
-		return nil
-	}
-	return o.IncidentImpactEntity
+	return o.CreateIncidentImpact
 }

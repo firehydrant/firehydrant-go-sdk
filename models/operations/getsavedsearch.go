@@ -4,29 +4,28 @@ package operations
 
 import (
 	"encoding/json"
-	"firehydrant/models/components"
 	"fmt"
 )
 
-type GetSavedSearchPathParamResourceType string
+type GetSavedSearchResourceType string
 
 const (
-	GetSavedSearchPathParamResourceTypeChangeEvents          GetSavedSearchPathParamResourceType = "change_events"
-	GetSavedSearchPathParamResourceTypeIncidents             GetSavedSearchPathParamResourceType = "incidents"
-	GetSavedSearchPathParamResourceTypeServices              GetSavedSearchPathParamResourceType = "services"
-	GetSavedSearchPathParamResourceTypeScheduledMaintenances GetSavedSearchPathParamResourceType = "scheduled_maintenances"
-	GetSavedSearchPathParamResourceTypeTicketTasks           GetSavedSearchPathParamResourceType = "ticket_tasks"
-	GetSavedSearchPathParamResourceTypeTicketFollowUps       GetSavedSearchPathParamResourceType = "ticket_follow_ups"
-	GetSavedSearchPathParamResourceTypeAnalytics             GetSavedSearchPathParamResourceType = "analytics"
-	GetSavedSearchPathParamResourceTypeImpactAnalytics       GetSavedSearchPathParamResourceType = "impact_analytics"
-	GetSavedSearchPathParamResourceTypeAlerts                GetSavedSearchPathParamResourceType = "alerts"
-	GetSavedSearchPathParamResourceTypeIncidentEvents        GetSavedSearchPathParamResourceType = "incident_events"
+	GetSavedSearchResourceTypeChangeEvents          GetSavedSearchResourceType = "change_events"
+	GetSavedSearchResourceTypeIncidents             GetSavedSearchResourceType = "incidents"
+	GetSavedSearchResourceTypeServices              GetSavedSearchResourceType = "services"
+	GetSavedSearchResourceTypeScheduledMaintenances GetSavedSearchResourceType = "scheduled_maintenances"
+	GetSavedSearchResourceTypeTicketTasks           GetSavedSearchResourceType = "ticket_tasks"
+	GetSavedSearchResourceTypeTicketFollowUps       GetSavedSearchResourceType = "ticket_follow_ups"
+	GetSavedSearchResourceTypeAnalytics             GetSavedSearchResourceType = "analytics"
+	GetSavedSearchResourceTypeImpactAnalytics       GetSavedSearchResourceType = "impact_analytics"
+	GetSavedSearchResourceTypeAlerts                GetSavedSearchResourceType = "alerts"
+	GetSavedSearchResourceTypeIncidentEvents        GetSavedSearchResourceType = "incident_events"
 )
 
-func (e GetSavedSearchPathParamResourceType) ToPointer() *GetSavedSearchPathParamResourceType {
+func (e GetSavedSearchResourceType) ToPointer() *GetSavedSearchResourceType {
 	return &e
 }
-func (e *GetSavedSearchPathParamResourceType) UnmarshalJSON(data []byte) error {
+func (e *GetSavedSearchResourceType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -51,21 +50,21 @@ func (e *GetSavedSearchPathParamResourceType) UnmarshalJSON(data []byte) error {
 	case "alerts":
 		fallthrough
 	case "incident_events":
-		*e = GetSavedSearchPathParamResourceType(v)
+		*e = GetSavedSearchResourceType(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetSavedSearchPathParamResourceType: %v", v)
+		return fmt.Errorf("invalid value for GetSavedSearchResourceType: %v", v)
 	}
 }
 
 type GetSavedSearchRequest struct {
-	ResourceType  GetSavedSearchPathParamResourceType `pathParam:"style=simple,explode=false,name=resource_type"`
-	SavedSearchID string                              `pathParam:"style=simple,explode=false,name=saved_search_id"`
+	ResourceType  GetSavedSearchResourceType `pathParam:"style=simple,explode=false,name=resource_type"`
+	SavedSearchID string                     `pathParam:"style=simple,explode=false,name=saved_search_id"`
 }
 
-func (o *GetSavedSearchRequest) GetResourceType() GetSavedSearchPathParamResourceType {
+func (o *GetSavedSearchRequest) GetResourceType() GetSavedSearchResourceType {
 	if o == nil {
-		return GetSavedSearchPathParamResourceType("")
+		return GetSavedSearchResourceType("")
 	}
 	return o.ResourceType
 }
@@ -75,24 +74,4 @@ func (o *GetSavedSearchRequest) GetSavedSearchID() string {
 		return ""
 	}
 	return o.SavedSearchID
-}
-
-type GetSavedSearchResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Retrieve a specific save search
-	SavedSearchEntity *components.SavedSearchEntity
-}
-
-func (o *GetSavedSearchResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *GetSavedSearchResponse) GetSavedSearchEntity() *components.SavedSearchEntity {
-	if o == nil {
-		return nil
-	}
-	return o.SavedSearchEntity
 }

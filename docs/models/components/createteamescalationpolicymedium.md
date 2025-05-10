@@ -1,0 +1,11 @@
+# CreateTeamEscalationPolicyMedium
+
+Settings for MEDIUM priority alerts
+
+
+## Fields
+
+| Field                                                                                                                             | Type                                                                                                                              | Required                                                                                                                          | Description                                                                                                                       |
+| --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `Repetitions`                                                                                                                     | **int*                                                                                                                            | :heavy_minus_sign:                                                                                                                | Number of repetitions for MEDIUM priority alerts                                                                                  |
+| `HandoffStep`                                                                                                                     | [*components.CreateTeamEscalationPolicyMediumHandoffStep](../../models/components/createteamescalationpolicymediumhandoffstep.md) | :heavy_minus_sign:                                                                                                                | Handoff step for MEDIUM priority alerts                                                                                           |

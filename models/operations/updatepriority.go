@@ -7,8 +7,8 @@ import (
 )
 
 type UpdatePriorityRequest struct {
-	PrioritySlug                  string                                   `pathParam:"style=simple,explode=false,name=priority_slug"`
-	PatchV1PrioritiesPrioritySlug components.PatchV1PrioritiesPrioritySlug `request:"mediaType=application/json"`
+	PrioritySlug   string                    `pathParam:"style=simple,explode=false,name=priority_slug"`
+	UpdatePriority components.UpdatePriority `request:"mediaType=application/json"`
 }
 
 func (o *UpdatePriorityRequest) GetPrioritySlug() string {
@@ -18,29 +18,9 @@ func (o *UpdatePriorityRequest) GetPrioritySlug() string {
 	return o.PrioritySlug
 }
 
-func (o *UpdatePriorityRequest) GetPatchV1PrioritiesPrioritySlug() components.PatchV1PrioritiesPrioritySlug {
+func (o *UpdatePriorityRequest) GetUpdatePriority() components.UpdatePriority {
 	if o == nil {
-		return components.PatchV1PrioritiesPrioritySlug{}
+		return components.UpdatePriority{}
 	}
-	return o.PatchV1PrioritiesPrioritySlug
-}
-
-type UpdatePriorityResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Update a specific priority
-	PriorityEntity *components.PriorityEntity
-}
-
-func (o *UpdatePriorityResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *UpdatePriorityResponse) GetPriorityEntity() *components.PriorityEntity {
-	if o == nil {
-		return nil
-	}
-	return o.PriorityEntity
+	return o.UpdatePriority
 }

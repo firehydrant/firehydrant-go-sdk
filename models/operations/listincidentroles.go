@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type ListIncidentRolesRequest struct {
 	Page    *int `queryParam:"style=form,explode=true,name=page"`
 	PerPage *int `queryParam:"style=form,explode=true,name=per_page"`
@@ -23,24 +19,4 @@ func (o *ListIncidentRolesRequest) GetPerPage() *int {
 		return nil
 	}
 	return o.PerPage
-}
-
-type ListIncidentRolesResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// List all of the incident roles in the organization
-	IncidentRoleEntityPaginated *components.IncidentRoleEntityPaginated
-}
-
-func (o *ListIncidentRolesResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListIncidentRolesResponse) GetIncidentRoleEntityPaginated() *components.IncidentRoleEntityPaginated {
-	if o == nil {
-		return nil
-	}
-	return o.IncidentRoleEntityPaginated
 }

@@ -11,8 +11,8 @@ type OrganizationsCustomFieldDefinitionEntity struct {
 	Description *string `json:"description,omitempty"`
 	Required    *bool   `json:"required,omitempty"`
 	// The milestone at which this field is required, if `required` is set to `true`. When null, a required field is always required.
-	RequiredAtMilestoneID *string `json:"required_at_milestone_id,omitempty"`
-	PermissibleValues     *string `json:"permissible_values,omitempty"`
+	RequiredAtMilestoneID *string  `json:"required_at_milestone_id,omitempty"`
+	PermissibleValues     []string `json:"permissible_values,omitempty"`
 }
 
 func (o *OrganizationsCustomFieldDefinitionEntity) GetDisplayName() *string {
@@ -64,7 +64,7 @@ func (o *OrganizationsCustomFieldDefinitionEntity) GetRequiredAtMilestoneID() *s
 	return o.RequiredAtMilestoneID
 }
 
-func (o *OrganizationsCustomFieldDefinitionEntity) GetPermissibleValues() *string {
+func (o *OrganizationsCustomFieldDefinitionEntity) GetPermissibleValues() []string {
 	if o == nil {
 		return nil
 	}

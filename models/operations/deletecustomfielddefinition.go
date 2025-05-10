@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type DeleteCustomFieldDefinitionRequest struct {
 	FieldID string `pathParam:"style=simple,explode=false,name=field_id"`
 }
@@ -15,24 +11,4 @@ func (o *DeleteCustomFieldDefinitionRequest) GetFieldID() string {
 		return ""
 	}
 	return o.FieldID
-}
-
-type DeleteCustomFieldDefinitionResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Delete a custom field definition
-	OrganizationsCustomFieldDefinitionEntity *components.OrganizationsCustomFieldDefinitionEntity
-}
-
-func (o *DeleteCustomFieldDefinitionResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *DeleteCustomFieldDefinitionResponse) GetOrganizationsCustomFieldDefinitionEntity() *components.OrganizationsCustomFieldDefinitionEntity {
-	if o == nil {
-		return nil
-	}
-	return o.OrganizationsCustomFieldDefinitionEntity
 }

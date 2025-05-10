@@ -9,12 +9,12 @@ import (
 
 // IncidentTypeEntity model
 type IncidentTypeEntity struct {
-	ID             *string                                 `json:"id,omitempty"`
-	Name           *string                                 `json:"name,omitempty"`
-	Template       *IncidentTypeEntityTemplateEntity       `json:"template,omitempty"`
-	TemplateValues *IncidentTypeEntityTemplateValuesEntity `json:"template_values,omitempty"`
-	CreatedAt      *time.Time                              `json:"created_at,omitempty"`
-	UpdatedAt      *time.Time                              `json:"updated_at,omitempty"`
+	ID             *string                                         `json:"id,omitempty"`
+	Name           *string                                         `json:"name,omitempty"`
+	Template       *NullableIncidentTypeEntityTemplateEntity       `json:"template,omitempty"`
+	TemplateValues *NullableIncidentTypeEntityTemplateValuesEntity `json:"template_values,omitempty"`
+	CreatedAt      *time.Time                                      `json:"created_at,omitempty"`
+	UpdatedAt      *time.Time                                      `json:"updated_at,omitempty"`
 }
 
 func (i IncidentTypeEntity) MarshalJSON() ([]byte, error) {
@@ -42,14 +42,14 @@ func (o *IncidentTypeEntity) GetName() *string {
 	return o.Name
 }
 
-func (o *IncidentTypeEntity) GetTemplate() *IncidentTypeEntityTemplateEntity {
+func (o *IncidentTypeEntity) GetTemplate() *NullableIncidentTypeEntityTemplateEntity {
 	if o == nil {
 		return nil
 	}
 	return o.Template
 }
 
-func (o *IncidentTypeEntity) GetTemplateValues() *IncidentTypeEntityTemplateValuesEntity {
+func (o *IncidentTypeEntity) GetTemplateValues() *NullableIncidentTypeEntityTemplateValuesEntity {
 	if o == nil {
 		return nil
 	}

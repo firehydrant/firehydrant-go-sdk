@@ -1,0 +1,11 @@
+# UpdateTeamEscalationPolicyLow
+
+Settings for LOW priority alerts
+
+
+## Fields
+
+| Field                                                                                                                       | Type                                                                                                                        | Required                                                                                                                    | Description                                                                                                                 |
+| --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `Repetitions`                                                                                                               | **int*                                                                                                                      | :heavy_minus_sign:                                                                                                          | Number of repetitions for LOW priority alerts                                                                               |
+| `HandoffStep`                                                                                                               | [*components.UpdateTeamEscalationPolicyLowHandoffStep](../../models/components/updateteamescalationpolicylowhandoffstep.md) | :heavy_minus_sign:                                                                                                          | Handoff step for LOW priority alerts                                                                                        |

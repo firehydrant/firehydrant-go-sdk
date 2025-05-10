@@ -4,9 +4,9 @@ package components
 
 // IncidentImpactEntity model
 type IncidentImpactEntity struct {
-	ID             *string         `json:"id,omitempty"`
-	Type           *string         `json:"type,omitempty"`
-	Infrastructure *SuccinctEntity `json:"infrastructure,omitempty"`
+	ID             *string                 `json:"id,omitempty"`
+	Type           *string                 `json:"type,omitempty"`
+	Infrastructure *NullableSuccinctEntity `json:"infrastructure,omitempty"`
 }
 
 func (o *IncidentImpactEntity) GetID() *string {
@@ -23,7 +23,7 @@ func (o *IncidentImpactEntity) GetType() *string {
 	return o.Type
 }
 
-func (o *IncidentImpactEntity) GetInfrastructure() *SuccinctEntity {
+func (o *IncidentImpactEntity) GetInfrastructure() *NullableSuccinctEntity {
 	if o == nil {
 		return nil
 	}

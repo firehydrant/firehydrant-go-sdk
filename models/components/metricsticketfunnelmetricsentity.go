@@ -4,8 +4,8 @@ package components
 
 // MetricsTicketFunnelMetricsEntity - Metrics_TicketFunnelMetricsEntity model
 type MetricsTicketFunnelMetricsEntity struct {
-	Data      []MetricsTicketFunnelMetricsEntityDataBucketEntity `json:"data,omitempty"`
-	Groupings *MetricsTicketFunnelMetricsEntityGroupingsEntity   `json:"groupings,omitempty"`
+	Data      []MetricsTicketFunnelMetricsEntityDataBucketEntity       `json:"data,omitempty"`
+	Groupings *NullableMetricsTicketFunnelMetricsEntityGroupingsEntity `json:"groupings,omitempty"`
 }
 
 func (o *MetricsTicketFunnelMetricsEntity) GetData() []MetricsTicketFunnelMetricsEntityDataBucketEntity {
@@ -15,7 +15,7 @@ func (o *MetricsTicketFunnelMetricsEntity) GetData() []MetricsTicketFunnelMetric
 	return o.Data
 }
 
-func (o *MetricsTicketFunnelMetricsEntity) GetGroupings() *MetricsTicketFunnelMetricsEntityGroupingsEntity {
+func (o *MetricsTicketFunnelMetricsEntity) GetGroupings() *NullableMetricsTicketFunnelMetricsEntityGroupingsEntity {
 	if o == nil {
 		return nil
 	}

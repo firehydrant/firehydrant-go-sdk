@@ -1,9 +1,0 @@
-# DeleteIncidentChatMessageResponse
-
-
-## Fields
-
-| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
-| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| `HTTPMeta`                                                                                            | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                    | :heavy_check_mark:                                                                                    | N/A                                                                                                   |
-| `EventGenericChatMessageEntity`                                                                       | [*components.EventGenericChatMessageEntity](../../models/components/eventgenericchatmessageentity.md) | :heavy_minus_sign:                                                                                    | Delete an existing generic chat message on an incident.                                               |

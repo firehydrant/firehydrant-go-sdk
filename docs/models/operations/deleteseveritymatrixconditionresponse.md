@@ -1,9 +1,0 @@
-# DeleteSeverityMatrixConditionResponse
-
-
-## Fields
-
-| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
-| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| `HTTPMeta`                                                                                            | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                    | :heavy_check_mark:                                                                                    | N/A                                                                                                   |
-| `SeverityMatrixConditionEntity`                                                                       | [*components.SeverityMatrixConditionEntity](../../models/components/severitymatrixconditionentity.md) | :heavy_minus_sign:                                                                                    | Delete a specific condition                                                                           |

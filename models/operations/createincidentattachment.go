@@ -5,25 +5,24 @@ package operations
 import (
 	"encoding/json"
 	"firehydrant/internal/utils"
-	"firehydrant/models/components"
 	"fmt"
 	"time"
 )
 
-type File struct {
+type CreateIncidentAttachmentFile struct {
 	FileName string `multipartForm:"name=fileName"`
 	// This field accepts []byte data or io.Reader implementations, such as *os.File.
 	Content any `multipartForm:"content"`
 }
 
-func (o *File) GetFileName() string {
+func (o *CreateIncidentAttachmentFile) GetFileName() string {
 	if o == nil {
 		return ""
 	}
 	return o.FileName
 }
 
-func (o *File) GetContent() any {
+func (o *CreateIncidentAttachmentFile) GetContent() any {
 	if o == nil {
 		return nil
 	}
@@ -57,10 +56,10 @@ func (e *VoteDirection) UnmarshalJSON(data []byte) error {
 }
 
 type CreateIncidentAttachmentRequestBody struct {
-	File          File           `multipartForm:"file,name=file"`
-	Description   *string        `multipartForm:"name=description"`
-	OccurredAt    *time.Time     `multipartForm:"name=occurred_at"`
-	VoteDirection *VoteDirection `multipartForm:"name=vote_direction"`
+	File          CreateIncidentAttachmentFile `multipartForm:"file,name=file"`
+	Description   *string                      `multipartForm:"name=description"`
+	OccurredAt    *time.Time                   `multipartForm:"name=occurred_at"`
+	VoteDirection *VoteDirection               `multipartForm:"name=vote_direction"`
 }
 
 func (c CreateIncidentAttachmentRequestBody) MarshalJSON() ([]byte, error) {
@@ -74,9 +73,9 @@ func (c *CreateIncidentAttachmentRequestBody) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CreateIncidentAttachmentRequestBody) GetFile() File {
+func (o *CreateIncidentAttachmentRequestBody) GetFile() CreateIncidentAttachmentFile {
 	if o == nil {
-		return File{}
+		return CreateIncidentAttachmentFile{}
 	}
 	return o.File
 }
@@ -119,24 +118,4 @@ func (o *CreateIncidentAttachmentRequest) GetRequestBody() CreateIncidentAttachm
 		return CreateIncidentAttachmentRequestBody{}
 	}
 	return o.RequestBody
-}
-
-type CreateIncidentAttachmentResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Allows adding image attachments to an incident
-	IncidentAttachmentEntity *components.IncidentAttachmentEntity
-}
-
-func (o *CreateIncidentAttachmentResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *CreateIncidentAttachmentResponse) GetIncidentAttachmentEntity() *components.IncidentAttachmentEntity {
-	if o == nil {
-		return nil
-	}
-	return o.IncidentAttachmentEntity
 }

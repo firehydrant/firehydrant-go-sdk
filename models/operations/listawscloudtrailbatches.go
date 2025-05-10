@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type ListAwsCloudtrailBatchesRequest struct {
 	Page    *int `queryParam:"style=form,explode=true,name=page"`
 	PerPage *int `queryParam:"style=form,explode=true,name=per_page"`
@@ -32,24 +28,4 @@ func (o *ListAwsCloudtrailBatchesRequest) GetConnectionID() *string {
 		return nil
 	}
 	return o.ConnectionID
-}
-
-type ListAwsCloudtrailBatchesResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Lists CloudTrail batches for the authenticated organization.
-	IntegrationsAwsCloudtrailBatchEntityPaginated *components.IntegrationsAwsCloudtrailBatchEntityPaginated
-}
-
-func (o *ListAwsCloudtrailBatchesResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListAwsCloudtrailBatchesResponse) GetIntegrationsAwsCloudtrailBatchEntityPaginated() *components.IntegrationsAwsCloudtrailBatchEntityPaginated {
-	if o == nil {
-		return nil
-	}
-	return o.IntegrationsAwsCloudtrailBatchEntityPaginated
 }

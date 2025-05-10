@@ -4,8 +4,8 @@ package components
 
 // IncidentEventEntityPaginated model
 type IncidentEventEntityPaginated struct {
-	Data       []IncidentEventEntity `json:"data,omitempty"`
-	Pagination *PaginationEntity     `json:"pagination,omitempty"`
+	Data       []IncidentEventEntity     `json:"data,omitempty"`
+	Pagination *NullablePaginationEntity `json:"pagination,omitempty"`
 }
 
 func (o *IncidentEventEntityPaginated) GetData() []IncidentEventEntity {
@@ -15,7 +15,7 @@ func (o *IncidentEventEntityPaginated) GetData() []IncidentEventEntity {
 	return o.Data
 }
 
-func (o *IncidentEventEntityPaginated) GetPagination() *PaginationEntity {
+func (o *IncidentEventEntityPaginated) GetPagination() *NullablePaginationEntity {
 	if o == nil {
 		return nil
 	}

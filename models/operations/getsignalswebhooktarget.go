@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type GetSignalsWebhookTargetRequest struct {
 	ID string `pathParam:"style=simple,explode=false,name=id"`
 }
@@ -15,15 +11,4 @@ func (o *GetSignalsWebhookTargetRequest) GetID() string {
 		return ""
 	}
 	return o.ID
-}
-
-type GetSignalsWebhookTargetResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-}
-
-func (o *GetSignalsWebhookTargetResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
 }

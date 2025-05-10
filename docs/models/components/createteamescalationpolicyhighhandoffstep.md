@@ -1,0 +1,11 @@
+# CreateTeamEscalationPolicyHighHandoffStep
+
+Handoff step for HIGH priority alerts
+
+
+## Fields
+
+| Field                                                                                                                      | Type                                                                                                                       | Required                                                                                                                   | Description                                                                                                                |
+| -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `TargetType`                                                                                                               | [components.CreateTeamEscalationPolicyHighTargetType](../../models/components/createteamescalationpolicyhightargettype.md) | :heavy_check_mark:                                                                                                         | N/A                                                                                                                        |
+| `TargetID`                                                                                                                 | *string*                                                                                                                   | :heavy_check_mark:                                                                                                         | N/A                                                                                                                        |

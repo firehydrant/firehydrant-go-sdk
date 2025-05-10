@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type ListSchedulesRequest struct {
 	// Filter schedules with a query on their name
 	Query   *string `queryParam:"style=form,explode=true,name=query"`
@@ -32,24 +28,4 @@ func (o *ListSchedulesRequest) GetPerPage() *int {
 		return nil
 	}
 	return o.PerPage
-}
-
-type ListSchedulesResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// List all known schedules in FireHydrant as pulled from external sources
-	ScheduleEntityPaginated *components.ScheduleEntityPaginated
-}
-
-func (o *ListSchedulesResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListSchedulesResponse) GetScheduleEntityPaginated() *components.ScheduleEntityPaginated {
-	if o == nil {
-		return nil
-	}
-	return o.ScheduleEntityPaginated
 }

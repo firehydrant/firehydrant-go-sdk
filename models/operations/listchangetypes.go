@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type ListChangeTypesRequest struct {
 	Page    *int `queryParam:"style=form,explode=true,name=page"`
 	PerPage *int `queryParam:"style=form,explode=true,name=per_page"`
@@ -23,24 +19,4 @@ func (o *ListChangeTypesRequest) GetPerPage() *int {
 		return nil
 	}
 	return o.PerPage
-}
-
-type ListChangeTypesResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Lists all change types
-	ChangeTypeEntityPaginated *components.ChangeTypeEntityPaginated
-}
-
-func (o *ListChangeTypesResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListChangeTypesResponse) GetChangeTypeEntityPaginated() *components.ChangeTypeEntityPaginated {
-	if o == nil {
-		return nil
-	}
-	return o.ChangeTypeEntityPaginated
 }

@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type ListSlackEmojiActionsRequest struct {
 	// Slack Connection UUID
 	ConnectionID string `pathParam:"style=simple,explode=false,name=connection_id"`
@@ -32,15 +28,4 @@ func (o *ListSlackEmojiActionsRequest) GetPerPage() *int {
 		return nil
 	}
 	return o.PerPage
-}
-
-type ListSlackEmojiActionsResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-}
-
-func (o *ListSlackEmojiActionsResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
 }

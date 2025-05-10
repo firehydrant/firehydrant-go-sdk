@@ -4,8 +4,8 @@ package components
 
 // MetricsRetrospectiveEntity - Metrics_RetrospectiveEntity model
 type MetricsRetrospectiveEntity struct {
-	Data    []MetricsRetrospectiveEntityDataEntity   `json:"data,omitempty"`
-	Summary *MetricsRetrospectiveEntitySummaryEntity `json:"summary,omitempty"`
+	Data    []MetricsRetrospectiveEntityDataEntity           `json:"data,omitempty"`
+	Summary *NullableMetricsRetrospectiveEntitySummaryEntity `json:"summary,omitempty"`
 }
 
 func (o *MetricsRetrospectiveEntity) GetData() []MetricsRetrospectiveEntityDataEntity {
@@ -15,7 +15,7 @@ func (o *MetricsRetrospectiveEntity) GetData() []MetricsRetrospectiveEntityDataE
 	return o.Data
 }
 
-func (o *MetricsRetrospectiveEntity) GetSummary() *MetricsRetrospectiveEntitySummaryEntity {
+func (o *MetricsRetrospectiveEntity) GetSummary() *NullableMetricsRetrospectiveEntitySummaryEntity {
 	if o == nil {
 		return nil
 	}

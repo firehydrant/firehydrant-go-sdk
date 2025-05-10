@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type GetWebhookRequest struct {
 	WebhookID string `pathParam:"style=simple,explode=false,name=webhook_id"`
 }
@@ -15,24 +11,4 @@ func (o *GetWebhookRequest) GetWebhookID() string {
 		return ""
 	}
 	return o.WebhookID
-}
-
-type GetWebhookResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Retrieve a specific webhook
-	WebhooksEntitiesWebhookEntity *components.WebhooksEntitiesWebhookEntity
-}
-
-func (o *GetWebhookResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *GetWebhookResponse) GetWebhooksEntitiesWebhookEntity() *components.WebhooksEntitiesWebhookEntity {
-	if o == nil {
-		return nil
-	}
-	return o.WebhooksEntitiesWebhookEntity
 }

@@ -4,9 +4,9 @@ package components
 
 // PongEntity model
 type PongEntity struct {
-	Response     *string             `json:"response,omitempty"`
-	Actor        *ActorEntity        `json:"actor,omitempty"`
-	Organization *OrganizationEntity `json:"organization,omitempty"`
+	Response     *string                     `json:"response,omitempty"`
+	Actor        *NullableActorEntity        `json:"actor,omitempty"`
+	Organization *NullableOrganizationEntity `json:"organization,omitempty"`
 }
 
 func (o *PongEntity) GetResponse() *string {
@@ -16,14 +16,14 @@ func (o *PongEntity) GetResponse() *string {
 	return o.Response
 }
 
-func (o *PongEntity) GetActor() *ActorEntity {
+func (o *PongEntity) GetActor() *NullableActorEntity {
 	if o == nil {
 		return nil
 	}
 	return o.Actor
 }
 
-func (o *PongEntity) GetOrganization() *OrganizationEntity {
+func (o *PongEntity) GetOrganization() *NullableOrganizationEntity {
 	if o == nil {
 		return nil
 	}

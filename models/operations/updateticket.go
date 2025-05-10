@@ -7,8 +7,8 @@ import (
 )
 
 type UpdateTicketRequest struct {
-	TicketID                        string                                     `pathParam:"style=simple,explode=false,name=ticket_id"`
-	PatchV1TicketingTicketsTicketID components.PatchV1TicketingTicketsTicketID `request:"mediaType=application/json"`
+	TicketID     string                  `pathParam:"style=simple,explode=false,name=ticket_id"`
+	UpdateTicket components.UpdateTicket `request:"mediaType=application/json"`
 }
 
 func (o *UpdateTicketRequest) GetTicketID() string {
@@ -18,29 +18,9 @@ func (o *UpdateTicketRequest) GetTicketID() string {
 	return o.TicketID
 }
 
-func (o *UpdateTicketRequest) GetPatchV1TicketingTicketsTicketID() components.PatchV1TicketingTicketsTicketID {
+func (o *UpdateTicketRequest) GetUpdateTicket() components.UpdateTicket {
 	if o == nil {
-		return components.PatchV1TicketingTicketsTicketID{}
+		return components.UpdateTicket{}
 	}
-	return o.PatchV1TicketingTicketsTicketID
-}
-
-type UpdateTicketResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Update a ticket's attributes
-	TicketingTicketEntity *components.TicketingTicketEntity
-}
-
-func (o *UpdateTicketResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *UpdateTicketResponse) GetTicketingTicketEntity() *components.TicketingTicketEntity {
-	if o == nil {
-		return nil
-	}
-	return o.TicketingTicketEntity
+	return o.UpdateTicket
 }

@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type DeleteServiceRequest struct {
 	ServiceID string `pathParam:"style=simple,explode=false,name=service_id"`
 }
@@ -15,24 +11,4 @@ func (o *DeleteServiceRequest) GetServiceID() string {
 		return ""
 	}
 	return o.ServiceID
-}
-
-type DeleteServiceResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Deletes the service from FireHydrant.
-	ServiceEntity *components.ServiceEntity
-}
-
-func (o *DeleteServiceResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *DeleteServiceResponse) GetServiceEntity() *components.ServiceEntity {
-	if o == nil {
-		return nil
-	}
-	return o.ServiceEntity
 }

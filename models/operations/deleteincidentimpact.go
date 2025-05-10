@@ -4,23 +4,22 @@ package operations
 
 import (
 	"encoding/json"
-	"firehydrant/models/components"
 	"fmt"
 )
 
-type DeleteIncidentImpactPathParamType string
+type DeleteIncidentImpactType string
 
 const (
-	DeleteIncidentImpactPathParamTypeEnvironments    DeleteIncidentImpactPathParamType = "environments"
-	DeleteIncidentImpactPathParamTypeFunctionalities DeleteIncidentImpactPathParamType = "functionalities"
-	DeleteIncidentImpactPathParamTypeServices        DeleteIncidentImpactPathParamType = "services"
-	DeleteIncidentImpactPathParamTypeCustomers       DeleteIncidentImpactPathParamType = "customers"
+	DeleteIncidentImpactTypeEnvironments    DeleteIncidentImpactType = "environments"
+	DeleteIncidentImpactTypeFunctionalities DeleteIncidentImpactType = "functionalities"
+	DeleteIncidentImpactTypeServices        DeleteIncidentImpactType = "services"
+	DeleteIncidentImpactTypeCustomers       DeleteIncidentImpactType = "customers"
 )
 
-func (e DeleteIncidentImpactPathParamType) ToPointer() *DeleteIncidentImpactPathParamType {
+func (e DeleteIncidentImpactType) ToPointer() *DeleteIncidentImpactType {
 	return &e
 }
-func (e *DeleteIncidentImpactPathParamType) UnmarshalJSON(data []byte) error {
+func (e *DeleteIncidentImpactType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -33,17 +32,17 @@ func (e *DeleteIncidentImpactPathParamType) UnmarshalJSON(data []byte) error {
 	case "services":
 		fallthrough
 	case "customers":
-		*e = DeleteIncidentImpactPathParamType(v)
+		*e = DeleteIncidentImpactType(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for DeleteIncidentImpactPathParamType: %v", v)
+		return fmt.Errorf("invalid value for DeleteIncidentImpactType: %v", v)
 	}
 }
 
 type DeleteIncidentImpactRequest struct {
-	IncidentID string                            `pathParam:"style=simple,explode=false,name=incident_id"`
-	Type       DeleteIncidentImpactPathParamType `pathParam:"style=simple,explode=false,name=type"`
-	ID         string                            `pathParam:"style=simple,explode=false,name=id"`
+	IncidentID string                   `pathParam:"style=simple,explode=false,name=incident_id"`
+	Type       DeleteIncidentImpactType `pathParam:"style=simple,explode=false,name=type"`
+	ID         string                   `pathParam:"style=simple,explode=false,name=id"`
 }
 
 func (o *DeleteIncidentImpactRequest) GetIncidentID() string {
@@ -53,9 +52,9 @@ func (o *DeleteIncidentImpactRequest) GetIncidentID() string {
 	return o.IncidentID
 }
 
-func (o *DeleteIncidentImpactRequest) GetType() DeleteIncidentImpactPathParamType {
+func (o *DeleteIncidentImpactRequest) GetType() DeleteIncidentImpactType {
 	if o == nil {
-		return DeleteIncidentImpactPathParamType("")
+		return DeleteIncidentImpactType("")
 	}
 	return o.Type
 }
@@ -65,15 +64,4 @@ func (o *DeleteIncidentImpactRequest) GetID() string {
 		return ""
 	}
 	return o.ID
-}
-
-type DeleteIncidentImpactResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-}
-
-func (o *DeleteIncidentImpactResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
 }

@@ -8,15 +8,15 @@ import (
 )
 
 type IncidentsLifecycleMilestoneEntity struct {
-	ID          *string       `json:"id,omitempty"`
-	Name        *string       `json:"name,omitempty"`
-	Description *string       `json:"description,omitempty"`
-	Slug        *string       `json:"slug,omitempty"`
-	Position    *int          `json:"position,omitempty"`
-	OccurredAt  *time.Time    `json:"occurred_at,omitempty"`
-	Duration    *string       `json:"duration,omitempty"`
-	UpdatedBy   *AuthorEntity `json:"updated_by,omitempty"`
-	UpdatedAt   *time.Time    `json:"updated_at,omitempty"`
+	ID          *string               `json:"id,omitempty"`
+	Name        *string               `json:"name,omitempty"`
+	Description *string               `json:"description,omitempty"`
+	Slug        *string               `json:"slug,omitempty"`
+	Position    *int                  `json:"position,omitempty"`
+	OccurredAt  *time.Time            `json:"occurred_at,omitempty"`
+	Duration    *string               `json:"duration,omitempty"`
+	UpdatedBy   *NullableAuthorEntity `json:"updated_by,omitempty"`
+	UpdatedAt   *time.Time            `json:"updated_at,omitempty"`
 }
 
 func (i IncidentsLifecycleMilestoneEntity) MarshalJSON() ([]byte, error) {
@@ -79,7 +79,7 @@ func (o *IncidentsLifecycleMilestoneEntity) GetDuration() *string {
 	return o.Duration
 }
 
-func (o *IncidentsLifecycleMilestoneEntity) GetUpdatedBy() *AuthorEntity {
+func (o *IncidentsLifecycleMilestoneEntity) GetUpdatedBy() *NullableAuthorEntity {
 	if o == nil {
 		return nil
 	}

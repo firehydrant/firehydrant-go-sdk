@@ -9,17 +9,17 @@ import (
 	"time"
 )
 
-type Status string
+type IncidentsRoleAssignmentEntityStatus string
 
 const (
-	StatusActive   Status = "active"
-	StatusInactive Status = "inactive"
+	IncidentsRoleAssignmentEntityStatusActive   IncidentsRoleAssignmentEntityStatus = "active"
+	IncidentsRoleAssignmentEntityStatusInactive IncidentsRoleAssignmentEntityStatus = "inactive"
 )
 
-func (e Status) ToPointer() *Status {
+func (e IncidentsRoleAssignmentEntityStatus) ToPointer() *IncidentsRoleAssignmentEntityStatus {
 	return &e
 }
-func (e *Status) UnmarshalJSON(data []byte) error {
+func (e *IncidentsRoleAssignmentEntityStatus) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -28,23 +28,21 @@ func (e *Status) UnmarshalJSON(data []byte) error {
 	case "active":
 		fallthrough
 	case "inactive":
-		*e = Status(v)
+		*e = IncidentsRoleAssignmentEntityStatus(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for Status: %v", v)
+		return fmt.Errorf("invalid value for IncidentsRoleAssignmentEntityStatus: %v", v)
 	}
 }
 
 // IncidentsRoleAssignmentEntity - Incidents_RoleAssignmentEntity model
 type IncidentsRoleAssignmentEntity struct {
-	ID        *string    `json:"id,omitempty"`
-	Status    *Status    `json:"status,omitempty"`
-	CreatedAt *time.Time `json:"created_at,omitempty"`
-	UpdatedAt *time.Time `json:"updated_at,omitempty"`
-	// IncidentRoleEntity model
-	IncidentRole *IncidentRoleEntity `json:"incident_role,omitempty"`
-	// UserEntity model
-	User *UserEntity `json:"user,omitempty"`
+	ID           *string                              `json:"id,omitempty"`
+	Status       *IncidentsRoleAssignmentEntityStatus `json:"status,omitempty"`
+	CreatedAt    *time.Time                           `json:"created_at,omitempty"`
+	UpdatedAt    *time.Time                           `json:"updated_at,omitempty"`
+	IncidentRole *NullableIncidentRoleEntity          `json:"incident_role,omitempty"`
+	User         *NullableUserEntity                  `json:"user,omitempty"`
 }
 
 func (i IncidentsRoleAssignmentEntity) MarshalJSON() ([]byte, error) {
@@ -65,7 +63,7 @@ func (o *IncidentsRoleAssignmentEntity) GetID() *string {
 	return o.ID
 }
 
-func (o *IncidentsRoleAssignmentEntity) GetStatus() *Status {
+func (o *IncidentsRoleAssignmentEntity) GetStatus() *IncidentsRoleAssignmentEntityStatus {
 	if o == nil {
 		return nil
 	}
@@ -86,14 +84,14 @@ func (o *IncidentsRoleAssignmentEntity) GetUpdatedAt() *time.Time {
 	return o.UpdatedAt
 }
 
-func (o *IncidentsRoleAssignmentEntity) GetIncidentRole() *IncidentRoleEntity {
+func (o *IncidentsRoleAssignmentEntity) GetIncidentRole() *NullableIncidentRoleEntity {
 	if o == nil {
 		return nil
 	}
 	return o.IncidentRole
 }
 
-func (o *IncidentsRoleAssignmentEntity) GetUser() *UserEntity {
+func (o *IncidentsRoleAssignmentEntity) GetUser() *NullableUserEntity {
 	if o == nil {
 		return nil
 	}

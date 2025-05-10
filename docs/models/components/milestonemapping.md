@@ -1,0 +1,9 @@
+# MilestoneMapping
+
+
+## Fields
+
+| Field                                                                                                      | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `MilestoneID`                                                                                              | *string*                                                                                                   | :heavy_check_mark:                                                                                         | FireHydrant milestone id                                                                                   |
+| `Status`                                                                                                   | [components.UpdateStatuspageConnectionStatus](../../models/components/updatestatuspageconnectionstatus.md) | :heavy_check_mark:                                                                                         | Statuspage.io status                                                                                       |

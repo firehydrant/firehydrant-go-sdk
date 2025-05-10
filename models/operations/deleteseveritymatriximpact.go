@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type DeleteSeverityMatrixImpactRequest struct {
 	ImpactID string `pathParam:"style=simple,explode=false,name=impact_id"`
 }
@@ -15,24 +11,4 @@ func (o *DeleteSeverityMatrixImpactRequest) GetImpactID() string {
 		return ""
 	}
 	return o.ImpactID
-}
-
-type DeleteSeverityMatrixImpactResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Delete a specific impact
-	SeverityMatrixImpactEntity *components.SeverityMatrixImpactEntity
-}
-
-func (o *DeleteSeverityMatrixImpactResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *DeleteSeverityMatrixImpactResponse) GetSeverityMatrixImpactEntity() *components.SeverityMatrixImpactEntity {
-	if o == nil {
-		return nil
-	}
-	return o.SeverityMatrixImpactEntity
 }

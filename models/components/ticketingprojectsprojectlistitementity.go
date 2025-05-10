@@ -9,14 +9,12 @@ import (
 
 // TicketingProjectsProjectListItemEntity - Ticketing_Projects_ProjectListItemEntity model
 type TicketingProjectsProjectListItemEntity struct {
-	ID   *string `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	// Ticketing_ProjectConfigEntity model
-	Config *TicketingProjectConfigEntity `json:"config,omitempty"`
-	// Ticketing_ProjectFieldMapEntity model
-	FieldMap       *TicketingProjectFieldMapEntity `json:"field_map,omitempty"`
-	UpdatedAt      *time.Time                      `json:"updated_at,omitempty"`
-	ConnectionSlug *string                         `json:"connection_slug,omitempty"`
+	ID             *string                                 `json:"id,omitempty"`
+	Name           *string                                 `json:"name,omitempty"`
+	Config         *NullableTicketingProjectConfigEntity   `json:"config,omitempty"`
+	FieldMap       *NullableTicketingProjectFieldMapEntity `json:"field_map,omitempty"`
+	UpdatedAt      *time.Time                              `json:"updated_at,omitempty"`
+	ConnectionSlug *string                                 `json:"connection_slug,omitempty"`
 }
 
 func (t TicketingProjectsProjectListItemEntity) MarshalJSON() ([]byte, error) {
@@ -44,14 +42,14 @@ func (o *TicketingProjectsProjectListItemEntity) GetName() *string {
 	return o.Name
 }
 
-func (o *TicketingProjectsProjectListItemEntity) GetConfig() *TicketingProjectConfigEntity {
+func (o *TicketingProjectsProjectListItemEntity) GetConfig() *NullableTicketingProjectConfigEntity {
 	if o == nil {
 		return nil
 	}
 	return o.Config
 }
 
-func (o *TicketingProjectsProjectListItemEntity) GetFieldMap() *TicketingProjectFieldMapEntity {
+func (o *TicketingProjectsProjectListItemEntity) GetFieldMap() *NullableTicketingProjectFieldMapEntity {
 	if o == nil {
 		return nil
 	}

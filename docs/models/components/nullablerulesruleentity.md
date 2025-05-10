@@ -1,0 +1,9 @@
+# NullableRulesRuleEntity
+
+
+## Fields
+
+| Field                                                                                               | Type                                                                                                | Required                                                                                            | Description                                                                                         |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `Logic`                                                                                             | [*components.NullableRulesRuleEntityLogic](../../models/components/nullablerulesruleentitylogic.md) | :heavy_minus_sign:                                                                                  | An unstructured object of key/value pairs describing the logic for applying the rule.               |
+| `UserData`                                                                                          | [*components.NullableFHTypesGenericEntity](../../models/components/nullablefhtypesgenericentity.md) | :heavy_minus_sign:                                                                                  | N/A                                                                                                 |

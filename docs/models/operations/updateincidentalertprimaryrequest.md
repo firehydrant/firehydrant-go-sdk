@@ -1,0 +1,10 @@
+# UpdateIncidentAlertPrimaryRequest
+
+
+## Fields
+
+| Field                                                                                          | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `IncidentAlertID`                                                                              | *string*                                                                                       | :heavy_check_mark:                                                                             | N/A                                                                                            |
+| `IncidentID`                                                                                   | *string*                                                                                       | :heavy_check_mark:                                                                             | N/A                                                                                            |
+| `UpdateIncidentAlertPrimary`                                                                   | [components.UpdateIncidentAlertPrimary](../../models/components/updateincidentalertprimary.md) | :heavy_check_mark:                                                                             | N/A                                                                                            |

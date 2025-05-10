@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type GetChangeEventRequest struct {
 	ChangeEventID string `pathParam:"style=simple,explode=false,name=change_event_id"`
 }
@@ -15,24 +11,4 @@ func (o *GetChangeEventRequest) GetChangeEventID() string {
 		return ""
 	}
 	return o.ChangeEventID
-}
-
-type GetChangeEventResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Retrieve a change event
-	ChangeEventEntity *components.ChangeEventEntity
-}
-
-func (o *GetChangeEventResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *GetChangeEventResponse) GetChangeEventEntity() *components.ChangeEventEntity {
-	if o == nil {
-		return nil
-	}
-	return o.ChangeEventEntity
 }

@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-type ChangeEventEntityAttachments struct {
+type ChangeEventEntityAttachment struct {
 }
 
 // ChangeEventEntityLabels - An object of label key and values
@@ -31,7 +31,7 @@ type ChangeEventEntity struct {
 	Identities      []ChangeIdentityEntity   `json:"identities,omitempty"`
 	Authors         []AuthorEntity           `json:"authors,omitempty"`
 	// A list of objects attached to this item. Can be one of: LinkEntity, CustomerSupportIssueEntity, or GenericAttachmentEntity
-	Attachments []ChangeEventEntityAttachments `json:"attachments,omitempty"`
+	Attachments []ChangeEventEntityAttachment `json:"attachments,omitempty"`
 	// An object of label key and values
 	Labels   *ChangeEventEntityLabels `json:"labels,omitempty"`
 	Services []ServiceEntityLite      `json:"services,omitempty"`
@@ -146,7 +146,7 @@ func (o *ChangeEventEntity) GetAuthors() []AuthorEntity {
 	return o.Authors
 }
 
-func (o *ChangeEventEntity) GetAttachments() []ChangeEventEntityAttachments {
+func (o *ChangeEventEntity) GetAttachments() []ChangeEventEntityAttachment {
 	if o == nil {
 		return nil
 	}

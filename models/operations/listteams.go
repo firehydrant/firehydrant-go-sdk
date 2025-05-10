@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type ListTeamsRequest struct {
 	Page    *int `queryParam:"style=form,explode=true,name=page"`
 	PerPage *int `queryParam:"style=form,explode=true,name=per_page"`
@@ -68,24 +64,4 @@ func (o *ListTeamsRequest) GetLite() *bool {
 		return nil
 	}
 	return o.Lite
-}
-
-type ListTeamsResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// List all of the teams in the organization
-	TeamEntityPaginated *components.TeamEntityPaginated
-}
-
-func (o *ListTeamsResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListTeamsResponse) GetTeamEntityPaginated() *components.TeamEntityPaginated {
-	if o == nil {
-		return nil
-	}
-	return o.TeamEntityPaginated
 }

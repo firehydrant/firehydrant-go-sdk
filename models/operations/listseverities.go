@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type ListSeveritiesRequest struct {
 	Page    *int `queryParam:"style=form,explode=true,name=page"`
 	PerPage *int `queryParam:"style=form,explode=true,name=per_page"`
@@ -23,24 +19,4 @@ func (o *ListSeveritiesRequest) GetPerPage() *int {
 		return nil
 	}
 	return o.PerPage
-}
-
-type ListSeveritiesResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Lists severities
-	SeverityEntityPaginated *components.SeverityEntityPaginated
-}
-
-func (o *ListSeveritiesResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListSeveritiesResponse) GetSeverityEntityPaginated() *components.SeverityEntityPaginated {
-	if o == nil {
-		return nil
-	}
-	return o.SeverityEntityPaginated
 }

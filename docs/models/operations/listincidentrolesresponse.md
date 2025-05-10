@@ -1,9 +1,0 @@
-# ListIncidentRolesResponse
-
-
-## Fields
-
-| Field                                                                                             | Type                                                                                              | Required                                                                                          | Description                                                                                       |
-| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| `HTTPMeta`                                                                                        | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                | :heavy_check_mark:                                                                                | N/A                                                                                               |
-| `IncidentRoleEntityPaginated`                                                                     | [*components.IncidentRoleEntityPaginated](../../models/components/incidentroleentitypaginated.md) | :heavy_minus_sign:                                                                                | List all of the incident roles in the organization                                                |

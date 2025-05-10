@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type DeleteChangeRequest struct {
 	ChangeID string `pathParam:"style=simple,explode=false,name=change_id"`
 }
@@ -15,15 +11,4 @@ func (o *DeleteChangeRequest) GetChangeID() string {
 		return ""
 	}
 	return o.ChangeID
-}
-
-type DeleteChangeResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-}
-
-func (o *DeleteChangeResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
 }

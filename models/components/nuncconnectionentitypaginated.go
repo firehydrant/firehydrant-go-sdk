@@ -4,8 +4,8 @@ package components
 
 // NuncConnectionEntityPaginated model
 type NuncConnectionEntityPaginated struct {
-	Data       []NuncConnectionEntity `json:"data,omitempty"`
-	Pagination *PaginationEntity      `json:"pagination,omitempty"`
+	Data       []NuncConnectionEntity    `json:"data,omitempty"`
+	Pagination *NullablePaginationEntity `json:"pagination,omitempty"`
 }
 
 func (o *NuncConnectionEntityPaginated) GetData() []NuncConnectionEntity {
@@ -15,7 +15,7 @@ func (o *NuncConnectionEntityPaginated) GetData() []NuncConnectionEntity {
 	return o.Data
 }
 
-func (o *NuncConnectionEntityPaginated) GetPagination() *PaginationEntity {
+func (o *NuncConnectionEntityPaginated) GetPagination() *NullablePaginationEntity {
 	if o == nil {
 		return nil
 	}

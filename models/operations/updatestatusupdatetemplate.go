@@ -7,8 +7,8 @@ import (
 )
 
 type UpdateStatusUpdateTemplateRequest struct {
-	StatusUpdateTemplateID                             string                                                        `pathParam:"style=simple,explode=false,name=status_update_template_id"`
-	PatchV1StatusUpdateTemplatesStatusUpdateTemplateID components.PatchV1StatusUpdateTemplatesStatusUpdateTemplateID `request:"mediaType=application/json"`
+	StatusUpdateTemplateID     string                                `pathParam:"style=simple,explode=false,name=status_update_template_id"`
+	UpdateStatusUpdateTemplate components.UpdateStatusUpdateTemplate `request:"mediaType=application/json"`
 }
 
 func (o *UpdateStatusUpdateTemplateRequest) GetStatusUpdateTemplateID() string {
@@ -18,29 +18,9 @@ func (o *UpdateStatusUpdateTemplateRequest) GetStatusUpdateTemplateID() string {
 	return o.StatusUpdateTemplateID
 }
 
-func (o *UpdateStatusUpdateTemplateRequest) GetPatchV1StatusUpdateTemplatesStatusUpdateTemplateID() components.PatchV1StatusUpdateTemplatesStatusUpdateTemplateID {
+func (o *UpdateStatusUpdateTemplateRequest) GetUpdateStatusUpdateTemplate() components.UpdateStatusUpdateTemplate {
 	if o == nil {
-		return components.PatchV1StatusUpdateTemplatesStatusUpdateTemplateID{}
+		return components.UpdateStatusUpdateTemplate{}
 	}
-	return o.PatchV1StatusUpdateTemplatesStatusUpdateTemplateID
-}
-
-type UpdateStatusUpdateTemplateResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Update a single status update template
-	StatusUpdateTemplateEntity *components.StatusUpdateTemplateEntity
-}
-
-func (o *UpdateStatusUpdateTemplateResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *UpdateStatusUpdateTemplateResponse) GetStatusUpdateTemplateEntity() *components.StatusUpdateTemplateEntity {
-	if o == nil {
-		return nil
-	}
-	return o.StatusUpdateTemplateEntity
+	return o.UpdateStatusUpdateTemplate
 }

@@ -3,10 +3,41 @@
 package operations
 
 import (
-	"firehydrant/models/components"
+	"encoding/json"
+	"fmt"
 )
 
-type CreateLifecycleMilestoneRequestBody struct {
+// CreateLifecycleMilestoneAutoAssignTimestampOnCreate - The setting for auto-assigning the milestone's timestamp during incident declaration
+type CreateLifecycleMilestoneAutoAssignTimestampOnCreate string
+
+const (
+	CreateLifecycleMilestoneAutoAssignTimestampOnCreateAlwaysSetOnCreate     CreateLifecycleMilestoneAutoAssignTimestampOnCreate = "always_set_on_create"
+	CreateLifecycleMilestoneAutoAssignTimestampOnCreateOnlySetOnManualCreate CreateLifecycleMilestoneAutoAssignTimestampOnCreate = "only_set_on_manual_create"
+	CreateLifecycleMilestoneAutoAssignTimestampOnCreateNeverSetOnCreate      CreateLifecycleMilestoneAutoAssignTimestampOnCreate = "never_set_on_create"
+)
+
+func (e CreateLifecycleMilestoneAutoAssignTimestampOnCreate) ToPointer() *CreateLifecycleMilestoneAutoAssignTimestampOnCreate {
+	return &e
+}
+func (e *CreateLifecycleMilestoneAutoAssignTimestampOnCreate) UnmarshalJSON(data []byte) error {
+	var v string
+	if err := json.Unmarshal(data, &v); err != nil {
+		return err
+	}
+	switch v {
+	case "always_set_on_create":
+		fallthrough
+	case "only_set_on_manual_create":
+		fallthrough
+	case "never_set_on_create":
+		*e = CreateLifecycleMilestoneAutoAssignTimestampOnCreate(v)
+		return nil
+	default:
+		return fmt.Errorf("invalid value for CreateLifecycleMilestoneAutoAssignTimestampOnCreate: %v", v)
+	}
+}
+
+type CreateLifecycleMilestoneRequest struct {
 	// The name of the milestone
 	Name string `json:"name"`
 	// A long-form description of the milestone's purpose
@@ -19,66 +50,55 @@ type CreateLifecycleMilestoneRequestBody struct {
 	Position *int `json:"position,omitempty"`
 	// The ID of a later milestone that cannot be started until this milestone has a timestamp populated
 	RequiredAtMilestoneID *string `json:"required_at_milestone_id,omitempty"`
+	// The setting for auto-assigning the milestone's timestamp during incident declaration
+	AutoAssignTimestampOnCreate *CreateLifecycleMilestoneAutoAssignTimestampOnCreate `json:"auto_assign_timestamp_on_create,omitempty"`
 }
 
-func (o *CreateLifecycleMilestoneRequestBody) GetName() string {
+func (o *CreateLifecycleMilestoneRequest) GetName() string {
 	if o == nil {
 		return ""
 	}
 	return o.Name
 }
 
-func (o *CreateLifecycleMilestoneRequestBody) GetDescription() string {
+func (o *CreateLifecycleMilestoneRequest) GetDescription() string {
 	if o == nil {
 		return ""
 	}
 	return o.Description
 }
 
-func (o *CreateLifecycleMilestoneRequestBody) GetSlug() *string {
+func (o *CreateLifecycleMilestoneRequest) GetSlug() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Slug
 }
 
-func (o *CreateLifecycleMilestoneRequestBody) GetPhaseID() string {
+func (o *CreateLifecycleMilestoneRequest) GetPhaseID() string {
 	if o == nil {
 		return ""
 	}
 	return o.PhaseID
 }
 
-func (o *CreateLifecycleMilestoneRequestBody) GetPosition() *int {
+func (o *CreateLifecycleMilestoneRequest) GetPosition() *int {
 	if o == nil {
 		return nil
 	}
 	return o.Position
 }
 
-func (o *CreateLifecycleMilestoneRequestBody) GetRequiredAtMilestoneID() *string {
+func (o *CreateLifecycleMilestoneRequest) GetRequiredAtMilestoneID() *string {
 	if o == nil {
 		return nil
 	}
 	return o.RequiredAtMilestoneID
 }
 
-type CreateLifecycleMilestoneResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Create a new milestone
-	LifecyclesPhaseEntityList *components.LifecyclesPhaseEntityList
-}
-
-func (o *CreateLifecycleMilestoneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *CreateLifecycleMilestoneResponse) GetLifecyclesPhaseEntityList() *components.LifecyclesPhaseEntityList {
+func (o *CreateLifecycleMilestoneRequest) GetAutoAssignTimestampOnCreate() *CreateLifecycleMilestoneAutoAssignTimestampOnCreate {
 	if o == nil {
 		return nil
 	}
-	return o.LifecyclesPhaseEntityList
+	return o.AutoAssignTimestampOnCreate
 }

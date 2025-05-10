@@ -1,0 +1,10 @@
+# UpdateIncidentRetrospectiveRequest
+
+
+## Fields
+
+| Field                                                                                            | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `RetrospectiveID`                                                                                | *string*                                                                                         | :heavy_check_mark:                                                                               | N/A                                                                                              |
+| `IncidentID`                                                                                     | *string*                                                                                         | :heavy_check_mark:                                                                               | N/A                                                                                              |
+| `UpdateIncidentRetrospective`                                                                    | [components.UpdateIncidentRetrospective](../../models/components/updateincidentretrospective.md) | :heavy_check_mark:                                                                               | N/A                                                                                              |

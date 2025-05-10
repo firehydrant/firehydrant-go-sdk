@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type ListFunctionalitiesRequest struct {
 	// A query to search functionalities by their name or description
 	Query *string `queryParam:"style=form,explode=true,name=query"`
@@ -77,24 +73,4 @@ func (o *ListFunctionalitiesRequest) GetPerPage() *int {
 		return nil
 	}
 	return o.PerPage
-}
-
-type ListFunctionalitiesResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// List all of the functionalities that have been added to the organiation
-	FunctionalityEntityPaginated *components.FunctionalityEntityPaginated
-}
-
-func (o *ListFunctionalitiesResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListFunctionalitiesResponse) GetFunctionalityEntityPaginated() *components.FunctionalityEntityPaginated {
-	if o == nil {
-		return nil
-	}
-	return o.FunctionalityEntityPaginated
 }

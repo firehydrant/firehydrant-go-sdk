@@ -1,9 +1,0 @@
-# DeleteIncidentRoleAssignmentResponse
-
-
-## Fields
-
-| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
-| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| `HTTPMeta`                                                                                            | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                    | :heavy_check_mark:                                                                                    | N/A                                                                                                   |
-| `IncidentsRoleAssignmentEntity`                                                                       | [*components.IncidentsRoleAssignmentEntity](../../models/components/incidentsroleassignmententity.md) | :heavy_minus_sign:                                                                                    | Unassign a role from a user                                                                           |

@@ -1,0 +1,11 @@
+# GetSignalsIngestURLRequest
+
+
+## Fields
+
+| Field                                                                                        | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `TeamID`                                                                                     | **string*                                                                                    | :heavy_minus_sign:                                                                           | Team ID to send signals to directly                                                          |
+| `EscalationPolicyID`                                                                         | **string*                                                                                    | :heavy_minus_sign:                                                                           | Escalation policy ID to send signals to directly. `team_id` is required if this is provided. |
+| `OnCallScheduleID`                                                                           | **string*                                                                                    | :heavy_minus_sign:                                                                           | On-call schedule ID to send signals to directly. `team_id` is required if this is provided.  |
+| `UserID`                                                                                     | **string*                                                                                    | :heavy_minus_sign:                                                                           | User ID to send signals to directly                                                          |

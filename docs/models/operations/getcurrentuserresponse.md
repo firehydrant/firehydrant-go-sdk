@@ -1,9 +1,0 @@
-# GetCurrentUserResponse
-
-
-## Fields
-
-| Field                                                                         | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `HTTPMeta`                                                                    | [components.HTTPMetadata](../../models/components/httpmetadata.md)            | :heavy_check_mark:                                                            | N/A                                                                           |
-| `CurrentUserEntity`                                                           | [*components.CurrentUserEntity](../../models/components/currentuserentity.md) | :heavy_minus_sign:                                                            | Retrieve the current user                                                     |

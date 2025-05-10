@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type DeleteWebhookRequest struct {
 	WebhookID string `pathParam:"style=simple,explode=false,name=webhook_id"`
 }
@@ -15,15 +11,4 @@ func (o *DeleteWebhookRequest) GetWebhookID() string {
 		return ""
 	}
 	return o.WebhookID
-}
-
-type DeleteWebhookResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-}
-
-func (o *DeleteWebhookResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
 }

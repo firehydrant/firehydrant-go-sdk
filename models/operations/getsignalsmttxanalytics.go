@@ -5,26 +5,25 @@ package operations
 import (
 	"encoding/json"
 	"firehydrant/internal/utils"
-	"firehydrant/models/components"
 	"fmt"
 	"time"
 )
 
-// GetSignalsMttxAnalyticsQueryParamGroupBy - String that determines how records are grouped
-type GetSignalsMttxAnalyticsQueryParamGroupBy string
+// GetSignalsMttxAnalyticsGroupBy - String that determines how records are grouped
+type GetSignalsMttxAnalyticsGroupBy string
 
 const (
-	GetSignalsMttxAnalyticsQueryParamGroupBySignalRules  GetSignalsMttxAnalyticsQueryParamGroupBy = "signal_rules"
-	GetSignalsMttxAnalyticsQueryParamGroupByTeams        GetSignalsMttxAnalyticsQueryParamGroupBy = "teams"
-	GetSignalsMttxAnalyticsQueryParamGroupByServices     GetSignalsMttxAnalyticsQueryParamGroupBy = "services"
-	GetSignalsMttxAnalyticsQueryParamGroupByEnvironments GetSignalsMttxAnalyticsQueryParamGroupBy = "environments"
-	GetSignalsMttxAnalyticsQueryParamGroupByTags         GetSignalsMttxAnalyticsQueryParamGroupBy = "tags"
+	GetSignalsMttxAnalyticsGroupBySignalRules  GetSignalsMttxAnalyticsGroupBy = "signal_rules"
+	GetSignalsMttxAnalyticsGroupByTeams        GetSignalsMttxAnalyticsGroupBy = "teams"
+	GetSignalsMttxAnalyticsGroupByServices     GetSignalsMttxAnalyticsGroupBy = "services"
+	GetSignalsMttxAnalyticsGroupByEnvironments GetSignalsMttxAnalyticsGroupBy = "environments"
+	GetSignalsMttxAnalyticsGroupByTags         GetSignalsMttxAnalyticsGroupBy = "tags"
 )
 
-func (e GetSignalsMttxAnalyticsQueryParamGroupBy) ToPointer() *GetSignalsMttxAnalyticsQueryParamGroupBy {
+func (e GetSignalsMttxAnalyticsGroupBy) ToPointer() *GetSignalsMttxAnalyticsGroupBy {
 	return &e
 }
-func (e *GetSignalsMttxAnalyticsQueryParamGroupBy) UnmarshalJSON(data []byte) error {
+func (e *GetSignalsMttxAnalyticsGroupBy) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -39,28 +38,28 @@ func (e *GetSignalsMttxAnalyticsQueryParamGroupBy) UnmarshalJSON(data []byte) er
 	case "environments":
 		fallthrough
 	case "tags":
-		*e = GetSignalsMttxAnalyticsQueryParamGroupBy(v)
+		*e = GetSignalsMttxAnalyticsGroupBy(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetSignalsMttxAnalyticsQueryParamGroupBy: %v", v)
+		return fmt.Errorf("invalid value for GetSignalsMttxAnalyticsGroupBy: %v", v)
 	}
 }
 
-// GetSignalsMttxAnalyticsQueryParamSortBy - String that determines how records are sorted
-type GetSignalsMttxAnalyticsQueryParamSortBy string
+// GetSignalsMttxAnalyticsSortBy - String that determines how records are sorted
+type GetSignalsMttxAnalyticsSortBy string
 
 const (
-	GetSignalsMttxAnalyticsQueryParamSortByTotalOpenedAlerts   GetSignalsMttxAnalyticsQueryParamSortBy = "total_opened_alerts"
-	GetSignalsMttxAnalyticsQueryParamSortByTotalAckedAlerts    GetSignalsMttxAnalyticsQueryParamSortBy = "total_acked_alerts"
-	GetSignalsMttxAnalyticsQueryParamSortByTotalIncidents      GetSignalsMttxAnalyticsQueryParamSortBy = "total_incidents"
-	GetSignalsMttxAnalyticsQueryParamSortByAckedPercentage     GetSignalsMttxAnalyticsQueryParamSortBy = "acked_percentage"
-	GetSignalsMttxAnalyticsQueryParamSortByIncidentsPercentage GetSignalsMttxAnalyticsQueryParamSortBy = "incidents_percentage"
+	GetSignalsMttxAnalyticsSortByTotalOpenedAlerts   GetSignalsMttxAnalyticsSortBy = "total_opened_alerts"
+	GetSignalsMttxAnalyticsSortByTotalAckedAlerts    GetSignalsMttxAnalyticsSortBy = "total_acked_alerts"
+	GetSignalsMttxAnalyticsSortByTotalIncidents      GetSignalsMttxAnalyticsSortBy = "total_incidents"
+	GetSignalsMttxAnalyticsSortByAckedPercentage     GetSignalsMttxAnalyticsSortBy = "acked_percentage"
+	GetSignalsMttxAnalyticsSortByIncidentsPercentage GetSignalsMttxAnalyticsSortBy = "incidents_percentage"
 )
 
-func (e GetSignalsMttxAnalyticsQueryParamSortBy) ToPointer() *GetSignalsMttxAnalyticsQueryParamSortBy {
+func (e GetSignalsMttxAnalyticsSortBy) ToPointer() *GetSignalsMttxAnalyticsSortBy {
 	return &e
 }
-func (e *GetSignalsMttxAnalyticsQueryParamSortBy) UnmarshalJSON(data []byte) error {
+func (e *GetSignalsMttxAnalyticsSortBy) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -75,25 +74,25 @@ func (e *GetSignalsMttxAnalyticsQueryParamSortBy) UnmarshalJSON(data []byte) err
 	case "acked_percentage":
 		fallthrough
 	case "incidents_percentage":
-		*e = GetSignalsMttxAnalyticsQueryParamSortBy(v)
+		*e = GetSignalsMttxAnalyticsSortBy(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetSignalsMttxAnalyticsQueryParamSortBy: %v", v)
+		return fmt.Errorf("invalid value for GetSignalsMttxAnalyticsSortBy: %v", v)
 	}
 }
 
-// GetSignalsMttxAnalyticsQueryParamSortDirection - String that determines how records are sorted
-type GetSignalsMttxAnalyticsQueryParamSortDirection string
+// GetSignalsMttxAnalyticsSortDirection - String that determines how records are sorted
+type GetSignalsMttxAnalyticsSortDirection string
 
 const (
-	GetSignalsMttxAnalyticsQueryParamSortDirectionAsc  GetSignalsMttxAnalyticsQueryParamSortDirection = "asc"
-	GetSignalsMttxAnalyticsQueryParamSortDirectionDesc GetSignalsMttxAnalyticsQueryParamSortDirection = "desc"
+	GetSignalsMttxAnalyticsSortDirectionAsc  GetSignalsMttxAnalyticsSortDirection = "asc"
+	GetSignalsMttxAnalyticsSortDirectionDesc GetSignalsMttxAnalyticsSortDirection = "desc"
 )
 
-func (e GetSignalsMttxAnalyticsQueryParamSortDirection) ToPointer() *GetSignalsMttxAnalyticsQueryParamSortDirection {
+func (e GetSignalsMttxAnalyticsSortDirection) ToPointer() *GetSignalsMttxAnalyticsSortDirection {
 	return &e
 }
-func (e *GetSignalsMttxAnalyticsQueryParamSortDirection) UnmarshalJSON(data []byte) error {
+func (e *GetSignalsMttxAnalyticsSortDirection) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -102,10 +101,10 @@ func (e *GetSignalsMttxAnalyticsQueryParamSortDirection) UnmarshalJSON(data []by
 	case "asc":
 		fallthrough
 	case "desc":
-		*e = GetSignalsMttxAnalyticsQueryParamSortDirection(v)
+		*e = GetSignalsMttxAnalyticsSortDirection(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetSignalsMttxAnalyticsQueryParamSortDirection: %v", v)
+		return fmt.Errorf("invalid value for GetSignalsMttxAnalyticsSortDirection: %v", v)
 	}
 }
 
@@ -123,11 +122,11 @@ type GetSignalsMttxAnalyticsRequest struct {
 	// A comma separated list of user IDs
 	Users *string `queryParam:"style=form,explode=true,name=users"`
 	// String that determines how records are grouped
-	GroupBy *GetSignalsMttxAnalyticsQueryParamGroupBy `queryParam:"style=form,explode=true,name=group_by"`
+	GroupBy *GetSignalsMttxAnalyticsGroupBy `queryParam:"style=form,explode=true,name=group_by"`
 	// String that determines how records are sorted
-	SortBy *GetSignalsMttxAnalyticsQueryParamSortBy `queryParam:"style=form,explode=true,name=sort_by"`
+	SortBy *GetSignalsMttxAnalyticsSortBy `queryParam:"style=form,explode=true,name=sort_by"`
 	// String that determines how records are sorted
-	SortDirection *GetSignalsMttxAnalyticsQueryParamSortDirection `queryParam:"style=form,explode=true,name=sort_direction"`
+	SortDirection *GetSignalsMttxAnalyticsSortDirection `queryParam:"style=form,explode=true,name=sort_direction"`
 	// The start date to return metrics from
 	StartDate *time.Time `queryParam:"style=form,explode=true,name=start_date"`
 	// The end date to return metrics from
@@ -187,21 +186,21 @@ func (o *GetSignalsMttxAnalyticsRequest) GetUsers() *string {
 	return o.Users
 }
 
-func (o *GetSignalsMttxAnalyticsRequest) GetGroupBy() *GetSignalsMttxAnalyticsQueryParamGroupBy {
+func (o *GetSignalsMttxAnalyticsRequest) GetGroupBy() *GetSignalsMttxAnalyticsGroupBy {
 	if o == nil {
 		return nil
 	}
 	return o.GroupBy
 }
 
-func (o *GetSignalsMttxAnalyticsRequest) GetSortBy() *GetSignalsMttxAnalyticsQueryParamSortBy {
+func (o *GetSignalsMttxAnalyticsRequest) GetSortBy() *GetSignalsMttxAnalyticsSortBy {
 	if o == nil {
 		return nil
 	}
 	return o.SortBy
 }
 
-func (o *GetSignalsMttxAnalyticsRequest) GetSortDirection() *GetSignalsMttxAnalyticsQueryParamSortDirection {
+func (o *GetSignalsMttxAnalyticsRequest) GetSortDirection() *GetSignalsMttxAnalyticsSortDirection {
 	if o == nil {
 		return nil
 	}
@@ -220,15 +219,4 @@ func (o *GetSignalsMttxAnalyticsRequest) GetEndDate() *time.Time {
 		return nil
 	}
 	return o.EndDate
-}
-
-type GetSignalsMttxAnalyticsResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-}
-
-func (o *GetSignalsMttxAnalyticsResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
 }

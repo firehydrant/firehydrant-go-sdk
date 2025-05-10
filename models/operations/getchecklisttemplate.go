@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type GetChecklistTemplateRequest struct {
 	ID string `pathParam:"style=simple,explode=false,name=id"`
 }
@@ -15,24 +11,4 @@ func (o *GetChecklistTemplateRequest) GetID() string {
 		return ""
 	}
 	return o.ID
-}
-
-type GetChecklistTemplateResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Retrieves a single checklist template by ID
-	ChecklistTemplateEntity *components.ChecklistTemplateEntity
-}
-
-func (o *GetChecklistTemplateResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *GetChecklistTemplateResponse) GetChecklistTemplateEntity() *components.ChecklistTemplateEntity {
-	if o == nil {
-		return nil
-	}
-	return o.ChecklistTemplateEntity
 }

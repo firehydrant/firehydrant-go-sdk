@@ -1,9 +1,0 @@
-# ListIncidentMilestonesResponse
-
-
-## Fields
-
-| Field                                                                                                         | Type                                                                                                          | Required                                                                                                      | Description                                                                                                   |
-| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| `HTTPMeta`                                                                                                    | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                            | :heavy_check_mark:                                                                                            | N/A                                                                                                           |
-| `IncidentsMilestoneEntityPaginated`                                                                           | [*components.IncidentsMilestoneEntityPaginated](../../models/components/incidentsmilestoneentitypaginated.md) | :heavy_minus_sign:                                                                                            | List times and durations for each milestone on an incident                                                    |

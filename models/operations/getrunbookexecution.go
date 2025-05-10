@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type GetRunbookExecutionRequest struct {
 	ExecutionID string `pathParam:"style=simple,explode=false,name=execution_id"`
 }
@@ -15,24 +11,4 @@ func (o *GetRunbookExecutionRequest) GetExecutionID() string {
 		return ""
 	}
 	return o.ExecutionID
-}
-
-type GetRunbookExecutionResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Retrieve a runbook execution by ID
-	RunbooksExecutionEntity *components.RunbooksExecutionEntity
-}
-
-func (o *GetRunbookExecutionResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *GetRunbookExecutionResponse) GetRunbooksExecutionEntity() *components.RunbooksExecutionEntity {
-	if o == nil {
-		return nil
-	}
-	return o.RunbooksExecutionEntity
 }

@@ -5,23 +5,22 @@ package operations
 import (
 	"encoding/json"
 	"firehydrant/internal/utils"
-	"firehydrant/models/components"
 	"firehydrant/types"
 	"fmt"
 )
 
-type QueryParamSortField string
+type ListUserInvolvementMetricsSortField string
 
 const (
-	QueryParamSortFieldUserCount     QueryParamSortField = "user_count"
-	QueryParamSortFieldIncidentCount QueryParamSortField = "incident_count"
-	QueryParamSortFieldTimeSpent     QueryParamSortField = "time_spent"
+	ListUserInvolvementMetricsSortFieldUserCount     ListUserInvolvementMetricsSortField = "user_count"
+	ListUserInvolvementMetricsSortFieldIncidentCount ListUserInvolvementMetricsSortField = "incident_count"
+	ListUserInvolvementMetricsSortFieldTimeSpent     ListUserInvolvementMetricsSortField = "time_spent"
 )
 
-func (e QueryParamSortField) ToPointer() *QueryParamSortField {
+func (e ListUserInvolvementMetricsSortField) ToPointer() *ListUserInvolvementMetricsSortField {
 	return &e
 }
-func (e *QueryParamSortField) UnmarshalJSON(data []byte) error {
+func (e *ListUserInvolvementMetricsSortField) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -32,24 +31,24 @@ func (e *QueryParamSortField) UnmarshalJSON(data []byte) error {
 	case "incident_count":
 		fallthrough
 	case "time_spent":
-		*e = QueryParamSortField(v)
+		*e = ListUserInvolvementMetricsSortField(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for QueryParamSortField: %v", v)
+		return fmt.Errorf("invalid value for ListUserInvolvementMetricsSortField: %v", v)
 	}
 }
 
-type QueryParamSortDirection string
+type ListUserInvolvementMetricsSortDirection string
 
 const (
-	QueryParamSortDirectionAsc  QueryParamSortDirection = "asc"
-	QueryParamSortDirectionDesc QueryParamSortDirection = "desc"
+	ListUserInvolvementMetricsSortDirectionAsc  ListUserInvolvementMetricsSortDirection = "asc"
+	ListUserInvolvementMetricsSortDirectionDesc ListUserInvolvementMetricsSortDirection = "desc"
 )
 
-func (e QueryParamSortDirection) ToPointer() *QueryParamSortDirection {
+func (e ListUserInvolvementMetricsSortDirection) ToPointer() *ListUserInvolvementMetricsSortDirection {
 	return &e
 }
-func (e *QueryParamSortDirection) UnmarshalJSON(data []byte) error {
+func (e *ListUserInvolvementMetricsSortDirection) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -58,10 +57,10 @@ func (e *QueryParamSortDirection) UnmarshalJSON(data []byte) error {
 	case "asc":
 		fallthrough
 	case "desc":
-		*e = QueryParamSortDirection(v)
+		*e = ListUserInvolvementMetricsSortDirection(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for QueryParamSortDirection: %v", v)
+		return fmt.Errorf("invalid value for ListUserInvolvementMetricsSortDirection: %v", v)
 	}
 }
 
@@ -69,12 +68,12 @@ type ListUserInvolvementMetricsRequest struct {
 	// The start date to return metrics from
 	StartDate *types.Date `queryParam:"style=form,explode=true,name=start_date"`
 	// The end date to return metrics from
-	EndDate       *types.Date              `queryParam:"style=form,explode=true,name=end_date"`
-	BucketSize    *string                  `queryParam:"style=form,explode=true,name=bucket_size"`
-	By            *string                  `queryParam:"style=form,explode=true,name=by"`
-	SortField     *QueryParamSortField     `queryParam:"style=form,explode=true,name=sort_field"`
-	SortDirection *QueryParamSortDirection `queryParam:"style=form,explode=true,name=sort_direction"`
-	SortLimit     *int                     `queryParam:"style=form,explode=true,name=sort_limit"`
+	EndDate       *types.Date                              `queryParam:"style=form,explode=true,name=end_date"`
+	BucketSize    *string                                  `queryParam:"style=form,explode=true,name=bucket_size"`
+	By            *string                                  `queryParam:"style=form,explode=true,name=by"`
+	SortField     *ListUserInvolvementMetricsSortField     `queryParam:"style=form,explode=true,name=sort_field"`
+	SortDirection *ListUserInvolvementMetricsSortDirection `queryParam:"style=form,explode=true,name=sort_direction"`
+	SortLimit     *int                                     `queryParam:"style=form,explode=true,name=sort_limit"`
 }
 
 func (l ListUserInvolvementMetricsRequest) MarshalJSON() ([]byte, error) {
@@ -116,14 +115,14 @@ func (o *ListUserInvolvementMetricsRequest) GetBy() *string {
 	return o.By
 }
 
-func (o *ListUserInvolvementMetricsRequest) GetSortField() *QueryParamSortField {
+func (o *ListUserInvolvementMetricsRequest) GetSortField() *ListUserInvolvementMetricsSortField {
 	if o == nil {
 		return nil
 	}
 	return o.SortField
 }
 
-func (o *ListUserInvolvementMetricsRequest) GetSortDirection() *QueryParamSortDirection {
+func (o *ListUserInvolvementMetricsRequest) GetSortDirection() *ListUserInvolvementMetricsSortDirection {
 	if o == nil {
 		return nil
 	}
@@ -135,24 +134,4 @@ func (o *ListUserInvolvementMetricsRequest) GetSortLimit() *int {
 		return nil
 	}
 	return o.SortLimit
-}
-
-type ListUserInvolvementMetricsResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Returns a report with time bucketed analytics data
-	MetricsMetricsEntity *components.MetricsMetricsEntity
-}
-
-func (o *ListUserInvolvementMetricsResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListUserInvolvementMetricsResponse) GetMetricsMetricsEntity() *components.MetricsMetricsEntity {
-	if o == nil {
-		return nil
-	}
-	return o.MetricsMetricsEntity
 }

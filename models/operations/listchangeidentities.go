@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type ListChangeIdentitiesRequest struct {
 	Page     *int   `queryParam:"style=form,explode=true,name=page"`
 	PerPage  *int   `queryParam:"style=form,explode=true,name=per_page"`
@@ -31,24 +27,4 @@ func (o *ListChangeIdentitiesRequest) GetChangeID() string {
 		return ""
 	}
 	return o.ChangeID
-}
-
-type ListChangeIdentitiesResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Retrieve all identities for the change
-	ChangeIdentityEntityPaginated *components.ChangeIdentityEntityPaginated
-}
-
-func (o *ListChangeIdentitiesResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListChangeIdentitiesResponse) GetChangeIdentityEntityPaginated() *components.ChangeIdentityEntityPaginated {
-	if o == nil {
-		return nil
-	}
-	return o.ChangeIdentityEntityPaginated
 }

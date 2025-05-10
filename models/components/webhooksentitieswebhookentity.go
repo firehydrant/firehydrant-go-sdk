@@ -9,13 +9,13 @@ import (
 
 // WebhooksEntitiesWebhookEntity - Webhooks_Entities_WebhookEntity model
 type WebhooksEntitiesWebhookEntity struct {
-	ID            *string       `json:"id,omitempty"`
-	URL           *string       `json:"url,omitempty"`
-	State         *string       `json:"state,omitempty"`
-	CreatedBy     *AuthorEntity `json:"created_by,omitempty"`
-	CreatedAt     *time.Time    `json:"created_at,omitempty"`
-	UpdatedAt     *time.Time    `json:"updated_at,omitempty"`
-	Subscriptions *string       `json:"subscriptions,omitempty"`
+	ID            *string               `json:"id,omitempty"`
+	URL           *string               `json:"url,omitempty"`
+	State         *string               `json:"state,omitempty"`
+	CreatedBy     *NullableAuthorEntity `json:"created_by,omitempty"`
+	CreatedAt     *time.Time            `json:"created_at,omitempty"`
+	UpdatedAt     *time.Time            `json:"updated_at,omitempty"`
+	Subscriptions *string               `json:"subscriptions,omitempty"`
 }
 
 func (w WebhooksEntitiesWebhookEntity) MarshalJSON() ([]byte, error) {
@@ -50,7 +50,7 @@ func (o *WebhooksEntitiesWebhookEntity) GetState() *string {
 	return o.State
 }
 
-func (o *WebhooksEntitiesWebhookEntity) GetCreatedBy() *AuthorEntity {
+func (o *WebhooksEntitiesWebhookEntity) GetCreatedBy() *NullableAuthorEntity {
 	if o == nil {
 		return nil
 	}

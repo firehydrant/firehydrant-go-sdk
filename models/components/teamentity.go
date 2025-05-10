@@ -9,25 +9,25 @@ import (
 
 // TeamEntity model
 type TeamEntity struct {
-	ID                      *string                                    `json:"id,omitempty"`
-	Name                    *string                                    `json:"name,omitempty"`
-	Description             *string                                    `json:"description,omitempty"`
-	Slug                    *string                                    `json:"slug,omitempty"`
-	CreatedAt               *time.Time                                 `json:"created_at,omitempty"`
-	UpdatedAt               *time.Time                                 `json:"updated_at,omitempty"`
-	SignalsIcalURL          *string                                    `json:"signals_ical_url,omitempty"`
-	CreatedBy               *AuthorEntity                              `json:"created_by,omitempty"`
-	InSupportHours          *bool                                      `json:"in_support_hours,omitempty"`
-	SlackChannel            *IntegrationsSlackSlackChannelEntity       `json:"slack_channel,omitempty"`
-	MsTeamsChannel          *IntegrationsMicrosoftTeamsV2ChannelEntity `json:"ms_teams_channel,omitempty"`
-	Memberships             []MembershipEntity                         `json:"memberships,omitempty"`
-	OwnedChecklistTemplates []ChecklistTemplateEntity                  `json:"owned_checklist_templates,omitempty"`
-	OwnedFunctionalities    []FunctionalityEntityLite                  `json:"owned_functionalities,omitempty"`
-	OwnedServices           []ServiceEntityLite                        `json:"owned_services,omitempty"`
-	OwnedRunbooks           []SlimRunbookEntity                        `json:"owned_runbooks,omitempty"`
-	RespondingServices      []ServiceEntityLite                        `json:"responding_services,omitempty"`
-	Services                []ServiceEntityLite                        `json:"services,omitempty"`
-	Functionalities         []FunctionalityEntityLite                  `json:"functionalities,omitempty"`
+	ID                      *string                                            `json:"id,omitempty"`
+	Name                    *string                                            `json:"name,omitempty"`
+	Description             *string                                            `json:"description,omitempty"`
+	Slug                    *string                                            `json:"slug,omitempty"`
+	CreatedAt               *time.Time                                         `json:"created_at,omitempty"`
+	UpdatedAt               *time.Time                                         `json:"updated_at,omitempty"`
+	SignalsIcalURL          *string                                            `json:"signals_ical_url,omitempty"`
+	CreatedBy               *NullableAuthorEntity                              `json:"created_by,omitempty"`
+	InSupportHours          *bool                                              `json:"in_support_hours,omitempty"`
+	SlackChannel            *NullableIntegrationsSlackSlackChannelEntity       `json:"slack_channel,omitempty"`
+	MsTeamsChannel          *NullableIntegrationsMicrosoftTeamsV2ChannelEntity `json:"ms_teams_channel,omitempty"`
+	Memberships             []MembershipEntity                                 `json:"memberships,omitempty"`
+	OwnedChecklistTemplates []ChecklistTemplateEntity                          `json:"owned_checklist_templates,omitempty"`
+	OwnedFunctionalities    []FunctionalityEntityLite                          `json:"owned_functionalities,omitempty"`
+	OwnedServices           []ServiceEntityLite                                `json:"owned_services,omitempty"`
+	OwnedRunbooks           []SlimRunbookEntity                                `json:"owned_runbooks,omitempty"`
+	RespondingServices      []ServiceEntityLite                                `json:"responding_services,omitempty"`
+	Services                []ServiceEntityLite                                `json:"services,omitempty"`
+	Functionalities         []FunctionalityEntityLite                          `json:"functionalities,omitempty"`
 }
 
 func (t TeamEntity) MarshalJSON() ([]byte, error) {
@@ -90,7 +90,7 @@ func (o *TeamEntity) GetSignalsIcalURL() *string {
 	return o.SignalsIcalURL
 }
 
-func (o *TeamEntity) GetCreatedBy() *AuthorEntity {
+func (o *TeamEntity) GetCreatedBy() *NullableAuthorEntity {
 	if o == nil {
 		return nil
 	}
@@ -104,14 +104,14 @@ func (o *TeamEntity) GetInSupportHours() *bool {
 	return o.InSupportHours
 }
 
-func (o *TeamEntity) GetSlackChannel() *IntegrationsSlackSlackChannelEntity {
+func (o *TeamEntity) GetSlackChannel() *NullableIntegrationsSlackSlackChannelEntity {
 	if o == nil {
 		return nil
 	}
 	return o.SlackChannel
 }
 
-func (o *TeamEntity) GetMsTeamsChannel() *IntegrationsMicrosoftTeamsV2ChannelEntity {
+func (o *TeamEntity) GetMsTeamsChannel() *NullableIntegrationsMicrosoftTeamsV2ChannelEntity {
 	if o == nil {
 		return nil
 	}
