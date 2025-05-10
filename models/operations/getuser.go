@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type GetUserRequest struct {
 	ID string `pathParam:"style=simple,explode=false,name=id"`
 }
@@ -15,24 +11,4 @@ func (o *GetUserRequest) GetID() string {
 		return ""
 	}
 	return o.ID
-}
-
-type GetUserResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Retrieve a single user by ID
-	UserEntity *components.UserEntity
-}
-
-func (o *GetUserResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *GetUserResponse) GetUserEntity() *components.UserEntity {
-	if o == nil {
-		return nil
-	}
-	return o.UserEntity
 }

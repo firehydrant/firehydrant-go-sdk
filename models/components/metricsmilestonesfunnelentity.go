@@ -4,10 +4,10 @@ package components
 
 // MetricsMilestonesFunnelEntity - Metrics_MilestonesFunnelEntity model
 type MetricsMilestonesFunnelEntity struct {
-	Data      []MetricsMilestonesFunnelEntityDataBucketEntity `json:"data,omitempty"`
-	Columns   []MetricsMilestonesFunnelEntityColumnEntity     `json:"columns,omitempty"`
-	Groupings *MetricsMilestonesFunnelEntityGroupingsEntity   `json:"groupings,omitempty"`
-	Meta      *MetricsMilestonesFunnelEntityMetaEntity        `json:"meta,omitempty"`
+	Data      []MetricsMilestonesFunnelEntityDataBucketEntity       `json:"data,omitempty"`
+	Columns   []MetricsMilestonesFunnelEntityColumnEntity           `json:"columns,omitempty"`
+	Groupings *NullableMetricsMilestonesFunnelEntityGroupingsEntity `json:"groupings,omitempty"`
+	Meta      *NullableMetricsMilestonesFunnelEntityMetaEntity      `json:"meta,omitempty"`
 }
 
 func (o *MetricsMilestonesFunnelEntity) GetData() []MetricsMilestonesFunnelEntityDataBucketEntity {
@@ -24,14 +24,14 @@ func (o *MetricsMilestonesFunnelEntity) GetColumns() []MetricsMilestonesFunnelEn
 	return o.Columns
 }
 
-func (o *MetricsMilestonesFunnelEntity) GetGroupings() *MetricsMilestonesFunnelEntityGroupingsEntity {
+func (o *MetricsMilestonesFunnelEntity) GetGroupings() *NullableMetricsMilestonesFunnelEntityGroupingsEntity {
 	if o == nil {
 		return nil
 	}
 	return o.Groupings
 }
 
-func (o *MetricsMilestonesFunnelEntity) GetMeta() *MetricsMilestonesFunnelEntityMetaEntity {
+func (o *MetricsMilestonesFunnelEntity) GetMeta() *NullableMetricsMilestonesFunnelEntityMetaEntity {
 	if o == nil {
 		return nil
 	}

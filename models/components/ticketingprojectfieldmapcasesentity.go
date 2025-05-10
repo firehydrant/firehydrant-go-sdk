@@ -8,8 +8,8 @@ type TicketingProjectFieldMapCasesEntityLogic struct {
 
 type TicketingProjectFieldMapCasesEntity struct {
 	// An unstructured object of key/value pairs describing the logic for applying the rule.
-	Logic         *TicketingProjectFieldMapCasesEntityLogic    `json:"logic,omitempty"`
-	ExternalValue *TicketingProjectFieldMapExternalValueEntity `json:"external_value,omitempty"`
+	Logic         *TicketingProjectFieldMapCasesEntityLogic            `json:"logic,omitempty"`
+	ExternalValue *NullableTicketingProjectFieldMapExternalValueEntity `json:"external_value,omitempty"`
 }
 
 func (o *TicketingProjectFieldMapCasesEntity) GetLogic() *TicketingProjectFieldMapCasesEntityLogic {
@@ -19,7 +19,7 @@ func (o *TicketingProjectFieldMapCasesEntity) GetLogic() *TicketingProjectFieldM
 	return o.Logic
 }
 
-func (o *TicketingProjectFieldMapCasesEntity) GetExternalValue() *TicketingProjectFieldMapExternalValueEntity {
+func (o *TicketingProjectFieldMapCasesEntity) GetExternalValue() *NullableTicketingProjectFieldMapExternalValueEntity {
 	if o == nil {
 		return nil
 	}

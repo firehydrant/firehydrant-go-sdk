@@ -4,23 +4,22 @@ package operations
 
 import (
 	"encoding/json"
-	"firehydrant/models/components"
 	"fmt"
 )
 
-// ListTicketsQueryParamTagMatchStrategy - A matching strategy for the tags provided
-type ListTicketsQueryParamTagMatchStrategy string
+// ListTicketsTagMatchStrategy - A matching strategy for the tags provided
+type ListTicketsTagMatchStrategy string
 
 const (
-	ListTicketsQueryParamTagMatchStrategyAny      ListTicketsQueryParamTagMatchStrategy = "any"
-	ListTicketsQueryParamTagMatchStrategyMatchAll ListTicketsQueryParamTagMatchStrategy = "match_all"
-	ListTicketsQueryParamTagMatchStrategyExclude  ListTicketsQueryParamTagMatchStrategy = "exclude"
+	ListTicketsTagMatchStrategyAny      ListTicketsTagMatchStrategy = "any"
+	ListTicketsTagMatchStrategyMatchAll ListTicketsTagMatchStrategy = "match_all"
+	ListTicketsTagMatchStrategyExclude  ListTicketsTagMatchStrategy = "exclude"
 )
 
-func (e ListTicketsQueryParamTagMatchStrategy) ToPointer() *ListTicketsQueryParamTagMatchStrategy {
+func (e ListTicketsTagMatchStrategy) ToPointer() *ListTicketsTagMatchStrategy {
 	return &e
 }
-func (e *ListTicketsQueryParamTagMatchStrategy) UnmarshalJSON(data []byte) error {
+func (e *ListTicketsTagMatchStrategy) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -31,10 +30,10 @@ func (e *ListTicketsQueryParamTagMatchStrategy) UnmarshalJSON(data []byte) error
 	case "match_all":
 		fallthrough
 	case "exclude":
-		*e = ListTicketsQueryParamTagMatchStrategy(v)
+		*e = ListTicketsTagMatchStrategy(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for ListTicketsQueryParamTagMatchStrategy: %v", v)
+		return fmt.Errorf("invalid value for ListTicketsTagMatchStrategy: %v", v)
 	}
 }
 
@@ -77,7 +76,7 @@ type ListTicketsRequest struct {
 	// A comma separated list of tags
 	Tags *string `queryParam:"style=form,explode=true,name=tags"`
 	// A matching strategy for the tags provided
-	TagMatchStrategy *ListTicketsQueryParamTagMatchStrategy `queryParam:"style=form,explode=true,name=tag_match_strategy"`
+	TagMatchStrategy *ListTicketsTagMatchStrategy `queryParam:"style=form,explode=true,name=tag_match_strategy"`
 	// Filter tickets assigned to this user id
 	AssignedUser *string `queryParam:"style=form,explode=true,name=assigned_user"`
 	// Filter tickets by state
@@ -105,7 +104,7 @@ func (o *ListTicketsRequest) GetTags() *string {
 	return o.Tags
 }
 
-func (o *ListTicketsRequest) GetTagMatchStrategy() *ListTicketsQueryParamTagMatchStrategy {
+func (o *ListTicketsRequest) GetTagMatchStrategy() *ListTicketsTagMatchStrategy {
 	if o == nil {
 		return nil
 	}
@@ -124,24 +123,4 @@ func (o *ListTicketsRequest) GetState() *State {
 		return nil
 	}
 	return o.State
-}
-
-type ListTicketsResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// List all of the tickets that have been added to the organiation
-	TicketingTicketEntity *components.TicketingTicketEntity
-}
-
-func (o *ListTicketsResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListTicketsResponse) GetTicketingTicketEntity() *components.TicketingTicketEntity {
-	if o == nil {
-		return nil
-	}
-	return o.TicketingTicketEntity
 }

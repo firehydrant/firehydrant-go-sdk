@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type DeleteLifecycleMilestoneRequest struct {
 	MilestoneID string `pathParam:"style=simple,explode=false,name=milestone_id"`
 }
@@ -15,24 +11,4 @@ func (o *DeleteLifecycleMilestoneRequest) GetMilestoneID() string {
 		return ""
 	}
 	return o.MilestoneID
-}
-
-type DeleteLifecycleMilestoneResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Delete a milestone
-	LifecyclesPhaseEntity *components.LifecyclesPhaseEntity
-}
-
-func (o *DeleteLifecycleMilestoneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *DeleteLifecycleMilestoneResponse) GetLifecyclesPhaseEntity() *components.LifecyclesPhaseEntity {
-	if o == nil {
-		return nil
-	}
-	return o.LifecyclesPhaseEntity
 }

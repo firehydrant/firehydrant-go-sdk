@@ -8,15 +8,15 @@ import (
 )
 
 type TeamEntityLite struct {
-	ID             *string       `json:"id,omitempty"`
-	Name           *string       `json:"name,omitempty"`
-	Description    *string       `json:"description,omitempty"`
-	Slug           *string       `json:"slug,omitempty"`
-	CreatedAt      *time.Time    `json:"created_at,omitempty"`
-	UpdatedAt      *time.Time    `json:"updated_at,omitempty"`
-	SignalsIcalURL *string       `json:"signals_ical_url,omitempty"`
-	CreatedBy      *AuthorEntity `json:"created_by,omitempty"`
-	InSupportHours *bool         `json:"in_support_hours,omitempty"`
+	ID             *string               `json:"id,omitempty"`
+	Name           *string               `json:"name,omitempty"`
+	Description    *string               `json:"description,omitempty"`
+	Slug           *string               `json:"slug,omitempty"`
+	CreatedAt      *time.Time            `json:"created_at,omitempty"`
+	UpdatedAt      *time.Time            `json:"updated_at,omitempty"`
+	SignalsIcalURL *string               `json:"signals_ical_url,omitempty"`
+	CreatedBy      *NullableAuthorEntity `json:"created_by,omitempty"`
+	InSupportHours *bool                 `json:"in_support_hours,omitempty"`
 }
 
 func (t TeamEntityLite) MarshalJSON() ([]byte, error) {
@@ -79,7 +79,7 @@ func (o *TeamEntityLite) GetSignalsIcalURL() *string {
 	return o.SignalsIcalURL
 }
 
-func (o *TeamEntityLite) GetCreatedBy() *AuthorEntity {
+func (o *TeamEntityLite) GetCreatedBy() *NullableAuthorEntity {
 	if o == nil {
 		return nil
 	}

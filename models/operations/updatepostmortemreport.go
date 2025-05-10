@@ -7,8 +7,8 @@ import (
 )
 
 type UpdatePostMortemReportRequest struct {
-	ReportID                          string                                       `pathParam:"style=simple,explode=false,name=report_id"`
-	PatchV1PostMortemsReportsReportID components.PatchV1PostMortemsReportsReportID `request:"mediaType=application/json"`
+	ReportID               string                            `pathParam:"style=simple,explode=false,name=report_id"`
+	UpdatePostMortemReport components.UpdatePostMortemReport `request:"mediaType=application/json"`
 }
 
 func (o *UpdatePostMortemReportRequest) GetReportID() string {
@@ -18,29 +18,9 @@ func (o *UpdatePostMortemReportRequest) GetReportID() string {
 	return o.ReportID
 }
 
-func (o *UpdatePostMortemReportRequest) GetPatchV1PostMortemsReportsReportID() components.PatchV1PostMortemsReportsReportID {
+func (o *UpdatePostMortemReportRequest) GetUpdatePostMortemReport() components.UpdatePostMortemReport {
 	if o == nil {
-		return components.PatchV1PostMortemsReportsReportID{}
+		return components.UpdatePostMortemReport{}
 	}
-	return o.PatchV1PostMortemsReportsReportID
-}
-
-type UpdatePostMortemReportResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Update a report
-	PostMortemsPostMortemReportEntity *components.PostMortemsPostMortemReportEntity
-}
-
-func (o *UpdatePostMortemReportResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *UpdatePostMortemReportResponse) GetPostMortemsPostMortemReportEntity() *components.PostMortemsPostMortemReportEntity {
-	if o == nil {
-		return nil
-	}
-	return o.PostMortemsPostMortemReportEntity
+	return o.UpdatePostMortemReport
 }

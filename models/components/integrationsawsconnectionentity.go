@@ -7,20 +7,20 @@ import (
 	"fmt"
 )
 
-type ConnectionStatus string
+type IntegrationsAwsConnectionEntityConnectionStatus string
 
 const (
-	ConnectionStatusPendingSetup       ConnectionStatus = "pending_setup"
-	ConnectionStatusRoleAssumed        ConnectionStatus = "role_assumed"
-	ConnectionStatusCantAssumeRole     ConnectionStatus = "cant_assume_role"
-	ConnectionStatusInvalidPermissions ConnectionStatus = "invalid_permissions"
-	ConnectionStatusValidated          ConnectionStatus = "validated"
+	IntegrationsAwsConnectionEntityConnectionStatusPendingSetup       IntegrationsAwsConnectionEntityConnectionStatus = "pending_setup"
+	IntegrationsAwsConnectionEntityConnectionStatusRoleAssumed        IntegrationsAwsConnectionEntityConnectionStatus = "role_assumed"
+	IntegrationsAwsConnectionEntityConnectionStatusCantAssumeRole     IntegrationsAwsConnectionEntityConnectionStatus = "cant_assume_role"
+	IntegrationsAwsConnectionEntityConnectionStatusInvalidPermissions IntegrationsAwsConnectionEntityConnectionStatus = "invalid_permissions"
+	IntegrationsAwsConnectionEntityConnectionStatusValidated          IntegrationsAwsConnectionEntityConnectionStatus = "validated"
 )
 
-func (e ConnectionStatus) ToPointer() *ConnectionStatus {
+func (e IntegrationsAwsConnectionEntityConnectionStatus) ToPointer() *IntegrationsAwsConnectionEntityConnectionStatus {
 	return &e
 }
-func (e *ConnectionStatus) UnmarshalJSON(data []byte) error {
+func (e *IntegrationsAwsConnectionEntityConnectionStatus) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -35,25 +35,25 @@ func (e *ConnectionStatus) UnmarshalJSON(data []byte) error {
 	case "invalid_permissions":
 		fallthrough
 	case "validated":
-		*e = ConnectionStatus(v)
+		*e = IntegrationsAwsConnectionEntityConnectionStatus(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for ConnectionStatus: %v", v)
+		return fmt.Errorf("invalid value for IntegrationsAwsConnectionEntityConnectionStatus: %v", v)
 	}
 }
 
 // IntegrationsAwsConnectionEntity - Integrations_Aws_ConnectionEntity model
 type IntegrationsAwsConnectionEntity struct {
-	ID                *string           `json:"id,omitempty"`
-	AwsAccountID      *string           `json:"aws_account_id,omitempty"`
-	TargetArn         *string           `json:"target_arn,omitempty"`
-	ExternalID        *string           `json:"external_id,omitempty"`
-	ConnectionStatus  *ConnectionStatus `json:"connection_status,omitempty"`
-	StatusText        *string           `json:"status_text,omitempty"`
-	StatusDescription *string           `json:"status_description,omitempty"`
-	EnvironmentID     *string           `json:"environment_id,omitempty"`
-	EnvironmentName   *string           `json:"environment_name,omitempty"`
-	Regions           []string          `json:"regions,omitempty"`
+	ID                *string                                          `json:"id,omitempty"`
+	AwsAccountID      *string                                          `json:"aws_account_id,omitempty"`
+	TargetArn         *string                                          `json:"target_arn,omitempty"`
+	ExternalID        *string                                          `json:"external_id,omitempty"`
+	ConnectionStatus  *IntegrationsAwsConnectionEntityConnectionStatus `json:"connection_status,omitempty"`
+	StatusText        *string                                          `json:"status_text,omitempty"`
+	StatusDescription *string                                          `json:"status_description,omitempty"`
+	EnvironmentID     *string                                          `json:"environment_id,omitempty"`
+	EnvironmentName   *string                                          `json:"environment_name,omitempty"`
+	Regions           []string                                         `json:"regions,omitempty"`
 }
 
 func (o *IntegrationsAwsConnectionEntity) GetID() *string {
@@ -84,7 +84,7 @@ func (o *IntegrationsAwsConnectionEntity) GetExternalID() *string {
 	return o.ExternalID
 }
 
-func (o *IntegrationsAwsConnectionEntity) GetConnectionStatus() *ConnectionStatus {
+func (o *IntegrationsAwsConnectionEntity) GetConnectionStatus() *IntegrationsAwsConnectionEntityConnectionStatus {
 	if o == nil {
 		return nil
 	}

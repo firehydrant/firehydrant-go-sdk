@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type ListTeamEscalationPoliciesRequest struct {
 	TeamID string `pathParam:"style=simple,explode=false,name=team_id"`
 	// A query string for searching through the list of escalation policies.
@@ -40,15 +36,4 @@ func (o *ListTeamEscalationPoliciesRequest) GetPerPage() *int {
 		return nil
 	}
 	return o.PerPage
-}
-
-type ListTeamEscalationPoliciesResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-}
-
-func (o *ListTeamEscalationPoliciesResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
 }

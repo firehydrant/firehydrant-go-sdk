@@ -7,8 +7,8 @@ import (
 )
 
 type UpdateIncidentRoleRequest struct {
-	IncidentRoleID                     string                                        `pathParam:"style=simple,explode=false,name=incident_role_id"`
-	PatchV1IncidentRolesIncidentRoleID components.PatchV1IncidentRolesIncidentRoleID `request:"mediaType=application/json"`
+	IncidentRoleID     string                        `pathParam:"style=simple,explode=false,name=incident_role_id"`
+	UpdateIncidentRole components.UpdateIncidentRole `request:"mediaType=application/json"`
 }
 
 func (o *UpdateIncidentRoleRequest) GetIncidentRoleID() string {
@@ -18,29 +18,9 @@ func (o *UpdateIncidentRoleRequest) GetIncidentRoleID() string {
 	return o.IncidentRoleID
 }
 
-func (o *UpdateIncidentRoleRequest) GetPatchV1IncidentRolesIncidentRoleID() components.PatchV1IncidentRolesIncidentRoleID {
+func (o *UpdateIncidentRoleRequest) GetUpdateIncidentRole() components.UpdateIncidentRole {
 	if o == nil {
-		return components.PatchV1IncidentRolesIncidentRoleID{}
+		return components.UpdateIncidentRole{}
 	}
-	return o.PatchV1IncidentRolesIncidentRoleID
-}
-
-type UpdateIncidentRoleResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Update a single incident role from its ID
-	IncidentRoleEntity *components.IncidentRoleEntity
-}
-
-func (o *UpdateIncidentRoleResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *UpdateIncidentRoleResponse) GetIncidentRoleEntity() *components.IncidentRoleEntity {
-	if o == nil {
-		return nil
-	}
-	return o.IncidentRoleEntity
+	return o.UpdateIncidentRole
 }

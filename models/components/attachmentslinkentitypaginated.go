@@ -4,8 +4,8 @@ package components
 
 // AttachmentsLinkEntityPaginated - Attachments_LinkEntityPaginated model
 type AttachmentsLinkEntityPaginated struct {
-	Data       []AttachmentsLinkEntity `json:"data,omitempty"`
-	Pagination *PaginationEntity       `json:"pagination,omitempty"`
+	Data       []AttachmentsLinkEntity   `json:"data,omitempty"`
+	Pagination *NullablePaginationEntity `json:"pagination,omitempty"`
 }
 
 func (o *AttachmentsLinkEntityPaginated) GetData() []AttachmentsLinkEntity {
@@ -15,7 +15,7 @@ func (o *AttachmentsLinkEntityPaginated) GetData() []AttachmentsLinkEntity {
 	return o.Data
 }
 
-func (o *AttachmentsLinkEntityPaginated) GetPagination() *PaginationEntity {
+func (o *AttachmentsLinkEntityPaginated) GetPagination() *NullablePaginationEntity {
 	if o == nil {
 		return nil
 	}

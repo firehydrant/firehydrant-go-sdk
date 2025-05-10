@@ -8,14 +8,15 @@ import (
 )
 
 type ExternalResourceEntity struct {
-	ConnectionType *string    `json:"connection_type,omitempty"`
-	ConnectionName *string    `json:"connection_name,omitempty"`
-	ConnectionID   *string    `json:"connection_id,omitempty"`
-	RemoteID       *string    `json:"remote_id,omitempty"`
-	RemoteURL      *string    `json:"remote_url,omitempty"`
-	CreatedAt      *time.Time `json:"created_at,omitempty"`
-	UpdatedAt      *time.Time `json:"updated_at,omitempty"`
-	Name           *string    `json:"name,omitempty"`
+	ConnectionType           *string    `json:"connection_type,omitempty"`
+	ConnectionName           *string    `json:"connection_name,omitempty"`
+	ConnectionFullFaviconURL *string    `json:"connection_full_favicon_url,omitempty"`
+	ConnectionID             *string    `json:"connection_id,omitempty"`
+	RemoteID                 *string    `json:"remote_id,omitempty"`
+	RemoteURL                *string    `json:"remote_url,omitempty"`
+	CreatedAt                *time.Time `json:"created_at,omitempty"`
+	UpdatedAt                *time.Time `json:"updated_at,omitempty"`
+	Name                     *string    `json:"name,omitempty"`
 }
 
 func (e ExternalResourceEntity) MarshalJSON() ([]byte, error) {
@@ -41,6 +42,13 @@ func (o *ExternalResourceEntity) GetConnectionName() *string {
 		return nil
 	}
 	return o.ConnectionName
+}
+
+func (o *ExternalResourceEntity) GetConnectionFullFaviconURL() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ConnectionFullFaviconURL
 }
 
 func (o *ExternalResourceEntity) GetConnectionID() *string {

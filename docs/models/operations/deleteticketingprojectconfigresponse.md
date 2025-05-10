@@ -1,9 +1,0 @@
-# DeleteTicketingProjectConfigResponse
-
-
-## Fields
-
-| Field                                                                                               | Type                                                                                                | Required                                                                                            | Description                                                                                         |
-| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| `HTTPMeta`                                                                                          | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                  | :heavy_check_mark:                                                                                  | N/A                                                                                                 |
-| `TicketingProjectConfigEntity`                                                                      | [*components.TicketingProjectConfigEntity](../../models/components/ticketingprojectconfigentity.md) | :heavy_minus_sign:                                                                                  | Archive configuration for a ticketing project                                                       |

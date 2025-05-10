@@ -22,7 +22,7 @@ type EnvironmentEntryEntity struct {
 	// The time the environment was created
 	CreatedAt *time.Time `json:"created_at,omitempty"`
 	// List of active incident guids
-	ActiveIncidents *string `json:"active_incidents,omitempty"`
+	ActiveIncidents []string `json:"active_incidents,omitempty"`
 	// Information about known linkages to representations of services outside of FireHydrant.
 	ExternalResources []ExternalResourceEntity `json:"external_resources,omitempty"`
 }
@@ -80,7 +80,7 @@ func (o *EnvironmentEntryEntity) GetCreatedAt() *time.Time {
 	return o.CreatedAt
 }
 
-func (o *EnvironmentEntryEntity) GetActiveIncidents() *string {
+func (o *EnvironmentEntryEntity) GetActiveIncidents() []string {
 	if o == nil {
 		return nil
 	}

@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type DeleteScimUserRequest struct {
 	ID string `pathParam:"style=simple,explode=false,name=id"`
 }
@@ -15,15 +11,4 @@ func (o *DeleteScimUserRequest) GetID() string {
 		return ""
 	}
 	return o.ID
-}
-
-type DeleteScimUserResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-}
-
-func (o *DeleteScimUserResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
 }

@@ -47,12 +47,11 @@ type IncidentsRelatedChangeEventEntity struct {
 	CreatedAt *time.Time `json:"created_at,omitempty"`
 	UpdatedAt *time.Time `json:"updated_at,omitempty"`
 	// The reason why this change event is related to this incident
-	Why  *string                                `json:"why,omitempty"`
-	Type *IncidentsRelatedChangeEventEntityType `json:"type,omitempty"`
-	// ChangeEventEntity model
-	ChangeEvent *ChangeEventEntity `json:"change_event,omitempty"`
-	IncidentID  *string            `json:"incident_id,omitempty"`
-	CreatedBy   *AuthorEntity      `json:"created_by,omitempty"`
+	Why         *string                                `json:"why,omitempty"`
+	Type        *IncidentsRelatedChangeEventEntityType `json:"type,omitempty"`
+	ChangeEvent *NullableChangeEventEntity             `json:"change_event,omitempty"`
+	IncidentID  *string                                `json:"incident_id,omitempty"`
+	CreatedBy   *NullableAuthorEntity                  `json:"created_by,omitempty"`
 }
 
 func (i IncidentsRelatedChangeEventEntity) MarshalJSON() ([]byte, error) {
@@ -101,7 +100,7 @@ func (o *IncidentsRelatedChangeEventEntity) GetType() *IncidentsRelatedChangeEve
 	return o.Type
 }
 
-func (o *IncidentsRelatedChangeEventEntity) GetChangeEvent() *ChangeEventEntity {
+func (o *IncidentsRelatedChangeEventEntity) GetChangeEvent() *NullableChangeEventEntity {
 	if o == nil {
 		return nil
 	}
@@ -115,7 +114,7 @@ func (o *IncidentsRelatedChangeEventEntity) GetIncidentID() *string {
 	return o.IncidentID
 }
 
-func (o *IncidentsRelatedChangeEventEntity) GetCreatedBy() *AuthorEntity {
+func (o *IncidentsRelatedChangeEventEntity) GetCreatedBy() *NullableAuthorEntity {
 	if o == nil {
 		return nil
 	}

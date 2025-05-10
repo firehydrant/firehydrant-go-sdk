@@ -1,0 +1,12 @@
+# UpdateTeamEscalationPolicyPrioritizedSettings
+
+Priority-specific settings for dynamic escalation policies
+
+
+## Fields
+
+| Field                                                                                                       | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
+| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `High`                                                                                                      | [*components.UpdateTeamEscalationPolicyHigh](../../models/components/updateteamescalationpolicyhigh.md)     | :heavy_minus_sign:                                                                                          | Settings for HIGH priority alerts                                                                           |
+| `Medium`                                                                                                    | [*components.UpdateTeamEscalationPolicyMedium](../../models/components/updateteamescalationpolicymedium.md) | :heavy_minus_sign:                                                                                          | Settings for MEDIUM priority alerts                                                                         |
+| `Low`                                                                                                       | [*components.UpdateTeamEscalationPolicyLow](../../models/components/updateteamescalationpolicylow.md)       | :heavy_minus_sign:                                                                                          | Settings for LOW priority alerts                                                                            |

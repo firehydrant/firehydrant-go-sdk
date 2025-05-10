@@ -7,8 +7,8 @@ import (
 )
 
 type CreateIncidentRoleAssignmentRequest struct {
-	IncidentID                               string                                              `pathParam:"style=simple,explode=false,name=incident_id"`
-	PostV1IncidentsIncidentIDRoleAssignments components.PostV1IncidentsIncidentIDRoleAssignments `request:"mediaType=application/json"`
+	IncidentID                   string                                  `pathParam:"style=simple,explode=false,name=incident_id"`
+	CreateIncidentRoleAssignment components.CreateIncidentRoleAssignment `request:"mediaType=application/json"`
 }
 
 func (o *CreateIncidentRoleAssignmentRequest) GetIncidentID() string {
@@ -18,29 +18,9 @@ func (o *CreateIncidentRoleAssignmentRequest) GetIncidentID() string {
 	return o.IncidentID
 }
 
-func (o *CreateIncidentRoleAssignmentRequest) GetPostV1IncidentsIncidentIDRoleAssignments() components.PostV1IncidentsIncidentIDRoleAssignments {
+func (o *CreateIncidentRoleAssignmentRequest) GetCreateIncidentRoleAssignment() components.CreateIncidentRoleAssignment {
 	if o == nil {
-		return components.PostV1IncidentsIncidentIDRoleAssignments{}
+		return components.CreateIncidentRoleAssignment{}
 	}
-	return o.PostV1IncidentsIncidentIDRoleAssignments
-}
-
-type CreateIncidentRoleAssignmentResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Assign a role to a user for this incident
-	IncidentsRoleAssignmentEntity *components.IncidentsRoleAssignmentEntity
-}
-
-func (o *CreateIncidentRoleAssignmentResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *CreateIncidentRoleAssignmentResponse) GetIncidentsRoleAssignmentEntity() *components.IncidentsRoleAssignmentEntity {
-	if o == nil {
-		return nil
-	}
-	return o.IncidentsRoleAssignmentEntity
+	return o.CreateIncidentRoleAssignment
 }

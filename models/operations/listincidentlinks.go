@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type ListIncidentLinksRequest struct {
 	Page       *int   `queryParam:"style=form,explode=true,name=page"`
 	PerPage    *int   `queryParam:"style=form,explode=true,name=per_page"`
@@ -31,24 +27,4 @@ func (o *ListIncidentLinksRequest) GetIncidentID() string {
 		return ""
 	}
 	return o.IncidentID
-}
-
-type ListIncidentLinksResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// List all the editable, external incident links attached to an incident
-	AttachmentsLinkEntityPaginated *components.AttachmentsLinkEntityPaginated
-}
-
-func (o *ListIncidentLinksResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListIncidentLinksResponse) GetAttachmentsLinkEntityPaginated() *components.AttachmentsLinkEntityPaginated {
-	if o == nil {
-		return nil
-	}
-	return o.AttachmentsLinkEntityPaginated
 }

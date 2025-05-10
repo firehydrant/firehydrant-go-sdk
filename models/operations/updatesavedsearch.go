@@ -8,25 +8,25 @@ import (
 	"fmt"
 )
 
-type UpdateSavedSearchPathParamResourceType string
+type UpdateSavedSearchResourceType string
 
 const (
-	UpdateSavedSearchPathParamResourceTypeChangeEvents          UpdateSavedSearchPathParamResourceType = "change_events"
-	UpdateSavedSearchPathParamResourceTypeIncidents             UpdateSavedSearchPathParamResourceType = "incidents"
-	UpdateSavedSearchPathParamResourceTypeServices              UpdateSavedSearchPathParamResourceType = "services"
-	UpdateSavedSearchPathParamResourceTypeScheduledMaintenances UpdateSavedSearchPathParamResourceType = "scheduled_maintenances"
-	UpdateSavedSearchPathParamResourceTypeTicketTasks           UpdateSavedSearchPathParamResourceType = "ticket_tasks"
-	UpdateSavedSearchPathParamResourceTypeTicketFollowUps       UpdateSavedSearchPathParamResourceType = "ticket_follow_ups"
-	UpdateSavedSearchPathParamResourceTypeAnalytics             UpdateSavedSearchPathParamResourceType = "analytics"
-	UpdateSavedSearchPathParamResourceTypeImpactAnalytics       UpdateSavedSearchPathParamResourceType = "impact_analytics"
-	UpdateSavedSearchPathParamResourceTypeAlerts                UpdateSavedSearchPathParamResourceType = "alerts"
-	UpdateSavedSearchPathParamResourceTypeIncidentEvents        UpdateSavedSearchPathParamResourceType = "incident_events"
+	UpdateSavedSearchResourceTypeChangeEvents          UpdateSavedSearchResourceType = "change_events"
+	UpdateSavedSearchResourceTypeIncidents             UpdateSavedSearchResourceType = "incidents"
+	UpdateSavedSearchResourceTypeServices              UpdateSavedSearchResourceType = "services"
+	UpdateSavedSearchResourceTypeScheduledMaintenances UpdateSavedSearchResourceType = "scheduled_maintenances"
+	UpdateSavedSearchResourceTypeTicketTasks           UpdateSavedSearchResourceType = "ticket_tasks"
+	UpdateSavedSearchResourceTypeTicketFollowUps       UpdateSavedSearchResourceType = "ticket_follow_ups"
+	UpdateSavedSearchResourceTypeAnalytics             UpdateSavedSearchResourceType = "analytics"
+	UpdateSavedSearchResourceTypeImpactAnalytics       UpdateSavedSearchResourceType = "impact_analytics"
+	UpdateSavedSearchResourceTypeAlerts                UpdateSavedSearchResourceType = "alerts"
+	UpdateSavedSearchResourceTypeIncidentEvents        UpdateSavedSearchResourceType = "incident_events"
 )
 
-func (e UpdateSavedSearchPathParamResourceType) ToPointer() *UpdateSavedSearchPathParamResourceType {
+func (e UpdateSavedSearchResourceType) ToPointer() *UpdateSavedSearchResourceType {
 	return &e
 }
-func (e *UpdateSavedSearchPathParamResourceType) UnmarshalJSON(data []byte) error {
+func (e *UpdateSavedSearchResourceType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -51,22 +51,22 @@ func (e *UpdateSavedSearchPathParamResourceType) UnmarshalJSON(data []byte) erro
 	case "alerts":
 		fallthrough
 	case "incident_events":
-		*e = UpdateSavedSearchPathParamResourceType(v)
+		*e = UpdateSavedSearchResourceType(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for UpdateSavedSearchPathParamResourceType: %v", v)
+		return fmt.Errorf("invalid value for UpdateSavedSearchResourceType: %v", v)
 	}
 }
 
 type UpdateSavedSearchRequest struct {
-	ResourceType                                  UpdateSavedSearchPathParamResourceType                   `pathParam:"style=simple,explode=false,name=resource_type"`
-	SavedSearchID                                 string                                                   `pathParam:"style=simple,explode=false,name=saved_search_id"`
-	PatchV1SavedSearchesResourceTypeSavedSearchID components.PatchV1SavedSearchesResourceTypeSavedSearchID `request:"mediaType=application/json"`
+	ResourceType      UpdateSavedSearchResourceType `pathParam:"style=simple,explode=false,name=resource_type"`
+	SavedSearchID     string                        `pathParam:"style=simple,explode=false,name=saved_search_id"`
+	UpdateSavedSearch components.UpdateSavedSearch  `request:"mediaType=application/json"`
 }
 
-func (o *UpdateSavedSearchRequest) GetResourceType() UpdateSavedSearchPathParamResourceType {
+func (o *UpdateSavedSearchRequest) GetResourceType() UpdateSavedSearchResourceType {
 	if o == nil {
-		return UpdateSavedSearchPathParamResourceType("")
+		return UpdateSavedSearchResourceType("")
 	}
 	return o.ResourceType
 }
@@ -78,29 +78,9 @@ func (o *UpdateSavedSearchRequest) GetSavedSearchID() string {
 	return o.SavedSearchID
 }
 
-func (o *UpdateSavedSearchRequest) GetPatchV1SavedSearchesResourceTypeSavedSearchID() components.PatchV1SavedSearchesResourceTypeSavedSearchID {
+func (o *UpdateSavedSearchRequest) GetUpdateSavedSearch() components.UpdateSavedSearch {
 	if o == nil {
-		return components.PatchV1SavedSearchesResourceTypeSavedSearchID{}
+		return components.UpdateSavedSearch{}
 	}
-	return o.PatchV1SavedSearchesResourceTypeSavedSearchID
-}
-
-type UpdateSavedSearchResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Update a specific saved search
-	SavedSearchEntity *components.SavedSearchEntity
-}
-
-func (o *UpdateSavedSearchResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *UpdateSavedSearchResponse) GetSavedSearchEntity() *components.SavedSearchEntity {
-	if o == nil {
-		return nil
-	}
-	return o.SavedSearchEntity
+	return o.UpdateSavedSearch
 }

@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type GetTaskListRequest struct {
 	TaskListID string `pathParam:"style=simple,explode=false,name=task_list_id"`
 }
@@ -15,24 +11,4 @@ func (o *GetTaskListRequest) GetTaskListID() string {
 		return ""
 	}
 	return o.TaskListID
-}
-
-type GetTaskListResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Retrieves a single task list by ID
-	TaskListEntity *components.TaskListEntity
-}
-
-func (o *GetTaskListResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *GetTaskListResponse) GetTaskListEntity() *components.TaskListEntity {
-	if o == nil {
-		return nil
-	}
-	return o.TaskListEntity
 }

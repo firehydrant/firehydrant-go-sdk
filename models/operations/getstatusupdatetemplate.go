@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type GetStatusUpdateTemplateRequest struct {
 	StatusUpdateTemplateID string `pathParam:"style=simple,explode=false,name=status_update_template_id"`
 }
@@ -15,24 +11,4 @@ func (o *GetStatusUpdateTemplateRequest) GetStatusUpdateTemplateID() string {
 		return ""
 	}
 	return o.StatusUpdateTemplateID
-}
-
-type GetStatusUpdateTemplateResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Get a single status update template by ID
-	StatusUpdateTemplateEntity *components.StatusUpdateTemplateEntity
-}
-
-func (o *GetStatusUpdateTemplateResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *GetStatusUpdateTemplateResponse) GetStatusUpdateTemplateEntity() *components.StatusUpdateTemplateEntity {
-	if o == nil {
-		return nil
-	}
-	return o.StatusUpdateTemplateEntity
 }

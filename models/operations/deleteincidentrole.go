@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type DeleteIncidentRoleRequest struct {
 	IncidentRoleID string `pathParam:"style=simple,explode=false,name=incident_role_id"`
 }
@@ -15,24 +11,4 @@ func (o *DeleteIncidentRoleRequest) GetIncidentRoleID() string {
 		return ""
 	}
 	return o.IncidentRoleID
-}
-
-type DeleteIncidentRoleResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Archives an incident role which will hide it from lists and metrics
-	IncidentRoleEntity *components.IncidentRoleEntity
-}
-
-func (o *DeleteIncidentRoleResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *DeleteIncidentRoleResponse) GetIncidentRoleEntity() *components.IncidentRoleEntity {
-	if o == nil {
-		return nil
-	}
-	return o.IncidentRoleEntity
 }

@@ -23,11 +23,11 @@ type FunctionalityEntityLite struct {
 	// List of active incident guids
 	ActiveIncidents []string `json:"active_incidents,omitempty"`
 	// List of links attached to this functionality.
-	Links                 []LinksEntity   `json:"links,omitempty"`
-	Owner                 *TeamEntityLite `json:"owner,omitempty"`
-	AlertOnAdd            *bool           `json:"alert_on_add,omitempty"`
-	AutoAddRespondingTeam *bool           `json:"auto_add_responding_team,omitempty"`
-	UpdatedBy             *AuthorEntity   `json:"updated_by,omitempty"`
+	Links                 []LinksEntity           `json:"links,omitempty"`
+	Owner                 *NullableTeamEntityLite `json:"owner,omitempty"`
+	AlertOnAdd            *bool                   `json:"alert_on_add,omitempty"`
+	AutoAddRespondingTeam *bool                   `json:"auto_add_responding_team,omitempty"`
+	UpdatedBy             *NullableAuthorEntity   `json:"updated_by,omitempty"`
 }
 
 func (f FunctionalityEntityLite) MarshalJSON() ([]byte, error) {
@@ -104,7 +104,7 @@ func (o *FunctionalityEntityLite) GetLinks() []LinksEntity {
 	return o.Links
 }
 
-func (o *FunctionalityEntityLite) GetOwner() *TeamEntityLite {
+func (o *FunctionalityEntityLite) GetOwner() *NullableTeamEntityLite {
 	if o == nil {
 		return nil
 	}
@@ -125,7 +125,7 @@ func (o *FunctionalityEntityLite) GetAutoAddRespondingTeam() *bool {
 	return o.AutoAddRespondingTeam
 }
 
-func (o *FunctionalityEntityLite) GetUpdatedBy() *AuthorEntity {
+func (o *FunctionalityEntityLite) GetUpdatedBy() *NullableAuthorEntity {
 	if o == nil {
 		return nil
 	}

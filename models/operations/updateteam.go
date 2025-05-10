@@ -7,8 +7,8 @@ import (
 )
 
 type UpdateTeamRequest struct {
-	TeamID             string                        `pathParam:"style=simple,explode=false,name=team_id"`
-	PatchV1TeamsTeamID components.PatchV1TeamsTeamID `request:"mediaType=application/json"`
+	TeamID     string                `pathParam:"style=simple,explode=false,name=team_id"`
+	UpdateTeam components.UpdateTeam `request:"mediaType=application/json"`
 }
 
 func (o *UpdateTeamRequest) GetTeamID() string {
@@ -18,29 +18,9 @@ func (o *UpdateTeamRequest) GetTeamID() string {
 	return o.TeamID
 }
 
-func (o *UpdateTeamRequest) GetPatchV1TeamsTeamID() components.PatchV1TeamsTeamID {
+func (o *UpdateTeamRequest) GetUpdateTeam() components.UpdateTeam {
 	if o == nil {
-		return components.PatchV1TeamsTeamID{}
+		return components.UpdateTeam{}
 	}
-	return o.PatchV1TeamsTeamID
-}
-
-type UpdateTeamResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Update a single team from its ID
-	TeamEntity *components.TeamEntity
-}
-
-func (o *UpdateTeamResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *UpdateTeamResponse) GetTeamEntity() *components.TeamEntity {
-	if o == nil {
-		return nil
-	}
-	return o.TeamEntity
+	return o.UpdateTeam
 }

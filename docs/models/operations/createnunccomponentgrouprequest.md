@@ -1,0 +1,9 @@
+# CreateNuncComponentGroupRequest
+
+
+## Fields
+
+| Field                                                                                                            | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `NuncConnectionID`                                                                                               | *string*                                                                                                         | :heavy_check_mark:                                                                                               | N/A                                                                                                              |
+| `RequestBody`                                                                                                    | [operations.CreateNuncComponentGroupRequestBody](../../models/operations/createnunccomponentgrouprequestbody.md) | :heavy_check_mark:                                                                                               | N/A                                                                                                              |

@@ -1,9 +1,0 @@
-# ListChangeIdentitiesResponse
-
-
-## Fields
-
-| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
-| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| `HTTPMeta`                                                                                            | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                    | :heavy_check_mark:                                                                                    | N/A                                                                                                   |
-| `ChangeIdentityEntityPaginated`                                                                       | [*components.ChangeIdentityEntityPaginated](../../models/components/changeidentityentitypaginated.md) | :heavy_minus_sign:                                                                                    | Retrieve all identities for the change                                                                |

@@ -5,7 +5,7 @@ package components
 // IntegrationsAwsConnectionEntityPaginated - Integrations_Aws_ConnectionEntityPaginated model
 type IntegrationsAwsConnectionEntityPaginated struct {
 	Data       []IntegrationsAwsConnectionEntity `json:"data,omitempty"`
-	Pagination *PaginationEntity                 `json:"pagination,omitempty"`
+	Pagination *NullablePaginationEntity         `json:"pagination,omitempty"`
 }
 
 func (o *IntegrationsAwsConnectionEntityPaginated) GetData() []IntegrationsAwsConnectionEntity {
@@ -15,7 +15,7 @@ func (o *IntegrationsAwsConnectionEntityPaginated) GetData() []IntegrationsAwsCo
 	return o.Data
 }
 
-func (o *IntegrationsAwsConnectionEntityPaginated) GetPagination() *PaginationEntity {
+func (o *IntegrationsAwsConnectionEntityPaginated) GetPagination() *NullablePaginationEntity {
 	if o == nil {
 		return nil
 	}

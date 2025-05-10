@@ -7,17 +7,17 @@ import (
 	"fmt"
 )
 
-type TicketingProjectFieldMapBodyEntityStrategy string
+type StrategyEnum string
 
 const (
-	TicketingProjectFieldMapBodyEntityStrategyBasic TicketingProjectFieldMapBodyEntityStrategy = "basic"
-	TicketingProjectFieldMapBodyEntityStrategyLogic TicketingProjectFieldMapBodyEntityStrategy = "logic"
+	StrategyEnumBasic StrategyEnum = "basic"
+	StrategyEnumLogic StrategyEnum = "logic"
 )
 
-func (e TicketingProjectFieldMapBodyEntityStrategy) ToPointer() *TicketingProjectFieldMapBodyEntityStrategy {
+func (e StrategyEnum) ToPointer() *StrategyEnum {
 	return &e
 }
-func (e *TicketingProjectFieldMapBodyEntityStrategy) UnmarshalJSON(data []byte) error {
+func (e *StrategyEnum) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -26,10 +26,10 @@ func (e *TicketingProjectFieldMapBodyEntityStrategy) UnmarshalJSON(data []byte) 
 	case "basic":
 		fallthrough
 	case "logic":
-		*e = TicketingProjectFieldMapBodyEntityStrategy(v)
+		*e = StrategyEnum(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for TicketingProjectFieldMapBodyEntityStrategy: %v", v)
+		return fmt.Errorf("invalid value for StrategyEnum: %v", v)
 	}
 }
 
@@ -37,15 +37,15 @@ type UserData struct {
 }
 
 type TicketingProjectFieldMapBodyEntity struct {
-	Strategy      *TicketingProjectFieldMapBodyEntityStrategy  `json:"strategy,omitempty"`
-	ExternalField *string                                      `json:"external_field,omitempty"`
-	ExternalValue *TicketingProjectFieldMapExternalValueEntity `json:"external_value,omitempty"`
-	UserData      *UserData                                    `json:"user_data,omitempty"`
-	Cases         []TicketingProjectFieldMapCasesEntity        `json:"cases,omitempty"`
-	Else          *TicketingProjectFieldMapCasesElseEntity     `json:"else,omitempty"`
+	Strategy      *StrategyEnum                                        `json:"strategy,omitempty"`
+	ExternalField *string                                              `json:"external_field,omitempty"`
+	ExternalValue *NullableTicketingProjectFieldMapExternalValueEntity `json:"external_value,omitempty"`
+	UserData      *UserData                                            `json:"user_data,omitempty"`
+	Cases         []TicketingProjectFieldMapCasesEntity                `json:"cases,omitempty"`
+	Else          *NullableTicketingProjectFieldMapCasesElseEntity     `json:"else,omitempty"`
 }
 
-func (o *TicketingProjectFieldMapBodyEntity) GetStrategy() *TicketingProjectFieldMapBodyEntityStrategy {
+func (o *TicketingProjectFieldMapBodyEntity) GetStrategy() *StrategyEnum {
 	if o == nil {
 		return nil
 	}
@@ -59,7 +59,7 @@ func (o *TicketingProjectFieldMapBodyEntity) GetExternalField() *string {
 	return o.ExternalField
 }
 
-func (o *TicketingProjectFieldMapBodyEntity) GetExternalValue() *TicketingProjectFieldMapExternalValueEntity {
+func (o *TicketingProjectFieldMapBodyEntity) GetExternalValue() *NullableTicketingProjectFieldMapExternalValueEntity {
 	if o == nil {
 		return nil
 	}
@@ -80,7 +80,7 @@ func (o *TicketingProjectFieldMapBodyEntity) GetCases() []TicketingProjectFieldM
 	return o.Cases
 }
 
-func (o *TicketingProjectFieldMapBodyEntity) GetElse() *TicketingProjectFieldMapCasesElseEntity {
+func (o *TicketingProjectFieldMapBodyEntity) GetElse() *NullableTicketingProjectFieldMapCasesElseEntity {
 	if o == nil {
 		return nil
 	}

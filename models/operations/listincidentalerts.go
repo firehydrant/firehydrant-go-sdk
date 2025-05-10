@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type ListIncidentAlertsRequest struct {
 	IncidentID string `pathParam:"style=simple,explode=false,name=incident_id"`
 }
@@ -15,24 +11,4 @@ func (o *ListIncidentAlertsRequest) GetIncidentID() string {
 		return ""
 	}
 	return o.IncidentID
-}
-
-type ListIncidentAlertsResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// List alerts that have been attached to an incident
-	IncidentsAlertEntityPaginated *components.IncidentsAlertEntityPaginated
-}
-
-func (o *ListIncidentAlertsResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListIncidentAlertsResponse) GetIncidentsAlertEntityPaginated() *components.IncidentsAlertEntityPaginated {
-	if o == nil {
-		return nil
-	}
-	return o.IncidentsAlertEntityPaginated
 }

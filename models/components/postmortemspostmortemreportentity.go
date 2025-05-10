@@ -9,18 +9,20 @@ import (
 
 // PostMortemsPostMortemReportEntity - PostMortems_PostMortemReportEntity model
 type PostMortemsPostMortemReportEntity struct {
-	ID                *string    `json:"id,omitempty"`
-	Name              *string    `json:"name,omitempty"`
-	Summary           *string    `json:"summary,omitempty"`
-	IncidentID        *string    `json:"incident_id,omitempty"`
-	CreatedAt         *time.Time `json:"created_at,omitempty"`
-	UpdatedAt         *time.Time `json:"updated_at,omitempty"`
-	TagList           []string   `json:"tag_list,omitempty"`
-	AdditionalDetails []string   `json:"additional_details,omitempty"`
-	// IncidentEntity model
-	Incident       *IncidentEntity            `json:"incident,omitempty"`
-	Questions      *PostMortemsQuestionEntity `json:"questions,omitempty"`
-	CalendarEvents *CalendarsEventEntity      `json:"calendar_events,omitempty"`
+	ID                *string                            `json:"id,omitempty"`
+	Name              *string                            `json:"name,omitempty"`
+	Summary           *string                            `json:"summary,omitempty"`
+	IncidentID        *string                            `json:"incident_id,omitempty"`
+	CreatedAt         *time.Time                         `json:"created_at,omitempty"`
+	UpdatedAt         *time.Time                         `json:"updated_at,omitempty"`
+	TagList           []string                           `json:"tag_list,omitempty"`
+	AdditionalDetails []string                           `json:"additional_details,omitempty"`
+	Incident          *NullableIncidentEntity            `json:"incident,omitempty"`
+	Questions         *NullablePostMortemsQuestionEntity `json:"questions,omitempty"`
+	CalendarEvents    *NullableCalendarsEventEntity      `json:"calendar_events,omitempty"`
+	RetrospectiveShim *bool                              `json:"retrospective_shim,omitempty"`
+	RetrospectiveID   *string                            `json:"retrospective_id,omitempty"`
+	RetrospectiveNote *string                            `json:"retrospective_note,omitempty"`
 }
 
 func (p PostMortemsPostMortemReportEntity) MarshalJSON() ([]byte, error) {
@@ -90,23 +92,44 @@ func (o *PostMortemsPostMortemReportEntity) GetAdditionalDetails() []string {
 	return o.AdditionalDetails
 }
 
-func (o *PostMortemsPostMortemReportEntity) GetIncident() *IncidentEntity {
+func (o *PostMortemsPostMortemReportEntity) GetIncident() *NullableIncidentEntity {
 	if o == nil {
 		return nil
 	}
 	return o.Incident
 }
 
-func (o *PostMortemsPostMortemReportEntity) GetQuestions() *PostMortemsQuestionEntity {
+func (o *PostMortemsPostMortemReportEntity) GetQuestions() *NullablePostMortemsQuestionEntity {
 	if o == nil {
 		return nil
 	}
 	return o.Questions
 }
 
-func (o *PostMortemsPostMortemReportEntity) GetCalendarEvents() *CalendarsEventEntity {
+func (o *PostMortemsPostMortemReportEntity) GetCalendarEvents() *NullableCalendarsEventEntity {
 	if o == nil {
 		return nil
 	}
 	return o.CalendarEvents
+}
+
+func (o *PostMortemsPostMortemReportEntity) GetRetrospectiveShim() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.RetrospectiveShim
+}
+
+func (o *PostMortemsPostMortemReportEntity) GetRetrospectiveID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.RetrospectiveID
+}
+
+func (o *PostMortemsPostMortemReportEntity) GetRetrospectiveNote() *string {
+	if o == nil {
+		return nil
+	}
+	return o.RetrospectiveNote
 }

@@ -5,7 +5,6 @@ package operations
 import (
 	"encoding/json"
 	"firehydrant/internal/utils"
-	"firehydrant/models/components"
 	"fmt"
 )
 
@@ -82,15 +81,4 @@ func (o *ListRunbookAuditsRequest) GetSort() *string {
 		return nil
 	}
 	return o.Sort
-}
-
-type ListRunbookAuditsResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-}
-
-func (o *ListRunbookAuditsResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
 }

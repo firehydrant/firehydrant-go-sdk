@@ -7,8 +7,8 @@ import (
 )
 
 type UpdateWebhookRequest struct {
-	WebhookID                string                              `pathParam:"style=simple,explode=false,name=webhook_id"`
-	PatchV1WebhooksWebhookID components.PatchV1WebhooksWebhookID `request:"mediaType=application/json"`
+	WebhookID     string                   `pathParam:"style=simple,explode=false,name=webhook_id"`
+	UpdateWebhook components.UpdateWebhook `request:"mediaType=application/json"`
 }
 
 func (o *UpdateWebhookRequest) GetWebhookID() string {
@@ -18,29 +18,9 @@ func (o *UpdateWebhookRequest) GetWebhookID() string {
 	return o.WebhookID
 }
 
-func (o *UpdateWebhookRequest) GetPatchV1WebhooksWebhookID() components.PatchV1WebhooksWebhookID {
+func (o *UpdateWebhookRequest) GetUpdateWebhook() components.UpdateWebhook {
 	if o == nil {
-		return components.PatchV1WebhooksWebhookID{}
+		return components.UpdateWebhook{}
 	}
-	return o.PatchV1WebhooksWebhookID
-}
-
-type UpdateWebhookResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Update a specific webhook
-	WebhooksEntitiesWebhookEntity *components.WebhooksEntitiesWebhookEntity
-}
-
-func (o *UpdateWebhookResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *UpdateWebhookResponse) GetWebhooksEntitiesWebhookEntity() *components.WebhooksEntitiesWebhookEntity {
-	if o == nil {
-		return nil
-	}
-	return o.WebhooksEntitiesWebhookEntity
+	return o.UpdateWebhook
 }

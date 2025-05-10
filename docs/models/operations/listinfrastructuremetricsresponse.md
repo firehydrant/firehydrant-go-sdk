@@ -1,9 +1,0 @@
-# ListInfrastructureMetricsResponse
-
-
-## Fields
-
-| Field                                                                                                     | Type                                                                                                      | Required                                                                                                  | Description                                                                                               |
-| --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| `HTTPMeta`                                                                                                | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                        | :heavy_check_mark:                                                                                        | N/A                                                                                                       |
-| `MetricsInfrastructureListEntity`                                                                         | [*components.MetricsInfrastructureListEntity](../../models/components/metricsinfrastructurelistentity.md) | :heavy_minus_sign:                                                                                        | Returns metrics for all components of a given type                                                        |

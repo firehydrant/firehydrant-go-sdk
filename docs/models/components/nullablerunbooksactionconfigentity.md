@@ -1,0 +1,9 @@
+# NullableRunbooksActionConfigEntity
+
+
+## Fields
+
+| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
+| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `Elements`                                                                                            | [*components.NullableRunbooksElementEntity](../../models/components/nullablerunbookselemententity.md) | :heavy_minus_sign:                                                                                    | N/A                                                                                                   |
+| `DocumentationURL`                                                                                    | **string*                                                                                             | :heavy_minus_sign:                                                                                    | Location of documentation for this action                                                             |

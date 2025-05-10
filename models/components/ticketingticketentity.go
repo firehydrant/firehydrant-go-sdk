@@ -70,25 +70,24 @@ func (e *TicketingTicketEntityType) UnmarshalJSON(data []byte) error {
 	}
 }
 
-type TicketingTicketEntityAttachments struct {
+type TicketingTicketEntityAttachment struct {
 }
 
 // TicketingTicketEntity - Ticketing_TicketEntity model
 type TicketingTicketEntity struct {
-	ID          *string                     `json:"id,omitempty"`
-	Summary     *string                     `json:"summary,omitempty"`
-	Description *string                     `json:"description,omitempty"`
-	State       *TicketingTicketEntityState `json:"state,omitempty"`
-	Type        *TicketingTicketEntityType  `json:"type,omitempty"`
-	Assignees   []AuthorEntity              `json:"assignees,omitempty"`
-	// Ticketing_PriorityEntity model
-	Priority  *TicketingPriorityEntity `json:"priority,omitempty"`
-	CreatedBy *AuthorEntity            `json:"created_by,omitempty"`
+	ID          *string                          `json:"id,omitempty"`
+	Summary     *string                          `json:"summary,omitempty"`
+	Description *string                          `json:"description,omitempty"`
+	State       *TicketingTicketEntityState      `json:"state,omitempty"`
+	Type        *TicketingTicketEntityType       `json:"type,omitempty"`
+	Assignees   []AuthorEntity                   `json:"assignees,omitempty"`
+	Priority    *NullableTicketingPriorityEntity `json:"priority,omitempty"`
+	CreatedBy   *NullableAuthorEntity            `json:"created_by,omitempty"`
 	// A list of objects attached to this item. Can be one of: LinkEntity, CustomerSupportIssueEntity, or GenericAttachmentEntity
-	Attachments []TicketingTicketEntityAttachments `json:"attachments,omitempty"`
-	CreatedAt   *time.Time                         `json:"created_at,omitempty"`
-	UpdatedAt   *time.Time                         `json:"updated_at,omitempty"`
-	TagList     []string                           `json:"tag_list,omitempty"`
+	Attachments []TicketingTicketEntityAttachment `json:"attachments,omitempty"`
+	CreatedAt   *time.Time                        `json:"created_at,omitempty"`
+	UpdatedAt   *time.Time                        `json:"updated_at,omitempty"`
+	TagList     []string                          `json:"tag_list,omitempty"`
 	// ID of incident that this ticket is related to
 	IncidentID *string `json:"incident_id,omitempty"`
 	// Name of incident that this ticket is related to
@@ -96,10 +95,9 @@ type TicketingTicketEntity struct {
 	// Milestone of incident that this ticket is related to
 	IncidentCurrentMilestone *string `json:"incident_current_milestone,omitempty"`
 	// ID of task that this ticket is related to
-	TaskID *string    `json:"task_id,omitempty"`
-	DueAt  *time.Time `json:"due_at,omitempty"`
-	// Attachments_LinkEntity model
-	Link *AttachmentsLinkEntity `json:"link,omitempty"`
+	TaskID *string                        `json:"task_id,omitempty"`
+	DueAt  *time.Time                     `json:"due_at,omitempty"`
+	Link   *NullableAttachmentsLinkEntity `json:"link,omitempty"`
 }
 
 func (t TicketingTicketEntity) MarshalJSON() ([]byte, error) {
@@ -155,21 +153,21 @@ func (o *TicketingTicketEntity) GetAssignees() []AuthorEntity {
 	return o.Assignees
 }
 
-func (o *TicketingTicketEntity) GetPriority() *TicketingPriorityEntity {
+func (o *TicketingTicketEntity) GetPriority() *NullableTicketingPriorityEntity {
 	if o == nil {
 		return nil
 	}
 	return o.Priority
 }
 
-func (o *TicketingTicketEntity) GetCreatedBy() *AuthorEntity {
+func (o *TicketingTicketEntity) GetCreatedBy() *NullableAuthorEntity {
 	if o == nil {
 		return nil
 	}
 	return o.CreatedBy
 }
 
-func (o *TicketingTicketEntity) GetAttachments() []TicketingTicketEntityAttachments {
+func (o *TicketingTicketEntity) GetAttachments() []TicketingTicketEntityAttachment {
 	if o == nil {
 		return nil
 	}
@@ -232,7 +230,7 @@ func (o *TicketingTicketEntity) GetDueAt() *time.Time {
 	return o.DueAt
 }
 
-func (o *TicketingTicketEntity) GetLink() *AttachmentsLinkEntity {
+func (o *TicketingTicketEntity) GetLink() *NullableAttachmentsLinkEntity {
 	if o == nil {
 		return nil
 	}

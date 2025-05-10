@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type DeleteScheduledMaintenanceRequest struct {
 	ScheduledMaintenanceID string `pathParam:"style=simple,explode=false,name=scheduled_maintenance_id"`
 }
@@ -15,15 +11,4 @@ func (o *DeleteScheduledMaintenanceRequest) GetScheduledMaintenanceID() string {
 		return ""
 	}
 	return o.ScheduledMaintenanceID
-}
-
-type DeleteScheduledMaintenanceResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-}
-
-func (o *DeleteScheduledMaintenanceResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
 }

@@ -8,13 +8,12 @@ import (
 )
 
 type ServiceParentDependencyEntity struct {
-	ID        *string    `json:"id,omitempty"`
-	Notes     *string    `json:"notes,omitempty"`
-	CreatedAt *time.Time `json:"created_at,omitempty"`
-	UpdatedAt *time.Time `json:"updated_at,omitempty"`
-	// ServiceEntity model
-	Service *ServiceEntity `json:"service,omitempty"`
-	Type    *string        `json:"type,omitempty"`
+	ID        *string                `json:"id,omitempty"`
+	Notes     *string                `json:"notes,omitempty"`
+	CreatedAt *time.Time             `json:"created_at,omitempty"`
+	UpdatedAt *time.Time             `json:"updated_at,omitempty"`
+	Service   *NullableServiceEntity `json:"service,omitempty"`
+	Type      *string                `json:"type,omitempty"`
 }
 
 func (s ServiceParentDependencyEntity) MarshalJSON() ([]byte, error) {
@@ -56,7 +55,7 @@ func (o *ServiceParentDependencyEntity) GetUpdatedAt() *time.Time {
 	return o.UpdatedAt
 }
 
-func (o *ServiceParentDependencyEntity) GetService() *ServiceEntity {
+func (o *ServiceParentDependencyEntity) GetService() *NullableServiceEntity {
 	if o == nil {
 		return nil
 	}

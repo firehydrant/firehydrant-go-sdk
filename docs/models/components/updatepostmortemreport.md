@@ -1,0 +1,13 @@
+# UpdatePostMortemReport
+
+Update a report
+
+
+## Fields
+
+| Field                                                                                                    | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `Name`                                                                                                   | **string*                                                                                                | :heavy_minus_sign:                                                                                       | N/A                                                                                                      |
+| `Summary`                                                                                                | **string*                                                                                                | :heavy_minus_sign:                                                                                       | N/A                                                                                                      |
+| `AdditionalDetails`                                                                                      | **string*                                                                                                | :heavy_minus_sign:                                                                                       | N/A                                                                                                      |
+| `Questions`                                                                                              | [][components.UpdatePostMortemReportQuestion](../../models/components/updatepostmortemreportquestion.md) | :heavy_minus_sign:                                                                                       | N/A                                                                                                      |

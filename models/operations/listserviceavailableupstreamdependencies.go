@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type ListServiceAvailableUpstreamDependenciesRequest struct {
 	ServiceID string `pathParam:"style=simple,explode=false,name=service_id"`
 }
@@ -15,24 +11,4 @@ func (o *ListServiceAvailableUpstreamDependenciesRequest) GetServiceID() string 
 		return ""
 	}
 	return o.ServiceID
-}
-
-type ListServiceAvailableUpstreamDependenciesResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Retrieves all services that are available to be upstream dependencies
-	ServiceEntityLite *components.ServiceEntityLite
-}
-
-func (o *ListServiceAvailableUpstreamDependenciesResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListServiceAvailableUpstreamDependenciesResponse) GetServiceEntityLite() *components.ServiceEntityLite {
-	if o == nil {
-		return nil
-	}
-	return o.ServiceEntityLite
 }

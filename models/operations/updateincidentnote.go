@@ -7,9 +7,9 @@ import (
 )
 
 type UpdateIncidentNoteRequest struct {
-	NoteID                                string                                           `pathParam:"style=simple,explode=false,name=note_id"`
-	IncidentID                            string                                           `pathParam:"style=simple,explode=false,name=incident_id"`
-	PatchV1IncidentsIncidentIDNotesNoteID components.PatchV1IncidentsIncidentIDNotesNoteID `request:"mediaType=application/json"`
+	NoteID             string                        `pathParam:"style=simple,explode=false,name=note_id"`
+	IncidentID         string                        `pathParam:"style=simple,explode=false,name=incident_id"`
+	UpdateIncidentNote components.UpdateIncidentNote `request:"mediaType=application/json"`
 }
 
 func (o *UpdateIncidentNoteRequest) GetNoteID() string {
@@ -26,29 +26,9 @@ func (o *UpdateIncidentNoteRequest) GetIncidentID() string {
 	return o.IncidentID
 }
 
-func (o *UpdateIncidentNoteRequest) GetPatchV1IncidentsIncidentIDNotesNoteID() components.PatchV1IncidentsIncidentIDNotesNoteID {
+func (o *UpdateIncidentNoteRequest) GetUpdateIncidentNote() components.UpdateIncidentNote {
 	if o == nil {
-		return components.PatchV1IncidentsIncidentIDNotesNoteID{}
+		return components.UpdateIncidentNote{}
 	}
-	return o.PatchV1IncidentsIncidentIDNotesNoteID
-}
-
-type UpdateIncidentNoteResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Updates the body of a note
-	EventNoteEntity *components.EventNoteEntity
-}
-
-func (o *UpdateIncidentNoteResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *UpdateIncidentNoteResponse) GetEventNoteEntity() *components.EventNoteEntity {
-	if o == nil {
-		return nil
-	}
-	return o.EventNoteEntity
+	return o.UpdateIncidentNote
 }

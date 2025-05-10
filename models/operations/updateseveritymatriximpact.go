@@ -7,8 +7,8 @@ import (
 )
 
 type UpdateSeverityMatrixImpactRequest struct {
-	ImpactID                             string                                          `pathParam:"style=simple,explode=false,name=impact_id"`
-	PatchV1SeverityMatrixImpactsImpactID components.PatchV1SeverityMatrixImpactsImpactID `request:"mediaType=application/json"`
+	ImpactID                   string                                `pathParam:"style=simple,explode=false,name=impact_id"`
+	UpdateSeverityMatrixImpact components.UpdateSeverityMatrixImpact `request:"mediaType=application/json"`
 }
 
 func (o *UpdateSeverityMatrixImpactRequest) GetImpactID() string {
@@ -18,29 +18,9 @@ func (o *UpdateSeverityMatrixImpactRequest) GetImpactID() string {
 	return o.ImpactID
 }
 
-func (o *UpdateSeverityMatrixImpactRequest) GetPatchV1SeverityMatrixImpactsImpactID() components.PatchV1SeverityMatrixImpactsImpactID {
+func (o *UpdateSeverityMatrixImpactRequest) GetUpdateSeverityMatrixImpact() components.UpdateSeverityMatrixImpact {
 	if o == nil {
-		return components.PatchV1SeverityMatrixImpactsImpactID{}
+		return components.UpdateSeverityMatrixImpact{}
 	}
-	return o.PatchV1SeverityMatrixImpactsImpactID
-}
-
-type UpdateSeverityMatrixImpactResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Update a specific impact
-	SeverityMatrixImpactEntity *components.SeverityMatrixImpactEntity
-}
-
-func (o *UpdateSeverityMatrixImpactResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *UpdateSeverityMatrixImpactResponse) GetSeverityMatrixImpactEntity() *components.SeverityMatrixImpactEntity {
-	if o == nil {
-		return nil
-	}
-	return o.SeverityMatrixImpactEntity
+	return o.UpdateSeverityMatrixImpact
 }

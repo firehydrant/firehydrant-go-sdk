@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type UnarchiveIncidentRequest struct {
 	IncidentID string `pathParam:"style=simple,explode=false,name=incident_id"`
 }
@@ -15,24 +11,4 @@ func (o *UnarchiveIncidentRequest) GetIncidentID() string {
 		return ""
 	}
 	return o.IncidentID
-}
-
-type UnarchiveIncidentResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Unarchives an incident
-	IncidentEntity *components.IncidentEntity
-}
-
-func (o *UnarchiveIncidentResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *UnarchiveIncidentResponse) GetIncidentEntity() *components.IncidentEntity {
-	if o == nil {
-		return nil
-	}
-	return o.IncidentEntity
 }

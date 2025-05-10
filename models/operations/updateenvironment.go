@@ -8,8 +8,8 @@ import (
 
 type UpdateEnvironmentRequest struct {
 	// Environment UUID
-	EnvironmentID                    string                                      `pathParam:"style=simple,explode=false,name=environment_id"`
-	PatchV1EnvironmentsEnvironmentID components.PatchV1EnvironmentsEnvironmentID `request:"mediaType=application/json"`
+	EnvironmentID     string                       `pathParam:"style=simple,explode=false,name=environment_id"`
+	UpdateEnvironment components.UpdateEnvironment `request:"mediaType=application/json"`
 }
 
 func (o *UpdateEnvironmentRequest) GetEnvironmentID() string {
@@ -19,29 +19,9 @@ func (o *UpdateEnvironmentRequest) GetEnvironmentID() string {
 	return o.EnvironmentID
 }
 
-func (o *UpdateEnvironmentRequest) GetPatchV1EnvironmentsEnvironmentID() components.PatchV1EnvironmentsEnvironmentID {
+func (o *UpdateEnvironmentRequest) GetUpdateEnvironment() components.UpdateEnvironment {
 	if o == nil {
-		return components.PatchV1EnvironmentsEnvironmentID{}
+		return components.UpdateEnvironment{}
 	}
-	return o.PatchV1EnvironmentsEnvironmentID
-}
-
-type UpdateEnvironmentResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Update a environments attributes
-	EnvironmentEntryEntity *components.EnvironmentEntryEntity
-}
-
-func (o *UpdateEnvironmentResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *UpdateEnvironmentResponse) GetEnvironmentEntryEntity() *components.EnvironmentEntryEntity {
-	if o == nil {
-		return nil
-	}
-	return o.EnvironmentEntryEntity
+	return o.UpdateEnvironment
 }

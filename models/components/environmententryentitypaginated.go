@@ -4,8 +4,8 @@ package components
 
 // EnvironmentEntryEntityPaginated model
 type EnvironmentEntryEntityPaginated struct {
-	Data       []EnvironmentEntryEntity `json:"data,omitempty"`
-	Pagination *PaginationEntity        `json:"pagination,omitempty"`
+	Data       []EnvironmentEntryEntity  `json:"data,omitempty"`
+	Pagination *NullablePaginationEntity `json:"pagination,omitempty"`
 }
 
 func (o *EnvironmentEntryEntityPaginated) GetData() []EnvironmentEntryEntity {
@@ -15,7 +15,7 @@ func (o *EnvironmentEntryEntityPaginated) GetData() []EnvironmentEntryEntity {
 	return o.Data
 }
 
-func (o *EnvironmentEntryEntityPaginated) GetPagination() *PaginationEntity {
+func (o *EnvironmentEntryEntityPaginated) GetPagination() *NullablePaginationEntity {
 	if o == nil {
 		return nil
 	}

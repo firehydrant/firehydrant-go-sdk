@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type DeleteTeamEscalationPolicyRequest struct {
 	TeamID string `pathParam:"style=simple,explode=false,name=team_id"`
 	ID     string `pathParam:"style=simple,explode=false,name=id"`
@@ -23,15 +19,4 @@ func (o *DeleteTeamEscalationPolicyRequest) GetID() string {
 		return ""
 	}
 	return o.ID
-}
-
-type DeleteTeamEscalationPolicyResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-}
-
-func (o *DeleteTeamEscalationPolicyResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
 }

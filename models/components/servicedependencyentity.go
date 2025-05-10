@@ -9,14 +9,12 @@ import (
 
 // ServiceDependencyEntity model
 type ServiceDependencyEntity struct {
-	ID        *string    `json:"id,omitempty"`
-	Notes     *string    `json:"notes,omitempty"`
-	CreatedAt *time.Time `json:"created_at,omitempty"`
-	UpdatedAt *time.Time `json:"updated_at,omitempty"`
-	// ServiceEntity model
-	Service *ServiceEntity `json:"service,omitempty"`
-	// ServiceEntity model
-	ConnectedService *ServiceEntity `json:"connected_service,omitempty"`
+	ID               *string                `json:"id,omitempty"`
+	Notes            *string                `json:"notes,omitempty"`
+	CreatedAt        *time.Time             `json:"created_at,omitempty"`
+	UpdatedAt        *time.Time             `json:"updated_at,omitempty"`
+	Service          *NullableServiceEntity `json:"service,omitempty"`
+	ConnectedService *NullableServiceEntity `json:"connected_service,omitempty"`
 }
 
 func (s ServiceDependencyEntity) MarshalJSON() ([]byte, error) {
@@ -58,14 +56,14 @@ func (o *ServiceDependencyEntity) GetUpdatedAt() *time.Time {
 	return o.UpdatedAt
 }
 
-func (o *ServiceDependencyEntity) GetService() *ServiceEntity {
+func (o *ServiceDependencyEntity) GetService() *NullableServiceEntity {
 	if o == nil {
 		return nil
 	}
 	return o.Service
 }
 
-func (o *ServiceDependencyEntity) GetConnectedService() *ServiceEntity {
+func (o *ServiceDependencyEntity) GetConnectedService() *NullableServiceEntity {
 	if o == nil {
 		return nil
 	}

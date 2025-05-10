@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type GetIncidentTaskRequest struct {
 	TaskID     string `pathParam:"style=simple,explode=false,name=task_id"`
 	IncidentID string `pathParam:"style=simple,explode=false,name=incident_id"`
@@ -23,15 +19,4 @@ func (o *GetIncidentTaskRequest) GetIncidentID() string {
 		return ""
 	}
 	return o.IncidentID
-}
-
-type GetIncidentTaskResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-}
-
-func (o *GetIncidentTaskResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
 }

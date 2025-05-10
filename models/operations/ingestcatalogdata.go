@@ -7,8 +7,8 @@ import (
 )
 
 type IngestCatalogDataRequest struct {
-	CatalogID                     string                                   `pathParam:"style=simple,explode=false,name=catalog_id"`
-	PostV1CatalogsCatalogIDIngest components.PostV1CatalogsCatalogIDIngest `request:"mediaType=application/json"`
+	CatalogID         string                       `pathParam:"style=simple,explode=false,name=catalog_id"`
+	IngestCatalogData components.IngestCatalogData `request:"mediaType=application/json"`
 }
 
 func (o *IngestCatalogDataRequest) GetCatalogID() string {
@@ -18,29 +18,9 @@ func (o *IngestCatalogDataRequest) GetCatalogID() string {
 	return o.CatalogID
 }
 
-func (o *IngestCatalogDataRequest) GetPostV1CatalogsCatalogIDIngest() components.PostV1CatalogsCatalogIDIngest {
+func (o *IngestCatalogDataRequest) GetIngestCatalogData() components.IngestCatalogData {
 	if o == nil {
-		return components.PostV1CatalogsCatalogIDIngest{}
+		return components.IngestCatalogData{}
 	}
-	return o.PostV1CatalogsCatalogIDIngest
-}
-
-type IngestCatalogDataResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Accepts catalog data in the configured format and asyncronously processes the data to incorporate changes into service catalog.
-	ImportsImportEntity *components.ImportsImportEntity
-}
-
-func (o *IngestCatalogDataResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *IngestCatalogDataResponse) GetImportsImportEntity() *components.ImportsImportEntity {
-	if o == nil {
-		return nil
-	}
-	return o.ImportsImportEntity
+	return o.IngestCatalogData
 }

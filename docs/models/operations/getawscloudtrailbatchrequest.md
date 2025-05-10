@@ -1,4 +1,4 @@
-# GetAwsCloudTrailBatchRequest
+# GetAwsCloudtrailBatchRequest
 
 
 ## Fields

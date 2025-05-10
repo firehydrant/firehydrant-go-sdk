@@ -7,20 +7,679 @@ Operations related to Tasks
 
 ### Available Operations
 
+* [CreateIncidentTaskList](#createincidenttasklist) - Add tasks from a task list to an incident
+* [ListIncidentTasks](#listincidenttasks) - List tasks for an incident
+* [CreateIncidentTask](#createincidenttask) - Create an incident task
+* [GetIncidentTask](#getincidenttask) - Get an incident task
+* [DeleteIncidentTask](#deleteincidenttask) - Delete an incident task
+* [UpdateIncidentTask](#updateincidenttask) - Update an incident task
+* [ConvertIncidentTask](#convertincidenttask) - Convert a task to a follow-up
+* [ListTaskLists](#listtasklists) - List task lists
+* [CreateTaskList](#createtasklist) - Create a task list
+* [GetTaskList](#gettasklist) - Get a task list
+* [DeleteTaskList](#deletetasklist) - Delete a task list
+* [UpdateTaskList](#updatetasklist) - Update a task list
 * [ListChecklistTemplates](#listchecklisttemplates) - List checklist templates
 * [CreateChecklistTemplate](#createchecklisttemplate) - Create a checklist template
+* [GetChecklistTemplate](#getchecklisttemplate) - Get a checklist template
 * [DeleteChecklistTemplate](#deletechecklisttemplate) - Archive a checklist template
 * [UpdateChecklistTemplate](#updatechecklisttemplate) - Update a checklist template
-* [ListForIncident](#listforincident) - List tasks for an incident
-* [Create](#create) - Create a task for an incident
-* [GetForIncident](#getforincident) - Get a task for an incident
-* [Delete](#delete) - Delete a task from an incident
-* [UpdateTask](#updatetask) - Update a task for an incident
-* [ConvertToFollowup](#converttofollowup) - Convert a task to a follow-up
-* [ListTasks](#listtasks) - List task lists
-* [CreateList](#createlist) - Create a task list
-* [Get](#get) - Get a task list
-* [Update](#update) - Update a task list
+
+## CreateIncidentTaskList
+
+Add all tasks from list to incident
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Tasks.CreateIncidentTaskList(ctx, "<id>", components.CreateIncidentTaskList{
+        TaskListID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `ctx`                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                  | :heavy_check_mark:                                                                     | The context to use for the request.                                                    |
+| `incidentID`                                                                           | *string*                                                                               | :heavy_check_mark:                                                                     | N/A                                                                                    |
+| `createIncidentTaskList`                                                               | [components.CreateIncidentTaskList](../../models/components/createincidenttasklist.md) | :heavy_check_mark:                                                                     | N/A                                                                                    |
+| `opts`                                                                                 | [][operations.Option](../../models/operations/option.md)                               | :heavy_minus_sign:                                                                     | The options for this request.                                                          |
+
+### Response
+
+**[*components.TaskEntity](../../models/components/taskentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## ListIncidentTasks
+
+Retrieve a list of all tasks for a specific incident
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Tasks.ListIncidentTasks(ctx, "<id>", nil, nil)
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `incidentID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `page`                                                   | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
+| `perPage`                                                | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.TaskEntityPaginated](../../models/components/taskentitypaginated.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## CreateIncidentTask
+
+Create a task
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Tasks.CreateIncidentTask(ctx, "<id>", components.CreateIncidentTask{
+        Title: "<value>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `ctx`                                                                          | [context.Context](https://pkg.go.dev/context#Context)                          | :heavy_check_mark:                                                             | The context to use for the request.                                            |
+| `incidentID`                                                                   | *string*                                                                       | :heavy_check_mark:                                                             | N/A                                                                            |
+| `createIncidentTask`                                                           | [components.CreateIncidentTask](../../models/components/createincidenttask.md) | :heavy_check_mark:                                                             | N/A                                                                            |
+| `opts`                                                                         | [][operations.Option](../../models/operations/option.md)                       | :heavy_minus_sign:                                                             | The options for this request.                                                  |
+
+### Response
+
+**[*components.TaskEntity](../../models/components/taskentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## GetIncidentTask
+
+Retrieve a single task for an incident
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    err := s.Tasks.GetIncidentTask(ctx, "<id>", "<id>")
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `taskID`                                                 | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `incidentID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## DeleteIncidentTask
+
+Delete a task
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    err := s.Tasks.DeleteIncidentTask(ctx, "<id>", "<id>")
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `taskID`                                                 | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `incidentID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## UpdateIncidentTask
+
+Update a task's attributes
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Tasks.UpdateIncidentTask(ctx, "<id>", "<id>", components.UpdateIncidentTask{})
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `ctx`                                                                          | [context.Context](https://pkg.go.dev/context#Context)                          | :heavy_check_mark:                                                             | The context to use for the request.                                            |
+| `taskID`                                                                       | *string*                                                                       | :heavy_check_mark:                                                             | N/A                                                                            |
+| `incidentID`                                                                   | *string*                                                                       | :heavy_check_mark:                                                             | N/A                                                                            |
+| `updateIncidentTask`                                                           | [components.UpdateIncidentTask](../../models/components/updateincidenttask.md) | :heavy_check_mark:                                                             | N/A                                                                            |
+| `opts`                                                                         | [][operations.Option](../../models/operations/option.md)                       | :heavy_minus_sign:                                                             | The options for this request.                                                  |
+
+### Response
+
+**[*components.TaskEntity](../../models/components/taskentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## ConvertIncidentTask
+
+Convert a task to a follow-up
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Tasks.ConvertIncidentTask(ctx, "<id>", "<id>", components.ConvertIncidentTask{})
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `ctx`                                                                            | [context.Context](https://pkg.go.dev/context#Context)                            | :heavy_check_mark:                                                               | The context to use for the request.                                              |
+| `taskID`                                                                         | *string*                                                                         | :heavy_check_mark:                                                               | N/A                                                                              |
+| `incidentID`                                                                     | *string*                                                                         | :heavy_check_mark:                                                               | N/A                                                                              |
+| `convertIncidentTask`                                                            | [components.ConvertIncidentTask](../../models/components/convertincidenttask.md) | :heavy_check_mark:                                                               | N/A                                                                              |
+| `opts`                                                                           | [][operations.Option](../../models/operations/option.md)                         | :heavy_minus_sign:                                                               | The options for this request.                                                    |
+
+### Response
+
+**[*components.TaskEntityPaginated](../../models/components/taskentitypaginated.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## ListTaskLists
+
+Lists all task lists for your organization
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Tasks.ListTaskLists(ctx, nil, nil)
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `page`                                                   | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
+| `perPage`                                                | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.TaskListEntity](../../models/components/tasklistentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## CreateTaskList
+
+Creates a new task list
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Tasks.CreateTaskList(ctx, components.CreateTaskList{
+        Name: "<value>",
+        TaskListItems: []components.CreateTaskListTaskListItem{
+            components.CreateTaskListTaskListItem{
+                Summary: "<value>",
+            },
+            components.CreateTaskListTaskListItem{
+                Summary: "<value>",
+            },
+        },
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `ctx`                                                                  | [context.Context](https://pkg.go.dev/context#Context)                  | :heavy_check_mark:                                                     | The context to use for the request.                                    |
+| `request`                                                              | [components.CreateTaskList](../../models/components/createtasklist.md) | :heavy_check_mark:                                                     | The request object to use for the request.                             |
+| `opts`                                                                 | [][operations.Option](../../models/operations/option.md)               | :heavy_minus_sign:                                                     | The options for this request.                                          |
+
+### Response
+
+**[*components.TaskListEntity](../../models/components/tasklistentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## GetTaskList
+
+Retrieves a single task list by ID
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Tasks.GetTaskList(ctx, "<id>")
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `taskListID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.TaskListEntity](../../models/components/tasklistentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## DeleteTaskList
+
+Delete a task list
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Tasks.DeleteTaskList(ctx, "<id>")
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `taskListID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.TaskListEntity](../../models/components/tasklistentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## UpdateTaskList
+
+Updates a task list's attributes and task list items
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Tasks.UpdateTaskList(ctx, "<id>", components.UpdateTaskList{})
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `ctx`                                                                  | [context.Context](https://pkg.go.dev/context#Context)                  | :heavy_check_mark:                                                     | The context to use for the request.                                    |
+| `taskListID`                                                           | *string*                                                               | :heavy_check_mark:                                                     | N/A                                                                    |
+| `updateTaskList`                                                       | [components.UpdateTaskList](../../models/components/updatetasklist.md) | :heavy_check_mark:                                                     | N/A                                                                    |
+| `opts`                                                                 | [][operations.Option](../../models/operations/option.md)               | :heavy_minus_sign:                                                     | The options for this request.                                          |
+
+### Response
+
+**[*components.TaskListEntity](../../models/components/tasklistentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## ListChecklistTemplates
 
@@ -34,21 +693,24 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
     res, err := s.Tasks.ListChecklistTemplates(ctx, nil, nil, nil)
     if err != nil {
         log.Fatal(err)
     }
-    if res.ChecklistTemplateEntityPaginated != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -66,19 +728,13 @@ func main() {
 
 ### Response
 
-**[*operations.ListChecklistTemplatesResponse](../../models/operations/listchecklisttemplatesresponse.md), error**
+**[*components.ChecklistTemplateEntityPaginated](../../models/components/checklisttemplateentitypaginated.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## CreateChecklistTemplate
 
@@ -98,15 +754,23 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Tasks.CreateChecklistTemplate(ctx, components.PostV1ChecklistTemplates{
+    res, err := s.Tasks.CreateChecklistTemplate(ctx, components.CreateChecklistTemplate{
         Name: "<value>",
-        Checks: []components.Checks{
-            components.Checks{
+        Checks: []components.CreateChecklistTemplateCheck{
+            components.CreateChecklistTemplateCheck{
+                Name: "<value>",
+            },
+            components.CreateChecklistTemplateCheck{
+                Name: "<value>",
+            },
+            components.CreateChecklistTemplateCheck{
                 Name: "<value>",
             },
         },
@@ -114,7 +778,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-    if res.ChecklistTemplateEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -122,28 +786,75 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `ctx`                                                                                      | [context.Context](https://pkg.go.dev/context#Context)                                      | :heavy_check_mark:                                                                         | The context to use for the request.                                                        |
-| `request`                                                                                  | [components.PostV1ChecklistTemplates](../../models/components/postv1checklisttemplates.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
-| `opts`                                                                                     | [][operations.Option](../../models/operations/option.md)                                   | :heavy_minus_sign:                                                                         | The options for this request.                                                              |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `ctx`                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                    | :heavy_check_mark:                                                                       | The context to use for the request.                                                      |
+| `request`                                                                                | [components.CreateChecklistTemplate](../../models/components/createchecklisttemplate.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+| `opts`                                                                                   | [][operations.Option](../../models/operations/option.md)                                 | :heavy_minus_sign:                                                                       | The options for this request.                                                            |
 
 ### Response
 
-**[*operations.CreateChecklistTemplateResponse](../../models/operations/createchecklisttemplateresponse.md), error**
+**[*components.ChecklistTemplateEntity](../../models/components/checklisttemplateentity.md), error**
 
 ### Errors
 
-| Error Type                    | Status Code                   | Content Type                  |
-| ----------------------------- | ----------------------------- | ----------------------------- |
-| sdkerrors.ErrorEntity         | 400                           | application/json              |
-| sdkerrors.Unauthorized        | 401, 403, 407, 511            | application/json              |
-| sdkerrors.NotFound            | 404, 501, 505                 | application/json              |
-| sdkerrors.Timeout             | 408, 504                      | application/json              |
-| sdkerrors.BadRequest          | 413, 414, 415, 422, 431, 510  | application/json              |
-| sdkerrors.RateLimited         | 429                           | application/json              |
-| sdkerrors.InternalServerError | 500, 502, 503, 506, 507, 508  | application/json              |
-| sdkerrors.SDKError            | 4XX, 5XX                      | \*/\*                         |
+| Error Type            | Status Code           | Content Type          |
+| --------------------- | --------------------- | --------------------- |
+| sdkerrors.ErrorEntity | 400                   | application/json      |
+| sdkerrors.SDKError    | 4XX, 5XX              | \*/\*                 |
+
+## GetChecklistTemplate
+
+Retrieves a single checklist template by ID
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Tasks.GetChecklistTemplate(ctx, "<id>")
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `id`                                                     | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.ChecklistTemplateEntity](../../models/components/checklisttemplateentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## DeleteChecklistTemplate
 
@@ -157,21 +868,24 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
     res, err := s.Tasks.DeleteChecklistTemplate(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
     }
-    if res.ChecklistTemplateEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -187,19 +901,13 @@ func main() {
 
 ### Response
 
-**[*operations.DeleteChecklistTemplateResponse](../../models/operations/deletechecklisttemplateresponse.md), error**
+**[*components.ChecklistTemplateEntity](../../models/components/checklisttemplateentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## UpdateChecklistTemplate
 
@@ -219,187 +927,14 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Tasks.UpdateChecklistTemplate(ctx, "<id>", components.PatchV1ChecklistTemplatesID{})
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.ChecklistTemplateEntity != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `ctx`                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                            | :heavy_check_mark:                                                                               | The context to use for the request.                                                              |
-| `id`                                                                                             | *string*                                                                                         | :heavy_check_mark:                                                                               | N/A                                                                                              |
-| `patchV1ChecklistTemplatesID`                                                                    | [components.PatchV1ChecklistTemplatesID](../../models/components/patchv1checklisttemplatesid.md) | :heavy_check_mark:                                                                               | N/A                                                                                              |
-| `opts`                                                                                           | [][operations.Option](../../models/operations/option.md)                                         | :heavy_minus_sign:                                                                               | The options for this request.                                                                    |
-
-### Response
-
-**[*operations.UpdateChecklistTemplateResponse](../../models/operations/updatechecklisttemplateresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## ListForIncident
-
-Retrieve a list of all tasks for a specific incident
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Tasks.ListForIncident(ctx, "<id>", nil, nil)
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.TaskEntityPaginated != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
-| `incidentID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
-| `page`                                                   | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
-| `perPage`                                                | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
-| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
-
-### Response
-
-**[*operations.ListIncidentTasksResponse](../../models/operations/listincidenttasksresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## Create
-
-Create a task
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"firehydrant/models/components"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Tasks.Create(ctx, "<id>", components.PostV1IncidentsIncidentIDTasks{
-        Title: "<value>",
-    })
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.TaskEntity != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `ctx`                                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                                  | :heavy_check_mark:                                                                                     | The context to use for the request.                                                                    |
-| `incidentID`                                                                                           | *string*                                                                                               | :heavy_check_mark:                                                                                     | N/A                                                                                                    |
-| `postV1IncidentsIncidentIDTasks`                                                                       | [components.PostV1IncidentsIncidentIDTasks](../../models/components/postv1incidentsincidentidtasks.md) | :heavy_check_mark:                                                                                     | N/A                                                                                                    |
-| `opts`                                                                                                 | [][operations.Option](../../models/operations/option.md)                                               | :heavy_minus_sign:                                                                                     | The options for this request.                                                                          |
-
-### Response
-
-**[*operations.CreateIncidentTaskResponse](../../models/operations/createincidenttaskresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## GetForIncident
-
-Retrieve a single task for an incident
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Tasks.GetForIncident(ctx, "<id>", "<id>")
+    res, err := s.Tasks.UpdateChecklistTemplate(ctx, "<id>", components.UpdateChecklistTemplate{})
     if err != nil {
         log.Fatal(err)
     }
@@ -411,438 +946,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
-| `taskID`                                                 | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
-| `incidentID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
-| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `ctx`                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                    | :heavy_check_mark:                                                                       | The context to use for the request.                                                      |
+| `id`                                                                                     | *string*                                                                                 | :heavy_check_mark:                                                                       | N/A                                                                                      |
+| `updateChecklistTemplate`                                                                | [components.UpdateChecklistTemplate](../../models/components/updatechecklisttemplate.md) | :heavy_check_mark:                                                                       | N/A                                                                                      |
+| `opts`                                                                                   | [][operations.Option](../../models/operations/option.md)                                 | :heavy_minus_sign:                                                                       | The options for this request.                                                            |
 
 ### Response
 
-**[*operations.GetIncidentTaskResponse](../../models/operations/getincidenttaskresponse.md), error**
+**[*components.ChecklistTemplateEntity](../../models/components/checklisttemplateentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## Delete
-
-Delete a task
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Tasks.Delete(ctx, "<id>", "<id>")
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
-| `taskID`                                                 | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
-| `incidentID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
-| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
-
-### Response
-
-**[*operations.DeleteIncidentTaskResponse](../../models/operations/deleteincidenttaskresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## UpdateTask
-
-Update a task's attributes
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"firehydrant/models/components"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Tasks.UpdateTask(ctx, "<id>", "<id>", components.PatchV1IncidentsIncidentIDTasksTaskID{})
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.TaskEntity != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
-| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                                                | :heavy_check_mark:                                                                                                   | The context to use for the request.                                                                                  |
-| `taskID`                                                                                                             | *string*                                                                                                             | :heavy_check_mark:                                                                                                   | N/A                                                                                                                  |
-| `incidentID`                                                                                                         | *string*                                                                                                             | :heavy_check_mark:                                                                                                   | N/A                                                                                                                  |
-| `patchV1IncidentsIncidentIDTasksTaskID`                                                                              | [components.PatchV1IncidentsIncidentIDTasksTaskID](../../models/components/patchv1incidentsincidentidtaskstaskid.md) | :heavy_check_mark:                                                                                                   | N/A                                                                                                                  |
-| `opts`                                                                                                               | [][operations.Option](../../models/operations/option.md)                                                             | :heavy_minus_sign:                                                                                                   | The options for this request.                                                                                        |
-
-### Response
-
-**[*operations.UpdateIncidentTaskResponse](../../models/operations/updateincidenttaskresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## ConvertToFollowup
-
-Convert a task to a follow-up
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"firehydrant/models/components"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Tasks.ConvertToFollowup(ctx, "<id>", "<id>", components.PostV1IncidentsIncidentIDTasksTaskIDConvert{})
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.TaskEntityPaginated != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
-| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                                                            | :heavy_check_mark:                                                                                                               | The context to use for the request.                                                                                              |
-| `taskID`                                                                                                                         | *string*                                                                                                                         | :heavy_check_mark:                                                                                                               | N/A                                                                                                                              |
-| `incidentID`                                                                                                                     | *string*                                                                                                                         | :heavy_check_mark:                                                                                                               | N/A                                                                                                                              |
-| `postV1IncidentsIncidentIDTasksTaskIDConvert`                                                                                    | [components.PostV1IncidentsIncidentIDTasksTaskIDConvert](../../models/components/postv1incidentsincidentidtaskstaskidconvert.md) | :heavy_check_mark:                                                                                                               | N/A                                                                                                                              |
-| `opts`                                                                                                                           | [][operations.Option](../../models/operations/option.md)                                                                         | :heavy_minus_sign:                                                                                                               | The options for this request.                                                                                                    |
-
-### Response
-
-**[*operations.ConvertIncidentTaskToFollowupResponse](../../models/operations/convertincidenttasktofollowupresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## ListTasks
-
-Lists all task lists for your organization
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Tasks.ListTasks(ctx, nil, nil)
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.TaskListEntity != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
-| `page`                                                   | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
-| `perPage`                                                | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
-| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
-
-### Response
-
-**[*operations.ListTaskListsResponse](../../models/operations/listtasklistsresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## CreateList
-
-Creates a new task list
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"firehydrant/models/components"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Tasks.CreateList(ctx, components.PostV1TaskLists{
-        Name: "<value>",
-        TaskListItems: []components.TaskListItems{
-            components.TaskListItems{
-                Summary: "<value>",
-            },
-            components.TaskListItems{
-                Summary: "<value>",
-            },
-        },
-    })
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.TaskListEntity != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
-| `ctx`                                                                    | [context.Context](https://pkg.go.dev/context#Context)                    | :heavy_check_mark:                                                       | The context to use for the request.                                      |
-| `request`                                                                | [components.PostV1TaskLists](../../models/components/postv1tasklists.md) | :heavy_check_mark:                                                       | The request object to use for the request.                               |
-| `opts`                                                                   | [][operations.Option](../../models/operations/option.md)                 | :heavy_minus_sign:                                                       | The options for this request.                                            |
-
-### Response
-
-**[*operations.CreateTaskListResponse](../../models/operations/createtasklistresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## Get
-
-Retrieves a single task list by ID
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Tasks.Get(ctx, "<id>")
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.TaskListEntity != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
-| `taskListID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
-| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
-
-### Response
-
-**[*operations.GetTaskListResponse](../../models/operations/gettasklistresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## Update
-
-Updates a task list's attributes and task list items
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"firehydrant/models/components"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Tasks.Update(ctx, "<id>", components.PatchV1TaskListsTaskListID{})
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.TaskListEntity != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                          | :heavy_check_mark:                                                                             | The context to use for the request.                                                            |
-| `taskListID`                                                                                   | *string*                                                                                       | :heavy_check_mark:                                                                             | N/A                                                                                            |
-| `patchV1TaskListsTaskListID`                                                                   | [components.PatchV1TaskListsTaskListID](../../models/components/patchv1taskliststasklistid.md) | :heavy_check_mark:                                                                             | N/A                                                                                            |
-| `opts`                                                                                         | [][operations.Option](../../models/operations/option.md)                                       | :heavy_minus_sign:                                                                             | The options for this request.                                                                  |
-
-### Response
-
-**[*operations.UpdateTaskListResponse](../../models/operations/updatetasklistresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |

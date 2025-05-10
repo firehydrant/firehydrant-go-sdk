@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type ListChangesRequest struct {
 	Page    *int `queryParam:"style=form,explode=true,name=page"`
 	PerPage *int `queryParam:"style=form,explode=true,name=per_page"`
@@ -32,15 +28,4 @@ func (o *ListChangesRequest) GetQuery() *string {
 		return nil
 	}
 	return o.Query
-}
-
-type ListChangesResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-}
-
-func (o *ListChangesResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
 }

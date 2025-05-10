@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type ListInfrastructuresRequest struct {
 	// A query to search infrastructures by their name
 	Query *string `queryParam:"style=form,explode=true,name=query"`
@@ -50,24 +46,4 @@ func (o *ListInfrastructuresRequest) GetPerPage() *int {
 		return nil
 	}
 	return o.PerPage
-}
-
-type ListInfrastructuresResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Lists functionality, service and environment objects
-	InfrastructureSearchEntity *components.InfrastructureSearchEntity
-}
-
-func (o *ListInfrastructuresResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListInfrastructuresResponse) GetInfrastructureSearchEntity() *components.InfrastructureSearchEntity {
-	if o == nil {
-		return nil
-	}
-	return o.InfrastructureSearchEntity
 }

@@ -7,8 +7,8 @@ import (
 )
 
 type CreateChangeIdentityRequest struct {
-	ChangeID                        string                                     `pathParam:"style=simple,explode=false,name=change_id"`
-	PostV1ChangesChangeIDIdentities components.PostV1ChangesChangeIDIdentities `request:"mediaType=application/json"`
+	ChangeID             string                          `pathParam:"style=simple,explode=false,name=change_id"`
+	CreateChangeIdentity components.CreateChangeIdentity `request:"mediaType=application/json"`
 }
 
 func (o *CreateChangeIdentityRequest) GetChangeID() string {
@@ -18,29 +18,9 @@ func (o *CreateChangeIdentityRequest) GetChangeID() string {
 	return o.ChangeID
 }
 
-func (o *CreateChangeIdentityRequest) GetPostV1ChangesChangeIDIdentities() components.PostV1ChangesChangeIDIdentities {
+func (o *CreateChangeIdentityRequest) GetCreateChangeIdentity() components.CreateChangeIdentity {
 	if o == nil {
-		return components.PostV1ChangesChangeIDIdentities{}
+		return components.CreateChangeIdentity{}
 	}
-	return o.PostV1ChangesChangeIDIdentities
-}
-
-type CreateChangeIdentityResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Create an identity for this change
-	ChangeIdentityEntity *components.ChangeIdentityEntity
-}
-
-func (o *CreateChangeIdentityResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *CreateChangeIdentityResponse) GetChangeIdentityEntity() *components.ChangeIdentityEntity {
-	if o == nil {
-		return nil
-	}
-	return o.ChangeIdentityEntity
+	return o.CreateChangeIdentity
 }

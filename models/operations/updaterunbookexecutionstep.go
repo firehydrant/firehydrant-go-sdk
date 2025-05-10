@@ -7,9 +7,9 @@ import (
 )
 
 type UpdateRunbookExecutionStepRequest struct {
-	ExecutionID                                   string                                                   `pathParam:"style=simple,explode=false,name=execution_id"`
-	StepID                                        string                                                   `pathParam:"style=simple,explode=false,name=step_id"`
-	PutV1RunbooksExecutionsExecutionIDStepsStepID components.PutV1RunbooksExecutionsExecutionIDStepsStepID `request:"mediaType=application/json"`
+	ExecutionID                string                                `pathParam:"style=simple,explode=false,name=execution_id"`
+	StepID                     string                                `pathParam:"style=simple,explode=false,name=step_id"`
+	UpdateRunbookExecutionStep components.UpdateRunbookExecutionStep `request:"mediaType=application/json"`
 }
 
 func (o *UpdateRunbookExecutionStepRequest) GetExecutionID() string {
@@ -26,29 +26,9 @@ func (o *UpdateRunbookExecutionStepRequest) GetStepID() string {
 	return o.StepID
 }
 
-func (o *UpdateRunbookExecutionStepRequest) GetPutV1RunbooksExecutionsExecutionIDStepsStepID() components.PutV1RunbooksExecutionsExecutionIDStepsStepID {
+func (o *UpdateRunbookExecutionStepRequest) GetUpdateRunbookExecutionStep() components.UpdateRunbookExecutionStep {
 	if o == nil {
-		return components.PutV1RunbooksExecutionsExecutionIDStepsStepID{}
+		return components.UpdateRunbookExecutionStep{}
 	}
-	return o.PutV1RunbooksExecutionsExecutionIDStepsStepID
-}
-
-type UpdateRunbookExecutionStepResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Updates a runbook step execution, especially for changing the state of a step execution.
-	RunbooksExecutionEntity *components.RunbooksExecutionEntity
-}
-
-func (o *UpdateRunbookExecutionStepResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *UpdateRunbookExecutionStepResponse) GetRunbooksExecutionEntity() *components.RunbooksExecutionEntity {
-	if o == nil {
-		return nil
-	}
-	return o.RunbooksExecutionEntity
+	return o.UpdateRunbookExecutionStep
 }

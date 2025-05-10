@@ -7,8 +7,8 @@ import (
 )
 
 type UpdateTaskListRequest struct {
-	TaskListID                 string                                `pathParam:"style=simple,explode=false,name=task_list_id"`
-	PatchV1TaskListsTaskListID components.PatchV1TaskListsTaskListID `request:"mediaType=application/json"`
+	TaskListID     string                    `pathParam:"style=simple,explode=false,name=task_list_id"`
+	UpdateTaskList components.UpdateTaskList `request:"mediaType=application/json"`
 }
 
 func (o *UpdateTaskListRequest) GetTaskListID() string {
@@ -18,29 +18,9 @@ func (o *UpdateTaskListRequest) GetTaskListID() string {
 	return o.TaskListID
 }
 
-func (o *UpdateTaskListRequest) GetPatchV1TaskListsTaskListID() components.PatchV1TaskListsTaskListID {
+func (o *UpdateTaskListRequest) GetUpdateTaskList() components.UpdateTaskList {
 	if o == nil {
-		return components.PatchV1TaskListsTaskListID{}
+		return components.UpdateTaskList{}
 	}
-	return o.PatchV1TaskListsTaskListID
-}
-
-type UpdateTaskListResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Updates a task list's attributes and task list items
-	TaskListEntity *components.TaskListEntity
-}
-
-func (o *UpdateTaskListResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *UpdateTaskListResponse) GetTaskListEntity() *components.TaskListEntity {
-	if o == nil {
-		return nil
-	}
-	return o.TaskListEntity
+	return o.UpdateTaskList
 }

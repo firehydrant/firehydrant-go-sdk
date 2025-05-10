@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type ListScheduledMaintenancesRequest struct {
 	// Filter scheduled_maintenances with a query on their name
 	Query   *string `queryParam:"style=form,explode=true,name=query"`
@@ -32,24 +28,4 @@ func (o *ListScheduledMaintenancesRequest) GetPerPage() *int {
 		return nil
 	}
 	return o.PerPage
-}
-
-type ListScheduledMaintenancesResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Lists all scheduled maintenance events
-	ScheduledMaintenanceEntity *components.ScheduledMaintenanceEntity
-}
-
-func (o *ListScheduledMaintenancesResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListScheduledMaintenancesResponse) GetScheduledMaintenanceEntity() *components.ScheduledMaintenanceEntity {
-	if o == nil {
-		return nil
-	}
-	return o.ScheduledMaintenanceEntity
 }

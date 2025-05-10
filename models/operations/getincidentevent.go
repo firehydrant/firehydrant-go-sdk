@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type GetIncidentEventRequest struct {
 	IncidentID string `pathParam:"style=simple,explode=false,name=incident_id"`
 	EventID    string `pathParam:"style=simple,explode=false,name=event_id"`
@@ -23,24 +19,4 @@ func (o *GetIncidentEventRequest) GetEventID() string {
 		return ""
 	}
 	return o.EventID
-}
-
-type GetIncidentEventResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Retrieve a single event for an incident
-	IncidentEventEntity *components.IncidentEventEntity
-}
-
-func (o *GetIncidentEventResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *GetIncidentEventResponse) GetIncidentEventEntity() *components.IncidentEventEntity {
-	if o == nil {
-		return nil
-	}
-	return o.IncidentEventEntity
 }

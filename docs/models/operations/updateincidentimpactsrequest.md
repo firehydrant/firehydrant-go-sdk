@@ -1,9 +1,0 @@
-# UpdateIncidentImpactsRequest
-
-
-## Fields
-
-| Field                                                                                                  | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `IncidentID`                                                                                           | *string*                                                                                               | :heavy_check_mark:                                                                                     | N/A                                                                                                    |
-| `PutV1IncidentsIncidentIDImpact`                                                                       | [components.PutV1IncidentsIncidentIDImpact](../../models/components/putv1incidentsincidentidimpact.md) | :heavy_check_mark:                                                                                     | N/A                                                                                                    |

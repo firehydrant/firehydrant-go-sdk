@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type DeletePriorityRequest struct {
 	PrioritySlug string `pathParam:"style=simple,explode=false,name=priority_slug"`
 }
@@ -15,24 +11,4 @@ func (o *DeletePriorityRequest) GetPrioritySlug() string {
 		return ""
 	}
 	return o.PrioritySlug
-}
-
-type DeletePriorityResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Delete a specific priority
-	PriorityEntity *components.PriorityEntity
-}
-
-func (o *DeletePriorityResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *DeletePriorityResponse) GetPriorityEntity() *components.PriorityEntity {
-	if o == nil {
-		return nil
-	}
-	return o.PriorityEntity
 }

@@ -1,0 +1,11 @@
+# ListCommentsRequest
+
+
+## Fields
+
+| Field                                                                                    | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `Before`                                                                                 | [*time.Time](https://pkg.go.dev/time#Time)                                               | :heavy_minus_sign:                                                                       | An ISO8601 timestamp that allows filtering for comments posted before the provided time. |
+| `After`                                                                                  | [*time.Time](https://pkg.go.dev/time#Time)                                               | :heavy_minus_sign:                                                                       | An ISO8601 timestamp that allows filtering for comments posted after the provided time.  |
+| `Sort`                                                                                   | [*operations.ListCommentsSort](../../models/operations/listcommentssort.md)              | :heavy_minus_sign:                                                                       | Allows sorting comments by the time they were posted, ascending or descending.           |
+| `ConversationID`                                                                         | *string*                                                                                 | :heavy_check_mark:                                                                       | N/A                                                                                      |

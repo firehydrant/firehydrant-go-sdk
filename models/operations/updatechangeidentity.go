@@ -7,9 +7,9 @@ import (
 )
 
 type UpdateChangeIdentityRequest struct {
-	IdentityID                                 string                                                `pathParam:"style=simple,explode=false,name=identity_id"`
-	ChangeID                                   string                                                `pathParam:"style=simple,explode=false,name=change_id"`
-	PatchV1ChangesChangeIDIdentitiesIdentityID components.PatchV1ChangesChangeIDIdentitiesIdentityID `request:"mediaType=application/json"`
+	IdentityID           string                          `pathParam:"style=simple,explode=false,name=identity_id"`
+	ChangeID             string                          `pathParam:"style=simple,explode=false,name=change_id"`
+	UpdateChangeIdentity components.UpdateChangeIdentity `request:"mediaType=application/json"`
 }
 
 func (o *UpdateChangeIdentityRequest) GetIdentityID() string {
@@ -26,29 +26,9 @@ func (o *UpdateChangeIdentityRequest) GetChangeID() string {
 	return o.ChangeID
 }
 
-func (o *UpdateChangeIdentityRequest) GetPatchV1ChangesChangeIDIdentitiesIdentityID() components.PatchV1ChangesChangeIDIdentitiesIdentityID {
+func (o *UpdateChangeIdentityRequest) GetUpdateChangeIdentity() components.UpdateChangeIdentity {
 	if o == nil {
-		return components.PatchV1ChangesChangeIDIdentitiesIdentityID{}
+		return components.UpdateChangeIdentity{}
 	}
-	return o.PatchV1ChangesChangeIDIdentitiesIdentityID
-}
-
-type UpdateChangeIdentityResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Update an identity
-	ChangeIdentityEntity *components.ChangeIdentityEntity
-}
-
-func (o *UpdateChangeIdentityResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *UpdateChangeIdentityResponse) GetChangeIdentityEntity() *components.ChangeIdentityEntity {
-	if o == nil {
-		return nil
-	}
-	return o.ChangeIdentityEntity
+	return o.UpdateChangeIdentity
 }

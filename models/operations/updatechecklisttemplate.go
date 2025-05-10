@@ -7,8 +7,8 @@ import (
 )
 
 type UpdateChecklistTemplateRequest struct {
-	ID                          string                                 `pathParam:"style=simple,explode=false,name=id"`
-	PatchV1ChecklistTemplatesID components.PatchV1ChecklistTemplatesID `request:"mediaType=application/json"`
+	ID                      string                             `pathParam:"style=simple,explode=false,name=id"`
+	UpdateChecklistTemplate components.UpdateChecklistTemplate `request:"mediaType=application/json"`
 }
 
 func (o *UpdateChecklistTemplateRequest) GetID() string {
@@ -18,29 +18,9 @@ func (o *UpdateChecklistTemplateRequest) GetID() string {
 	return o.ID
 }
 
-func (o *UpdateChecklistTemplateRequest) GetPatchV1ChecklistTemplatesID() components.PatchV1ChecklistTemplatesID {
+func (o *UpdateChecklistTemplateRequest) GetUpdateChecklistTemplate() components.UpdateChecklistTemplate {
 	if o == nil {
-		return components.PatchV1ChecklistTemplatesID{}
+		return components.UpdateChecklistTemplate{}
 	}
-	return o.PatchV1ChecklistTemplatesID
-}
-
-type UpdateChecklistTemplateResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Update a checklist templates attributes
-	ChecklistTemplateEntity *components.ChecklistTemplateEntity
-}
-
-func (o *UpdateChecklistTemplateResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *UpdateChecklistTemplateResponse) GetChecklistTemplateEntity() *components.ChecklistTemplateEntity {
-	if o == nil {
-		return nil
-	}
-	return o.ChecklistTemplateEntity
+	return o.UpdateChecklistTemplate
 }

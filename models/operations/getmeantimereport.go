@@ -4,7 +4,6 @@ package operations
 
 import (
 	"firehydrant/internal/utils"
-	"firehydrant/models/components"
 	"firehydrant/types"
 )
 
@@ -137,24 +136,4 @@ func (o *GetMeanTimeReportRequest) GetCurrentMilestones() *string {
 		return nil
 	}
 	return o.CurrentMilestones
-}
-
-type GetMeanTimeReportResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Returns a report with time bucketed analytics data
-	ReportEntity *components.ReportEntity
-}
-
-func (o *GetMeanTimeReportResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *GetMeanTimeReportResponse) GetReportEntity() *components.ReportEntity {
-	if o == nil {
-		return nil
-	}
-	return o.ReportEntity
 }

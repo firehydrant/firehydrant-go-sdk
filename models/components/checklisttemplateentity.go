@@ -9,13 +9,13 @@ import (
 
 // ChecklistTemplateEntity model
 type ChecklistTemplateEntity struct {
-	ID          *string                `json:"id,omitempty"`
-	Name        *string                `json:"name,omitempty"`
-	Description *string                `json:"description,omitempty"`
-	CreatedAt   *string                `json:"created_at,omitempty"`
-	UpdatedAt   *time.Time             `json:"updated_at,omitempty"`
-	Checks      []ChecklistCheckEntity `json:"checks,omitempty"`
-	Owner       *TeamEntityLite        `json:"owner,omitempty"`
+	ID          *string                 `json:"id,omitempty"`
+	Name        *string                 `json:"name,omitempty"`
+	Description *string                 `json:"description,omitempty"`
+	CreatedAt   *string                 `json:"created_at,omitempty"`
+	UpdatedAt   *time.Time              `json:"updated_at,omitempty"`
+	Checks      []ChecklistCheckEntity  `json:"checks,omitempty"`
+	Owner       *NullableTeamEntityLite `json:"owner,omitempty"`
 	// List of services that use this checklist
 	ConnectedServices []ServiceEntityChecklist `json:"connected_services,omitempty"`
 }
@@ -73,7 +73,7 @@ func (o *ChecklistTemplateEntity) GetChecks() []ChecklistCheckEntity {
 	return o.Checks
 }
 
-func (o *ChecklistTemplateEntity) GetOwner() *TeamEntityLite {
+func (o *ChecklistTemplateEntity) GetOwner() *NullableTeamEntityLite {
 	if o == nil {
 		return nil
 	}

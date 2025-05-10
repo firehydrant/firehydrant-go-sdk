@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type ResolveIncidentRequestBody struct {
 	// The slug of any milestone in the post-incident or closed phase to set on the incident (and its children, if `resolve_children` os set). Must be one of the configured milestones available on this incident.
 	Milestone *string `json:"milestone,omitempty"`
@@ -35,24 +31,4 @@ func (o *ResolveIncidentRequest) GetRequestBody() *ResolveIncidentRequestBody {
 		return nil
 	}
 	return o.RequestBody
-}
-
-type ResolveIncidentResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Resolves a currently active incident
-	IncidentEntity *components.IncidentEntity
-}
-
-func (o *ResolveIncidentResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ResolveIncidentResponse) GetIncidentEntity() *components.IncidentEntity {
-	if o == nil {
-		return nil
-	}
-	return o.IncidentEntity
 }

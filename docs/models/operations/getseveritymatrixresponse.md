@@ -1,9 +1,0 @@
-# GetSeverityMatrixResponse
-
-
-## Fields
-
-| Field                                                                                                           | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
-| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| `HTTPMeta`                                                                                                      | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                              | :heavy_check_mark:                                                                                              | N/A                                                                                                             |
-| `SeverityMatrixSeverityMatrixEntity`                                                                            | [*components.SeverityMatrixSeverityMatrixEntity](../../models/components/severitymatrixseveritymatrixentity.md) | :heavy_minus_sign:                                                                                              | Retrieve the Severity matrix for your organization and its components and configured severities.                |

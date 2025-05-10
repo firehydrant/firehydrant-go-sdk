@@ -4,7 +4,6 @@ package operations
 
 import (
 	"firehydrant/internal/utils"
-	"firehydrant/models/components"
 	"firehydrant/types"
 )
 
@@ -38,24 +37,4 @@ func (o *ListRetrospectiveMetricsRequest) GetEndDate() *types.Date {
 		return nil
 	}
 	return o.EndDate
-}
-
-type ListRetrospectiveMetricsResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Returns a report with retrospective analytics data
-	MetricsRetrospectiveEntity *components.MetricsRetrospectiveEntity
-}
-
-func (o *ListRetrospectiveMetricsResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListRetrospectiveMetricsResponse) GetMetricsRetrospectiveEntity() *components.MetricsRetrospectiveEntity {
-	if o == nil {
-		return nil
-	}
-	return o.MetricsRetrospectiveEntity
 }

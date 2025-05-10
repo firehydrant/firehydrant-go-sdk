@@ -8,25 +8,25 @@ import (
 	"fmt"
 )
 
-type PathParamResourceType string
+type CreateSavedSearchResourceType string
 
 const (
-	PathParamResourceTypeChangeEvents          PathParamResourceType = "change_events"
-	PathParamResourceTypeIncidents             PathParamResourceType = "incidents"
-	PathParamResourceTypeServices              PathParamResourceType = "services"
-	PathParamResourceTypeScheduledMaintenances PathParamResourceType = "scheduled_maintenances"
-	PathParamResourceTypeTicketTasks           PathParamResourceType = "ticket_tasks"
-	PathParamResourceTypeTicketFollowUps       PathParamResourceType = "ticket_follow_ups"
-	PathParamResourceTypeAnalytics             PathParamResourceType = "analytics"
-	PathParamResourceTypeImpactAnalytics       PathParamResourceType = "impact_analytics"
-	PathParamResourceTypeAlerts                PathParamResourceType = "alerts"
-	PathParamResourceTypeIncidentEvents        PathParamResourceType = "incident_events"
+	CreateSavedSearchResourceTypeChangeEvents          CreateSavedSearchResourceType = "change_events"
+	CreateSavedSearchResourceTypeIncidents             CreateSavedSearchResourceType = "incidents"
+	CreateSavedSearchResourceTypeServices              CreateSavedSearchResourceType = "services"
+	CreateSavedSearchResourceTypeScheduledMaintenances CreateSavedSearchResourceType = "scheduled_maintenances"
+	CreateSavedSearchResourceTypeTicketTasks           CreateSavedSearchResourceType = "ticket_tasks"
+	CreateSavedSearchResourceTypeTicketFollowUps       CreateSavedSearchResourceType = "ticket_follow_ups"
+	CreateSavedSearchResourceTypeAnalytics             CreateSavedSearchResourceType = "analytics"
+	CreateSavedSearchResourceTypeImpactAnalytics       CreateSavedSearchResourceType = "impact_analytics"
+	CreateSavedSearchResourceTypeAlerts                CreateSavedSearchResourceType = "alerts"
+	CreateSavedSearchResourceTypeIncidentEvents        CreateSavedSearchResourceType = "incident_events"
 )
 
-func (e PathParamResourceType) ToPointer() *PathParamResourceType {
+func (e CreateSavedSearchResourceType) ToPointer() *CreateSavedSearchResourceType {
 	return &e
 }
-func (e *PathParamResourceType) UnmarshalJSON(data []byte) error {
+func (e *CreateSavedSearchResourceType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -51,48 +51,28 @@ func (e *PathParamResourceType) UnmarshalJSON(data []byte) error {
 	case "alerts":
 		fallthrough
 	case "incident_events":
-		*e = PathParamResourceType(v)
+		*e = CreateSavedSearchResourceType(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for PathParamResourceType: %v", v)
+		return fmt.Errorf("invalid value for CreateSavedSearchResourceType: %v", v)
 	}
 }
 
 type CreateSavedSearchRequest struct {
-	ResourceType                    PathParamResourceType                      `pathParam:"style=simple,explode=false,name=resource_type"`
-	PostV1SavedSearchesResourceType components.PostV1SavedSearchesResourceType `request:"mediaType=application/json"`
+	ResourceType      CreateSavedSearchResourceType `pathParam:"style=simple,explode=false,name=resource_type"`
+	CreateSavedSearch components.CreateSavedSearch  `request:"mediaType=application/json"`
 }
 
-func (o *CreateSavedSearchRequest) GetResourceType() PathParamResourceType {
+func (o *CreateSavedSearchRequest) GetResourceType() CreateSavedSearchResourceType {
 	if o == nil {
-		return PathParamResourceType("")
+		return CreateSavedSearchResourceType("")
 	}
 	return o.ResourceType
 }
 
-func (o *CreateSavedSearchRequest) GetPostV1SavedSearchesResourceType() components.PostV1SavedSearchesResourceType {
+func (o *CreateSavedSearchRequest) GetCreateSavedSearch() components.CreateSavedSearch {
 	if o == nil {
-		return components.PostV1SavedSearchesResourceType{}
+		return components.CreateSavedSearch{}
 	}
-	return o.PostV1SavedSearchesResourceType
-}
-
-type CreateSavedSearchResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Create a new saved search for a particular resource type
-	SavedSearchEntity *components.SavedSearchEntity
-}
-
-func (o *CreateSavedSearchResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *CreateSavedSearchResponse) GetSavedSearchEntity() *components.SavedSearchEntity {
-	if o == nil {
-		return nil
-	}
-	return o.SavedSearchEntity
+	return o.CreateSavedSearch
 }

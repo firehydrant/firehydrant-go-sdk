@@ -4,32 +4,32 @@ package components
 
 // NuncConnectionEntity model
 type NuncConnectionEntity struct {
-	ID                    *string                   `json:"id,omitempty"`
-	Domain                *string                   `json:"domain,omitempty"`
-	CompanyName           *string                   `json:"company_name,omitempty"`
-	CompanyWebsite        *string                   `json:"company_website,omitempty"`
-	Cname                 *string                   `json:"cname,omitempty"`
-	GreetingTitle         *string                   `json:"greeting_title,omitempty"`
-	GreetingBody          *string                   `json:"greeting_body,omitempty"`
-	OperationalMessage    *string                   `json:"operational_message,omitempty"`
-	CompanyTosURL         *string                   `json:"company_tos_url,omitempty"`
-	PrimaryColor          *string                   `json:"primary_color,omitempty"`
-	SecondaryColor        *string                   `json:"secondary_color,omitempty"`
-	ButtonBackgroundColor *string                   `json:"button_background_color,omitempty"`
-	ButtonTextColor       *string                   `json:"button_text_color,omitempty"`
-	LinkColor             *string                   `json:"link_color,omitempty"`
-	Title                 *string                   `json:"title,omitempty"`
-	ExposedFields         *string                   `json:"exposed_fields,omitempty"`
-	Conditions            *NuncConditionEntity      `json:"conditions,omitempty"`
-	Components            *NuncComponentEntity      `json:"components,omitempty"`
-	ComponentGroups       *NuncComponentGroupEntity `json:"component_groups,omitempty"`
-	Logo                  *MediaImageEntity         `json:"logo,omitempty"`
-	CoverImage            *MediaImageEntity         `json:"cover_image,omitempty"`
-	Favicon               *MediaImageEntity         `json:"favicon,omitempty"`
-	OpenGraphImage        *MediaImageEntity         `json:"open_graph_image,omitempty"`
-	DarkLogo              *MediaImageEntity         `json:"dark_logo,omitempty"`
-	EnableHistogram       *bool                     `json:"enable_histogram,omitempty"`
-	UIVersion             *int                      `json:"ui_version,omitempty"`
+	ID                    *string                           `json:"id,omitempty"`
+	Domain                *string                           `json:"domain,omitempty"`
+	CompanyName           *string                           `json:"company_name,omitempty"`
+	CompanyWebsite        *string                           `json:"company_website,omitempty"`
+	Cname                 *string                           `json:"cname,omitempty"`
+	GreetingTitle         *string                           `json:"greeting_title,omitempty"`
+	GreetingBody          *string                           `json:"greeting_body,omitempty"`
+	OperationalMessage    *string                           `json:"operational_message,omitempty"`
+	CompanyTosURL         *string                           `json:"company_tos_url,omitempty"`
+	PrimaryColor          *string                           `json:"primary_color,omitempty"`
+	SecondaryColor        *string                           `json:"secondary_color,omitempty"`
+	ButtonBackgroundColor *string                           `json:"button_background_color,omitempty"`
+	ButtonTextColor       *string                           `json:"button_text_color,omitempty"`
+	LinkColor             *string                           `json:"link_color,omitempty"`
+	Title                 *string                           `json:"title,omitempty"`
+	ExposedFields         []string                          `json:"exposed_fields,omitempty"`
+	Conditions            *NullableNuncConditionEntity      `json:"conditions,omitempty"`
+	Components            *NullableNuncComponentEntity      `json:"components,omitempty"`
+	ComponentGroups       *NullableNuncComponentGroupEntity `json:"component_groups,omitempty"`
+	Logo                  *NullableMediaImageEntity         `json:"logo,omitempty"`
+	CoverImage            *NullableMediaImageEntity         `json:"cover_image,omitempty"`
+	Favicon               *NullableMediaImageEntity         `json:"favicon,omitempty"`
+	OpenGraphImage        *NullableMediaImageEntity         `json:"open_graph_image,omitempty"`
+	DarkLogo              *NullableMediaImageEntity         `json:"dark_logo,omitempty"`
+	EnableHistogram       *bool                             `json:"enable_histogram,omitempty"`
+	UIVersion             *int                              `json:"ui_version,omitempty"`
 	// List of links attached to this status page.
 	Links []LinksEntity `json:"links,omitempty"`
 }
@@ -139,63 +139,63 @@ func (o *NuncConnectionEntity) GetTitle() *string {
 	return o.Title
 }
 
-func (o *NuncConnectionEntity) GetExposedFields() *string {
+func (o *NuncConnectionEntity) GetExposedFields() []string {
 	if o == nil {
 		return nil
 	}
 	return o.ExposedFields
 }
 
-func (o *NuncConnectionEntity) GetConditions() *NuncConditionEntity {
+func (o *NuncConnectionEntity) GetConditions() *NullableNuncConditionEntity {
 	if o == nil {
 		return nil
 	}
 	return o.Conditions
 }
 
-func (o *NuncConnectionEntity) GetComponents() *NuncComponentEntity {
+func (o *NuncConnectionEntity) GetComponents() *NullableNuncComponentEntity {
 	if o == nil {
 		return nil
 	}
 	return o.Components
 }
 
-func (o *NuncConnectionEntity) GetComponentGroups() *NuncComponentGroupEntity {
+func (o *NuncConnectionEntity) GetComponentGroups() *NullableNuncComponentGroupEntity {
 	if o == nil {
 		return nil
 	}
 	return o.ComponentGroups
 }
 
-func (o *NuncConnectionEntity) GetLogo() *MediaImageEntity {
+func (o *NuncConnectionEntity) GetLogo() *NullableMediaImageEntity {
 	if o == nil {
 		return nil
 	}
 	return o.Logo
 }
 
-func (o *NuncConnectionEntity) GetCoverImage() *MediaImageEntity {
+func (o *NuncConnectionEntity) GetCoverImage() *NullableMediaImageEntity {
 	if o == nil {
 		return nil
 	}
 	return o.CoverImage
 }
 
-func (o *NuncConnectionEntity) GetFavicon() *MediaImageEntity {
+func (o *NuncConnectionEntity) GetFavicon() *NullableMediaImageEntity {
 	if o == nil {
 		return nil
 	}
 	return o.Favicon
 }
 
-func (o *NuncConnectionEntity) GetOpenGraphImage() *MediaImageEntity {
+func (o *NuncConnectionEntity) GetOpenGraphImage() *NullableMediaImageEntity {
 	if o == nil {
 		return nil
 	}
 	return o.OpenGraphImage
 }
 
-func (o *NuncConnectionEntity) GetDarkLogo() *MediaImageEntity {
+func (o *NuncConnectionEntity) GetDarkLogo() *NullableMediaImageEntity {
 	if o == nil {
 		return nil
 	}

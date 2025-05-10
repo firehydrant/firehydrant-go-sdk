@@ -7,8 +7,8 @@ import (
 )
 
 type CreateTeamEscalationPolicyRequest struct {
-	TeamID                              string                                         `pathParam:"style=simple,explode=false,name=team_id"`
-	PostV1TeamsTeamIDEscalationPolicies components.PostV1TeamsTeamIDEscalationPolicies `request:"mediaType=application/json"`
+	TeamID                     string                                `pathParam:"style=simple,explode=false,name=team_id"`
+	CreateTeamEscalationPolicy components.CreateTeamEscalationPolicy `request:"mediaType=application/json"`
 }
 
 func (o *CreateTeamEscalationPolicyRequest) GetTeamID() string {
@@ -18,20 +18,9 @@ func (o *CreateTeamEscalationPolicyRequest) GetTeamID() string {
 	return o.TeamID
 }
 
-func (o *CreateTeamEscalationPolicyRequest) GetPostV1TeamsTeamIDEscalationPolicies() components.PostV1TeamsTeamIDEscalationPolicies {
+func (o *CreateTeamEscalationPolicyRequest) GetCreateTeamEscalationPolicy() components.CreateTeamEscalationPolicy {
 	if o == nil {
-		return components.PostV1TeamsTeamIDEscalationPolicies{}
+		return components.CreateTeamEscalationPolicy{}
 	}
-	return o.PostV1TeamsTeamIDEscalationPolicies
-}
-
-type CreateTeamEscalationPolicyResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-}
-
-func (o *CreateTeamEscalationPolicyResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
+	return o.CreateTeamEscalationPolicy
 }

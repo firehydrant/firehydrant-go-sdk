@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type ListTeamOnCallSchedulesRequest struct {
 	TeamID string `pathParam:"style=simple,explode=false,name=team_id"`
 	// A query string for searching through the list of on-call schedules.
@@ -40,15 +36,4 @@ func (o *ListTeamOnCallSchedulesRequest) GetPerPage() *int {
 		return nil
 	}
 	return o.PerPage
-}
-
-type ListTeamOnCallSchedulesResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-}
-
-func (o *ListTeamOnCallSchedulesResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
 }

@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type GetPostMortemReportRequest struct {
 	ReportID string `pathParam:"style=simple,explode=false,name=report_id"`
 }
@@ -15,24 +11,4 @@ func (o *GetPostMortemReportRequest) GetReportID() string {
 		return ""
 	}
 	return o.ReportID
-}
-
-type GetPostMortemReportResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Get a report
-	PostMortemsPostMortemReportEntity *components.PostMortemsPostMortemReportEntity
-}
-
-func (o *GetPostMortemReportResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *GetPostMortemReportResponse) GetPostMortemsPostMortemReportEntity() *components.PostMortemsPostMortemReportEntity {
-	if o == nil {
-		return nil
-	}
-	return o.PostMortemsPostMortemReportEntity
 }

@@ -3,11 +3,10 @@
 package components
 
 type ScheduledMaintenancesImpactEntity struct {
-	ID     *string         `json:"id,omitempty"`
-	Type   *string         `json:"type,omitempty"`
-	Impact *SuccinctEntity `json:"impact,omitempty"`
-	// SeverityMatrix_ConditionEntity model
-	Condition *SeverityMatrixConditionEntity `json:"condition,omitempty"`
+	ID        *string                                `json:"id,omitempty"`
+	Type      *string                                `json:"type,omitempty"`
+	Impact    *NullableSuccinctEntity                `json:"impact,omitempty"`
+	Condition *NullableSeverityMatrixConditionEntity `json:"condition,omitempty"`
 }
 
 func (o *ScheduledMaintenancesImpactEntity) GetID() *string {
@@ -24,14 +23,14 @@ func (o *ScheduledMaintenancesImpactEntity) GetType() *string {
 	return o.Type
 }
 
-func (o *ScheduledMaintenancesImpactEntity) GetImpact() *SuccinctEntity {
+func (o *ScheduledMaintenancesImpactEntity) GetImpact() *NullableSuccinctEntity {
 	if o == nil {
 		return nil
 	}
 	return o.Impact
 }
 
-func (o *ScheduledMaintenancesImpactEntity) GetCondition() *SeverityMatrixConditionEntity {
+func (o *ScheduledMaintenancesImpactEntity) GetCondition() *NullableSeverityMatrixConditionEntity {
 	if o == nil {
 		return nil
 	}

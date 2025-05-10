@@ -7,7 +7,7 @@ type PostMortemsReasonEntity struct {
 	ID            *string                             `json:"id,omitempty"`
 	Summary       *string                             `json:"summary,omitempty"`
 	Position      *int                                `json:"position,omitempty"`
-	CreatedBy     *AuthorEntity                       `json:"created_by,omitempty"`
+	CreatedBy     *NullableAuthorEntity               `json:"created_by,omitempty"`
 	Conversations []ConversationsAPIEntitiesReference `json:"conversations,omitempty"`
 }
 
@@ -32,7 +32,7 @@ func (o *PostMortemsReasonEntity) GetPosition() *int {
 	return o.Position
 }
 
-func (o *PostMortemsReasonEntity) GetCreatedBy() *AuthorEntity {
+func (o *PostMortemsReasonEntity) GetCreatedBy() *NullableAuthorEntity {
 	if o == nil {
 		return nil
 	}
