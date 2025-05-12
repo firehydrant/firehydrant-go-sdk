@@ -7,8 +7,8 @@ import (
 )
 
 type UpdateRunbookRequest struct {
-	RunbookID              string                            `pathParam:"style=simple,explode=false,name=runbook_id"`
-	PutV1RunbooksRunbookID components.PutV1RunbooksRunbookID `request:"mediaType=application/json"`
+	RunbookID     string                   `pathParam:"style=simple,explode=false,name=runbook_id"`
+	UpdateRunbook components.UpdateRunbook `request:"mediaType=application/json"`
 }
 
 func (o *UpdateRunbookRequest) GetRunbookID() string {
@@ -18,31 +18,9 @@ func (o *UpdateRunbookRequest) GetRunbookID() string {
 	return o.RunbookID
 }
 
-func (o *UpdateRunbookRequest) GetPutV1RunbooksRunbookID() components.PutV1RunbooksRunbookID {
+func (o *UpdateRunbookRequest) GetUpdateRunbook() components.UpdateRunbook {
 	if o == nil {
-		return components.PutV1RunbooksRunbookID{}
+		return components.UpdateRunbook{}
 	}
-	return o.PutV1RunbooksRunbookID
-}
-
-type UpdateRunbookResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Update a runbook and any attachment rules associated with it. This endpoint is used to configure nearly everything
-	// about a runbook, including but not limited to the steps, environments, attachment rules, and severities.
-	//
-	RunbookEntity *components.RunbookEntity
-}
-
-func (o *UpdateRunbookResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *UpdateRunbookResponse) GetRunbookEntity() *components.RunbookEntity {
-	if o == nil {
-		return nil
-	}
-	return o.RunbookEntity
+	return o.UpdateRunbook
 }

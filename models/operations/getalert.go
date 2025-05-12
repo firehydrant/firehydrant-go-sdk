@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type GetAlertRequest struct {
 	AlertID string `pathParam:"style=simple,explode=false,name=alert_id"`
 }
@@ -15,24 +11,4 @@ func (o *GetAlertRequest) GetAlertID() string {
 		return ""
 	}
 	return o.AlertID
-}
-
-type GetAlertResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Retrieve a single alert
-	AlertsAlertEntity *components.AlertsAlertEntity
-}
-
-func (o *GetAlertResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *GetAlertResponse) GetAlertsAlertEntity() *components.AlertsAlertEntity {
-	if o == nil {
-		return nil
-	}
-	return o.AlertsAlertEntity
 }

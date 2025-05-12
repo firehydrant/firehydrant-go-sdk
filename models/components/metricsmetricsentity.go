@@ -5,7 +5,7 @@ package components
 type DisplayInformation struct {
 }
 
-type Buckets struct {
+type Bucket struct {
 }
 
 // MetricsMetricsEntity - Metrics_MetricsEntity model
@@ -14,11 +14,11 @@ type MetricsMetricsEntity struct {
 	// The field by which the metrics are grouped. Can be one of: total, severity, priority, functionality, service, environment, or user.
 	By *string `json:"by,omitempty"`
 	// The size of returned buckets. Can be one of: day, week, month, or all_time.
-	BucketSize         *int                            `json:"bucket_size,omitempty"`
-	DisplayInformation *DisplayInformation             `json:"display_information,omitempty"`
-	Keys               []string                        `json:"keys,omitempty"`
-	Buckets            []Buckets                       `json:"buckets,omitempty"`
-	Sort               *MetricsMetricsEntitySortEntity `json:"sort,omitempty"`
+	BucketSize         *int                                    `json:"bucket_size,omitempty"`
+	DisplayInformation *DisplayInformation                     `json:"display_information,omitempty"`
+	Keys               []string                                `json:"keys,omitempty"`
+	Buckets            []Bucket                                `json:"buckets,omitempty"`
+	Sort               *NullableMetricsMetricsEntitySortEntity `json:"sort,omitempty"`
 }
 
 func (o *MetricsMetricsEntity) GetType() *string {
@@ -56,14 +56,14 @@ func (o *MetricsMetricsEntity) GetKeys() []string {
 	return o.Keys
 }
 
-func (o *MetricsMetricsEntity) GetBuckets() []Buckets {
+func (o *MetricsMetricsEntity) GetBuckets() []Bucket {
 	if o == nil {
 		return nil
 	}
 	return o.Buckets
 }
 
-func (o *MetricsMetricsEntity) GetSort() *MetricsMetricsEntitySortEntity {
+func (o *MetricsMetricsEntity) GetSort() *NullableMetricsMetricsEntitySortEntity {
 	if o == nil {
 		return nil
 	}

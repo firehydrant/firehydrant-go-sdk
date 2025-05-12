@@ -4,8 +4,8 @@ package components
 
 // TaskEntityPaginated model
 type TaskEntityPaginated struct {
-	Data       []TaskEntity      `json:"data,omitempty"`
-	Pagination *PaginationEntity `json:"pagination,omitempty"`
+	Data       []TaskEntity              `json:"data,omitempty"`
+	Pagination *NullablePaginationEntity `json:"pagination,omitempty"`
 }
 
 func (o *TaskEntityPaginated) GetData() []TaskEntity {
@@ -15,7 +15,7 @@ func (o *TaskEntityPaginated) GetData() []TaskEntity {
 	return o.Data
 }
 
-func (o *TaskEntityPaginated) GetPagination() *PaginationEntity {
+func (o *TaskEntityPaginated) GetPagination() *NullablePaginationEntity {
 	if o == nil {
 		return nil
 	}

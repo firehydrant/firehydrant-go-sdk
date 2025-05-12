@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type CloseIncidentRequest struct {
 	IncidentID string `pathParam:"style=simple,explode=false,name=incident_id"`
 }
@@ -15,24 +11,4 @@ func (o *CloseIncidentRequest) GetIncidentID() string {
 		return ""
 	}
 	return o.IncidentID
-}
-
-type CloseIncidentResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Closes an incident and optionally close all children
-	IncidentEntity *components.IncidentEntity
-}
-
-func (o *CloseIncidentResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *CloseIncidentResponse) GetIncidentEntity() *components.IncidentEntity {
-	if o == nil {
-		return nil
-	}
-	return o.IncidentEntity
 }

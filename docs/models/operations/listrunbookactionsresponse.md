@@ -1,9 +1,0 @@
-# ListRunbookActionsResponse
-
-
-## Fields
-
-| Field                                                                                                   | Type                                                                                                    | Required                                                                                                | Description                                                                                             |
-| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| `HTTPMeta`                                                                                              | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                      | :heavy_check_mark:                                                                                      | N/A                                                                                                     |
-| `RunbooksActionsEntityPaginated`                                                                        | [*components.RunbooksActionsEntityPaginated](../../models/components/runbooksactionsentitypaginated.md) | :heavy_minus_sign:                                                                                      | List all Runbook actions available through your connected integrations                                  |

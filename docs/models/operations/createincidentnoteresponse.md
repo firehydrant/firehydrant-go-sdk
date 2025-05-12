@@ -1,9 +1,0 @@
-# CreateIncidentNoteResponse
-
-
-## Fields
-
-| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
-| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| `HTTPMeta`                                                                                            | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                    | :heavy_check_mark:                                                                                    | N/A                                                                                                   |
-| `EventNoteEntity`                                                                                     | [*components.EventNoteEntity](../../models/components/eventnoteentity.md)                             | :heavy_minus_sign:                                                                                    | Create a new note on for an incident. The visibility field on a note determines where it gets posted. |

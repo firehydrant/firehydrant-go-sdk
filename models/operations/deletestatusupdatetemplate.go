@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type DeleteStatusUpdateTemplateRequest struct {
 	StatusUpdateTemplateID string `pathParam:"style=simple,explode=false,name=status_update_template_id"`
 }
@@ -15,24 +11,4 @@ func (o *DeleteStatusUpdateTemplateRequest) GetStatusUpdateTemplateID() string {
 		return ""
 	}
 	return o.StatusUpdateTemplateID
-}
-
-type DeleteStatusUpdateTemplateResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Delete a single status update template
-	StatusUpdateTemplateEntity *components.StatusUpdateTemplateEntity
-}
-
-func (o *DeleteStatusUpdateTemplateResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *DeleteStatusUpdateTemplateResponse) GetStatusUpdateTemplateEntity() *components.StatusUpdateTemplateEntity {
-	if o == nil {
-		return nil
-	}
-	return o.StatusUpdateTemplateEntity
 }

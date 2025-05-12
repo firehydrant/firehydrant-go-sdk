@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type DeleteTeamOnCallScheduleRequest struct {
 	TeamID     string `pathParam:"style=simple,explode=false,name=team_id"`
 	ScheduleID string `pathParam:"style=simple,explode=false,name=schedule_id"`
@@ -23,15 +19,4 @@ func (o *DeleteTeamOnCallScheduleRequest) GetScheduleID() string {
 		return ""
 	}
 	return o.ScheduleID
-}
-
-type DeleteTeamOnCallScheduleResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-}
-
-func (o *DeleteTeamOnCallScheduleResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
 }

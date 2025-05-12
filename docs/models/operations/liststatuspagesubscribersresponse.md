@@ -1,9 +1,0 @@
-# ListStatusPageSubscribersResponse
-
-
-## Fields
-
-| Field                                                                                           | Type                                                                                            | Required                                                                                        | Description                                                                                     |
-| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| `HTTPMeta`                                                                                      | [components.HTTPMetadata](../../models/components/httpmetadata.md)                              | :heavy_check_mark:                                                                              | N/A                                                                                             |
-| `NuncEmailSubscribersEntity`                                                                    | [*components.NuncEmailSubscribersEntity](../../models/components/nuncemailsubscribersentity.md) | :heavy_minus_sign:                                                                              | Retrieves the list of subscribers for a status page.                                            |

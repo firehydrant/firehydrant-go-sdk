@@ -1,0 +1,9 @@
+# CreateEmailSubscriberRequest
+
+
+## Fields
+
+| Field                                                                                                      | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `NuncConnectionID`                                                                                         | *string*                                                                                                   | :heavy_check_mark:                                                                                         | N/A                                                                                                        |
+| `RequestBody`                                                                                              | [operations.CreateEmailSubscriberRequestBody](../../models/operations/createemailsubscriberrequestbody.md) | :heavy_check_mark:                                                                                         | N/A                                                                                                        |

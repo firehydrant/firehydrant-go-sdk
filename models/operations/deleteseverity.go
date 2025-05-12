@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type DeleteSeverityRequest struct {
 	SeveritySlug string `pathParam:"style=simple,explode=false,name=severity_slug"`
 }
@@ -15,24 +11,4 @@ func (o *DeleteSeverityRequest) GetSeveritySlug() string {
 		return ""
 	}
 	return o.SeveritySlug
-}
-
-type DeleteSeverityResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Delete a specific severity
-	SeverityEntity *components.SeverityEntity
-}
-
-func (o *DeleteSeverityResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *DeleteSeverityResponse) GetSeverityEntity() *components.SeverityEntity {
-	if o == nil {
-		return nil
-	}
-	return o.SeverityEntity
 }

@@ -25,7 +25,7 @@ type ServiceEntityChecklist struct {
 	AlertOnAdd                *bool                         `json:"alert_on_add,omitempty"`
 	AutoAddRespondingTeam     *bool                         `json:"auto_add_responding_team,omitempty"`
 	CompletedChecks           *int                          `json:"completed_checks,omitempty"`
-	Owner                     *TeamEntityLite               `json:"owner,omitempty"`
+	Owner                     *NullableTeamEntityLite       `json:"owner,omitempty"`
 	ServiceChecklistUpdatedAt *time.Time                    `json:"service_checklist_updated_at,omitempty"`
 }
 
@@ -124,7 +124,7 @@ func (o *ServiceEntityChecklist) GetCompletedChecks() *int {
 	return o.CompletedChecks
 }
 
-func (o *ServiceEntityChecklist) GetOwner() *TeamEntityLite {
+func (o *ServiceEntityChecklist) GetOwner() *NullableTeamEntityLite {
 	if o == nil {
 		return nil
 	}

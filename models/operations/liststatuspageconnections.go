@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type ListStatuspageConnectionsRequest struct {
 	Page    *int `queryParam:"style=form,explode=true,name=page"`
 	PerPage *int `queryParam:"style=form,explode=true,name=per_page"`
@@ -23,24 +19,4 @@ func (o *ListStatuspageConnectionsRequest) GetPerPage() *int {
 		return nil
 	}
 	return o.PerPage
-}
-
-type ListStatuspageConnectionsResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Lists the available and configured Statuspage integrations connections for the authenticated organization.
-	IntegrationsStatuspageConnectionEntityPaginated *components.IntegrationsStatuspageConnectionEntityPaginated
-}
-
-func (o *ListStatuspageConnectionsResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListStatuspageConnectionsResponse) GetIntegrationsStatuspageConnectionEntityPaginated() *components.IntegrationsStatuspageConnectionEntityPaginated {
-	if o == nil {
-		return nil
-	}
-	return o.IntegrationsStatuspageConnectionEntityPaginated
 }

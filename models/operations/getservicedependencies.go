@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type GetServiceDependenciesRequest struct {
 	ServiceID string `pathParam:"style=simple,explode=false,name=service_id"`
 	// If true, returns all dependencies in one array. If false, splits dependencies into different arrays for child and parent dependencies
@@ -24,24 +20,4 @@ func (o *GetServiceDependenciesRequest) GetFlatten() *bool {
 		return nil
 	}
 	return o.Flatten
-}
-
-type GetServiceDependenciesResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Retrieves a service's dependencies
-	ServiceWithAllDependenciesEntity *components.ServiceWithAllDependenciesEntity
-}
-
-func (o *GetServiceDependenciesResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *GetServiceDependenciesResponse) GetServiceWithAllDependenciesEntity() *components.ServiceWithAllDependenciesEntity {
-	if o == nil {
-		return nil
-	}
-	return o.ServiceWithAllDependenciesEntity
 }

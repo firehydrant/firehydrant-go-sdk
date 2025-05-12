@@ -7,8 +7,8 @@ import (
 )
 
 type UpdateCustomFieldDefinitionRequest struct {
-	FieldID                               string                                           `pathParam:"style=simple,explode=false,name=field_id"`
-	PatchV1CustomFieldsDefinitionsFieldID components.PatchV1CustomFieldsDefinitionsFieldID `request:"mediaType=application/json"`
+	FieldID                     string                                 `pathParam:"style=simple,explode=false,name=field_id"`
+	UpdateCustomFieldDefinition components.UpdateCustomFieldDefinition `request:"mediaType=application/json"`
 }
 
 func (o *UpdateCustomFieldDefinitionRequest) GetFieldID() string {
@@ -18,29 +18,9 @@ func (o *UpdateCustomFieldDefinitionRequest) GetFieldID() string {
 	return o.FieldID
 }
 
-func (o *UpdateCustomFieldDefinitionRequest) GetPatchV1CustomFieldsDefinitionsFieldID() components.PatchV1CustomFieldsDefinitionsFieldID {
+func (o *UpdateCustomFieldDefinitionRequest) GetUpdateCustomFieldDefinition() components.UpdateCustomFieldDefinition {
 	if o == nil {
-		return components.PatchV1CustomFieldsDefinitionsFieldID{}
+		return components.UpdateCustomFieldDefinition{}
 	}
-	return o.PatchV1CustomFieldsDefinitionsFieldID
-}
-
-type UpdateCustomFieldDefinitionResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Update a single custom field definition
-	OrganizationsCustomFieldDefinitionEntity *components.OrganizationsCustomFieldDefinitionEntity
-}
-
-func (o *UpdateCustomFieldDefinitionResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *UpdateCustomFieldDefinitionResponse) GetOrganizationsCustomFieldDefinitionEntity() *components.OrganizationsCustomFieldDefinitionEntity {
-	if o == nil {
-		return nil
-	}
-	return o.OrganizationsCustomFieldDefinitionEntity
+	return o.UpdateCustomFieldDefinition
 }

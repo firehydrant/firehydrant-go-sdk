@@ -8,11 +8,11 @@ import (
 )
 
 type IncidentsTeamAssignmentEntityLite struct {
-	ID        *string         `json:"id,omitempty"`
-	Status    *string         `json:"status,omitempty"`
-	CreatedAt *time.Time      `json:"created_at,omitempty"`
-	UpdatedAt *time.Time      `json:"updated_at,omitempty"`
-	Team      *TeamEntityLite `json:"team,omitempty"`
+	ID        *string                 `json:"id,omitempty"`
+	Status    *string                 `json:"status,omitempty"`
+	CreatedAt *time.Time              `json:"created_at,omitempty"`
+	UpdatedAt *time.Time              `json:"updated_at,omitempty"`
+	Team      *NullableTeamEntityLite `json:"team,omitempty"`
 }
 
 func (i IncidentsTeamAssignmentEntityLite) MarshalJSON() ([]byte, error) {
@@ -54,7 +54,7 @@ func (o *IncidentsTeamAssignmentEntityLite) GetUpdatedAt() *time.Time {
 	return o.UpdatedAt
 }
 
-func (o *IncidentsTeamAssignmentEntityLite) GetTeam() *TeamEntityLite {
+func (o *IncidentsTeamAssignmentEntityLite) GetTeam() *NullableTeamEntityLite {
 	if o == nil {
 		return nil
 	}

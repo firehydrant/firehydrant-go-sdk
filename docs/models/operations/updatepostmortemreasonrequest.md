@@ -1,0 +1,10 @@
+# UpdatePostMortemReasonRequest
+
+
+## Fields
+
+| Field                                                                                  | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `ReportID`                                                                             | *string*                                                                               | :heavy_check_mark:                                                                     | N/A                                                                                    |
+| `ReasonID`                                                                             | *string*                                                                               | :heavy_check_mark:                                                                     | N/A                                                                                    |
+| `UpdatePostMortemReason`                                                               | [components.UpdatePostMortemReason](../../models/components/updatepostmortemreason.md) | :heavy_check_mark:                                                                     | N/A                                                                                    |

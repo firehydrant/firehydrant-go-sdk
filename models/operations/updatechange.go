@@ -7,8 +7,8 @@ import (
 )
 
 type UpdateChangeRequest struct {
-	ChangeID               string                            `pathParam:"style=simple,explode=false,name=change_id"`
-	PatchV1ChangesChangeID components.PatchV1ChangesChangeID `request:"mediaType=application/json"`
+	ChangeID     string                  `pathParam:"style=simple,explode=false,name=change_id"`
+	UpdateChange components.UpdateChange `request:"mediaType=application/json"`
 }
 
 func (o *UpdateChangeRequest) GetChangeID() string {
@@ -18,29 +18,9 @@ func (o *UpdateChangeRequest) GetChangeID() string {
 	return o.ChangeID
 }
 
-func (o *UpdateChangeRequest) GetPatchV1ChangesChangeID() components.PatchV1ChangesChangeID {
+func (o *UpdateChangeRequest) GetUpdateChange() components.UpdateChange {
 	if o == nil {
-		return components.PatchV1ChangesChangeID{}
+		return components.UpdateChange{}
 	}
-	return o.PatchV1ChangesChangeID
-}
-
-type UpdateChangeResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Update a change entry
-	ChangeEntity *components.ChangeEntity
-}
-
-func (o *UpdateChangeResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *UpdateChangeResponse) GetChangeEntity() *components.ChangeEntity {
-	if o == nil {
-		return nil
-	}
-	return o.ChangeEntity
+	return o.UpdateChange
 }

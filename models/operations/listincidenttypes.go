@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type ListIncidentTypesRequest struct {
 	// A query to search incident types by their name
 	Query   *string `queryParam:"style=form,explode=true,name=query"`
@@ -32,24 +28,4 @@ func (o *ListIncidentTypesRequest) GetPerPage() *int {
 		return nil
 	}
 	return o.PerPage
-}
-
-type ListIncidentTypesResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// List all of the incident types in the organization
-	IncidentTypeEntityPaginated *components.IncidentTypeEntityPaginated
-}
-
-func (o *ListIncidentTypesResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListIncidentTypesResponse) GetIncidentTypeEntityPaginated() *components.IncidentTypeEntityPaginated {
-	if o == nil {
-		return nil
-	}
-	return o.IncidentTypeEntityPaginated
 }

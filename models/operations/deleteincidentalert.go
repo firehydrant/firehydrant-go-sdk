@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type DeleteIncidentAlertRequest struct {
 	IncidentAlertID string `pathParam:"style=simple,explode=false,name=incident_alert_id"`
 	IncidentID      string `pathParam:"style=simple,explode=false,name=incident_id"`
@@ -23,15 +19,4 @@ func (o *DeleteIncidentAlertRequest) GetIncidentID() string {
 		return ""
 	}
 	return o.IncidentID
-}
-
-type DeleteIncidentAlertResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-}
-
-func (o *DeleteIncidentAlertResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
 }

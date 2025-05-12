@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type GetRunbookExecutionStepScriptRequest struct {
 	ExecutionID string `pathParam:"style=simple,explode=false,name=execution_id"`
 	StepID      string `pathParam:"style=simple,explode=false,name=step_id"`
@@ -23,24 +19,4 @@ func (o *GetRunbookExecutionStepScriptRequest) GetStepID() string {
 		return ""
 	}
 	return o.StepID
-}
-
-type GetRunbookExecutionStepScriptResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Retrieves the bash script from a "script" step.
-	RunbooksExecutionEntity *components.RunbooksExecutionEntity
-}
-
-func (o *GetRunbookExecutionStepScriptResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *GetRunbookExecutionStepScriptResponse) GetRunbooksExecutionEntity() *components.RunbooksExecutionEntity {
-	if o == nil {
-		return nil
-	}
-	return o.RunbooksExecutionEntity
 }

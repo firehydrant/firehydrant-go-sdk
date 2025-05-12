@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type ListSeverityMatrixConditionsRequest struct {
 	Page    *int `queryParam:"style=form,explode=true,name=page"`
 	PerPage *int `queryParam:"style=form,explode=true,name=per_page"`
@@ -23,24 +19,4 @@ func (o *ListSeverityMatrixConditionsRequest) GetPerPage() *int {
 		return nil
 	}
 	return o.PerPage
-}
-
-type ListSeverityMatrixConditionsResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Lists conditions
-	SeverityMatrixConditionEntity *components.SeverityMatrixConditionEntity
-}
-
-func (o *ListSeverityMatrixConditionsResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListSeverityMatrixConditionsResponse) GetSeverityMatrixConditionEntity() *components.SeverityMatrixConditionEntity {
-	if o == nil {
-		return nil
-	}
-	return o.SeverityMatrixConditionEntity
 }

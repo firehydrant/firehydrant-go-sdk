@@ -1,0 +1,11 @@
+# CreateTeamEscalationPolicyMediumHandoffStep
+
+Handoff step for MEDIUM priority alerts
+
+
+## Fields
+
+| Field                                                                                                                          | Type                                                                                                                           | Required                                                                                                                       | Description                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
+| `TargetType`                                                                                                                   | [components.CreateTeamEscalationPolicyMediumTargetType](../../models/components/createteamescalationpolicymediumtargettype.md) | :heavy_check_mark:                                                                                                             | N/A                                                                                                                            |
+| `TargetID`                                                                                                                     | *string*                                                                                                                       | :heavy_check_mark:                                                                                                             | N/A                                                                                                                            |

@@ -7,8 +7,8 @@ import (
 )
 
 type CreateTeamOnCallScheduleRequest struct {
-	TeamID                           string                                      `pathParam:"style=simple,explode=false,name=team_id"`
-	PostV1TeamsTeamIDOnCallSchedules components.PostV1TeamsTeamIDOnCallSchedules `request:"mediaType=application/json"`
+	TeamID                   string                              `pathParam:"style=simple,explode=false,name=team_id"`
+	CreateTeamOnCallSchedule components.CreateTeamOnCallSchedule `request:"mediaType=application/json"`
 }
 
 func (o *CreateTeamOnCallScheduleRequest) GetTeamID() string {
@@ -18,20 +18,9 @@ func (o *CreateTeamOnCallScheduleRequest) GetTeamID() string {
 	return o.TeamID
 }
 
-func (o *CreateTeamOnCallScheduleRequest) GetPostV1TeamsTeamIDOnCallSchedules() components.PostV1TeamsTeamIDOnCallSchedules {
+func (o *CreateTeamOnCallScheduleRequest) GetCreateTeamOnCallSchedule() components.CreateTeamOnCallSchedule {
 	if o == nil {
-		return components.PostV1TeamsTeamIDOnCallSchedules{}
+		return components.CreateTeamOnCallSchedule{}
 	}
-	return o.PostV1TeamsTeamIDOnCallSchedules
-}
-
-type CreateTeamOnCallScheduleResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-}
-
-func (o *CreateTeamOnCallScheduleResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
+	return o.CreateTeamOnCallSchedule
 }

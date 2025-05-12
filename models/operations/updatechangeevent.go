@@ -7,8 +7,8 @@ import (
 )
 
 type UpdateChangeEventRequest struct {
-	ChangeEventID                     string                                       `pathParam:"style=simple,explode=false,name=change_event_id"`
-	PatchV1ChangesEventsChangeEventID components.PatchV1ChangesEventsChangeEventID `request:"mediaType=application/json"`
+	ChangeEventID     string                       `pathParam:"style=simple,explode=false,name=change_event_id"`
+	UpdateChangeEvent components.UpdateChangeEvent `request:"mediaType=application/json"`
 }
 
 func (o *UpdateChangeEventRequest) GetChangeEventID() string {
@@ -18,29 +18,9 @@ func (o *UpdateChangeEventRequest) GetChangeEventID() string {
 	return o.ChangeEventID
 }
 
-func (o *UpdateChangeEventRequest) GetPatchV1ChangesEventsChangeEventID() components.PatchV1ChangesEventsChangeEventID {
+func (o *UpdateChangeEventRequest) GetUpdateChangeEvent() components.UpdateChangeEvent {
 	if o == nil {
-		return components.PatchV1ChangesEventsChangeEventID{}
+		return components.UpdateChangeEvent{}
 	}
-	return o.PatchV1ChangesEventsChangeEventID
-}
-
-type UpdateChangeEventResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Update a change event
-	ChangeEventEntity *components.ChangeEventEntity
-}
-
-func (o *UpdateChangeEventResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *UpdateChangeEventResponse) GetChangeEventEntity() *components.ChangeEventEntity {
-	if o == nil {
-		return nil
-	}
-	return o.ChangeEventEntity
+	return o.UpdateChangeEvent
 }

@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type ListServicesRequest struct {
 	Page    *int `queryParam:"style=form,explode=true,name=page"`
 	PerPage *int `queryParam:"style=form,explode=true,name=per_page"`
@@ -131,24 +127,4 @@ func (o *ListServicesRequest) GetInclude() []string {
 		return nil
 	}
 	return o.Include
-}
-
-type ListServicesResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// List all of the services that have been added to the organization.
-	ServiceEntityPaginated *components.ServiceEntityPaginated
-}
-
-func (o *ListServicesResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListServicesResponse) GetServiceEntityPaginated() *components.ServiceEntityPaginated {
-	if o == nil {
-		return nil
-	}
-	return o.ServiceEntityPaginated
 }

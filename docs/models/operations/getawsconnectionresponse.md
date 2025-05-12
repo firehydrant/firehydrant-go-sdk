@@ -1,9 +1,0 @@
-# GetAwsConnectionResponse
-
-
-## Fields
-
-| Field                                                                                                     | Type                                                                                                      | Required                                                                                                  | Description                                                                                               |
-| --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| `HTTPMeta`                                                                                                | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                        | :heavy_check_mark:                                                                                        | N/A                                                                                                       |
-| `IntegrationsAwsConnectionEntity`                                                                         | [*components.IntegrationsAwsConnectionEntity](../../models/components/integrationsawsconnectionentity.md) | :heavy_minus_sign:                                                                                        | Retrieves the information about the AWS connection.                                                       |

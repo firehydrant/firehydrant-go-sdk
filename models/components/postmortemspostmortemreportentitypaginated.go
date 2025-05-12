@@ -5,7 +5,7 @@ package components
 // PostMortemsPostMortemReportEntityPaginated - PostMortems_PostMortemReportEntityPaginated model
 type PostMortemsPostMortemReportEntityPaginated struct {
 	Data       []PostMortemsPostMortemReportEntity `json:"data,omitempty"`
-	Pagination *PaginationEntity                   `json:"pagination,omitempty"`
+	Pagination *NullablePaginationEntity           `json:"pagination,omitempty"`
 }
 
 func (o *PostMortemsPostMortemReportEntityPaginated) GetData() []PostMortemsPostMortemReportEntity {
@@ -15,7 +15,7 @@ func (o *PostMortemsPostMortemReportEntityPaginated) GetData() []PostMortemsPost
 	return o.Data
 }
 
-func (o *PostMortemsPostMortemReportEntityPaginated) GetPagination() *PaginationEntity {
+func (o *PostMortemsPostMortemReportEntityPaginated) GetPagination() *NullablePaginationEntity {
 	if o == nil {
 		return nil
 	}

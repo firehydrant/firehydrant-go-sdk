@@ -1,0 +1,11 @@
+# IntegrationsZendeskSearchTicketsPaginatedEntity
+
+Integrations_Zendesk_SearchTickets_PaginatedEntity model
+
+
+## Fields
+
+| Field                                                                                                                  | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `Data`                                                                                                                 | [][components.IntegrationsZendeskSupportIssueEntity](../../models/components/integrationszendesksupportissueentity.md) | :heavy_minus_sign:                                                                                                     | N/A                                                                                                                    |
+| `Pagination`                                                                                                           | [*components.NullablePaginationEntity](../../models/components/nullablepaginationentity.md)                            | :heavy_minus_sign:                                                                                                     | N/A                                                                                                                    |

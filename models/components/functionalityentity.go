@@ -24,11 +24,11 @@ type FunctionalityEntity struct {
 	// List of active incident guids
 	ActiveIncidents []string `json:"active_incidents,omitempty"`
 	// List of links attached to this functionality.
-	Links                 []LinksEntity   `json:"links,omitempty"`
-	Owner                 *TeamEntityLite `json:"owner,omitempty"`
-	AlertOnAdd            *bool           `json:"alert_on_add,omitempty"`
-	AutoAddRespondingTeam *bool           `json:"auto_add_responding_team,omitempty"`
-	UpdatedBy             *AuthorEntity   `json:"updated_by,omitempty"`
+	Links                 []LinksEntity           `json:"links,omitempty"`
+	Owner                 *NullableTeamEntityLite `json:"owner,omitempty"`
+	AlertOnAdd            *bool                   `json:"alert_on_add,omitempty"`
+	AutoAddRespondingTeam *bool                   `json:"auto_add_responding_team,omitempty"`
+	UpdatedBy             *NullableAuthorEntity   `json:"updated_by,omitempty"`
 	// Services this functionality provides
 	Services []ServiceEntityLite `json:"services,omitempty"`
 	// Information about known linkages to representations of services outside of FireHydrant.
@@ -111,7 +111,7 @@ func (o *FunctionalityEntity) GetLinks() []LinksEntity {
 	return o.Links
 }
 
-func (o *FunctionalityEntity) GetOwner() *TeamEntityLite {
+func (o *FunctionalityEntity) GetOwner() *NullableTeamEntityLite {
 	if o == nil {
 		return nil
 	}
@@ -132,7 +132,7 @@ func (o *FunctionalityEntity) GetAutoAddRespondingTeam() *bool {
 	return o.AutoAddRespondingTeam
 }
 
-func (o *FunctionalityEntity) GetUpdatedBy() *AuthorEntity {
+func (o *FunctionalityEntity) GetUpdatedBy() *NullableAuthorEntity {
 	if o == nil {
 		return nil
 	}

@@ -5,7 +5,6 @@ package operations
 import (
 	"encoding/json"
 	"firehydrant/internal/utils"
-	"firehydrant/models/components"
 	"firehydrant/types"
 	"fmt"
 )
@@ -86,21 +85,21 @@ func (e *By) UnmarshalJSON(data []byte) error {
 	}
 }
 
-type SortField string
+type ListIncidentMetricsSortField string
 
 const (
-	SortFieldMttd      SortField = "mttd"
-	SortFieldMtta      SortField = "mtta"
-	SortFieldMttm      SortField = "mttm"
-	SortFieldMttr      SortField = "mttr"
-	SortFieldCount     SortField = "count"
-	SortFieldTotalTime SortField = "total_time"
+	ListIncidentMetricsSortFieldMttd      ListIncidentMetricsSortField = "mttd"
+	ListIncidentMetricsSortFieldMtta      ListIncidentMetricsSortField = "mtta"
+	ListIncidentMetricsSortFieldMttm      ListIncidentMetricsSortField = "mttm"
+	ListIncidentMetricsSortFieldMttr      ListIncidentMetricsSortField = "mttr"
+	ListIncidentMetricsSortFieldCount     ListIncidentMetricsSortField = "count"
+	ListIncidentMetricsSortFieldTotalTime ListIncidentMetricsSortField = "total_time"
 )
 
-func (e SortField) ToPointer() *SortField {
+func (e ListIncidentMetricsSortField) ToPointer() *ListIncidentMetricsSortField {
 	return &e
 }
-func (e *SortField) UnmarshalJSON(data []byte) error {
+func (e *ListIncidentMetricsSortField) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -117,24 +116,24 @@ func (e *SortField) UnmarshalJSON(data []byte) error {
 	case "count":
 		fallthrough
 	case "total_time":
-		*e = SortField(v)
+		*e = ListIncidentMetricsSortField(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for SortField: %v", v)
+		return fmt.Errorf("invalid value for ListIncidentMetricsSortField: %v", v)
 	}
 }
 
-type SortDirection string
+type ListIncidentMetricsSortDirection string
 
 const (
-	SortDirectionAsc  SortDirection = "asc"
-	SortDirectionDesc SortDirection = "desc"
+	ListIncidentMetricsSortDirectionAsc  ListIncidentMetricsSortDirection = "asc"
+	ListIncidentMetricsSortDirectionDesc ListIncidentMetricsSortDirection = "desc"
 )
 
-func (e SortDirection) ToPointer() *SortDirection {
+func (e ListIncidentMetricsSortDirection) ToPointer() *ListIncidentMetricsSortDirection {
 	return &e
 }
-func (e *SortDirection) UnmarshalJSON(data []byte) error {
+func (e *ListIncidentMetricsSortDirection) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -143,10 +142,10 @@ func (e *SortDirection) UnmarshalJSON(data []byte) error {
 	case "asc":
 		fallthrough
 	case "desc":
-		*e = SortDirection(v)
+		*e = ListIncidentMetricsSortDirection(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for SortDirection: %v", v)
+		return fmt.Errorf("invalid value for ListIncidentMetricsSortDirection: %v", v)
 	}
 }
 
@@ -154,13 +153,13 @@ type ListIncidentMetricsRequest struct {
 	// The start date to return metrics from
 	StartDate *types.Date `queryParam:"style=form,explode=true,name=start_date"`
 	// The end date to return metrics from
-	EndDate       *types.Date    `queryParam:"style=form,explode=true,name=end_date"`
-	BucketSize    *BucketSize    `queryParam:"style=form,explode=true,name=bucket_size"`
-	By            *By            `queryParam:"style=form,explode=true,name=by"`
-	SortField     *SortField     `queryParam:"style=form,explode=true,name=sort_field"`
-	SortDirection *SortDirection `queryParam:"style=form,explode=true,name=sort_direction"`
-	SortLimit     *int           `queryParam:"style=form,explode=true,name=sort_limit"`
-	Conditions    *string        `queryParam:"style=form,explode=true,name=conditions"`
+	EndDate       *types.Date                       `queryParam:"style=form,explode=true,name=end_date"`
+	BucketSize    *BucketSize                       `queryParam:"style=form,explode=true,name=bucket_size"`
+	By            *By                               `queryParam:"style=form,explode=true,name=by"`
+	SortField     *ListIncidentMetricsSortField     `queryParam:"style=form,explode=true,name=sort_field"`
+	SortDirection *ListIncidentMetricsSortDirection `queryParam:"style=form,explode=true,name=sort_direction"`
+	SortLimit     *int                              `queryParam:"style=form,explode=true,name=sort_limit"`
+	Conditions    *string                           `queryParam:"style=form,explode=true,name=conditions"`
 }
 
 func (l ListIncidentMetricsRequest) MarshalJSON() ([]byte, error) {
@@ -202,14 +201,14 @@ func (o *ListIncidentMetricsRequest) GetBy() *By {
 	return o.By
 }
 
-func (o *ListIncidentMetricsRequest) GetSortField() *SortField {
+func (o *ListIncidentMetricsRequest) GetSortField() *ListIncidentMetricsSortField {
 	if o == nil {
 		return nil
 	}
 	return o.SortField
 }
 
-func (o *ListIncidentMetricsRequest) GetSortDirection() *SortDirection {
+func (o *ListIncidentMetricsRequest) GetSortDirection() *ListIncidentMetricsSortDirection {
 	if o == nil {
 		return nil
 	}
@@ -228,24 +227,4 @@ func (o *ListIncidentMetricsRequest) GetConditions() *string {
 		return nil
 	}
 	return o.Conditions
-}
-
-type ListIncidentMetricsResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Returns a report with time bucketed analytics data
-	MetricsMetricsEntity *components.MetricsMetricsEntity
-}
-
-func (o *ListIncidentMetricsResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListIncidentMetricsResponse) GetMetricsMetricsEntity() *components.MetricsMetricsEntity {
-	if o == nil {
-		return nil
-	}
-	return o.MetricsMetricsEntity
 }

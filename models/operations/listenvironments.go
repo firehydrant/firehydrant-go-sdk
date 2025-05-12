@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type ListEnvironmentsRequest struct {
 	Page    *int `queryParam:"style=form,explode=true,name=page"`
 	PerPage *int `queryParam:"style=form,explode=true,name=per_page"`
@@ -41,24 +37,4 @@ func (o *ListEnvironmentsRequest) GetName() *string {
 		return nil
 	}
 	return o.Name
-}
-
-type ListEnvironmentsResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// List all of the environments that have been added to the organiation
-	EnvironmentEntryEntityPaginated *components.EnvironmentEntryEntityPaginated
-}
-
-func (o *ListEnvironmentsResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListEnvironmentsResponse) GetEnvironmentEntryEntityPaginated() *components.EnvironmentEntryEntityPaginated {
-	if o == nil {
-		return nil
-	}
-	return o.EnvironmentEntryEntityPaginated
 }

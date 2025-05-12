@@ -1,0 +1,11 @@
+# UpdateTeamEscalationPolicyHigh
+
+Settings for HIGH priority alerts
+
+
+## Fields
+
+| Field                                                                                                                         | Type                                                                                                                          | Required                                                                                                                      | Description                                                                                                                   |
+| ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `Repetitions`                                                                                                                 | **int*                                                                                                                        | :heavy_minus_sign:                                                                                                            | Number of repetitions for HIGH priority alerts                                                                                |
+| `HandoffStep`                                                                                                                 | [*components.UpdateTeamEscalationPolicyHighHandoffStep](../../models/components/updateteamescalationpolicyhighhandoffstep.md) | :heavy_minus_sign:                                                                                                            | Handoff step for HIGH priority alerts                                                                                         |

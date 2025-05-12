@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type UpdateSlackEmojiActionRequestBody struct {
 	// The name of the emoji to associate with this action
 	EmojiName *string `json:"emoji_name,omitempty"`
@@ -53,15 +49,4 @@ func (o *UpdateSlackEmojiActionRequest) GetRequestBody() *UpdateSlackEmojiAction
 		return nil
 	}
 	return o.RequestBody
-}
-
-type UpdateSlackEmojiActionResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-}
-
-func (o *UpdateSlackEmojiActionResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
 }

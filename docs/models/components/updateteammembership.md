@@ -1,0 +1,10 @@
+# UpdateTeamMembership
+
+
+## Fields
+
+| Field                                                                                                  | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `UserID`                                                                                               | **string*                                                                                              | :heavy_minus_sign:                                                                                     | N/A                                                                                                    |
+| `ScheduleID`                                                                                           | **string*                                                                                              | :heavy_minus_sign:                                                                                     | N/A                                                                                                    |
+| `IncidentRoleID`                                                                                       | **string*                                                                                              | :heavy_minus_sign:                                                                                     | An incident role ID that this user will automatically assigned if this team is assigned to an incident |

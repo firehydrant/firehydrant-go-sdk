@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type GetSeverityMatrixConditionRequest struct {
 	ConditionID string `pathParam:"style=simple,explode=false,name=condition_id"`
 }
@@ -15,15 +11,4 @@ func (o *GetSeverityMatrixConditionRequest) GetConditionID() string {
 		return ""
 	}
 	return o.ConditionID
-}
-
-type GetSeverityMatrixConditionResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-}
-
-func (o *GetSeverityMatrixConditionResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
 }

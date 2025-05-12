@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type GetTicketRequest struct {
 	TicketID string `pathParam:"style=simple,explode=false,name=ticket_id"`
 }
@@ -15,24 +11,4 @@ func (o *GetTicketRequest) GetTicketID() string {
 		return ""
 	}
 	return o.TicketID
-}
-
-type GetTicketResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Retrieves a single ticket by ID
-	TicketingTicketEntity *components.TicketingTicketEntity
-}
-
-func (o *GetTicketResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *GetTicketResponse) GetTicketingTicketEntity() *components.TicketingTicketEntity {
-	if o == nil {
-		return nil
-	}
-	return o.TicketingTicketEntity
 }

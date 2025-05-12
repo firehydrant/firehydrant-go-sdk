@@ -7,9 +7,9 @@ import (
 )
 
 type UpdateIncidentTaskRequest struct {
-	TaskID                                string                                           `pathParam:"style=simple,explode=false,name=task_id"`
-	IncidentID                            string                                           `pathParam:"style=simple,explode=false,name=incident_id"`
-	PatchV1IncidentsIncidentIDTasksTaskID components.PatchV1IncidentsIncidentIDTasksTaskID `request:"mediaType=application/json"`
+	TaskID             string                        `pathParam:"style=simple,explode=false,name=task_id"`
+	IncidentID         string                        `pathParam:"style=simple,explode=false,name=incident_id"`
+	UpdateIncidentTask components.UpdateIncidentTask `request:"mediaType=application/json"`
 }
 
 func (o *UpdateIncidentTaskRequest) GetTaskID() string {
@@ -26,29 +26,9 @@ func (o *UpdateIncidentTaskRequest) GetIncidentID() string {
 	return o.IncidentID
 }
 
-func (o *UpdateIncidentTaskRequest) GetPatchV1IncidentsIncidentIDTasksTaskID() components.PatchV1IncidentsIncidentIDTasksTaskID {
+func (o *UpdateIncidentTaskRequest) GetUpdateIncidentTask() components.UpdateIncidentTask {
 	if o == nil {
-		return components.PatchV1IncidentsIncidentIDTasksTaskID{}
+		return components.UpdateIncidentTask{}
 	}
-	return o.PatchV1IncidentsIncidentIDTasksTaskID
-}
-
-type UpdateIncidentTaskResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Update a task's attributes
-	TaskEntity *components.TaskEntity
-}
-
-func (o *UpdateIncidentTaskResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *UpdateIncidentTaskResponse) GetTaskEntity() *components.TaskEntity {
-	if o == nil {
-		return nil
-	}
-	return o.TaskEntity
+	return o.UpdateIncidentTask
 }

@@ -10,6 +10,7 @@ import (
 type IncidentsImpactEntityType string
 
 const (
+	IncidentsImpactEntityTypeCustomer      IncidentsImpactEntityType = "customer"
 	IncidentsImpactEntityTypeEnvironment   IncidentsImpactEntityType = "environment"
 	IncidentsImpactEntityTypeFunctionality IncidentsImpactEntityType = "functionality"
 	IncidentsImpactEntityTypeService       IncidentsImpactEntityType = "service"
@@ -24,6 +25,8 @@ func (e *IncidentsImpactEntityType) UnmarshalJSON(data []byte) error {
 		return err
 	}
 	switch v {
+	case "customer":
+		fallthrough
 	case "environment":
 		fallthrough
 	case "functionality":
@@ -37,12 +40,11 @@ func (e *IncidentsImpactEntityType) UnmarshalJSON(data []byte) error {
 }
 
 type IncidentsImpactEntity struct {
-	ID     *string                    `json:"id,omitempty"`
-	Type   *IncidentsImpactEntityType `json:"type,omitempty"`
-	Impact *SuccinctEntity            `json:"impact,omitempty"`
-	// SeverityMatrix_ConditionEntity model
-	Condition     *SeverityMatrixConditionEntity      `json:"condition,omitempty"`
-	Conversations []ConversationsAPIEntitiesReference `json:"conversations,omitempty"`
+	ID            *string                                `json:"id,omitempty"`
+	Type          *IncidentsImpactEntityType             `json:"type,omitempty"`
+	Impact        *NullableSuccinctEntity                `json:"impact,omitempty"`
+	Condition     *NullableSeverityMatrixConditionEntity `json:"condition,omitempty"`
+	Conversations []ConversationsAPIEntitiesReference    `json:"conversations,omitempty"`
 }
 
 func (o *IncidentsImpactEntity) GetID() *string {
@@ -59,14 +61,14 @@ func (o *IncidentsImpactEntity) GetType() *IncidentsImpactEntityType {
 	return o.Type
 }
 
-func (o *IncidentsImpactEntity) GetImpact() *SuccinctEntity {
+func (o *IncidentsImpactEntity) GetImpact() *NullableSuccinctEntity {
 	if o == nil {
 		return nil
 	}
 	return o.Impact
 }
 
-func (o *IncidentsImpactEntity) GetCondition() *SeverityMatrixConditionEntity {
+func (o *IncidentsImpactEntity) GetCondition() *NullableSeverityMatrixConditionEntity {
 	if o == nil {
 		return nil
 	}

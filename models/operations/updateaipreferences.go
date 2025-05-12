@@ -2,11 +2,7 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
-type UpdateAiPreferencesRequestBody struct {
+type UpdateAiPreferencesRequest struct {
 	// Whether to enable AI features
 	Ai *bool `json:"ai,omitempty"`
 	// Whether to enable incident summaries
@@ -25,78 +21,58 @@ type UpdateAiPreferencesRequestBody struct {
 	SimilarIncidents *bool `json:"similar_incidents,omitempty"`
 }
 
-func (o *UpdateAiPreferencesRequestBody) GetAi() *bool {
+func (o *UpdateAiPreferencesRequest) GetAi() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.Ai
 }
 
-func (o *UpdateAiPreferencesRequestBody) GetSummaries() *bool {
+func (o *UpdateAiPreferencesRequest) GetSummaries() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.Summaries
 }
 
-func (o *UpdateAiPreferencesRequestBody) GetDescription() *bool {
+func (o *UpdateAiPreferencesRequest) GetDescription() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.Description
 }
 
-func (o *UpdateAiPreferencesRequestBody) GetImpact() *bool {
+func (o *UpdateAiPreferencesRequest) GetImpact() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.Impact
 }
 
-func (o *UpdateAiPreferencesRequestBody) GetUpdates() *bool {
+func (o *UpdateAiPreferencesRequest) GetUpdates() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.Updates
 }
 
-func (o *UpdateAiPreferencesRequestBody) GetRetros() *bool {
+func (o *UpdateAiPreferencesRequest) GetRetros() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.Retros
 }
 
-func (o *UpdateAiPreferencesRequestBody) GetFollowups() *bool {
+func (o *UpdateAiPreferencesRequest) GetFollowups() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.Followups
 }
 
-func (o *UpdateAiPreferencesRequestBody) GetSimilarIncidents() *bool {
+func (o *UpdateAiPreferencesRequest) GetSimilarIncidents() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.SimilarIncidents
-}
-
-type UpdateAiPreferencesResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Updates the AI preferences
-	AIEntitiesPreferencesEntity *components.AIEntitiesPreferencesEntity
-}
-
-func (o *UpdateAiPreferencesResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *UpdateAiPreferencesResponse) GetAIEntitiesPreferencesEntity() *components.AIEntitiesPreferencesEntity {
-	if o == nil {
-		return nil
-	}
-	return o.AIEntitiesPreferencesEntity
 }

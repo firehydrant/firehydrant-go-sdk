@@ -5,24 +5,23 @@ package operations
 import (
 	"encoding/json"
 	"firehydrant/internal/utils"
-	"firehydrant/models/components"
 	"firehydrant/types"
 	"fmt"
 )
 
-type InfraType string
+type ListInfrastructureMetricsInfraType string
 
 const (
-	InfraTypeEnvironments    InfraType = "environments"
-	InfraTypeFunctionalities InfraType = "functionalities"
-	InfraTypeServices        InfraType = "services"
-	InfraTypeCustomers       InfraType = "customers"
+	ListInfrastructureMetricsInfraTypeEnvironments    ListInfrastructureMetricsInfraType = "environments"
+	ListInfrastructureMetricsInfraTypeFunctionalities ListInfrastructureMetricsInfraType = "functionalities"
+	ListInfrastructureMetricsInfraTypeServices        ListInfrastructureMetricsInfraType = "services"
+	ListInfrastructureMetricsInfraTypeCustomers       ListInfrastructureMetricsInfraType = "customers"
 )
 
-func (e InfraType) ToPointer() *InfraType {
+func (e ListInfrastructureMetricsInfraType) ToPointer() *ListInfrastructureMetricsInfraType {
 	return &e
 }
-func (e *InfraType) UnmarshalJSON(data []byte) error {
+func (e *ListInfrastructureMetricsInfraType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -35,15 +34,17 @@ func (e *InfraType) UnmarshalJSON(data []byte) error {
 	case "services":
 		fallthrough
 	case "customers":
-		*e = InfraType(v)
+		*e = ListInfrastructureMetricsInfraType(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for InfraType: %v", v)
+		return fmt.Errorf("invalid value for ListInfrastructureMetricsInfraType: %v", v)
 	}
 }
 
 type ListInfrastructureMetricsRequest struct {
-	InfraType InfraType `pathParam:"style=simple,explode=false,name=infra_type"`
+	InfraType ListInfrastructureMetricsInfraType `pathParam:"style=simple,explode=false,name=infra_type"`
+	// Component UUID
+	InfraID string `pathParam:"style=simple,explode=false,name=infra_id"`
 	// The start date to return metrics from; defaults to 30 days ago
 	StartDate *types.Date `queryParam:"style=form,explode=true,name=start_date"`
 	// The end date to return metrics from, defaults to today
@@ -61,11 +62,18 @@ func (l *ListInfrastructureMetricsRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ListInfrastructureMetricsRequest) GetInfraType() InfraType {
+func (o *ListInfrastructureMetricsRequest) GetInfraType() ListInfrastructureMetricsInfraType {
 	if o == nil {
-		return InfraType("")
+		return ListInfrastructureMetricsInfraType("")
 	}
 	return o.InfraType
+}
+
+func (o *ListInfrastructureMetricsRequest) GetInfraID() string {
+	if o == nil {
+		return ""
+	}
+	return o.InfraID
 }
 
 func (o *ListInfrastructureMetricsRequest) GetStartDate() *types.Date {
@@ -80,24 +88,4 @@ func (o *ListInfrastructureMetricsRequest) GetEndDate() *types.Date {
 		return nil
 	}
 	return o.EndDate
-}
-
-type ListInfrastructureMetricsResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Returns metrics for all components of a given type
-	MetricsInfrastructureListEntity *components.MetricsInfrastructureListEntity
-}
-
-func (o *ListInfrastructureMetricsResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListInfrastructureMetricsResponse) GetMetricsInfrastructureListEntity() *components.MetricsInfrastructureListEntity {
-	if o == nil {
-		return nil
-	}
-	return o.MetricsInfrastructureListEntity
 }

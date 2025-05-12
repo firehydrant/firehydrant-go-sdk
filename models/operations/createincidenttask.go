@@ -7,8 +7,8 @@ import (
 )
 
 type CreateIncidentTaskRequest struct {
-	IncidentID                     string                                    `pathParam:"style=simple,explode=false,name=incident_id"`
-	PostV1IncidentsIncidentIDTasks components.PostV1IncidentsIncidentIDTasks `request:"mediaType=application/json"`
+	IncidentID         string                        `pathParam:"style=simple,explode=false,name=incident_id"`
+	CreateIncidentTask components.CreateIncidentTask `request:"mediaType=application/json"`
 }
 
 func (o *CreateIncidentTaskRequest) GetIncidentID() string {
@@ -18,29 +18,9 @@ func (o *CreateIncidentTaskRequest) GetIncidentID() string {
 	return o.IncidentID
 }
 
-func (o *CreateIncidentTaskRequest) GetPostV1IncidentsIncidentIDTasks() components.PostV1IncidentsIncidentIDTasks {
+func (o *CreateIncidentTaskRequest) GetCreateIncidentTask() components.CreateIncidentTask {
 	if o == nil {
-		return components.PostV1IncidentsIncidentIDTasks{}
+		return components.CreateIncidentTask{}
 	}
-	return o.PostV1IncidentsIncidentIDTasks
-}
-
-type CreateIncidentTaskResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Create a task
-	TaskEntity *components.TaskEntity
-}
-
-func (o *CreateIncidentTaskResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *CreateIncidentTaskResponse) GetTaskEntity() *components.TaskEntity {
-	if o == nil {
-		return nil
-	}
-	return o.TaskEntity
+	return o.CreateIncidentTask
 }

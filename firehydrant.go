@@ -67,60 +67,150 @@ func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
 	return ServerList[c.ServerIndex], nil
 }
 
+// FireHydrant API: The FireHydrant API is based around REST. It uses Bearer token authentication and returns JSON responses. You can use the FireHydrant API to configure integrations, define incidents, and set up webhooks--anything you can do on the FireHydrant UI.
+//
+// * [Dig into our API endpoints](https://developers.firehydrant.io/docs/api)
+// * [View your bot users](https://app.firehydrant.io/organizations/bots)
+//
+// ## Base API endpoint
+//
+// [https://api.firehydrant.io/v1](https://api.firehydrant.io/v1)
+//
+// ## Current version
+//
+// v1
+//
+// ## Authentication
+//
+// All requests to the FireHydrant API require an `Authorization` header with the value set to `Bearer {token}`. FireHydrant supports bot tokens to act on behalf of a computer instead of a user's account. This prevents integrations from breaking when people leave your organization or their token is revoked. See the Bot tokens section (below) for more information on this.
+//
+// An example of a header to authenticate against FireHydrant would look like:
+//
+// ```
+// Authorization: Bearer fhb-thisismytoken
+// ```
+//
+// ## Bot tokens
+//
+// To access the FireHydrant API, you must authenticate with a bot token. (You must have owner permissions on your organization to see bot tokens.) Bot users allow you to interact with the FireHydrant API by using token-based authentication. To create bot tokens, log in to your organization and refer to the **Bot users** [page](https://app.firehydrant.io/organizations/bots).
+//
+// Bot tokens enable you to create a bot that has no ties to any user. Normally, all actions associated with an API token are associated with the user who created it. Bot tokens attribute all actions to the bot user itself. This way, all data associated with the token actions can be performed against the FireHydrant API without a user.
+//
+// Every request to the API is authenticated unless specified otherwise.
+//
+// ### Rate Limiting
+//
+// Currently, requests made with bot tokens are rate limited on a per-account level. If your account has multiple bot token then the rate limit is shared across all of them. As of February 7th, 2023, the rate limit is at least 50 requests per account every 10 seconds, or 300 requests per minute.
+//
+// Rate limited responses will be served with a `429` status code and a JSON body of:
+//
+// ```json
+// {"error": "rate limit exceeded"}
+// ```
+// and headers of:
+// ```
+// "RateLimit-Limit" -> the maximum number of requests in the rate limit pool
+// "Retry-After" -> the number of seconds to wait before trying again
+// ```
+//
+// ## How lists are returned
+//
+// API lists are returned as arrays. A paginated entity in FireHydrant will return two top-level keys in the response object: a data key and a pagination key.
+//
+// ### Paginated requests
+//
+// The `data` key is returned as an array. Each item in the array includes all of the entity data specified in the API endpoint. (The per-page default for the array is 20 items.)
+//
+// Pagination is the second key (`pagination`) returned in the overall response body. It includes medtadata around the current page, total count of items, and options to go to the next and previous page. All of the specifications returned in the pagination object are available as URL parameters. So if you want to specify, for example, going to the second page of a response, you can send a request to the same endpoint but pass the URL parameter **page=2**.
+//
+// For example, you might request **https://api.firehydrant.io/v1/environments/** to retrieve environments data. The JSON returned contains the above-mentioned data section and pagination section. The data section includes various details about an incident, such as the environment name, description, and when it was created.
+//
+// ```
+//
+//	{
+//	  "data": [
+//	    {
+//	      "id": "f8125cf4-b3a7-4f88-b5ab-57a60b9ed89b",
+//	      "name": "Production - GCP",
+//	      "description": "",
+//	      "created_at": "2021-02-17T20:02:10.679Z"
+//	    },
+//	    {
+//	      "id": "a69f1f58-af77-4708-802d-7e73c0bf261c",
+//	      "name": "Staging",
+//	      "description": "",
+//	      "created_at": "2021-04-16T13:41:59.418Z"
+//	    }
+//	  ],
+//	  "pagination": {
+//	    "count": 2,
+//	    "page": 1,
+//	    "items": 2,
+//	    "pages": 1,
+//	    "last": 1,
+//	    "prev": null,
+//	    "next": null
+//	  }
+//	}
+//
+// ```
+//
+// To request the second page, you'd request the same endpoint with the additional query parameter of `page` in the URL:
+//
+// ```
+// GET https://api.firehydrant.io/v1/environments?page=2
+// ```
+//
+// If you need to modify the number of records coming back from FireHydrant, you can use the `per_page` parameter (max is 200):
+//
+// ```
+// GET https://api.firehydrant.io/v1/environments?per_page=50
+// ```
 type FireHydrant struct {
+	// Operations related to Account Settings
 	AccountSettings *AccountSettings
+	// Operations related to Catalog Entries
+	CatalogEntries *CatalogEntries
+	// Operations related to Teams
+	Teams *Teams
+	// Operations related to Signals
+	Signals *Signals
+	// Operations related to Changes
+	Changes *Changes
 	// Operations related to Incidents
 	Incidents *Incidents
 	// Operations related to Alerts
 	Alerts *Alerts
-	// Operations related to Services
-	Services *Services
-	// Operations related to Changes
-	Changes *Changes
+	// Operations related to Status Pages
+	StatusPages *StatusPages
 	// Operations related to Tasks
-	Tasks              *Tasks
-	ChecklistTemplates *ChecklistTemplates
+	Tasks *Tasks
 	// Operations related to Conversations
 	Conversations *Conversations
-	// Operations related to Users
-	Users            *Users
-	IncidentSettings *IncidentSettings
-	// Operations related to Environments
-	Environments *Environments
-	// Operations related to Functionalities
-	Functionalities *Functionalities
-	StatusPages     *StatusPages
-	Infrastructures *Infrastructures
-	// Operations related to Integrations
-	Integrations             *Integrations
-	AwsCloudtrailBatchEvents *AwsCloudtrailBatchEvents
-	AwsConnections           *AwsConnections
-	Confluence               *Confluence
-	Slack                    *Slack
-	Statuspage               *Statuspage
-	Zendesk                  *Zendesk
-	MetricsReporting         *MetricsReporting
-	Metrics                  *Metrics
-	System                   *System
 	// Operations related to Retrospectives
 	Retrospectives *Retrospectives
+	// Operations related to Incident Settings
+	IncidentSettings *IncidentSettings
+	// Operations related to Integrations
+	Integrations *Integrations
+	// Operations related to Users
+	Users *Users
+	// Operations related to Metrics & Reporting
+	MetricsReporting *MetricsReporting
 	// Operations related to Runbooks
-	Runbooks     *Runbooks
-	Maintenances *Maintenances
-	Teams        *Teams
-	Scim         *Scim
-	// Operations related to Signals
-	Signals *Signals
+	Runbooks *Runbooks
 	// Operations related to Communication
-	Communication         *Communication
-	StatusUpdateTemplates *StatusUpdateTemplates
-	OnCallSchedules       *OnCallSchedules
-	TicketingPriorities   *TicketingPriorities
-	Ticketing             *Ticketing
-	ProjectConfigurations *ProjectConfigurations
-	Tickets               *Tickets
+	Communication *Communication
+	// Operations related to Ticketing
+	Ticketing *Ticketing
+	// Operations related to SCIM
+	Scim *Scim
+	// Operations about Call Routes
+	CallRoutes *CallRoutes
 	// Operations related to Webhooks
 	Webhooks *Webhooks
+	// Operations related to Audiences
+	Audiences *Audiences
 
 	sdkConfiguration sdkConfiguration
 }
@@ -164,10 +254,9 @@ func WithClient(client HTTPClient) SDKOption {
 }
 
 // WithSecurity configures the SDK to use the provided security details
-func WithSecurity(apiKey string) SDKOption {
+func WithSecurity(security components.Security) SDKOption {
 	return func(sdk *FireHydrant) {
-		security := components.Security{APIKey: apiKey}
-		sdk.sdkConfiguration.Security = utils.AsSecuritySource(&security)
+		sdk.sdkConfiguration.Security = utils.AsSecuritySource(security)
 	}
 }
 
@@ -199,9 +288,9 @@ func New(opts ...SDKOption) *FireHydrant {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "0.0.1",
-			SDKVersion:        "0.10.1",
-			GenVersion:        "2.481.0",
-			UserAgent:         "speakeasy-sdk/go 0.10.1 2.481.0 0.0.1 firehydrant",
+			SDKVersion:        "1.0.0",
+			GenVersion:        "2.598.22",
+			UserAgent:         "speakeasy-sdk/go 1.0.0 2.598.22 0.0.1 firehydrant",
 			Hooks:             hooks.New(),
 		},
 	}
@@ -223,79 +312,47 @@ func New(opts ...SDKOption) *FireHydrant {
 
 	sdk.AccountSettings = newAccountSettings(sdk.sdkConfiguration)
 
+	sdk.CatalogEntries = newCatalogEntries(sdk.sdkConfiguration)
+
+	sdk.Teams = newTeams(sdk.sdkConfiguration)
+
+	sdk.Signals = newSignals(sdk.sdkConfiguration)
+
+	sdk.Changes = newChanges(sdk.sdkConfiguration)
+
 	sdk.Incidents = newIncidents(sdk.sdkConfiguration)
 
 	sdk.Alerts = newAlerts(sdk.sdkConfiguration)
 
-	sdk.Services = newServices(sdk.sdkConfiguration)
-
-	sdk.Changes = newChanges(sdk.sdkConfiguration)
+	sdk.StatusPages = newStatusPages(sdk.sdkConfiguration)
 
 	sdk.Tasks = newTasks(sdk.sdkConfiguration)
 
-	sdk.ChecklistTemplates = newChecklistTemplates(sdk.sdkConfiguration)
-
 	sdk.Conversations = newConversations(sdk.sdkConfiguration)
-
-	sdk.Users = newUsers(sdk.sdkConfiguration)
-
-	sdk.IncidentSettings = newIncidentSettings(sdk.sdkConfiguration)
-
-	sdk.Environments = newEnvironments(sdk.sdkConfiguration)
-
-	sdk.Functionalities = newFunctionalities(sdk.sdkConfiguration)
-
-	sdk.StatusPages = newStatusPages(sdk.sdkConfiguration)
-
-	sdk.Infrastructures = newInfrastructures(sdk.sdkConfiguration)
-
-	sdk.Integrations = newIntegrations(sdk.sdkConfiguration)
-
-	sdk.AwsCloudtrailBatchEvents = newAwsCloudtrailBatchEvents(sdk.sdkConfiguration)
-
-	sdk.AwsConnections = newAwsConnections(sdk.sdkConfiguration)
-
-	sdk.Confluence = newConfluence(sdk.sdkConfiguration)
-
-	sdk.Slack = newSlack(sdk.sdkConfiguration)
-
-	sdk.Statuspage = newStatuspage(sdk.sdkConfiguration)
-
-	sdk.Zendesk = newZendesk(sdk.sdkConfiguration)
-
-	sdk.MetricsReporting = newMetricsReporting(sdk.sdkConfiguration)
-
-	sdk.Metrics = newMetrics(sdk.sdkConfiguration)
-
-	sdk.System = newSystem(sdk.sdkConfiguration)
 
 	sdk.Retrospectives = newRetrospectives(sdk.sdkConfiguration)
 
+	sdk.IncidentSettings = newIncidentSettings(sdk.sdkConfiguration)
+
+	sdk.Integrations = newIntegrations(sdk.sdkConfiguration)
+
+	sdk.Users = newUsers(sdk.sdkConfiguration)
+
+	sdk.MetricsReporting = newMetricsReporting(sdk.sdkConfiguration)
+
 	sdk.Runbooks = newRunbooks(sdk.sdkConfiguration)
-
-	sdk.Maintenances = newMaintenances(sdk.sdkConfiguration)
-
-	sdk.Teams = newTeams(sdk.sdkConfiguration)
-
-	sdk.Scim = newScim(sdk.sdkConfiguration)
-
-	sdk.Signals = newSignals(sdk.sdkConfiguration)
 
 	sdk.Communication = newCommunication(sdk.sdkConfiguration)
 
-	sdk.StatusUpdateTemplates = newStatusUpdateTemplates(sdk.sdkConfiguration)
-
-	sdk.OnCallSchedules = newOnCallSchedules(sdk.sdkConfiguration)
-
-	sdk.TicketingPriorities = newTicketingPriorities(sdk.sdkConfiguration)
-
 	sdk.Ticketing = newTicketing(sdk.sdkConfiguration)
 
-	sdk.ProjectConfigurations = newProjectConfigurations(sdk.sdkConfiguration)
+	sdk.Scim = newScim(sdk.sdkConfiguration)
 
-	sdk.Tickets = newTickets(sdk.sdkConfiguration)
+	sdk.CallRoutes = newCallRoutes(sdk.sdkConfiguration)
 
 	sdk.Webhooks = newWebhooks(sdk.sdkConfiguration)
+
+	sdk.Audiences = newAudiences(sdk.sdkConfiguration)
 
 	return sdk
 }

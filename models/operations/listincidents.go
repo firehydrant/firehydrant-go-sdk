@@ -5,25 +5,24 @@ package operations
 import (
 	"encoding/json"
 	"firehydrant/internal/utils"
-	"firehydrant/models/components"
 	"firehydrant/types"
 	"fmt"
 	"time"
 )
 
-// QueryParamTagMatchStrategy - A matching strategy for the tags provided
-type QueryParamTagMatchStrategy string
+// ListIncidentsTagMatchStrategy - A matching strategy for the tags provided
+type ListIncidentsTagMatchStrategy string
 
 const (
-	QueryParamTagMatchStrategyAny      QueryParamTagMatchStrategy = "any"
-	QueryParamTagMatchStrategyMatchAll QueryParamTagMatchStrategy = "match_all"
-	QueryParamTagMatchStrategyExclude  QueryParamTagMatchStrategy = "exclude"
+	ListIncidentsTagMatchStrategyAny      ListIncidentsTagMatchStrategy = "any"
+	ListIncidentsTagMatchStrategyMatchAll ListIncidentsTagMatchStrategy = "match_all"
+	ListIncidentsTagMatchStrategyExclude  ListIncidentsTagMatchStrategy = "exclude"
 )
 
-func (e QueryParamTagMatchStrategy) ToPointer() *QueryParamTagMatchStrategy {
+func (e ListIncidentsTagMatchStrategy) ToPointer() *ListIncidentsTagMatchStrategy {
 	return &e
 }
-func (e *QueryParamTagMatchStrategy) UnmarshalJSON(data []byte) error {
+func (e *ListIncidentsTagMatchStrategy) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -34,10 +33,10 @@ func (e *QueryParamTagMatchStrategy) UnmarshalJSON(data []byte) error {
 	case "match_all":
 		fallthrough
 	case "exclude":
-		*e = QueryParamTagMatchStrategy(v)
+		*e = ListIncidentsTagMatchStrategy(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for QueryParamTagMatchStrategy: %v", v)
+		return fmt.Errorf("invalid value for ListIncidentsTagMatchStrategy: %v", v)
 	}
 }
 
@@ -68,6 +67,10 @@ type ListIncidentsRequest struct {
 	ResolvedAtOrAfter *time.Time `queryParam:"style=form,explode=true,name=resolved_at_or_after"`
 	// Filters for incidents that were resolved at or before this time. Combine this with the `current_milestones` parameter if you wish to omit incidents that were re-opened and are still active.
 	ResolvedAtOrBefore *time.Time `queryParam:"style=form,explode=true,name=resolved_at_or_before"`
+	// Filters for incidents that were closed at or after this time
+	ClosedAtOrAfter *time.Time `queryParam:"style=form,explode=true,name=closed_at_or_after"`
+	// Filters for incidents that were closed at or before this time
+	ClosedAtOrBefore *time.Time `queryParam:"style=form,explode=true,name=closed_at_or_before"`
 	// Filters for incidents that were created at or after this time
 	CreatedAtOrAfter *time.Time `queryParam:"style=form,explode=true,name=created_at_or_after"`
 	// Filters for incidents that were created at or before this time
@@ -91,7 +94,7 @@ type ListIncidentsRequest struct {
 	// A comma separated list of tags
 	Tags *string `queryParam:"style=form,explode=true,name=tags"`
 	// A matching strategy for the tags provided
-	TagMatchStrategy *QueryParamTagMatchStrategy `queryParam:"style=form,explode=true,name=tag_match_strategy"`
+	TagMatchStrategy *ListIncidentsTagMatchStrategy `queryParam:"style=form,explode=true,name=tag_match_strategy"`
 	// Return archived incidents
 	Archived *bool `queryParam:"style=form,explode=true,name=archived"`
 	// Filters for incidents that were updated after this date
@@ -100,6 +103,8 @@ type ListIncidentsRequest struct {
 	UpdatedBefore *time.Time `queryParam:"style=form,explode=true,name=updated_before"`
 	// A comma separated list of incident type IDs
 	IncidentTypeID *string `queryParam:"style=form,explode=true,name=incident_type_id"`
+	// A comma separated list of retrospective template IDs
+	RetrospectiveTemplate *string `queryParam:"style=form,explode=true,name=retrospective_template"`
 }
 
 func (l ListIncidentsRequest) MarshalJSON() ([]byte, error) {
@@ -211,6 +216,20 @@ func (o *ListIncidentsRequest) GetResolvedAtOrBefore() *time.Time {
 	return o.ResolvedAtOrBefore
 }
 
+func (o *ListIncidentsRequest) GetClosedAtOrAfter() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.ClosedAtOrAfter
+}
+
+func (o *ListIncidentsRequest) GetClosedAtOrBefore() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.ClosedAtOrBefore
+}
+
 func (o *ListIncidentsRequest) GetCreatedAtOrAfter() *time.Time {
 	if o == nil {
 		return nil
@@ -288,7 +307,7 @@ func (o *ListIncidentsRequest) GetTags() *string {
 	return o.Tags
 }
 
-func (o *ListIncidentsRequest) GetTagMatchStrategy() *QueryParamTagMatchStrategy {
+func (o *ListIncidentsRequest) GetTagMatchStrategy() *ListIncidentsTagMatchStrategy {
 	if o == nil {
 		return nil
 	}
@@ -323,22 +342,9 @@ func (o *ListIncidentsRequest) GetIncidentTypeID() *string {
 	return o.IncidentTypeID
 }
 
-type ListIncidentsResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// List all of the incidents in the organization
-	IncidentEntityPaginated *components.IncidentEntityPaginated
-}
-
-func (o *ListIncidentsResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListIncidentsResponse) GetIncidentEntityPaginated() *components.IncidentEntityPaginated {
+func (o *ListIncidentsRequest) GetRetrospectiveTemplate() *string {
 	if o == nil {
 		return nil
 	}
-	return o.IncidentEntityPaginated
+	return o.RetrospectiveTemplate
 }

@@ -7,8 +7,8 @@ import (
 )
 
 type UpdateScheduledMaintenanceRequest struct {
-	ScheduledMaintenanceID                             string                                                        `pathParam:"style=simple,explode=false,name=scheduled_maintenance_id"`
-	PatchV1ScheduledMaintenancesScheduledMaintenanceID components.PatchV1ScheduledMaintenancesScheduledMaintenanceID `request:"mediaType=application/json"`
+	ScheduledMaintenanceID     string                                `pathParam:"style=simple,explode=false,name=scheduled_maintenance_id"`
+	UpdateScheduledMaintenance components.UpdateScheduledMaintenance `request:"mediaType=application/json"`
 }
 
 func (o *UpdateScheduledMaintenanceRequest) GetScheduledMaintenanceID() string {
@@ -18,29 +18,9 @@ func (o *UpdateScheduledMaintenanceRequest) GetScheduledMaintenanceID() string {
 	return o.ScheduledMaintenanceID
 }
 
-func (o *UpdateScheduledMaintenanceRequest) GetPatchV1ScheduledMaintenancesScheduledMaintenanceID() components.PatchV1ScheduledMaintenancesScheduledMaintenanceID {
+func (o *UpdateScheduledMaintenanceRequest) GetUpdateScheduledMaintenance() components.UpdateScheduledMaintenance {
 	if o == nil {
-		return components.PatchV1ScheduledMaintenancesScheduledMaintenanceID{}
+		return components.UpdateScheduledMaintenance{}
 	}
-	return o.PatchV1ScheduledMaintenancesScheduledMaintenanceID
-}
-
-type UpdateScheduledMaintenanceResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Change the conditions of a scheduled maintenance event, including updating any status page announcements of changes.
-	ScheduledMaintenanceEntity *components.ScheduledMaintenanceEntity
-}
-
-func (o *UpdateScheduledMaintenanceResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *UpdateScheduledMaintenanceResponse) GetScheduledMaintenanceEntity() *components.ScheduledMaintenanceEntity {
-	if o == nil {
-		return nil
-	}
-	return o.ScheduledMaintenanceEntity
+	return o.UpdateScheduledMaintenance
 }

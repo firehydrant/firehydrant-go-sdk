@@ -5,7 +5,7 @@ package components
 // IncidentsMilestoneEntityPaginated - Incidents_MilestoneEntityPaginated model
 type IncidentsMilestoneEntityPaginated struct {
 	Data       []IncidentsMilestoneEntity `json:"data,omitempty"`
-	Pagination *PaginationEntity          `json:"pagination,omitempty"`
+	Pagination *NullablePaginationEntity  `json:"pagination,omitempty"`
 }
 
 func (o *IncidentsMilestoneEntityPaginated) GetData() []IncidentsMilestoneEntity {
@@ -15,7 +15,7 @@ func (o *IncidentsMilestoneEntityPaginated) GetData() []IncidentsMilestoneEntity
 	return o.Data
 }
 
-func (o *IncidentsMilestoneEntityPaginated) GetPagination() *PaginationEntity {
+func (o *IncidentsMilestoneEntityPaginated) GetPagination() *NullablePaginationEntity {
 	if o == nil {
 		return nil
 	}

@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type GetFormConfigurationRequest struct {
 	Slug string `pathParam:"style=simple,explode=false,name=slug"`
 }
@@ -15,15 +11,4 @@ func (o *GetFormConfigurationRequest) GetSlug() string {
 		return ""
 	}
 	return o.Slug
-}
-
-type GetFormConfigurationResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-}
-
-func (o *GetFormConfigurationResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
 }

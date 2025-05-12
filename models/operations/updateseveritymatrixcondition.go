@@ -7,8 +7,8 @@ import (
 )
 
 type UpdateSeverityMatrixConditionRequest struct {
-	ConditionID                                string                                                `pathParam:"style=simple,explode=false,name=condition_id"`
-	PatchV1SeverityMatrixConditionsConditionID components.PatchV1SeverityMatrixConditionsConditionID `request:"mediaType=application/json"`
+	ConditionID                   string                                   `pathParam:"style=simple,explode=false,name=condition_id"`
+	UpdateSeverityMatrixCondition components.UpdateSeverityMatrixCondition `request:"mediaType=application/json"`
 }
 
 func (o *UpdateSeverityMatrixConditionRequest) GetConditionID() string {
@@ -18,29 +18,9 @@ func (o *UpdateSeverityMatrixConditionRequest) GetConditionID() string {
 	return o.ConditionID
 }
 
-func (o *UpdateSeverityMatrixConditionRequest) GetPatchV1SeverityMatrixConditionsConditionID() components.PatchV1SeverityMatrixConditionsConditionID {
+func (o *UpdateSeverityMatrixConditionRequest) GetUpdateSeverityMatrixCondition() components.UpdateSeverityMatrixCondition {
 	if o == nil {
-		return components.PatchV1SeverityMatrixConditionsConditionID{}
+		return components.UpdateSeverityMatrixCondition{}
 	}
-	return o.PatchV1SeverityMatrixConditionsConditionID
-}
-
-type UpdateSeverityMatrixConditionResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Update a specific condition
-	SeverityMatrixConditionEntity *components.SeverityMatrixConditionEntity
-}
-
-func (o *UpdateSeverityMatrixConditionResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *UpdateSeverityMatrixConditionResponse) GetSeverityMatrixConditionEntity() *components.SeverityMatrixConditionEntity {
-	if o == nil {
-		return nil
-	}
-	return o.SeverityMatrixConditionEntity
+	return o.UpdateSeverityMatrixCondition
 }

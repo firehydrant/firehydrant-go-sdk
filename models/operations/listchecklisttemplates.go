@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type ListChecklistTemplatesRequest struct {
 	Page    *int `queryParam:"style=form,explode=true,name=page"`
 	PerPage *int `queryParam:"style=form,explode=true,name=per_page"`
@@ -32,24 +28,4 @@ func (o *ListChecklistTemplatesRequest) GetQuery() *string {
 		return nil
 	}
 	return o.Query
-}
-
-type ListChecklistTemplatesResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// List all of the checklist templates that have been added to the organization
-	ChecklistTemplateEntityPaginated *components.ChecklistTemplateEntityPaginated
-}
-
-func (o *ListChecklistTemplatesResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListChecklistTemplatesResponse) GetChecklistTemplateEntityPaginated() *components.ChecklistTemplateEntityPaginated {
-	if o == nil {
-		return nil
-	}
-	return o.ChecklistTemplateEntityPaginated
 }

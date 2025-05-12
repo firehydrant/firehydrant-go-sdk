@@ -7,8 +7,8 @@ import (
 )
 
 type UpdateSeverityRequest struct {
-	SeveritySlug                  string                                   `pathParam:"style=simple,explode=false,name=severity_slug"`
-	PatchV1SeveritiesSeveritySlug components.PatchV1SeveritiesSeveritySlug `request:"mediaType=application/json"`
+	SeveritySlug   string                    `pathParam:"style=simple,explode=false,name=severity_slug"`
+	UpdateSeverity components.UpdateSeverity `request:"mediaType=application/json"`
 }
 
 func (o *UpdateSeverityRequest) GetSeveritySlug() string {
@@ -18,29 +18,9 @@ func (o *UpdateSeverityRequest) GetSeveritySlug() string {
 	return o.SeveritySlug
 }
 
-func (o *UpdateSeverityRequest) GetPatchV1SeveritiesSeveritySlug() components.PatchV1SeveritiesSeveritySlug {
+func (o *UpdateSeverityRequest) GetUpdateSeverity() components.UpdateSeverity {
 	if o == nil {
-		return components.PatchV1SeveritiesSeveritySlug{}
+		return components.UpdateSeverity{}
 	}
-	return o.PatchV1SeveritiesSeveritySlug
-}
-
-type UpdateSeverityResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Update a specific severity
-	SeverityEntity *components.SeverityEntity
-}
-
-func (o *UpdateSeverityResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *UpdateSeverityResponse) GetSeverityEntity() *components.SeverityEntity {
-	if o == nil {
-		return nil
-	}
-	return o.SeverityEntity
+	return o.UpdateSeverity
 }

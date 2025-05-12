@@ -9,8 +9,8 @@ import (
 
 type MetricsTicketFunnelMetricsEntityDataBucketEntity struct {
 	// The start datetime for the period
-	TimeBucket   *time.Time                                                    `json:"time_bucket,omitempty"`
-	FilterParams *MetricsTicketFunnelMetricsEntityDataBucketFilterParamsEntity `json:"filter_params,omitempty"`
+	TimeBucket   *time.Time                                                            `json:"time_bucket,omitempty"`
+	FilterParams *NullableMetricsTicketFunnelMetricsEntityDataBucketFilterParamsEntity `json:"filter_params,omitempty"`
 	// The number of tasks created
 	TasksCreated *int `json:"tasks_created,omitempty"`
 	// The number of tasks completed
@@ -39,7 +39,7 @@ func (o *MetricsTicketFunnelMetricsEntityDataBucketEntity) GetTimeBucket() *time
 	return o.TimeBucket
 }
 
-func (o *MetricsTicketFunnelMetricsEntityDataBucketEntity) GetFilterParams() *MetricsTicketFunnelMetricsEntityDataBucketFilterParamsEntity {
+func (o *MetricsTicketFunnelMetricsEntityDataBucketEntity) GetFilterParams() *NullableMetricsTicketFunnelMetricsEntityDataBucketFilterParamsEntity {
 	if o == nil {
 		return nil
 	}

@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type ListWebhooksRequest struct {
 	Page    *int `queryParam:"style=form,explode=true,name=page"`
 	PerPage *int `queryParam:"style=form,explode=true,name=per_page"`
@@ -23,24 +19,4 @@ func (o *ListWebhooksRequest) GetPerPage() *int {
 		return nil
 	}
 	return o.PerPage
-}
-
-type ListWebhooksResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Lists webhooks
-	WebhooksEntitiesWebhookEntity *components.WebhooksEntitiesWebhookEntity
-}
-
-func (o *ListWebhooksResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListWebhooksResponse) GetWebhooksEntitiesWebhookEntity() *components.WebhooksEntitiesWebhookEntity {
-	if o == nil {
-		return nil
-	}
-	return o.WebhooksEntitiesWebhookEntity
 }

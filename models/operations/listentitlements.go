@@ -4,22 +4,21 @@ package operations
 
 import (
 	"encoding/json"
-	"firehydrant/models/components"
 	"fmt"
 )
 
-// Type of Entitlement
-type Type string
+// ListEntitlementsType - Type of Entitlement
+type ListEntitlementsType string
 
 const (
-	TypeQuota  Type = "quota"
-	TypeAccess Type = "access"
+	ListEntitlementsTypeQuota  ListEntitlementsType = "quota"
+	ListEntitlementsTypeAccess ListEntitlementsType = "access"
 )
 
-func (e Type) ToPointer() *Type {
+func (e ListEntitlementsType) ToPointer() *ListEntitlementsType {
 	return &e
 }
-func (e *Type) UnmarshalJSON(data []byte) error {
+func (e *ListEntitlementsType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -28,10 +27,10 @@ func (e *Type) UnmarshalJSON(data []byte) error {
 	case "quota":
 		fallthrough
 	case "access":
-		*e = Type(v)
+		*e = ListEntitlementsType(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for Type: %v", v)
+		return fmt.Errorf("invalid value for ListEntitlementsType: %v", v)
 	}
 }
 
@@ -39,7 +38,7 @@ type ListEntitlementsRequest struct {
 	// Name of Entitlement
 	Name *string `queryParam:"style=form,explode=true,name=name"`
 	// Type of Entitlement
-	Type *Type `queryParam:"style=form,explode=true,name=type"`
+	Type *ListEntitlementsType `queryParam:"style=form,explode=true,name=type"`
 }
 
 func (o *ListEntitlementsRequest) GetName() *string {
@@ -49,29 +48,9 @@ func (o *ListEntitlementsRequest) GetName() *string {
 	return o.Name
 }
 
-func (o *ListEntitlementsRequest) GetType() *Type {
+func (o *ListEntitlementsRequest) GetType() *ListEntitlementsType {
 	if o == nil {
 		return nil
 	}
 	return o.Type
-}
-
-type ListEntitlementsResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Retrieve all entitlements
-	EntitlementEntityPaginated *components.EntitlementEntityPaginated
-}
-
-func (o *ListEntitlementsResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListEntitlementsResponse) GetEntitlementEntityPaginated() *components.EntitlementEntityPaginated {
-	if o == nil {
-		return nil
-	}
-	return o.EntitlementEntityPaginated
 }

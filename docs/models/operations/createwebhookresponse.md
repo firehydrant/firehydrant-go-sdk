@@ -1,9 +1,0 @@
-# CreateWebhookResponse
-
-
-## Fields
-
-| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
-| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| `HTTPMeta`                                                                                            | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                    | :heavy_check_mark:                                                                                    | N/A                                                                                                   |
-| `WebhooksEntitiesWebhookEntity`                                                                       | [*components.WebhooksEntitiesWebhookEntity](../../models/components/webhooksentitieswebhookentity.md) | :heavy_minus_sign:                                                                                    | Create a new webhook                                                                                  |

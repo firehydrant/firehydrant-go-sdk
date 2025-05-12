@@ -2,7 +2,7 @@
 
 package components
 
-type ServiceDependencies struct {
+type ServiceDependency struct {
 }
 
 // ServiceWithAllDependenciesEntity model
@@ -12,7 +12,7 @@ type ServiceWithAllDependenciesEntity struct {
 	// Services that this service is dependent on
 	ParentServiceDependencies []ServiceParentDependencyEntity `json:"parent_service_dependencies,omitempty"`
 	// All dependencies. Can be one of: ServiceChildDependencyEntity, ServiceParentDependencyEntity
-	ServiceDependencies []ServiceDependencies `json:"service_dependencies,omitempty"`
+	ServiceDependencies []ServiceDependency `json:"service_dependencies,omitempty"`
 }
 
 func (o *ServiceWithAllDependenciesEntity) GetChildServiceDependencies() []ServiceChildDependencyEntity {
@@ -29,7 +29,7 @@ func (o *ServiceWithAllDependenciesEntity) GetParentServiceDependencies() []Serv
 	return o.ParentServiceDependencies
 }
 
-func (o *ServiceWithAllDependenciesEntity) GetServiceDependencies() []ServiceDependencies {
+func (o *ServiceWithAllDependenciesEntity) GetServiceDependencies() []ServiceDependency {
 	if o == nil {
 		return nil
 	}

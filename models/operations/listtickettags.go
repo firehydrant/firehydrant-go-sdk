@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type ListTicketTagsRequest struct {
 	Prefix *string `queryParam:"style=form,explode=true,name=prefix"`
 }
@@ -15,24 +11,4 @@ func (o *ListTicketTagsRequest) GetPrefix() *string {
 		return nil
 	}
 	return o.Prefix
-}
-
-type ListTicketTagsResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// List all of the ticket tags in the organization
-	TagEntityPaginated *components.TagEntityPaginated
-}
-
-func (o *ListTicketTagsResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListTicketTagsResponse) GetTagEntityPaginated() *components.TagEntityPaginated {
-	if o == nil {
-		return nil
-	}
-	return o.TagEntityPaginated
 }

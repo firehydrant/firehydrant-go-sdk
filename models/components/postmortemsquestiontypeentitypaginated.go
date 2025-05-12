@@ -5,7 +5,7 @@ package components
 // PostMortemsQuestionTypeEntityPaginated - PostMortems_QuestionTypeEntityPaginated model
 type PostMortemsQuestionTypeEntityPaginated struct {
 	Data       []PostMortemsQuestionTypeEntity `json:"data,omitempty"`
-	Pagination *PaginationEntity               `json:"pagination,omitempty"`
+	Pagination *NullablePaginationEntity       `json:"pagination,omitempty"`
 }
 
 func (o *PostMortemsQuestionTypeEntityPaginated) GetData() []PostMortemsQuestionTypeEntity {
@@ -15,7 +15,7 @@ func (o *PostMortemsQuestionTypeEntityPaginated) GetData() []PostMortemsQuestion
 	return o.Data
 }
 
-func (o *PostMortemsQuestionTypeEntityPaginated) GetPagination() *PaginationEntity {
+func (o *PostMortemsQuestionTypeEntityPaginated) GetPagination() *NullablePaginationEntity {
 	if o == nil {
 		return nil
 	}

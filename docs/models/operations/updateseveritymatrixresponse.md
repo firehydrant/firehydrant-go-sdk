@@ -1,9 +1,0 @@
-# UpdateSeverityMatrixResponse
-
-
-## Fields
-
-| Field                                                                                                           | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
-| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| `HTTPMeta`                                                                                                      | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                              | :heavy_check_mark:                                                                                              | N/A                                                                                                             |
-| `SeverityMatrixSeverityMatrixEntity`                                                                            | [*components.SeverityMatrixSeverityMatrixEntity](../../models/components/severitymatrixseveritymatrixentity.md) | :heavy_minus_sign:                                                                                              | Update available severities and impacts in your organization's severity matrix.                                 |

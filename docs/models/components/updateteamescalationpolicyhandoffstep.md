@@ -1,0 +1,11 @@
+# UpdateTeamEscalationPolicyHandoffStep
+
+A step that defines where an alert should be sent when the policy is exhausted and the alert is still unacknowledged.
+
+
+## Fields
+
+| Field                                                                                                              | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `TargetType`                                                                                                       | [components.UpdateTeamEscalationPolicyTargetType](../../models/components/updateteamescalationpolicytargettype.md) | :heavy_check_mark:                                                                                                 | The type of target to which the policy will hand off.                                                              |
+| `TargetID`                                                                                                         | *string*                                                                                                           | :heavy_check_mark:                                                                                                 | The ID of the target to which the policy will hand off.                                                            |

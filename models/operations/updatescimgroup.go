@@ -7,8 +7,8 @@ import (
 )
 
 type UpdateScimGroupRequest struct {
-	ID                  string                         `pathParam:"style=simple,explode=false,name=id"`
-	PutV1ScimV2GroupsID components.PutV1ScimV2GroupsID `request:"mediaType=application/scim+json"`
+	ID              string                     `pathParam:"style=simple,explode=false,name=id"`
+	UpdateScimGroup components.UpdateScimGroup `request:"mediaType=application/scim+json"`
 }
 
 func (o *UpdateScimGroupRequest) GetID() string {
@@ -18,20 +18,9 @@ func (o *UpdateScimGroupRequest) GetID() string {
 	return o.ID
 }
 
-func (o *UpdateScimGroupRequest) GetPutV1ScimV2GroupsID() components.PutV1ScimV2GroupsID {
+func (o *UpdateScimGroupRequest) GetUpdateScimGroup() components.UpdateScimGroup {
 	if o == nil {
-		return components.PutV1ScimV2GroupsID{}
+		return components.UpdateScimGroup{}
 	}
-	return o.PutV1ScimV2GroupsID
-}
-
-type UpdateScimGroupResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-}
-
-func (o *UpdateScimGroupResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
+	return o.UpdateScimGroup
 }

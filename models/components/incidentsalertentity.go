@@ -4,9 +4,8 @@ package components
 
 // IncidentsAlertEntity - Incidents_AlertEntity model
 type IncidentsAlertEntity struct {
-	ID *string `json:"id,omitempty"`
-	// Alerts_AlertEntity model
-	Alert *AlertsAlertEntity `json:"alert,omitempty"`
+	ID    *string                    `json:"id,omitempty"`
+	Alert *NullableAlertsAlertEntity `json:"alert,omitempty"`
 	// whether or not this is the primary alert for this incident
 	Primary *bool `json:"primary,omitempty"`
 }
@@ -18,7 +17,7 @@ func (o *IncidentsAlertEntity) GetID() *string {
 	return o.ID
 }
 
-func (o *IncidentsAlertEntity) GetAlert() *AlertsAlertEntity {
+func (o *IncidentsAlertEntity) GetAlert() *NullableAlertsAlertEntity {
 	if o == nil {
 		return nil
 	}

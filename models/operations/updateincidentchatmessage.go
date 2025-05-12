@@ -7,9 +7,9 @@ import (
 )
 
 type UpdateIncidentChatMessageRequest struct {
-	MessageID                                              string                                                            `pathParam:"style=simple,explode=false,name=message_id"`
-	IncidentID                                             string                                                            `pathParam:"style=simple,explode=false,name=incident_id"`
-	PatchV1IncidentsIncidentIDGenericChatMessagesMessageID components.PatchV1IncidentsIncidentIDGenericChatMessagesMessageID `request:"mediaType=application/json"`
+	MessageID                 string                               `pathParam:"style=simple,explode=false,name=message_id"`
+	IncidentID                string                               `pathParam:"style=simple,explode=false,name=incident_id"`
+	UpdateIncidentChatMessage components.UpdateIncidentChatMessage `request:"mediaType=application/json"`
 }
 
 func (o *UpdateIncidentChatMessageRequest) GetMessageID() string {
@@ -26,29 +26,9 @@ func (o *UpdateIncidentChatMessageRequest) GetIncidentID() string {
 	return o.IncidentID
 }
 
-func (o *UpdateIncidentChatMessageRequest) GetPatchV1IncidentsIncidentIDGenericChatMessagesMessageID() components.PatchV1IncidentsIncidentIDGenericChatMessagesMessageID {
+func (o *UpdateIncidentChatMessageRequest) GetUpdateIncidentChatMessage() components.UpdateIncidentChatMessage {
 	if o == nil {
-		return components.PatchV1IncidentsIncidentIDGenericChatMessagesMessageID{}
+		return components.UpdateIncidentChatMessage{}
 	}
-	return o.PatchV1IncidentsIncidentIDGenericChatMessagesMessageID
-}
-
-type UpdateIncidentChatMessageResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Update an existing generic chat message on an incident.
-	EventGenericChatMessageEntity *components.EventGenericChatMessageEntity
-}
-
-func (o *UpdateIncidentChatMessageResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *UpdateIncidentChatMessageResponse) GetEventGenericChatMessageEntity() *components.EventGenericChatMessageEntity {
-	if o == nil {
-		return nil
-	}
-	return o.EventGenericChatMessageEntity
+	return o.UpdateIncidentChatMessage
 }

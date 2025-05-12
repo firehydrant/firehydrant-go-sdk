@@ -4,12 +4,12 @@ package components
 
 // IncidentsStatusPageEntity - Incidents_StatusPageEntity model
 type IncidentsStatusPageEntity struct {
-	ID          *string            `json:"id,omitempty"`
-	URL         *string            `json:"url,omitempty"`
-	ExternalID  *string            `json:"external_id,omitempty"`
-	Name        *string            `json:"name,omitempty"`
-	DisplayName *string            `json:"display_name,omitempty"`
-	Integration *IntegrationEntity `json:"integration,omitempty"`
+	ID          *string                    `json:"id,omitempty"`
+	URL         *string                    `json:"url,omitempty"`
+	ExternalID  *string                    `json:"external_id,omitempty"`
+	Name        *string                    `json:"name,omitempty"`
+	DisplayName *string                    `json:"display_name,omitempty"`
+	Integration *NullableIntegrationEntity `json:"integration,omitempty"`
 }
 
 func (o *IncidentsStatusPageEntity) GetID() *string {
@@ -47,7 +47,7 @@ func (o *IncidentsStatusPageEntity) GetDisplayName() *string {
 	return o.DisplayName
 }
 
-func (o *IncidentsStatusPageEntity) GetIntegration() *IntegrationEntity {
+func (o *IncidentsStatusPageEntity) GetIntegration() *NullableIntegrationEntity {
 	if o == nil {
 		return nil
 	}

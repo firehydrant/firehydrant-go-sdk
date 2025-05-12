@@ -7,8 +7,8 @@ import (
 )
 
 type CreateIncidentTeamAssignmentRequest struct {
-	IncidentID                               string                                              `pathParam:"style=simple,explode=false,name=incident_id"`
-	PostV1IncidentsIncidentIDTeamAssignments components.PostV1IncidentsIncidentIDTeamAssignments `request:"mediaType=application/json"`
+	IncidentID                   string                                  `pathParam:"style=simple,explode=false,name=incident_id"`
+	CreateIncidentTeamAssignment components.CreateIncidentTeamAssignment `request:"mediaType=application/json"`
 }
 
 func (o *CreateIncidentTeamAssignmentRequest) GetIncidentID() string {
@@ -18,20 +18,9 @@ func (o *CreateIncidentTeamAssignmentRequest) GetIncidentID() string {
 	return o.IncidentID
 }
 
-func (o *CreateIncidentTeamAssignmentRequest) GetPostV1IncidentsIncidentIDTeamAssignments() components.PostV1IncidentsIncidentIDTeamAssignments {
+func (o *CreateIncidentTeamAssignmentRequest) GetCreateIncidentTeamAssignment() components.CreateIncidentTeamAssignment {
 	if o == nil {
-		return components.PostV1IncidentsIncidentIDTeamAssignments{}
+		return components.CreateIncidentTeamAssignment{}
 	}
-	return o.PostV1IncidentsIncidentIDTeamAssignments
-}
-
-type CreateIncidentTeamAssignmentResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-}
-
-func (o *CreateIncidentTeamAssignmentResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
+	return o.CreateIncidentTeamAssignment
 }

@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type GetEnvironmentRequest struct {
 	// Environment UUID
 	EnvironmentID string `pathParam:"style=simple,explode=false,name=environment_id"`
@@ -16,24 +12,4 @@ func (o *GetEnvironmentRequest) GetEnvironmentID() string {
 		return ""
 	}
 	return o.EnvironmentID
-}
-
-type GetEnvironmentResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Retrieves a single environment by ID
-	EnvironmentEntryEntity *components.EnvironmentEntryEntity
-}
-
-func (o *GetEnvironmentResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *GetEnvironmentResponse) GetEnvironmentEntryEntity() *components.EnvironmentEntryEntity {
-	if o == nil {
-		return nil
-	}
-	return o.EnvironmentEntryEntity
 }

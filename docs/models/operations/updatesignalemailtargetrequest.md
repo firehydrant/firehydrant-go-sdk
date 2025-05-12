@@ -1,9 +1,0 @@
-# UpdateSignalEmailTargetRequest
-
-
-## Fields
-
-| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `ID`                                                                                               | *string*                                                                                           | :heavy_check_mark:                                                                                 | N/A                                                                                                |
-| `PatchV1SignalsEmailTargetsID`                                                                     | [components.PatchV1SignalsEmailTargetsID](../../models/components/patchv1signalsemailtargetsid.md) | :heavy_check_mark:                                                                                 | N/A                                                                                                |

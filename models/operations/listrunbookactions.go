@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type ListRunbookActionsRequest struct {
 	Page    *int `queryParam:"style=form,explode=true,name=page"`
 	PerPage *int `queryParam:"style=form,explode=true,name=per_page"`
@@ -41,24 +37,4 @@ func (o *ListRunbookActionsRequest) GetLite() *bool {
 		return nil
 	}
 	return o.Lite
-}
-
-type ListRunbookActionsResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// List all Runbook actions available through your connected integrations
-	RunbooksActionsEntityPaginated *components.RunbooksActionsEntityPaginated
-}
-
-func (o *ListRunbookActionsResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListRunbookActionsResponse) GetRunbooksActionsEntityPaginated() *components.RunbooksActionsEntityPaginated {
-	if o == nil {
-		return nil
-	}
-	return o.RunbooksActionsEntityPaginated
 }

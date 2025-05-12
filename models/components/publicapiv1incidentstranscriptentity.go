@@ -22,7 +22,8 @@ type PublicAPIV1IncidentsTranscriptEntity struct {
 	// The time the transcript entry was created
 	CreatedAt *time.Time `json:"created_at,omitempty"`
 	// The time the transcript entry was last updated
-	UpdatedAt *time.Time `json:"updated_at,omitempty"`
+	UpdatedAt *time.Time            `json:"updated_at,omitempty"`
+	Author    *NullableAuthorEntity `json:"author,omitempty"`
 }
 
 func (p PublicAPIV1IncidentsTranscriptEntity) MarshalJSON() ([]byte, error) {
@@ -83,4 +84,11 @@ func (o *PublicAPIV1IncidentsTranscriptEntity) GetUpdatedAt() *time.Time {
 		return nil
 	}
 	return o.UpdatedAt
+}
+
+func (o *PublicAPIV1IncidentsTranscriptEntity) GetAuthor() *NullableAuthorEntity {
+	if o == nil {
+		return nil
+	}
+	return o.Author
 }

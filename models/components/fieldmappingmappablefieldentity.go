@@ -11,7 +11,7 @@ type FieldMappingMappableFieldEntity struct {
 	// The allowed type of the field
 	Type *string `json:"type,omitempty"`
 	// The allowed values of the field
-	AllowedValues *string `json:"allowed_values,omitempty"`
+	AllowedValues []string `json:"allowed_values,omitempty"`
 	// If the field is required to be mapped
 	Required *string `json:"required,omitempty"`
 	// Short, inline documentation for the present field
@@ -39,7 +39,7 @@ func (o *FieldMappingMappableFieldEntity) GetType() *string {
 	return o.Type
 }
 
-func (o *FieldMappingMappableFieldEntity) GetAllowedValues() *string {
+func (o *FieldMappingMappableFieldEntity) GetAllowedValues() []string {
 	if o == nil {
 		return nil
 	}

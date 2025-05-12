@@ -11,8 +11,8 @@ import (
 type ServiceEntityLabels struct {
 }
 
-// ManagedBySettings - Indicates the settings of the catalog that manages this service
-type ManagedBySettings struct {
+// ServiceEntityManagedBySettings - Indicates the settings of the catalog that manages this service
+type ServiceEntityManagedBySettings struct {
 }
 
 // ServiceEntity model
@@ -37,19 +37,19 @@ type ServiceEntity struct {
 	// Information about known linkages to representations of services outside of FireHydrant.
 	ExternalResources []ExternalResourceEntity `json:"external_resources,omitempty"`
 	// List of functionalities attached to the service
-	Functionalities []FunctionalityEntity            `json:"functionalities,omitempty"`
-	LastImport      *ImportsImportableResourceEntity `json:"last_import,omitempty"`
+	Functionalities []FunctionalityEntity                    `json:"functionalities,omitempty"`
+	LastImport      *NullableImportsImportableResourceEntity `json:"last_import,omitempty"`
 	// List of links attached to this service.
 	Links []LinksEntity `json:"links,omitempty"`
 	// If set, this field indicates that the service is managed by an integration and thus cannot be set manually
 	ManagedBy *string `json:"managed_by,omitempty"`
 	// Indicates the settings of the catalog that manages this service
-	ManagedBySettings         *ManagedBySettings `json:"managed_by_settings,omitempty"`
-	Owner                     *TeamEntityLite    `json:"owner,omitempty"`
-	ServiceChecklistUpdatedAt *time.Time         `json:"service_checklist_updated_at,omitempty"`
+	ManagedBySettings         *ServiceEntityManagedBySettings `json:"managed_by_settings,omitempty"`
+	Owner                     *NullableTeamEntityLite         `json:"owner,omitempty"`
+	ServiceChecklistUpdatedAt *time.Time                      `json:"service_checklist_updated_at,omitempty"`
 	// List of teams attached to the service
-	Teams     []TeamEntityLite `json:"teams,omitempty"`
-	UpdatedBy *AuthorEntity    `json:"updated_by,omitempty"`
+	Teams     []TeamEntityLite      `json:"teams,omitempty"`
+	UpdatedBy *NullableAuthorEntity `json:"updated_by,omitempty"`
 }
 
 func (s ServiceEntity) MarshalJSON() ([]byte, error) {
@@ -175,7 +175,7 @@ func (o *ServiceEntity) GetFunctionalities() []FunctionalityEntity {
 	return o.Functionalities
 }
 
-func (o *ServiceEntity) GetLastImport() *ImportsImportableResourceEntity {
+func (o *ServiceEntity) GetLastImport() *NullableImportsImportableResourceEntity {
 	if o == nil {
 		return nil
 	}
@@ -196,14 +196,14 @@ func (o *ServiceEntity) GetManagedBy() *string {
 	return o.ManagedBy
 }
 
-func (o *ServiceEntity) GetManagedBySettings() *ManagedBySettings {
+func (o *ServiceEntity) GetManagedBySettings() *ServiceEntityManagedBySettings {
 	if o == nil {
 		return nil
 	}
 	return o.ManagedBySettings
 }
 
-func (o *ServiceEntity) GetOwner() *TeamEntityLite {
+func (o *ServiceEntity) GetOwner() *NullableTeamEntityLite {
 	if o == nil {
 		return nil
 	}
@@ -224,7 +224,7 @@ func (o *ServiceEntity) GetTeams() []TeamEntityLite {
 	return o.Teams
 }
 
-func (o *ServiceEntity) GetUpdatedBy() *AuthorEntity {
+func (o *ServiceEntity) GetUpdatedBy() *NullableAuthorEntity {
 	if o == nil {
 		return nil
 	}
