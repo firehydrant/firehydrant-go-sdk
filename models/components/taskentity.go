@@ -9,15 +9,15 @@ import (
 
 // TaskEntity model
 type TaskEntity struct {
-	ID          *string       `json:"id,omitempty"`
-	Title       *string       `json:"title,omitempty"`
-	Description *string       `json:"description,omitempty"`
-	State       *string       `json:"state,omitempty"`
-	Assignee    *AuthorEntity `json:"assignee,omitempty"`
-	CreatedBy   *AuthorEntity `json:"created_by,omitempty"`
-	CreatedAt   *time.Time    `json:"created_at,omitempty"`
-	UpdatedAt   *time.Time    `json:"updated_at,omitempty"`
-	DueAt       *time.Time    `json:"due_at,omitempty"`
+	ID          *string               `json:"id,omitempty"`
+	Title       *string               `json:"title,omitempty"`
+	Description *string               `json:"description,omitempty"`
+	State       *string               `json:"state,omitempty"`
+	Assignee    *NullableAuthorEntity `json:"assignee,omitempty"`
+	CreatedBy   *NullableAuthorEntity `json:"created_by,omitempty"`
+	CreatedAt   *time.Time            `json:"created_at,omitempty"`
+	UpdatedAt   *time.Time            `json:"updated_at,omitempty"`
+	DueAt       *time.Time            `json:"due_at,omitempty"`
 }
 
 func (t TaskEntity) MarshalJSON() ([]byte, error) {
@@ -59,14 +59,14 @@ func (o *TaskEntity) GetState() *string {
 	return o.State
 }
 
-func (o *TaskEntity) GetAssignee() *AuthorEntity {
+func (o *TaskEntity) GetAssignee() *NullableAuthorEntity {
 	if o == nil {
 		return nil
 	}
 	return o.Assignee
 }
 
-func (o *TaskEntity) GetCreatedBy() *AuthorEntity {
+func (o *TaskEntity) GetCreatedBy() *NullableAuthorEntity {
 	if o == nil {
 		return nil
 	}

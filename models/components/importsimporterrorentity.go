@@ -16,8 +16,8 @@ type ImportsImportErrorEntity struct {
 	Message   *string    `json:"message,omitempty"`
 	CreatedAt *time.Time `json:"created_at,omitempty"`
 	// Additional error data
-	Data     *ImportsImportErrorEntityData           `json:"data,omitempty"`
-	Resource *ImportsImportErrorEntityResourceEntity `json:"resource,omitempty"`
+	Data     *ImportsImportErrorEntityData                   `json:"data,omitempty"`
+	Resource *NullableImportsImportErrorEntityResourceEntity `json:"resource,omitempty"`
 }
 
 func (i ImportsImportErrorEntity) MarshalJSON() ([]byte, error) {
@@ -59,7 +59,7 @@ func (o *ImportsImportErrorEntity) GetData() *ImportsImportErrorEntityData {
 	return o.Data
 }
 
-func (o *ImportsImportErrorEntity) GetResource() *ImportsImportErrorEntityResourceEntity {
+func (o *ImportsImportErrorEntity) GetResource() *NullableImportsImportErrorEntityResourceEntity {
 	if o == nil {
 		return nil
 	}

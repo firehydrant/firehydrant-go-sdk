@@ -4,7 +4,6 @@ package operations
 
 import (
 	"encoding/json"
-	"firehydrant/models/components"
 	"fmt"
 )
 
@@ -53,24 +52,4 @@ func (o *ListIncidentRoleAssignmentsRequest) GetStatus() *Status {
 		return nil
 	}
 	return o.Status
-}
-
-type ListIncidentRoleAssignmentsResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Retrieve a list of all of the current role assignments for the incident
-	IncidentsRoleAssignmentEntityPaginated *components.IncidentsRoleAssignmentEntityPaginated
-}
-
-func (o *ListIncidentRoleAssignmentsResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListIncidentRoleAssignmentsResponse) GetIncidentsRoleAssignmentEntityPaginated() *components.IncidentsRoleAssignmentEntityPaginated {
-	if o == nil {
-		return nil
-	}
-	return o.IncidentsRoleAssignmentEntityPaginated
 }

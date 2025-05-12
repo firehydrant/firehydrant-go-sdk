@@ -7,14 +7,14 @@ Operations related to Webhooks
 
 ### Available Operations
 
-* [List](#list) - List webhooks
-* [Create](#create) - Create a webhook
-* [Get](#get) - Get a webhook
-* [Delete](#delete) - Delete a webhook
-* [Update](#update) - Update a webhook
-* [ListDeliveries](#listdeliveries) - List webhook deliveries
+* [ListWebhooks](#listwebhooks) - List webhooks
+* [CreateWebhook](#createwebhook) - Create a webhook
+* [ListWebhookDeliveries](#listwebhookdeliveries) - List webhook deliveries
+* [GetWebhook](#getwebhook) - Get a webhook
+* [DeleteWebhook](#deletewebhook) - Delete a webhook
+* [UpdateWebhook](#updatewebhook) - Update a webhook
 
-## List
+## ListWebhooks
 
 Lists webhooks
 
@@ -26,21 +26,24 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Webhooks.List(ctx, nil, nil)
+    res, err := s.Webhooks.ListWebhooks(ctx, nil, nil)
     if err != nil {
         log.Fatal(err)
     }
-    if res.WebhooksEntitiesWebhookEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -57,21 +60,15 @@ func main() {
 
 ### Response
 
-**[*operations.ListWebhooksResponse](../../models/operations/listwebhooksresponse.md), error**
+**[*components.WebhooksEntitiesWebhookEntity](../../models/components/webhooksentitieswebhookentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## Create
+## CreateWebhook
 
 Create a new webhook
 
@@ -89,18 +86,20 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Webhooks.Create(ctx, components.PostV1Webhooks{
-        URL: "https://woeful-yin.biz",
+    res, err := s.Webhooks.CreateWebhook(ctx, components.CreateWebhook{
+        URL: "https://prime-tooth.biz/",
     })
     if err != nil {
         log.Fatal(err)
     }
-    if res.WebhooksEntitiesWebhookEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -108,29 +107,73 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
-| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| `ctx`                                                                  | [context.Context](https://pkg.go.dev/context#Context)                  | :heavy_check_mark:                                                     | The context to use for the request.                                    |
-| `request`                                                              | [components.PostV1Webhooks](../../models/components/postv1webhooks.md) | :heavy_check_mark:                                                     | The request object to use for the request.                             |
-| `opts`                                                                 | [][operations.Option](../../models/operations/option.md)               | :heavy_minus_sign:                                                     | The options for this request.                                          |
+| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `ctx`                                                                | [context.Context](https://pkg.go.dev/context#Context)                | :heavy_check_mark:                                                   | The context to use for the request.                                  |
+| `request`                                                            | [components.CreateWebhook](../../models/components/createwebhook.md) | :heavy_check_mark:                                                   | The request object to use for the request.                           |
+| `opts`                                                               | [][operations.Option](../../models/operations/option.md)             | :heavy_minus_sign:                                                   | The options for this request.                                        |
 
 ### Response
 
-**[*operations.CreateWebhookResponse](../../models/operations/createwebhookresponse.md), error**
+**[*components.WebhooksEntitiesWebhookEntity](../../models/components/webhooksentitieswebhookentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## Get
+## ListWebhookDeliveries
+
+Get webhook deliveries
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    err := s.Webhooks.ListWebhookDeliveries(ctx, "<id>")
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `webhookID`                                              | *string*                                                 | :heavy_check_mark:                                       | ID of a webhook                                          |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## GetWebhook
 
 Retrieve a specific webhook
 
@@ -142,73 +185,20 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Webhooks.Get(ctx, "<id>")
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.WebhooksEntitiesWebhookEntity != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
-| `webhookID`                                              | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
-| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
-
-### Response
-
-**[*operations.GetWebhookResponse](../../models/operations/getwebhookresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## Delete
-
-Delete a specific webhook
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Webhooks.Delete(ctx, "<id>")
+    res, err := s.Webhooks.GetWebhook(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
     }
@@ -228,21 +218,65 @@ func main() {
 
 ### Response
 
-**[*operations.DeleteWebhookResponse](../../models/operations/deletewebhookresponse.md), error**
+**[*components.WebhooksEntitiesWebhookEntity](../../models/components/webhooksentitieswebhookentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## Update
+## DeleteWebhook
+
+Delete a specific webhook
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    err := s.Webhooks.DeleteWebhook(ctx, "<id>")
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `webhookID`                                              | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## UpdateWebhook
 
 Update a specific webhook
 
@@ -260,69 +294,14 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Webhooks.Update(ctx, "<id>", components.PatchV1WebhooksWebhookID{})
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.WebhooksEntitiesWebhookEntity != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `ctx`                                                                                      | [context.Context](https://pkg.go.dev/context#Context)                                      | :heavy_check_mark:                                                                         | The context to use for the request.                                                        |
-| `webhookID`                                                                                | *string*                                                                                   | :heavy_check_mark:                                                                         | N/A                                                                                        |
-| `patchV1WebhooksWebhookID`                                                                 | [components.PatchV1WebhooksWebhookID](../../models/components/patchv1webhookswebhookid.md) | :heavy_check_mark:                                                                         | N/A                                                                                        |
-| `opts`                                                                                     | [][operations.Option](../../models/operations/option.md)                                   | :heavy_minus_sign:                                                                         | The options for this request.                                                              |
-
-### Response
-
-**[*operations.UpdateWebhookResponse](../../models/operations/updatewebhookresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## ListDeliveries
-
-List webhook deliveries
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Webhooks.ListDeliveries(ctx, "<id>")
+    res, err := s.Webhooks.UpdateWebhook(ctx, "<id>", components.UpdateWebhook{})
     if err != nil {
         log.Fatal(err)
     }
@@ -334,24 +313,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
-| `webhookID`                                              | *string*                                                 | :heavy_check_mark:                                       | ID of a webhook                                          |
-| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `ctx`                                                                | [context.Context](https://pkg.go.dev/context#Context)                | :heavy_check_mark:                                                   | The context to use for the request.                                  |
+| `webhookID`                                                          | *string*                                                             | :heavy_check_mark:                                                   | N/A                                                                  |
+| `updateWebhook`                                                      | [components.UpdateWebhook](../../models/components/updatewebhook.md) | :heavy_check_mark:                                                   | N/A                                                                  |
+| `opts`                                                               | [][operations.Option](../../models/operations/option.md)             | :heavy_minus_sign:                                                   | The options for this request.                                        |
 
 ### Response
 
-**[*operations.ListWebhookDeliveriesResponse](../../models/operations/listwebhookdeliveriesresponse.md), error**
+**[*components.WebhooksEntitiesWebhookEntity](../../models/components/webhooksentitieswebhookentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |

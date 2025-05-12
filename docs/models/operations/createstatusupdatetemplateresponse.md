@@ -1,9 +1,0 @@
-# CreateStatusUpdateTemplateResponse
-
-
-## Fields
-
-| Field                                                                                           | Type                                                                                            | Required                                                                                        | Description                                                                                     |
-| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| `HTTPMeta`                                                                                      | [components.HTTPMetadata](../../models/components/httpmetadata.md)                              | :heavy_check_mark:                                                                              | N/A                                                                                             |
-| `StatusUpdateTemplateEntity`                                                                    | [*components.StatusUpdateTemplateEntity](../../models/components/statusupdatetemplateentity.md) | :heavy_minus_sign:                                                                              | Create a status update template for your organization                                           |

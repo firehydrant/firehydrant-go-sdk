@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type DeleteFunctionalityRequest struct {
 	FunctionalityID string `pathParam:"style=simple,explode=false,name=functionality_id"`
 }
@@ -15,24 +11,4 @@ func (o *DeleteFunctionalityRequest) GetFunctionalityID() string {
 		return ""
 	}
 	return o.FunctionalityID
-}
-
-type DeleteFunctionalityResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Archive a functionality
-	FunctionalityEntity *components.FunctionalityEntity
-}
-
-func (o *DeleteFunctionalityResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *DeleteFunctionalityResponse) GetFunctionalityEntity() *components.FunctionalityEntity {
-	if o == nil {
-		return nil
-	}
-	return o.FunctionalityEntity
 }

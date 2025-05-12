@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type ListStatusUpdateTemplatesRequest struct {
 	Page    *int `queryParam:"style=form,explode=true,name=page"`
 	PerPage *int `queryParam:"style=form,explode=true,name=per_page"`
@@ -23,24 +19,4 @@ func (o *ListStatusUpdateTemplatesRequest) GetPerPage() *int {
 		return nil
 	}
 	return o.PerPage
-}
-
-type ListStatusUpdateTemplatesResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// List all status update templates for your organization
-	StatusUpdateTemplateEntity *components.StatusUpdateTemplateEntity
-}
-
-func (o *ListStatusUpdateTemplatesResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListStatusUpdateTemplatesResponse) GetStatusUpdateTemplateEntity() *components.StatusUpdateTemplateEntity {
-	if o == nil {
-		return nil
-	}
-	return o.StatusUpdateTemplateEntity
 }

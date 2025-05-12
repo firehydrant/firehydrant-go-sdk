@@ -11,7 +11,7 @@ import (
 type IncidentEntityLabels struct {
 }
 
-type RetroExports struct {
+type IncidentEntityRetroExport struct {
 }
 
 // IncidentEntity model
@@ -32,19 +32,17 @@ type IncidentEntity struct {
 	// The type/slug of the current milestone. Will be one of the currently configured milestones for the given incident.
 	CurrentMilestone *string `json:"current_milestone,omitempty"`
 	// Incident number
-	Number            *int     `json:"number,omitempty"`
-	Priority          *string  `json:"priority,omitempty"`
-	Severity          *string  `json:"severity,omitempty"`
-	SeverityColor     *string  `json:"severity_color,omitempty"`
-	SeverityImpact    *string  `json:"severity_impact,omitempty"`
-	SeverityCondition *string  `json:"severity_condition,omitempty"`
-	TagList           []string `json:"tag_list,omitempty"`
-	// SeverityMatrix_ImpactEntity model
-	SeverityImpactObject *SeverityMatrixImpactEntity `json:"severity_impact_object,omitempty"`
-	// SeverityMatrix_ConditionEntity model
-	SeverityConditionObject *SeverityMatrixConditionEntity `json:"severity_condition_object,omitempty"`
-	PrivateID               *string                        `json:"private_id,omitempty"`
-	OrganizationID          *string                        `json:"organization_id,omitempty"`
+	Number                  *int                                   `json:"number,omitempty"`
+	Priority                *string                                `json:"priority,omitempty"`
+	Severity                *string                                `json:"severity,omitempty"`
+	SeverityColor           *string                                `json:"severity_color,omitempty"`
+	SeverityImpact          *string                                `json:"severity_impact,omitempty"`
+	SeverityCondition       *string                                `json:"severity_condition,omitempty"`
+	TagList                 []string                               `json:"tag_list,omitempty"`
+	SeverityImpactObject    *NullableSeverityMatrixImpactEntity    `json:"severity_impact_object,omitempty"`
+	SeverityConditionObject *NullableSeverityMatrixConditionEntity `json:"severity_condition_object,omitempty"`
+	PrivateID               *string                                `json:"private_id,omitempty"`
+	OrganizationID          *string                                `json:"organization_id,omitempty"`
 	// DEPRECATED: Please use lifecycle phases instead
 	Milestones            []IncidentsMilestoneEntity            `json:"milestones,omitempty"`
 	LifecyclePhases       []IncidentsLifecyclePhaseEntity       `json:"lifecycle_phases,omitempty"`
@@ -56,33 +54,31 @@ type IncidentEntity struct {
 	StatusPages          []IncidentsStatusPageEntity     `json:"status_pages,omitempty"`
 	IncidentURL          *string                         `json:"incident_url,omitempty"`
 	PrivateStatusPageURL *string                         `json:"private_status_page_url,omitempty"`
-	Organization         *OrganizationEntity             `json:"organization,omitempty"`
+	Organization         *NullableOrganizationEntity     `json:"organization,omitempty"`
 	CustomersImpacted    *int                            `json:"customers_impacted,omitempty"`
 	MonetaryImpact       *int                            `json:"monetary_impact,omitempty"`
 	MonetaryImpactCents  *int                            `json:"monetary_impact_cents,omitempty"`
 	LastUpdate           *string                         `json:"last_update,omitempty"`
-	// Event_NoteEntity model
-	LastNote          *EventNoteEntity `json:"last_note,omitempty"`
-	ReportID          *string          `json:"report_id,omitempty"`
-	AiIncidentSummary *string          `json:"ai_incident_summary,omitempty"`
-	Services          []SuccinctEntity `json:"services,omitempty"`
-	Environments      []SuccinctEntity `json:"environments,omitempty"`
-	Functionalities   []SuccinctEntity `json:"functionalities,omitempty"`
-	ChannelName       *string          `json:"channel_name,omitempty"`
-	ChannelReference  *string          `json:"channel_reference,omitempty"`
-	ChannelID         *string          `json:"channel_id,omitempty"`
+	LastNote             *NullableEventNoteEntity        `json:"last_note,omitempty"`
+	ReportID             *string                         `json:"report_id,omitempty"`
+	AiIncidentSummary    *string                         `json:"ai_incident_summary,omitempty"`
+	Services             []SuccinctEntity                `json:"services,omitempty"`
+	Environments         []SuccinctEntity                `json:"environments,omitempty"`
+	Functionalities      []SuccinctEntity                `json:"functionalities,omitempty"`
+	ChannelName          *string                         `json:"channel_name,omitempty"`
+	ChannelReference     *string                         `json:"channel_reference,omitempty"`
+	ChannelID            *string                         `json:"channel_id,omitempty"`
 	// inoperative: 0, operational: 1, archived: 2
-	ChannelStatus   *string                 `json:"channel_status,omitempty"`
-	IncidentTickets []TicketingTicketEntity `json:"incident_tickets,omitempty"`
-	// Ticketing_TicketEntity model
-	Ticket            *TicketingTicketEntity            `json:"ticket,omitempty"`
+	ChannelStatus     *string                           `json:"channel_status,omitempty"`
+	IncidentTickets   []TicketingTicketEntity           `json:"incident_tickets,omitempty"`
+	Ticket            *NullableTicketingTicketEntity    `json:"ticket,omitempty"`
 	Impacts           []IncidentsImpactEntity           `json:"impacts,omitempty"`
 	ConferenceBridges []IncidentsConferenceBridgeEntity `json:"conference_bridges,omitempty"`
 	IncidentChannels  []IncidentsChannelEntity          `json:"incident_channels,omitempty"`
 	// A list of objects attached to this item. Can be one of: LinkEntity, CustomerSupportIssueEntity, or GenericAttachmentEntity
-	RetroExports      []RetroExports                         `json:"retro_exports,omitempty"`
-	CreatedBy         *AuthorEntity                          `json:"created_by,omitempty"`
-	ContextObject     *IncidentsContextObjectEntity          `json:"context_object,omitempty"`
+	RetroExports      []IncidentEntityRetroExport            `json:"retro_exports,omitempty"`
+	CreatedBy         *NullableAuthorEntity                  `json:"created_by,omitempty"`
+	ContextObject     *NullableIncidentsContextObjectEntity  `json:"context_object,omitempty"`
 	TeamAssignments   []IncidentsTeamAssignmentEntityLite    `json:"team_assignments,omitempty"`
 	Conversations     []ConversationsAPIEntitiesReference    `json:"conversations,omitempty"`
 	CustomFields      []CustomFieldsFieldValue               `json:"custom_fields,omitempty"`
@@ -212,14 +208,14 @@ func (o *IncidentEntity) GetTagList() []string {
 	return o.TagList
 }
 
-func (o *IncidentEntity) GetSeverityImpactObject() *SeverityMatrixImpactEntity {
+func (o *IncidentEntity) GetSeverityImpactObject() *NullableSeverityMatrixImpactEntity {
 	if o == nil {
 		return nil
 	}
 	return o.SeverityImpactObject
 }
 
-func (o *IncidentEntity) GetSeverityConditionObject() *SeverityMatrixConditionEntity {
+func (o *IncidentEntity) GetSeverityConditionObject() *NullableSeverityMatrixConditionEntity {
 	if o == nil {
 		return nil
 	}
@@ -303,7 +299,7 @@ func (o *IncidentEntity) GetPrivateStatusPageURL() *string {
 	return o.PrivateStatusPageURL
 }
 
-func (o *IncidentEntity) GetOrganization() *OrganizationEntity {
+func (o *IncidentEntity) GetOrganization() *NullableOrganizationEntity {
 	if o == nil {
 		return nil
 	}
@@ -338,7 +334,7 @@ func (o *IncidentEntity) GetLastUpdate() *string {
 	return o.LastUpdate
 }
 
-func (o *IncidentEntity) GetLastNote() *EventNoteEntity {
+func (o *IncidentEntity) GetLastNote() *NullableEventNoteEntity {
 	if o == nil {
 		return nil
 	}
@@ -415,7 +411,7 @@ func (o *IncidentEntity) GetIncidentTickets() []TicketingTicketEntity {
 	return o.IncidentTickets
 }
 
-func (o *IncidentEntity) GetTicket() *TicketingTicketEntity {
+func (o *IncidentEntity) GetTicket() *NullableTicketingTicketEntity {
 	if o == nil {
 		return nil
 	}
@@ -443,21 +439,21 @@ func (o *IncidentEntity) GetIncidentChannels() []IncidentsChannelEntity {
 	return o.IncidentChannels
 }
 
-func (o *IncidentEntity) GetRetroExports() []RetroExports {
+func (o *IncidentEntity) GetRetroExports() []IncidentEntityRetroExport {
 	if o == nil {
 		return nil
 	}
 	return o.RetroExports
 }
 
-func (o *IncidentEntity) GetCreatedBy() *AuthorEntity {
+func (o *IncidentEntity) GetCreatedBy() *NullableAuthorEntity {
 	if o == nil {
 		return nil
 	}
 	return o.CreatedBy
 }
 
-func (o *IncidentEntity) GetContextObject() *IncidentsContextObjectEntity {
+func (o *IncidentEntity) GetContextObject() *NullableIncidentsContextObjectEntity {
 	if o == nil {
 		return nil
 	}

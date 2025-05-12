@@ -3,8 +3,39 @@
 package operations
 
 import (
-	"firehydrant/models/components"
+	"encoding/json"
+	"fmt"
 )
+
+// UpdateLifecycleMilestoneAutoAssignTimestampOnCreate - The setting for auto-assigning the milestone's timestamp during incident declaration
+type UpdateLifecycleMilestoneAutoAssignTimestampOnCreate string
+
+const (
+	UpdateLifecycleMilestoneAutoAssignTimestampOnCreateAlwaysSetOnCreate     UpdateLifecycleMilestoneAutoAssignTimestampOnCreate = "always_set_on_create"
+	UpdateLifecycleMilestoneAutoAssignTimestampOnCreateOnlySetOnManualCreate UpdateLifecycleMilestoneAutoAssignTimestampOnCreate = "only_set_on_manual_create"
+	UpdateLifecycleMilestoneAutoAssignTimestampOnCreateNeverSetOnCreate      UpdateLifecycleMilestoneAutoAssignTimestampOnCreate = "never_set_on_create"
+)
+
+func (e UpdateLifecycleMilestoneAutoAssignTimestampOnCreate) ToPointer() *UpdateLifecycleMilestoneAutoAssignTimestampOnCreate {
+	return &e
+}
+func (e *UpdateLifecycleMilestoneAutoAssignTimestampOnCreate) UnmarshalJSON(data []byte) error {
+	var v string
+	if err := json.Unmarshal(data, &v); err != nil {
+		return err
+	}
+	switch v {
+	case "always_set_on_create":
+		fallthrough
+	case "only_set_on_manual_create":
+		fallthrough
+	case "never_set_on_create":
+		*e = UpdateLifecycleMilestoneAutoAssignTimestampOnCreate(v)
+		return nil
+	default:
+		return fmt.Errorf("invalid value for UpdateLifecycleMilestoneAutoAssignTimestampOnCreate: %v", v)
+	}
+}
 
 type UpdateLifecycleMilestoneRequestBody struct {
 	// The name of the milestone
@@ -17,6 +48,8 @@ type UpdateLifecycleMilestoneRequestBody struct {
 	Position *int `json:"position,omitempty"`
 	// The ID of a later milestone that cannot be started until this milestone has a timestamp populated
 	RequiredAtMilestoneID *string `json:"required_at_milestone_id,omitempty"`
+	// The setting for auto-assigning the milestone's timestamp during incident declaration
+	AutoAssignTimestampOnCreate *UpdateLifecycleMilestoneAutoAssignTimestampOnCreate `json:"auto_assign_timestamp_on_create,omitempty"`
 }
 
 func (o *UpdateLifecycleMilestoneRequestBody) GetName() *string {
@@ -54,6 +87,13 @@ func (o *UpdateLifecycleMilestoneRequestBody) GetRequiredAtMilestoneID() *string
 	return o.RequiredAtMilestoneID
 }
 
+func (o *UpdateLifecycleMilestoneRequestBody) GetAutoAssignTimestampOnCreate() *UpdateLifecycleMilestoneAutoAssignTimestampOnCreate {
+	if o == nil {
+		return nil
+	}
+	return o.AutoAssignTimestampOnCreate
+}
+
 type UpdateLifecycleMilestoneRequest struct {
 	MilestoneID string                               `pathParam:"style=simple,explode=false,name=milestone_id"`
 	RequestBody *UpdateLifecycleMilestoneRequestBody `request:"mediaType=application/json"`
@@ -71,24 +111,4 @@ func (o *UpdateLifecycleMilestoneRequest) GetRequestBody() *UpdateLifecycleMiles
 		return nil
 	}
 	return o.RequestBody
-}
-
-type UpdateLifecycleMilestoneResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Update a milestone
-	LifecyclesPhaseEntity *components.LifecyclesPhaseEntity
-}
-
-func (o *UpdateLifecycleMilestoneResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *UpdateLifecycleMilestoneResponse) GetLifecyclesPhaseEntity() *components.LifecyclesPhaseEntity {
-	if o == nil {
-		return nil
-	}
-	return o.LifecyclesPhaseEntity
 }

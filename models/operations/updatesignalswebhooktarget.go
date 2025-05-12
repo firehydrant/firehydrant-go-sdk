@@ -7,8 +7,8 @@ import (
 )
 
 type UpdateSignalsWebhookTargetRequest struct {
-	ID                             string                                    `pathParam:"style=simple,explode=false,name=id"`
-	PatchV1SignalsWebhookTargetsID components.PatchV1SignalsWebhookTargetsID `request:"mediaType=application/json"`
+	ID                         string                                `pathParam:"style=simple,explode=false,name=id"`
+	UpdateSignalsWebhookTarget components.UpdateSignalsWebhookTarget `request:"mediaType=application/json"`
 }
 
 func (o *UpdateSignalsWebhookTargetRequest) GetID() string {
@@ -18,20 +18,9 @@ func (o *UpdateSignalsWebhookTargetRequest) GetID() string {
 	return o.ID
 }
 
-func (o *UpdateSignalsWebhookTargetRequest) GetPatchV1SignalsWebhookTargetsID() components.PatchV1SignalsWebhookTargetsID {
+func (o *UpdateSignalsWebhookTargetRequest) GetUpdateSignalsWebhookTarget() components.UpdateSignalsWebhookTarget {
 	if o == nil {
-		return components.PatchV1SignalsWebhookTargetsID{}
+		return components.UpdateSignalsWebhookTarget{}
 	}
-	return o.PatchV1SignalsWebhookTargetsID
-}
-
-type UpdateSignalsWebhookTargetResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-}
-
-func (o *UpdateSignalsWebhookTargetResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
+	return o.UpdateSignalsWebhookTarget
 }

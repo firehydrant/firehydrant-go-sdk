@@ -3,36 +3,34 @@
 package components
 
 type MembershipEntity struct {
-	// UserEntity model
-	User                  *UserEntity     `json:"user,omitempty"`
-	Schedule              *ScheduleEntity `json:"schedule,omitempty"`
-	SignalsOnCallSchedule *SuccinctEntity `json:"signals_on_call_schedule,omitempty"`
-	// IncidentRoleEntity model
-	DefaultIncidentRole *IncidentRoleEntity `json:"default_incident_role,omitempty"`
+	User                  *NullableUserEntity         `json:"user,omitempty"`
+	Schedule              *NullableScheduleEntity     `json:"schedule,omitempty"`
+	SignalsOnCallSchedule *NullableSuccinctEntity     `json:"signals_on_call_schedule,omitempty"`
+	DefaultIncidentRole   *NullableIncidentRoleEntity `json:"default_incident_role,omitempty"`
 }
 
-func (o *MembershipEntity) GetUser() *UserEntity {
+func (o *MembershipEntity) GetUser() *NullableUserEntity {
 	if o == nil {
 		return nil
 	}
 	return o.User
 }
 
-func (o *MembershipEntity) GetSchedule() *ScheduleEntity {
+func (o *MembershipEntity) GetSchedule() *NullableScheduleEntity {
 	if o == nil {
 		return nil
 	}
 	return o.Schedule
 }
 
-func (o *MembershipEntity) GetSignalsOnCallSchedule() *SuccinctEntity {
+func (o *MembershipEntity) GetSignalsOnCallSchedule() *NullableSuccinctEntity {
 	if o == nil {
 		return nil
 	}
 	return o.SignalsOnCallSchedule
 }
 
-func (o *MembershipEntity) GetDefaultIncidentRole() *IncidentRoleEntity {
+func (o *MembershipEntity) GetDefaultIncidentRole() *NullableIncidentRoleEntity {
 	if o == nil {
 		return nil
 	}

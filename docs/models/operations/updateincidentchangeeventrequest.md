@@ -1,0 +1,10 @@
+# UpdateIncidentChangeEventRequest
+
+
+## Fields
+
+| Field                                                                                        | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `RelatedChangeEventID`                                                                       | *string*                                                                                     | :heavy_check_mark:                                                                           | N/A                                                                                          |
+| `IncidentID`                                                                                 | *string*                                                                                     | :heavy_check_mark:                                                                           | N/A                                                                                          |
+| `UpdateIncidentChangeEvent`                                                                  | [components.UpdateIncidentChangeEvent](../../models/components/updateincidentchangeevent.md) | :heavy_check_mark:                                                                           | N/A                                                                                          |

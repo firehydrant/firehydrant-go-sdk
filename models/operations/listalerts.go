@@ -4,23 +4,22 @@ package operations
 
 import (
 	"encoding/json"
-	"firehydrant/models/components"
 	"fmt"
 )
 
-// TagMatchStrategy - The strategy to match tags. `any` will return alerts that have at least one of the supplied tags, `match_all` will return only alerts that have all of the supplied tags, and `exclude` will only return alerts that have none of the supplied tags. This currently only works for Signals alerts.
-type TagMatchStrategy string
+// ListAlertsTagMatchStrategy - The strategy to match tags. `any` will return alerts that have at least one of the supplied tags, `match_all` will return only alerts that have all of the supplied tags, and `exclude` will only return alerts that have none of the supplied tags. This currently only works for Signals alerts.
+type ListAlertsTagMatchStrategy string
 
 const (
-	TagMatchStrategyAny      TagMatchStrategy = "any"
-	TagMatchStrategyMatchAll TagMatchStrategy = "match_all"
-	TagMatchStrategyExclude  TagMatchStrategy = "exclude"
+	ListAlertsTagMatchStrategyAny      ListAlertsTagMatchStrategy = "any"
+	ListAlertsTagMatchStrategyMatchAll ListAlertsTagMatchStrategy = "match_all"
+	ListAlertsTagMatchStrategyExclude  ListAlertsTagMatchStrategy = "exclude"
 )
 
-func (e TagMatchStrategy) ToPointer() *TagMatchStrategy {
+func (e ListAlertsTagMatchStrategy) ToPointer() *ListAlertsTagMatchStrategy {
 	return &e
 }
-func (e *TagMatchStrategy) UnmarshalJSON(data []byte) error {
+func (e *ListAlertsTagMatchStrategy) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -31,10 +30,10 @@ func (e *TagMatchStrategy) UnmarshalJSON(data []byte) error {
 	case "match_all":
 		fallthrough
 	case "exclude":
-		*e = TagMatchStrategy(v)
+		*e = ListAlertsTagMatchStrategy(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for TagMatchStrategy: %v", v)
+		return fmt.Errorf("invalid value for ListAlertsTagMatchStrategy: %v", v)
 	}
 }
 
@@ -58,8 +57,8 @@ type ListAlertsRequest struct {
 	// A comma separated list of tags. This currently only works for Signals alerts.
 	Tags *string `queryParam:"style=form,explode=true,name=tags"`
 	// The strategy to match tags. `any` will return alerts that have at least one of the supplied tags, `match_all` will return only alerts that have all of the supplied tags, and `exclude` will only return alerts that have none of the supplied tags. This currently only works for Signals alerts.
-	TagMatchStrategy *TagMatchStrategy `queryParam:"style=form,explode=true,name=tag_match_strategy"`
-	// A comma separated list of statuses to filter by. Valid statuses are: opened, acknowledged, resolved, ignored, or expired
+	TagMatchStrategy *ListAlertsTagMatchStrategy `queryParam:"style=form,explode=true,name=tag_match_strategy"`
+	// A comma separated list of statuses to filter by. Valid statuses are: opened, acknowledged, resolved, ignored, expired, or linked
 	Statuses *string `queryParam:"style=form,explode=true,name=statuses"`
 }
 
@@ -133,7 +132,7 @@ func (o *ListAlertsRequest) GetTags() *string {
 	return o.Tags
 }
 
-func (o *ListAlertsRequest) GetTagMatchStrategy() *TagMatchStrategy {
+func (o *ListAlertsRequest) GetTagMatchStrategy() *ListAlertsTagMatchStrategy {
 	if o == nil {
 		return nil
 	}
@@ -145,24 +144,4 @@ func (o *ListAlertsRequest) GetStatuses() *string {
 		return nil
 	}
 	return o.Statuses
-}
-
-type ListAlertsResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Retrieve all alerts from third parties
-	AlertsAlertEntityPaginated *components.AlertsAlertEntityPaginated
-}
-
-func (o *ListAlertsResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListAlertsResponse) GetAlertsAlertEntityPaginated() *components.AlertsAlertEntityPaginated {
-	if o == nil {
-		return nil
-	}
-	return o.AlertsAlertEntityPaginated
 }

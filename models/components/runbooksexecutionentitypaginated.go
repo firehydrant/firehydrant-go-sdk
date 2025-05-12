@@ -5,7 +5,7 @@ package components
 // RunbooksExecutionEntityPaginated - Runbooks_ExecutionEntityPaginated model
 type RunbooksExecutionEntityPaginated struct {
 	Data       []RunbooksExecutionEntity `json:"data,omitempty"`
-	Pagination *PaginationEntity         `json:"pagination,omitempty"`
+	Pagination *NullablePaginationEntity `json:"pagination,omitempty"`
 }
 
 func (o *RunbooksExecutionEntityPaginated) GetData() []RunbooksExecutionEntity {
@@ -15,7 +15,7 @@ func (o *RunbooksExecutionEntityPaginated) GetData() []RunbooksExecutionEntity {
 	return o.Data
 }
 
-func (o *RunbooksExecutionEntityPaginated) GetPagination() *PaginationEntity {
+func (o *RunbooksExecutionEntityPaginated) GetPagination() *NullablePaginationEntity {
 	if o == nil {
 		return nil
 	}

@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type ListIncidentTasksRequest struct {
 	Page       *int   `queryParam:"style=form,explode=true,name=page"`
 	PerPage    *int   `queryParam:"style=form,explode=true,name=per_page"`
@@ -31,24 +27,4 @@ func (o *ListIncidentTasksRequest) GetIncidentID() string {
 		return ""
 	}
 	return o.IncidentID
-}
-
-type ListIncidentTasksResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Retrieve a list of all tasks for a specific incident
-	TaskEntityPaginated *components.TaskEntityPaginated
-}
-
-func (o *ListIncidentTasksResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListIncidentTasksResponse) GetTaskEntityPaginated() *components.TaskEntityPaginated {
-	if o == nil {
-		return nil
-	}
-	return o.TaskEntityPaginated
 }

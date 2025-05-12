@@ -1,9 +1,0 @@
-# UpdateSeverityMatrixImpactResponse
-
-
-## Fields
-
-| Field                                                                                           | Type                                                                                            | Required                                                                                        | Description                                                                                     |
-| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| `HTTPMeta`                                                                                      | [components.HTTPMetadata](../../models/components/httpmetadata.md)                              | :heavy_check_mark:                                                                              | N/A                                                                                             |
-| `SeverityMatrixImpactEntity`                                                                    | [*components.SeverityMatrixImpactEntity](../../models/components/severitymatriximpactentity.md) | :heavy_minus_sign:                                                                              | Update a specific impact                                                                        |

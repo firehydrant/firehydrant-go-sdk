@@ -4,29 +4,28 @@ package operations
 
 import (
 	"encoding/json"
-	"firehydrant/models/components"
 	"fmt"
 )
 
-type ResourceType string
+type ListSavedSearchesResourceType string
 
 const (
-	ResourceTypeChangeEvents          ResourceType = "change_events"
-	ResourceTypeIncidents             ResourceType = "incidents"
-	ResourceTypeServices              ResourceType = "services"
-	ResourceTypeScheduledMaintenances ResourceType = "scheduled_maintenances"
-	ResourceTypeTicketTasks           ResourceType = "ticket_tasks"
-	ResourceTypeTicketFollowUps       ResourceType = "ticket_follow_ups"
-	ResourceTypeAnalytics             ResourceType = "analytics"
-	ResourceTypeImpactAnalytics       ResourceType = "impact_analytics"
-	ResourceTypeAlerts                ResourceType = "alerts"
-	ResourceTypeIncidentEvents        ResourceType = "incident_events"
+	ListSavedSearchesResourceTypeChangeEvents          ListSavedSearchesResourceType = "change_events"
+	ListSavedSearchesResourceTypeIncidents             ListSavedSearchesResourceType = "incidents"
+	ListSavedSearchesResourceTypeServices              ListSavedSearchesResourceType = "services"
+	ListSavedSearchesResourceTypeScheduledMaintenances ListSavedSearchesResourceType = "scheduled_maintenances"
+	ListSavedSearchesResourceTypeTicketTasks           ListSavedSearchesResourceType = "ticket_tasks"
+	ListSavedSearchesResourceTypeTicketFollowUps       ListSavedSearchesResourceType = "ticket_follow_ups"
+	ListSavedSearchesResourceTypeAnalytics             ListSavedSearchesResourceType = "analytics"
+	ListSavedSearchesResourceTypeImpactAnalytics       ListSavedSearchesResourceType = "impact_analytics"
+	ListSavedSearchesResourceTypeAlerts                ListSavedSearchesResourceType = "alerts"
+	ListSavedSearchesResourceTypeIncidentEvents        ListSavedSearchesResourceType = "incident_events"
 )
 
-func (e ResourceType) ToPointer() *ResourceType {
+func (e ListSavedSearchesResourceType) ToPointer() *ListSavedSearchesResourceType {
 	return &e
 }
-func (e *ResourceType) UnmarshalJSON(data []byte) error {
+func (e *ListSavedSearchesResourceType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -51,15 +50,15 @@ func (e *ResourceType) UnmarshalJSON(data []byte) error {
 	case "alerts":
 		fallthrough
 	case "incident_events":
-		*e = ResourceType(v)
+		*e = ListSavedSearchesResourceType(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for ResourceType: %v", v)
+		return fmt.Errorf("invalid value for ListSavedSearchesResourceType: %v", v)
 	}
 }
 
 type ListSavedSearchesRequest struct {
-	ResourceType ResourceType `pathParam:"style=simple,explode=false,name=resource_type"`
+	ResourceType ListSavedSearchesResourceType `pathParam:"style=simple,explode=false,name=resource_type"`
 	// The user ID used to filter saved searches.
 	UserID *string `queryParam:"style=form,explode=true,name=user_id"`
 	// Filter saved searches with a query on their name
@@ -68,9 +67,9 @@ type ListSavedSearchesRequest struct {
 	PerPage *int    `queryParam:"style=form,explode=true,name=per_page"`
 }
 
-func (o *ListSavedSearchesRequest) GetResourceType() ResourceType {
+func (o *ListSavedSearchesRequest) GetResourceType() ListSavedSearchesResourceType {
 	if o == nil {
-		return ResourceType("")
+		return ListSavedSearchesResourceType("")
 	}
 	return o.ResourceType
 }
@@ -101,24 +100,4 @@ func (o *ListSavedSearchesRequest) GetPerPage() *int {
 		return nil
 	}
 	return o.PerPage
-}
-
-type ListSavedSearchesResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Lists save searches
-	SavedSearchEntity *components.SavedSearchEntity
-}
-
-func (o *ListSavedSearchesResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListSavedSearchesResponse) GetSavedSearchEntity() *components.SavedSearchEntity {
-	if o == nil {
-		return nil
-	}
-	return o.SavedSearchEntity
 }

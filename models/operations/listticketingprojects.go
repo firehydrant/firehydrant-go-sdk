@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type ListTicketingProjectsRequest struct {
 	SupportsTicketTypes *string `queryParam:"style=form,explode=true,name=supports_ticket_types"`
 	Providers           *string `queryParam:"style=form,explode=true,name=providers"`
@@ -63,24 +59,4 @@ func (o *ListTicketingProjectsRequest) GetPerPage() *int {
 		return nil
 	}
 	return o.PerPage
-}
-
-type ListTicketingProjectsResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// List all ticketing projects available to the organization
-	TicketingProjectsProjectListItemEntity *components.TicketingProjectsProjectListItemEntity
-}
-
-func (o *ListTicketingProjectsResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListTicketingProjectsResponse) GetTicketingProjectsProjectListItemEntity() *components.TicketingProjectsProjectListItemEntity {
-	if o == nil {
-		return nil
-	}
-	return o.TicketingProjectsProjectListItemEntity
 }

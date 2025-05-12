@@ -8,8 +8,8 @@ import (
 
 type UpdateStatuspageConnectionRequest struct {
 	// Connection UUID
-	ConnectionID                                         string                                                          `pathParam:"style=simple,explode=false,name=connection_id"`
-	PatchV1IntegrationsStatuspageConnectionsConnectionID components.PatchV1IntegrationsStatuspageConnectionsConnectionID `request:"mediaType=application/json"`
+	ConnectionID               string                                `pathParam:"style=simple,explode=false,name=connection_id"`
+	UpdateStatuspageConnection components.UpdateStatuspageConnection `request:"mediaType=application/json"`
 }
 
 func (o *UpdateStatuspageConnectionRequest) GetConnectionID() string {
@@ -19,29 +19,9 @@ func (o *UpdateStatuspageConnectionRequest) GetConnectionID() string {
 	return o.ConnectionID
 }
 
-func (o *UpdateStatuspageConnectionRequest) GetPatchV1IntegrationsStatuspageConnectionsConnectionID() components.PatchV1IntegrationsStatuspageConnectionsConnectionID {
+func (o *UpdateStatuspageConnectionRequest) GetUpdateStatuspageConnection() components.UpdateStatuspageConnection {
 	if o == nil {
-		return components.PatchV1IntegrationsStatuspageConnectionsConnectionID{}
+		return components.UpdateStatuspageConnection{}
 	}
-	return o.PatchV1IntegrationsStatuspageConnectionsConnectionID
-}
-
-type UpdateStatuspageConnectionResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Update the given Statuspage integration connection.
-	IntegrationsStatuspageConnectionEntity *components.IntegrationsStatuspageConnectionEntity
-}
-
-func (o *UpdateStatuspageConnectionResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *UpdateStatuspageConnectionResponse) GetIntegrationsStatuspageConnectionEntity() *components.IntegrationsStatuspageConnectionEntity {
-	if o == nil {
-		return nil
-	}
-	return o.IntegrationsStatuspageConnectionEntity
+	return o.UpdateStatuspageConnection
 }

@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type ListIncidentMilestonesRequest struct {
 	IncidentID string `pathParam:"style=simple,explode=false,name=incident_id"`
 }
@@ -15,24 +11,4 @@ func (o *ListIncidentMilestonesRequest) GetIncidentID() string {
 		return ""
 	}
 	return o.IncidentID
-}
-
-type ListIncidentMilestonesResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// List times and durations for each milestone on an incident
-	IncidentsMilestoneEntityPaginated *components.IncidentsMilestoneEntityPaginated
-}
-
-func (o *ListIncidentMilestonesResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListIncidentMilestonesResponse) GetIncidentsMilestoneEntityPaginated() *components.IncidentsMilestoneEntityPaginated {
-	if o == nil {
-		return nil
-	}
-	return o.IncidentsMilestoneEntityPaginated
 }

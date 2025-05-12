@@ -4,29 +4,28 @@ package operations
 
 import (
 	"encoding/json"
-	"firehydrant/models/components"
 	"fmt"
 )
 
-type DeleteSavedSearchPathParamResourceType string
+type DeleteSavedSearchResourceType string
 
 const (
-	DeleteSavedSearchPathParamResourceTypeChangeEvents          DeleteSavedSearchPathParamResourceType = "change_events"
-	DeleteSavedSearchPathParamResourceTypeIncidents             DeleteSavedSearchPathParamResourceType = "incidents"
-	DeleteSavedSearchPathParamResourceTypeServices              DeleteSavedSearchPathParamResourceType = "services"
-	DeleteSavedSearchPathParamResourceTypeScheduledMaintenances DeleteSavedSearchPathParamResourceType = "scheduled_maintenances"
-	DeleteSavedSearchPathParamResourceTypeTicketTasks           DeleteSavedSearchPathParamResourceType = "ticket_tasks"
-	DeleteSavedSearchPathParamResourceTypeTicketFollowUps       DeleteSavedSearchPathParamResourceType = "ticket_follow_ups"
-	DeleteSavedSearchPathParamResourceTypeAnalytics             DeleteSavedSearchPathParamResourceType = "analytics"
-	DeleteSavedSearchPathParamResourceTypeImpactAnalytics       DeleteSavedSearchPathParamResourceType = "impact_analytics"
-	DeleteSavedSearchPathParamResourceTypeAlerts                DeleteSavedSearchPathParamResourceType = "alerts"
-	DeleteSavedSearchPathParamResourceTypeIncidentEvents        DeleteSavedSearchPathParamResourceType = "incident_events"
+	DeleteSavedSearchResourceTypeChangeEvents          DeleteSavedSearchResourceType = "change_events"
+	DeleteSavedSearchResourceTypeIncidents             DeleteSavedSearchResourceType = "incidents"
+	DeleteSavedSearchResourceTypeServices              DeleteSavedSearchResourceType = "services"
+	DeleteSavedSearchResourceTypeScheduledMaintenances DeleteSavedSearchResourceType = "scheduled_maintenances"
+	DeleteSavedSearchResourceTypeTicketTasks           DeleteSavedSearchResourceType = "ticket_tasks"
+	DeleteSavedSearchResourceTypeTicketFollowUps       DeleteSavedSearchResourceType = "ticket_follow_ups"
+	DeleteSavedSearchResourceTypeAnalytics             DeleteSavedSearchResourceType = "analytics"
+	DeleteSavedSearchResourceTypeImpactAnalytics       DeleteSavedSearchResourceType = "impact_analytics"
+	DeleteSavedSearchResourceTypeAlerts                DeleteSavedSearchResourceType = "alerts"
+	DeleteSavedSearchResourceTypeIncidentEvents        DeleteSavedSearchResourceType = "incident_events"
 )
 
-func (e DeleteSavedSearchPathParamResourceType) ToPointer() *DeleteSavedSearchPathParamResourceType {
+func (e DeleteSavedSearchResourceType) ToPointer() *DeleteSavedSearchResourceType {
 	return &e
 }
-func (e *DeleteSavedSearchPathParamResourceType) UnmarshalJSON(data []byte) error {
+func (e *DeleteSavedSearchResourceType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -51,21 +50,21 @@ func (e *DeleteSavedSearchPathParamResourceType) UnmarshalJSON(data []byte) erro
 	case "alerts":
 		fallthrough
 	case "incident_events":
-		*e = DeleteSavedSearchPathParamResourceType(v)
+		*e = DeleteSavedSearchResourceType(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for DeleteSavedSearchPathParamResourceType: %v", v)
+		return fmt.Errorf("invalid value for DeleteSavedSearchResourceType: %v", v)
 	}
 }
 
 type DeleteSavedSearchRequest struct {
-	ResourceType  DeleteSavedSearchPathParamResourceType `pathParam:"style=simple,explode=false,name=resource_type"`
-	SavedSearchID string                                 `pathParam:"style=simple,explode=false,name=saved_search_id"`
+	ResourceType  DeleteSavedSearchResourceType `pathParam:"style=simple,explode=false,name=resource_type"`
+	SavedSearchID string                        `pathParam:"style=simple,explode=false,name=saved_search_id"`
 }
 
-func (o *DeleteSavedSearchRequest) GetResourceType() DeleteSavedSearchPathParamResourceType {
+func (o *DeleteSavedSearchRequest) GetResourceType() DeleteSavedSearchResourceType {
 	if o == nil {
-		return DeleteSavedSearchPathParamResourceType("")
+		return DeleteSavedSearchResourceType("")
 	}
 	return o.ResourceType
 }
@@ -75,15 +74,4 @@ func (o *DeleteSavedSearchRequest) GetSavedSearchID() string {
 		return ""
 	}
 	return o.SavedSearchID
-}
-
-type DeleteSavedSearchResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-}
-
-func (o *DeleteSavedSearchResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
 }

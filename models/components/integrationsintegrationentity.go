@@ -9,18 +9,18 @@ import (
 
 // IntegrationsIntegrationEntity - Integrations_IntegrationEntity model
 type IntegrationsIntegrationEntity struct {
-	ID          *string                                  `json:"id,omitempty"`
-	Slug        *string                                  `json:"slug,omitempty"`
-	Name        *string                                  `json:"name,omitempty"`
-	Description *string                                  `json:"description,omitempty"`
-	SetupURL    *string                                  `json:"setup_url,omitempty"`
-	CreatedAt   *time.Time                               `json:"created_at,omitempty"`
-	Connections *IntegrationsConnectionEntity            `json:"connections,omitempty"`
-	Enabled     *bool                                    `json:"enabled,omitempty"`
-	Installed   *bool                                    `json:"installed,omitempty"`
-	Deprecated  *bool                                    `json:"deprecated,omitempty"`
-	Logo        *IntegrationsIntegrationEntityLogoEntity `json:"logo,omitempty"`
-	NatIP       *string                                  `json:"nat_ip,omitempty"`
+	ID          *string                                          `json:"id,omitempty"`
+	Slug        *string                                          `json:"slug,omitempty"`
+	Name        *string                                          `json:"name,omitempty"`
+	Description *string                                          `json:"description,omitempty"`
+	SetupURL    *string                                          `json:"setup_url,omitempty"`
+	CreatedAt   *time.Time                                       `json:"created_at,omitempty"`
+	Connections *NullableIntegrationsConnectionEntity            `json:"connections,omitempty"`
+	Enabled     *bool                                            `json:"enabled,omitempty"`
+	Installed   *bool                                            `json:"installed,omitempty"`
+	Deprecated  *bool                                            `json:"deprecated,omitempty"`
+	Logo        *NullableIntegrationsIntegrationEntityLogoEntity `json:"logo,omitempty"`
+	NatIP       *string                                          `json:"nat_ip,omitempty"`
 }
 
 func (i IntegrationsIntegrationEntity) MarshalJSON() ([]byte, error) {
@@ -76,7 +76,7 @@ func (o *IntegrationsIntegrationEntity) GetCreatedAt() *time.Time {
 	return o.CreatedAt
 }
 
-func (o *IntegrationsIntegrationEntity) GetConnections() *IntegrationsConnectionEntity {
+func (o *IntegrationsIntegrationEntity) GetConnections() *NullableIntegrationsConnectionEntity {
 	if o == nil {
 		return nil
 	}
@@ -104,7 +104,7 @@ func (o *IntegrationsIntegrationEntity) GetDeprecated() *bool {
 	return o.Deprecated
 }
 
-func (o *IntegrationsIntegrationEntity) GetLogo() *IntegrationsIntegrationEntityLogoEntity {
+func (o *IntegrationsIntegrationEntity) GetLogo() *NullableIntegrationsIntegrationEntityLogoEntity {
 	if o == nil {
 		return nil
 	}

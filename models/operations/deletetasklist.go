@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type DeleteTaskListRequest struct {
 	TaskListID string `pathParam:"style=simple,explode=false,name=task_list_id"`
 }
@@ -15,24 +11,4 @@ func (o *DeleteTaskListRequest) GetTaskListID() string {
 		return ""
 	}
 	return o.TaskListID
-}
-
-type DeleteTaskListResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Delete a task list
-	TaskListEntity *components.TaskListEntity
-}
-
-func (o *DeleteTaskListResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *DeleteTaskListResponse) GetTaskListEntity() *components.TaskListEntity {
-	if o == nil {
-		return nil
-	}
-	return o.TaskListEntity
 }

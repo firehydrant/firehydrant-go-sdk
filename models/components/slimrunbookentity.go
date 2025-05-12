@@ -8,17 +8,17 @@ import (
 )
 
 type SlimRunbookEntity struct {
-	ID             *string          `json:"id,omitempty"`
-	Name           *string          `json:"name,omitempty"`
-	Summary        *string          `json:"summary,omitempty"`
-	Description    *string          `json:"description,omitempty"`
-	Type           *string          `json:"type,omitempty"`
-	CreatedAt      *time.Time       `json:"created_at,omitempty"`
-	UpdatedAt      *time.Time       `json:"updated_at,omitempty"`
-	AttachmentRule *RulesRuleEntity `json:"attachment_rule,omitempty"`
-	Owner          *TeamEntityLite  `json:"owner,omitempty"`
+	ID             *string                  `json:"id,omitempty"`
+	Name           *string                  `json:"name,omitempty"`
+	Summary        *string                  `json:"summary,omitempty"`
+	Description    *string                  `json:"description,omitempty"`
+	Type           *string                  `json:"type,omitempty"`
+	CreatedAt      *time.Time               `json:"created_at,omitempty"`
+	UpdatedAt      *time.Time               `json:"updated_at,omitempty"`
+	AttachmentRule *NullableRulesRuleEntity `json:"attachment_rule,omitempty"`
+	Owner          *NullableTeamEntityLite  `json:"owner,omitempty"`
 	// categories the runbook applies to
-	Categories *string `json:"categories,omitempty"`
+	Categories []string `json:"categories,omitempty"`
 }
 
 func (s SlimRunbookEntity) MarshalJSON() ([]byte, error) {
@@ -81,21 +81,21 @@ func (o *SlimRunbookEntity) GetUpdatedAt() *time.Time {
 	return o.UpdatedAt
 }
 
-func (o *SlimRunbookEntity) GetAttachmentRule() *RulesRuleEntity {
+func (o *SlimRunbookEntity) GetAttachmentRule() *NullableRulesRuleEntity {
 	if o == nil {
 		return nil
 	}
 	return o.AttachmentRule
 }
 
-func (o *SlimRunbookEntity) GetOwner() *TeamEntityLite {
+func (o *SlimRunbookEntity) GetOwner() *NullableTeamEntityLite {
 	if o == nil {
 		return nil
 	}
 	return o.Owner
 }
 
-func (o *SlimRunbookEntity) GetCategories() *string {
+func (o *SlimRunbookEntity) GetCategories() []string {
 	if o == nil {
 		return nil
 	}

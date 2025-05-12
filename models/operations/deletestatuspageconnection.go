@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type DeleteStatuspageConnectionRequest struct {
 	// Connection UUID
 	ConnectionID string `pathParam:"style=simple,explode=false,name=connection_id"`
@@ -16,24 +12,4 @@ func (o *DeleteStatuspageConnectionRequest) GetConnectionID() string {
 		return ""
 	}
 	return o.ConnectionID
-}
-
-type DeleteStatuspageConnectionResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Deletes the given Statuspage integration connection.
-	IntegrationsStatuspageConnectionEntity *components.IntegrationsStatuspageConnectionEntity
-}
-
-func (o *DeleteStatuspageConnectionResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *DeleteStatuspageConnectionResponse) GetIntegrationsStatuspageConnectionEntity() *components.IntegrationsStatuspageConnectionEntity {
-	if o == nil {
-		return nil
-	}
-	return o.IntegrationsStatuspageConnectionEntity
 }

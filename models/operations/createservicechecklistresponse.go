@@ -7,9 +7,9 @@ import (
 )
 
 type CreateServiceChecklistResponseRequest struct {
-	ServiceID                                           string                                                         `pathParam:"style=simple,explode=false,name=service_id"`
-	ChecklistID                                         string                                                         `pathParam:"style=simple,explode=false,name=checklist_id"`
-	PostV1ServicesServiceIDChecklistResponseChecklistID components.PostV1ServicesServiceIDChecklistResponseChecklistID `request:"mediaType=application/json"`
+	ServiceID                      string                                    `pathParam:"style=simple,explode=false,name=service_id"`
+	ChecklistID                    string                                    `pathParam:"style=simple,explode=false,name=checklist_id"`
+	CreateServiceChecklistResponse components.CreateServiceChecklistResponse `request:"mediaType=application/json"`
 }
 
 func (o *CreateServiceChecklistResponseRequest) GetServiceID() string {
@@ -26,20 +26,9 @@ func (o *CreateServiceChecklistResponseRequest) GetChecklistID() string {
 	return o.ChecklistID
 }
 
-func (o *CreateServiceChecklistResponseRequest) GetPostV1ServicesServiceIDChecklistResponseChecklistID() components.PostV1ServicesServiceIDChecklistResponseChecklistID {
+func (o *CreateServiceChecklistResponseRequest) GetCreateServiceChecklistResponse() components.CreateServiceChecklistResponse {
 	if o == nil {
-		return components.PostV1ServicesServiceIDChecklistResponseChecklistID{}
+		return components.CreateServiceChecklistResponse{}
 	}
-	return o.PostV1ServicesServiceIDChecklistResponseChecklistID
-}
-
-type CreateServiceChecklistResponseResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-}
-
-func (o *CreateServiceChecklistResponseResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
+	return o.CreateServiceChecklistResponse
 }

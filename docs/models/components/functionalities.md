@@ -1,9 +1,0 @@
-# Functionalities
-
-
-## Fields
-
-| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `Summary`                                                                                          | **string*                                                                                          | :heavy_minus_sign:                                                                                 | If you are trying to create a new functionality and attach it to this service, set the summary key |
-| `ID`                                                                                               | **string*                                                                                          | :heavy_minus_sign:                                                                                 | If you are trying to reuse a functionality, you may set the ID to attach it to the service         |

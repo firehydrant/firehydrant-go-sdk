@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type RefreshCatalogRequest struct {
 	CatalogID string `pathParam:"style=simple,explode=false,name=catalog_id"`
 }
@@ -15,15 +11,4 @@ func (o *RefreshCatalogRequest) GetCatalogID() string {
 		return ""
 	}
 	return o.CatalogID
-}
-
-type RefreshCatalogResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-}
-
-func (o *RefreshCatalogResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
 }

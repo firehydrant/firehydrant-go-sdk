@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type DeleteRunbookExecutionRequest struct {
 	ExecutionID string `pathParam:"style=simple,explode=false,name=execution_id"`
 	// The reason for terminating the runbook execution
@@ -24,15 +20,4 @@ func (o *DeleteRunbookExecutionRequest) GetReason() string {
 		return ""
 	}
 	return o.Reason
-}
-
-type DeleteRunbookExecutionResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-}
-
-func (o *DeleteRunbookExecutionResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
 }

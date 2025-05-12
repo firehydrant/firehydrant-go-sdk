@@ -1,9 +1,0 @@
-# ListIncidentImpactResponse
-
-
-## Fields
-
-| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
-| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| `HTTPMeta`                                                                                            | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                    | :heavy_check_mark:                                                                                    | N/A                                                                                                   |
-| `IncidentImpactEntityPaginated`                                                                       | [*components.IncidentImpactEntityPaginated](../../models/components/incidentimpactentitypaginated.md) | :heavy_minus_sign:                                                                                    | List impacted infrastructure on an incident by specifying type                                        |

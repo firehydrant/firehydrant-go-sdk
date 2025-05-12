@@ -5,7 +5,7 @@ package components
 // IntegrationsAwsCloudtrailBatchEntityPaginated - Integrations_Aws_CloudtrailBatchEntityPaginated model
 type IntegrationsAwsCloudtrailBatchEntityPaginated struct {
 	Data       []IntegrationsAwsCloudtrailBatchEntity `json:"data,omitempty"`
-	Pagination *PaginationEntity                      `json:"pagination,omitempty"`
+	Pagination *NullablePaginationEntity              `json:"pagination,omitempty"`
 }
 
 func (o *IntegrationsAwsCloudtrailBatchEntityPaginated) GetData() []IntegrationsAwsCloudtrailBatchEntity {
@@ -15,7 +15,7 @@ func (o *IntegrationsAwsCloudtrailBatchEntityPaginated) GetData() []Integrations
 	return o.Data
 }
 
-func (o *IntegrationsAwsCloudtrailBatchEntityPaginated) GetPagination() *PaginationEntity {
+func (o *IntegrationsAwsCloudtrailBatchEntityPaginated) GetPagination() *NullablePaginationEntity {
 	if o == nil {
 		return nil
 	}

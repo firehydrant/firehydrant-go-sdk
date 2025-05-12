@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type GetSeverityRequest struct {
 	SeveritySlug string `pathParam:"style=simple,explode=false,name=severity_slug"`
 }
@@ -15,24 +11,4 @@ func (o *GetSeverityRequest) GetSeveritySlug() string {
 		return ""
 	}
 	return o.SeveritySlug
-}
-
-type GetSeverityResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Retrieve a specific severity
-	SeverityEntity *components.SeverityEntity
-}
-
-func (o *GetSeverityResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *GetSeverityResponse) GetSeverityEntity() *components.SeverityEntity {
-	if o == nil {
-		return nil
-	}
-	return o.SeverityEntity
 }

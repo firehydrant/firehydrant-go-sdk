@@ -5,7 +5,7 @@ package components
 type PublicAPIV1IncidentsSuccinctEntity struct {
 	ID     *string `json:"id,omitempty"`
 	Name   *string `json:"name,omitempty"`
-	Number *string `json:"number,omitempty"`
+	Number *int    `json:"number,omitempty"`
 }
 
 func (o *PublicAPIV1IncidentsSuccinctEntity) GetID() *string {
@@ -22,7 +22,7 @@ func (o *PublicAPIV1IncidentsSuccinctEntity) GetName() *string {
 	return o.Name
 }
 
-func (o *PublicAPIV1IncidentsSuccinctEntity) GetNumber() *string {
+func (o *PublicAPIV1IncidentsSuccinctEntity) GetNumber() *int {
 	if o == nil {
 		return nil
 	}

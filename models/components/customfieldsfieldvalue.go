@@ -3,15 +3,15 @@
 package components
 
 type CustomFieldsFieldValue struct {
-	Name        *string `json:"name,omitempty"`
-	ValueType   *string `json:"value_type,omitempty"`
-	DisplayName *string `json:"display_name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Slug        *string `json:"slug,omitempty"`
-	FieldID     *string `json:"field_id,omitempty"`
-	ValueArray  *string `json:"value_array,omitempty"`
-	ValueString *string `json:"value_string,omitempty"`
-	Value       *string `json:"value,omitempty"`
+	Name        *string  `json:"name,omitempty"`
+	ValueType   *string  `json:"value_type,omitempty"`
+	DisplayName *string  `json:"display_name,omitempty"`
+	Description *string  `json:"description,omitempty"`
+	Slug        *string  `json:"slug,omitempty"`
+	FieldID     *string  `json:"field_id,omitempty"`
+	ValueArray  []string `json:"value_array,omitempty"`
+	ValueString *string  `json:"value_string,omitempty"`
+	Value       *string  `json:"value,omitempty"`
 }
 
 func (o *CustomFieldsFieldValue) GetName() *string {
@@ -56,7 +56,7 @@ func (o *CustomFieldsFieldValue) GetFieldID() *string {
 	return o.FieldID
 }
 
-func (o *CustomFieldsFieldValue) GetValueArray() *string {
+func (o *CustomFieldsFieldValue) GetValueArray() []string {
 	if o == nil {
 		return nil
 	}

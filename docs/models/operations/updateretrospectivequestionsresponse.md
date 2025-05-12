@@ -1,9 +1,0 @@
-# UpdateRetrospectiveQuestionsResponse
-
-
-## Fields
-
-| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
-| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| `HTTPMeta`                                                                                            | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                    | :heavy_check_mark:                                                                                    | N/A                                                                                                   |
-| `PostMortemsQuestionTypeEntity`                                                                       | [*components.PostMortemsQuestionTypeEntity](../../models/components/postmortemsquestiontypeentity.md) | :heavy_minus_sign:                                                                                    | Update the questions configured to be provided and filled out on future retrospective reports.        |

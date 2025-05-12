@@ -51,9 +51,8 @@ type IntegrationsAwsCloudtrailBatchEntity struct {
 	Status        *IntegrationsAwsCloudtrailBatchEntityStatus `json:"status,omitempty"`
 	StartsAt      *time.Time                                  `json:"starts_at,omitempty"`
 	EndsAt        *time.Time                                  `json:"ends_at,omitempty"`
-	// Integrations_Aws_ConnectionEntity model
-	Connection *IntegrationsAwsConnectionEntity `json:"connection,omitempty"`
-	CreatedAt  *time.Time                       `json:"created_at,omitempty"`
+	Connection    *NullableIntegrationsAwsConnectionEntity    `json:"connection,omitempty"`
+	CreatedAt     *time.Time                                  `json:"created_at,omitempty"`
 }
 
 func (i IntegrationsAwsCloudtrailBatchEntity) MarshalJSON() ([]byte, error) {
@@ -102,7 +101,7 @@ func (o *IntegrationsAwsCloudtrailBatchEntity) GetEndsAt() *time.Time {
 	return o.EndsAt
 }
 
-func (o *IntegrationsAwsCloudtrailBatchEntity) GetConnection() *IntegrationsAwsConnectionEntity {
+func (o *IntegrationsAwsCloudtrailBatchEntity) GetConnection() *NullableIntegrationsAwsConnectionEntity {
 	if o == nil {
 		return nil
 	}

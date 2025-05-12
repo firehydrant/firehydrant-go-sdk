@@ -7,9 +7,9 @@ import (
 )
 
 type UpdateTeamEscalationPolicyRequest struct {
-	TeamID                                 string                                            `pathParam:"style=simple,explode=false,name=team_id"`
-	ID                                     string                                            `pathParam:"style=simple,explode=false,name=id"`
-	PatchV1TeamsTeamIDEscalationPoliciesID components.PatchV1TeamsTeamIDEscalationPoliciesID `request:"mediaType=application/json"`
+	TeamID                     string                                `pathParam:"style=simple,explode=false,name=team_id"`
+	ID                         string                                `pathParam:"style=simple,explode=false,name=id"`
+	UpdateTeamEscalationPolicy components.UpdateTeamEscalationPolicy `request:"mediaType=application/json"`
 }
 
 func (o *UpdateTeamEscalationPolicyRequest) GetTeamID() string {
@@ -26,20 +26,9 @@ func (o *UpdateTeamEscalationPolicyRequest) GetID() string {
 	return o.ID
 }
 
-func (o *UpdateTeamEscalationPolicyRequest) GetPatchV1TeamsTeamIDEscalationPoliciesID() components.PatchV1TeamsTeamIDEscalationPoliciesID {
+func (o *UpdateTeamEscalationPolicyRequest) GetUpdateTeamEscalationPolicy() components.UpdateTeamEscalationPolicy {
 	if o == nil {
-		return components.PatchV1TeamsTeamIDEscalationPoliciesID{}
+		return components.UpdateTeamEscalationPolicy{}
 	}
-	return o.PatchV1TeamsTeamIDEscalationPoliciesID
-}
-
-type UpdateTeamEscalationPolicyResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-}
-
-func (o *UpdateTeamEscalationPolicyResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
+	return o.UpdateTeamEscalationPolicy
 }

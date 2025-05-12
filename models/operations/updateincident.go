@@ -7,8 +7,8 @@ import (
 )
 
 type UpdateIncidentRequest struct {
-	IncidentID                 string                                `pathParam:"style=simple,explode=false,name=incident_id"`
-	PatchV1IncidentsIncidentID components.PatchV1IncidentsIncidentID `request:"mediaType=application/json"`
+	IncidentID     string                    `pathParam:"style=simple,explode=false,name=incident_id"`
+	UpdateIncident components.UpdateIncident `request:"mediaType=application/json"`
 }
 
 func (o *UpdateIncidentRequest) GetIncidentID() string {
@@ -18,29 +18,9 @@ func (o *UpdateIncidentRequest) GetIncidentID() string {
 	return o.IncidentID
 }
 
-func (o *UpdateIncidentRequest) GetPatchV1IncidentsIncidentID() components.PatchV1IncidentsIncidentID {
+func (o *UpdateIncidentRequest) GetUpdateIncident() components.UpdateIncident {
 	if o == nil {
-		return components.PatchV1IncidentsIncidentID{}
+		return components.UpdateIncident{}
 	}
-	return o.PatchV1IncidentsIncidentID
-}
-
-type UpdateIncidentResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Updates an incident with provided parameters
-	IncidentEntity *components.IncidentEntity
-}
-
-func (o *UpdateIncidentResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *UpdateIncidentResponse) GetIncidentEntity() *components.IncidentEntity {
-	if o == nil {
-		return nil
-	}
-	return o.IncidentEntity
+	return o.UpdateIncident
 }

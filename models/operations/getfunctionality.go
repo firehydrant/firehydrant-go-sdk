@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type GetFunctionalityRequest struct {
 	FunctionalityID string `pathParam:"style=simple,explode=false,name=functionality_id"`
 }
@@ -15,24 +11,4 @@ func (o *GetFunctionalityRequest) GetFunctionalityID() string {
 		return ""
 	}
 	return o.FunctionalityID
-}
-
-type GetFunctionalityResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Retrieves a single functionality by ID
-	FunctionalityEntity *components.FunctionalityEntity
-}
-
-func (o *GetFunctionalityResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *GetFunctionalityResponse) GetFunctionalityEntity() *components.FunctionalityEntity {
-	if o == nil {
-		return nil
-	}
-	return o.FunctionalityEntity
 }

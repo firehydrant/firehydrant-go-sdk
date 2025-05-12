@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type DeleteEnvironmentRequest struct {
 	// Environment UUID
 	EnvironmentID string `pathParam:"style=simple,explode=false,name=environment_id"`
@@ -16,24 +12,4 @@ func (o *DeleteEnvironmentRequest) GetEnvironmentID() string {
 		return ""
 	}
 	return o.EnvironmentID
-}
-
-type DeleteEnvironmentResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Archive an environment
-	EnvironmentEntryEntity *components.EnvironmentEntryEntity
-}
-
-func (o *DeleteEnvironmentResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *DeleteEnvironmentResponse) GetEnvironmentEntryEntity() *components.EnvironmentEntryEntity {
-	if o == nil {
-		return nil
-	}
-	return o.EnvironmentEntryEntity
 }

@@ -5,7 +5,7 @@ package components
 // AlertsProcessingLogEntryEntityPaginated - Alerts_ProcessingLogEntryEntityPaginated model
 type AlertsProcessingLogEntryEntityPaginated struct {
 	Data       []AlertsProcessingLogEntryEntity `json:"data,omitempty"`
-	Pagination *PaginationEntity                `json:"pagination,omitempty"`
+	Pagination *NullablePaginationEntity        `json:"pagination,omitempty"`
 }
 
 func (o *AlertsProcessingLogEntryEntityPaginated) GetData() []AlertsProcessingLogEntryEntity {
@@ -15,7 +15,7 @@ func (o *AlertsProcessingLogEntryEntityPaginated) GetData() []AlertsProcessingLo
 	return o.Data
 }
 
-func (o *AlertsProcessingLogEntryEntityPaginated) GetPagination() *PaginationEntity {
+func (o *AlertsProcessingLogEntryEntityPaginated) GetPagination() *NullablePaginationEntity {
 	if o == nil {
 		return nil
 	}

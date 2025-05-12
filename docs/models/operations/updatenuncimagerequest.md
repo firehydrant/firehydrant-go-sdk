@@ -1,0 +1,10 @@
+# UpdateNuncImageRequest
+
+
+## Fields
+
+| Field                                                                                           | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `NuncConnectionID`                                                                              | *string*                                                                                        | :heavy_check_mark:                                                                              | N/A                                                                                             |
+| `Type`                                                                                          | *string*                                                                                        | :heavy_check_mark:                                                                              | N/A                                                                                             |
+| `RequestBody`                                                                                   | [*operations.UpdateNuncImageRequestBody](../../models/operations/updatenuncimagerequestbody.md) | :heavy_minus_sign:                                                                              | N/A                                                                                             |

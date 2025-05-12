@@ -3,30 +3,31 @@
 
 ## Overview
 
+Operations related to Incident Settings
+
 ### Available Operations
 
-* [ListCustomFieldDefinitions](#listcustomfielddefinitions) - List custom field definitions
-* [CreateCustomFieldDefinition](#createcustomfielddefinition) - Create a custom field definition
-* [DeleteCustomFieldDefinition](#deletecustomfielddefinition) - Delete a custom field definition
-* [UpdateCustomFieldDefinition](#updatecustomfielddefinition) - Update a custom field definition
-* [ListSelectOptions](#listselectoptions) - List select options for a custom field
-* [GetFormConfiguration](#getformconfiguration) - Get a form configuration
-* [ListRoles](#listroles) - List incident roles
+* [ListIncidentRoles](#listincidentroles) - List incident roles
 * [CreateIncidentRole](#createincidentrole) - Create an incident role
 * [GetIncidentRole](#getincidentrole) - Get an incident role
-* [DeleteRole](#deleterole) - Archive an incident role
+* [DeleteIncidentRole](#deleteincidentrole) - Archive an incident role
 * [UpdateIncidentRole](#updateincidentrole) - Update an incident role
-* [ListIncidentTags](#listincidenttags) - List incident tags
 * [ValidateIncidentTags](#validateincidenttags) - Validate incident tags
+* [ListIncidentTags](#listincidenttags) - List incident tags
 * [ListIncidentTypes](#listincidenttypes) - List incident types
 * [CreateIncidentType](#createincidenttype) - Create an incident type
 * [GetIncidentType](#getincidenttype) - Get an incident type
-* [ArchiveIncidentType](#archiveincidenttype) - Archive an incident type
-* [UpdateType](#updatetype) - Update an incident type
-* [CreateMilestone](#createmilestone) - Create a milestone for an incident lifecycle
-* [DeleteLifecycleMilestone](#deletelifecyclemilestone) - Delete a lifecycle milestone
-* [UpdateLifecycleMilestone](#updatelifecyclemilestone) - Update a lifecycle milestone
-* [ListLifecyclePhases](#listlifecyclephases) - List lifecycle phases and milestones
+* [DeleteIncidentType](#deleteincidenttype) - Archive an incident type
+* [UpdateIncidentType](#updateincidenttype) - Update an incident type
+* [ListLifecycleMeasurementDefinitions](#listlifecyclemeasurementdefinitions) - List measurement definitions
+* [CreateLifecycleMeasurementDefinition](#createlifecyclemeasurementdefinition) - Create a measurement definition
+* [GetLifecycleMeasurementDefinition](#getlifecyclemeasurementdefinition) - Get a measurement definition
+* [DeleteLifecycleMeasurementDefinition](#deletelifecyclemeasurementdefinition) - Archive a measurement definition
+* [UpdateLifecycleMeasurementDefinition](#updatelifecyclemeasurementdefinition) - Update a measurement definition
+* [ListLifecyclePhases](#listlifecyclephases) - List phases and milestones
+* [CreateLifecycleMilestone](#createlifecyclemilestone) - Create a milestone
+* [DeleteLifecycleMilestone](#deletelifecyclemilestone) - Delete a milestone
+* [UpdateLifecycleMilestone](#updatelifecyclemilestone) - Update a milestone
 * [ListPriorities](#listpriorities) - List priorities
 * [CreatePriority](#createpriority) - Create a priority
 * [GetPriority](#getpriority) - Get a priority
@@ -43,359 +44,19 @@
 * [CreateSeverityMatrixCondition](#createseveritymatrixcondition) - Create a severity matrix condition
 * [GetSeverityMatrixCondition](#getseveritymatrixcondition) - Get a severity matrix condition
 * [DeleteSeverityMatrixCondition](#deleteseveritymatrixcondition) - Delete a severity matrix condition
-* [UpdateCondition](#updatecondition) - Update a severity matrix condition
+* [UpdateSeverityMatrixCondition](#updateseveritymatrixcondition) - Update a severity matrix condition
 * [ListSeverityMatrixImpacts](#listseveritymatriximpacts) - List severity matrix impacts
-* [CreateImpact](#createimpact) - Create a severity matrix impact
-* [DeleteSeverityMatrixImpact](#deleteseveritymatriximpact) - Delete an impact from the severity matrix
-* [UpdateImpact](#updateimpact) - Update an impact in the severity matrix
-* [ListTicketingPriorities](#listticketingpriorities) - List ticketing priorities
-* [CreateTicketingPriority](#createticketingpriority) - Create a ticketing priority
-
-## ListCustomFieldDefinitions
-
-List all custom field definitions
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.IncidentSettings.ListCustomFieldDefinitions(ctx)
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.OrganizationsCustomFieldDefinitionEntity != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
-| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
-
-### Response
-
-**[*operations.ListCustomFieldDefinitionsResponse](../../models/operations/listcustomfielddefinitionsresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## CreateCustomFieldDefinition
-
-Create a new custom field definition
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"firehydrant/models/components"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.IncidentSettings.CreateCustomFieldDefinition(ctx, components.PostV1CustomFieldsDefinitions{
-        DisplayName: "Juvenal_Herman70",
-        FieldType: "<value>",
-        Required: true,
-    })
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.OrganizationsCustomFieldDefinitionEntity != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                                | :heavy_check_mark:                                                                                   | The context to use for the request.                                                                  |
-| `request`                                                                                            | [components.PostV1CustomFieldsDefinitions](../../models/components/postv1customfieldsdefinitions.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `opts`                                                                                               | [][operations.Option](../../models/operations/option.md)                                             | :heavy_minus_sign:                                                                                   | The options for this request.                                                                        |
-
-### Response
-
-**[*operations.CreateCustomFieldDefinitionResponse](../../models/operations/createcustomfielddefinitionresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## DeleteCustomFieldDefinition
-
-Delete a custom field definition
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.IncidentSettings.DeleteCustomFieldDefinition(ctx, "<id>")
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.OrganizationsCustomFieldDefinitionEntity != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
-| `fieldID`                                                | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
-| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
-
-### Response
-
-**[*operations.DeleteCustomFieldDefinitionResponse](../../models/operations/deletecustomfielddefinitionresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## UpdateCustomFieldDefinition
-
-Update a single custom field definition
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"firehydrant/models/components"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.IncidentSettings.UpdateCustomFieldDefinition(ctx, "<id>", components.PatchV1CustomFieldsDefinitionsFieldID{})
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.OrganizationsCustomFieldDefinitionEntity != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
-| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                                                | :heavy_check_mark:                                                                                                   | The context to use for the request.                                                                                  |
-| `fieldID`                                                                                                            | *string*                                                                                                             | :heavy_check_mark:                                                                                                   | N/A                                                                                                                  |
-| `patchV1CustomFieldsDefinitionsFieldID`                                                                              | [components.PatchV1CustomFieldsDefinitionsFieldID](../../models/components/patchv1customfieldsdefinitionsfieldid.md) | :heavy_check_mark:                                                                                                   | N/A                                                                                                                  |
-| `opts`                                                                                                               | [][operations.Option](../../models/operations/option.md)                                                             | :heavy_minus_sign:                                                                                                   | The options for this request.                                                                                        |
-
-### Response
-
-**[*operations.UpdateCustomFieldDefinitionResponse](../../models/operations/updatecustomfielddefinitionresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## ListSelectOptions
-
-Get the permissible values for the a currently active custom select or multi-select field.
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.IncidentSettings.ListSelectOptions(ctx, "<id>", nil, nil)
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.OrganizationsCustomFieldDefinitionEntity != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `ctx`                                                        | [context.Context](https://pkg.go.dev/context#Context)        | :heavy_check_mark:                                           | The context to use for the request.                          |
-| `fieldID`                                                    | *string*                                                     | :heavy_check_mark:                                           | N/A                                                          |
-| `query`                                                      | **string*                                                    | :heavy_minus_sign:                                           | Text string of a query for filtering values.                 |
-| `allVersions`                                                | **bool*                                                      | :heavy_minus_sign:                                           | If true, return all versions of the custom field definition. |
-| `opts`                                                       | [][operations.Option](../../models/operations/option.md)     | :heavy_minus_sign:                                           | The options for this request.                                |
-
-### Response
-
-**[*operations.GetCustomFieldSelectOptionsResponse](../../models/operations/getcustomfieldselectoptionsresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## GetFormConfiguration
-
-Get a form configuration
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.IncidentSettings.GetFormConfiguration(ctx, "<value>")
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
-| `slug`                                                   | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
-| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
-
-### Response
-
-**[*operations.GetFormConfigurationResponse](../../models/operations/getformconfigurationresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## ListRoles
+* [CreateSeverityMatrixImpact](#createseveritymatriximpact) - Create a severity matrix impact
+* [DeleteSeverityMatrixImpact](#deleteseveritymatriximpact) - Delete a severity matrix impact
+* [UpdateSeverityMatrixImpact](#updateseveritymatriximpact) - Update a severity matrix impact
+* [DeleteCustomFieldDefinition](#deletecustomfielddefinition) - Delete a custom field definition
+* [UpdateCustomFieldDefinition](#updatecustomfielddefinition) - Update a custom field definition
+* [ListCustomFieldDefinitions](#listcustomfielddefinitions) - List custom field definitions
+* [CreateCustomFieldDefinition](#createcustomfielddefinition) - Create a custom field definition
+* [ListCustomFieldSelectOptions](#listcustomfieldselectoptions) - Get available values for a custom field
+* [GetFormConfiguration](#getformconfiguration) - Get a form configuration
+
+## ListIncidentRoles
 
 List all of the incident roles in the organization
 
@@ -407,21 +68,24 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.IncidentSettings.ListRoles(ctx, nil, nil)
+    res, err := s.IncidentSettings.ListIncidentRoles(ctx, nil, nil)
     if err != nil {
         log.Fatal(err)
     }
-    if res.IncidentRoleEntityPaginated != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -438,19 +102,13 @@ func main() {
 
 ### Response
 
-**[*operations.ListIncidentRolesResponse](../../models/operations/listincidentrolesresponse.md), error**
+**[*components.IncidentRoleEntityPaginated](../../models/components/incidentroleentitypaginated.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## CreateIncidentRole
 
@@ -470,19 +128,21 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.IncidentSettings.CreateIncidentRole(ctx, components.PostV1IncidentRoles{
+    res, err := s.IncidentSettings.CreateIncidentRole(ctx, components.CreateIncidentRole{
         Name: "<value>",
         Summary: "<value>",
     })
     if err != nil {
         log.Fatal(err)
     }
-    if res.IncidentRoleEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -490,27 +150,21 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `ctx`                                                                            | [context.Context](https://pkg.go.dev/context#Context)                            | :heavy_check_mark:                                                               | The context to use for the request.                                              |
-| `request`                                                                        | [components.PostV1IncidentRoles](../../models/components/postv1incidentroles.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
-| `opts`                                                                           | [][operations.Option](../../models/operations/option.md)                         | :heavy_minus_sign:                                                               | The options for this request.                                                    |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `ctx`                                                                          | [context.Context](https://pkg.go.dev/context#Context)                          | :heavy_check_mark:                                                             | The context to use for the request.                                            |
+| `request`                                                                      | [components.CreateIncidentRole](../../models/components/createincidentrole.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
+| `opts`                                                                         | [][operations.Option](../../models/operations/option.md)                       | :heavy_minus_sign:                                                             | The options for this request.                                                  |
 
 ### Response
 
-**[*operations.CreateIncidentRoleResponse](../../models/operations/createincidentroleresponse.md), error**
+**[*components.IncidentRoleEntity](../../models/components/incidentroleentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## GetIncidentRole
 
@@ -524,21 +178,24 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
     res, err := s.IncidentSettings.GetIncidentRole(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
     }
-    if res.IncidentRoleEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -554,21 +211,15 @@ func main() {
 
 ### Response
 
-**[*operations.GetIncidentRoleResponse](../../models/operations/getincidentroleresponse.md), error**
+**[*components.IncidentRoleEntity](../../models/components/incidentroleentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## DeleteRole
+## DeleteIncidentRole
 
 Archives an incident role which will hide it from lists and metrics
 
@@ -580,21 +231,24 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.IncidentSettings.DeleteRole(ctx, "<id>")
+    res, err := s.IncidentSettings.DeleteIncidentRole(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
     }
-    if res.IncidentRoleEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -610,19 +264,13 @@ func main() {
 
 ### Response
 
-**[*operations.DeleteIncidentRoleResponse](../../models/operations/deleteincidentroleresponse.md), error**
+**[*components.IncidentRoleEntity](../../models/components/incidentroleentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## UpdateIncidentRole
 
@@ -642,16 +290,18 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.IncidentSettings.UpdateIncidentRole(ctx, "<id>", components.PatchV1IncidentRolesIncidentRoleID{})
+    res, err := s.IncidentSettings.UpdateIncidentRole(ctx, "<id>", components.UpdateIncidentRole{})
     if err != nil {
         log.Fatal(err)
     }
-    if res.IncidentRoleEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -659,84 +309,22 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                                          | :heavy_check_mark:                                                                                             | The context to use for the request.                                                                            |
-| `incidentRoleID`                                                                                               | *string*                                                                                                       | :heavy_check_mark:                                                                                             | N/A                                                                                                            |
-| `patchV1IncidentRolesIncidentRoleID`                                                                           | [components.PatchV1IncidentRolesIncidentRoleID](../../models/components/patchv1incidentrolesincidentroleid.md) | :heavy_check_mark:                                                                                             | N/A                                                                                                            |
-| `opts`                                                                                                         | [][operations.Option](../../models/operations/option.md)                                                       | :heavy_minus_sign:                                                                                             | The options for this request.                                                                                  |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `ctx`                                                                          | [context.Context](https://pkg.go.dev/context#Context)                          | :heavy_check_mark:                                                             | The context to use for the request.                                            |
+| `incidentRoleID`                                                               | *string*                                                                       | :heavy_check_mark:                                                             | N/A                                                                            |
+| `updateIncidentRole`                                                           | [components.UpdateIncidentRole](../../models/components/updateincidentrole.md) | :heavy_check_mark:                                                             | N/A                                                                            |
+| `opts`                                                                         | [][operations.Option](../../models/operations/option.md)                       | :heavy_minus_sign:                                                             | The options for this request.                                                  |
 
 ### Response
 
-**[*operations.UpdateIncidentRoleResponse](../../models/operations/updateincidentroleresponse.md), error**
+**[*components.IncidentRoleEntity](../../models/components/incidentroleentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## ListIncidentTags
-
-List all of the incident tags in the organization
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.IncidentSettings.ListIncidentTags(ctx, nil)
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.TagEntityPaginated != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
-| `prefix`                                                 | **string*                                                | :heavy_minus_sign:                                       | N/A                                                      |
-| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
-
-### Response
-
-**[*operations.ListIncidentTagsResponse](../../models/operations/listincidenttagsresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## ValidateIncidentTags
 
@@ -750,14 +338,17 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
     res, err := s.IncidentSettings.ValidateIncidentTags(ctx, []string{
@@ -768,7 +359,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-    if res.TagEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -784,19 +375,66 @@ func main() {
 
 ### Response
 
-**[*operations.ValidateIncidentTagsResponse](../../models/operations/validateincidenttagsresponse.md), error**
+**[*components.TagEntity](../../models/components/tagentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## ListIncidentTags
+
+List all of the incident tags in the organization
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.IncidentSettings.ListIncidentTags(ctx, nil)
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `prefix`                                                 | **string*                                                | :heavy_minus_sign:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.TagEntityPaginated](../../models/components/tagentitypaginated.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## ListIncidentTypes
 
@@ -810,21 +448,24 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
     res, err := s.IncidentSettings.ListIncidentTypes(ctx, nil, nil, nil)
     if err != nil {
         log.Fatal(err)
     }
-    if res.IncidentTypeEntityPaginated != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -842,19 +483,13 @@ func main() {
 
 ### Response
 
-**[*operations.ListIncidentTypesResponse](../../models/operations/listincidenttypesresponse.md), error**
+**[*components.IncidentTypeEntityPaginated](../../models/components/incidenttypeentitypaginated.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## CreateIncidentType
 
@@ -874,19 +509,21 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.IncidentSettings.CreateIncidentType(ctx, components.PostV1IncidentTypes{
+    res, err := s.IncidentSettings.CreateIncidentType(ctx, components.CreateIncidentType{
         Name: "<value>",
-        Template: components.Template{},
+        Template: components.CreateIncidentTypeTemplate{},
     })
     if err != nil {
         log.Fatal(err)
     }
-    if res.IncidentTypeEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -894,27 +531,21 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `ctx`                                                                            | [context.Context](https://pkg.go.dev/context#Context)                            | :heavy_check_mark:                                                               | The context to use for the request.                                              |
-| `request`                                                                        | [components.PostV1IncidentTypes](../../models/components/postv1incidenttypes.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
-| `opts`                                                                           | [][operations.Option](../../models/operations/option.md)                         | :heavy_minus_sign:                                                               | The options for this request.                                                    |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `ctx`                                                                          | [context.Context](https://pkg.go.dev/context#Context)                          | :heavy_check_mark:                                                             | The context to use for the request.                                            |
+| `request`                                                                      | [components.CreateIncidentType](../../models/components/createincidenttype.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
+| `opts`                                                                         | [][operations.Option](../../models/operations/option.md)                       | :heavy_minus_sign:                                                             | The options for this request.                                                  |
 
 ### Response
 
-**[*operations.CreateIncidentTypeResponse](../../models/operations/createincidenttyperesponse.md), error**
+**[*components.IncidentTypeEntity](../../models/components/incidenttypeentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## GetIncidentType
 
@@ -928,21 +559,24 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
     res, err := s.IncidentSettings.GetIncidentType(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
     }
-    if res.IncidentTypeEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -958,21 +592,15 @@ func main() {
 
 ### Response
 
-**[*operations.GetIncidentTypeResponse](../../models/operations/getincidenttyperesponse.md), error**
+**[*components.IncidentTypeEntity](../../models/components/incidenttypeentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## ArchiveIncidentType
+## DeleteIncidentType
 
 Archives an incident type which will hide it from lists and metrics
 
@@ -984,21 +612,24 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.IncidentSettings.ArchiveIncidentType(ctx, "<id>")
+    res, err := s.IncidentSettings.DeleteIncidentType(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
     }
-    if res.IncidentTypeEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -1014,21 +645,15 @@ func main() {
 
 ### Response
 
-**[*operations.ArchiveIncidentTypeResponse](../../models/operations/archiveincidenttyperesponse.md), error**
+**[*components.IncidentTypeEntity](../../models/components/incidenttypeentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## UpdateType
+## UpdateIncidentType
 
 Update a single incident type from its ID
 
@@ -1046,19 +671,21 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.IncidentSettings.UpdateType(ctx, "<id>", components.PatchV1IncidentTypesID{
+    res, err := s.IncidentSettings.UpdateIncidentType(ctx, "<id>", components.UpdateIncidentType{
         Name: "<value>",
-        Template: components.PatchV1IncidentTypesIDTemplate{},
+        Template: components.UpdateIncidentTypeTemplate{},
     })
     if err != nil {
         log.Fatal(err)
     }
-    if res.IncidentTypeEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -1066,30 +693,333 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `ctx`                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                  | :heavy_check_mark:                                                                     | The context to use for the request.                                                    |
-| `id`                                                                                   | *string*                                                                               | :heavy_check_mark:                                                                     | N/A                                                                                    |
-| `patchV1IncidentTypesID`                                                               | [components.PatchV1IncidentTypesID](../../models/components/patchv1incidenttypesid.md) | :heavy_check_mark:                                                                     | N/A                                                                                    |
-| `opts`                                                                                 | [][operations.Option](../../models/operations/option.md)                               | :heavy_minus_sign:                                                                     | The options for this request.                                                          |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `ctx`                                                                          | [context.Context](https://pkg.go.dev/context#Context)                          | :heavy_check_mark:                                                             | The context to use for the request.                                            |
+| `id`                                                                           | *string*                                                                       | :heavy_check_mark:                                                             | N/A                                                                            |
+| `updateIncidentType`                                                           | [components.UpdateIncidentType](../../models/components/updateincidenttype.md) | :heavy_check_mark:                                                             | N/A                                                                            |
+| `opts`                                                                         | [][operations.Option](../../models/operations/option.md)                       | :heavy_minus_sign:                                                             | The options for this request.                                                  |
 
 ### Response
 
-**[*operations.UpdateIncidentTypeResponse](../../models/operations/updateincidenttyperesponse.md), error**
+**[*components.IncidentTypeEntity](../../models/components/incidenttypeentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## CreateMilestone
+## ListLifecycleMeasurementDefinitions
+
+List all of the measurement definitions in the organization
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    err := s.IncidentSettings.ListLifecycleMeasurementDefinitions(ctx, nil, nil)
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `page`                                                   | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
+| `perPage`                                                | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## CreateLifecycleMeasurementDefinition
+
+Create a new measurement definition
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"firehydrant/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    err := s.IncidentSettings.CreateLifecycleMeasurementDefinition(ctx, operations.CreateLifecycleMeasurementDefinitionRequest{
+        Name: "<value>",
+        StartsAtMilestoneID: "<id>",
+        EndsAtMilestoneID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
+| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                                                            | :heavy_check_mark:                                                                                                               | The context to use for the request.                                                                                              |
+| `request`                                                                                                                        | [operations.CreateLifecycleMeasurementDefinitionRequest](../../models/operations/createlifecyclemeasurementdefinitionrequest.md) | :heavy_check_mark:                                                                                                               | The request object to use for the request.                                                                                       |
+| `opts`                                                                                                                           | [][operations.Option](../../models/operations/option.md)                                                                         | :heavy_minus_sign:                                                                                                               | The options for this request.                                                                                                    |
+
+### Response
+
+**error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## GetLifecycleMeasurementDefinition
+
+Retrieve a single measurement definition from its ID
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    err := s.IncidentSettings.GetLifecycleMeasurementDefinition(ctx, "<id>")
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `measurementDefinitionID`                                | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## DeleteLifecycleMeasurementDefinition
+
+Archives a measurement definition which will hide it from lists and metrics
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    err := s.IncidentSettings.DeleteLifecycleMeasurementDefinition(ctx, "<id>")
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `measurementDefinitionID`                                | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## UpdateLifecycleMeasurementDefinition
+
+Update a single measurement definition from its ID
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    err := s.IncidentSettings.UpdateLifecycleMeasurementDefinition(ctx, "<id>", nil)
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                 | Type                                                                                                                                      | Required                                                                                                                                  | Description                                                                                                                               |
+| ----------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                     | [context.Context](https://pkg.go.dev/context#Context)                                                                                     | :heavy_check_mark:                                                                                                                        | The context to use for the request.                                                                                                       |
+| `measurementDefinitionID`                                                                                                                 | *string*                                                                                                                                  | :heavy_check_mark:                                                                                                                        | N/A                                                                                                                                       |
+| `requestBody`                                                                                                                             | [*operations.UpdateLifecycleMeasurementDefinitionRequestBody](../../models/operations/updatelifecyclemeasurementdefinitionrequestbody.md) | :heavy_minus_sign:                                                                                                                        | N/A                                                                                                                                       |
+| `opts`                                                                                                                                    | [][operations.Option](../../models/operations/option.md)                                                                                  | :heavy_minus_sign:                                                                                                                        | The options for this request.                                                                                                             |
+
+### Response
+
+**error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## ListLifecyclePhases
+
+List all of the lifecycle phases and milestones in the organization
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.IncidentSettings.ListLifecyclePhases(ctx)
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.LifecyclesPhaseEntityList](../../models/components/lifecyclesphaseentitylist.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## CreateLifecycleMilestone
 
 Create a new milestone
 
@@ -1101,26 +1031,29 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.IncidentSettings.CreateMilestone(ctx, operations.CreateLifecycleMilestoneRequestBody{
+    res, err := s.IncidentSettings.CreateLifecycleMilestone(ctx, operations.CreateLifecycleMilestoneRequest{
         Name: "<value>",
-        Description: "how in redraw dependable cash apropos",
+        Description: "serpentine blah into after pendant zowie athletic",
         PhaseID: "<id>",
     })
     if err != nil {
         log.Fatal(err)
     }
-    if res.LifecyclesPhaseEntityList != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -1128,27 +1061,21 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                                            | :heavy_check_mark:                                                                                               | The context to use for the request.                                                                              |
-| `request`                                                                                                        | [operations.CreateLifecycleMilestoneRequestBody](../../models/operations/createlifecyclemilestonerequestbody.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
-| `opts`                                                                                                           | [][operations.Option](../../models/operations/option.md)                                                         | :heavy_minus_sign:                                                                                               | The options for this request.                                                                                    |
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                    | :heavy_check_mark:                                                                                       | The context to use for the request.                                                                      |
+| `request`                                                                                                | [operations.CreateLifecycleMilestoneRequest](../../models/operations/createlifecyclemilestonerequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `opts`                                                                                                   | [][operations.Option](../../models/operations/option.md)                                                 | :heavy_minus_sign:                                                                                       | The options for this request.                                                                            |
 
 ### Response
 
-**[*operations.CreateLifecycleMilestoneResponse](../../models/operations/createlifecyclemilestoneresponse.md), error**
+**[*components.LifecyclesPhaseEntityList](../../models/components/lifecyclesphaseentitylist.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## DeleteLifecycleMilestone
 
@@ -1162,21 +1089,24 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
     res, err := s.IncidentSettings.DeleteLifecycleMilestone(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
     }
-    if res.LifecyclesPhaseEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -1192,19 +1122,13 @@ func main() {
 
 ### Response
 
-**[*operations.DeleteLifecycleMilestoneResponse](../../models/operations/deletelifecyclemilestoneresponse.md), error**
+**[*components.LifecyclesPhaseEntity](../../models/components/lifecyclesphaseentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## UpdateLifecycleMilestone
 
@@ -1218,21 +1142,24 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
     res, err := s.IncidentSettings.UpdateLifecycleMilestone(ctx, "<id>", nil)
     if err != nil {
         log.Fatal(err)
     }
-    if res.LifecyclesPhaseEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -1249,74 +1176,13 @@ func main() {
 
 ### Response
 
-**[*operations.UpdateLifecycleMilestoneResponse](../../models/operations/updatelifecyclemilestoneresponse.md), error**
+**[*components.LifecyclesPhaseEntity](../../models/components/lifecyclesphaseentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## ListLifecyclePhases
-
-List all of the lifecycle phases and milestones in the organization
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.IncidentSettings.ListLifecyclePhases(ctx)
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.LifecyclesPhaseEntityList != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
-| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
-
-### Response
-
-**[*operations.ListLifecyclePhasesResponse](../../models/operations/listlifecyclephasesresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## ListPriorities
 
@@ -1330,21 +1196,24 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
     res, err := s.IncidentSettings.ListPriorities(ctx, nil, nil)
     if err != nil {
         log.Fatal(err)
     }
-    if res.PriorityEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -1361,19 +1230,13 @@ func main() {
 
 ### Response
 
-**[*operations.ListPrioritiesResponse](../../models/operations/listprioritiesresponse.md), error**
+**[*components.PriorityEntity](../../models/components/priorityentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## CreatePriority
 
@@ -1393,18 +1256,20 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.IncidentSettings.CreatePriority(ctx, components.PostV1Priorities{
+    res, err := s.IncidentSettings.CreatePriority(ctx, components.CreatePriority{
         Slug: "<value>",
     })
     if err != nil {
         log.Fatal(err)
     }
-    if res.PriorityEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -1412,27 +1277,21 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
-| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| `ctx`                                                                      | [context.Context](https://pkg.go.dev/context#Context)                      | :heavy_check_mark:                                                         | The context to use for the request.                                        |
-| `request`                                                                  | [components.PostV1Priorities](../../models/components/postv1priorities.md) | :heavy_check_mark:                                                         | The request object to use for the request.                                 |
-| `opts`                                                                     | [][operations.Option](../../models/operations/option.md)                   | :heavy_minus_sign:                                                         | The options for this request.                                              |
+| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `ctx`                                                                  | [context.Context](https://pkg.go.dev/context#Context)                  | :heavy_check_mark:                                                     | The context to use for the request.                                    |
+| `request`                                                              | [components.CreatePriority](../../models/components/createpriority.md) | :heavy_check_mark:                                                     | The request object to use for the request.                             |
+| `opts`                                                                 | [][operations.Option](../../models/operations/option.md)               | :heavy_minus_sign:                                                     | The options for this request.                                          |
 
 ### Response
 
-**[*operations.CreatePriorityResponse](../../models/operations/createpriorityresponse.md), error**
+**[*components.PriorityEntity](../../models/components/priorityentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## GetPriority
 
@@ -1446,21 +1305,24 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
     res, err := s.IncidentSettings.GetPriority(ctx, "<value>")
     if err != nil {
         log.Fatal(err)
     }
-    if res.PriorityEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -1476,19 +1338,13 @@ func main() {
 
 ### Response
 
-**[*operations.GetPriorityResponse](../../models/operations/getpriorityresponse.md), error**
+**[*components.PriorityEntity](../../models/components/priorityentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## DeletePriority
 
@@ -1502,21 +1358,24 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
     res, err := s.IncidentSettings.DeletePriority(ctx, "<value>")
     if err != nil {
         log.Fatal(err)
     }
-    if res.PriorityEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -1532,19 +1391,13 @@ func main() {
 
 ### Response
 
-**[*operations.DeletePriorityResponse](../../models/operations/deletepriorityresponse.md), error**
+**[*components.PriorityEntity](../../models/components/priorityentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## UpdatePriority
 
@@ -1564,16 +1417,18 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.IncidentSettings.UpdatePriority(ctx, "<value>", components.PatchV1PrioritiesPrioritySlug{})
+    res, err := s.IncidentSettings.UpdatePriority(ctx, "<value>", components.UpdatePriority{})
     if err != nil {
         log.Fatal(err)
     }
-    if res.PriorityEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -1581,28 +1436,22 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                                | :heavy_check_mark:                                                                                   | The context to use for the request.                                                                  |
-| `prioritySlug`                                                                                       | *string*                                                                                             | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
-| `patchV1PrioritiesPrioritySlug`                                                                      | [components.PatchV1PrioritiesPrioritySlug](../../models/components/patchv1prioritiespriorityslug.md) | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
-| `opts`                                                                                               | [][operations.Option](../../models/operations/option.md)                                             | :heavy_minus_sign:                                                                                   | The options for this request.                                                                        |
+| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `ctx`                                                                  | [context.Context](https://pkg.go.dev/context#Context)                  | :heavy_check_mark:                                                     | The context to use for the request.                                    |
+| `prioritySlug`                                                         | *string*                                                               | :heavy_check_mark:                                                     | N/A                                                                    |
+| `updatePriority`                                                       | [components.UpdatePriority](../../models/components/updatepriority.md) | :heavy_check_mark:                                                     | N/A                                                                    |
+| `opts`                                                                 | [][operations.Option](../../models/operations/option.md)               | :heavy_minus_sign:                                                     | The options for this request.                                          |
 
 ### Response
 
-**[*operations.UpdatePriorityResponse](../../models/operations/updatepriorityresponse.md), error**
+**[*components.PriorityEntity](../../models/components/priorityentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## ListSeverities
 
@@ -1616,21 +1465,24 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
     res, err := s.IncidentSettings.ListSeverities(ctx, nil, nil)
     if err != nil {
         log.Fatal(err)
     }
-    if res.SeverityEntityPaginated != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -1647,19 +1499,13 @@ func main() {
 
 ### Response
 
-**[*operations.ListSeveritiesResponse](../../models/operations/listseveritiesresponse.md), error**
+**[*components.SeverityEntityPaginated](../../models/components/severityentitypaginated.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## CreateSeverity
 
@@ -1679,18 +1525,20 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.IncidentSettings.CreateSeverity(ctx, components.PostV1Severities{
+    res, err := s.IncidentSettings.CreateSeverity(ctx, components.CreateSeverity{
         Slug: "<value>",
     })
     if err != nil {
         log.Fatal(err)
     }
-    if res.SeverityEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -1698,27 +1546,21 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
-| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| `ctx`                                                                      | [context.Context](https://pkg.go.dev/context#Context)                      | :heavy_check_mark:                                                         | The context to use for the request.                                        |
-| `request`                                                                  | [components.PostV1Severities](../../models/components/postv1severities.md) | :heavy_check_mark:                                                         | The request object to use for the request.                                 |
-| `opts`                                                                     | [][operations.Option](../../models/operations/option.md)                   | :heavy_minus_sign:                                                         | The options for this request.                                              |
+| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `ctx`                                                                  | [context.Context](https://pkg.go.dev/context#Context)                  | :heavy_check_mark:                                                     | The context to use for the request.                                    |
+| `request`                                                              | [components.CreateSeverity](../../models/components/createseverity.md) | :heavy_check_mark:                                                     | The request object to use for the request.                             |
+| `opts`                                                                 | [][operations.Option](../../models/operations/option.md)               | :heavy_minus_sign:                                                     | The options for this request.                                          |
 
 ### Response
 
-**[*operations.CreateSeverityResponse](../../models/operations/createseverityresponse.md), error**
+**[*components.SeverityEntity](../../models/components/severityentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## GetSeverity
 
@@ -1732,21 +1574,24 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
     res, err := s.IncidentSettings.GetSeverity(ctx, "<value>")
     if err != nil {
         log.Fatal(err)
     }
-    if res.SeverityEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -1762,19 +1607,13 @@ func main() {
 
 ### Response
 
-**[*operations.GetSeverityResponse](../../models/operations/getseverityresponse.md), error**
+**[*components.SeverityEntity](../../models/components/severityentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## DeleteSeverity
 
@@ -1788,21 +1627,24 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
     res, err := s.IncidentSettings.DeleteSeverity(ctx, "<value>")
     if err != nil {
         log.Fatal(err)
     }
-    if res.SeverityEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -1818,19 +1660,13 @@ func main() {
 
 ### Response
 
-**[*operations.DeleteSeverityResponse](../../models/operations/deleteseverityresponse.md), error**
+**[*components.SeverityEntity](../../models/components/severityentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## UpdateSeverity
 
@@ -1850,16 +1686,18 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.IncidentSettings.UpdateSeverity(ctx, "<value>", components.PatchV1SeveritiesSeveritySlug{})
+    res, err := s.IncidentSettings.UpdateSeverity(ctx, "<value>", components.UpdateSeverity{})
     if err != nil {
         log.Fatal(err)
     }
-    if res.SeverityEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -1867,28 +1705,22 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                                | :heavy_check_mark:                                                                                   | The context to use for the request.                                                                  |
-| `severitySlug`                                                                                       | *string*                                                                                             | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
-| `patchV1SeveritiesSeveritySlug`                                                                      | [components.PatchV1SeveritiesSeveritySlug](../../models/components/patchv1severitiesseverityslug.md) | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
-| `opts`                                                                                               | [][operations.Option](../../models/operations/option.md)                                             | :heavy_minus_sign:                                                                                   | The options for this request.                                                                        |
+| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `ctx`                                                                  | [context.Context](https://pkg.go.dev/context#Context)                  | :heavy_check_mark:                                                     | The context to use for the request.                                    |
+| `severitySlug`                                                         | *string*                                                               | :heavy_check_mark:                                                     | N/A                                                                    |
+| `updateSeverity`                                                       | [components.UpdateSeverity](../../models/components/updateseverity.md) | :heavy_check_mark:                                                     | N/A                                                                    |
+| `opts`                                                                 | [][operations.Option](../../models/operations/option.md)               | :heavy_minus_sign:                                                     | The options for this request.                                          |
 
 ### Response
 
-**[*operations.UpdateSeverityResponse](../../models/operations/updateseverityresponse.md), error**
+**[*components.SeverityEntity](../../models/components/severityentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## GetSeverityMatrix
 
@@ -1902,21 +1734,24 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
     res, err := s.IncidentSettings.GetSeverityMatrix(ctx)
     if err != nil {
         log.Fatal(err)
     }
-    if res.SeverityMatrixSeverityMatrixEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -1931,19 +1766,13 @@ func main() {
 
 ### Response
 
-**[*operations.GetSeverityMatrixResponse](../../models/operations/getseveritymatrixresponse.md), error**
+**[*components.SeverityMatrixSeverityMatrixEntity](../../models/components/severitymatrixseveritymatrixentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## UpdateSeverityMatrix
 
@@ -1963,14 +1792,26 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.IncidentSettings.UpdateSeverityMatrix(ctx, components.PatchV1SeverityMatrix{
-        Data: []components.PatchV1SeverityMatrixData{
-            components.PatchV1SeverityMatrixData{
+    res, err := s.IncidentSettings.UpdateSeverityMatrix(ctx, components.UpdateSeverityMatrix{
+        Data: []components.UpdateSeverityMatrixData{
+            components.UpdateSeverityMatrixData{
+                Severity: "<value>",
+                ImpactID: "<id>",
+                ConditionID: "<id>",
+            },
+            components.UpdateSeverityMatrixData{
+                Severity: "<value>",
+                ImpactID: "<id>",
+                ConditionID: "<id>",
+            },
+            components.UpdateSeverityMatrixData{
                 Severity: "<value>",
                 ImpactID: "<id>",
                 ConditionID: "<id>",
@@ -1980,7 +1821,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-    if res.SeverityMatrixSeverityMatrixEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -1988,27 +1829,21 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |
-| `request`                                                                            | [components.PatchV1SeverityMatrix](../../models/components/patchv1severitymatrix.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
-| `opts`                                                                               | [][operations.Option](../../models/operations/option.md)                             | :heavy_minus_sign:                                                                   | The options for this request.                                                        |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `ctx`                                                                              | [context.Context](https://pkg.go.dev/context#Context)                              | :heavy_check_mark:                                                                 | The context to use for the request.                                                |
+| `request`                                                                          | [components.UpdateSeverityMatrix](../../models/components/updateseveritymatrix.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
+| `opts`                                                                             | [][operations.Option](../../models/operations/option.md)                           | :heavy_minus_sign:                                                                 | The options for this request.                                                      |
 
 ### Response
 
-**[*operations.UpdateSeverityMatrixResponse](../../models/operations/updateseveritymatrixresponse.md), error**
+**[*components.SeverityMatrixSeverityMatrixEntity](../../models/components/severitymatrixseveritymatrixentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## ListSeverityMatrixConditions
 
@@ -2022,21 +1857,24 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
     res, err := s.IncidentSettings.ListSeverityMatrixConditions(ctx, nil, nil)
     if err != nil {
         log.Fatal(err)
     }
-    if res.SeverityMatrixConditionEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -2053,19 +1891,13 @@ func main() {
 
 ### Response
 
-**[*operations.ListSeverityMatrixConditionsResponse](../../models/operations/listseveritymatrixconditionsresponse.md), error**
+**[*components.SeverityMatrixConditionEntity](../../models/components/severitymatrixconditionentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## CreateSeverityMatrixCondition
 
@@ -2085,18 +1917,20 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.IncidentSettings.CreateSeverityMatrixCondition(ctx, components.PostV1SeverityMatrixConditions{
+    res, err := s.IncidentSettings.CreateSeverityMatrixCondition(ctx, components.CreateSeverityMatrixCondition{
         Name: "<value>",
     })
     if err != nil {
         log.Fatal(err)
     }
-    if res.SeverityMatrixConditionEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -2104,31 +1938,25 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `ctx`                                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                                  | :heavy_check_mark:                                                                                     | The context to use for the request.                                                                    |
-| `request`                                                                                              | [components.PostV1SeverityMatrixConditions](../../models/components/postv1severitymatrixconditions.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
-| `opts`                                                                                                 | [][operations.Option](../../models/operations/option.md)                                               | :heavy_minus_sign:                                                                                     | The options for this request.                                                                          |
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                                | :heavy_check_mark:                                                                                   | The context to use for the request.                                                                  |
+| `request`                                                                                            | [components.CreateSeverityMatrixCondition](../../models/components/createseveritymatrixcondition.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| `opts`                                                                                               | [][operations.Option](../../models/operations/option.md)                                             | :heavy_minus_sign:                                                                                   | The options for this request.                                                                        |
 
 ### Response
 
-**[*operations.CreateSeverityMatrixConditionResponse](../../models/operations/createseveritymatrixconditionresponse.md), error**
+**[*components.SeverityMatrixConditionEntity](../../models/components/severitymatrixconditionentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## GetSeverityMatrixCondition
 
-Get a severity matrix condition
+Retrieve a specific condition
 
 ### Example Usage
 
@@ -2138,14 +1966,17 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
     res, err := s.IncidentSettings.GetSeverityMatrixCondition(ctx, "<id>")
@@ -2168,79 +1999,17 @@ func main() {
 
 ### Response
 
-**[*operations.GetSeverityMatrixConditionResponse](../../models/operations/getseveritymatrixconditionresponse.md), error**
+**[*components.SeverityMatrixConditionEntity](../../models/components/severitymatrixconditionentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## DeleteSeverityMatrixCondition
 
 Delete a specific condition
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.IncidentSettings.DeleteSeverityMatrixCondition(ctx, "<id>")
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.SeverityMatrixConditionEntity != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
-| `conditionID`                                            | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
-| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
-
-### Response
-
-**[*operations.DeleteSeverityMatrixConditionResponse](../../models/operations/deleteseveritymatrixconditionresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## UpdateCondition
-
-Update a specific condition
 
 ### Example Usage
 
@@ -2256,16 +2025,18 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.IncidentSettings.UpdateCondition(ctx, "<id>", components.PatchV1SeverityMatrixConditionsConditionID{})
+    res, err := s.IncidentSettings.DeleteSeverityMatrixCondition(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
     }
-    if res.SeverityMatrixConditionEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -2273,28 +2044,75 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                                      | Type                                                                                                                           | Required                                                                                                                       | Description                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
-| `ctx`                                                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                                                          | :heavy_check_mark:                                                                                                             | The context to use for the request.                                                                                            |
-| `conditionID`                                                                                                                  | *string*                                                                                                                       | :heavy_check_mark:                                                                                                             | N/A                                                                                                                            |
-| `patchV1SeverityMatrixConditionsConditionID`                                                                                   | [components.PatchV1SeverityMatrixConditionsConditionID](../../models/components/patchv1severitymatrixconditionsconditionid.md) | :heavy_check_mark:                                                                                                             | N/A                                                                                                                            |
-| `opts`                                                                                                                         | [][operations.Option](../../models/operations/option.md)                                                                       | :heavy_minus_sign:                                                                                                             | The options for this request.                                                                                                  |
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `conditionID`                                            | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
 
 ### Response
 
-**[*operations.UpdateSeverityMatrixConditionResponse](../../models/operations/updateseveritymatrixconditionresponse.md), error**
+**[*components.SeverityMatrixConditionEntity](../../models/components/severitymatrixconditionentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## UpdateSeverityMatrixCondition
+
+Update a severity matrix condition
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.IncidentSettings.UpdateSeverityMatrixCondition(ctx, "<id>", components.UpdateSeverityMatrixCondition{})
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                                | :heavy_check_mark:                                                                                   | The context to use for the request.                                                                  |
+| `conditionID`                                                                                        | *string*                                                                                             | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
+| `updateSeverityMatrixCondition`                                                                      | [components.UpdateSeverityMatrixCondition](../../models/components/updateseveritymatrixcondition.md) | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
+| `opts`                                                                                               | [][operations.Option](../../models/operations/option.md)                                             | :heavy_minus_sign:                                                                                   | The options for this request.                                                                        |
+
+### Response
+
+**[*components.SeverityMatrixConditionEntity](../../models/components/severitymatrixconditionentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## ListSeverityMatrixImpacts
 
@@ -2308,21 +2126,24 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
     res, err := s.IncidentSettings.ListSeverityMatrixImpacts(ctx, nil, nil)
     if err != nil {
         log.Fatal(err)
     }
-    if res.SeverityMatrixImpactEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -2339,21 +2160,15 @@ func main() {
 
 ### Response
 
-**[*operations.ListSeverityMatrixImpactsResponse](../../models/operations/listseveritymatriximpactsresponse.md), error**
+**[*components.SeverityMatrixImpactEntity](../../models/components/severitymatriximpactentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## CreateImpact
+## CreateSeverityMatrixImpact
 
 Create a new impact
 
@@ -2371,19 +2186,21 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.IncidentSettings.CreateImpact(ctx, components.PostV1SeverityMatrixImpacts{
+    res, err := s.IncidentSettings.CreateSeverityMatrixImpact(ctx, components.CreateSeverityMatrixImpact{
         AffectsType: "<value>",
         AffectsID: "<id>",
     })
     if err != nil {
         log.Fatal(err)
     }
-    if res.SeverityMatrixImpactEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -2391,27 +2208,21 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `ctx`                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                            | :heavy_check_mark:                                                                               | The context to use for the request.                                                              |
-| `request`                                                                                        | [components.PostV1SeverityMatrixImpacts](../../models/components/postv1severitymatriximpacts.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
-| `opts`                                                                                           | [][operations.Option](../../models/operations/option.md)                                         | :heavy_minus_sign:                                                                               | The options for this request.                                                                    |
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                          | :heavy_check_mark:                                                                             | The context to use for the request.                                                            |
+| `request`                                                                                      | [components.CreateSeverityMatrixImpact](../../models/components/createseveritymatriximpact.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| `opts`                                                                                         | [][operations.Option](../../models/operations/option.md)                                       | :heavy_minus_sign:                                                                             | The options for this request.                                                                  |
 
 ### Response
 
-**[*operations.CreateSeverityMatrixImpactResponse](../../models/operations/createseveritymatriximpactresponse.md), error**
+**[*components.SeverityMatrixImpactEntity](../../models/components/severitymatriximpactentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## DeleteSeverityMatrixImpact
 
@@ -2425,21 +2236,24 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
     res, err := s.IncidentSettings.DeleteSeverityMatrixImpact(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
     }
-    if res.SeverityMatrixImpactEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -2455,23 +2269,17 @@ func main() {
 
 ### Response
 
-**[*operations.DeleteSeverityMatrixImpactResponse](../../models/operations/deleteseveritymatriximpactresponse.md), error**
+**[*components.SeverityMatrixImpactEntity](../../models/components/severitymatriximpactentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## UpdateImpact
+## UpdateSeverityMatrixImpact
 
-Update a specific impact
+Update a severity matrix impact
 
 ### Example Usage
 
@@ -2487,16 +2295,18 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.IncidentSettings.UpdateImpact(ctx, "<id>", components.PatchV1SeverityMatrixImpactsImpactID{})
+    res, err := s.IncidentSettings.UpdateSeverityMatrixImpact(ctx, "<id>", components.UpdateSeverityMatrixImpact{})
     if err != nil {
         log.Fatal(err)
     }
-    if res.SeverityMatrixImpactEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -2504,32 +2314,26 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `ctx`                                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                                              | :heavy_check_mark:                                                                                                 | The context to use for the request.                                                                                |
-| `impactID`                                                                                                         | *string*                                                                                                           | :heavy_check_mark:                                                                                                 | N/A                                                                                                                |
-| `patchV1SeverityMatrixImpactsImpactID`                                                                             | [components.PatchV1SeverityMatrixImpactsImpactID](../../models/components/patchv1severitymatriximpactsimpactid.md) | :heavy_check_mark:                                                                                                 | N/A                                                                                                                |
-| `opts`                                                                                                             | [][operations.Option](../../models/operations/option.md)                                                           | :heavy_minus_sign:                                                                                                 | The options for this request.                                                                                      |
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                          | :heavy_check_mark:                                                                             | The context to use for the request.                                                            |
+| `impactID`                                                                                     | *string*                                                                                       | :heavy_check_mark:                                                                             | N/A                                                                                            |
+| `updateSeverityMatrixImpact`                                                                   | [components.UpdateSeverityMatrixImpact](../../models/components/updateseveritymatriximpact.md) | :heavy_check_mark:                                                                             | N/A                                                                                            |
+| `opts`                                                                                         | [][operations.Option](../../models/operations/option.md)                                       | :heavy_minus_sign:                                                                             | The options for this request.                                                                  |
 
 ### Response
 
-**[*operations.UpdateSeverityMatrixImpactResponse](../../models/operations/updateseveritymatriximpactresponse.md), error**
+**[*components.SeverityMatrixImpactEntity](../../models/components/severitymatriximpactentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## ListTicketingPriorities
+## DeleteCustomFieldDefinition
 
-List all ticketing priorities available to the organization
+Delete a custom field definition
 
 ### Example Usage
 
@@ -2539,21 +2343,131 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.IncidentSettings.ListTicketingPriorities(ctx)
+    res, err := s.IncidentSettings.DeleteCustomFieldDefinition(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
     }
-    if res.TicketingPriorityEntity != nil {
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `fieldID`                                                | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.OrganizationsCustomFieldDefinitionEntity](../../models/components/organizationscustomfielddefinitionentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## UpdateCustomFieldDefinition
+
+Update a single custom field definition
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.IncidentSettings.UpdateCustomFieldDefinition(ctx, "<id>", components.UpdateCustomFieldDefinition{})
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                            | :heavy_check_mark:                                                                               | The context to use for the request.                                                              |
+| `fieldID`                                                                                        | *string*                                                                                         | :heavy_check_mark:                                                                               | N/A                                                                                              |
+| `updateCustomFieldDefinition`                                                                    | [components.UpdateCustomFieldDefinition](../../models/components/updatecustomfielddefinition.md) | :heavy_check_mark:                                                                               | N/A                                                                                              |
+| `opts`                                                                                           | [][operations.Option](../../models/operations/option.md)                                         | :heavy_minus_sign:                                                                               | The options for this request.                                                                    |
+
+### Response
+
+**[*components.OrganizationsCustomFieldDefinitionEntity](../../models/components/organizationscustomfielddefinitionentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## ListCustomFieldDefinitions
+
+List all custom field definitions
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.IncidentSettings.ListCustomFieldDefinitions(ctx)
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
         // handle response
     }
 }
@@ -2568,23 +2482,17 @@ func main() {
 
 ### Response
 
-**[*operations.ListTicketingPrioritiesResponse](../../models/operations/listticketingprioritiesresponse.md), error**
+**[*components.OrganizationsCustomFieldDefinitionEntity](../../models/components/organizationscustomfielddefinitionentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## CreateTicketingPriority
+## CreateCustomFieldDefinition
 
-Create a single ticketing priority
+Create a new custom field definition
 
 ### Example Usage
 
@@ -2600,18 +2508,22 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.IncidentSettings.CreateTicketingPriority(ctx, components.PostV1TicketingPriorities{
-        Name: "<value>",
+    res, err := s.IncidentSettings.CreateCustomFieldDefinition(ctx, components.CreateCustomFieldDefinition{
+        DisplayName: "Meredith_Gibson",
+        FieldType: "<value>",
+        Required: true,
     })
     if err != nil {
         log.Fatal(err)
     }
-    if res.TicketingPriorityEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -2619,24 +2531,126 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                        | :heavy_check_mark:                                                                           | The context to use for the request.                                                          |
-| `request`                                                                                    | [components.PostV1TicketingPriorities](../../models/components/postv1ticketingpriorities.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
-| `opts`                                                                                       | [][operations.Option](../../models/operations/option.md)                                     | :heavy_minus_sign:                                                                           | The options for this request.                                                                |
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                            | :heavy_check_mark:                                                                               | The context to use for the request.                                                              |
+| `request`                                                                                        | [components.CreateCustomFieldDefinition](../../models/components/createcustomfielddefinition.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
+| `opts`                                                                                           | [][operations.Option](../../models/operations/option.md)                                         | :heavy_minus_sign:                                                                               | The options for this request.                                                                    |
 
 ### Response
 
-**[*operations.CreateTicketingPriorityResponse](../../models/operations/createticketingpriorityresponse.md), error**
+**[*components.OrganizationsCustomFieldDefinitionEntity](../../models/components/organizationscustomfielddefinitionentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## ListCustomFieldSelectOptions
+
+Get the permissible values for the a currently active custom select or multi-select field.
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.IncidentSettings.ListCustomFieldSelectOptions(ctx, "<id>", nil, nil)
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `ctx`                                                        | [context.Context](https://pkg.go.dev/context#Context)        | :heavy_check_mark:                                           | The context to use for the request.                          |
+| `fieldID`                                                    | *string*                                                     | :heavy_check_mark:                                           | N/A                                                          |
+| `query`                                                      | **string*                                                    | :heavy_minus_sign:                                           | Text string of a query for filtering values.                 |
+| `allVersions`                                                | **bool*                                                      | :heavy_minus_sign:                                           | If true, return all versions of the custom field definition. |
+| `opts`                                                       | [][operations.Option](../../models/operations/option.md)     | :heavy_minus_sign:                                           | The options for this request.                                |
+
+### Response
+
+**[*components.OrganizationsCustomFieldDefinitionEntity](../../models/components/organizationscustomfielddefinitionentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## GetFormConfiguration
+
+Get a form configuration
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.IncidentSettings.GetFormConfiguration(ctx, "<value>")
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `slug`                                                   | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.FormConfigurationEntity](../../models/components/formconfigurationentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |

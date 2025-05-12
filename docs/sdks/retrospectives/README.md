@@ -7,24 +7,40 @@ Operations related to Retrospectives
 
 ### Available Operations
 
-* [ListQuestions](#listquestions) - List retrospective questions
-* [UpdateQuestions](#updatequestions) - Update retrospective questions
-* [GetQuestion](#getquestion) - Get a retrospective question
-* [ListReports](#listreports) - List retrospective reports
-* [CreateReport](#createreport) - Create a retrospective report
-* [GetReport](#getreport) - Get a retrospective report
-* [UpdateReport](#updatereport) - Update a retrospective report
-* [UpdateField](#updatefield) - Update a retrospective field
-* [PublishReport](#publishreport) - Publish a retrospective report
-* [ListReportReasons](#listreportreasons) - List contributing factors for a retrospective report
-* [CreateReason](#createreason) - Create a contributing factor for a retrospective report
-* [UpdateReportReasonOrder](#updatereportreasonorder) - Update the order of contributing factors in a retrospective report
-* [DeleteReason](#deletereason) - Delete a contributing factor from a retrospective report
-* [UpdateReason](#updatereason) - Update a contributing factor in a retrospective report
+* [ShareIncidentRetrospectives](#shareincidentretrospectives) - Share an incident's retrospective
+* [ExportIncidentRetrospectives](#exportincidentretrospectives) - Export an incident's retrospective(s)
+* [ListIncidentRetrospectives](#listincidentretrospectives) - All attached retrospectives for an incident
+* [CreateIncidentRetrospective](#createincidentretrospective) - Create a new retrospective on the incident using the template
+* [UpdateIncidentRetrospective](#updateincidentretrospective) - Update a retrospective on the incident
+* [CreateIncidentRetrospectiveField](#createincidentretrospectivefield) - Appends a new incident retrospective field to an incident retrospective
+* [GetIncidentRetrospectiveField](#getincidentretrospectivefield) - Get a retrospective field
+* [UpdateIncidentRetrospectiveField](#updateincidentretrospectivefield) - Update the value on a retrospective field
+* [CreateIncidentRetrospectiveDynamicInput](#createincidentretrospectivedynamicinput) - Add a new dynamic input field to a retrospective's dynamic input group field
+* [DeleteIncidentRetrospectiveDynamicInput](#deleteincidentretrospectivedynamicinput) - Removes a dynamic input from a retrospective's dynamic input group field
+* [ListRetrospectives](#listretrospectives) - List retrospective reports
+* [ListPostMortemReports](#listpostmortemreports) - List retrospective reports
+* [CreatePostMortemReport](#createpostmortemreport) - Create a retrospective report
+* [GetPostMortemReport](#getpostmortemreport) - Get a retrospective report
+* [UpdatePostMortemReport](#updatepostmortemreport) - Update a retrospective report
+* [ListPostMortemReasons](#listpostmortemreasons) - List contributing factors for a retrospective report
+* [CreatePostMortemReason](#createpostmortemreason) - Create a contributing factor for a retrospective report
+* [DeletePostMortemReason](#deletepostmortemreason) - Delete a contributing factor from a retrospective report
+* [UpdatePostMortemReason](#updatepostmortemreason) - Update a contributing factor in a retrospective report
+* [ReorderPostMortemReasons](#reorderpostmortemreasons) - Reorder a contributing factor for a retrospective report
+* [PublishPostMortemReport](#publishpostmortemreport) - Publish a retrospective report
+* [UpdatePostMortemField](#updatepostmortemfield) - Update a retrospective field
+* [ListPostMortemQuestions](#listpostmortemquestions) - List retrospective questions
+* [UpdatePostMortemQuestions](#updatepostmortemquestions) - Update retrospective questions
+* [GetPostMortemQuestion](#getpostmortemquestion) - Get a retrospective question
+* [ListRetrospectiveTemplates](#listretrospectivetemplates) - List retrospective templates
+* [CreateRetrospectiveTemplate](#createretrospectivetemplate) - Create a retrospective template
+* [GetRetrospectiveTemplate](#getretrospectivetemplate) - Get a retrospective template
+* [DeleteRetrospectiveTemplate](#deleteretrospectivetemplate) - Delete a retrospective template
+* [UpdateRetrospectiveTemplate](#updateretrospectivetemplate) - Update a retrospective template
 
-## ListQuestions
+## ShareIncidentRetrospectives
 
-List the questions configured to be provided and filled out on each retrospective report.
+Share incident retrospectives with users or teams
 
 ### Example Usage
 
@@ -34,21 +50,29 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
+	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Retrospectives.ListQuestions(ctx, nil, nil)
+    res, err := s.Retrospectives.ShareIncidentRetrospectives(ctx, "<id>", operations.ShareIncidentRetrospectivesRequestBody{
+        RetrospectiveIds: []string{
+            "<value>",
+        },
+    })
     if err != nil {
         log.Fatal(err)
     }
-    if res.PostMortemsQuestionTypeEntityPaginated != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -56,32 +80,83 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
-| `page`                                                   | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
-| `perPage`                                                | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
-| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                                                  | :heavy_check_mark:                                                                                                     | The context to use for the request.                                                                                    |
+| `incidentID`                                                                                                           | *string*                                                                                                               | :heavy_check_mark:                                                                                                     | N/A                                                                                                                    |
+| `requestBody`                                                                                                          | [operations.ShareIncidentRetrospectivesRequestBody](../../models/operations/shareincidentretrospectivesrequestbody.md) | :heavy_check_mark:                                                                                                     | N/A                                                                                                                    |
+| `opts`                                                                                                                 | [][operations.Option](../../models/operations/option.md)                                                               | :heavy_minus_sign:                                                                                                     | The options for this request.                                                                                          |
 
 ### Response
 
-**[*operations.ListRetrospectiveQuestionsResponse](../../models/operations/listretrospectivequestionsresponse.md), error**
+**[*components.IncidentsShareRetrospectivesResultEntity](../../models/components/incidentsshareretrospectivesresultentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## UpdateQuestions
+## ExportIncidentRetrospectives
 
-Update the questions configured to be provided and filled out on future retrospective reports.
+Export incident's retrospective(s) using their templates
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"firehydrant/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Retrospectives.ExportIncidentRetrospectives(ctx, "<id>", operations.ExportIncidentRetrospectivesRequestBody{
+        IntegrationSlug: operations.IntegrationSlugGoogleDocs,
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
+| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                                    | :heavy_check_mark:                                                                                                       | The context to use for the request.                                                                                      |
+| `incidentID`                                                                                                             | *string*                                                                                                                 | :heavy_check_mark:                                                                                                       | N/A                                                                                                                      |
+| `requestBody`                                                                                                            | [operations.ExportIncidentRetrospectivesRequestBody](../../models/operations/exportincidentretrospectivesrequestbody.md) | :heavy_check_mark:                                                                                                       | N/A                                                                                                                      |
+| `opts`                                                                                                                   | [][operations.Option](../../models/operations/option.md)                                                                 | :heavy_minus_sign:                                                                                                       | The options for this request.                                                                                            |
+
+### Response
+
+**[*components.IncidentsExportRetrospectivesResultEntity](../../models/components/incidentsexportretrospectivesresultentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## ListIncidentRetrospectives
+
+Retrieve retrospectives attached to an incident
 
 ### Example Usage
 
@@ -97,68 +172,14 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Retrospectives.UpdateQuestions(ctx, components.PutV1PostMortemsQuestions{})
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.PostMortemsQuestionTypeEntity != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                        | :heavy_check_mark:                                                                           | The context to use for the request.                                                          |
-| `request`                                                                                    | [components.PutV1PostMortemsQuestions](../../models/components/putv1postmortemsquestions.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
-| `opts`                                                                                       | [][operations.Option](../../models/operations/option.md)                                     | :heavy_minus_sign:                                                                           | The options for this request.                                                                |
-
-### Response
-
-**[*operations.UpdateRetrospectiveQuestionsResponse](../../models/operations/updateretrospectivequestionsresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## GetQuestion
-
-Get an incident retrospective question
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Retrospectives.GetQuestion(ctx, "<id>")
+    res, err := s.Retrospectives.ListIncidentRetrospectives(ctx, "<id>", nil, nil, nil)
     if err != nil {
         log.Fatal(err)
     }
@@ -173,28 +194,25 @@ func main() {
 | Parameter                                                | Type                                                     | Required                                                 | Description                                              |
 | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
 | `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
-| `questionID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `incidentID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `page`                                                   | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
+| `perPage`                                                | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
+| `isHidden`                                               | **bool*                                                  | :heavy_minus_sign:                                       | Filter by hidden status.                                 |
 | `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
 
 ### Response
 
-**[*operations.GetRetrospectiveQuestionResponse](../../models/operations/getretrospectivequestionresponse.md), error**
+**[*components.IncidentsRetrospectiveEntityPaginated](../../models/components/incidentsretrospectiveentitypaginated.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## ListReports
+## CreateIncidentRetrospective
 
-List all reports
+Create a new retrospective for an incident
 
 ### Example Usage
 
@@ -204,21 +222,419 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
+	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Retrospectives.ListReports(ctx, nil, nil, nil, nil)
+    res, err := s.Retrospectives.CreateIncidentRetrospective(ctx, "<id>", operations.CreateIncidentRetrospectiveRequestBody{
+        RetrospectiveTemplateID: "<id>",
+    })
     if err != nil {
         log.Fatal(err)
     }
-    if res.PostMortemsPostMortemReportEntityPaginated != nil {
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                                                  | :heavy_check_mark:                                                                                                     | The context to use for the request.                                                                                    |
+| `incidentID`                                                                                                           | *string*                                                                                                               | :heavy_check_mark:                                                                                                     | N/A                                                                                                                    |
+| `requestBody`                                                                                                          | [operations.CreateIncidentRetrospectiveRequestBody](../../models/operations/createincidentretrospectiverequestbody.md) | :heavy_check_mark:                                                                                                     | N/A                                                                                                                    |
+| `opts`                                                                                                                 | [][operations.Option](../../models/operations/option.md)                                                               | :heavy_minus_sign:                                                                                                     | The options for this request.                                                                                          |
+
+### Response
+
+**[*components.IncidentsRetrospectiveEntity](../../models/components/incidentsretrospectiveentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## UpdateIncidentRetrospective
+
+Update a retrospective attached to an incident
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Retrospectives.UpdateIncidentRetrospective(ctx, "<id>", "<id>", components.UpdateIncidentRetrospective{})
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                            | :heavy_check_mark:                                                                               | The context to use for the request.                                                              |
+| `retrospectiveID`                                                                                | *string*                                                                                         | :heavy_check_mark:                                                                               | N/A                                                                                              |
+| `incidentID`                                                                                     | *string*                                                                                         | :heavy_check_mark:                                                                               | N/A                                                                                              |
+| `updateIncidentRetrospective`                                                                    | [components.UpdateIncidentRetrospective](../../models/components/updateincidentretrospective.md) | :heavy_check_mark:                                                                               | N/A                                                                                              |
+| `opts`                                                                                           | [][operations.Option](../../models/operations/option.md)                                         | :heavy_minus_sign:                                                                               | The options for this request.                                                                    |
+
+### Response
+
+**[*components.IncidentsRetrospectiveEntity](../../models/components/incidentsretrospectiveentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## CreateIncidentRetrospectiveField
+
+Add a new field to an incident retrospective
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"firehydrant/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Retrospectives.CreateIncidentRetrospectiveField(ctx, "<id>", "<id>", operations.CreateIncidentRetrospectiveFieldRequestBody{
+        Label: "<value>",
+        Type: operations.CreateIncidentRetrospectiveFieldTypeDynamicInputGroup,
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
+| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                                                            | :heavy_check_mark:                                                                                                               | The context to use for the request.                                                                                              |
+| `retrospectiveID`                                                                                                                | *string*                                                                                                                         | :heavy_check_mark:                                                                                                               | N/A                                                                                                                              |
+| `incidentID`                                                                                                                     | *string*                                                                                                                         | :heavy_check_mark:                                                                                                               | N/A                                                                                                                              |
+| `requestBody`                                                                                                                    | [operations.CreateIncidentRetrospectiveFieldRequestBody](../../models/operations/createincidentretrospectivefieldrequestbody.md) | :heavy_check_mark:                                                                                                               | N/A                                                                                                                              |
+| `opts`                                                                                                                           | [][operations.Option](../../models/operations/option.md)                                                                         | :heavy_minus_sign:                                                                                                               | The options for this request.                                                                                                    |
+
+### Response
+
+**[*components.IncidentsRetrospectiveFieldEntity](../../models/components/incidentsretrospectivefieldentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## GetIncidentRetrospectiveField
+
+Retrieve a field on an incident retrospective
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Retrospectives.GetIncidentRetrospectiveField(ctx, "<id>", "<id>", "<id>")
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `retrospectiveID`                                        | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `fieldID`                                                | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `incidentID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.IncidentsRetrospectiveFieldEntity](../../models/components/incidentsretrospectivefieldentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## UpdateIncidentRetrospectiveField
+
+Update retrospective field value
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Retrospectives.UpdateIncidentRetrospectiveField(ctx, "<id>", "<id>", "<id>", components.UpdateIncidentRetrospectiveField{
+        Value: 168058,
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                      | [context.Context](https://pkg.go.dev/context#Context)                                                      | :heavy_check_mark:                                                                                         | The context to use for the request.                                                                        |
+| `retrospectiveID`                                                                                          | *string*                                                                                                   | :heavy_check_mark:                                                                                         | N/A                                                                                                        |
+| `fieldID`                                                                                                  | *string*                                                                                                   | :heavy_check_mark:                                                                                         | N/A                                                                                                        |
+| `incidentID`                                                                                               | *string*                                                                                                   | :heavy_check_mark:                                                                                         | N/A                                                                                                        |
+| `updateIncidentRetrospectiveField`                                                                         | [components.UpdateIncidentRetrospectiveField](../../models/components/updateincidentretrospectivefield.md) | :heavy_check_mark:                                                                                         | N/A                                                                                                        |
+| `opts`                                                                                                     | [][operations.Option](../../models/operations/option.md)                                                   | :heavy_minus_sign:                                                                                         | The options for this request.                                                                              |
+
+### Response
+
+**[*components.IncidentsRetrospectiveFieldEntity](../../models/components/incidentsretrospectivefieldentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## CreateIncidentRetrospectiveDynamicInput
+
+Add a new dynamic input field to a dynamic input group
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Retrospectives.CreateIncidentRetrospectiveDynamicInput(ctx, "<id>", "<id>", "<id>")
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `retrospectiveID`                                        | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `fieldID`                                                | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `incidentID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.IncidentsRetrospectiveFieldEntity](../../models/components/incidentsretrospectivefieldentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## DeleteIncidentRetrospectiveDynamicInput
+
+Delete a dynamic input on a dynamic input group
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Retrospectives.DeleteIncidentRetrospectiveDynamicInput(ctx, "<id>", "<id>", "<id>", "<id>")
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `retrospectiveID`                                        | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `fieldID`                                                | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `dynamicInputFieldID`                                    | *string*                                                 | :heavy_check_mark:                                       | The ID of the dynamic input field to delete.             |
+| `incidentID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.IncidentsRetrospectiveFieldEntity](../../models/components/incidentsretrospectivefieldentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## ListRetrospectives
+
+List all retrospective reports
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Retrospectives.ListRetrospectives(ctx, nil, nil, nil, nil)
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
         // handle response
     }
 }
@@ -237,21 +653,71 @@ func main() {
 
 ### Response
 
-**[*operations.ListRetrospectiveReportsResponse](../../models/operations/listretrospectivereportsresponse.md), error**
+**[*components.IncidentsRetrospectiveEntityPaginated](../../models/components/incidentsretrospectiveentitypaginated.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## CreateReport
+## ListPostMortemReports
+
+List all reports
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Retrospectives.ListPostMortemReports(ctx, nil, nil, nil, nil)
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `ctx`                                                        | [context.Context](https://pkg.go.dev/context#Context)        | :heavy_check_mark:                                           | The context to use for the request.                          |
+| `page`                                                       | **int*                                                       | :heavy_minus_sign:                                           | N/A                                                          |
+| `perPage`                                                    | **int*                                                       | :heavy_minus_sign:                                           | N/A                                                          |
+| `incidentID`                                                 | **string*                                                    | :heavy_minus_sign:                                           | Filter the reports by an incident ID                         |
+| `updatedSince`                                               | [*time.Time](https://pkg.go.dev/time#Time)                   | :heavy_minus_sign:                                           | Filter for reports updated after the given ISO8601 timestamp |
+| `opts`                                                       | [][operations.Option](../../models/operations/option.md)     | :heavy_minus_sign:                                           | The options for this request.                                |
+
+### Response
+
+**[*components.PostMortemsPostMortemReportEntityPaginated](../../models/components/postmortemspostmortemreportentitypaginated.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## CreatePostMortemReport
 
 Create a report
 
@@ -269,18 +735,20 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Retrospectives.CreateReport(ctx, components.PostV1PostMortemsReports{
+    res, err := s.Retrospectives.CreatePostMortemReport(ctx, components.CreatePostMortemReport{
         IncidentID: "<id>",
     })
     if err != nil {
         log.Fatal(err)
     }
-    if res.PostMortemsPostMortemReportEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -288,29 +756,23 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `ctx`                                                                                      | [context.Context](https://pkg.go.dev/context#Context)                                      | :heavy_check_mark:                                                                         | The context to use for the request.                                                        |
-| `request`                                                                                  | [components.PostV1PostMortemsReports](../../models/components/postv1postmortemsreports.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
-| `opts`                                                                                     | [][operations.Option](../../models/operations/option.md)                                   | :heavy_minus_sign:                                                                         | The options for this request.                                                              |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `ctx`                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                  | :heavy_check_mark:                                                                     | The context to use for the request.                                                    |
+| `request`                                                                              | [components.CreatePostMortemReport](../../models/components/createpostmortemreport.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| `opts`                                                                                 | [][operations.Option](../../models/operations/option.md)                               | :heavy_minus_sign:                                                                     | The options for this request.                                                          |
 
 ### Response
 
-**[*operations.CreateRetrospectiveReportResponse](../../models/operations/createretrospectivereportresponse.md), error**
+**[*components.PostMortemsPostMortemReportEntity](../../models/components/postmortemspostmortemreportentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## GetReport
+## GetPostMortemReport
 
 Get a report
 
@@ -322,21 +784,24 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Retrospectives.GetReport(ctx, "<id>")
+    res, err := s.Retrospectives.GetPostMortemReport(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
     }
-    if res.PostMortemsPostMortemReportEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -352,21 +817,15 @@ func main() {
 
 ### Response
 
-**[*operations.GetPostMortemReportResponse](../../models/operations/getpostmortemreportresponse.md), error**
+**[*components.PostMortemsPostMortemReportEntity](../../models/components/postmortemspostmortemreportentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## UpdateReport
+## UpdatePostMortemReport
 
 Update a report
 
@@ -384,16 +843,18 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Retrospectives.UpdateReport(ctx, "<id>", components.PatchV1PostMortemsReportsReportID{})
+    res, err := s.Retrospectives.UpdatePostMortemReport(ctx, "<id>", components.UpdatePostMortemReport{})
     if err != nil {
         log.Fatal(err)
     }
-    if res.PostMortemsPostMortemReportEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -401,150 +862,24 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `ctx`                                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                                        | :heavy_check_mark:                                                                                           | The context to use for the request.                                                                          |
-| `reportID`                                                                                                   | *string*                                                                                                     | :heavy_check_mark:                                                                                           | N/A                                                                                                          |
-| `patchV1PostMortemsReportsReportID`                                                                          | [components.PatchV1PostMortemsReportsReportID](../../models/components/patchv1postmortemsreportsreportid.md) | :heavy_check_mark:                                                                                           | N/A                                                                                                          |
-| `opts`                                                                                                       | [][operations.Option](../../models/operations/option.md)                                                     | :heavy_minus_sign:                                                                                           | The options for this request.                                                                                |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `ctx`                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                  | :heavy_check_mark:                                                                     | The context to use for the request.                                                    |
+| `reportID`                                                                             | *string*                                                                               | :heavy_check_mark:                                                                     | N/A                                                                                    |
+| `updatePostMortemReport`                                                               | [components.UpdatePostMortemReport](../../models/components/updatepostmortemreport.md) | :heavy_check_mark:                                                                     | N/A                                                                                    |
+| `opts`                                                                                 | [][operations.Option](../../models/operations/option.md)                               | :heavy_minus_sign:                                                                     | The options for this request.                                                          |
 
 ### Response
 
-**[*operations.UpdatePostMortemReportResponse](../../models/operations/updatepostmortemreportresponse.md), error**
+**[*components.PostMortemsPostMortemReportEntity](../../models/components/postmortemspostmortemreportentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## UpdateField
-
-Update a field value on a post mortem report
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"firehydrant/models/components"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Retrospectives.UpdateField(ctx, "<id>", "<id>", components.PatchV1PostMortemsReportsReportIDFieldsFieldID{
-        Value: "<value>",
-    })
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.PostMortemsSectionFieldEntity != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                                              | Type                                                                                                                                   | Required                                                                                                                               | Description                                                                                                                            |
-| -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                                                                  | :heavy_check_mark:                                                                                                                     | The context to use for the request.                                                                                                    |
-| `fieldID`                                                                                                                              | *string*                                                                                                                               | :heavy_check_mark:                                                                                                                     | N/A                                                                                                                                    |
-| `reportID`                                                                                                                             | *string*                                                                                                                               | :heavy_check_mark:                                                                                                                     | N/A                                                                                                                                    |
-| `patchV1PostMortemsReportsReportIDFieldsFieldID`                                                                                       | [components.PatchV1PostMortemsReportsReportIDFieldsFieldID](../../models/components/patchv1postmortemsreportsreportidfieldsfieldid.md) | :heavy_check_mark:                                                                                                                     | N/A                                                                                                                                    |
-| `opts`                                                                                                                                 | [][operations.Option](../../models/operations/option.md)                                                                               | :heavy_minus_sign:                                                                                                                     | The options for this request.                                                                                                          |
-
-### Response
-
-**[*operations.UpdateRetrospectiveFieldResponse](../../models/operations/updateretrospectivefieldresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## PublishReport
-
-Marks an incident retrospective as published and emails all of the participants in the report the summary
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"firehydrant/models/components"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Retrospectives.PublishReport(ctx, "<id>", components.PostV1PostMortemsReportsReportIDPublish{})
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.PostMortemsPostMortemReportEntity != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
-| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `ctx`                                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                                    | :heavy_check_mark:                                                                                                       | The context to use for the request.                                                                                      |
-| `reportID`                                                                                                               | *string*                                                                                                                 | :heavy_check_mark:                                                                                                       | N/A                                                                                                                      |
-| `postV1PostMortemsReportsReportIDPublish`                                                                                | [components.PostV1PostMortemsReportsReportIDPublish](../../models/components/postv1postmortemsreportsreportidpublish.md) | :heavy_check_mark:                                                                                                       | N/A                                                                                                                      |
-| `opts`                                                                                                                   | [][operations.Option](../../models/operations/option.md)                                                                 | :heavy_minus_sign:                                                                                                       | The options for this request.                                                                                            |
-
-### Response
-
-**[*operations.PublishRetrospectiveReportResponse](../../models/operations/publishretrospectivereportresponse.md), error**
-
-### Errors
-
-| Error Type                    | Status Code                   | Content Type                  |
-| ----------------------------- | ----------------------------- | ----------------------------- |
-| sdkerrors.ErrorEntity         | 400                           | application/json              |
-| sdkerrors.Unauthorized        | 401, 403, 407, 511            | application/json              |
-| sdkerrors.NotFound            | 404, 501, 505                 | application/json              |
-| sdkerrors.Timeout             | 408, 504                      | application/json              |
-| sdkerrors.BadRequest          | 413, 414, 415, 422, 431, 510  | application/json              |
-| sdkerrors.RateLimited         | 429                           | application/json              |
-| sdkerrors.InternalServerError | 500, 502, 503, 506, 507, 508  | application/json              |
-| sdkerrors.SDKError            | 4XX, 5XX                      | \*/\*                         |
-
-## ListReportReasons
+## ListPostMortemReasons
 
 List all contributing factors to an incident
 
@@ -556,21 +891,24 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Retrospectives.ListReportReasons(ctx, "<id>", nil, nil)
+    res, err := s.Retrospectives.ListPostMortemReasons(ctx, "<id>", nil, nil)
     if err != nil {
         log.Fatal(err)
     }
-    if res.PostMortemsReasonEntityPaginated != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -588,21 +926,15 @@ func main() {
 
 ### Response
 
-**[*operations.ListRetrospectiveReportReasonsResponse](../../models/operations/listretrospectivereportreasonsresponse.md), error**
+**[*components.PostMortemsReasonEntityPaginated](../../models/components/postmortemsreasonentitypaginated.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## CreateReason
+## CreatePostMortemReason
 
 Add a new contributing factor to an incident
 
@@ -620,18 +952,20 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Retrospectives.CreateReason(ctx, "<id>", components.PostV1PostMortemsReportsReportIDReasons{
+    res, err := s.Retrospectives.CreatePostMortemReason(ctx, "<id>", components.CreatePostMortemReason{
         Summary: "<value>",
     })
     if err != nil {
         log.Fatal(err)
     }
-    if res.PostMortemsReasonEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -639,32 +973,26 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
-| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `ctx`                                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                                    | :heavy_check_mark:                                                                                                       | The context to use for the request.                                                                                      |
-| `reportID`                                                                                                               | *string*                                                                                                                 | :heavy_check_mark:                                                                                                       | N/A                                                                                                                      |
-| `postV1PostMortemsReportsReportIDReasons`                                                                                | [components.PostV1PostMortemsReportsReportIDReasons](../../models/components/postv1postmortemsreportsreportidreasons.md) | :heavy_check_mark:                                                                                                       | N/A                                                                                                                      |
-| `opts`                                                                                                                   | [][operations.Option](../../models/operations/option.md)                                                                 | :heavy_minus_sign:                                                                                                       | The options for this request.                                                                                            |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `ctx`                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                  | :heavy_check_mark:                                                                     | The context to use for the request.                                                    |
+| `reportID`                                                                             | *string*                                                                               | :heavy_check_mark:                                                                     | N/A                                                                                    |
+| `createPostMortemReason`                                                               | [components.CreatePostMortemReason](../../models/components/createpostmortemreason.md) | :heavy_check_mark:                                                                     | N/A                                                                                    |
+| `opts`                                                                                 | [][operations.Option](../../models/operations/option.md)                               | :heavy_minus_sign:                                                                     | The options for this request.                                                          |
 
 ### Response
 
-**[*operations.CreateRetrospectiveReportReasonResponse](../../models/operations/createretrospectivereportreasonresponse.md), error**
+**[*components.PostMortemsReasonEntity](../../models/components/postmortemsreasonentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## UpdateReportReasonOrder
+## DeletePostMortemReason
 
-Reorder a contributing factor
+Delete a contributing factor
 
 ### Example Usage
 
@@ -680,76 +1008,18 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Retrospectives.UpdateReportReasonOrder(ctx, "<id>", components.PutV1PostMortemsReportsReportIDReasonsOrder{
-        OldPosition: 868580,
-        NewPosition: 521651,
-    })
+    res, err := s.Retrospectives.DeletePostMortemReason(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
     }
-    if res.PostMortemsReasonEntity != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
-| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                                                            | :heavy_check_mark:                                                                                                               | The context to use for the request.                                                                                              |
-| `reportID`                                                                                                                       | *string*                                                                                                                         | :heavy_check_mark:                                                                                                               | N/A                                                                                                                              |
-| `putV1PostMortemsReportsReportIDReasonsOrder`                                                                                    | [components.PutV1PostMortemsReportsReportIDReasonsOrder](../../models/components/putv1postmortemsreportsreportidreasonsorder.md) | :heavy_check_mark:                                                                                                               | N/A                                                                                                                              |
-| `opts`                                                                                                                           | [][operations.Option](../../models/operations/option.md)                                                                         | :heavy_minus_sign:                                                                                                               | The options for this request.                                                                                                    |
-
-### Response
-
-**[*operations.UpdateRetrospectiveReportReasonOrderResponse](../../models/operations/updateretrospectivereportreasonorderresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## DeleteReason
-
-Delete a contributing factor
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Retrospectives.DeleteReason(ctx, "<id>", "<id>")
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.PostMortemsReasonEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -766,21 +1036,15 @@ func main() {
 
 ### Response
 
-**[*operations.DeleteRetrospectiveReasonResponse](../../models/operations/deleteretrospectivereasonresponse.md), error**
+**[*components.PostMortemsReasonEntity](../../models/components/postmortemsreasonentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## UpdateReason
+## UpdatePostMortemReason
 
 Update a contributing factor
 
@@ -798,16 +1062,18 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Retrospectives.UpdateReason(ctx, "<id>", "<id>", components.PatchV1PostMortemsReportsReportIDReasonsReasonID{})
+    res, err := s.Retrospectives.UpdatePostMortemReason(ctx, "<id>", "<id>", components.UpdatePostMortemReason{})
     if err != nil {
         log.Fatal(err)
     }
-    if res.PostMortemsReasonEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -815,26 +1081,642 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                                                  | Type                                                                                                                                       | Required                                                                                                                                   | Description                                                                                                                                |
-| ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `ctx`                                                                                                                                      | [context.Context](https://pkg.go.dev/context#Context)                                                                                      | :heavy_check_mark:                                                                                                                         | The context to use for the request.                                                                                                        |
-| `reportID`                                                                                                                                 | *string*                                                                                                                                   | :heavy_check_mark:                                                                                                                         | N/A                                                                                                                                        |
-| `reasonID`                                                                                                                                 | *string*                                                                                                                                   | :heavy_check_mark:                                                                                                                         | N/A                                                                                                                                        |
-| `patchV1PostMortemsReportsReportIDReasonsReasonID`                                                                                         | [components.PatchV1PostMortemsReportsReportIDReasonsReasonID](../../models/components/patchv1postmortemsreportsreportidreasonsreasonid.md) | :heavy_check_mark:                                                                                                                         | N/A                                                                                                                                        |
-| `opts`                                                                                                                                     | [][operations.Option](../../models/operations/option.md)                                                                                   | :heavy_minus_sign:                                                                                                                         | The options for this request.                                                                                                              |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `ctx`                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                  | :heavy_check_mark:                                                                     | The context to use for the request.                                                    |
+| `reportID`                                                                             | *string*                                                                               | :heavy_check_mark:                                                                     | N/A                                                                                    |
+| `reasonID`                                                                             | *string*                                                                               | :heavy_check_mark:                                                                     | N/A                                                                                    |
+| `updatePostMortemReason`                                                               | [components.UpdatePostMortemReason](../../models/components/updatepostmortemreason.md) | :heavy_check_mark:                                                                     | N/A                                                                                    |
+| `opts`                                                                                 | [][operations.Option](../../models/operations/option.md)                               | :heavy_minus_sign:                                                                     | The options for this request.                                                          |
 
 ### Response
 
-**[*operations.UpdateRetrospectiveReasonResponse](../../models/operations/updateretrospectivereasonresponse.md), error**
+**[*components.PostMortemsReasonEntity](../../models/components/postmortemsreasonentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## ReorderPostMortemReasons
+
+Update the order of contributing factors in a retrospective report
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Retrospectives.ReorderPostMortemReasons(ctx, "<id>", components.ReorderPostMortemReasons{
+        OldPosition: 735999,
+        NewPosition: 264317,
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                      | [context.Context](https://pkg.go.dev/context#Context)                                      | :heavy_check_mark:                                                                         | The context to use for the request.                                                        |
+| `reportID`                                                                                 | *string*                                                                                   | :heavy_check_mark:                                                                         | N/A                                                                                        |
+| `reorderPostMortemReasons`                                                                 | [components.ReorderPostMortemReasons](../../models/components/reorderpostmortemreasons.md) | :heavy_check_mark:                                                                         | N/A                                                                                        |
+| `opts`                                                                                     | [][operations.Option](../../models/operations/option.md)                                   | :heavy_minus_sign:                                                                         | The options for this request.                                                              |
+
+### Response
+
+**[*components.PostMortemsReasonEntity](../../models/components/postmortemsreasonentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## PublishPostMortemReport
+
+Marks an incident retrospective as published and emails all of the participants in the report the summary
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Retrospectives.PublishPostMortemReport(ctx, "<id>", components.PublishPostMortemReport{})
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `ctx`                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                    | :heavy_check_mark:                                                                       | The context to use for the request.                                                      |
+| `reportID`                                                                               | *string*                                                                                 | :heavy_check_mark:                                                                       | N/A                                                                                      |
+| `publishPostMortemReport`                                                                | [components.PublishPostMortemReport](../../models/components/publishpostmortemreport.md) | :heavy_check_mark:                                                                       | N/A                                                                                      |
+| `opts`                                                                                   | [][operations.Option](../../models/operations/option.md)                                 | :heavy_minus_sign:                                                                       | The options for this request.                                                            |
+
+### Response
+
+**[*components.PostMortemsPostMortemReportEntity](../../models/components/postmortemspostmortemreportentity.md), error**
+
+### Errors
+
+| Error Type            | Status Code           | Content Type          |
+| --------------------- | --------------------- | --------------------- |
+| sdkerrors.ErrorEntity | 400                   | application/json      |
+| sdkerrors.SDKError    | 4XX, 5XX              | \*/\*                 |
+
+## UpdatePostMortemField
+
+Update a field value on a post mortem report
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Retrospectives.UpdatePostMortemField(ctx, "<id>", "<id>", components.UpdatePostMortemField{
+        Value: "<value>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |
+| `fieldID`                                                                            | *string*                                                                             | :heavy_check_mark:                                                                   | N/A                                                                                  |
+| `reportID`                                                                           | *string*                                                                             | :heavy_check_mark:                                                                   | N/A                                                                                  |
+| `updatePostMortemField`                                                              | [components.UpdatePostMortemField](../../models/components/updatepostmortemfield.md) | :heavy_check_mark:                                                                   | N/A                                                                                  |
+| `opts`                                                                               | [][operations.Option](../../models/operations/option.md)                             | :heavy_minus_sign:                                                                   | The options for this request.                                                        |
+
+### Response
+
+**[*components.PostMortemsSectionFieldEntity](../../models/components/postmortemssectionfieldentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## ListPostMortemQuestions
+
+List the questions configured to be provided and filled out on each retrospective report.
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Retrospectives.ListPostMortemQuestions(ctx, nil, nil)
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `page`                                                   | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
+| `perPage`                                                | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.PostMortemsQuestionTypeEntityPaginated](../../models/components/postmortemsquestiontypeentitypaginated.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## UpdatePostMortemQuestions
+
+Update the questions configured to be provided and filled out on future retrospective reports.
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Retrospectives.UpdatePostMortemQuestions(ctx, components.UpdatePostMortemQuestions{})
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                        | :heavy_check_mark:                                                                           | The context to use for the request.                                                          |
+| `request`                                                                                    | [components.UpdatePostMortemQuestions](../../models/components/updatepostmortemquestions.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `opts`                                                                                       | [][operations.Option](../../models/operations/option.md)                                     | :heavy_minus_sign:                                                                           | The options for this request.                                                                |
+
+### Response
+
+**[*components.PostMortemsQuestionTypeEntity](../../models/components/postmortemsquestiontypeentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## GetPostMortemQuestion
+
+Get an incident retrospective question configured to be provided and filled out on each retrospective report.
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    err := s.Retrospectives.GetPostMortemQuestion(ctx, "<id>")
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `questionID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## ListRetrospectiveTemplates
+
+List all retrospective templates
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Retrospectives.ListRetrospectiveTemplates(ctx, nil, nil, nil)
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `page`                                                   | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
+| `perPage`                                                | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
+| `forIncident`                                            | **string*                                                | :heavy_minus_sign:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.RetrospectivesIndexTemplateEntityPaginated](../../models/components/retrospectivesindextemplateentitypaginated.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## CreateRetrospectiveTemplate
+
+Create a new retrospective template
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"firehydrant/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Retrospectives.CreateRetrospectiveTemplate(ctx, operations.CreateRetrospectiveTemplateRequest{
+        Name: "<value>",
+        Description: "second-hand ample mid bidet fooey",
+        SectionsSlug: []operations.SectionsSlug{
+            operations.SectionsSlugKeyData,
+            operations.SectionsSlugKeyData,
+            operations.SectionsSlugKeyData,
+        },
+        SectionsElements: []string{
+            "<value>",
+            "<value>",
+            "<value>",
+        },
+        FieldsLabel: []string{},
+        FieldsType: []operations.CreateRetrospectiveTemplateFieldsType{
+            operations.CreateRetrospectiveTemplateFieldsTypeMultiSelect,
+        },
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                                          | :heavy_check_mark:                                                                                             | The context to use for the request.                                                                            |
+| `request`                                                                                                      | [operations.CreateRetrospectiveTemplateRequest](../../models/operations/createretrospectivetemplaterequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
+| `opts`                                                                                                         | [][operations.Option](../../models/operations/option.md)                                                       | :heavy_minus_sign:                                                                                             | The options for this request.                                                                                  |
+
+### Response
+
+**[*components.RetrospectivesTemplateEntity](../../models/components/retrospectivestemplateentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## GetRetrospectiveTemplate
+
+Retrieve a single retrospective template by ID
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Retrospectives.GetRetrospectiveTemplate(ctx, "<id>")
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `retrospectiveTemplateID`                                | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.RetrospectivesTemplateEntity](../../models/components/retrospectivestemplateentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## DeleteRetrospectiveTemplate
+
+Delete a single retrospective template
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Retrospectives.DeleteRetrospectiveTemplate(ctx, "<id>")
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `retrospectiveTemplateID`                                | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.RetrospectivesTemplateEntity](../../models/components/retrospectivestemplateentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## UpdateRetrospectiveTemplate
+
+Update a single retrospective template
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"firehydrant/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Retrospectives.UpdateRetrospectiveTemplate(ctx, "<id>", operations.UpdateRetrospectiveTemplateRequestBody{
+        SectionsSlug: []string{},
+        SectionsElements: []string{
+            "<value>",
+            "<value>",
+            "<value>",
+        },
+        FieldsLabel: []string{},
+        FieldsType: []operations.UpdateRetrospectiveTemplateFieldsType{},
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                                                  | :heavy_check_mark:                                                                                                     | The context to use for the request.                                                                                    |
+| `retrospectiveTemplateID`                                                                                              | *string*                                                                                                               | :heavy_check_mark:                                                                                                     | N/A                                                                                                                    |
+| `requestBody`                                                                                                          | [operations.UpdateRetrospectiveTemplateRequestBody](../../models/operations/updateretrospectivetemplaterequestbody.md) | :heavy_check_mark:                                                                                                     | N/A                                                                                                                    |
+| `opts`                                                                                                                 | [][operations.Option](../../models/operations/option.md)                                                               | :heavy_minus_sign:                                                                                                     | The options for this request.                                                                                          |
+
+### Response
+
+**[*components.RetrospectivesTemplateEntity](../../models/components/retrospectivestemplateentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |

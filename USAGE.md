@@ -5,6 +5,7 @@ package main
 import (
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
@@ -12,14 +13,16 @@ func main() {
 	ctx := context.Background()
 
 	s := firehydrant.New(
-		firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+		firehydrant.WithSecurity(components.Security{
+			APIKey: "<YOUR_API_KEY_HERE>",
+		}),
 	)
 
-	res, err := s.AccountSettings.GetAiPreferences(ctx)
+	res, err := s.AccountSettings.Ping(ctx)
 	if err != nil {
 		log.Fatal(err)
 	}
-	if res.AIEntitiesPreferencesEntity != nil {
+	if res != nil {
 		// handle response
 	}
 }

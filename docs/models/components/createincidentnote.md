@@ -1,0 +1,13 @@
+# CreateIncidentNote
+
+Create a new note on for an incident. The visibility field on a note determines where it gets posted.
+
+
+## Fields
+
+| Field                                                                                                | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `Body`                                                                                               | *string*                                                                                             | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
+| `OccurredAt`                                                                                         | [*time.Time](https://pkg.go.dev/time#Time)                                                           | :heavy_minus_sign:                                                                                   | ISO8601 timestamp for when the note occurred                                                         |
+| `Visibility`                                                                                         | [*components.CreateIncidentNoteVisibility](../../models/components/createincidentnotevisibility.md)  | :heavy_minus_sign:                                                                                   | N/A                                                                                                  |
+| `StatusPages`                                                                                        | [][components.CreateIncidentNoteStatusPage](../../models/components/createincidentnotestatuspage.md) | :heavy_minus_sign:                                                                                   | N/A                                                                                                  |

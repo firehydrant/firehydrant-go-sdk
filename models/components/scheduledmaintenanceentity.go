@@ -13,16 +13,15 @@ type ScheduledMaintenanceEntityLabels struct {
 
 // ScheduledMaintenanceEntity model
 type ScheduledMaintenanceEntity struct {
-	ID          *string    `json:"id,omitempty"`
-	Name        *string    `json:"name,omitempty"`
-	Summary     *string    `json:"summary,omitempty"`
-	Description *string    `json:"description,omitempty"`
-	CreatedAt   *time.Time `json:"created_at,omitempty"`
-	UpdatedAt   *time.Time `json:"updated_at,omitempty"`
-	StartsAt    *time.Time `json:"starts_at,omitempty"`
-	EndsAt      *time.Time `json:"ends_at,omitempty"`
-	// IncidentEntity model
-	Incident    *IncidentEntity                         `json:"incident,omitempty"`
+	ID          *string                                 `json:"id,omitempty"`
+	Name        *string                                 `json:"name,omitempty"`
+	Summary     *string                                 `json:"summary,omitempty"`
+	Description *string                                 `json:"description,omitempty"`
+	CreatedAt   *time.Time                              `json:"created_at,omitempty"`
+	UpdatedAt   *time.Time                              `json:"updated_at,omitempty"`
+	StartsAt    *time.Time                              `json:"starts_at,omitempty"`
+	EndsAt      *time.Time                              `json:"ends_at,omitempty"`
+	Incident    *NullableIncidentEntity                 `json:"incident,omitempty"`
 	StatusPages []ScheduledMaintenancesStatusPageEntity `json:"status_pages,omitempty"`
 	Impacts     []ScheduledMaintenancesImpactEntity     `json:"impacts,omitempty"`
 	// An object of label key and values
@@ -96,7 +95,7 @@ func (o *ScheduledMaintenanceEntity) GetEndsAt() *time.Time {
 	return o.EndsAt
 }
 
-func (o *ScheduledMaintenanceEntity) GetIncident() *IncidentEntity {
+func (o *ScheduledMaintenanceEntity) GetIncident() *NullableIncidentEntity {
 	if o == nil {
 		return nil
 	}

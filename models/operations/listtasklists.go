@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type ListTaskListsRequest struct {
 	Page    *int `queryParam:"style=form,explode=true,name=page"`
 	PerPage *int `queryParam:"style=form,explode=true,name=per_page"`
@@ -23,24 +19,4 @@ func (o *ListTaskListsRequest) GetPerPage() *int {
 		return nil
 	}
 	return o.PerPage
-}
-
-type ListTaskListsResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Lists all task lists for your organization
-	TaskListEntity *components.TaskListEntity
-}
-
-func (o *ListTaskListsResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListTaskListsResponse) GetTaskListEntity() *components.TaskListEntity {
-	if o == nil {
-		return nil
-	}
-	return o.TaskListEntity
 }

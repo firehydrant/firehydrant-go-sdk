@@ -13,18 +13,18 @@ import (
 type IncidentEventEntityData struct {
 }
 
-type Visibility string
+type IncidentEventEntityVisibility string
 
 const (
-	VisibilityPrivateToOrg       Visibility = "private_to_org"
-	VisibilityOpenToPublic       Visibility = "open_to_public"
-	VisibilityInternalStatusPage Visibility = "internal_status_page"
+	IncidentEventEntityVisibilityPrivateToOrg       IncidentEventEntityVisibility = "private_to_org"
+	IncidentEventEntityVisibilityOpenToPublic       IncidentEventEntityVisibility = "open_to_public"
+	IncidentEventEntityVisibilityInternalStatusPage IncidentEventEntityVisibility = "internal_status_page"
 )
 
-func (e Visibility) ToPointer() *Visibility {
+func (e IncidentEventEntityVisibility) ToPointer() *IncidentEventEntityVisibility {
 	return &e
 }
-func (e *Visibility) UnmarshalJSON(data []byte) error {
+func (e *IncidentEventEntityVisibility) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -35,10 +35,10 @@ func (e *Visibility) UnmarshalJSON(data []byte) error {
 	case "open_to_public":
 		fallthrough
 	case "internal_status_page":
-		*e = Visibility(v)
+		*e = IncidentEventEntityVisibility(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for Visibility: %v", v)
+		return fmt.Errorf("invalid value for IncidentEventEntityVisibility: %v", v)
 	}
 }
 
@@ -49,12 +49,11 @@ type IncidentEventEntity struct {
 	Type       *string `json:"type,omitempty"`
 	Context    *string `json:"context,omitempty"`
 	// Can be one of: NoteEntity, TourStepEntity, RootCauseEntity, ChangeTypeEntity, RoleUpdateEntity, TaskUpdateEntity, AlertLinkedEntity, ChatMessageEntity, AddTaskListEntity, ImpactUpdateEntity, TicketUpdateEntity, GeneralUpdateEntity, ChangelogEntryEntity, IncidentStatusEntity, TeamAssignmentEntity, BulkUpdateEntity
-	Data       *IncidentEventEntityData `json:"data,omitempty"`
-	OccurredAt *time.Time               `json:"occurred_at,omitempty"`
-	Visibility *Visibility              `json:"visibility,omitempty"`
-	Author     *AuthorEntity            `json:"author,omitempty"`
-	// VotesEntity model
-	Votes         *VotesEntity                        `json:"votes,omitempty"`
+	Data          *IncidentEventEntityData            `json:"data,omitempty"`
+	OccurredAt    *time.Time                          `json:"occurred_at,omitempty"`
+	Visibility    *IncidentEventEntityVisibility      `json:"visibility,omitempty"`
+	Author        *NullableAuthorEntity               `json:"author,omitempty"`
+	Votes         *NullableVotesEntity                `json:"votes,omitempty"`
 	Conversations []ConversationsAPIEntitiesReference `json:"conversations,omitempty"`
 }
 
@@ -111,21 +110,21 @@ func (o *IncidentEventEntity) GetOccurredAt() *time.Time {
 	return o.OccurredAt
 }
 
-func (o *IncidentEventEntity) GetVisibility() *Visibility {
+func (o *IncidentEventEntity) GetVisibility() *IncidentEventEntityVisibility {
 	if o == nil {
 		return nil
 	}
 	return o.Visibility
 }
 
-func (o *IncidentEventEntity) GetAuthor() *AuthorEntity {
+func (o *IncidentEventEntity) GetAuthor() *NullableAuthorEntity {
 	if o == nil {
 		return nil
 	}
 	return o.Author
 }
 
-func (o *IncidentEventEntity) GetVotes() *VotesEntity {
+func (o *IncidentEventEntity) GetVotes() *NullableVotesEntity {
 	if o == nil {
 		return nil
 	}

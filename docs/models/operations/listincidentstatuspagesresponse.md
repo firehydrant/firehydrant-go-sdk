@@ -1,9 +1,0 @@
-# ListIncidentStatusPagesResponse
-
-
-## Fields
-
-| Field                                                                                                           | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
-| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| `HTTPMeta`                                                                                                      | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                              | :heavy_check_mark:                                                                                              | N/A                                                                                                             |
-| `IncidentsStatusPageEntityPaginated`                                                                            | [*components.IncidentsStatusPageEntityPaginated](../../models/components/incidentsstatuspageentitypaginated.md) | :heavy_minus_sign:                                                                                              | List status pages that are attached to an incident                                                              |

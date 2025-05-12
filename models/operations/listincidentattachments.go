@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type ListIncidentAttachmentsRequest struct {
 	IncidentID     string  `pathParam:"style=simple,explode=false,name=incident_id"`
 	AttachableType *string `queryParam:"style=form,explode=true,name=attachable_type"`
@@ -39,15 +35,4 @@ func (o *ListIncidentAttachmentsRequest) GetPerPage() *int {
 		return nil
 	}
 	return o.PerPage
-}
-
-type ListIncidentAttachmentsResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-}
-
-func (o *ListIncidentAttachmentsResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
 }

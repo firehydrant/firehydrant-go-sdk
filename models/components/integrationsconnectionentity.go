@@ -7,10 +7,11 @@ import (
 	"time"
 )
 
-// Details - Integration-specific details of this connection. As identified by the integration_slug, this object will be represented by that integration's ConnectionEntity.
-type Details struct {
+// IntegrationsConnectionEntityDetails - Integration-specific details of this connection. As identified by the integration_slug, this object will be represented by that integration's ConnectionEntity.
+type IntegrationsConnectionEntityDetails struct {
 }
 
+// IntegrationsConnectionEntity - Integrations_ConnectionEntity model
 type IntegrationsConnectionEntity struct {
 	ID               *string    `json:"id,omitempty"`
 	IntegrationSlug  *string    `json:"integration_slug,omitempty"`
@@ -22,8 +23,8 @@ type IntegrationsConnectionEntity struct {
 	CreatedAt        *time.Time `json:"created_at,omitempty"`
 	UpdatedAt        *time.Time `json:"updated_at,omitempty"`
 	// Integration-specific details of this connection. As identified by the integration_slug, this object will be represented by that integration's ConnectionEntity.
-	Details                *Details      `json:"details,omitempty"`
-	DefaultAuthorizedActor *AuthorEntity `json:"default_authorized_actor,omitempty"`
+	Details                *IntegrationsConnectionEntityDetails `json:"details,omitempty"`
+	DefaultAuthorizedActor *NullableAuthorEntity                `json:"default_authorized_actor,omitempty"`
 }
 
 func (i IntegrationsConnectionEntity) MarshalJSON() ([]byte, error) {
@@ -100,14 +101,14 @@ func (o *IntegrationsConnectionEntity) GetUpdatedAt() *time.Time {
 	return o.UpdatedAt
 }
 
-func (o *IntegrationsConnectionEntity) GetDetails() *Details {
+func (o *IntegrationsConnectionEntity) GetDetails() *IntegrationsConnectionEntityDetails {
 	if o == nil {
 		return nil
 	}
 	return o.Details
 }
 
-func (o *IntegrationsConnectionEntity) GetDefaultAuthorizedActor() *AuthorEntity {
+func (o *IntegrationsConnectionEntity) GetDefaultAuthorizedActor() *NullableAuthorEntity {
 	if o == nil {
 		return nil
 	}

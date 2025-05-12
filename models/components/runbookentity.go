@@ -9,26 +9,25 @@ import (
 
 // RunbookEntity model
 type RunbookEntity struct {
-	ID                *string            `json:"id,omitempty"`
-	Name              *string            `json:"name,omitempty"`
-	Summary           *string            `json:"summary,omitempty"`
-	Description       *string            `json:"description,omitempty"`
-	Type              *string            `json:"type,omitempty"`
-	RunbookTemplateID *string            `json:"runbook_template_id,omitempty"`
-	CreatedAt         *time.Time         `json:"created_at,omitempty"`
-	UpdatedAt         *time.Time         `json:"updated_at,omitempty"`
-	CreatedBy         *AuthorEntity      `json:"created_by,omitempty"`
-	UpdatedBy         *AuthorEntity      `json:"updated_by,omitempty"`
-	Steps             *RunbookStepEntity `json:"steps,omitempty"`
-	AttachmentRule    *RulesRuleEntity   `json:"attachment_rule,omitempty"`
-	// VotesEntity model
-	Votes      *VotesEntity    `json:"votes,omitempty"`
-	IsEditable *bool           `json:"is_editable,omitempty"`
-	Owner      *TeamEntityLite `json:"owner,omitempty"`
+	ID                *string                    `json:"id,omitempty"`
+	Name              *string                    `json:"name,omitempty"`
+	Summary           *string                    `json:"summary,omitempty"`
+	Description       *string                    `json:"description,omitempty"`
+	Type              *string                    `json:"type,omitempty"`
+	RunbookTemplateID *string                    `json:"runbook_template_id,omitempty"`
+	CreatedAt         *time.Time                 `json:"created_at,omitempty"`
+	UpdatedAt         *time.Time                 `json:"updated_at,omitempty"`
+	CreatedBy         *NullableAuthorEntity      `json:"created_by,omitempty"`
+	UpdatedBy         *NullableAuthorEntity      `json:"updated_by,omitempty"`
+	Steps             *NullableRunbookStepEntity `json:"steps,omitempty"`
+	AttachmentRule    *NullableRulesRuleEntity   `json:"attachment_rule,omitempty"`
+	Votes             *NullableVotesEntity       `json:"votes,omitempty"`
+	IsEditable        *bool                      `json:"is_editable,omitempty"`
+	Owner             *NullableTeamEntityLite    `json:"owner,omitempty"`
 	// categories the runbook applies to
-	Categories                      *string `json:"categories,omitempty"`
-	AutoAttachToRestrictedIncidents *bool   `json:"auto_attach_to_restricted_incidents,omitempty"`
-	Tutorial                        *bool   `json:"tutorial,omitempty"`
+	Categories                      []string `json:"categories,omitempty"`
+	AutoAttachToRestrictedIncidents *bool    `json:"auto_attach_to_restricted_incidents,omitempty"`
+	Tutorial                        *bool    `json:"tutorial,omitempty"`
 }
 
 func (r RunbookEntity) MarshalJSON() ([]byte, error) {
@@ -98,35 +97,35 @@ func (o *RunbookEntity) GetUpdatedAt() *time.Time {
 	return o.UpdatedAt
 }
 
-func (o *RunbookEntity) GetCreatedBy() *AuthorEntity {
+func (o *RunbookEntity) GetCreatedBy() *NullableAuthorEntity {
 	if o == nil {
 		return nil
 	}
 	return o.CreatedBy
 }
 
-func (o *RunbookEntity) GetUpdatedBy() *AuthorEntity {
+func (o *RunbookEntity) GetUpdatedBy() *NullableAuthorEntity {
 	if o == nil {
 		return nil
 	}
 	return o.UpdatedBy
 }
 
-func (o *RunbookEntity) GetSteps() *RunbookStepEntity {
+func (o *RunbookEntity) GetSteps() *NullableRunbookStepEntity {
 	if o == nil {
 		return nil
 	}
 	return o.Steps
 }
 
-func (o *RunbookEntity) GetAttachmentRule() *RulesRuleEntity {
+func (o *RunbookEntity) GetAttachmentRule() *NullableRulesRuleEntity {
 	if o == nil {
 		return nil
 	}
 	return o.AttachmentRule
 }
 
-func (o *RunbookEntity) GetVotes() *VotesEntity {
+func (o *RunbookEntity) GetVotes() *NullableVotesEntity {
 	if o == nil {
 		return nil
 	}
@@ -140,14 +139,14 @@ func (o *RunbookEntity) GetIsEditable() *bool {
 	return o.IsEditable
 }
 
-func (o *RunbookEntity) GetOwner() *TeamEntityLite {
+func (o *RunbookEntity) GetOwner() *NullableTeamEntityLite {
 	if o == nil {
 		return nil
 	}
 	return o.Owner
 }
 
-func (o *RunbookEntity) GetCategories() *string {
+func (o *RunbookEntity) GetCategories() []string {
 	if o == nil {
 		return nil
 	}

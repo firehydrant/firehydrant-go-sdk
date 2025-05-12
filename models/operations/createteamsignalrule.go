@@ -7,8 +7,8 @@ import (
 )
 
 type CreateTeamSignalRuleRequest struct {
-	TeamID                       string                                  `pathParam:"style=simple,explode=false,name=team_id"`
-	PostV1TeamsTeamIDSignalRules components.PostV1TeamsTeamIDSignalRules `request:"mediaType=application/json"`
+	TeamID               string                          `pathParam:"style=simple,explode=false,name=team_id"`
+	CreateTeamSignalRule components.CreateTeamSignalRule `request:"mediaType=application/json"`
 }
 
 func (o *CreateTeamSignalRuleRequest) GetTeamID() string {
@@ -18,20 +18,9 @@ func (o *CreateTeamSignalRuleRequest) GetTeamID() string {
 	return o.TeamID
 }
 
-func (o *CreateTeamSignalRuleRequest) GetPostV1TeamsTeamIDSignalRules() components.PostV1TeamsTeamIDSignalRules {
+func (o *CreateTeamSignalRuleRequest) GetCreateTeamSignalRule() components.CreateTeamSignalRule {
 	if o == nil {
-		return components.PostV1TeamsTeamIDSignalRules{}
+		return components.CreateTeamSignalRule{}
 	}
-	return o.PostV1TeamsTeamIDSignalRules
-}
-
-type CreateTeamSignalRuleResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-}
-
-func (o *CreateTeamSignalRuleResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
+	return o.CreateTeamSignalRule
 }

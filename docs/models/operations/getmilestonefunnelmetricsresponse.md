@@ -1,9 +1,0 @@
-# GetMilestoneFunnelMetricsResponse
-
-
-## Fields
-
-| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
-| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| `HTTPMeta`                                                                                            | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                    | :heavy_check_mark:                                                                                    | N/A                                                                                                   |
-| `MetricsMilestonesFunnelEntity`                                                                       | [*components.MetricsMilestonesFunnelEntity](../../models/components/metricsmilestonesfunnelentity.md) | :heavy_minus_sign:                                                                                    | Returns a report with time bucketed milestone data                                                    |

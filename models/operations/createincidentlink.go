@@ -7,8 +7,8 @@ import (
 )
 
 type CreateIncidentLinkRequest struct {
-	IncidentID                     string                                    `pathParam:"style=simple,explode=false,name=incident_id"`
-	PostV1IncidentsIncidentIDLinks components.PostV1IncidentsIncidentIDLinks `request:"mediaType=application/json"`
+	IncidentID         string                        `pathParam:"style=simple,explode=false,name=incident_id"`
+	CreateIncidentLink components.CreateIncidentLink `request:"mediaType=application/json"`
 }
 
 func (o *CreateIncidentLinkRequest) GetIncidentID() string {
@@ -18,29 +18,9 @@ func (o *CreateIncidentLinkRequest) GetIncidentID() string {
 	return o.IncidentID
 }
 
-func (o *CreateIncidentLinkRequest) GetPostV1IncidentsIncidentIDLinks() components.PostV1IncidentsIncidentIDLinks {
+func (o *CreateIncidentLinkRequest) GetCreateIncidentLink() components.CreateIncidentLink {
 	if o == nil {
-		return components.PostV1IncidentsIncidentIDLinks{}
+		return components.CreateIncidentLink{}
 	}
-	return o.PostV1IncidentsIncidentIDLinks
-}
-
-type CreateIncidentLinkResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Allows adding adhoc links to an incident as an attachment
-	AttachmentsLinkEntity *components.AttachmentsLinkEntity
-}
-
-func (o *CreateIncidentLinkResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *CreateIncidentLinkResponse) GetAttachmentsLinkEntity() *components.AttachmentsLinkEntity {
-	if o == nil {
-		return nil
-	}
-	return o.AttachmentsLinkEntity
+	return o.CreateIncidentLink
 }

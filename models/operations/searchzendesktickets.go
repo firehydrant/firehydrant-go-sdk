@@ -2,38 +2,37 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type SearchZendeskTicketsRequest struct {
-	// Zendesk ticket ID
-	TicketID string `queryParam:"style=form,explode=true,name=ticket_id"`
-	// Use to include attached_incidents
-	Include *string `queryParam:"style=form,explode=true,name=include"`
+	ConnectionID string `pathParam:"style=simple,explode=false,name=connection_id"`
+	Query        string `queryParam:"style=form,explode=true,name=query"`
+	Page         *int   `queryParam:"style=form,explode=true,name=page"`
+	PerPage      *int   `queryParam:"style=form,explode=true,name=per_page"`
 }
 
-func (o *SearchZendeskTicketsRequest) GetTicketID() string {
+func (o *SearchZendeskTicketsRequest) GetConnectionID() string {
 	if o == nil {
 		return ""
 	}
-	return o.TicketID
+	return o.ConnectionID
 }
 
-func (o *SearchZendeskTicketsRequest) GetInclude() *string {
+func (o *SearchZendeskTicketsRequest) GetQuery() string {
+	if o == nil {
+		return ""
+	}
+	return o.Query
+}
+
+func (o *SearchZendeskTicketsRequest) GetPage() *int {
 	if o == nil {
 		return nil
 	}
-	return o.Include
+	return o.Page
 }
 
-type SearchZendeskTicketsResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-}
-
-func (o *SearchZendeskTicketsResponse) GetHTTPMeta() components.HTTPMetadata {
+func (o *SearchZendeskTicketsRequest) GetPerPage() *int {
 	if o == nil {
-		return components.HTTPMetadata{}
+		return nil
 	}
-	return o.HTTPMeta
+	return o.PerPage
 }

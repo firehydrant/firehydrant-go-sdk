@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type DeleteServiceLinkRequest struct {
 	ServiceID string `pathParam:"style=simple,explode=false,name=service_id"`
 	// The external service ID which can be found in the JSON
@@ -27,15 +23,4 @@ func (o *DeleteServiceLinkRequest) GetRemoteID() string {
 		return ""
 	}
 	return o.RemoteID
-}
-
-type DeleteServiceLinkResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-}
-
-func (o *DeleteServiceLinkResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
 }

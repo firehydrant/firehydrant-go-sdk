@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type DeleteIncidentTeamAssignmentRequestBody struct {
 	// Team role assignments to unassign from the incident
 	RoleAssignmentIds []string `multipartForm:"name=role_assignment_ids"`
@@ -43,15 +39,4 @@ func (o *DeleteIncidentTeamAssignmentRequest) GetRequestBody() *DeleteIncidentTe
 		return nil
 	}
 	return o.RequestBody
-}
-
-type DeleteIncidentTeamAssignmentResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-}
-
-func (o *DeleteIncidentTeamAssignmentResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
 }

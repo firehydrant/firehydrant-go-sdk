@@ -7,8 +7,8 @@ import (
 )
 
 type UpdateServiceDependencyRequest struct {
-	ServiceDependencyID                           string                                                   `pathParam:"style=simple,explode=false,name=service_dependency_id"`
-	PatchV1ServiceDependenciesServiceDependencyID components.PatchV1ServiceDependenciesServiceDependencyID `request:"mediaType=application/json"`
+	ServiceDependencyID     string                             `pathParam:"style=simple,explode=false,name=service_dependency_id"`
+	UpdateServiceDependency components.UpdateServiceDependency `request:"mediaType=application/json"`
 }
 
 func (o *UpdateServiceDependencyRequest) GetServiceDependencyID() string {
@@ -18,29 +18,9 @@ func (o *UpdateServiceDependencyRequest) GetServiceDependencyID() string {
 	return o.ServiceDependencyID
 }
 
-func (o *UpdateServiceDependencyRequest) GetPatchV1ServiceDependenciesServiceDependencyID() components.PatchV1ServiceDependenciesServiceDependencyID {
+func (o *UpdateServiceDependencyRequest) GetUpdateServiceDependency() components.UpdateServiceDependency {
 	if o == nil {
-		return components.PatchV1ServiceDependenciesServiceDependencyID{}
+		return components.UpdateServiceDependency{}
 	}
-	return o.PatchV1ServiceDependenciesServiceDependencyID
-}
-
-type UpdateServiceDependencyResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Update the notes of the service dependency
-	ServiceDependencyEntity *components.ServiceDependencyEntity
-}
-
-func (o *UpdateServiceDependencyResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *UpdateServiceDependencyResponse) GetServiceDependencyEntity() *components.ServiceDependencyEntity {
-	if o == nil {
-		return nil
-	}
-	return o.ServiceDependencyEntity
+	return o.UpdateServiceDependency
 }

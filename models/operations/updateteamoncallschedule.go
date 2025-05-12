@@ -7,9 +7,9 @@ import (
 )
 
 type UpdateTeamOnCallScheduleRequest struct {
-	TeamID                                      string                                                 `pathParam:"style=simple,explode=false,name=team_id"`
-	ScheduleID                                  string                                                 `pathParam:"style=simple,explode=false,name=schedule_id"`
-	PatchV1TeamsTeamIDOnCallSchedulesScheduleID components.PatchV1TeamsTeamIDOnCallSchedulesScheduleID `request:"mediaType=application/json"`
+	TeamID                   string                              `pathParam:"style=simple,explode=false,name=team_id"`
+	ScheduleID               string                              `pathParam:"style=simple,explode=false,name=schedule_id"`
+	UpdateTeamOnCallSchedule components.UpdateTeamOnCallSchedule `request:"mediaType=application/json"`
 }
 
 func (o *UpdateTeamOnCallScheduleRequest) GetTeamID() string {
@@ -26,20 +26,9 @@ func (o *UpdateTeamOnCallScheduleRequest) GetScheduleID() string {
 	return o.ScheduleID
 }
 
-func (o *UpdateTeamOnCallScheduleRequest) GetPatchV1TeamsTeamIDOnCallSchedulesScheduleID() components.PatchV1TeamsTeamIDOnCallSchedulesScheduleID {
+func (o *UpdateTeamOnCallScheduleRequest) GetUpdateTeamOnCallSchedule() components.UpdateTeamOnCallSchedule {
 	if o == nil {
-		return components.PatchV1TeamsTeamIDOnCallSchedulesScheduleID{}
+		return components.UpdateTeamOnCallSchedule{}
 	}
-	return o.PatchV1TeamsTeamIDOnCallSchedulesScheduleID
-}
-
-type UpdateTeamOnCallScheduleResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-}
-
-func (o *UpdateTeamOnCallScheduleResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
+	return o.UpdateTeamOnCallSchedule
 }

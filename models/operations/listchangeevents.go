@@ -4,7 +4,6 @@ package operations
 
 import (
 	"firehydrant/internal/utils"
-	"firehydrant/models/components"
 	"time"
 )
 
@@ -99,24 +98,4 @@ func (o *ListChangeEventsRequest) GetEndsAt() *time.Time {
 		return nil
 	}
 	return o.EndsAt
-}
-
-type ListChangeEventsResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// List change events for the organization. Note: Not all information is included on a change event like attachments and related changes. You must fetch a change event separately to retrieve all of the information about it
-	ChangeEventSlimEntityPaginated *components.ChangeEventSlimEntityPaginated
-}
-
-func (o *ListChangeEventsResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListChangeEventsResponse) GetChangeEventSlimEntityPaginated() *components.ChangeEventSlimEntityPaginated {
-	if o == nil {
-		return nil
-	}
-	return o.ChangeEventSlimEntityPaginated
 }

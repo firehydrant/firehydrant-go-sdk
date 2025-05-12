@@ -4,8 +4,8 @@ package components
 
 // ChangeIdentityEntityPaginated model
 type ChangeIdentityEntityPaginated struct {
-	Data       []ChangeIdentityEntity `json:"data,omitempty"`
-	Pagination *PaginationEntity      `json:"pagination,omitempty"`
+	Data       []ChangeIdentityEntity    `json:"data,omitempty"`
+	Pagination *NullablePaginationEntity `json:"pagination,omitempty"`
 }
 
 func (o *ChangeIdentityEntityPaginated) GetData() []ChangeIdentityEntity {
@@ -15,7 +15,7 @@ func (o *ChangeIdentityEntityPaginated) GetData() []ChangeIdentityEntity {
 	return o.Data
 }
 
-func (o *ChangeIdentityEntityPaginated) GetPagination() *PaginationEntity {
+func (o *ChangeIdentityEntityPaginated) GetPagination() *NullablePaginationEntity {
 	if o == nil {
 		return nil
 	}

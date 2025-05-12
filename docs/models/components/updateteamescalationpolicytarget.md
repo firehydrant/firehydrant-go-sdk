@@ -1,0 +1,9 @@
+# UpdateTeamEscalationPolicyTarget
+
+
+## Fields
+
+| Field                                                                                                  | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `Type`                                                                                                 | [components.UpdateTeamEscalationPolicyType](../../models/components/updateteamescalationpolicytype.md) | :heavy_check_mark:                                                                                     | The type of target that the step will notify.                                                          |
+| `ID`                                                                                                   | *string*                                                                                               | :heavy_check_mark:                                                                                     | The ID of the target that the step will notify.                                                        |

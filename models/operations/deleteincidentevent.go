@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type DeleteIncidentEventRequest struct {
 	IncidentID string `pathParam:"style=simple,explode=false,name=incident_id"`
 	EventID    string `pathParam:"style=simple,explode=false,name=event_id"`
@@ -23,24 +19,4 @@ func (o *DeleteIncidentEventRequest) GetEventID() string {
 		return ""
 	}
 	return o.EventID
-}
-
-type DeleteIncidentEventResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Delete a single event for an incident
-	IncidentEventEntity *components.IncidentEventEntity
-}
-
-func (o *DeleteIncidentEventResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *DeleteIncidentEventResponse) GetIncidentEventEntity() *components.IncidentEventEntity {
-	if o == nil {
-		return nil
-	}
-	return o.IncidentEventEntity
 }

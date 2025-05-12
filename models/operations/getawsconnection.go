@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type GetAwsConnectionRequest struct {
 	ID string `pathParam:"style=simple,explode=false,name=id"`
 }
@@ -15,24 +11,4 @@ func (o *GetAwsConnectionRequest) GetID() string {
 		return ""
 	}
 	return o.ID
-}
-
-type GetAwsConnectionResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Retrieves the information about the AWS connection.
-	IntegrationsAwsConnectionEntity *components.IntegrationsAwsConnectionEntity
-}
-
-func (o *GetAwsConnectionResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *GetAwsConnectionResponse) GetIntegrationsAwsConnectionEntity() *components.IntegrationsAwsConnectionEntity {
-	if o == nil {
-		return nil
-	}
-	return o.IntegrationsAwsConnectionEntity
 }

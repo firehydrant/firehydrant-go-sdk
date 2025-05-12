@@ -2,13 +2,19 @@
 
 package components
 
-type IncidentsConferenceBridgeEntityAttachments struct {
+type IncidentsConferenceBridgeEntityAttachment struct {
 }
 
+// IncidentsConferenceBridgeEntity - Incidents_ConferenceBridgeEntity model
 type IncidentsConferenceBridgeEntity struct {
 	ID *string `json:"id,omitempty"`
 	// A list of objects attached to this item. Can be one of: LinkEntity, CustomerSupportIssueEntity, or GenericAttachmentEntity
-	Attachments []IncidentsConferenceBridgeEntityAttachments `json:"attachments,omitempty"`
+	Attachments              []IncidentsConferenceBridgeEntityAttachment `json:"attachments,omitempty"`
+	HasTranslatedTranscripts *bool                                       `json:"has_translated_transcripts,omitempty"`
+	// A list of language codes that have translated transcripts for this conference bridge
+	LanguageCodes        []string `json:"language_codes,omitempty"`
+	TranscriptionStatus  *string  `json:"transcription_status,omitempty"`
+	TranscriptionSubCode *string  `json:"transcription_sub_code,omitempty"`
 }
 
 func (o *IncidentsConferenceBridgeEntity) GetID() *string {
@@ -18,9 +24,37 @@ func (o *IncidentsConferenceBridgeEntity) GetID() *string {
 	return o.ID
 }
 
-func (o *IncidentsConferenceBridgeEntity) GetAttachments() []IncidentsConferenceBridgeEntityAttachments {
+func (o *IncidentsConferenceBridgeEntity) GetAttachments() []IncidentsConferenceBridgeEntityAttachment {
 	if o == nil {
 		return nil
 	}
 	return o.Attachments
+}
+
+func (o *IncidentsConferenceBridgeEntity) GetHasTranslatedTranscripts() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.HasTranslatedTranscripts
+}
+
+func (o *IncidentsConferenceBridgeEntity) GetLanguageCodes() []string {
+	if o == nil {
+		return nil
+	}
+	return o.LanguageCodes
+}
+
+func (o *IncidentsConferenceBridgeEntity) GetTranscriptionStatus() *string {
+	if o == nil {
+		return nil
+	}
+	return o.TranscriptionStatus
+}
+
+func (o *IncidentsConferenceBridgeEntity) GetTranscriptionSubCode() *string {
+	if o == nil {
+		return nil
+	}
+	return o.TranscriptionSubCode
 }

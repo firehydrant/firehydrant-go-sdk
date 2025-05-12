@@ -4,9 +4,8 @@ package components
 
 // ServiceLinkEntity model
 type ServiceLinkEntity struct {
-	StatusCode *int `json:"status_code,omitempty"`
-	// ServiceEntity model
-	Service *ServiceEntity `json:"service,omitempty"`
+	StatusCode *int                   `json:"status_code,omitempty"`
+	Service    *NullableServiceEntity `json:"service,omitempty"`
 }
 
 func (o *ServiceLinkEntity) GetStatusCode() *int {
@@ -16,7 +15,7 @@ func (o *ServiceLinkEntity) GetStatusCode() *int {
 	return o.StatusCode
 }
 
-func (o *ServiceLinkEntity) GetService() *ServiceEntity {
+func (o *ServiceLinkEntity) GetService() *NullableServiceEntity {
 	if o == nil {
 		return nil
 	}

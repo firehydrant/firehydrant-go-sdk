@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type ListAwsConnectionsRequest struct {
 	Page    *int `queryParam:"style=form,explode=true,name=page"`
 	PerPage *int `queryParam:"style=form,explode=true,name=per_page"`
@@ -50,24 +46,4 @@ func (o *ListAwsConnectionsRequest) GetExternalID() *string {
 		return nil
 	}
 	return o.ExternalID
-}
-
-type ListAwsConnectionsResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Lists the available and configured AWS integration connections for the authenticated organization.
-	IntegrationsAwsConnectionEntityPaginated *components.IntegrationsAwsConnectionEntityPaginated
-}
-
-func (o *ListAwsConnectionsResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *ListAwsConnectionsResponse) GetIntegrationsAwsConnectionEntityPaginated() *components.IntegrationsAwsConnectionEntityPaginated {
-	if o == nil {
-		return nil
-	}
-	return o.IntegrationsAwsConnectionEntityPaginated
 }

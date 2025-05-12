@@ -7,8 +7,8 @@ import (
 )
 
 type UpdateTicketingPriorityRequest struct {
-	ID                           string                                  `pathParam:"style=simple,explode=false,name=id"`
-	PatchV1TicketingPrioritiesID components.PatchV1TicketingPrioritiesID `request:"mediaType=application/json"`
+	ID                      string                             `pathParam:"style=simple,explode=false,name=id"`
+	UpdateTicketingPriority components.UpdateTicketingPriority `request:"mediaType=application/json"`
 }
 
 func (o *UpdateTicketingPriorityRequest) GetID() string {
@@ -18,29 +18,9 @@ func (o *UpdateTicketingPriorityRequest) GetID() string {
 	return o.ID
 }
 
-func (o *UpdateTicketingPriorityRequest) GetPatchV1TicketingPrioritiesID() components.PatchV1TicketingPrioritiesID {
+func (o *UpdateTicketingPriorityRequest) GetUpdateTicketingPriority() components.UpdateTicketingPriority {
 	if o == nil {
-		return components.PatchV1TicketingPrioritiesID{}
+		return components.UpdateTicketingPriority{}
 	}
-	return o.PatchV1TicketingPrioritiesID
-}
-
-type UpdateTicketingPriorityResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Update a single ticketing priority's attributes
-	TicketingPriorityEntity *components.TicketingPriorityEntity
-}
-
-func (o *UpdateTicketingPriorityResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *UpdateTicketingPriorityResponse) GetTicketingPriorityEntity() *components.TicketingPriorityEntity {
-	if o == nil {
-		return nil
-	}
-	return o.TicketingPriorityEntity
+	return o.UpdateTicketingPriority
 }

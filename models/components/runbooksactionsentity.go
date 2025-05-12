@@ -7,33 +7,32 @@ import (
 	"time"
 )
 
-type Prerequisites struct {
+type RunbooksActionsEntityPrerequisites struct {
 }
 
-type DefaultLogic struct {
+type RunbooksActionsEntityDefaultLogic struct {
 }
 
-type DefaultRuleData struct {
+type RunbooksActionsEntityDefaultRuleData struct {
 }
 
 type RunbooksActionsEntity struct {
-	ID            *string                     `json:"id,omitempty"`
-	Name          *string                     `json:"name,omitempty"`
-	Slug          *string                     `json:"slug,omitempty"`
-	Description   *string                     `json:"description,omitempty"`
-	Config        *RunbooksActionConfigEntity `json:"config,omitempty"`
-	Category      *string                     `json:"category,omitempty"`
-	Prerequisites *Prerequisites              `json:"prerequisites,omitempty"`
-	// Integrations_IntegrationEntity model
-	Integration           *IntegrationsIntegrationEntity `json:"integration,omitempty"`
-	SupportedRunbookTypes []string                       `json:"supported_runbook_types,omitempty"`
-	CreatedAt             *time.Time                     `json:"created_at,omitempty"`
-	UpdatedAt             *time.Time                     `json:"updated_at,omitempty"`
-	Automatable           *bool                          `json:"automatable,omitempty"`
-	Rerunnable            *bool                          `json:"rerunnable,omitempty"`
-	Repeatable            *bool                          `json:"repeatable,omitempty"`
-	DefaultLogic          *DefaultLogic                  `json:"default_logic,omitempty"`
-	DefaultRuleData       *DefaultRuleData               `json:"default_rule_data,omitempty"`
+	ID                    *string                                `json:"id,omitempty"`
+	Name                  *string                                `json:"name,omitempty"`
+	Slug                  *string                                `json:"slug,omitempty"`
+	Description           *string                                `json:"description,omitempty"`
+	Config                *NullableRunbooksActionConfigEntity    `json:"config,omitempty"`
+	Category              *string                                `json:"category,omitempty"`
+	Prerequisites         *RunbooksActionsEntityPrerequisites    `json:"prerequisites,omitempty"`
+	Integration           *NullableIntegrationsIntegrationEntity `json:"integration,omitempty"`
+	SupportedRunbookTypes []string                               `json:"supported_runbook_types,omitempty"`
+	CreatedAt             *time.Time                             `json:"created_at,omitempty"`
+	UpdatedAt             *time.Time                             `json:"updated_at,omitempty"`
+	Automatable           *bool                                  `json:"automatable,omitempty"`
+	Rerunnable            *bool                                  `json:"rerunnable,omitempty"`
+	Repeatable            *bool                                  `json:"repeatable,omitempty"`
+	DefaultLogic          *RunbooksActionsEntityDefaultLogic     `json:"default_logic,omitempty"`
+	DefaultRuleData       *RunbooksActionsEntityDefaultRuleData  `json:"default_rule_data,omitempty"`
 }
 
 func (r RunbooksActionsEntity) MarshalJSON() ([]byte, error) {
@@ -75,7 +74,7 @@ func (o *RunbooksActionsEntity) GetDescription() *string {
 	return o.Description
 }
 
-func (o *RunbooksActionsEntity) GetConfig() *RunbooksActionConfigEntity {
+func (o *RunbooksActionsEntity) GetConfig() *NullableRunbooksActionConfigEntity {
 	if o == nil {
 		return nil
 	}
@@ -89,14 +88,14 @@ func (o *RunbooksActionsEntity) GetCategory() *string {
 	return o.Category
 }
 
-func (o *RunbooksActionsEntity) GetPrerequisites() *Prerequisites {
+func (o *RunbooksActionsEntity) GetPrerequisites() *RunbooksActionsEntityPrerequisites {
 	if o == nil {
 		return nil
 	}
 	return o.Prerequisites
 }
 
-func (o *RunbooksActionsEntity) GetIntegration() *IntegrationsIntegrationEntity {
+func (o *RunbooksActionsEntity) GetIntegration() *NullableIntegrationsIntegrationEntity {
 	if o == nil {
 		return nil
 	}
@@ -145,14 +144,14 @@ func (o *RunbooksActionsEntity) GetRepeatable() *bool {
 	return o.Repeatable
 }
 
-func (o *RunbooksActionsEntity) GetDefaultLogic() *DefaultLogic {
+func (o *RunbooksActionsEntity) GetDefaultLogic() *RunbooksActionsEntityDefaultLogic {
 	if o == nil {
 		return nil
 	}
 	return o.DefaultLogic
 }
 
-func (o *RunbooksActionsEntity) GetDefaultRuleData() *DefaultRuleData {
+func (o *RunbooksActionsEntity) GetDefaultRuleData() *RunbooksActionsEntityDefaultRuleData {
 	if o == nil {
 		return nil
 	}

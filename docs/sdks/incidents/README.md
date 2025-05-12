@@ -7,117 +7,64 @@ Operations related to Incidents
 
 ### Available Operations
 
-* [GetAiSummaryVoteStatus](#getaisummaryvotestatus) - Get the vote status for an AI-generated incident summary
-* [List](#list) - List incidents
-* [Create](#create) - Create an incident
-* [Get](#get) - Get an incident
-* [Archive](#archive) - Archive an incident
-* [Update](#update) - Update an incident
-* [DeleteAlert](#deletealert) - Delete an alert from an incident
-* [SetAlertAsPrimary](#setalertasprimary) - Set an alert as primary for an incident
-* [ListAttachments](#listattachments) - List attachments for an incident
-* [CreateAttachment](#createattachment) - Create an attachment for an incident
-* [GetChannel](#getchannel) - Get chat channel information for an incident
-* [Close](#close) - Close an incident
-* [ListEvents](#listevents) - List events for an incident
-* [GetEvent](#getevent) - Get an incident event
-* [DeleteEvent](#deleteevent) - Delete an incident event
-* [UpdateEvent](#updateevent) - Update an incident event
-* [UpdateEventVotes](#updateeventvotes) - Update votes for an incident event
-* [GetEventVoteStatus](#geteventvotestatus) - Get vote counts for an incident event
-* [CreateGenericChatMessage](#creategenericchatmessage) - Create a chat message for an incident
-* [DeleteChatMessage](#deletechatmessage) - Delete a chat message from an incident
-* [UpdateChatMessage](#updatechatmessage) - Update a chat message in an incident
-* [UpdateImpacts](#updateimpacts) - Replace all impacts for an incident
-* [PartialUpdateImpacts](#partialupdateimpacts) - Update impacts for an incident
-* [ListImpact](#listimpact) - List impacted infrastructure for an incident
-* [CreateImpact](#createimpact) - Add impacted infrastructure to an incident
-* [DeleteImpact](#deleteimpact) - Remove impacted infrastructure from an incident
-* [ListLinks](#listlinks) - List links for an incident
-* [CreateLink](#createlink) - Create a link for an incident
-* [UpdateLink](#updatelink) - Update an external link for an incident
-* [DeleteLink](#deletelink) - Delete an external link from an incident
-* [ListMilestones](#listmilestones) - List milestones for an incident
-* [UpdateMilestonesBulk](#updatemilestonesbulk) - Bulk update milestone timestamps for an incident
-* [CreateNote](#createnote) - Create a note for an incident
-* [UpdateNote](#updatenote) - Update a note for an incident
-* [ListRelatedChangeEvents](#listrelatedchangeevents) - List related changes for an incident
-* [CreateRelatedChange](#createrelatedchange) - Add a related change to an incident
-* [UpdateRelatedChangeEvent](#updaterelatedchangeevent) - Update a related change event for an incident
-* [GetRelationships](#getrelationships) - List incident relationships
-* [Resolve](#resolve) - Resolve an incident
-* [ListRoleAssignments](#listroleassignments) - List role assignments for an incident
-* [CreateRoleAssignment](#createroleassignment) - Create a role assignment for an incident
-* [DeleteRoleAssignment](#deleteroleassignment) - Delete a role assignment from an incident
-* [ListSimilar](#listsimilar) - List similar incidents
-* [ListStatusPages](#liststatuspages) - List status pages for an incident
-* [AddStatusPage](#addstatuspage) - Add a status page to an incident
-* [CreateTaskList](#createtasklist) - Add tasks from a task list to an incident
-* [CreateTeamAssignment](#createteamassignment) - Assign a team to an incident
-* [DeleteTeamAssignment](#deleteteamassignment) - Remove a team assignment from an incident
-* [GetTranscript](#gettranscript) - List transcript messages for an incident
-* [DeleteTranscript](#deletetranscript) - Delete a transcript from an incident
-* [Unarchive](#unarchive) - Unarchive an incident
-* [GetUserRole](#getuserrole) - Get a user's role in an incident
+* [ListIncidents](#listincidents) - List incidents
+* [CreateIncident](#createincident) - Create an incident
+* [GetIncidentChannel](#getincidentchannel) - Get chat channel information for an incident
+* [CloseIncident](#closeincident) - Close an incident
+* [ResolveIncident](#resolveincident) - Resolve an incident
+* [GetIncident](#getincident) - Get an incident
+* [DeleteIncident](#deleteincident) - Archive an incident
+* [UpdateIncident](#updateincident) - Update an incident
+* [UnarchiveIncident](#unarchiveincident) - Unarchive an incident
+* [BulkUpdateIncidentMilestones](#bulkupdateincidentmilestones) - Update milestone times
+* [ListIncidentMilestones](#listincidentmilestones) - List incident milestones
+* [ListIncidentChangeEvents](#listincidentchangeevents) - List related changes on an incident
+* [CreateIncidentChangeEvent](#createincidentchangeevent) - Add a related change to an incident
+* [UpdateIncidentChangeEvent](#updateincidentchangeevent) - Update a change attached to an incident
+* [ListIncidentStatusPages](#listincidentstatuspages) - List status pages for an incident
+* [CreateIncidentStatusPage](#createincidentstatuspage) - Add a status page to an incident
+* [ListIncidentLinks](#listincidentlinks) - List links on an incident
+* [CreateIncidentLink](#createincidentlink) - Add a link to an incident
+* [UpdateIncidentLink](#updateincidentlink) - Update the external incident link
+* [DeleteIncidentLink](#deleteincidentlink) - Remove a link from an incident
+* [UpdateTranscriptAttribution](#updatetranscriptattribution) - Update the attribution of a transcript
+* [ListTranscriptEntries](#listtranscriptentries) - Lists all of the messages in the incident's transcript
+* [DeleteTranscriptEntry](#deletetranscriptentry) - Delete a transcript from an incident
+* [ListIncidentConferenceBridges](#listincidentconferencebridges) - Retrieve all conference bridges for an incident
+* [GetConferenceBridgeTranslation](#getconferencebridgetranslation) - Retrieve the translations for a specific conference bridge
+* [ListSimilarIncidents](#listsimilarincidents) - List similar incidents
+* [ListIncidentAttachments](#listincidentattachments) - List attachments for an incident
+* [CreateIncidentAttachment](#createincidentattachment) - Add an attachment to the incident timeline
+* [ListIncidentEvents](#listincidentevents) - List events for an incident
+* [GetIncidentEvent](#getincidentevent) - Get an incident event
+* [DeleteIncidentEvent](#deleteincidentevent) - Delete an incident event
+* [UpdateIncidentEvent](#updateincidentevent) - Update an incident event
+* [UpdateIncidentImpactPut](#updateincidentimpactput) - Update impacts for an incident
+* [UpdateIncidentImpactPatch](#updateincidentimpactpatch) - Update impacts for an incident
+* [ListIncidentImpacts](#listincidentimpacts) - List impacted infrastructure for an incident
+* [CreateIncidentImpact](#createincidentimpact) - Add impacted infrastructure to an incident
+* [DeleteIncidentImpact](#deleteincidentimpact) - Remove impacted infrastructure from an incident
+* [CreateIncidentNote](#createincidentnote) - Add a note to an incident
+* [UpdateIncidentNote](#updateincidentnote) - Update a note
+* [CreateIncidentChatMessage](#createincidentchatmessage) - Add a chat message to an incident
+* [DeleteIncidentChatMessage](#deleteincidentchatmessage) - Delete a chat message from an incident
+* [UpdateIncidentChatMessage](#updateincidentchatmessage) - Update a chat message on an incident
+* [ListIncidentRoleAssignments](#listincidentroleassignments) - List incident assignees
+* [CreateIncidentRoleAssignment](#createincidentroleassignment) - Assign a user to an incident
+* [DeleteIncidentRoleAssignment](#deleteincidentroleassignment) - Unassign a user from an incident
+* [CreateIncidentTeamAssignment](#createincidentteamassignment) - Assign a team to an incident
+* [DeleteIncidentTeamAssignment](#deleteincidentteamassignment) - Unassign a team from an incident
+* [GetIncidentUser](#getincidentuser) - Get the current user's incident role
+* [GetIncidentRelationships](#getincidentrelationships) - List incident relationships
+* [ListScheduledMaintenances](#listscheduledmaintenances) - List scheduled maintenance events
+* [CreateScheduledMaintenance](#createscheduledmaintenance) - Create a scheduled maintenance event
+* [GetScheduledMaintenance](#getscheduledmaintenance) - Get a scheduled maintenance event
+* [DeleteScheduledMaintenance](#deletescheduledmaintenance) - Delete a scheduled maintenance event
+* [UpdateScheduledMaintenance](#updatescheduledmaintenance) - Update a scheduled maintenance event
+* [GetAiIncidentSummaryVoteStatus](#getaiincidentsummaryvotestatus) - Get the current user's vote status for an AI-generated incident summary
+* [VoteAiIncidentSummary](#voteaiincidentsummary) - Vote on an AI-generated incident summary
 
-## GetAiSummaryVoteStatus
-
-Get the vote status for an AI-generated incident summary
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Incidents.GetAiSummaryVoteStatus(ctx, "<id>", "<id>")
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
-| `incidentID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
-| `generatedSummaryID`                                     | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
-| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
-
-### Response
-
-**[*operations.GetIncidentAiSummaryVoteStatusResponse](../../models/operations/getincidentaisummaryvotestatusresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## List
+## ListIncidents
 
 List all of the incidents in the organization
 
@@ -129,22 +76,25 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Incidents.List(ctx, operations.ListIncidentsRequest{})
+    res, err := s.Incidents.ListIncidents(ctx, operations.ListIncidentsRequest{})
     if err != nil {
         log.Fatal(err)
     }
-    if res.IncidentEntityPaginated != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -160,21 +110,15 @@ func main() {
 
 ### Response
 
-**[*operations.ListIncidentsResponse](../../models/operations/listincidentsresponse.md), error**
+**[*components.IncidentEntityPaginated](../../models/components/incidententitypaginated.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## Create
+## CreateIncident
 
 Create a new incident
 
@@ -192,18 +136,20 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Incidents.Create(ctx, components.PostV1Incidents{
+    res, err := s.Incidents.CreateIncident(ctx, components.CreateIncident{
         Name: "<value>",
     })
     if err != nil {
         log.Fatal(err)
     }
-    if res.IncidentEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -211,29 +157,183 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
-| `ctx`                                                                    | [context.Context](https://pkg.go.dev/context#Context)                    | :heavy_check_mark:                                                       | The context to use for the request.                                      |
-| `request`                                                                | [components.PostV1Incidents](../../models/components/postv1incidents.md) | :heavy_check_mark:                                                       | The request object to use for the request.                               |
-| `opts`                                                                   | [][operations.Option](../../models/operations/option.md)                 | :heavy_minus_sign:                                                       | The options for this request.                                            |
+| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `ctx`                                                                  | [context.Context](https://pkg.go.dev/context#Context)                  | :heavy_check_mark:                                                     | The context to use for the request.                                    |
+| `request`                                                              | [components.CreateIncident](../../models/components/createincident.md) | :heavy_check_mark:                                                     | The request object to use for the request.                             |
+| `opts`                                                                 | [][operations.Option](../../models/operations/option.md)               | :heavy_minus_sign:                                                     | The options for this request.                                          |
 
 ### Response
 
-**[*operations.CreateIncidentResponse](../../models/operations/createincidentresponse.md), error**
+**[*components.IncidentEntity](../../models/components/incidententity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## Get
+## GetIncidentChannel
+
+Gives chat channel information for the specified incident
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Incidents.GetIncidentChannel(ctx, "<id>")
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `incidentID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.IncidentsChannelEntity](../../models/components/incidentschannelentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## CloseIncident
+
+Closes an incident and optionally close all children
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Incidents.CloseIncident(ctx, "<id>")
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `incidentID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.IncidentEntity](../../models/components/incidententity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## ResolveIncident
+
+Resolves a currently active incident
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Incidents.ResolveIncident(ctx, "<id>", nil)
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                           | [context.Context](https://pkg.go.dev/context#Context)                                           | :heavy_check_mark:                                                                              | The context to use for the request.                                                             |
+| `incidentID`                                                                                    | *string*                                                                                        | :heavy_check_mark:                                                                              | N/A                                                                                             |
+| `requestBody`                                                                                   | [*operations.ResolveIncidentRequestBody](../../models/operations/resolveincidentrequestbody.md) | :heavy_minus_sign:                                                                              | N/A                                                                                             |
+| `opts`                                                                                          | [][operations.Option](../../models/operations/option.md)                                        | :heavy_minus_sign:                                                                              | The options for this request.                                                                   |
+
+### Response
+
+**[*components.IncidentEntity](../../models/components/incidententity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## GetIncident
 
 Retrieve a single incident from its ID
 
@@ -245,21 +345,24 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Incidents.Get(ctx, "<id>")
+    res, err := s.Incidents.GetIncident(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
     }
-    if res.IncidentEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -275,21 +378,15 @@ func main() {
 
 ### Response
 
-**[*operations.GetIncidentResponse](../../models/operations/getincidentresponse.md), error**
+**[*components.IncidentEntity](../../models/components/incidententity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## Archive
+## DeleteIncident
 
 Archives an incident which will hide it from lists and metrics
 
@@ -301,21 +398,24 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Incidents.Archive(ctx, "<id>")
+    res, err := s.Incidents.DeleteIncident(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
     }
-    if res.IncidentEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -331,21 +431,15 @@ func main() {
 
 ### Response
 
-**[*operations.ArchiveIncidentResponse](../../models/operations/archiveincidentresponse.md), error**
+**[*components.IncidentEntity](../../models/components/incidententity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## Update
+## UpdateIncident
 
 Updates an incident with provided parameters
 
@@ -363,69 +457,14 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Incidents.Update(ctx, "<id>", components.PatchV1IncidentsIncidentID{})
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.IncidentEntity != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                          | :heavy_check_mark:                                                                             | The context to use for the request.                                                            |
-| `incidentID`                                                                                   | *string*                                                                                       | :heavy_check_mark:                                                                             | N/A                                                                                            |
-| `patchV1IncidentsIncidentID`                                                                   | [components.PatchV1IncidentsIncidentID](../../models/components/patchv1incidentsincidentid.md) | :heavy_check_mark:                                                                             | N/A                                                                                            |
-| `opts`                                                                                         | [][operations.Option](../../models/operations/option.md)                                       | :heavy_minus_sign:                                                                             | The options for this request.                                                                  |
-
-### Response
-
-**[*operations.UpdateIncidentResponse](../../models/operations/updateincidentresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## DeleteAlert
-
-Remove an alert from an incident
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Incidents.DeleteAlert(ctx, "<id>", "<id>")
+    res, err := s.Incidents.UpdateIncident(ctx, "<id>", components.UpdateIncident{})
     if err != nil {
         log.Fatal(err)
     }
@@ -437,32 +476,26 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
-| `incidentAlertID`                                        | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
-| `incidentID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
-| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `ctx`                                                                  | [context.Context](https://pkg.go.dev/context#Context)                  | :heavy_check_mark:                                                     | The context to use for the request.                                    |
+| `incidentID`                                                           | *string*                                                               | :heavy_check_mark:                                                     | N/A                                                                    |
+| `updateIncident`                                                       | [components.UpdateIncident](../../models/components/updateincident.md) | :heavy_check_mark:                                                     | N/A                                                                    |
+| `opts`                                                                 | [][operations.Option](../../models/operations/option.md)               | :heavy_minus_sign:                                                     | The options for this request.                                          |
 
 ### Response
 
-**[*operations.DeleteIncidentAlertResponse](../../models/operations/deleteincidentalertresponse.md), error**
+**[*components.IncidentEntity](../../models/components/incidententity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## SetAlertAsPrimary
+## UnarchiveIncident
 
-Setting an alert as primary will overwrite milestone times in the FireHydrant incident with times included in the primary alert. Services attached to the primary alert will also be automatically added to the incident.
+Unarchive an incident
 
 ### Example Usage
 
@@ -478,18 +511,18 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Incidents.SetAlertAsPrimary(ctx, "<id>", "<id>", components.PatchV1IncidentsIncidentIDAlertsIncidentAlertIDPrimary{
-        Primary: false,
-    })
+    res, err := s.Incidents.UnarchiveIncident(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
     }
-    if res.IncidentsAlertEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -497,31 +530,973 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                                                              | Type                                                                                                                                                   | Required                                                                                                                                               | Description                                                                                                                                            |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `ctx`                                                                                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                                                                                  | :heavy_check_mark:                                                                                                                                     | The context to use for the request.                                                                                                                    |
-| `incidentAlertID`                                                                                                                                      | *string*                                                                                                                                               | :heavy_check_mark:                                                                                                                                     | N/A                                                                                                                                                    |
-| `incidentID`                                                                                                                                           | *string*                                                                                                                                               | :heavy_check_mark:                                                                                                                                     | N/A                                                                                                                                                    |
-| `patchV1IncidentsIncidentIDAlertsIncidentAlertIDPrimary`                                                                                               | [components.PatchV1IncidentsIncidentIDAlertsIncidentAlertIDPrimary](../../models/components/patchv1incidentsincidentidalertsincidentalertidprimary.md) | :heavy_check_mark:                                                                                                                                     | N/A                                                                                                                                                    |
-| `opts`                                                                                                                                                 | [][operations.Option](../../models/operations/option.md)                                                                                               | :heavy_minus_sign:                                                                                                                                     | The options for this request.                                                                                                                          |
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `incidentID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
 
 ### Response
 
-**[*operations.SetIncidentAlertAsPrimaryResponse](../../models/operations/setincidentalertasprimaryresponse.md), error**
+**[*components.IncidentEntity](../../models/components/incidententity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## ListAttachments
+## BulkUpdateIncidentMilestones
+
+Update milestone times in bulk for a given incident. All milestone
+times for an incident must occur in chronological order
+corresponding to the configured order of milestones. If the result
+of this request would cause any milestone(s) to appear out of place,
+a 422 response will instead be returned. This includes milestones
+not explicitly submitted or updated in this request.
+
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"firehydrant/types"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Incidents.BulkUpdateIncidentMilestones(ctx, "<id>", components.BulkUpdateIncidentMilestones{
+        Milestones: []components.BulkUpdateIncidentMilestonesMilestone{
+            components.BulkUpdateIncidentMilestonesMilestone{
+                Type: "<value>",
+                OccurredAt: types.MustTimeFromString("2025-04-19T18:24:04.583Z"),
+            },
+            components.BulkUpdateIncidentMilestonesMilestone{
+                Type: "<value>",
+                OccurredAt: types.MustTimeFromString("2024-09-22T18:15:43.263Z"),
+            },
+            components.BulkUpdateIncidentMilestonesMilestone{
+                Type: "<value>",
+                OccurredAt: types.MustTimeFromString("2023-08-29T06:50:58.826Z"),
+            },
+        },
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                              | :heavy_check_mark:                                                                                 | The context to use for the request.                                                                |
+| `incidentID`                                                                                       | *string*                                                                                           | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `bulkUpdateIncidentMilestones`                                                                     | [components.BulkUpdateIncidentMilestones](../../models/components/bulkupdateincidentmilestones.md) | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `opts`                                                                                             | [][operations.Option](../../models/operations/option.md)                                           | :heavy_minus_sign:                                                                                 | The options for this request.                                                                      |
+
+### Response
+
+**[*components.IncidentsMilestoneEntityPaginated](../../models/components/incidentsmilestoneentitypaginated.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## ListIncidentMilestones
+
+List times and durations for each milestone on an incident
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Incidents.ListIncidentMilestones(ctx, "<id>")
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `incidentID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.IncidentsMilestoneEntityPaginated](../../models/components/incidentsmilestoneentitypaginated.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## ListIncidentChangeEvents
+
+List related changes that have been attached to an incident
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Incidents.ListIncidentChangeEvents(ctx, "<id>", nil, nil, nil)
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                           | Type                                                                                                | Required                                                                                            | Description                                                                                         |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                               | [context.Context](https://pkg.go.dev/context#Context)                                               | :heavy_check_mark:                                                                                  | The context to use for the request.                                                                 |
+| `incidentID`                                                                                        | *string*                                                                                            | :heavy_check_mark:                                                                                  | N/A                                                                                                 |
+| `page`                                                                                              | **int*                                                                                              | :heavy_minus_sign:                                                                                  | N/A                                                                                                 |
+| `perPage`                                                                                           | **int*                                                                                              | :heavy_minus_sign:                                                                                  | N/A                                                                                                 |
+| `type_`                                                                                             | [*operations.ListIncidentChangeEventsType](../../models/operations/listincidentchangeeventstype.md) | :heavy_minus_sign:                                                                                  | The type of the relation to the incident                                                            |
+| `opts`                                                                                              | [][operations.Option](../../models/operations/option.md)                                            | :heavy_minus_sign:                                                                                  | The options for this request.                                                                       |
+
+### Response
+
+**[*components.IncidentsRelatedChangeEventEntityPaginated](../../models/components/incidentsrelatedchangeevententitypaginated.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## CreateIncidentChangeEvent
+
+Add a related change to an incident. Changes added to an incident can be causes, fixes, or suspects. To remove a change from an incident, the type field should be set to dismissed.
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Incidents.CreateIncidentChangeEvent(ctx, "<id>", components.CreateIncidentChangeEvent{
+        ChangeEventID: "<id>",
+        Type: components.CreateIncidentChangeEventTypeCaused,
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                        | :heavy_check_mark:                                                                           | The context to use for the request.                                                          |
+| `incidentID`                                                                                 | *string*                                                                                     | :heavy_check_mark:                                                                           | N/A                                                                                          |
+| `createIncidentChangeEvent`                                                                  | [components.CreateIncidentChangeEvent](../../models/components/createincidentchangeevent.md) | :heavy_check_mark:                                                                           | N/A                                                                                          |
+| `opts`                                                                                       | [][operations.Option](../../models/operations/option.md)                                     | :heavy_minus_sign:                                                                           | The options for this request.                                                                |
+
+### Response
+
+**[*components.IncidentsRelatedChangeEventEntity](../../models/components/incidentsrelatedchangeevententity.md), error**
+
+### Errors
+
+| Error Type            | Status Code           | Content Type          |
+| --------------------- | --------------------- | --------------------- |
+| sdkerrors.ErrorEntity | 400, 409              | application/json      |
+| sdkerrors.SDKError    | 4XX, 5XX              | \*/\*                 |
+
+## UpdateIncidentChangeEvent
+
+Update a change attached to an incident
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Incidents.UpdateIncidentChangeEvent(ctx, "<id>", "<id>", components.UpdateIncidentChangeEvent{})
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                        | :heavy_check_mark:                                                                           | The context to use for the request.                                                          |
+| `relatedChangeEventID`                                                                       | *string*                                                                                     | :heavy_check_mark:                                                                           | N/A                                                                                          |
+| `incidentID`                                                                                 | *string*                                                                                     | :heavy_check_mark:                                                                           | N/A                                                                                          |
+| `updateIncidentChangeEvent`                                                                  | [components.UpdateIncidentChangeEvent](../../models/components/updateincidentchangeevent.md) | :heavy_check_mark:                                                                           | N/A                                                                                          |
+| `opts`                                                                                       | [][operations.Option](../../models/operations/option.md)                                     | :heavy_minus_sign:                                                                           | The options for this request.                                                                |
+
+### Response
+
+**[*components.IncidentsRelatedChangeEventEntity](../../models/components/incidentsrelatedchangeevententity.md), error**
+
+### Errors
+
+| Error Type            | Status Code           | Content Type          |
+| --------------------- | --------------------- | --------------------- |
+| sdkerrors.ErrorEntity | 400, 409              | application/json      |
+| sdkerrors.SDKError    | 4XX, 5XX              | \*/\*                 |
+
+## ListIncidentStatusPages
+
+List status pages that are attached to an incident
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Incidents.ListIncidentStatusPages(ctx, "<id>")
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `incidentID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.IncidentsStatusPageEntityPaginated](../../models/components/incidentsstatuspageentitypaginated.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## CreateIncidentStatusPage
+
+Add a status page to an incident.
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Incidents.CreateIncidentStatusPage(ctx, "<id>", components.CreateIncidentStatusPage{
+        IntegrationSlug: "<value>",
+        IntegrationID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                      | [context.Context](https://pkg.go.dev/context#Context)                                      | :heavy_check_mark:                                                                         | The context to use for the request.                                                        |
+| `incidentID`                                                                               | *string*                                                                                   | :heavy_check_mark:                                                                         | N/A                                                                                        |
+| `createIncidentStatusPage`                                                                 | [components.CreateIncidentStatusPage](../../models/components/createincidentstatuspage.md) | :heavy_check_mark:                                                                         | N/A                                                                                        |
+| `opts`                                                                                     | [][operations.Option](../../models/operations/option.md)                                   | :heavy_minus_sign:                                                                         | The options for this request.                                                              |
+
+### Response
+
+**[*components.IncidentsStatusPageEntity](../../models/components/incidentsstatuspageentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## ListIncidentLinks
+
+List all the editable, external incident links attached to an incident
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Incidents.ListIncidentLinks(ctx, "<id>", nil, nil)
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `incidentID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `page`                                                   | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
+| `perPage`                                                | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.AttachmentsLinkEntityPaginated](../../models/components/attachmentslinkentitypaginated.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## CreateIncidentLink
+
+Allows adding adhoc links to an incident as an attachment
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Incidents.CreateIncidentLink(ctx, "<id>", components.CreateIncidentLink{
+        Href: "<value>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `ctx`                                                                          | [context.Context](https://pkg.go.dev/context#Context)                          | :heavy_check_mark:                                                             | The context to use for the request.                                            |
+| `incidentID`                                                                   | *string*                                                                       | :heavy_check_mark:                                                             | N/A                                                                            |
+| `createIncidentLink`                                                           | [components.CreateIncidentLink](../../models/components/createincidentlink.md) | :heavy_check_mark:                                                             | N/A                                                                            |
+| `opts`                                                                         | [][operations.Option](../../models/operations/option.md)                       | :heavy_minus_sign:                                                             | The options for this request.                                                  |
+
+### Response
+
+**[*components.AttachmentsLinkEntity](../../models/components/attachmentslinkentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## UpdateIncidentLink
+
+Update the external incident link attributes
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    err := s.Incidents.UpdateIncidentLink(ctx, "<id>", "<id>", components.UpdateIncidentLink{})
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `ctx`                                                                          | [context.Context](https://pkg.go.dev/context#Context)                          | :heavy_check_mark:                                                             | The context to use for the request.                                            |
+| `linkID`                                                                       | *string*                                                                       | :heavy_check_mark:                                                             | N/A                                                                            |
+| `incidentID`                                                                   | *string*                                                                       | :heavy_check_mark:                                                             | N/A                                                                            |
+| `updateIncidentLink`                                                           | [components.UpdateIncidentLink](../../models/components/updateincidentlink.md) | :heavy_check_mark:                                                             | N/A                                                                            |
+| `opts`                                                                         | [][operations.Option](../../models/operations/option.md)                       | :heavy_minus_sign:                                                             | The options for this request.                                                  |
+
+### Response
+
+**error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## DeleteIncidentLink
+
+Remove a link from an incident
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    err := s.Incidents.DeleteIncidentLink(ctx, "<id>", "<id>")
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `linkID`                                                 | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `incidentID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## UpdateTranscriptAttribution
+
+Update the attribution of a transcript
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"firehydrant/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    err := s.Incidents.UpdateTranscriptAttribution(ctx, "<id>", operations.UpdateTranscriptAttributionRequestBody{
+        ToUserID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                                                  | :heavy_check_mark:                                                                                                     | The context to use for the request.                                                                                    |
+| `incidentID`                                                                                                           | *string*                                                                                                               | :heavy_check_mark:                                                                                                     | N/A                                                                                                                    |
+| `requestBody`                                                                                                          | [operations.UpdateTranscriptAttributionRequestBody](../../models/operations/updatetranscriptattributionrequestbody.md) | :heavy_check_mark:                                                                                                     | N/A                                                                                                                    |
+| `opts`                                                                                                                 | [][operations.Option](../../models/operations/option.md)                                                               | :heavy_minus_sign:                                                                                                     | The options for this request.                                                                                          |
+
+### Response
+
+**error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## ListTranscriptEntries
+
+Retrieve the transcript for a specific incident
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Incidents.ListTranscriptEntries(ctx, "<id>", nil, nil, nil)
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                         | [context.Context](https://pkg.go.dev/context#Context)                                         | :heavy_check_mark:                                                                            | The context to use for the request.                                                           |
+| `incidentID`                                                                                  | *string*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `after`                                                                                       | **string*                                                                                     | :heavy_minus_sign:                                                                            | The ID of the transcript entry to start after.                                                |
+| `before`                                                                                      | **string*                                                                                     | :heavy_minus_sign:                                                                            | The ID of the transcript entry to start before.                                               |
+| `sort`                                                                                        | [*operations.ListTranscriptEntriesSort](../../models/operations/listtranscriptentriessort.md) | :heavy_minus_sign:                                                                            | The order to sort the transcript entries.                                                     |
+| `opts`                                                                                        | [][operations.Option](../../models/operations/option.md)                                      | :heavy_minus_sign:                                                                            | The options for this request.                                                                 |
+
+### Response
+
+**[*components.PublicAPIV1IncidentsTranscriptEntity](../../models/components/publicapiv1incidentstranscriptentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## DeleteTranscriptEntry
+
+Delete a transcript from an incident
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Incidents.DeleteTranscriptEntry(ctx, "<id>", "<id>")
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `transcriptID`                                           | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `incidentID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.PublicAPIV1IncidentsTranscriptEntity](../../models/components/publicapiv1incidentstranscriptentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## ListIncidentConferenceBridges
+
+Retrieve all conference bridges for an incident
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Incidents.ListIncidentConferenceBridges(ctx, "<id>")
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `incidentID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.IncidentsConferenceBridgeEntity](../../models/components/incidentsconferencebridgeentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## GetConferenceBridgeTranslation
+
+Retrieve the translations for a specific conference bridge
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Incidents.GetConferenceBridgeTranslation(ctx, "<id>", "<value>", "<id>")
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `id`                                                     | *string*                                                 | :heavy_check_mark:                                       | The ID of the conference bridge                          |
+| `languageCode`                                           | *string*                                                 | :heavy_check_mark:                                       | The language code of the translation                     |
+| `incidentID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.IncidentsConferenceBridgeEntity](../../models/components/incidentsconferencebridgeentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## ListSimilarIncidents
+
+Retrieve a list of similar incidents
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Incidents.ListSimilarIncidents(ctx, "<id>", nil, nil)
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `incidentID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `threshold`                                              | **float32*                                               | :heavy_minus_sign:                                       | N/A                                                      |
+| `limit`                                                  | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.SimilarIncidentEntityPaginated](../../models/components/similarincidententitypaginated.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## ListIncidentAttachments
 
 List attachments for an incident
 
@@ -533,17 +1508,20 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Incidents.ListAttachments(ctx, "<id>", nil, nil, nil)
+    res, err := s.Incidents.ListIncidentAttachments(ctx, "<id>", nil, nil, nil)
     if err != nil {
         log.Fatal(err)
     }
@@ -566,21 +1544,15 @@ func main() {
 
 ### Response
 
-**[*operations.ListIncidentAttachmentsResponse](../../models/operations/listincidentattachmentsresponse.md), error**
+**[*components.AttachmentsTypedAttachmentEntityPaginated](../../models/components/attachmentstypedattachmententitypaginated.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## CreateAttachment
+## CreateIncidentAttachment
 
 Allows adding image attachments to an incident
 
@@ -592,6 +1564,7 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"os"
 	"firehydrant/models/operations"
 	"log"
@@ -599,9 +1572,11 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
     content, fileErr := os.Open("example.file")
@@ -610,8 +1585,8 @@ func main() {
     }
 
 
-    res, err := s.Incidents.CreateAttachment(ctx, "<id>", operations.CreateIncidentAttachmentRequestBody{
-        File: operations.File{
+    res, err := s.Incidents.CreateIncidentAttachment(ctx, "<id>", operations.CreateIncidentAttachmentRequestBody{
+        File: operations.CreateIncidentAttachmentFile{
             FileName: "example.file",
             Content: content,
         },
@@ -619,7 +1594,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-    if res.IncidentAttachmentEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -636,133 +1611,15 @@ func main() {
 
 ### Response
 
-**[*operations.CreateIncidentAttachmentResponse](../../models/operations/createincidentattachmentresponse.md), error**
+**[*components.IncidentAttachmentEntity](../../models/components/incidentattachmententity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## GetChannel
-
-Gives chat channel information for the specified incident
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Incidents.GetChannel(ctx, "<id>")
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.IncidentsChannelEntity != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
-| `incidentID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
-| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
-
-### Response
-
-**[*operations.GetIncidentChannelResponse](../../models/operations/getincidentchannelresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## Close
-
-Closes an incident and optionally close all children
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Incidents.Close(ctx, "<id>")
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.IncidentEntity != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
-| `incidentID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
-| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
-
-### Response
-
-**[*operations.CloseIncidentResponse](../../models/operations/closeincidentresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## ListEvents
+## ListIncidentEvents
 
 List all events for an incident. An event is a timeline entry. This can be filtered with params to retrieve events of a certain type.
 
@@ -774,21 +1631,24 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Incidents.ListEvents(ctx, "<id>", nil, nil, nil)
+    res, err := s.Incidents.ListIncidentEvents(ctx, "<id>", nil, nil, nil)
     if err != nil {
         log.Fatal(err)
     }
-    if res.IncidentEventEntityPaginated != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -796,32 +1656,26 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
-| `incidentID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
-| `types`                                                  | **string*                                                | :heavy_minus_sign:                                       | A comma separated list of types of events to filter by   |
-| `page`                                                   | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
-| `perPage`                                                | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
-| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+| Parameter                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | Required                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | :heavy_check_mark:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | The context to use for the request.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `incidentID`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | *string*                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | :heavy_check_mark:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `types`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | **string*                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | A comma separated list of types of events to filter by. Possible values are:<br/> - `add_task_list`: Task list was added<br/> - `alert_event`: Someone was paged or took action on a linked alert<br/> - `alert_linked`: An alert was linked to the incident<br/> - `bulk_milestone_update`: When a milestone change occurs with no other changes<br/> - `bulk_update`: When an incident note/update is posted or when impacted components are updated. If other changes occur together with either of these changes (e.g., milestone change), they are all bundled together into a bulk_update<br/> - `change_type`: Updates to associated change events<br/> - `chat_message`: Any chat message event in a linked chat app like Slack or MS Teams<br/> - `children_changed`: When adding or updating child related incidents<br/> - `external_link`: When an external link is added or updated<br/> - `general_update`: Currently only describes Runbook stoppage events<br/> - `generic_chat_message`: When an event or message is manually added to the timeline via the web UI or API<br/> - `incident_attachment`: When attachments or files are added to the timeline<br/> - `generic_resource_change`: Any changes to individual fields within the incident, including custom fields<br/> - `incident_restriction`: When an incident is converted to private<br/> - `incident_status`: Only used when an incident starts and changes to an `active` state<br/> - `note`: When a message is posted to a status page directly and not via `/fh update`<br/> - `role_update`: Any updates to assigned roles<br/> - `runbook_attachment`: Any updates to a runbook<br/> - `runbook_step_execution_update`: Any Runbook step events<br/> - `task_update`: Task update events<br/> - `team_assignment`: Team assignment events<br/> - `ticket_update`: Updates to incident and follow-up tickets |
+| `page`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | **int*                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `perPage`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | **int*                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `opts`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | [][operations.Option](../../models/operations/option.md)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | The options for this request.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 
 ### Response
 
-**[*operations.ListIncidentEventsResponse](../../models/operations/listincidenteventsresponse.md), error**
+**[*components.IncidentEventEntityPaginated](../../models/components/incidentevententitypaginated.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## GetEvent
+## GetIncidentEvent
 
 Retrieve a single event for an incident
 
@@ -833,21 +1687,24 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Incidents.GetEvent(ctx, "<id>", "<id>")
+    res, err := s.Incidents.GetIncidentEvent(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
     }
-    if res.IncidentEventEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -864,23 +1721,17 @@ func main() {
 
 ### Response
 
-**[*operations.GetIncidentEventResponse](../../models/operations/getincidenteventresponse.md), error**
+**[*components.IncidentEventEntity](../../models/components/incidentevententity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## DeleteEvent
+## DeleteIncidentEvent
 
-Delete a single event for an incident
+Delete an event for an incident
 
 ### Example Usage
 
@@ -890,21 +1741,24 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Incidents.DeleteEvent(ctx, "<id>", "<id>")
+    res, err := s.Incidents.DeleteIncidentEvent(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
     }
-    if res.IncidentEventEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -921,21 +1775,15 @@ func main() {
 
 ### Response
 
-**[*operations.DeleteIncidentEventResponse](../../models/operations/deleteincidenteventresponse.md), error**
+**[*components.IncidentEventEntity](../../models/components/incidentevententity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## UpdateEvent
+## UpdateIncidentEvent
 
 Update a single event for an incident
 
@@ -947,21 +1795,24 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Incidents.UpdateEvent(ctx, "<id>", "<id>")
+    res, err := s.Incidents.UpdateIncidentEvent(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
     }
-    if res.IncidentEventEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -978,317 +1829,15 @@ func main() {
 
 ### Response
 
-**[*operations.UpdateIncidentEventResponse](../../models/operations/updateincidenteventresponse.md), error**
+**[*components.IncidentEventEntity](../../models/components/incidentevententity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## UpdateEventVotes
-
-Allows for upvoting or downvoting an event
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"firehydrant/models/components"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Incidents.UpdateEventVotes(ctx, "<id>", "<id>", components.PatchV1IncidentsIncidentIDEventsEventIDVotes{
-        Direction: components.DirectionDig,
-    })
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.VotesEntity != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                                          | Type                                                                                                                               | Required                                                                                                                           | Description                                                                                                                        |
-| ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                                                              | :heavy_check_mark:                                                                                                                 | The context to use for the request.                                                                                                |
-| `incidentID`                                                                                                                       | *string*                                                                                                                           | :heavy_check_mark:                                                                                                                 | N/A                                                                                                                                |
-| `eventID`                                                                                                                          | *string*                                                                                                                           | :heavy_check_mark:                                                                                                                 | N/A                                                                                                                                |
-| `patchV1IncidentsIncidentIDEventsEventIDVotes`                                                                                     | [components.PatchV1IncidentsIncidentIDEventsEventIDVotes](../../models/components/patchv1incidentsincidentideventseventidvotes.md) | :heavy_check_mark:                                                                                                                 | N/A                                                                                                                                |
-| `opts`                                                                                                                             | [][operations.Option](../../models/operations/option.md)                                                                           | :heavy_minus_sign:                                                                                                                 | The options for this request.                                                                                                      |
-
-### Response
-
-**[*operations.UpdateIncidentEventVotesResponse](../../models/operations/updateincidenteventvotesresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## GetEventVoteStatus
-
-Returns the current vote counts for an object
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Incidents.GetEventVoteStatus(ctx, "<id>", "<id>")
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.VotesEntity != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
-| `incidentID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
-| `eventID`                                                | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
-| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
-
-### Response
-
-**[*operations.GetIncidentEventVoteStatusResponse](../../models/operations/getincidenteventvotestatusresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## CreateGenericChatMessage
-
-Create a new generic chat message on an incident timeline. These are independent of any specific chat provider.
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"firehydrant/models/components"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Incidents.CreateGenericChatMessage(ctx, "<id>", components.PostV1IncidentsIncidentIDGenericChatMessages{
-        Body: "<value>",
-    })
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.EventGenericChatMessageEntity != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                                          | Type                                                                                                                               | Required                                                                                                                           | Description                                                                                                                        |
-| ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                                                              | :heavy_check_mark:                                                                                                                 | The context to use for the request.                                                                                                |
-| `incidentID`                                                                                                                       | *string*                                                                                                                           | :heavy_check_mark:                                                                                                                 | N/A                                                                                                                                |
-| `postV1IncidentsIncidentIDGenericChatMessages`                                                                                     | [components.PostV1IncidentsIncidentIDGenericChatMessages](../../models/components/postv1incidentsincidentidgenericchatmessages.md) | :heavy_check_mark:                                                                                                                 | N/A                                                                                                                                |
-| `opts`                                                                                                                             | [][operations.Option](../../models/operations/option.md)                                                                           | :heavy_minus_sign:                                                                                                                 | The options for this request.                                                                                                      |
-
-### Response
-
-**[*operations.CreateIncidentGenericChatMessageResponse](../../models/operations/createincidentgenericchatmessageresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## DeleteChatMessage
-
-Delete an existing generic chat message on an incident.
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Incidents.DeleteChatMessage(ctx, "<id>", "<id>")
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.EventGenericChatMessageEntity != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
-| `messageID`                                              | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
-| `incidentID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
-| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
-
-### Response
-
-**[*operations.DeleteIncidentChatMessageResponse](../../models/operations/deleteincidentchatmessageresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## UpdateChatMessage
-
-Update an existing generic chat message on an incident.
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"firehydrant/models/components"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Incidents.UpdateChatMessage(ctx, "<id>", "<id>", components.PatchV1IncidentsIncidentIDGenericChatMessagesMessageID{
-        Body: "<value>",
-    })
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.EventGenericChatMessageEntity != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                                                              | Type                                                                                                                                                   | Required                                                                                                                                               | Description                                                                                                                                            |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `ctx`                                                                                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                                                                                  | :heavy_check_mark:                                                                                                                                     | The context to use for the request.                                                                                                                    |
-| `messageID`                                                                                                                                            | *string*                                                                                                                                               | :heavy_check_mark:                                                                                                                                     | N/A                                                                                                                                                    |
-| `incidentID`                                                                                                                                           | *string*                                                                                                                                               | :heavy_check_mark:                                                                                                                                     | N/A                                                                                                                                                    |
-| `patchV1IncidentsIncidentIDGenericChatMessagesMessageID`                                                                                               | [components.PatchV1IncidentsIncidentIDGenericChatMessagesMessageID](../../models/components/patchv1incidentsincidentidgenericchatmessagesmessageid.md) | :heavy_check_mark:                                                                                                                                     | N/A                                                                                                                                                    |
-| `opts`                                                                                                                                                 | [][operations.Option](../../models/operations/option.md)                                                                                               | :heavy_minus_sign:                                                                                                                                     | The options for this request.                                                                                                                          |
-
-### Response
-
-**[*operations.UpdateIncidentChatMessageResponse](../../models/operations/updateincidentchatmessageresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## UpdateImpacts
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## UpdateIncidentImpactPut
 
 Allows updating an incident's impacted infrastructure, with the option to
 move the incident into a different milestone and provide a note to update
@@ -1313,16 +1862,18 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Incidents.UpdateImpacts(ctx, "<id>", components.PutV1IncidentsIncidentIDImpact{})
+    res, err := s.Incidents.UpdateIncidentImpactPut(ctx, "<id>", components.UpdateIncidentImpactPut{})
     if err != nil {
         log.Fatal(err)
     }
-    if res.IncidentEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -1330,30 +1881,24 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `ctx`                                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                                  | :heavy_check_mark:                                                                                     | The context to use for the request.                                                                    |
-| `incidentID`                                                                                           | *string*                                                                                               | :heavy_check_mark:                                                                                     | N/A                                                                                                    |
-| `putV1IncidentsIncidentIDImpact`                                                                       | [components.PutV1IncidentsIncidentIDImpact](../../models/components/putv1incidentsincidentidimpact.md) | :heavy_check_mark:                                                                                     | N/A                                                                                                    |
-| `opts`                                                                                                 | [][operations.Option](../../models/operations/option.md)                                               | :heavy_minus_sign:                                                                                     | The options for this request.                                                                          |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `ctx`                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                    | :heavy_check_mark:                                                                       | The context to use for the request.                                                      |
+| `incidentID`                                                                             | *string*                                                                                 | :heavy_check_mark:                                                                       | N/A                                                                                      |
+| `updateIncidentImpactPut`                                                                | [components.UpdateIncidentImpactPut](../../models/components/updateincidentimpactput.md) | :heavy_check_mark:                                                                       | N/A                                                                                      |
+| `opts`                                                                                   | [][operations.Option](../../models/operations/option.md)                                 | :heavy_minus_sign:                                                                       | The options for this request.                                                            |
 
 ### Response
 
-**[*operations.UpdateIncidentImpactsResponse](../../models/operations/updateincidentimpactsresponse.md), error**
+**[*components.IncidentEntity](../../models/components/incidententity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## PartialUpdateImpacts
+## UpdateIncidentImpactPatch
 
 Allows updating an incident's impacted infrastructure, with the option to
 move the incident into a different milestone and provide a note to update
@@ -1378,16 +1923,18 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Incidents.PartialUpdateImpacts(ctx, "<id>", components.PatchV1IncidentsIncidentIDImpact{})
+    res, err := s.Incidents.UpdateIncidentImpactPatch(ctx, "<id>", components.UpdateIncidentImpactPatch{})
     if err != nil {
         log.Fatal(err)
     }
-    if res.IncidentEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -1395,30 +1942,24 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                      | [context.Context](https://pkg.go.dev/context#Context)                                                      | :heavy_check_mark:                                                                                         | The context to use for the request.                                                                        |
-| `incidentID`                                                                                               | *string*                                                                                                   | :heavy_check_mark:                                                                                         | N/A                                                                                                        |
-| `patchV1IncidentsIncidentIDImpact`                                                                         | [components.PatchV1IncidentsIncidentIDImpact](../../models/components/patchv1incidentsincidentidimpact.md) | :heavy_check_mark:                                                                                         | N/A                                                                                                        |
-| `opts`                                                                                                     | [][operations.Option](../../models/operations/option.md)                                                   | :heavy_minus_sign:                                                                                         | The options for this request.                                                                              |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                        | :heavy_check_mark:                                                                           | The context to use for the request.                                                          |
+| `incidentID`                                                                                 | *string*                                                                                     | :heavy_check_mark:                                                                           | N/A                                                                                          |
+| `updateIncidentImpactPatch`                                                                  | [components.UpdateIncidentImpactPatch](../../models/components/updateincidentimpactpatch.md) | :heavy_check_mark:                                                                           | N/A                                                                                          |
+| `opts`                                                                                       | [][operations.Option](../../models/operations/option.md)                                     | :heavy_minus_sign:                                                                           | The options for this request.                                                                |
 
 ### Response
 
-**[*operations.PartialUpdateIncidentImpactsResponse](../../models/operations/partialupdateincidentimpactsresponse.md), error**
+**[*components.IncidentEntity](../../models/components/incidententity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## ListImpact
+## ListIncidentImpacts
 
 List impacted infrastructure on an incident by specifying type
 
@@ -1430,22 +1971,25 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Incidents.ListImpact(ctx, "<id>", operations.PathParamTypeEnvironments)
+    res, err := s.Incidents.ListIncidentImpacts(ctx, "<id>", operations.ListIncidentImpactsTypeEnvironments)
     if err != nil {
         log.Fatal(err)
     }
-    if res.IncidentImpactEntityPaginated != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -1453,30 +1997,24 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
-| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| `ctx`                                                                | [context.Context](https://pkg.go.dev/context#Context)                | :heavy_check_mark:                                                   | The context to use for the request.                                  |
-| `incidentID`                                                         | *string*                                                             | :heavy_check_mark:                                                   | N/A                                                                  |
-| `type_`                                                              | [operations.PathParamType](../../models/operations/pathparamtype.md) | :heavy_check_mark:                                                   | N/A                                                                  |
-| `opts`                                                               | [][operations.Option](../../models/operations/option.md)             | :heavy_minus_sign:                                                   | The options for this request.                                        |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `ctx`                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                    | :heavy_check_mark:                                                                       | The context to use for the request.                                                      |
+| `incidentID`                                                                             | *string*                                                                                 | :heavy_check_mark:                                                                       | N/A                                                                                      |
+| `type_`                                                                                  | [operations.ListIncidentImpactsType](../../models/operations/listincidentimpactstype.md) | :heavy_check_mark:                                                                       | N/A                                                                                      |
+| `opts`                                                                                   | [][operations.Option](../../models/operations/option.md)                                 | :heavy_minus_sign:                                                                       | The options for this request.                                                            |
 
 ### Response
 
-**[*operations.ListIncidentImpactResponse](../../models/operations/listincidentimpactresponse.md), error**
+**[*components.IncidentImpactEntityPaginated](../../models/components/incidentimpactentitypaginated.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## CreateImpact
+## CreateIncidentImpact
 
 Add impacted infrastructure to an incident
 
@@ -1488,25 +2026,27 @@ package main
 import(
 	"context"
 	"firehydrant"
-	"firehydrant/models/operations"
 	"firehydrant/models/components"
+	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Incidents.CreateImpact(ctx, "<id>", operations.CreateIncidentImpactPathParamTypeServices, components.PostV1IncidentsIncidentIDImpactType{
+    res, err := s.Incidents.CreateIncidentImpact(ctx, "<id>", operations.CreateIncidentImpactTypeFunctionalities, components.CreateIncidentImpact{
         ID: "<id>",
     })
     if err != nil {
         log.Fatal(err)
     }
-    if res.IncidentImpactEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -1514,34 +2054,28 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                                            | :heavy_check_mark:                                                                                               | The context to use for the request.                                                                              |
-| `incidentID`                                                                                                     | *string*                                                                                                         | :heavy_check_mark:                                                                                               | N/A                                                                                                              |
-| `type_`                                                                                                          | [operations.CreateIncidentImpactPathParamType](../../models/operations/createincidentimpactpathparamtype.md)     | :heavy_check_mark:                                                                                               | N/A                                                                                                              |
-| `postV1IncidentsIncidentIDImpactType`                                                                            | [components.PostV1IncidentsIncidentIDImpactType](../../models/components/postv1incidentsincidentidimpacttype.md) | :heavy_check_mark:                                                                                               | N/A                                                                                                              |
-| `opts`                                                                                                           | [][operations.Option](../../models/operations/option.md)                                                         | :heavy_minus_sign:                                                                                               | The options for this request.                                                                                    |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                      | [context.Context](https://pkg.go.dev/context#Context)                                      | :heavy_check_mark:                                                                         | The context to use for the request.                                                        |
+| `incidentID`                                                                               | *string*                                                                                   | :heavy_check_mark:                                                                         | N/A                                                                                        |
+| `type_`                                                                                    | [operations.CreateIncidentImpactType](../../models/operations/createincidentimpacttype.md) | :heavy_check_mark:                                                                         | N/A                                                                                        |
+| `createIncidentImpact`                                                                     | [components.CreateIncidentImpact](../../models/components/createincidentimpact.md)         | :heavy_check_mark:                                                                         | N/A                                                                                        |
+| `opts`                                                                                     | [][operations.Option](../../models/operations/option.md)                                   | :heavy_minus_sign:                                                                         | The options for this request.                                                              |
 
 ### Response
 
-**[*operations.CreateIncidentImpactResponse](../../models/operations/createincidentimpactresponse.md), error**
+**[*components.IncidentImpactEntity](../../models/components/incidentimpactentity.md), error**
 
 ### Errors
 
-| Error Type                    | Status Code                   | Content Type                  |
-| ----------------------------- | ----------------------------- | ----------------------------- |
-| sdkerrors.ErrorEntity         | 400                           | application/json              |
-| sdkerrors.Unauthorized        | 401, 403, 407, 511            | application/json              |
-| sdkerrors.NotFound            | 404, 501, 505                 | application/json              |
-| sdkerrors.Timeout             | 408, 504                      | application/json              |
-| sdkerrors.BadRequest          | 413, 414, 415, 422, 431, 510  | application/json              |
-| sdkerrors.RateLimited         | 429                           | application/json              |
-| sdkerrors.InternalServerError | 500, 502, 503, 506, 507, 508  | application/json              |
-| sdkerrors.SDKError            | 4XX, 5XX                      | \*/\*                         |
+| Error Type            | Status Code           | Content Type          |
+| --------------------- | --------------------- | --------------------- |
+| sdkerrors.ErrorEntity | 400                   | application/json      |
+| sdkerrors.SDKError    | 4XX, 5XX              | \*/\*                 |
 
-## DeleteImpact
+## DeleteIncidentImpact
 
-Remove impacted infrastructure on an incident
+Remove impacted infrastructure from an incident
 
 ### Example Usage
 
@@ -1551,417 +2085,49 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"firehydrant/models/operations"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Incidents.DeleteImpact(ctx, "<id>", operations.DeleteIncidentImpactPathParamTypeServices, "<id>")
+    err := s.Incidents.DeleteIncidentImpact(ctx, "<id>", operations.DeleteIncidentImpactTypeServices, "<id>")
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `ctx`                                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                                        | :heavy_check_mark:                                                                                           | The context to use for the request.                                                                          |
-| `incidentID`                                                                                                 | *string*                                                                                                     | :heavy_check_mark:                                                                                           | N/A                                                                                                          |
-| `type_`                                                                                                      | [operations.DeleteIncidentImpactPathParamType](../../models/operations/deleteincidentimpactpathparamtype.md) | :heavy_check_mark:                                                                                           | N/A                                                                                                          |
-| `id`                                                                                                         | *string*                                                                                                     | :heavy_check_mark:                                                                                           | N/A                                                                                                          |
-| `opts`                                                                                                       | [][operations.Option](../../models/operations/option.md)                                                     | :heavy_minus_sign:                                                                                           | The options for this request.                                                                                |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                      | [context.Context](https://pkg.go.dev/context#Context)                                      | :heavy_check_mark:                                                                         | The context to use for the request.                                                        |
+| `incidentID`                                                                               | *string*                                                                                   | :heavy_check_mark:                                                                         | N/A                                                                                        |
+| `type_`                                                                                    | [operations.DeleteIncidentImpactType](../../models/operations/deleteincidentimpacttype.md) | :heavy_check_mark:                                                                         | N/A                                                                                        |
+| `id`                                                                                       | *string*                                                                                   | :heavy_check_mark:                                                                         | N/A                                                                                        |
+| `opts`                                                                                     | [][operations.Option](../../models/operations/option.md)                                   | :heavy_minus_sign:                                                                         | The options for this request.                                                              |
 
 ### Response
 
-**[*operations.DeleteIncidentImpactResponse](../../models/operations/deleteincidentimpactresponse.md), error**
+**error**
 
 ### Errors
 
-| Error Type                    | Status Code                   | Content Type                  |
-| ----------------------------- | ----------------------------- | ----------------------------- |
-| sdkerrors.ErrorEntity         | 400                           | application/json              |
-| sdkerrors.Unauthorized        | 401, 403, 407, 511            | application/json              |
-| sdkerrors.NotFound            | 404, 501, 505                 | application/json              |
-| sdkerrors.Timeout             | 408, 504                      | application/json              |
-| sdkerrors.BadRequest          | 413, 414, 415, 422, 431, 510  | application/json              |
-| sdkerrors.RateLimited         | 429                           | application/json              |
-| sdkerrors.InternalServerError | 500, 502, 503, 506, 507, 508  | application/json              |
-| sdkerrors.SDKError            | 4XX, 5XX                      | \*/\*                         |
-
-## ListLinks
-
-List all the editable, external incident links attached to an incident
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Incidents.ListLinks(ctx, "<id>", nil, nil)
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.AttachmentsLinkEntityPaginated != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
-| `incidentID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
-| `page`                                                   | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
-| `perPage`                                                | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
-| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
-
-### Response
-
-**[*operations.ListIncidentLinksResponse](../../models/operations/listincidentlinksresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## CreateLink
-
-Allows adding adhoc links to an incident as an attachment
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"firehydrant/models/components"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Incidents.CreateLink(ctx, "<id>", components.PostV1IncidentsIncidentIDLinks{
-        Href: "<value>",
-    })
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.AttachmentsLinkEntity != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `ctx`                                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                                  | :heavy_check_mark:                                                                                     | The context to use for the request.                                                                    |
-| `incidentID`                                                                                           | *string*                                                                                               | :heavy_check_mark:                                                                                     | N/A                                                                                                    |
-| `postV1IncidentsIncidentIDLinks`                                                                       | [components.PostV1IncidentsIncidentIDLinks](../../models/components/postv1incidentsincidentidlinks.md) | :heavy_check_mark:                                                                                     | N/A                                                                                                    |
-| `opts`                                                                                                 | [][operations.Option](../../models/operations/option.md)                                               | :heavy_minus_sign:                                                                                     | The options for this request.                                                                          |
-
-### Response
-
-**[*operations.CreateIncidentLinkResponse](../../models/operations/createincidentlinkresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## UpdateLink
-
-Updates the external incident link attributes
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"firehydrant/models/components"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Incidents.UpdateLink(ctx, "<id>", "<id>", components.PutV1IncidentsIncidentIDLinksLinkID{})
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                                            | :heavy_check_mark:                                                                                               | The context to use for the request.                                                                              |
-| `linkID`                                                                                                         | *string*                                                                                                         | :heavy_check_mark:                                                                                               | N/A                                                                                                              |
-| `incidentID`                                                                                                     | *string*                                                                                                         | :heavy_check_mark:                                                                                               | N/A                                                                                                              |
-| `putV1IncidentsIncidentIDLinksLinkID`                                                                            | [components.PutV1IncidentsIncidentIDLinksLinkID](../../models/components/putv1incidentsincidentidlinkslinkid.md) | :heavy_check_mark:                                                                                               | N/A                                                                                                              |
-| `opts`                                                                                                           | [][operations.Option](../../models/operations/option.md)                                                         | :heavy_minus_sign:                                                                                               | The options for this request.                                                                                    |
-
-### Response
-
-**[*operations.UpdateIncidentLinkResponse](../../models/operations/updateincidentlinkresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## DeleteLink
-
-Deletes the external incident link
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Incidents.DeleteLink(ctx, "<id>", "<id>")
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
-| `linkID`                                                 | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
-| `incidentID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
-| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
-
-### Response
-
-**[*operations.DeleteIncidentLinkResponse](../../models/operations/deleteincidentlinkresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## ListMilestones
-
-List times and durations for each milestone on an incident
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Incidents.ListMilestones(ctx, "<id>")
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.IncidentsMilestoneEntityPaginated != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
-| `incidentID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
-| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
-
-### Response
-
-**[*operations.ListIncidentMilestonesResponse](../../models/operations/listincidentmilestonesresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## UpdateMilestonesBulk
-
-Update milestone times in bulk for a given incident. All milestone
-times for an incident must occur in chronological order
-corresponding to the configured order of milestones. If the result
-of this request would cause any milestone(s) to appear out of place,
-a 422 response will instead be returned. This includes milestones
-not explicitly submitted or updated in this request.
-
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"firehydrant/types"
-	"firehydrant/models/components"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Incidents.UpdateMilestonesBulk(ctx, "<id>", components.PutV1IncidentsIncidentIDMilestonesBulkUpdate{
-        Milestones: []components.PutV1IncidentsIncidentIDMilestonesBulkUpdateMilestones{
-            components.PutV1IncidentsIncidentIDMilestonesBulkUpdateMilestones{
-                Type: "<value>",
-                OccurredAt: types.MustTimeFromString("2023-05-22T05:39:43.411Z"),
-            },
-        },
-    })
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.IncidentsMilestoneEntityPaginated != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                                          | Type                                                                                                                               | Required                                                                                                                           | Description                                                                                                                        |
-| ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                                                              | :heavy_check_mark:                                                                                                                 | The context to use for the request.                                                                                                |
-| `incidentID`                                                                                                                       | *string*                                                                                                                           | :heavy_check_mark:                                                                                                                 | N/A                                                                                                                                |
-| `putV1IncidentsIncidentIDMilestonesBulkUpdate`                                                                                     | [components.PutV1IncidentsIncidentIDMilestonesBulkUpdate](../../models/components/putv1incidentsincidentidmilestonesbulkupdate.md) | :heavy_check_mark:                                                                                                                 | N/A                                                                                                                                |
-| `opts`                                                                                                                             | [][operations.Option](../../models/operations/option.md)                                                                           | :heavy_minus_sign:                                                                                                                 | The options for this request.                                                                                                      |
-
-### Response
-
-**[*operations.UpdateIncidentMilestonesBulkResponse](../../models/operations/updateincidentmilestonesbulkresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## CreateNote
+| Error Type            | Status Code           | Content Type          |
+| --------------------- | --------------------- | --------------------- |
+| sdkerrors.ErrorEntity | 400                   | application/json      |
+| sdkerrors.SDKError    | 4XX, 5XX              | \*/\*                 |
+
+## CreateIncidentNote
 
 Create a new note on for an incident. The visibility field on a note determines where it gets posted.
 
@@ -1979,18 +2145,20 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Incidents.CreateNote(ctx, "<id>", components.PostV1IncidentsIncidentIDNotes{
+    res, err := s.Incidents.CreateIncidentNote(ctx, "<id>", components.CreateIncidentNote{
         Body: "<value>",
     })
     if err != nil {
         log.Fatal(err)
     }
-    if res.EventNoteEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -1998,30 +2166,24 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `ctx`                                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                                  | :heavy_check_mark:                                                                                     | The context to use for the request.                                                                    |
-| `incidentID`                                                                                           | *string*                                                                                               | :heavy_check_mark:                                                                                     | N/A                                                                                                    |
-| `postV1IncidentsIncidentIDNotes`                                                                       | [components.PostV1IncidentsIncidentIDNotes](../../models/components/postv1incidentsincidentidnotes.md) | :heavy_check_mark:                                                                                     | N/A                                                                                                    |
-| `opts`                                                                                                 | [][operations.Option](../../models/operations/option.md)                                               | :heavy_minus_sign:                                                                                     | The options for this request.                                                                          |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `ctx`                                                                          | [context.Context](https://pkg.go.dev/context#Context)                          | :heavy_check_mark:                                                             | The context to use for the request.                                            |
+| `incidentID`                                                                   | *string*                                                                       | :heavy_check_mark:                                                             | N/A                                                                            |
+| `createIncidentNote`                                                           | [components.CreateIncidentNote](../../models/components/createincidentnote.md) | :heavy_check_mark:                                                             | N/A                                                                            |
+| `opts`                                                                         | [][operations.Option](../../models/operations/option.md)                       | :heavy_minus_sign:                                                             | The options for this request.                                                  |
 
 ### Response
 
-**[*operations.CreateIncidentNoteResponse](../../models/operations/createincidentnoteresponse.md), error**
+**[*components.EventNoteEntity](../../models/components/eventnoteentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## UpdateNote
+## UpdateIncidentNote
 
 Updates the body of a note
 
@@ -2039,18 +2201,20 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Incidents.UpdateNote(ctx, "<id>", "<id>", components.PatchV1IncidentsIncidentIDNotesNoteID{
+    res, err := s.Incidents.UpdateIncidentNote(ctx, "<id>", "<id>", components.UpdateIncidentNote{
         Body: "<value>",
     })
     if err != nil {
         log.Fatal(err)
     }
-    if res.EventNoteEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -2058,92 +2222,27 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
-| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                                                | :heavy_check_mark:                                                                                                   | The context to use for the request.                                                                                  |
-| `noteID`                                                                                                             | *string*                                                                                                             | :heavy_check_mark:                                                                                                   | N/A                                                                                                                  |
-| `incidentID`                                                                                                         | *string*                                                                                                             | :heavy_check_mark:                                                                                                   | N/A                                                                                                                  |
-| `patchV1IncidentsIncidentIDNotesNoteID`                                                                              | [components.PatchV1IncidentsIncidentIDNotesNoteID](../../models/components/patchv1incidentsincidentidnotesnoteid.md) | :heavy_check_mark:                                                                                                   | N/A                                                                                                                  |
-| `opts`                                                                                                               | [][operations.Option](../../models/operations/option.md)                                                             | :heavy_minus_sign:                                                                                                   | The options for this request.                                                                                        |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `ctx`                                                                          | [context.Context](https://pkg.go.dev/context#Context)                          | :heavy_check_mark:                                                             | The context to use for the request.                                            |
+| `noteID`                                                                       | *string*                                                                       | :heavy_check_mark:                                                             | N/A                                                                            |
+| `incidentID`                                                                   | *string*                                                                       | :heavy_check_mark:                                                             | N/A                                                                            |
+| `updateIncidentNote`                                                           | [components.UpdateIncidentNote](../../models/components/updateincidentnote.md) | :heavy_check_mark:                                                             | N/A                                                                            |
+| `opts`                                                                         | [][operations.Option](../../models/operations/option.md)                       | :heavy_minus_sign:                                                             | The options for this request.                                                  |
 
 ### Response
 
-**[*operations.UpdateIncidentNoteResponse](../../models/operations/updateincidentnoteresponse.md), error**
+**[*components.EventNoteEntity](../../models/components/eventnoteentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## ListRelatedChangeEvents
+## CreateIncidentChatMessage
 
-List related changes that have been attached to an incident
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Incidents.ListRelatedChangeEvents(ctx, "<id>", nil, nil, nil)
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.IncidentsRelatedChangeEventEntityPaginated != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
-| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| `ctx`                                                                   | [context.Context](https://pkg.go.dev/context#Context)                   | :heavy_check_mark:                                                      | The context to use for the request.                                     |
-| `incidentID`                                                            | *string*                                                                | :heavy_check_mark:                                                      | N/A                                                                     |
-| `page`                                                                  | **int*                                                                  | :heavy_minus_sign:                                                      | N/A                                                                     |
-| `perPage`                                                               | **int*                                                                  | :heavy_minus_sign:                                                      | N/A                                                                     |
-| `type_`                                                                 | [*operations.QueryParamType](../../models/operations/queryparamtype.md) | :heavy_minus_sign:                                                      | The type of the relation to the incident                                |
-| `opts`                                                                  | [][operations.Option](../../models/operations/option.md)                | :heavy_minus_sign:                                                      | The options for this request.                                           |
-
-### Response
-
-**[*operations.ListIncidentRelatedChangesResponse](../../models/operations/listincidentrelatedchangesresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## CreateRelatedChange
-
-Add a related change to an incident. Changes added to an incident can be causes, fixes, or suspects. To remove a change from an incident, the type field should be set to dismissed.
+Create a new generic chat message on an incident timeline. These are independent of any specific chat provider.
 
 ### Example Usage
 
@@ -2159,19 +2258,20 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Incidents.CreateRelatedChange(ctx, "<id>", components.PostV1IncidentsIncidentIDRelatedChangeEvents{
-        ChangeEventID: "<id>",
-        Type: components.PostV1IncidentsIncidentIDRelatedChangeEventsTypeFixed,
+    res, err := s.Incidents.CreateIncidentChatMessage(ctx, "<id>", components.CreateIncidentChatMessage{
+        Body: "<value>",
     })
     if err != nil {
         log.Fatal(err)
     }
-    if res.IncidentsRelatedChangeEventEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -2179,33 +2279,26 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                                          | Type                                                                                                                               | Required                                                                                                                           | Description                                                                                                                        |
-| ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                                                              | :heavy_check_mark:                                                                                                                 | The context to use for the request.                                                                                                |
-| `incidentID`                                                                                                                       | *string*                                                                                                                           | :heavy_check_mark:                                                                                                                 | N/A                                                                                                                                |
-| `postV1IncidentsIncidentIDRelatedChangeEvents`                                                                                     | [components.PostV1IncidentsIncidentIDRelatedChangeEvents](../../models/components/postv1incidentsincidentidrelatedchangeevents.md) | :heavy_check_mark:                                                                                                                 | N/A                                                                                                                                |
-| `opts`                                                                                                                             | [][operations.Option](../../models/operations/option.md)                                                                           | :heavy_minus_sign:                                                                                                                 | The options for this request.                                                                                                      |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                        | :heavy_check_mark:                                                                           | The context to use for the request.                                                          |
+| `incidentID`                                                                                 | *string*                                                                                     | :heavy_check_mark:                                                                           | N/A                                                                                          |
+| `createIncidentChatMessage`                                                                  | [components.CreateIncidentChatMessage](../../models/components/createincidentchatmessage.md) | :heavy_check_mark:                                                                           | N/A                                                                                          |
+| `opts`                                                                                       | [][operations.Option](../../models/operations/option.md)                                     | :heavy_minus_sign:                                                                           | The options for this request.                                                                |
 
 ### Response
 
-**[*operations.CreateIncidentRelatedChangeResponse](../../models/operations/createincidentrelatedchangeresponse.md), error**
+**[*components.EventGenericChatMessageEntity](../../models/components/eventgenericchatmessageentity.md), error**
 
 ### Errors
 
-| Error Type                    | Status Code                   | Content Type                  |
-| ----------------------------- | ----------------------------- | ----------------------------- |
-| sdkerrors.ErrorEntity         | 400, 409                      | application/json              |
-| sdkerrors.Unauthorized        | 401, 403, 407, 511            | application/json              |
-| sdkerrors.NotFound            | 404, 501, 505                 | application/json              |
-| sdkerrors.Timeout             | 408, 504                      | application/json              |
-| sdkerrors.BadRequest          | 413, 414, 415, 422, 431, 510  | application/json              |
-| sdkerrors.RateLimited         | 429                           | application/json              |
-| sdkerrors.InternalServerError | 500, 502, 503, 506, 507, 508  | application/json              |
-| sdkerrors.SDKError            | 4XX, 5XX                      | \*/\*                         |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## UpdateRelatedChangeEvent
+## DeleteIncidentChatMessage
 
-Update a change attached to an incident
+Delete an existing generic chat message on an incident.
 
 ### Example Usage
 
@@ -2221,75 +2314,18 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Incidents.UpdateRelatedChangeEvent(ctx, "<id>", "<id>", components.PatchV1IncidentsIncidentIDRelatedChangeEventsRelatedChangeEventID{})
+    res, err := s.Incidents.DeleteIncidentChatMessage(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
     }
-    if res.IncidentsRelatedChangeEventEntity != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                    | Type                                                                                                                                                                         | Required                                                                                                                                                                     | Description                                                                                                                                                                  |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                        | :heavy_check_mark:                                                                                                                                                           | The context to use for the request.                                                                                                                                          |
-| `relatedChangeEventID`                                                                                                                                                       | *string*                                                                                                                                                                     | :heavy_check_mark:                                                                                                                                                           | N/A                                                                                                                                                                          |
-| `incidentID`                                                                                                                                                                 | *string*                                                                                                                                                                     | :heavy_check_mark:                                                                                                                                                           | N/A                                                                                                                                                                          |
-| `patchV1IncidentsIncidentIDRelatedChangeEventsRelatedChangeEventID`                                                                                                          | [components.PatchV1IncidentsIncidentIDRelatedChangeEventsRelatedChangeEventID](../../models/components/patchv1incidentsincidentidrelatedchangeeventsrelatedchangeeventid.md) | :heavy_check_mark:                                                                                                                                                           | N/A                                                                                                                                                                          |
-| `opts`                                                                                                                                                                       | [][operations.Option](../../models/operations/option.md)                                                                                                                     | :heavy_minus_sign:                                                                                                                                                           | The options for this request.                                                                                                                                                |
-
-### Response
-
-**[*operations.UpdateIncidentRelatedChangeEventResponse](../../models/operations/updateincidentrelatedchangeeventresponse.md), error**
-
-### Errors
-
-| Error Type                    | Status Code                   | Content Type                  |
-| ----------------------------- | ----------------------------- | ----------------------------- |
-| sdkerrors.ErrorEntity         | 400, 409                      | application/json              |
-| sdkerrors.Unauthorized        | 401, 403, 407, 511            | application/json              |
-| sdkerrors.NotFound            | 404, 501, 505                 | application/json              |
-| sdkerrors.Timeout             | 408, 504                      | application/json              |
-| sdkerrors.BadRequest          | 413, 414, 415, 422, 431, 510  | application/json              |
-| sdkerrors.RateLimited         | 429                           | application/json              |
-| sdkerrors.InternalServerError | 500, 502, 503, 506, 507, 508  | application/json              |
-| sdkerrors.SDKError            | 4XX, 5XX                      | \*/\*                         |
-
-## GetRelationships
-
-List any parent/child relationships for an incident
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Incidents.GetRelationships(ctx, "<id>")
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.IncidentsRelationshipsEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -2300,28 +2336,23 @@ func main() {
 | Parameter                                                | Type                                                     | Required                                                 | Description                                              |
 | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
 | `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `messageID`                                              | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `incidentID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
 
 ### Response
 
-**[*operations.GetIncidentRelationshipsResponse](../../models/operations/getincidentrelationshipsresponse.md), error**
+**[*components.EventGenericChatMessageEntity](../../models/components/eventgenericchatmessageentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## Resolve
+## UpdateIncidentChatMessage
 
-Resolves a currently active incident
+Update an existing generic chat message on an incident.
 
 ### Example Usage
 
@@ -2331,21 +2362,26 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Incidents.Resolve(ctx, "<id>", nil)
+    res, err := s.Incidents.UpdateIncidentChatMessage(ctx, "<id>", "<id>", components.UpdateIncidentChatMessage{
+        Body: "<value>",
+    })
     if err != nil {
         log.Fatal(err)
     }
-    if res.IncidentEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -2353,30 +2389,25 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
-| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                           | [context.Context](https://pkg.go.dev/context#Context)                                           | :heavy_check_mark:                                                                              | The context to use for the request.                                                             |
-| `incidentID`                                                                                    | *string*                                                                                        | :heavy_check_mark:                                                                              | N/A                                                                                             |
-| `requestBody`                                                                                   | [*operations.ResolveIncidentRequestBody](../../models/operations/resolveincidentrequestbody.md) | :heavy_minus_sign:                                                                              | N/A                                                                                             |
-| `opts`                                                                                          | [][operations.Option](../../models/operations/option.md)                                        | :heavy_minus_sign:                                                                              | The options for this request.                                                                   |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                        | :heavy_check_mark:                                                                           | The context to use for the request.                                                          |
+| `messageID`                                                                                  | *string*                                                                                     | :heavy_check_mark:                                                                           | N/A                                                                                          |
+| `incidentID`                                                                                 | *string*                                                                                     | :heavy_check_mark:                                                                           | N/A                                                                                          |
+| `updateIncidentChatMessage`                                                                  | [components.UpdateIncidentChatMessage](../../models/components/updateincidentchatmessage.md) | :heavy_check_mark:                                                                           | N/A                                                                                          |
+| `opts`                                                                                       | [][operations.Option](../../models/operations/option.md)                                     | :heavy_minus_sign:                                                                           | The options for this request.                                                                |
 
 ### Response
 
-**[*operations.ResolveIncidentResponse](../../models/operations/resolveincidentresponse.md), error**
+**[*components.EventGenericChatMessageEntity](../../models/components/eventgenericchatmessageentity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## ListRoleAssignments
+## ListIncidentRoleAssignments
 
 Retrieve a list of all of the current role assignments for the incident
 
@@ -2388,21 +2419,24 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Incidents.ListRoleAssignments(ctx, "<id>", nil)
+    res, err := s.Incidents.ListIncidentRoleAssignments(ctx, "<id>", nil)
     if err != nil {
         log.Fatal(err)
     }
-    if res.IncidentsRoleAssignmentEntityPaginated != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -2419,21 +2453,15 @@ func main() {
 
 ### Response
 
-**[*operations.ListIncidentRoleAssignmentsResponse](../../models/operations/listincidentroleassignmentsresponse.md), error**
+**[*components.IncidentsRoleAssignmentEntityPaginated](../../models/components/incidentsroleassignmententitypaginated.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## CreateRoleAssignment
+## CreateIncidentRoleAssignment
 
 Assign a role to a user for this incident
 
@@ -2451,19 +2479,21 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Incidents.CreateRoleAssignment(ctx, "<id>", components.PostV1IncidentsIncidentIDRoleAssignments{
+    res, err := s.Incidents.CreateIncidentRoleAssignment(ctx, "<id>", components.CreateIncidentRoleAssignment{
         UserID: "<id>",
         IncidentRoleID: "<id>",
     })
     if err != nil {
         log.Fatal(err)
     }
-    if res.IncidentsRoleAssignmentEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -2471,30 +2501,24 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                                  | Type                                                                                                                       | Required                                                                                                                   | Description                                                                                                                |
-| -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                                      | [context.Context](https://pkg.go.dev/context#Context)                                                                      | :heavy_check_mark:                                                                                                         | The context to use for the request.                                                                                        |
-| `incidentID`                                                                                                               | *string*                                                                                                                   | :heavy_check_mark:                                                                                                         | N/A                                                                                                                        |
-| `postV1IncidentsIncidentIDRoleAssignments`                                                                                 | [components.PostV1IncidentsIncidentIDRoleAssignments](../../models/components/postv1incidentsincidentidroleassignments.md) | :heavy_check_mark:                                                                                                         | N/A                                                                                                                        |
-| `opts`                                                                                                                     | [][operations.Option](../../models/operations/option.md)                                                                   | :heavy_minus_sign:                                                                                                         | The options for this request.                                                                                              |
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                              | :heavy_check_mark:                                                                                 | The context to use for the request.                                                                |
+| `incidentID`                                                                                       | *string*                                                                                           | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `createIncidentRoleAssignment`                                                                     | [components.CreateIncidentRoleAssignment](../../models/components/createincidentroleassignment.md) | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `opts`                                                                                             | [][operations.Option](../../models/operations/option.md)                                           | :heavy_minus_sign:                                                                                 | The options for this request.                                                                      |
 
 ### Response
 
-**[*operations.CreateIncidentRoleAssignmentResponse](../../models/operations/createincidentroleassignmentresponse.md), error**
+**[*components.IncidentsRoleAssignmentEntity](../../models/components/incidentsroleassignmententity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## DeleteRoleAssignment
+## DeleteIncidentRoleAssignment
 
 Unassign a role from a user
 
@@ -2506,21 +2530,24 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Incidents.DeleteRoleAssignment(ctx, "<id>", "<id>")
+    res, err := s.Incidents.DeleteIncidentRoleAssignment(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
     }
-    if res.IncidentsRoleAssignmentEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -2537,256 +2564,15 @@ func main() {
 
 ### Response
 
-**[*operations.DeleteIncidentRoleAssignmentResponse](../../models/operations/deleteincidentroleassignmentresponse.md), error**
+**[*components.IncidentsRoleAssignmentEntity](../../models/components/incidentsroleassignmententity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## ListSimilar
-
-List similar incidents
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Incidents.ListSimilar(ctx, "<id>", nil, nil)
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
-| `incidentID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
-| `threshold`                                              | **float32*                                               | :heavy_minus_sign:                                       | N/A                                                      |
-| `limit`                                                  | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
-| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
-
-### Response
-
-**[*operations.GetSimilarIncidentsResponse](../../models/operations/getsimilarincidentsresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## ListStatusPages
-
-List status pages that are attached to an incident
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Incidents.ListStatusPages(ctx, "<id>")
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.IncidentsStatusPageEntityPaginated != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
-| `incidentID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
-| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
-
-### Response
-
-**[*operations.ListIncidentStatusPagesResponse](../../models/operations/listincidentstatuspagesresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## AddStatusPage
-
-Add a status page to an incident.
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"firehydrant/models/components"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Incidents.AddStatusPage(ctx, "<id>", components.PostV1IncidentsIncidentIDStatusPages{
-        IntegrationSlug: "<value>",
-        IntegrationID: "<id>",
-    })
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.IncidentsStatusPageEntity != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `ctx`                                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                                              | :heavy_check_mark:                                                                                                 | The context to use for the request.                                                                                |
-| `incidentID`                                                                                                       | *string*                                                                                                           | :heavy_check_mark:                                                                                                 | N/A                                                                                                                |
-| `postV1IncidentsIncidentIDStatusPages`                                                                             | [components.PostV1IncidentsIncidentIDStatusPages](../../models/components/postv1incidentsincidentidstatuspages.md) | :heavy_check_mark:                                                                                                 | N/A                                                                                                                |
-| `opts`                                                                                                             | [][operations.Option](../../models/operations/option.md)                                                           | :heavy_minus_sign:                                                                                                 | The options for this request.                                                                                      |
-
-### Response
-
-**[*operations.CreateIncidentStatusPageResponse](../../models/operations/createincidentstatuspageresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## CreateTaskList
-
-Add all tasks from list to incident
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"firehydrant/models/components"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Incidents.CreateTaskList(ctx, "<id>", components.PostV1IncidentsIncidentIDTaskLists{
-        TaskListID: "<id>",
-    })
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.TaskEntity != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                                          | :heavy_check_mark:                                                                                             | The context to use for the request.                                                                            |
-| `incidentID`                                                                                                   | *string*                                                                                                       | :heavy_check_mark:                                                                                             | N/A                                                                                                            |
-| `postV1IncidentsIncidentIDTaskLists`                                                                           | [components.PostV1IncidentsIncidentIDTaskLists](../../models/components/postv1incidentsincidentidtasklists.md) | :heavy_check_mark:                                                                                             | N/A                                                                                                            |
-| `opts`                                                                                                         | [][operations.Option](../../models/operations/option.md)                                                       | :heavy_minus_sign:                                                                                             | The options for this request.                                                                                  |
-
-### Response
-
-**[*operations.CreateIncidentTaskListResponse](../../models/operations/createincidenttasklistresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## CreateTeamAssignment
+## CreateIncidentTeamAssignment
 
 Assign a team for this incident
 
@@ -2804,49 +2590,42 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Incidents.CreateTeamAssignment(ctx, "<id>", components.PostV1IncidentsIncidentIDTeamAssignments{
+    err := s.Incidents.CreateIncidentTeamAssignment(ctx, "<id>", components.CreateIncidentTeamAssignment{
         TeamID: "<id>",
     })
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                  | Type                                                                                                                       | Required                                                                                                                   | Description                                                                                                                |
-| -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                                      | [context.Context](https://pkg.go.dev/context#Context)                                                                      | :heavy_check_mark:                                                                                                         | The context to use for the request.                                                                                        |
-| `incidentID`                                                                                                               | *string*                                                                                                                   | :heavy_check_mark:                                                                                                         | N/A                                                                                                                        |
-| `postV1IncidentsIncidentIDTeamAssignments`                                                                                 | [components.PostV1IncidentsIncidentIDTeamAssignments](../../models/components/postv1incidentsincidentidteamassignments.md) | :heavy_check_mark:                                                                                                         | N/A                                                                                                                        |
-| `opts`                                                                                                                     | [][operations.Option](../../models/operations/option.md)                                                                   | :heavy_minus_sign:                                                                                                         | The options for this request.                                                                                              |
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                              | :heavy_check_mark:                                                                                 | The context to use for the request.                                                                |
+| `incidentID`                                                                                       | *string*                                                                                           | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `createIncidentTeamAssignment`                                                                     | [components.CreateIncidentTeamAssignment](../../models/components/createincidentteamassignment.md) | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `opts`                                                                                             | [][operations.Option](../../models/operations/option.md)                                           | :heavy_minus_sign:                                                                                 | The options for this request.                                                                      |
 
 ### Response
 
-**[*operations.CreateIncidentTeamAssignmentResponse](../../models/operations/createincidentteamassignmentresponse.md), error**
+**error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## DeleteTeamAssignment
+## DeleteIncidentTeamAssignment
 
 Unassign a team from an incident
 
@@ -2858,22 +2637,22 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Incidents.DeleteTeamAssignment(ctx, "<id>", "<id>", nil)
+    err := s.Incidents.DeleteIncidentTeamAssignment(ctx, "<id>", "<id>", nil)
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -2890,193 +2669,15 @@ func main() {
 
 ### Response
 
-**[*operations.DeleteIncidentTeamAssignmentResponse](../../models/operations/deleteincidentteamassignmentresponse.md), error**
+**error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## GetTranscript
-
-Retrieve the transcript for a specific incident
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Incidents.GetTranscript(ctx, "<id>", nil, nil, nil)
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.PublicApiv1IncidentsTranscriptEntity != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
-| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| `ctx`                                                                   | [context.Context](https://pkg.go.dev/context#Context)                   | :heavy_check_mark:                                                      | The context to use for the request.                                     |
-| `incidentID`                                                            | *string*                                                                | :heavy_check_mark:                                                      | N/A                                                                     |
-| `after`                                                                 | **string*                                                               | :heavy_minus_sign:                                                      | The ID of the transcript entry to start after.                          |
-| `before`                                                                | **string*                                                               | :heavy_minus_sign:                                                      | The ID of the transcript entry to start before.                         |
-| `sort`                                                                  | [*operations.QueryParamSort](../../models/operations/queryparamsort.md) | :heavy_minus_sign:                                                      | The order to sort the transcript entries.                               |
-| `opts`                                                                  | [][operations.Option](../../models/operations/option.md)                | :heavy_minus_sign:                                                      | The options for this request.                                           |
-
-### Response
-
-**[*operations.GetIncidentTranscriptResponse](../../models/operations/getincidenttranscriptresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## DeleteTranscript
-
-Delete a transcript from an incident
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Incidents.DeleteTranscript(ctx, "<id>", "<id>")
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
-| `transcriptID`                                           | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
-| `incidentID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
-| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
-
-### Response
-
-**[*operations.DeleteIncidentTranscriptResponse](../../models/operations/deleteincidenttranscriptresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## Unarchive
-
-Unarchives an incident
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"firehydrant"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-    
-    s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
-
-    res, err := s.Incidents.Unarchive(ctx, "<id>")
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.IncidentEntity != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
-| `incidentID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
-| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
-
-### Response
-
-**[*operations.UnarchiveIncidentResponse](../../models/operations/unarchiveincidentresponse.md), error**
-
-### Errors
-
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
-
-## GetUserRole
+## GetIncidentUser
 
 Retrieve a user with current roles for an incident
 
@@ -3088,21 +2689,24 @@ package main
 import(
 	"context"
 	"firehydrant"
+	"firehydrant/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
-    
+
     s := firehydrant.New(
-        firehydrant.WithSecurity("<YOUR_API_KEY_HERE>"),
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
     )
 
-    res, err := s.Incidents.GetUserRole(ctx, "<id>", "<id>")
+    res, err := s.Incidents.GetIncidentUser(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
     }
-    if res.IncidentsRoleAssignmentEntity != nil {
+    if res != nil {
         // handle response
     }
 }
@@ -3119,16 +2723,443 @@ func main() {
 
 ### Response
 
-**[*operations.GetIncidentUserRoleResponse](../../models/operations/getincidentuserroleresponse.md), error**
+**[*components.IncidentsRoleAssignmentEntity](../../models/components/incidentsroleassignmententity.md), error**
 
 ### Errors
 
-| Error Type                        | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| sdkerrors.BadRequest              | 400, 413, 414, 415, 422, 431, 510 | application/json                  |
-| sdkerrors.Unauthorized            | 401, 403, 407, 511                | application/json                  |
-| sdkerrors.NotFound                | 404, 501, 505                     | application/json                  |
-| sdkerrors.Timeout                 | 408, 504                          | application/json                  |
-| sdkerrors.RateLimited             | 429                               | application/json                  |
-| sdkerrors.InternalServerError     | 500, 502, 503, 506, 507, 508      | application/json                  |
-| sdkerrors.SDKError                | 4XX, 5XX                          | \*/\*                             |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## GetIncidentRelationships
+
+List any parent/child relationships for an incident
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Incidents.GetIncidentRelationships(ctx, "<id>")
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `incidentID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.IncidentsRelationshipsEntity](../../models/components/incidentsrelationshipsentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## ListScheduledMaintenances
+
+Lists all scheduled maintenance events
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Incidents.ListScheduledMaintenances(ctx, nil, nil, nil)
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `query`                                                  | **string*                                                | :heavy_minus_sign:                                       | Filter scheduled_maintenances with a query on their name |
+| `page`                                                   | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
+| `perPage`                                                | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.ScheduledMaintenanceEntity](../../models/components/scheduledmaintenanceentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## CreateScheduledMaintenance
+
+Create a new scheduled maintenance event
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"firehydrant/types"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Incidents.CreateScheduledMaintenance(ctx, components.CreateScheduledMaintenance{
+        Name: "<value>",
+        StartsAt: types.MustTimeFromString("2024-11-04T00:39:53.690Z"),
+        EndsAt: types.MustTimeFromString("2023-11-08T19:38:38.616Z"),
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                          | :heavy_check_mark:                                                                             | The context to use for the request.                                                            |
+| `request`                                                                                      | [components.CreateScheduledMaintenance](../../models/components/createscheduledmaintenance.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| `opts`                                                                                         | [][operations.Option](../../models/operations/option.md)                                       | :heavy_minus_sign:                                                                             | The options for this request.                                                                  |
+
+### Response
+
+**[*components.ScheduledMaintenanceEntity](../../models/components/scheduledmaintenanceentity.md), error**
+
+### Errors
+
+| Error Type            | Status Code           | Content Type          |
+| --------------------- | --------------------- | --------------------- |
+| sdkerrors.ErrorEntity | 400                   | application/json      |
+| sdkerrors.SDKError    | 4XX, 5XX              | \*/\*                 |
+
+## GetScheduledMaintenance
+
+Fetch the details of a scheduled maintenance event.
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Incidents.GetScheduledMaintenance(ctx, "<id>")
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `scheduledMaintenanceID`                                 | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.ScheduledMaintenanceEntity](../../models/components/scheduledmaintenanceentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## DeleteScheduledMaintenance
+
+Delete a scheduled maintenance event, preventing it from taking place.
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    err := s.Incidents.DeleteScheduledMaintenance(ctx, "<id>")
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `scheduledMaintenanceID`                                 | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## UpdateScheduledMaintenance
+
+Change the conditions of a scheduled maintenance event, including updating any status page announcements of changes.
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Incidents.UpdateScheduledMaintenance(ctx, "<id>", components.UpdateScheduledMaintenance{})
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                          | :heavy_check_mark:                                                                             | The context to use for the request.                                                            |
+| `scheduledMaintenanceID`                                                                       | *string*                                                                                       | :heavy_check_mark:                                                                             | N/A                                                                                            |
+| `updateScheduledMaintenance`                                                                   | [components.UpdateScheduledMaintenance](../../models/components/updatescheduledmaintenance.md) | :heavy_check_mark:                                                                             | N/A                                                                                            |
+| `opts`                                                                                         | [][operations.Option](../../models/operations/option.md)                                       | :heavy_minus_sign:                                                                             | The options for this request.                                                                  |
+
+### Response
+
+**[*components.ScheduledMaintenanceEntity](../../models/components/scheduledmaintenanceentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## GetAiIncidentSummaryVoteStatus
+
+Get the current user's vote status for an AI-generated incident summary
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    err := s.Incidents.GetAiIncidentSummaryVoteStatus(ctx, "<id>", "<id>")
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `incidentID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `generatedSummaryID`                                     | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## VoteAiIncidentSummary
+
+Vote on an AI-generated incident summary for the current user
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"firehydrant/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Incidents.VoteAiIncidentSummary(ctx, "<id>", "<id>", operations.VoteAiIncidentSummaryRequestBody{
+        Direction: operations.DirectionDown,
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                      | [context.Context](https://pkg.go.dev/context#Context)                                                      | :heavy_check_mark:                                                                                         | The context to use for the request.                                                                        |
+| `incidentID`                                                                                               | *string*                                                                                                   | :heavy_check_mark:                                                                                         | N/A                                                                                                        |
+| `generatedSummaryID`                                                                                       | *string*                                                                                                   | :heavy_check_mark:                                                                                         | N/A                                                                                                        |
+| `requestBody`                                                                                              | [operations.VoteAiIncidentSummaryRequestBody](../../models/operations/voteaiincidentsummaryrequestbody.md) | :heavy_check_mark:                                                                                         | N/A                                                                                                        |
+| `opts`                                                                                                     | [][operations.Option](../../models/operations/option.md)                                                   | :heavy_minus_sign:                                                                                         | The options for this request.                                                                              |
+
+### Response
+
+**[*components.AIEntitiesIncidentSummaryEntity](../../models/components/aientitiesincidentsummaryentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |

@@ -3,12 +3,12 @@
 package components
 
 type ConversationsAPIEntitiesReference struct {
-	ID            *string                          `json:"id,omitempty"`
-	ResourceClass *string                          `json:"resource_class,omitempty"`
-	ResourceID    *string                          `json:"resource_id,omitempty"`
-	Field         *string                          `json:"field,omitempty"`
-	CommentsURL   *string                          `json:"comments_url,omitempty"`
-	Channel       *ConversationsAPIEntitiesChannel `json:"channel,omitempty"`
+	ID            *string                                  `json:"id,omitempty"`
+	ResourceClass *string                                  `json:"resource_class,omitempty"`
+	ResourceID    *string                                  `json:"resource_id,omitempty"`
+	Field         *string                                  `json:"field,omitempty"`
+	CommentsURL   *string                                  `json:"comments_url,omitempty"`
+	Channel       *NullableConversationsAPIEntitiesChannel `json:"channel,omitempty"`
 }
 
 func (o *ConversationsAPIEntitiesReference) GetID() *string {
@@ -46,7 +46,7 @@ func (o *ConversationsAPIEntitiesReference) GetCommentsURL() *string {
 	return o.CommentsURL
 }
 
-func (o *ConversationsAPIEntitiesReference) GetChannel() *ConversationsAPIEntitiesChannel {
+func (o *ConversationsAPIEntitiesReference) GetChannel() *NullableConversationsAPIEntitiesChannel {
 	if o == nil {
 		return nil
 	}

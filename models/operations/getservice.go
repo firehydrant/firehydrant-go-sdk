@@ -2,10 +2,6 @@
 
 package operations
 
-import (
-	"firehydrant/models/components"
-)
-
 type GetServiceRequest struct {
 	ServiceID string `pathParam:"style=simple,explode=false,name=service_id"`
 }
@@ -15,24 +11,4 @@ func (o *GetServiceRequest) GetServiceID() string {
 		return ""
 	}
 	return o.ServiceID
-}
-
-type GetServiceResponse struct {
-	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Retrieves a single service by ID
-	ServiceEntity *components.ServiceEntity
-}
-
-func (o *GetServiceResponse) GetHTTPMeta() components.HTTPMetadata {
-	if o == nil {
-		return components.HTTPMetadata{}
-	}
-	return o.HTTPMeta
-}
-
-func (o *GetServiceResponse) GetServiceEntity() *components.ServiceEntity {
-	if o == nil {
-		return nil
-	}
-	return o.ServiceEntity
 }

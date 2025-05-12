@@ -1,9 +1,0 @@
-# ListIncidentLinksResponse
-
-
-## Fields
-
-| Field                                                                                                   | Type                                                                                                    | Required                                                                                                | Description                                                                                             |
-| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| `HTTPMeta`                                                                                              | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                      | :heavy_check_mark:                                                                                      | N/A                                                                                                     |
-| `AttachmentsLinkEntityPaginated`                                                                        | [*components.AttachmentsLinkEntityPaginated](../../models/components/attachmentslinkentitypaginated.md) | :heavy_minus_sign:                                                                                      | List all the editable, external incident links attached to an incident                                  |
