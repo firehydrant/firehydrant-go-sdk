@@ -288,9 +288,9 @@ func New(opts ...SDKOption) *FireHydrant {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "0.0.1",
-			SDKVersion:        "1.0.0",
-			GenVersion:        "2.598.22",
-			UserAgent:         "speakeasy-sdk/go 1.0.0 2.598.22 0.0.1 firehydrant",
+			SDKVersion:        "1.0.1",
+			GenVersion:        "2.604.2",
+			UserAgent:         "speakeasy-sdk/go 1.0.1 2.604.2 0.0.1 firehydrant",
 			Hooks:             hooks.New(),
 		},
 	}
