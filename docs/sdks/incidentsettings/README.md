@@ -352,9 +352,7 @@ func main() {
     )
 
     res, err := s.IncidentSettings.ValidateIncidentTags(ctx, []string{
-        "<value>",
-        "<value>",
-        "<value>",
+        "<value 1>",
     })
     if err != nil {
         log.Fatal(err)
@@ -1047,7 +1045,7 @@ func main() {
 
     res, err := s.IncidentSettings.CreateLifecycleMilestone(ctx, operations.CreateLifecycleMilestoneRequest{
         Name: "<value>",
-        Description: "serpentine blah into after pendant zowie athletic",
+        Description: "militate grass boo hmph treble upset who scornful alarmed",
         PhaseID: "<id>",
     })
     if err != nil {
@@ -1806,16 +1804,6 @@ func main() {
                 ImpactID: "<id>",
                 ConditionID: "<id>",
             },
-            components.UpdateSeverityMatrixData{
-                Severity: "<value>",
-                ImpactID: "<id>",
-                ConditionID: "<id>",
-            },
-            components.UpdateSeverityMatrixData{
-                Severity: "<value>",
-                ImpactID: "<id>",
-                ConditionID: "<id>",
-            },
         },
     })
     if err != nil {
@@ -2516,9 +2504,9 @@ func main() {
     )
 
     res, err := s.IncidentSettings.CreateCustomFieldDefinition(ctx, components.CreateCustomFieldDefinition{
-        DisplayName: "Meredith_Gibson",
+        DisplayName: "Rasheed_Runolfsson",
         FieldType: "<value>",
-        Required: true,
+        Required: false,
     })
     if err != nil {
         log.Fatal(err)
