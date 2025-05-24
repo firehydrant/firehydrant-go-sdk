@@ -319,7 +319,7 @@ func main() {
     )
 
     res, err := s.Runbooks.UpdateRunbookExecutionStep(ctx, "<id>", "<id>", components.UpdateRunbookExecutionStep{
-        State: "Maine",
+        State: "Kentucky",
     })
     if err != nil {
         log.Fatal(err)
@@ -429,7 +429,7 @@ func main() {
         }),
     )
 
-    res, err := s.Runbooks.UpdateRunbookExecutionStepScript(ctx, "<id>", "<id>", "Tennessee")
+    res, err := s.Runbooks.UpdateRunbookExecutionStepScript(ctx, "<id>", "<id>", "North Dakota")
     if err != nil {
         log.Fatal(err)
     }
@@ -595,7 +595,7 @@ func main() {
 
     res, err := s.Runbooks.CreateRunbook(ctx, components.CreateRunbook{
         Name: "<value>",
-        Type: components.CreateRunbookTypeIncidentRole,
+        Type: components.CreateRunbookTypeInfrastructure,
     })
     if err != nil {
         log.Fatal(err)
