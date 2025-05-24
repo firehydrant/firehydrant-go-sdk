@@ -5,7 +5,6 @@ package operations
 import (
 	"encoding/json"
 	"firehydrant/internal/utils"
-	"firehydrant/types"
 	"fmt"
 	"time"
 )
@@ -60,9 +59,9 @@ type ListIncidentsRequest struct {
 	// Incident status
 	Status *string `queryParam:"style=form,explode=true,name=status"`
 	// Filters for incidents that started on or after this date
-	StartDate *types.Date `queryParam:"style=form,explode=true,name=start_date"`
+	StartDate *time.Time `queryParam:"style=form,explode=true,name=start_date"`
 	// Filters for incidents that started on or before this date
-	EndDate *types.Date `queryParam:"style=form,explode=true,name=end_date"`
+	EndDate *time.Time `queryParam:"style=form,explode=true,name=end_date"`
 	// Filters for incidents that were resolved at or after this time. Combine this with the `current_milestones` parameter if you wish to omit incidents that were re-opened and are still active.
 	ResolvedAtOrAfter *time.Time `queryParam:"style=form,explode=true,name=resolved_at_or_after"`
 	// Filters for incidents that were resolved at or before this time. Combine this with the `current_milestones` parameter if you wish to omit incidents that were re-opened and are still active.
@@ -188,14 +187,14 @@ func (o *ListIncidentsRequest) GetStatus() *string {
 	return o.Status
 }
 
-func (o *ListIncidentsRequest) GetStartDate() *types.Date {
+func (o *ListIncidentsRequest) GetStartDate() *time.Time {
 	if o == nil {
 		return nil
 	}
 	return o.StartDate
 }
 
-func (o *ListIncidentsRequest) GetEndDate() *types.Date {
+func (o *ListIncidentsRequest) GetEndDate() *time.Time {
 	if o == nil {
 		return nil
 	}

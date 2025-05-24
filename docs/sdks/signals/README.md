@@ -122,38 +122,7 @@ func main() {
 
     err := s.Signals.CreateTeamEscalationPolicy(ctx, "<id>", components.CreateTeamEscalationPolicy{
         Name: "<value>",
-        Steps: []components.CreateTeamEscalationPolicyStep{
-            components.CreateTeamEscalationPolicyStep{
-                Targets: []components.CreateTeamEscalationPolicyTarget{},
-                Timeout: "<value>",
-            },
-            components.CreateTeamEscalationPolicyStep{
-                Targets: []components.CreateTeamEscalationPolicyTarget{
-                    components.CreateTeamEscalationPolicyTarget{
-                        Type: components.CreateTeamEscalationPolicyTypeWebhook,
-                        ID: "<id>",
-                    },
-                    components.CreateTeamEscalationPolicyTarget{
-                        Type: components.CreateTeamEscalationPolicyTypeOnCallSchedule,
-                        ID: "<id>",
-                    },
-                },
-                Timeout: "<value>",
-            },
-            components.CreateTeamEscalationPolicyStep{
-                Targets: []components.CreateTeamEscalationPolicyTarget{
-                    components.CreateTeamEscalationPolicyTarget{
-                        Type: components.CreateTeamEscalationPolicyTypeSlackChannel,
-                        ID: "<id>",
-                    },
-                    components.CreateTeamEscalationPolicyTarget{
-                        Type: components.CreateTeamEscalationPolicyTypeEntireTeam,
-                        ID: "<id>",
-                    },
-                },
-                Timeout: "<value>",
-            },
-        },
+        Steps: []components.CreateTeamEscalationPolicyStep{},
     })
     if err != nil {
         log.Fatal(err)
@@ -414,7 +383,7 @@ func main() {
 
     err := s.Signals.CreateTeamOnCallSchedule(ctx, "<id>", components.CreateTeamOnCallSchedule{
         Name: "<value>",
-        TimeZone: "Antarctica/DumontDUrville",
+        TimeZone: "America/Argentina/Buenos_Aires",
         Strategy: components.CreateTeamOnCallScheduleStrategy{
             Type: components.CreateTeamOnCallScheduleTypeCustom,
         },
@@ -891,7 +860,7 @@ func main() {
     err := s.Signals.CreateTeamSignalRule(ctx, "<id>", components.CreateTeamSignalRule{
         Name: "<value>",
         Expression: "<value>",
-        TargetType: components.CreateTeamSignalRuleTargetTypeOnCallSchedule,
+        TargetType: components.CreateTeamSignalRuleTargetTypeEscalationPolicy,
         TargetID: "<id>",
     })
     if err != nil {
@@ -1458,7 +1427,7 @@ func main() {
 
     err := s.Signals.CreateSignalsWebhookTarget(ctx, components.CreateSignalsWebhookTarget{
         Name: "<value>",
-        URL: "https://our-alligator.net/",
+        URL: "https://puny-hydrolyze.net/",
     })
     if err != nil {
         log.Fatal(err)
@@ -1770,9 +1739,7 @@ func main() {
 
     err := s.Signals.DebugSignalsExpression(ctx, components.DebugSignalsExpression{
         Expression: "<value>",
-        Signals: []components.Signal{
-            components.Signal{},
-        },
+        Signals: []components.Signal{},
     })
     if err != nil {
         log.Fatal(err)
