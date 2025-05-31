@@ -444,6 +444,7 @@ func main() {
 * [ListCustomFieldDefinitions](docs/sdks/incidentsettings/README.md#listcustomfielddefinitions) - List custom field definitions
 * [CreateCustomFieldDefinition](docs/sdks/incidentsettings/README.md#createcustomfielddefinition) - Create a custom field definition
 * [ListCustomFieldSelectOptions](docs/sdks/incidentsettings/README.md#listcustomfieldselectoptions) - Get available values for a custom field
+* [AppendFormDataOnSelectedValueGet](docs/sdks/incidentsettings/README.md#appendformdataonselectedvalueget) - Get data for a form field on select
 * [GetFormConfiguration](docs/sdks/incidentsettings/README.md#getformconfiguration) - Get a form configuration
 
 ### [Integrations](docs/sdks/integrations/README.md)

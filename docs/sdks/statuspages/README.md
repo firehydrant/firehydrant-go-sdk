@@ -157,22 +157,16 @@ func main() {
     )
 
     res, err := s.StatusPages.CreateNuncConnection(ctx, operations.CreateNuncConnectionRequest{
-        Domain: "pertinent-ribbon.com",
-        ConditionsNuncCondition: []string{
-            "<value>",
-            "<value>",
-        },
+        Domain: "subtle-instance.biz",
+        ConditionsNuncCondition: []string{},
         ConditionsConditionID: []string{
-            "<value>",
+            "<value 1>",
         },
-        ComponentsInfrastructureType: []string{
-            "<value>",
-            "<value>",
-        },
+        ComponentsInfrastructureType: []string{},
         ComponentsInfrastructureID: []string{
-            "<value>",
-            "<value>",
-            "<value>",
+            "<value 1>",
+            "<value 2>",
+            "<value 3>",
         },
     })
     if err != nil {
@@ -446,17 +440,18 @@ func main() {
     )
 
     res, err := s.StatusPages.UpdateNuncConnection(ctx, "<id>", operations.UpdateNuncConnectionRequestBody{
-        ConditionsNuncCondition: []string{},
+        ConditionsNuncCondition: []string{
+            "<value 1>",
+        },
         ConditionsConditionID: []string{
-            "<value>",
-            "<value>",
-            "<value>",
+            "<value 1>",
+            "<value 2>",
+            "<value 3>",
         },
-        ComponentsInfrastructureType: []string{
-            "<value>",
-        },
+        ComponentsInfrastructureType: []string{},
         ComponentsInfrastructureID: []string{
-            "<value>",
+            "<value 1>",
+            "<value 2>",
         },
     })
     if err != nil {
@@ -1051,7 +1046,7 @@ func main() {
     )
 
     res, err := s.StatusPages.CreateNuncSubscription(ctx, components.CreateNuncSubscription{
-        Email: "Arvilla_Funk@gmail.com",
+        Email: "Thad_Senger@yahoo.com",
     })
     if err != nil {
         log.Fatal(err)

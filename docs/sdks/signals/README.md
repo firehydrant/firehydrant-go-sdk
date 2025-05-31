@@ -122,38 +122,7 @@ func main() {
 
     err := s.Signals.CreateTeamEscalationPolicy(ctx, "<id>", components.CreateTeamEscalationPolicy{
         Name: "<value>",
-        Steps: []components.CreateTeamEscalationPolicyStep{
-            components.CreateTeamEscalationPolicyStep{
-                Targets: []components.CreateTeamEscalationPolicyTarget{},
-                Timeout: "<value>",
-            },
-            components.CreateTeamEscalationPolicyStep{
-                Targets: []components.CreateTeamEscalationPolicyTarget{
-                    components.CreateTeamEscalationPolicyTarget{
-                        Type: components.CreateTeamEscalationPolicyTypeWebhook,
-                        ID: "<id>",
-                    },
-                    components.CreateTeamEscalationPolicyTarget{
-                        Type: components.CreateTeamEscalationPolicyTypeOnCallSchedule,
-                        ID: "<id>",
-                    },
-                },
-                Timeout: "<value>",
-            },
-            components.CreateTeamEscalationPolicyStep{
-                Targets: []components.CreateTeamEscalationPolicyTarget{
-                    components.CreateTeamEscalationPolicyTarget{
-                        Type: components.CreateTeamEscalationPolicyTypeSlackChannel,
-                        ID: "<id>",
-                    },
-                    components.CreateTeamEscalationPolicyTarget{
-                        Type: components.CreateTeamEscalationPolicyTypeEntireTeam,
-                        ID: "<id>",
-                    },
-                },
-                Timeout: "<value>",
-            },
-        },
+        Steps: []components.CreateTeamEscalationPolicyStep{},
     })
     if err != nil {
         log.Fatal(err)
@@ -347,6 +316,7 @@ import(
 	"context"
 	"firehydrant"
 	"firehydrant/models/components"
+	"firehydrant/models/operations"
 	"log"
 )
 
@@ -359,7 +329,9 @@ func main() {
         }),
     )
 
-    err := s.Signals.ListTeamOnCallSchedules(ctx, "<id>", nil, nil, nil)
+    err := s.Signals.ListTeamOnCallSchedules(ctx, operations.ListTeamOnCallSchedulesRequest{
+        TeamID: "<id>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -368,14 +340,11 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `ctx`                                                               | [context.Context](https://pkg.go.dev/context#Context)               | :heavy_check_mark:                                                  | The context to use for the request.                                 |
-| `teamID`                                                            | *string*                                                            | :heavy_check_mark:                                                  | N/A                                                                 |
-| `query`                                                             | **string*                                                           | :heavy_minus_sign:                                                  | A query string for searching through the list of on-call schedules. |
-| `page`                                                              | **int*                                                              | :heavy_minus_sign:                                                  | N/A                                                                 |
-| `perPage`                                                           | **int*                                                              | :heavy_minus_sign:                                                  | N/A                                                                 |
-| `opts`                                                              | [][operations.Option](../../models/operations/option.md)            | :heavy_minus_sign:                                                  | The options for this request.                                       |
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                                  | :heavy_check_mark:                                                                                     | The context to use for the request.                                                                    |
+| `request`                                                                                              | [operations.ListTeamOnCallSchedulesRequest](../../models/operations/listteamoncallschedulesrequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+| `opts`                                                                                                 | [][operations.Option](../../models/operations/option.md)                                               | :heavy_minus_sign:                                                                                     | The options for this request.                                                                          |
 
 ### Response
 
@@ -389,7 +358,7 @@ func main() {
 
 ## CreateTeamOnCallSchedule
 
-Create a Signals on-call schedule for a team.
+Create a Signals on-call schedule for a team with a single rotation. More rotations can be created later.
 
 ### Example Usage
 
@@ -414,7 +383,7 @@ func main() {
 
     err := s.Signals.CreateTeamOnCallSchedule(ctx, "<id>", components.CreateTeamOnCallSchedule{
         Name: "<value>",
-        TimeZone: "Antarctica/DumontDUrville",
+        TimeZone: "America/Argentina/Buenos_Aires",
         Strategy: components.CreateTeamOnCallScheduleStrategy{
             Type: components.CreateTeamOnCallScheduleTypeCustom,
         },
@@ -469,7 +438,7 @@ func main() {
         }),
     )
 
-    err := s.Signals.GetTeamOnCallSchedule(ctx, "<id>", "<id>")
+    err := s.Signals.GetTeamOnCallSchedule(ctx, "<id>", "<id>", nil, nil)
     if err != nil {
         log.Fatal(err)
     }
@@ -478,12 +447,14 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
-| `teamID`                                                 | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
-| `scheduleID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
-| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+| Parameter                                                                                                                                                                                                                               | Type                                                                                                                                                                                                                                    | Required                                                                                                                                                                                                                                | Description                                                                                                                                                                                                                             |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                                                                                                                   | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                                                                                   | :heavy_check_mark:                                                                                                                                                                                                                      | The context to use for the request.                                                                                                                                                                                                     |
+| `teamID`                                                                                                                                                                                                                                | *string*                                                                                                                                                                                                                                | :heavy_check_mark:                                                                                                                                                                                                                      | N/A                                                                                                                                                                                                                                     |
+| `scheduleID`                                                                                                                                                                                                                            | *string*                                                                                                                                                                                                                                | :heavy_check_mark:                                                                                                                                                                                                                      | N/A                                                                                                                                                                                                                                     |
+| `shiftTimeWindowStart`                                                                                                                                                                                                                  | **string*                                                                                                                                                                                                                               | :heavy_minus_sign:                                                                                                                                                                                                                      | An optional ISO8601 timestamp for filtering the shifts listed in each on-call schedule to only include shifts that overlap with the provided time window. If provided, only shifts that end at or after this time will be included.     |
+| `shiftTimeWindowEnd`                                                                                                                                                                                                                    | **string*                                                                                                                                                                                                                               | :heavy_minus_sign:                                                                                                                                                                                                                      | An optional ISO8601 timestamp for filtering the shifts listed in each on-call schedule to only include shifts that overlap with the provided time window.. If provided, only shifts that start at or before this time will be included. |
+| `opts`                                                                                                                                                                                                                                  | [][operations.Option](../../models/operations/option.md)                                                                                                                                                                                | :heavy_minus_sign:                                                                                                                                                                                                                      | The options for this request.                                                                                                                                                                                                           |
 
 ### Response
 
@@ -548,7 +519,10 @@ func main() {
 
 ## UpdateTeamOnCallSchedule
 
-Update a Signals on-call schedule by ID
+Update a Signals on-call schedule by ID. For backwards compatibility, all parameters except for
+`name` and `description` will be ignored if the schedule has more than one rotation. If the schedule
+has only one rotation, you can continue to update that rotation using the rotation-specific parameters.
+
 
 ### Example Usage
 
@@ -891,7 +865,7 @@ func main() {
     err := s.Signals.CreateTeamSignalRule(ctx, "<id>", components.CreateTeamSignalRule{
         Name: "<value>",
         Expression: "<value>",
-        TargetType: components.CreateTeamSignalRuleTargetTypeOnCallSchedule,
+        TargetType: components.CreateTeamSignalRuleTargetTypeEscalationPolicy,
         TargetID: "<id>",
     })
     if err != nil {
@@ -1458,7 +1432,7 @@ func main() {
 
     err := s.Signals.CreateSignalsWebhookTarget(ctx, components.CreateSignalsWebhookTarget{
         Name: "<value>",
-        URL: "https://our-alligator.net/",
+        URL: "https://puny-hydrolyze.net/",
     })
     if err != nil {
         log.Fatal(err)
@@ -1770,9 +1744,7 @@ func main() {
 
     err := s.Signals.DebugSignalsExpression(ctx, components.DebugSignalsExpression{
         Expression: "<value>",
-        Signals: []components.Signal{
-            components.Signal{},
-        },
+        Signals: []components.Signal{},
     })
     if err != nil {
         log.Fatal(err)
