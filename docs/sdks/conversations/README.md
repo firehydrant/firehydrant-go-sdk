@@ -98,7 +98,7 @@ func main() {
     )
 
     res, err := s.Conversations.UpdateVote(ctx, "<id>", "<id>", components.UpdateVote{
-        Direction: components.DirectionDig,
+        Direction: components.DirectionUp,
     })
     if err != nil {
         log.Fatal(err)
