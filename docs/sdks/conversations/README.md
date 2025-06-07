@@ -98,7 +98,7 @@ func main() {
     )
 
     res, err := s.Conversations.UpdateVote(ctx, "<id>", "<id>", components.UpdateVote{
-        Direction: components.DirectionDig,
+        Direction: components.DirectionUp,
     })
     if err != nil {
         log.Fatal(err)
@@ -453,6 +453,7 @@ import(
 	"context"
 	"firehydrant"
 	"firehydrant/models/components"
+	"firehydrant/models/operations"
 	"log"
 )
 
@@ -465,7 +466,7 @@ func main() {
         }),
     )
 
-    err := s.Conversations.ListComments(ctx, "<id>", nil, nil, nil)
+    err := s.Conversations.ListComments(ctx, "<id>", nil, nil, operations.ListCommentsSortAsc.ToPointer())
     if err != nil {
         log.Fatal(err)
     }

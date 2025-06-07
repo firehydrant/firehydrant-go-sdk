@@ -1,6 +1,6 @@
 # CreateTeamOnCallScheduleStrategy
 
-An object that specifies how the schedule's on-call shifts should be generated.
+An object that specifies how the initial rotation's on-call shifts should be generated.
 
 
 ## Fields
