@@ -4,9 +4,8 @@ package components
 
 // FormConfigurationEntity model
 type FormConfigurationEntity struct {
-	Fields *string `json:"fields,omitempty"`
-	// Whether to show incident types on the declaration form
-	ShowIncidentTypes *bool `json:"show_incident_types,omitempty"`
+	Fields            *string `json:"fields,omitempty"`
+	ShowIncidentTypes *string `json:"show_incident_types,omitempty"`
 }
 
 func (o *FormConfigurationEntity) GetFields() *string {
@@ -16,7 +15,7 @@ func (o *FormConfigurationEntity) GetFields() *string {
 	return o.Fields
 }
 
-func (o *FormConfigurationEntity) GetShowIncidentTypes() *bool {
+func (o *FormConfigurationEntity) GetShowIncidentTypes() *string {
 	if o == nil {
 		return nil
 	}
