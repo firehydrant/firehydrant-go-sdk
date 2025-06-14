@@ -449,7 +449,7 @@ func main() {
     res, err := s.CatalogEntries.CreateServiceLinks(ctx, components.CreateServiceLinks{
         ExternalServiceIds: "<value>",
         ConnectionID: "<id>",
-        Integration: components.IntegrationVictorops,
+        Integration: components.IntegrationPagerDuty,
     })
     if err != nil {
         log.Fatal(err)
@@ -878,7 +878,7 @@ func main() {
 
     err := s.CatalogEntries.CreateServiceChecklistResponse(ctx, "<id>", "<id>", components.CreateServiceChecklistResponse{
         CheckID: "<id>",
-        Status: true,
+        Status: false,
     })
     if err != nil {
         log.Fatal(err)
@@ -1629,7 +1629,7 @@ func main() {
     )
 
     res, err := s.CatalogEntries.IngestCatalogData(ctx, "<id>", components.IngestCatalogData{
-        Encoding: components.EncodingApplicationXYaml,
+        Encoding: components.EncodingApplicationJSON,
         Data: "<value>",
     })
     if err != nil {

@@ -95,9 +95,11 @@ type NullableTicketingTicketEntity struct {
 	// Milestone of incident that this ticket is related to
 	IncidentCurrentMilestone *string `json:"incident_current_milestone,omitempty"`
 	// ID of task that this ticket is related to
-	TaskID *string                        `json:"task_id,omitempty"`
-	DueAt  *time.Time                     `json:"due_at,omitempty"`
-	Link   *NullableAttachmentsLinkEntity `json:"link,omitempty"`
+	TaskID *string    `json:"task_id,omitempty"`
+	DueAt  *time.Time `json:"due_at,omitempty"`
+	// Error message from syncing this ticket to integrations
+	SyncErrorMessage *string                        `json:"sync_error_message,omitempty"`
+	Link             *NullableAttachmentsLinkEntity `json:"link,omitempty"`
 }
 
 func (n NullableTicketingTicketEntity) MarshalJSON() ([]byte, error) {
@@ -228,6 +230,13 @@ func (o *NullableTicketingTicketEntity) GetDueAt() *time.Time {
 		return nil
 	}
 	return o.DueAt
+}
+
+func (o *NullableTicketingTicketEntity) GetSyncErrorMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.SyncErrorMessage
 }
 
 func (o *NullableTicketingTicketEntity) GetLink() *NullableAttachmentsLinkEntity {

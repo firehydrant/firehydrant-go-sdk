@@ -582,15 +582,7 @@ func main() {
         Milestones: []components.BulkUpdateIncidentMilestonesMilestone{
             components.BulkUpdateIncidentMilestonesMilestone{
                 Type: "<value>",
-                OccurredAt: types.MustTimeFromString("2025-04-19T18:24:04.583Z"),
-            },
-            components.BulkUpdateIncidentMilestonesMilestone{
-                Type: "<value>",
-                OccurredAt: types.MustTimeFromString("2024-09-22T18:15:43.263Z"),
-            },
-            components.BulkUpdateIncidentMilestonesMilestone{
-                Type: "<value>",
-                OccurredAt: types.MustTimeFromString("2023-08-29T06:50:58.826Z"),
+                OccurredAt: types.MustTimeFromString("2025-04-19T10:45:27.739Z"),
             },
         },
     })
@@ -758,7 +750,7 @@ func main() {
 
     res, err := s.Incidents.CreateIncidentChangeEvent(ctx, "<id>", components.CreateIncidentChangeEvent{
         ChangeEventID: "<id>",
-        Type: components.CreateIncidentChangeEventTypeCaused,
+        Type: components.CreateIncidentChangeEventTypeSuspect,
     })
     if err != nil {
         log.Fatal(err)
@@ -1236,6 +1228,7 @@ import(
 	"context"
 	"firehydrant"
 	"firehydrant/models/components"
+	"firehydrant/models/operations"
 	"log"
 )
 
@@ -1248,7 +1241,7 @@ func main() {
         }),
     )
 
-    res, err := s.Incidents.ListTranscriptEntries(ctx, "<id>", nil, nil, nil)
+    res, err := s.Incidents.ListTranscriptEntries(ctx, "<id>", nil, nil, operations.ListTranscriptEntriesSortAsc.ToPointer())
     if err != nil {
         log.Fatal(err)
     }
@@ -1466,7 +1459,7 @@ func main() {
         }),
     )
 
-    res, err := s.Incidents.ListSimilarIncidents(ctx, "<id>", nil, nil)
+    res, err := s.Incidents.ListSimilarIncidents(ctx, "<id>", firehydrant.Float32(0.2), firehydrant.Int(5))
     if err != nil {
         log.Fatal(err)
     }
@@ -1579,16 +1572,15 @@ func main() {
         }),
     )
 
-    content, fileErr := os.Open("example.file")
+    example, fileErr := os.Open("example.file")
     if fileErr != nil {
         panic(fileErr)
     }
 
-
     res, err := s.Incidents.CreateIncidentAttachment(ctx, "<id>", operations.CreateIncidentAttachmentRequestBody{
         File: operations.CreateIncidentAttachmentFile{
             FileName: "example.file",
-            Content: content,
+            Content: example,
         },
     })
     if err != nil {
@@ -1985,7 +1977,7 @@ func main() {
         }),
     )
 
-    res, err := s.Incidents.ListIncidentImpacts(ctx, "<id>", operations.ListIncidentImpactsTypeEnvironments)
+    res, err := s.Incidents.ListIncidentImpacts(ctx, "<id>", operations.ListIncidentImpactsTypeCustomers)
     if err != nil {
         log.Fatal(err)
     }
@@ -2040,7 +2032,7 @@ func main() {
         }),
     )
 
-    res, err := s.Incidents.CreateIncidentImpact(ctx, "<id>", operations.CreateIncidentImpactTypeFunctionalities, components.CreateIncidentImpact{
+    res, err := s.Incidents.CreateIncidentImpact(ctx, "<id>", operations.CreateIncidentImpactTypeCustomers, components.CreateIncidentImpact{
         ID: "<id>",
     })
     if err != nil {
@@ -2867,8 +2859,8 @@ func main() {
 
     res, err := s.Incidents.CreateScheduledMaintenance(ctx, components.CreateScheduledMaintenance{
         Name: "<value>",
-        StartsAt: types.MustTimeFromString("2024-11-04T00:39:53.690Z"),
-        EndsAt: types.MustTimeFromString("2023-11-08T19:38:38.616Z"),
+        StartsAt: types.MustTimeFromString("2023-07-05T09:49:56.220Z"),
+        EndsAt: types.MustTimeFromString("2025-04-17T19:51:25.891Z"),
     })
     if err != nil {
         log.Fatal(err)
@@ -3133,7 +3125,7 @@ func main() {
     )
 
     res, err := s.Incidents.VoteAiIncidentSummary(ctx, "<id>", "<id>", operations.VoteAiIncidentSummaryRequestBody{
-        Direction: operations.DirectionDown,
+        Direction: operations.DirectionUp,
     })
     if err != nil {
         log.Fatal(err)
