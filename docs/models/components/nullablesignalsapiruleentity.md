@@ -1,5 +1,7 @@
 # NullableSignalsAPIRuleEntity
 
+Signals_API_RuleEntity model
+
 
 ## Fields
 

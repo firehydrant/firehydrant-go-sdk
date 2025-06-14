@@ -12,11 +12,12 @@ import (
 type UpdateTeamEscalationPolicyType string
 
 const (
-	UpdateTeamEscalationPolicyTypeOnCallSchedule UpdateTeamEscalationPolicyType = "OnCallSchedule"
-	UpdateTeamEscalationPolicyTypeUser           UpdateTeamEscalationPolicyType = "User"
-	UpdateTeamEscalationPolicyTypeSlackChannel   UpdateTeamEscalationPolicyType = "SlackChannel"
-	UpdateTeamEscalationPolicyTypeEntireTeam     UpdateTeamEscalationPolicyType = "EntireTeam"
-	UpdateTeamEscalationPolicyTypeWebhook        UpdateTeamEscalationPolicyType = "Webhook"
+	UpdateTeamEscalationPolicyTypeOnCallSchedule        UpdateTeamEscalationPolicyType = "OnCallSchedule"
+	UpdateTeamEscalationPolicyTypeUser                  UpdateTeamEscalationPolicyType = "User"
+	UpdateTeamEscalationPolicyTypeSlackChannel          UpdateTeamEscalationPolicyType = "SlackChannel"
+	UpdateTeamEscalationPolicyTypeMicrosoftTeamsChannel UpdateTeamEscalationPolicyType = "MicrosoftTeamsChannel"
+	UpdateTeamEscalationPolicyTypeEntireTeam            UpdateTeamEscalationPolicyType = "EntireTeam"
+	UpdateTeamEscalationPolicyTypeWebhook               UpdateTeamEscalationPolicyType = "Webhook"
 )
 
 func (e UpdateTeamEscalationPolicyType) ToPointer() *UpdateTeamEscalationPolicyType {
@@ -33,6 +34,8 @@ func (e *UpdateTeamEscalationPolicyType) UnmarshalJSON(data []byte) error {
 	case "User":
 		fallthrough
 	case "SlackChannel":
+		fallthrough
+	case "MicrosoftTeamsChannel":
 		fallthrough
 	case "EntireTeam":
 		fallthrough

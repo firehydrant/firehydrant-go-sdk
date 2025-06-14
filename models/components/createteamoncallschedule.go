@@ -8,9 +8,9 @@ import (
 )
 
 type CreateTeamOnCallScheduleMember struct {
-	// The ID of a user who should be added to the schedule's rotation. You can add a user to the schedule
-	// multiple times to construct more complex rotations, and you can specify a `null` user ID to create
-	// unassigned slots in the rotation.
+	// The ID of a user who should be added to the schedule's initial rotation. You can add a user to the
+	// schedule multiple times to construct more complex rotations, and you can specify a `null` user ID
+	// to create unassigned slots in the rotation.
 	//
 	UserID *string `json:"user_id,omitempty"`
 }
@@ -94,7 +94,7 @@ func (e *CreateTeamOnCallScheduleHandoffDay) UnmarshalJSON(data []byte) error {
 	}
 }
 
-// CreateTeamOnCallScheduleStrategy - An object that specifies how the schedule's on-call shifts should be generated.
+// CreateTeamOnCallScheduleStrategy - An object that specifies how the initial rotation's on-call shifts should be generated. This value must be provided if `rotations` is not.
 type CreateTeamOnCallScheduleStrategy struct {
 	// The type of strategy. Must be one of "daily", "weekly", or "custom".
 	Type CreateTeamOnCallScheduleType `json:"type"`
@@ -257,26 +257,30 @@ func (o *CreateTeamOnCallScheduleRestriction) GetEndTime() string {
 	return o.EndTime
 }
 
-// CreateTeamOnCallSchedule - Create a Signals on-call schedule for a team.
+// CreateTeamOnCallSchedule - Create a Signals on-call schedule for a team with a single rotation. More rotations can be created later.
 type CreateTeamOnCallSchedule struct {
 	// The on-call schedule's name.
 	Name string `json:"name"`
 	// A detailed description of the on-call schedule.
 	Description *string `json:"description,omitempty"`
-	// The time zone in which the on-call schedule operates. This value must be a valid IANA time zone name.
-	TimeZone string `json:"time_zone"`
-	// The ID of a Slack user group for syncing purposes. If provided, we will automatically sync whoever is on call to the user group in Slack.
-	SlackUserGroupID *string `json:"slack_user_group_id,omitempty"`
-	// An ordered list of objects that specify members of the on-call schedule's rotation.
-	Members []CreateTeamOnCallScheduleMember `json:"members,omitempty"`
-	// An object that specifies how the schedule's on-call shifts should be generated.
-	Strategy CreateTeamOnCallScheduleStrategy `json:"strategy"`
-	// A list of objects that restrict the schedule to speccific on-call periods.
-	Restrictions []CreateTeamOnCallScheduleRestriction `json:"restrictions,omitempty"`
-	// An ISO8601 time string specifying when the schedule's first shift should start. This value is only used if the schedule's strategy is "custom".
-	StartTime *string `json:"start_time,omitempty"`
-	// A hex color code that will be used to represent the schedule in the UI and iCal subscriptions.
+	// An optional name for the initial rotation. If not provided, the schedule's name will be used.
+	RotationName *string `json:"rotation_name,omitempty"`
+	// An optional description for the initial rotation. If not provided, the schedule's description will be used.
+	RotationDescription *string `json:"rotation_description,omitempty"`
+	// A hex color code that will be used to represent the initial rotation in FireHydrant's UI.
 	Color *string `json:"color,omitempty"`
+	// The time zone in which the on-call schedule's rotation will operate. This value must be a valid IANA time zone name and must be provided if `rotations` is not.
+	TimeZone *string `json:"time_zone,omitempty"`
+	// The ID of a Slack user group to sync the initial rotation's on-call members to.
+	SlackUserGroupID *string `json:"slack_user_group_id,omitempty"`
+	// An ordered list of objects that specify members of the initial rotation.
+	Members []CreateTeamOnCallScheduleMember `json:"members,omitempty"`
+	// An object that specifies how the initial rotation's on-call shifts should be generated. This value must be provided if `rotations` is not.
+	Strategy *CreateTeamOnCallScheduleStrategy `json:"strategy,omitempty"`
+	// A list of objects that restrict the initial rotation to specific on-call periods.
+	Restrictions []CreateTeamOnCallScheduleRestriction `json:"restrictions,omitempty"`
+	// An ISO8601 time string specifying when the initial rotation should start. This value is only used if the rotation's strategy type is "custom".
+	StartTime *string `json:"start_time,omitempty"`
 	// This parameter is deprecated; use `members` instead.
 	MemberIds []string `json:"member_ids,omitempty"`
 }
@@ -295,9 +299,30 @@ func (o *CreateTeamOnCallSchedule) GetDescription() *string {
 	return o.Description
 }
 
-func (o *CreateTeamOnCallSchedule) GetTimeZone() string {
+func (o *CreateTeamOnCallSchedule) GetRotationName() *string {
 	if o == nil {
-		return ""
+		return nil
+	}
+	return o.RotationName
+}
+
+func (o *CreateTeamOnCallSchedule) GetRotationDescription() *string {
+	if o == nil {
+		return nil
+	}
+	return o.RotationDescription
+}
+
+func (o *CreateTeamOnCallSchedule) GetColor() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Color
+}
+
+func (o *CreateTeamOnCallSchedule) GetTimeZone() *string {
+	if o == nil {
+		return nil
 	}
 	return o.TimeZone
 }
@@ -316,9 +341,9 @@ func (o *CreateTeamOnCallSchedule) GetMembers() []CreateTeamOnCallScheduleMember
 	return o.Members
 }
 
-func (o *CreateTeamOnCallSchedule) GetStrategy() CreateTeamOnCallScheduleStrategy {
+func (o *CreateTeamOnCallSchedule) GetStrategy() *CreateTeamOnCallScheduleStrategy {
 	if o == nil {
-		return CreateTeamOnCallScheduleStrategy{}
+		return nil
 	}
 	return o.Strategy
 }
@@ -335,13 +360,6 @@ func (o *CreateTeamOnCallSchedule) GetStartTime() *string {
 		return nil
 	}
 	return o.StartTime
-}
-
-func (o *CreateTeamOnCallSchedule) GetColor() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Color
 }
 
 func (o *CreateTeamOnCallSchedule) GetMemberIds() []string {

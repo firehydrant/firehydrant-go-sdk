@@ -131,8 +131,21 @@ type CreateIncident struct {
 	// An array of custom fields to set on the incident.
 	CustomFields  []CustomField `json:"custom_fields,omitempty"`
 	ExternalLinks *string       `json:"external_links,omitempty"`
-	// The ID of the incident type to use as a template when creating the incident. This will copy values from the incident type unless they are being overridden via parameters in this request.
+	// The ID of the incident type. This will copy values from the incident type (if any) unless they are being overridden via parameters in this request.
 	IncidentTypeID *string `json:"incident_type_id,omitempty"`
+	// If true, the incident type values will not be copied to the incident. This is useful when creating an incident from an incident type, but you want to set the values manually.
+	SkipIncidentTypeValues *bool `default:"false" json:"skip_incident_type_values"`
+}
+
+func (c CreateIncident) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *CreateIncident) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, false); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (o *CreateIncident) GetName() string {
@@ -266,4 +279,11 @@ func (o *CreateIncident) GetIncidentTypeID() *string {
 		return nil
 	}
 	return o.IncidentTypeID
+}
+
+func (o *CreateIncident) GetSkipIncidentTypeValues() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.SkipIncidentTypeValues
 }
