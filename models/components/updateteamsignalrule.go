@@ -11,11 +11,12 @@ import (
 type UpdateTeamSignalRuleTargetType string
 
 const (
-	UpdateTeamSignalRuleTargetTypeEscalationPolicy UpdateTeamSignalRuleTargetType = "EscalationPolicy"
-	UpdateTeamSignalRuleTargetTypeOnCallSchedule   UpdateTeamSignalRuleTargetType = "OnCallSchedule"
-	UpdateTeamSignalRuleTargetTypeUser             UpdateTeamSignalRuleTargetType = "User"
-	UpdateTeamSignalRuleTargetTypeWebhook          UpdateTeamSignalRuleTargetType = "Webhook"
-	UpdateTeamSignalRuleTargetTypeSlackChannel     UpdateTeamSignalRuleTargetType = "SlackChannel"
+	UpdateTeamSignalRuleTargetTypeEscalationPolicy      UpdateTeamSignalRuleTargetType = "EscalationPolicy"
+	UpdateTeamSignalRuleTargetTypeOnCallSchedule        UpdateTeamSignalRuleTargetType = "OnCallSchedule"
+	UpdateTeamSignalRuleTargetTypeUser                  UpdateTeamSignalRuleTargetType = "User"
+	UpdateTeamSignalRuleTargetTypeWebhook               UpdateTeamSignalRuleTargetType = "Webhook"
+	UpdateTeamSignalRuleTargetTypeSlackChannel          UpdateTeamSignalRuleTargetType = "SlackChannel"
+	UpdateTeamSignalRuleTargetTypeMicrosoftTeamsChannel UpdateTeamSignalRuleTargetType = "MicrosoftTeamsChannel"
 )
 
 func (e UpdateTeamSignalRuleTargetType) ToPointer() *UpdateTeamSignalRuleTargetType {
@@ -36,6 +37,8 @@ func (e *UpdateTeamSignalRuleTargetType) UnmarshalJSON(data []byte) error {
 	case "Webhook":
 		fallthrough
 	case "SlackChannel":
+		fallthrough
+	case "MicrosoftTeamsChannel":
 		*e = UpdateTeamSignalRuleTargetType(v)
 		return nil
 	default:

@@ -11,13 +11,14 @@ import (
 type CreateSignalsEmailTargetType string
 
 const (
-	CreateSignalsEmailTargetTypeTeam             CreateSignalsEmailTargetType = "Team"
-	CreateSignalsEmailTargetTypeEntireTeam       CreateSignalsEmailTargetType = "EntireTeam"
-	CreateSignalsEmailTargetTypeEscalationPolicy CreateSignalsEmailTargetType = "EscalationPolicy"
-	CreateSignalsEmailTargetTypeOnCallSchedule   CreateSignalsEmailTargetType = "OnCallSchedule"
-	CreateSignalsEmailTargetTypeUser             CreateSignalsEmailTargetType = "User"
-	CreateSignalsEmailTargetTypeSlackChannel     CreateSignalsEmailTargetType = "SlackChannel"
-	CreateSignalsEmailTargetTypeWebhook          CreateSignalsEmailTargetType = "Webhook"
+	CreateSignalsEmailTargetTypeTeam                  CreateSignalsEmailTargetType = "Team"
+	CreateSignalsEmailTargetTypeEntireTeam            CreateSignalsEmailTargetType = "EntireTeam"
+	CreateSignalsEmailTargetTypeEscalationPolicy      CreateSignalsEmailTargetType = "EscalationPolicy"
+	CreateSignalsEmailTargetTypeOnCallSchedule        CreateSignalsEmailTargetType = "OnCallSchedule"
+	CreateSignalsEmailTargetTypeUser                  CreateSignalsEmailTargetType = "User"
+	CreateSignalsEmailTargetTypeSlackChannel          CreateSignalsEmailTargetType = "SlackChannel"
+	CreateSignalsEmailTargetTypeMicrosoftTeamsChannel CreateSignalsEmailTargetType = "MicrosoftTeamsChannel"
+	CreateSignalsEmailTargetTypeWebhook               CreateSignalsEmailTargetType = "Webhook"
 )
 
 func (e CreateSignalsEmailTargetType) ToPointer() *CreateSignalsEmailTargetType {
@@ -40,6 +41,8 @@ func (e *CreateSignalsEmailTargetType) UnmarshalJSON(data []byte) error {
 	case "User":
 		fallthrough
 	case "SlackChannel":
+		fallthrough
+	case "MicrosoftTeamsChannel":
 		fallthrough
 	case "Webhook":
 		*e = CreateSignalsEmailTargetType(v)

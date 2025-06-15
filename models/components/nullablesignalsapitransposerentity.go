@@ -2,22 +2,23 @@
 
 package components
 
-type ExamplePayload struct {
+type NullableSignalsAPITransposerEntityExamplePayload struct {
 }
 
+// NullableSignalsAPITransposerEntity - Signals_API_TransposerEntity model
 type NullableSignalsAPITransposerEntity struct {
-	Name           *string               `json:"name,omitempty"`
-	Slug           *string               `json:"slug,omitempty"`
-	ExamplePayload *ExamplePayload       `json:"example_payload,omitempty"`
-	Expression     *string               `json:"expression,omitempty"`
-	Expected       *string               `json:"expected,omitempty"`
-	Website        *string               `json:"website,omitempty"`
-	Description    *string               `json:"description,omitempty"`
-	Tags           []string              `json:"tags,omitempty"`
-	IngestURL      *string               `json:"ingest_url,omitempty"`
-	Editable       *bool                 `json:"editable,omitempty"`
-	CreatedBy      *NullableAuthorEntity `json:"created_by,omitempty"`
-	UpdatedBy      *NullableAuthorEntity `json:"updated_by,omitempty"`
+	Name           *string                                           `json:"name,omitempty"`
+	Slug           *string                                           `json:"slug,omitempty"`
+	ExamplePayload *NullableSignalsAPITransposerEntityExamplePayload `json:"example_payload,omitempty"`
+	Expression     *string                                           `json:"expression,omitempty"`
+	Expected       *string                                           `json:"expected,omitempty"`
+	Website        *string                                           `json:"website,omitempty"`
+	Description    *string                                           `json:"description,omitempty"`
+	Tags           []string                                          `json:"tags,omitempty"`
+	IngestURL      *string                                           `json:"ingest_url,omitempty"`
+	Editable       *bool                                             `json:"editable,omitempty"`
+	CreatedBy      *NullableAuthorEntity                             `json:"created_by,omitempty"`
+	UpdatedBy      *NullableAuthorEntity                             `json:"updated_by,omitempty"`
 }
 
 func (o *NullableSignalsAPITransposerEntity) GetName() *string {
@@ -34,7 +35,7 @@ func (o *NullableSignalsAPITransposerEntity) GetSlug() *string {
 	return o.Slug
 }
 
-func (o *NullableSignalsAPITransposerEntity) GetExamplePayload() *ExamplePayload {
+func (o *NullableSignalsAPITransposerEntity) GetExamplePayload() *NullableSignalsAPITransposerEntityExamplePayload {
 	if o == nil {
 		return nil
 	}

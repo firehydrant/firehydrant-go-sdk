@@ -1,0 +1,10 @@
+# UpdateSignalsAlertGroupingConfigurationStrategy
+
+The strategy to use for grouping alerts
+
+
+## Fields
+
+| Field                                                                                                                                       | Type                                                                                                                                        | Required                                                                                                                                    | Description                                                                                                                                 |
+| ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Substring`                                                                                                                                 | [*components.UpdateSignalsAlertGroupingConfigurationSubstring](../../models/components/updatesignalsalertgroupingconfigurationsubstring.md) | :heavy_minus_sign:                                                                                                                          | The type of strategy to use for grouping alerts                                                                                             |

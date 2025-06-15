@@ -94,9 +94,7 @@ func main() {
     )
 
     err := s.Alerts.CreateIncidentAlert(ctx, "<id>", []string{
-        "<value>",
-        "<value>",
-        "<value>",
+        "<value 1>",
     })
     if err != nil {
         log.Fatal(err)
