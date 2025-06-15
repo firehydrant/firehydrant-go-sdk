@@ -1,0 +1,9 @@
+# NullableSignalsAPIEscalationPolicyHandoffStepEntity
+
+
+## Fields
+
+| Field                                                                                                   | Type                                                                                                    | Required                                                                                                | Description                                                                                             |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `ID`                                                                                                    | **string*                                                                                               | :heavy_minus_sign:                                                                                      | N/A                                                                                                     |
+| `Target`                                                                                                | [*components.NullableSignalsAPITargetEntity](../../models/components/nullablesignalsapitargetentity.md) | :heavy_minus_sign:                                                                                      | N/A                                                                                                     |

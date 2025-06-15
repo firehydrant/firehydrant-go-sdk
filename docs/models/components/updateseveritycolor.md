@@ -11,3 +11,4 @@
 | `UpdateSeverityColorBlue`   | blue                        |
 | `UpdateSeverityColorTeal`   | teal                        |
 | `UpdateSeverityColorGrey`   | grey                        |
+| `UpdateSeverityColorGreen`  | green                       |
