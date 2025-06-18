@@ -1,4 +1,6 @@
-# ExamplePayload
+# PublicAPIV1FormConfigurationsSelectedValueEntityTemplate
+
+The template for the selected value
 
 
 ## Fields

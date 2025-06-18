@@ -1,0 +1,10 @@
+# PublicAPIV1FormConfigurationsSelectedValueEntity
+
+PublicAPI_V1_FormConfigurations_SelectedValueEntity model
+
+
+## Fields
+
+| Field                                                                                                                                                       | Type                                                                                                                                                        | Required                                                                                                                                                    | Description                                                                                                                                                 |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Template`                                                                                                                                                  | [*components.PublicAPIV1FormConfigurationsSelectedValueEntityTemplate](../../models/components/publicapiv1formconfigurationsselectedvalueentitytemplate.md) | :heavy_minus_sign:                                                                                                                                          | The template for the selected value                                                                                                                         |

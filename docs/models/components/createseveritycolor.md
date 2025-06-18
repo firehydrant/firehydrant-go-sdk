@@ -11,3 +11,4 @@
 | `CreateSeverityColorBlue`   | blue                        |
 | `CreateSeverityColorTeal`   | teal                        |
 | `CreateSeverityColorGrey`   | grey                        |
+| `CreateSeverityColorGreen`  | green                       |

@@ -5,7 +5,6 @@ package operations
 import (
 	"encoding/json"
 	"firehydrant/internal/utils"
-	"firehydrant/types"
 	"fmt"
 	"time"
 )
@@ -101,9 +100,9 @@ type ListTicketFunnelMetricsRequest struct {
 	// Incident status
 	Status *string `queryParam:"style=form,explode=true,name=status"`
 	// Filters for incidents that started on or after this date
-	StartDate *types.Date `queryParam:"style=form,explode=true,name=start_date"`
+	StartDate *time.Time `queryParam:"style=form,explode=true,name=start_date"`
 	// Filters for incidents that started on or before this date
-	EndDate *types.Date `queryParam:"style=form,explode=true,name=end_date"`
+	EndDate *time.Time `queryParam:"style=form,explode=true,name=end_date"`
 	// Filters for incidents that were resolved at or after this time. Combine this with the `current_milestones` parameter if you wish to omit incidents that were re-opened and are still active.
 	ResolvedAtOrAfter *time.Time `queryParam:"style=form,explode=true,name=resolved_at_or_after"`
 	// Filters for incidents that were resolved at or before this time. Combine this with the `current_milestones` parameter if you wish to omit incidents that were re-opened and are still active.
@@ -145,8 +144,8 @@ type ListTicketFunnelMetricsRequest struct {
 	// A comma separated list of incident type IDs
 	IncidentTypeID *string `queryParam:"style=form,explode=true,name=incident_type_id"`
 	// A comma separated list of retrospective template IDs
-	RetrospectiveTemplate *string                             `queryParam:"style=form,explode=true,name=retrospective_template"`
-	RequestBody           *ListTicketFunnelMetricsRequestBody `request:"mediaType=multipart/form-data"`
+	RetrospectiveTemplates *string                             `queryParam:"style=form,explode=true,name=retrospective_templates"`
+	RequestBody            *ListTicketFunnelMetricsRequestBody `request:"mediaType=multipart/form-data"`
 }
 
 func (l ListTicketFunnelMetricsRequest) MarshalJSON() ([]byte, error) {
@@ -216,14 +215,14 @@ func (o *ListTicketFunnelMetricsRequest) GetStatus() *string {
 	return o.Status
 }
 
-func (o *ListTicketFunnelMetricsRequest) GetStartDate() *types.Date {
+func (o *ListTicketFunnelMetricsRequest) GetStartDate() *time.Time {
 	if o == nil {
 		return nil
 	}
 	return o.StartDate
 }
 
-func (o *ListTicketFunnelMetricsRequest) GetEndDate() *types.Date {
+func (o *ListTicketFunnelMetricsRequest) GetEndDate() *time.Time {
 	if o == nil {
 		return nil
 	}
@@ -370,11 +369,11 @@ func (o *ListTicketFunnelMetricsRequest) GetIncidentTypeID() *string {
 	return o.IncidentTypeID
 }
 
-func (o *ListTicketFunnelMetricsRequest) GetRetrospectiveTemplate() *string {
+func (o *ListTicketFunnelMetricsRequest) GetRetrospectiveTemplates() *string {
 	if o == nil {
 		return nil
 	}
-	return o.RetrospectiveTemplate
+	return o.RetrospectiveTemplates
 }
 
 func (o *ListTicketFunnelMetricsRequest) GetRequestBody() *ListTicketFunnelMetricsRequestBody {

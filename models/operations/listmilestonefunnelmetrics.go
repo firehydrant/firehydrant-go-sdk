@@ -5,7 +5,6 @@ package operations
 import (
 	"encoding/json"
 	"firehydrant/internal/utils"
-	"firehydrant/types"
 	"fmt"
 	"time"
 )
@@ -101,9 +100,9 @@ type ListMilestoneFunnelMetricsRequest struct {
 	// Incident status
 	Status *string `queryParam:"style=form,explode=true,name=status"`
 	// Filters for incidents that started on or after this date
-	StartDate *types.Date `queryParam:"style=form,explode=true,name=start_date"`
+	StartDate *time.Time `queryParam:"style=form,explode=true,name=start_date"`
 	// Filters for incidents that started on or before this date
-	EndDate *types.Date `queryParam:"style=form,explode=true,name=end_date"`
+	EndDate *time.Time `queryParam:"style=form,explode=true,name=end_date"`
 	// Filters for incidents that were resolved at or after this time. Combine this with the `current_milestones` parameter if you wish to omit incidents that were re-opened and are still active.
 	ResolvedAtOrAfter *time.Time `queryParam:"style=form,explode=true,name=resolved_at_or_after"`
 	// Filters for incidents that were resolved at or before this time. Combine this with the `current_milestones` parameter if you wish to omit incidents that were re-opened and are still active.
@@ -145,8 +144,8 @@ type ListMilestoneFunnelMetricsRequest struct {
 	// A comma separated list of incident type IDs
 	IncidentTypeID *string `queryParam:"style=form,explode=true,name=incident_type_id"`
 	// A comma separated list of retrospective template IDs
-	RetrospectiveTemplate *string                                `queryParam:"style=form,explode=true,name=retrospective_template"`
-	RequestBody           *ListMilestoneFunnelMetricsRequestBody `request:"mediaType=multipart/form-data"`
+	RetrospectiveTemplates *string                                `queryParam:"style=form,explode=true,name=retrospective_templates"`
+	RequestBody            *ListMilestoneFunnelMetricsRequestBody `request:"mediaType=multipart/form-data"`
 }
 
 func (l ListMilestoneFunnelMetricsRequest) MarshalJSON() ([]byte, error) {
@@ -216,14 +215,14 @@ func (o *ListMilestoneFunnelMetricsRequest) GetStatus() *string {
 	return o.Status
 }
 
-func (o *ListMilestoneFunnelMetricsRequest) GetStartDate() *types.Date {
+func (o *ListMilestoneFunnelMetricsRequest) GetStartDate() *time.Time {
 	if o == nil {
 		return nil
 	}
 	return o.StartDate
 }
 
-func (o *ListMilestoneFunnelMetricsRequest) GetEndDate() *types.Date {
+func (o *ListMilestoneFunnelMetricsRequest) GetEndDate() *time.Time {
 	if o == nil {
 		return nil
 	}
@@ -370,11 +369,11 @@ func (o *ListMilestoneFunnelMetricsRequest) GetIncidentTypeID() *string {
 	return o.IncidentTypeID
 }
 
-func (o *ListMilestoneFunnelMetricsRequest) GetRetrospectiveTemplate() *string {
+func (o *ListMilestoneFunnelMetricsRequest) GetRetrospectiveTemplates() *string {
 	if o == nil {
 		return nil
 	}
-	return o.RetrospectiveTemplate
+	return o.RetrospectiveTemplates
 }
 
 func (o *ListMilestoneFunnelMetricsRequest) GetRequestBody() *ListMilestoneFunnelMetricsRequestBody {

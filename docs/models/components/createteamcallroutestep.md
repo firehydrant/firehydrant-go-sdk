@@ -1,0 +1,10 @@
+# CreateTeamCallRouteStep
+
+
+## Fields
+
+| Field                                                                                                | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `TargetType`                                                                                         | [components.CreateTeamCallRouteTargetType](../../models/components/createteamcallroutetargettype.md) | :heavy_check_mark:                                                                                   | Type of target                                                                                       |
+| `TargetID`                                                                                           | *string*                                                                                             | :heavy_check_mark:                                                                                   | ID of the target                                                                                     |
+| `Timeout`                                                                                            | *string*                                                                                             | :heavy_check_mark:                                                                                   | Timeout in seconds for the step                                                                      |

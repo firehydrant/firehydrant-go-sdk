@@ -94,7 +94,7 @@ func main() {
     )
 
     res, err := s.Webhooks.CreateWebhook(ctx, components.CreateWebhook{
-        URL: "https://prime-tooth.biz/",
+        URL: "https://helpful-cafe.biz",
     })
     if err != nil {
         log.Fatal(err)

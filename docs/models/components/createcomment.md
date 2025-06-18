@@ -1,6 +1,6 @@
 # CreateComment
 
-ALPHA - Creates a comment for a project
+Creates a comment for a project
 
 
 ## Fields

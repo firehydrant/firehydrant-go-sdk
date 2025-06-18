@@ -95,7 +95,7 @@ func main() {
     )
 
     err := s.Scim.UpdateScimGroup(ctx, "<id>", components.UpdateScimGroup{
-        DisplayName: "Monte_Schowalter",
+        DisplayName: "Dejon_Prosacco5",
         Members: []components.UpdateScimGroupMember{
             components.UpdateScimGroupMember{
                 Value: "<value>",
@@ -255,14 +255,8 @@ func main() {
     )
 
     err := s.Scim.CreateScimGroup(ctx, components.CreateScimGroup{
-        DisplayName: "Allie.Schowalter",
+        DisplayName: "Odessa.Schulist",
         Members: []components.CreateScimGroupMember{
-            components.CreateScimGroupMember{
-                Value: "<value>",
-            },
-            components.CreateScimGroupMember{
-                Value: "<value>",
-            },
             components.CreateScimGroupMember{
                 Value: "<value>",
             },
@@ -469,20 +463,7 @@ func main() {
     )
 
     err := s.Scim.PatchScimUser(ctx, "<id>", components.PatchScimUser{
-        Operations: []components.Operation{
-            components.Operation{
-                Op: "<value>",
-                Path: "/System",
-            },
-            components.Operation{
-                Op: "<value>",
-                Path: "/lib",
-            },
-            components.Operation{
-                Op: "<value>",
-                Path: "/etc/namedb",
-            },
-        },
+        Operations: []components.Operation{},
     })
     if err != nil {
         log.Fatal(err)
@@ -587,25 +568,12 @@ func main() {
     )
 
     err := s.Scim.CreateScimUser(ctx, components.CreateScimUser{
-        UserName: "Angeline72",
+        UserName: "Vinnie.Crooks27",
         Name: components.CreateScimUserName{
             FamilyName: "<value>",
             GivenName: "<value>",
         },
-        Emails: []components.CreateScimUserEmail{
-            components.CreateScimUserEmail{
-                Value: "<value>",
-                Primary: false,
-            },
-            components.CreateScimUserEmail{
-                Value: "<value>",
-                Primary: false,
-            },
-            components.CreateScimUserEmail{
-                Value: "<value>",
-                Primary: true,
-            },
-        },
+        Emails: []components.CreateScimUserEmail{},
     })
     if err != nil {
         log.Fatal(err)

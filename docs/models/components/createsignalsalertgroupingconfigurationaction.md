@@ -1,0 +1,11 @@
+# CreateSignalsAlertGroupingConfigurationAction
+
+The action to take when grouping alerts
+
+
+## Fields
+
+| Field                                                                                                                           | Type                                                                                                                            | Required                                                                                                                        | Description                                                                                                                     |
+| ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| `Link`                                                                                                                          | **bool*                                                                                                                         | :heavy_minus_sign:                                                                                                              | Link the alerts and do not notify anyone                                                                                        |
+| `Fyi`                                                                                                                           | [*components.CreateSignalsAlertGroupingConfigurationFyi](../../models/components/createsignalsalertgroupingconfigurationfyi.md) | :heavy_minus_sign:                                                                                                              | Send FYI notification                                                                                                           |

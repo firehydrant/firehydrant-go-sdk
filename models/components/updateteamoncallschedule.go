@@ -8,7 +8,7 @@ import (
 )
 
 type UpdateTeamOnCallScheduleMember struct {
-	// The ID of a user who should be added to the schedule's rotation. You can add a user to the schedule
+	// The ID of a user who should be added to the schedule's rotation. You can add a user to the rotation
 	// multiple times to construct more complex rotations, and you can specify a `null` user ID to create
 	// unassigned slots in the rotation.
 	//
@@ -94,7 +94,7 @@ func (e *UpdateTeamOnCallScheduleHandoffDay) UnmarshalJSON(data []byte) error {
 	}
 }
 
-// UpdateTeamOnCallScheduleStrategy - An object that specifies how the schedule's on-call shifts should be generated.
+// UpdateTeamOnCallScheduleStrategy - An object that specifies how the rotation's on-call shifts should be generated.
 type UpdateTeamOnCallScheduleStrategy struct {
 	// The type of strategy. Must be one of "daily", "weekly", or "custom".
 	Type UpdateTeamOnCallScheduleType `json:"type"`
@@ -257,29 +257,35 @@ func (o *UpdateTeamOnCallScheduleRestriction) GetEndTime() string {
 	return o.EndTime
 }
 
-// UpdateTeamOnCallSchedule - Update a Signals on-call schedule by ID
+// UpdateTeamOnCallSchedule - Update a Signals on-call schedule by ID. For backwards compatibility, all parameters except for
+// `name` and `description` will be ignored if the schedule has more than one rotation. If the schedule
+// has only one rotation, you can continue to update that rotation using the rotation-specific parameters.
 type UpdateTeamOnCallSchedule struct {
-	// The on-call schedule's name.
+	// A new name for the on-call schedule.
 	Name *string `json:"name,omitempty"`
-	// A detailed description of the on-call schedule.
+	// A new, detailed description for the on-call schedule.
 	Description *string `json:"description,omitempty"`
-	// The time zone in which the on-call schedule operates. This value must be a valid IANA time zone name.
+	// A new name for the schedule's rotation.
+	RotationName *string `json:"rotation_name,omitempty"`
+	// A new, detailed description for the schedule's rotation.
+	RotationDescription *string `json:"rotation_description,omitempty"`
+	// A hex color code that will be used to represent the schedule's rotation in FireHydrant's UI.
+	Color *string `json:"color,omitempty"`
+	// The time zone in which the on-call schedule's rotation will operate. This value must be a valid IANA time zone name.
 	TimeZone *string `json:"time_zone,omitempty"`
-	// The ID of a Slack user group for syncing purposes. If provided, we will automatically sync whoever is on call to the user group in Slack.
+	// The ID of a Slack user group to sync the rotation's on-call members to.
 	SlackUserGroupID *string `json:"slack_user_group_id,omitempty"`
-	// An ordered list of objects that specify members of the on-call schedule's rotation.
+	// An ordered list of objects that specify members of the schedule's rotation.
 	Members []UpdateTeamOnCallScheduleMember `json:"members,omitempty"`
-	// An object that specifies how the schedule's on-call shifts should be generated.
+	// An object that specifies how the rotation's on-call shifts should be generated.
 	Strategy *UpdateTeamOnCallScheduleStrategy `json:"strategy,omitempty"`
-	// A list of objects that restrict the schedule to speccific on-call periods.
+	// A list of objects that restrict the schedule's rotation to specific on-call periods.
 	Restrictions []UpdateTeamOnCallScheduleRestriction `json:"restrictions,omitempty"`
 	// An ISO8601 time string specifying when the updated schedule should take effect. This
 	// value must be provided if editing an attribute that would affect how the schedule's
 	// shifts are generated, such as the time zone, members, strategy, or restrictions.
 	//
 	EffectiveAt *string `json:"effective_at,omitempty"`
-	// A hex color code that will be used to represent the schedule in the UI and iCal subscriptions.
-	Color *string `json:"color,omitempty"`
 	// This parameter is deprecated; use `members` instead.
 	MemberIds []string `json:"member_ids,omitempty"`
 }
@@ -296,6 +302,27 @@ func (o *UpdateTeamOnCallSchedule) GetDescription() *string {
 		return nil
 	}
 	return o.Description
+}
+
+func (o *UpdateTeamOnCallSchedule) GetRotationName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.RotationName
+}
+
+func (o *UpdateTeamOnCallSchedule) GetRotationDescription() *string {
+	if o == nil {
+		return nil
+	}
+	return o.RotationDescription
+}
+
+func (o *UpdateTeamOnCallSchedule) GetColor() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Color
 }
 
 func (o *UpdateTeamOnCallSchedule) GetTimeZone() *string {
@@ -338,13 +365,6 @@ func (o *UpdateTeamOnCallSchedule) GetEffectiveAt() *string {
 		return nil
 	}
 	return o.EffectiveAt
-}
-
-func (o *UpdateTeamOnCallSchedule) GetColor() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Color
 }
 
 func (o *UpdateTeamOnCallSchedule) GetMemberIds() []string {

@@ -54,6 +54,7 @@ Operations related to Incident Settings
 * [ListCustomFieldDefinitions](#listcustomfielddefinitions) - List custom field definitions
 * [CreateCustomFieldDefinition](#createcustomfielddefinition) - Create a custom field definition
 * [ListCustomFieldSelectOptions](#listcustomfieldselectoptions) - Get available values for a custom field
+* [AppendFormDataOnSelectedValueGet](#appendformdataonselectedvalueget) - Get data for a form field on select
 * [GetFormConfiguration](#getformconfiguration) - Get a form configuration
 
 ## ListIncidentRoles
@@ -352,9 +353,7 @@ func main() {
     )
 
     res, err := s.IncidentSettings.ValidateIncidentTags(ctx, []string{
-        "<value>",
-        "<value>",
-        "<value>",
+        "<value 1>",
     })
     if err != nil {
         log.Fatal(err)
@@ -1047,7 +1046,7 @@ func main() {
 
     res, err := s.IncidentSettings.CreateLifecycleMilestone(ctx, operations.CreateLifecycleMilestoneRequest{
         Name: "<value>",
-        Description: "serpentine blah into after pendant zowie athletic",
+        Description: "militate grass boo hmph treble upset who scornful alarmed",
         PhaseID: "<id>",
     })
     if err != nil {
@@ -1800,23 +1799,7 @@ func main() {
     )
 
     res, err := s.IncidentSettings.UpdateSeverityMatrix(ctx, components.UpdateSeverityMatrix{
-        Data: []components.UpdateSeverityMatrixData{
-            components.UpdateSeverityMatrixData{
-                Severity: "<value>",
-                ImpactID: "<id>",
-                ConditionID: "<id>",
-            },
-            components.UpdateSeverityMatrixData{
-                Severity: "<value>",
-                ImpactID: "<id>",
-                ConditionID: "<id>",
-            },
-            components.UpdateSeverityMatrixData{
-                Severity: "<value>",
-                ImpactID: "<id>",
-                ConditionID: "<id>",
-            },
-        },
+        Data: []components.UpdateSeverityMatrixData{},
     })
     if err != nil {
         log.Fatal(err)
@@ -2516,9 +2499,9 @@ func main() {
     )
 
     res, err := s.IncidentSettings.CreateCustomFieldDefinition(ctx, components.CreateCustomFieldDefinition{
-        DisplayName: "Meredith_Gibson",
+        DisplayName: "Rasheed_Runolfsson",
         FieldType: "<value>",
-        Required: true,
+        Required: false,
     })
     if err != nil {
         log.Fatal(err)
@@ -2595,6 +2578,61 @@ func main() {
 ### Response
 
 **[*components.OrganizationsCustomFieldDefinitionEntity](../../models/components/organizationscustomfielddefinitionentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## AppendFormDataOnSelectedValueGet
+
+Get data for a form field on select that should be appended to a form by using a template
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.IncidentSettings.AppendFormDataOnSelectedValueGet(ctx, "<value>", "<id>", "<value>")
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `slug`                                                   | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `fieldID`                                                | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `selectedValue`                                          | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.PublicAPIV1FormConfigurationsSelectedValueEntity](../../models/components/publicapiv1formconfigurationsselectedvalueentity.md), error**
 
 ### Errors
 

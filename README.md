@@ -260,9 +260,19 @@ func main() {
 * [GenerateAudienceSummary](docs/sdks/audiences/README.md#generateaudiencesummary) - Generate summary
 * [ListAudienceSummaries](docs/sdks/audiences/README.md#listaudiencesummaries) - List audience summaries
 
+### [AuditEvents](docs/sdks/auditevents/README.md)
+
+* [ListAuditEvents](docs/sdks/auditevents/README.md#listauditevents) - List audit events
+* [GetAuditEvent](docs/sdks/auditevents/README.md#getauditevent) - Get a single audit event
+
 ### [CallRoutes](docs/sdks/callroutes/README.md)
 
+* [ListTeamCallRoutes](docs/sdks/callroutes/README.md#listteamcallroutes) - List call routes for a team
+* [CreateTeamCallRoute](docs/sdks/callroutes/README.md#createteamcallroute) - Create a call route for a team
 * [ListCallRoutes](docs/sdks/callroutes/README.md#listcallroutes) - List call routes
+* [GetCallRoute](docs/sdks/callroutes/README.md#getcallroute) - Retrieve a call route
+* [DeleteCallRoute](docs/sdks/callroutes/README.md#deletecallroute) - Delete a call route
+* [UpdateCallRoute](docs/sdks/callroutes/README.md#updatecallroute) - Update a call route
 
 ### [CatalogEntries](docs/sdks/catalogentries/README.md)
 
@@ -444,6 +454,7 @@ func main() {
 * [ListCustomFieldDefinitions](docs/sdks/incidentsettings/README.md#listcustomfielddefinitions) - List custom field definitions
 * [CreateCustomFieldDefinition](docs/sdks/incidentsettings/README.md#createcustomfielddefinition) - Create a custom field definition
 * [ListCustomFieldSelectOptions](docs/sdks/incidentsettings/README.md#listcustomfieldselectoptions) - Get available values for a custom field
+* [AppendFormDataOnSelectedValueGet](docs/sdks/incidentsettings/README.md#appendformdataonselectedvalueget) - Get data for a form field on select
 * [GetFormConfiguration](docs/sdks/incidentsettings/README.md#getformconfiguration) - Get a form configuration
 
 ### [Integrations](docs/sdks/integrations/README.md)
@@ -592,6 +603,14 @@ func main() {
 * [DeleteTeamSignalRule](docs/sdks/signals/README.md#deleteteamsignalrule) - Delete a Signals rule
 * [UpdateTeamSignalRule](docs/sdks/signals/README.md#updateteamsignalrule) - Update a Signals rule
 * [ListSignalsEventSources](docs/sdks/signals/README.md#listsignalseventsources) - List event sources for Signals
+* [CreateSignalsEventSource](docs/sdks/signals/README.md#createsignalseventsource) - Create an event source for Signals
+* [GetSignalsEventSource](docs/sdks/signals/README.md#getsignalseventsource) - Get an event source for Signals
+* [DeleteSignalsEventSource](docs/sdks/signals/README.md#deletesignalseventsource) - Delete an event source for Signals
+* [ListSignalsAlertGroupingConfigurations](docs/sdks/signals/README.md#listsignalsalertgroupingconfigurations) - List alert grouping configurations.
+* [CreateSignalsAlertGroupingConfiguration](docs/sdks/signals/README.md#createsignalsalertgroupingconfiguration) - Create an alert grouping configuration.
+* [GetSignalsAlertGroupingConfiguration](docs/sdks/signals/README.md#getsignalsalertgroupingconfiguration) - Get an alert grouping configuration.
+* [DeleteSignalsAlertGroupingConfiguration](docs/sdks/signals/README.md#deletesignalsalertgroupingconfiguration) - Delete an alert grouping configuration.
+* [UpdateSignalsAlertGroupingConfiguration](docs/sdks/signals/README.md#updatesignalsalertgroupingconfiguration) - Update an alert grouping configuration.
 * [ListSignalsEmailTargets](docs/sdks/signals/README.md#listsignalsemailtargets) - List email targets for signals
 * [CreateSignalsEmailTarget](docs/sdks/signals/README.md#createsignalsemailtarget) - Create an email target for signals
 * [GetSignalsEmailTarget](docs/sdks/signals/README.md#getsignalsemailtarget) - Get a signal email target
@@ -605,7 +624,7 @@ func main() {
 * [ListSignalsTransposers](docs/sdks/signals/README.md#listsignalstransposers) - List signal transposers
 * [GetSignalsIngestURL](docs/sdks/signals/README.md#getsignalsingesturl) - Get the signals ingestion URL
 * [DebugSignalsExpression](docs/sdks/signals/README.md#debugsignalsexpression) - Debug Signals expressions
-* [ListOrganizationOnCallSchedules](docs/sdks/signals/README.md#listorganizationoncallschedules) - List on-call schedules
+* [ListOrganizationOnCallSchedules](docs/sdks/signals/README.md#listorganizationoncallschedules) - List who's on call for the organization
 
 ### [StatusPages](docs/sdks/statuspages/README.md)
 

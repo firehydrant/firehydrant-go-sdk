@@ -66,7 +66,8 @@ func main() {
 
     res, err := s.Retrospectives.ShareIncidentRetrospectives(ctx, "<id>", operations.ShareIncidentRetrospectivesRequestBody{
         RetrospectiveIds: []string{
-            "<value>",
+            "<value 1>",
+            "<value 2>",
         },
     })
     if err != nil {
@@ -124,7 +125,7 @@ func main() {
     )
 
     res, err := s.Retrospectives.ExportIncidentRetrospectives(ctx, "<id>", operations.ExportIncidentRetrospectivesRequestBody{
-        IntegrationSlug: operations.IntegrationSlugGoogleDocs,
+        IntegrationSlug: operations.IntegrationSlugConfluenceCloud,
     })
     if err != nil {
         log.Fatal(err)
@@ -350,7 +351,7 @@ func main() {
 
     res, err := s.Retrospectives.CreateIncidentRetrospectiveField(ctx, "<id>", "<id>", operations.CreateIncidentRetrospectiveFieldRequestBody{
         Label: "<value>",
-        Type: operations.CreateIncidentRetrospectiveFieldTypeDynamicInputGroup,
+        Type: operations.CreateIncidentRetrospectiveFieldTypeDatetime,
     })
     if err != nil {
         log.Fatal(err)
@@ -462,7 +463,7 @@ func main() {
     )
 
     res, err := s.Retrospectives.UpdateIncidentRetrospectiveField(ctx, "<id>", "<id>", "<id>", components.UpdateIncidentRetrospectiveField{
-        Value: 168058,
+        Value: 361722,
     })
     if err != nil {
         log.Fatal(err)
@@ -1125,8 +1126,8 @@ func main() {
     )
 
     res, err := s.Retrospectives.ReorderPostMortemReasons(ctx, "<id>", components.ReorderPostMortemReasons{
-        OldPosition: 735999,
-        NewPosition: 264317,
+        OldPosition: 622113,
+        NewPosition: 136342,
     })
     if err != nil {
         log.Fatal(err)
@@ -1508,16 +1509,14 @@ func main() {
 
     res, err := s.Retrospectives.CreateRetrospectiveTemplate(ctx, operations.CreateRetrospectiveTemplateRequest{
         Name: "<value>",
-        Description: "second-hand ample mid bidet fooey",
+        Description: "unnecessarily pfft while gratefully upon er co-producer whoa uh-huh dismal",
         SectionsSlug: []operations.SectionsSlug{
-            operations.SectionsSlugKeyData,
-            operations.SectionsSlugKeyData,
-            operations.SectionsSlugKeyData,
+            operations.SectionsSlugDetails,
         },
         SectionsElements: []string{
-            "<value>",
-            "<value>",
-            "<value>",
+            "<value 1>",
+            "<value 2>",
+            "<value 3>",
         },
         FieldsLabel: []string{},
         FieldsType: []operations.CreateRetrospectiveTemplateFieldsType{
@@ -1684,14 +1683,18 @@ func main() {
     )
 
     res, err := s.Retrospectives.UpdateRetrospectiveTemplate(ctx, "<id>", operations.UpdateRetrospectiveTemplateRequestBody{
-        SectionsSlug: []string{},
-        SectionsElements: []string{
-            "<value>",
-            "<value>",
-            "<value>",
+        SectionsSlug: []string{
+            "<value 1>",
         },
-        FieldsLabel: []string{},
-        FieldsType: []operations.UpdateRetrospectiveTemplateFieldsType{},
+        SectionsElements: []string{
+            "<value 1>",
+        },
+        FieldsLabel: []string{
+            "<value 1>",
+        },
+        FieldsType: []operations.UpdateRetrospectiveTemplateFieldsType{
+            operations.UpdateRetrospectiveTemplateFieldsTypeMarkdownText,
+        },
     })
     if err != nil {
         log.Fatal(err)

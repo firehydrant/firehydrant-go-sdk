@@ -5,6 +5,10 @@ package operations
 type GetTeamOnCallScheduleRequest struct {
 	TeamID     string `pathParam:"style=simple,explode=false,name=team_id"`
 	ScheduleID string `pathParam:"style=simple,explode=false,name=schedule_id"`
+	// An optional ISO8601 timestamp for filtering the shifts listed in each on-call schedule to only include shifts that overlap with the provided time window. If provided, only shifts that end at or after this time will be included.
+	ShiftTimeWindowStart *string `queryParam:"style=form,explode=true,name=shift_time_window_start"`
+	// An optional ISO8601 timestamp for filtering the shifts listed in each on-call schedule to only include shifts that overlap with the provided time window.. If provided, only shifts that start at or before this time will be included.
+	ShiftTimeWindowEnd *string `queryParam:"style=form,explode=true,name=shift_time_window_end"`
 }
 
 func (o *GetTeamOnCallScheduleRequest) GetTeamID() string {
@@ -19,4 +23,18 @@ func (o *GetTeamOnCallScheduleRequest) GetScheduleID() string {
 		return ""
 	}
 	return o.ScheduleID
+}
+
+func (o *GetTeamOnCallScheduleRequest) GetShiftTimeWindowStart() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ShiftTimeWindowStart
+}
+
+func (o *GetTeamOnCallScheduleRequest) GetShiftTimeWindowEnd() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ShiftTimeWindowEnd
 }

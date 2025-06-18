@@ -1,6 +1,6 @@
 # UpdateComment
 
-ALPHA - Update a comment's attributes
+Update a comment's attributes
 
 
 ## Fields

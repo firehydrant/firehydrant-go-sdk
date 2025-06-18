@@ -39,6 +39,7 @@ type NullableIncidentEntity struct {
 	SeverityImpact          *string                                `json:"severity_impact,omitempty"`
 	SeverityCondition       *string                                `json:"severity_condition,omitempty"`
 	TagList                 []string                               `json:"tag_list,omitempty"`
+	IncidentType            *NullableSuccinctEntity                `json:"incident_type,omitempty"`
 	SeverityImpactObject    *NullableSeverityMatrixImpactEntity    `json:"severity_impact_object,omitempty"`
 	SeverityConditionObject *NullableSeverityMatrixConditionEntity `json:"severity_condition_object,omitempty"`
 	PrivateID               *string                                `json:"private_id,omitempty"`
@@ -206,6 +207,13 @@ func (o *NullableIncidentEntity) GetTagList() []string {
 		return nil
 	}
 	return o.TagList
+}
+
+func (o *NullableIncidentEntity) GetIncidentType() *NullableSuccinctEntity {
+	if o == nil {
+		return nil
+	}
+	return o.IncidentType
 }
 
 func (o *NullableIncidentEntity) GetSeverityImpactObject() *NullableSeverityMatrixImpactEntity {

@@ -2,7 +2,7 @@
 
 package components
 
-// CreateComment - ALPHA - Creates a comment for a project
+// CreateComment - Creates a comment for a project
 type CreateComment struct {
 	// Text body of comment
 	Body string `json:"body"`

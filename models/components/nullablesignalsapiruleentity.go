@@ -64,6 +64,7 @@ func (e *NullableSignalsAPIRuleEntityCreateIncidentConditionWhen) UnmarshalJSON(
 	}
 }
 
+// NullableSignalsAPIRuleEntity - Signals_API_RuleEntity model
 type NullableSignalsAPIRuleEntity struct {
 	ID                           *string                                                   `json:"id,omitempty"`
 	Name                         *string                                                   `json:"name,omitempty"`

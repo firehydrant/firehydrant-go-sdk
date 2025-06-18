@@ -1,6 +1,6 @@
 # CreateCommentReaction
 
-ALPHA - Create a reaction on a comment
+Create a reaction on a comment
 
 
 ## Fields

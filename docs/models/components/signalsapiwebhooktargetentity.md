@@ -1,0 +1,16 @@
+# SignalsAPIWebhookTargetEntity
+
+Signals_API_WebhookTargetEntity model
+
+
+## Fields
+
+| Field                                                                               | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `ID`                                                                                | **string*                                                                           | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `Name`                                                                              | **string*                                                                           | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `Description`                                                                       | **string*                                                                           | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `URL`                                                                               | **string*                                                                           | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `CreatedBy`                                                                         | [*components.NullableAuthorEntity](../../models/components/nullableauthorentity.md) | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `CreatedAt`                                                                         | [*time.Time](https://pkg.go.dev/time#Time)                                          | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `UpdatedAt`                                                                         | [*time.Time](https://pkg.go.dev/time#Time)                                          | :heavy_minus_sign:                                                                  | N/A                                                                                 |
