@@ -2,8 +2,11 @@
 
 package firehydrant
 
+// Generated from OpenAPI doc version 0.0.1 and generator version 2.630.8
+
 import (
 	"context"
+	"firehydrant/internal/config"
 	"firehydrant/internal/hooks"
 	"firehydrant/internal/utils"
 	"firehydrant/models/components"
@@ -18,7 +21,7 @@ var ServerList = []string{
 	"https://api.firehydrant.io/",
 }
 
-// HTTPClient provides an interface for suplying the SDK with a custom HTTP client
+// HTTPClient provides an interface for supplying the SDK with a custom HTTP client
 type HTTPClient interface {
 	Do(req *http.Request) (*http.Response, error)
 }
@@ -43,29 +46,6 @@ func Float64(f float64) *float64 { return &f }
 
 // Pointer provides a helper function to return a pointer to a type
 func Pointer[T any](v T) *T { return &v }
-
-type sdkConfiguration struct {
-	Client            HTTPClient
-	Security          func(context.Context) (interface{}, error)
-	ServerURL         string
-	ServerIndex       int
-	Language          string
-	OpenAPIDocVersion string
-	SDKVersion        string
-	GenVersion        string
-	UserAgent         string
-	RetryConfig       *retry.Config
-	Hooks             *hooks.Hooks
-	Timeout           *time.Duration
-}
-
-func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
-	if c.ServerURL != "" {
-		return c.ServerURL, nil
-	}
-
-	return ServerList[c.ServerIndex], nil
-}
 
 // FireHydrant API: The FireHydrant API is based around REST. It uses Bearer token authentication and returns JSON responses. You can use the FireHydrant API to configure integrations, define incidents, and set up webhooks--anything you can do on the FireHydrant UI.
 //
@@ -167,12 +147,15 @@ func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
 // GET https://api.firehydrant.io/v1/environments?per_page=50
 // ```
 type FireHydrant struct {
+	SDKVersion string
 	// Operations related to Account Settings
 	AccountSettings *AccountSettings
 	// Operations related to Catalog Entries
 	CatalogEntries *CatalogEntries
 	// Operations related to Teams
 	Teams *Teams
+	// Operations about Call Routes
+	CallRoutes *CallRoutes
 	// Operations related to Signals
 	Signals *Signals
 	// Operations related to Changes
@@ -199,20 +182,21 @@ type FireHydrant struct {
 	MetricsReporting *MetricsReporting
 	// Operations related to Runbooks
 	Runbooks *Runbooks
+	// Operations about Audit Events
+	AuditEvents *AuditEvents
 	// Operations related to Communication
 	Communication *Communication
 	// Operations related to Ticketing
 	Ticketing *Ticketing
 	// Operations related to SCIM
 	Scim *Scim
-	// Operations about Call Routes
-	CallRoutes *CallRoutes
 	// Operations related to Webhooks
 	Webhooks *Webhooks
 	// Operations related to Audiences
 	Audiences *Audiences
 
-	sdkConfiguration sdkConfiguration
+	sdkConfiguration config.SDKConfiguration
+	hooks            *hooks.Hooks
 }
 
 type SDKOption func(*FireHydrant)
@@ -285,14 +269,12 @@ func WithTimeout(timeout time.Duration) SDKOption {
 // New creates a new instance of the SDK with the provided options
 func New(opts ...SDKOption) *FireHydrant {
 	sdk := &FireHydrant{
-		sdkConfiguration: sdkConfiguration{
-			Language:          "go",
-			OpenAPIDocVersion: "0.0.1",
-			SDKVersion:        "1.0.0",
-			GenVersion:        "2.598.22",
-			UserAgent:         "speakeasy-sdk/go 1.0.0 2.598.22 0.0.1 firehydrant",
-			Hooks:             hooks.New(),
+		SDKVersion: "1.1.0",
+		sdkConfiguration: config.SDKConfiguration{
+			UserAgent:  "speakeasy-sdk/go 1.1.0 2.630.8 0.0.1 firehydrant",
+			ServerList: ServerList,
 		},
+		hooks: hooks.New(),
 	}
 	for _, opt := range opts {
 		opt(sdk)
@@ -305,54 +287,34 @@ func New(opts ...SDKOption) *FireHydrant {
 
 	currentServerURL, _ := sdk.sdkConfiguration.GetServerDetails()
 	serverURL := currentServerURL
-	serverURL, sdk.sdkConfiguration.Client = sdk.sdkConfiguration.Hooks.SDKInit(currentServerURL, sdk.sdkConfiguration.Client)
-	if serverURL != currentServerURL {
+	serverURL, sdk.sdkConfiguration.Client = sdk.hooks.SDKInit(currentServerURL, sdk.sdkConfiguration.Client)
+	if currentServerURL != serverURL {
 		sdk.sdkConfiguration.ServerURL = serverURL
 	}
 
-	sdk.AccountSettings = newAccountSettings(sdk.sdkConfiguration)
-
-	sdk.CatalogEntries = newCatalogEntries(sdk.sdkConfiguration)
-
-	sdk.Teams = newTeams(sdk.sdkConfiguration)
-
-	sdk.Signals = newSignals(sdk.sdkConfiguration)
-
-	sdk.Changes = newChanges(sdk.sdkConfiguration)
-
-	sdk.Incidents = newIncidents(sdk.sdkConfiguration)
-
-	sdk.Alerts = newAlerts(sdk.sdkConfiguration)
-
-	sdk.StatusPages = newStatusPages(sdk.sdkConfiguration)
-
-	sdk.Tasks = newTasks(sdk.sdkConfiguration)
-
-	sdk.Conversations = newConversations(sdk.sdkConfiguration)
-
-	sdk.Retrospectives = newRetrospectives(sdk.sdkConfiguration)
-
-	sdk.IncidentSettings = newIncidentSettings(sdk.sdkConfiguration)
-
-	sdk.Integrations = newIntegrations(sdk.sdkConfiguration)
-
-	sdk.Users = newUsers(sdk.sdkConfiguration)
-
-	sdk.MetricsReporting = newMetricsReporting(sdk.sdkConfiguration)
-
-	sdk.Runbooks = newRunbooks(sdk.sdkConfiguration)
-
-	sdk.Communication = newCommunication(sdk.sdkConfiguration)
-
-	sdk.Ticketing = newTicketing(sdk.sdkConfiguration)
-
-	sdk.Scim = newScim(sdk.sdkConfiguration)
-
-	sdk.CallRoutes = newCallRoutes(sdk.sdkConfiguration)
-
-	sdk.Webhooks = newWebhooks(sdk.sdkConfiguration)
-
-	sdk.Audiences = newAudiences(sdk.sdkConfiguration)
+	sdk.AccountSettings = newAccountSettings(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.CatalogEntries = newCatalogEntries(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.Teams = newTeams(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.CallRoutes = newCallRoutes(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.Signals = newSignals(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.Changes = newChanges(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.Incidents = newIncidents(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.Alerts = newAlerts(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.StatusPages = newStatusPages(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.Tasks = newTasks(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.Conversations = newConversations(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.Retrospectives = newRetrospectives(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.IncidentSettings = newIncidentSettings(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.Integrations = newIntegrations(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.Users = newUsers(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.MetricsReporting = newMetricsReporting(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.Runbooks = newRunbooks(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.AuditEvents = newAuditEvents(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.Communication = newCommunication(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.Ticketing = newTicketing(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.Scim = newScim(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.Webhooks = newWebhooks(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.Audiences = newAudiences(sdk, sdk.sdkConfiguration, sdk.hooks)
 
 	return sdk
 }

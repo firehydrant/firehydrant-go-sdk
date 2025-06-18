@@ -489,9 +489,6 @@ func main() {
             components.CreateTaskListTaskListItem{
                 Summary: "<value>",
             },
-            components.CreateTaskListTaskListItem{
-                Summary: "<value>",
-            },
         },
     })
     if err != nil {
@@ -764,12 +761,6 @@ func main() {
     res, err := s.Tasks.CreateChecklistTemplate(ctx, components.CreateChecklistTemplate{
         Name: "<value>",
         Checks: []components.CreateChecklistTemplateCheck{
-            components.CreateChecklistTemplateCheck{
-                Name: "<value>",
-            },
-            components.CreateChecklistTemplateCheck{
-                Name: "<value>",
-            },
             components.CreateChecklistTemplateCheck{
                 Name: "<value>",
             },

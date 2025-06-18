@@ -1,0 +1,11 @@
+# SignalsAPIOrganizationOnCallScheduleEntityPaginated
+
+Signals_API_OrganizationOnCallScheduleEntityPaginated model
+
+
+## Fields
+
+| Field                                                                                                                            | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
+| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `Data`                                                                                                                           | [][components.SignalsAPIOrganizationOnCallScheduleEntity](../../models/components/signalsapiorganizationoncallscheduleentity.md) | :heavy_minus_sign:                                                                                                               | N/A                                                                                                                              |
+| `Pagination`                                                                                                                     | [*components.NullablePaginationEntity](../../models/components/nullablepaginationentity.md)                                      | :heavy_minus_sign:                                                                                                               | N/A                                                                                                                              |

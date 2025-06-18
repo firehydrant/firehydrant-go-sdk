@@ -2,7 +2,7 @@
 
 package components
 
-// CreateCommentReaction - ALPHA - Create a reaction on a comment
+// CreateCommentReaction - Create a reaction on a comment
 type CreateCommentReaction struct {
 	// CLDR short name of Unicode emojis
 	Reaction string `json:"reaction"`

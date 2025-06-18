@@ -20,6 +20,8 @@ type UpdateIncident struct {
 	SeverityImpactID    *string               `json:"severity_impact_id,omitempty"`
 	// List of tags for the incident
 	TagList []string `json:"tag_list,omitempty"`
+	// The ID of the incident type. This will copy values from the incident type (if any) unless they are being overridden via parameters in this request.
+	IncidentTypeID *string `json:"incident_type_id,omitempty"`
 }
 
 func (o *UpdateIncident) GetName() *string {
@@ -90,4 +92,11 @@ func (o *UpdateIncident) GetTagList() []string {
 		return nil
 	}
 	return o.TagList
+}
+
+func (o *UpdateIncident) GetIncidentTypeID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.IncidentTypeID
 }

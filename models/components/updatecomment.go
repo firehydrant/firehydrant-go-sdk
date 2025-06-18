@@ -2,7 +2,7 @@
 
 package components
 
-// UpdateComment - ALPHA - Update a comment's attributes
+// UpdateComment - Update a comment's attributes
 type UpdateComment struct {
 	// Text body of comment
 	Body *string `json:"body,omitempty"`

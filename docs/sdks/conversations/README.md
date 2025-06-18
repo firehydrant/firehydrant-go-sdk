@@ -98,7 +98,7 @@ func main() {
     )
 
     res, err := s.Conversations.UpdateVote(ctx, "<id>", "<id>", components.UpdateVote{
-        Direction: components.DirectionDig,
+        Direction: components.DirectionUp,
     })
     if err != nil {
         log.Fatal(err)
@@ -131,7 +131,7 @@ func main() {
 
 ## DeleteCommentReaction
 
-ALPHA - Archive a reaction
+Archive a reaction
 
 ### Example Usage
 
@@ -183,7 +183,7 @@ func main() {
 
 ## ListCommentReactions
 
-ALPHA - List all of the reactions that have been added to a comment
+List all of the reactions that have been added to a comment
 
 ### Example Usage
 
@@ -234,7 +234,7 @@ func main() {
 
 ## CreateCommentReaction
 
-ALPHA - Create a reaction on a comment
+Create a reaction on a comment
 
 ### Example Usage
 
@@ -288,7 +288,7 @@ func main() {
 
 ## GetComment
 
-ALPHA - Retrieves a single comment by ID
+Retrieves a single comment by ID
 
 ### Example Usage
 
@@ -339,7 +339,7 @@ func main() {
 
 ## DeleteComment
 
-ALPHA - Archive a comment
+Archive a comment
 
 ### Example Usage
 
@@ -390,7 +390,7 @@ func main() {
 
 ## UpdateComment
 
-ALPHA - Update a comment's attributes
+Update a comment's attributes
 
 ### Example Usage
 
@@ -442,7 +442,7 @@ func main() {
 
 ## ListComments
 
-ALPHA - List all of the comments that have been added to the organization
+List all of the comments that have been added to the organization
 
 ### Example Usage
 
@@ -453,6 +453,7 @@ import(
 	"context"
 	"firehydrant"
 	"firehydrant/models/components"
+	"firehydrant/models/operations"
 	"log"
 )
 
@@ -465,7 +466,7 @@ func main() {
         }),
     )
 
-    err := s.Conversations.ListComments(ctx, "<id>", nil, nil, nil)
+    err := s.Conversations.ListComments(ctx, "<id>", nil, nil, operations.ListCommentsSortAsc.ToPointer())
     if err != nil {
         log.Fatal(err)
     }
@@ -495,7 +496,7 @@ func main() {
 
 ## CreateComment
 
-ALPHA - Creates a comment for a project
+Creates a comment for a project
 
 ### Example Usage
 

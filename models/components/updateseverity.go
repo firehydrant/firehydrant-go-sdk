@@ -16,6 +16,7 @@ const (
 	UpdateSeverityColorBlue   UpdateSeverityColor = "blue"
 	UpdateSeverityColorTeal   UpdateSeverityColor = "teal"
 	UpdateSeverityColorGrey   UpdateSeverityColor = "grey"
+	UpdateSeverityColorGreen  UpdateSeverityColor = "green"
 )
 
 func (e UpdateSeverityColor) ToPointer() *UpdateSeverityColor {
@@ -38,6 +39,8 @@ func (e *UpdateSeverityColor) UnmarshalJSON(data []byte) error {
 	case "teal":
 		fallthrough
 	case "grey":
+		fallthrough
+	case "green":
 		*e = UpdateSeverityColor(v)
 		return nil
 	default:

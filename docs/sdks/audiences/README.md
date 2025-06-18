@@ -44,7 +44,7 @@ func main() {
         }),
     )
 
-    res, err := s.Audiences.ListAudiences(ctx, nil)
+    res, err := s.Audiences.ListAudiences(ctx, firehydrant.Bool(false))
     if err != nil {
         log.Fatal(err)
     }
@@ -100,12 +100,12 @@ func main() {
 
     res, err := s.Audiences.CreateAudience(ctx, operations.CreateAudienceRequest{
         Name: "<value>",
-        Description: "sandy closely closely suddenly whose rear",
-        DetailsQuestion: []string{
-            "<value>",
-        },
+        Description: "simple contractor hmph along amongst thump provision crowded fragrant and",
+        DetailsQuestion: []string{},
         DetailsPrompt: []string{
-            "<value>",
+            "<value 1>",
+            "<value 2>",
+            "<value 3>",
         },
     })
     if err != nil {
@@ -373,7 +373,7 @@ func main() {
         }),
     )
 
-    res, err := s.Audiences.GetMemberDefaultAudience(ctx, 518189)
+    res, err := s.Audiences.GetMemberDefaultAudience(ctx, 9319)
     if err != nil {
         log.Fatal(err)
     }
@@ -427,7 +427,7 @@ func main() {
         }),
     )
 
-    res, err := s.Audiences.SetMemberDefaultAudience(ctx, 191738, operations.SetMemberDefaultAudienceRequestBody{
+    res, err := s.Audiences.SetMemberDefaultAudience(ctx, 411452, operations.SetMemberDefaultAudienceRequestBody{
         AudienceID: "<id>",
     })
     if err != nil {

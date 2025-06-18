@@ -378,8 +378,8 @@ func main() {
     )
 
     res, err := s.MetricsReporting.ListMttxMetrics(ctx, operations.ListMttxMetricsRequest{
-        StartDate: types.MustDateFromString("2025-05-13"),
-        EndDate: types.MustDateFromString("2024-08-28"),
+        StartDate: types.MustDateFromString("2023-01-19"),
+        EndDate: types.MustDateFromString("2024-06-14"),
     })
     if err != nil {
         log.Fatal(err)
@@ -434,7 +434,7 @@ func main() {
         }),
     )
 
-    res, err := s.MetricsReporting.ListInfrastructureTypeMetrics(ctx, operations.ListInfrastructureTypeMetricsInfraTypeCustomers, nil, nil)
+    res, err := s.MetricsReporting.ListInfrastructureTypeMetrics(ctx, operations.ListInfrastructureTypeMetricsInfraTypeServices, nil, nil)
     if err != nil {
         log.Fatal(err)
     }
@@ -490,7 +490,7 @@ func main() {
         }),
     )
 
-    res, err := s.MetricsReporting.ListInfrastructureMetrics(ctx, operations.ListInfrastructureMetricsInfraTypeEnvironments, "<id>", nil, nil)
+    res, err := s.MetricsReporting.ListInfrastructureMetrics(ctx, operations.ListInfrastructureMetricsInfraTypeCustomers, "<id>", nil, nil)
     if err != nil {
         log.Fatal(err)
     }
@@ -547,7 +547,7 @@ func main() {
         }),
     )
 
-    res, err := s.MetricsReporting.GetSavedSearch(ctx, operations.GetSavedSearchResourceTypeIncidents, "<id>")
+    res, err := s.MetricsReporting.GetSavedSearch(ctx, operations.GetSavedSearchResourceTypeServices, "<id>")
     if err != nil {
         log.Fatal(err)
     }
@@ -602,7 +602,7 @@ func main() {
         }),
     )
 
-    res, err := s.MetricsReporting.DeleteSavedSearch(ctx, operations.DeleteSavedSearchResourceTypeScheduledMaintenances, "<id>")
+    res, err := s.MetricsReporting.DeleteSavedSearch(ctx, operations.DeleteSavedSearchResourceTypeTicketFollowUps, "<id>")
     if err != nil {
         log.Fatal(err)
     }
@@ -657,7 +657,7 @@ func main() {
         }),
     )
 
-    res, err := s.MetricsReporting.UpdateSavedSearch(ctx, operations.UpdateSavedSearchResourceTypeIncidentEvents, "<id>", components.UpdateSavedSearch{})
+    res, err := s.MetricsReporting.UpdateSavedSearch(ctx, operations.UpdateSavedSearchResourceTypeScheduledMaintenances, "<id>", components.UpdateSavedSearch{})
     if err != nil {
         log.Fatal(err)
     }
@@ -714,7 +714,7 @@ func main() {
     )
 
     res, err := s.MetricsReporting.ListSavedSearches(ctx, operations.ListSavedSearchesRequest{
-        ResourceType: operations.ListSavedSearchesResourceTypeIncidents,
+        ResourceType: operations.ListSavedSearchesResourceTypeScheduledMaintenances,
     })
     if err != nil {
         log.Fatal(err)
@@ -769,12 +769,10 @@ func main() {
         }),
     )
 
-    res, err := s.MetricsReporting.CreateSavedSearch(ctx, operations.CreateSavedSearchResourceTypeServices, components.CreateSavedSearch{
+    res, err := s.MetricsReporting.CreateSavedSearch(ctx, operations.CreateSavedSearchResourceTypeIncidents, components.CreateSavedSearch{
         Name: "<value>",
         FilterValues: map[string]any{
-            "key": "<value>",
-            "key1": "<value>",
-            "key2": "<value>",
+
         },
     })
     if err != nil {
@@ -831,9 +829,12 @@ func main() {
         }),
     )
 
-    err := s.MetricsReporting.GetSignalsTimeseriesAnalytics(ctx, operations.GetSignalsTimeseriesAnalyticsRequest{})
+    res, err := s.MetricsReporting.GetSignalsTimeseriesAnalytics(ctx, operations.GetSignalsTimeseriesAnalyticsRequest{})
     if err != nil {
         log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
     }
 }
 ```
@@ -848,7 +849,7 @@ func main() {
 
 ### Response
 
-**error**
+**[*components.SignalsAPIAnalyticsTimeseriesPointEntity](../../models/components/signalsapianalyticstimeseriespointentity.md), error**
 
 ### Errors
 
@@ -882,9 +883,12 @@ func main() {
         }),
     )
 
-    err := s.MetricsReporting.GetSignalsGroupedMetrics(ctx, operations.GetSignalsGroupedMetricsRequest{})
+    res, err := s.MetricsReporting.GetSignalsGroupedMetrics(ctx, operations.GetSignalsGroupedMetricsRequest{})
     if err != nil {
         log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
     }
 }
 ```
@@ -899,7 +903,7 @@ func main() {
 
 ### Response
 
-**error**
+**[*components.SignalsAPIAnalyticsGroupedMetricsEntity](../../models/components/signalsapianalyticsgroupedmetricsentity.md), error**
 
 ### Errors
 
@@ -933,9 +937,12 @@ func main() {
         }),
     )
 
-    err := s.MetricsReporting.GetSignalsMttxAnalytics(ctx, operations.GetSignalsMttxAnalyticsRequest{})
+    res, err := s.MetricsReporting.GetSignalsMttxAnalytics(ctx, operations.GetSignalsMttxAnalyticsRequest{})
     if err != nil {
         log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
     }
 }
 ```
@@ -950,7 +957,7 @@ func main() {
 
 ### Response
 
-**error**
+**[*components.SignalsAPIAnalyticsMttxMetricsEntity](../../models/components/signalsapianalyticsmttxmetricsentity.md), error**
 
 ### Errors
 
@@ -984,7 +991,7 @@ func main() {
         }),
     )
 
-    err := s.MetricsReporting.ExportSignalsShiftAnalytics(ctx, types.MustTimeFromString("2025-01-23T11:55:06.817Z"), types.MustTimeFromString("2023-09-24T03:00:50.158Z"), nil)
+    err := s.MetricsReporting.ExportSignalsShiftAnalytics(ctx, types.MustTimeFromString("2025-01-17T01:07:20.168Z"), types.MustTimeFromString("2024-10-08T06:33:20.543Z"), nil)
     if err != nil {
         log.Fatal(err)
     }

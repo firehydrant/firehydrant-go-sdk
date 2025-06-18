@@ -105,6 +105,7 @@ const (
 	ListMttxMetricsGroupByTeams           ListMttxMetricsGroupBy = "teams"
 	ListMttxMetricsGroupBySeverities      ListMttxMetricsGroupBy = "severities"
 	ListMttxMetricsGroupByUsers           ListMttxMetricsGroupBy = "users"
+	ListMttxMetricsGroupByIncidentTypes   ListMttxMetricsGroupBy = "incident_types"
 	ListMttxMetricsGroupByStartedDay      ListMttxMetricsGroupBy = "started_day"
 	ListMttxMetricsGroupByStartedWeek     ListMttxMetricsGroupBy = "started_week"
 	ListMttxMetricsGroupByStartedMonth    ListMttxMetricsGroupBy = "started_month"
@@ -131,6 +132,8 @@ func (e *ListMttxMetricsGroupBy) UnmarshalJSON(data []byte) error {
 	case "severities":
 		fallthrough
 	case "users":
+		fallthrough
+	case "incident_types":
 		fallthrough
 	case "started_day":
 		fallthrough
@@ -221,11 +224,17 @@ type ListMttxMetricsRequest struct {
 	// A comma separated list of incident type IDs
 	IncidentTypeID *string `queryParam:"style=form,explode=true,name=incident_type_id"`
 	// A comma separated list of retrospective template IDs
-	RetrospectiveTemplate *string                `queryParam:"style=form,explode=true,name=retrospective_template"`
-	CustomFieldID         *string                `queryParam:"style=form,explode=true,name=custom_field_id"`
-	SortBy                *ListMttxMetricsSortBy `queryParam:"style=form,explode=true,name=sort_by"`
+	RetrospectiveTemplates *string                `queryParam:"style=form,explode=true,name=retrospective_templates"`
+	CustomFieldID          *string                `queryParam:"style=form,explode=true,name=custom_field_id"`
+	SortBy                 *ListMttxMetricsSortBy `queryParam:"style=form,explode=true,name=sort_by"`
 	// Comma-separated list of measurements to include in the response
-	Measurements *string                     `queryParam:"style=form,explode=true,name=measurements"`
+	Measurements *string `queryParam:"style=form,explode=true,name=measurements"`
+	// Comma-separated list of label key / values in the format of 'key=value,key2=value2'
+	Labels *string `queryParam:"style=form,explode=true,name=labels"`
+	// Comma-separated list of user IDs for the incident openers
+	IncidentOpeners *string `queryParam:"style=form,explode=true,name=incident_openers"`
+	// Comma-separated list of ticket status states
+	TicketStatus *string                     `queryParam:"style=form,explode=true,name=ticket_status"`
 	RequestBody  *ListMttxMetricsRequestBody `request:"mediaType=multipart/form-data"`
 }
 
@@ -464,11 +473,11 @@ func (o *ListMttxMetricsRequest) GetIncidentTypeID() *string {
 	return o.IncidentTypeID
 }
 
-func (o *ListMttxMetricsRequest) GetRetrospectiveTemplate() *string {
+func (o *ListMttxMetricsRequest) GetRetrospectiveTemplates() *string {
 	if o == nil {
 		return nil
 	}
-	return o.RetrospectiveTemplate
+	return o.RetrospectiveTemplates
 }
 
 func (o *ListMttxMetricsRequest) GetCustomFieldID() *string {
@@ -490,6 +499,27 @@ func (o *ListMttxMetricsRequest) GetMeasurements() *string {
 		return nil
 	}
 	return o.Measurements
+}
+
+func (o *ListMttxMetricsRequest) GetLabels() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Labels
+}
+
+func (o *ListMttxMetricsRequest) GetIncidentOpeners() *string {
+	if o == nil {
+		return nil
+	}
+	return o.IncidentOpeners
+}
+
+func (o *ListMttxMetricsRequest) GetTicketStatus() *string {
+	if o == nil {
+		return nil
+	}
+	return o.TicketStatus
 }
 
 func (o *ListMttxMetricsRequest) GetRequestBody() *ListMttxMetricsRequestBody {
