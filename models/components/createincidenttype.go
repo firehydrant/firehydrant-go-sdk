@@ -113,8 +113,10 @@ func (o *CreateIncidentTypeTemplate) GetImpacts() []CreateIncidentTypeImpact {
 
 // CreateIncidentType - Create a new incident type
 type CreateIncidentType struct {
-	Name     string                     `json:"name"`
-	Template CreateIncidentTypeTemplate `json:"template"`
+	Name string `json:"name"`
+	// A description of the incident type
+	Description *string                    `json:"description,omitempty"`
+	Template    CreateIncidentTypeTemplate `json:"template"`
 }
 
 func (o *CreateIncidentType) GetName() string {
@@ -122,6 +124,13 @@ func (o *CreateIncidentType) GetName() string {
 		return ""
 	}
 	return o.Name
+}
+
+func (o *CreateIncidentType) GetDescription() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Description
 }
 
 func (o *CreateIncidentType) GetTemplate() CreateIncidentTypeTemplate {

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 39357612-0c85-4a96-a549-e2d920c4a065
 management:
-  docChecksum: 32d87b7cda3f8c3fc8eddd7ce59bcb55
+  docChecksum: 2df31b43959a3266d215aeefd39d6860
   docVersion: 0.0.1
-  speakeasyVersion: 1.564.0
-  generationVersion: 2.630.8
-  releaseVersion: 1.1.0
-  configChecksum: ea50b8d2d77cc8c2a0976e70c64b2a86
+  speakeasyVersion: 1.568.0
+  generationVersion: 2.632.2
+  releaseVersion: 1.1.1
+  configChecksum: 01c11fe4d4f0db9980d58d0ff0a29f4f
   repoURL: https://github.com/firehydrant/firehydrant-go-sdk.git
   installationURL: https://github.com/firehydrant/firehydrant-go-sdk
 features:
@@ -258,14 +258,12 @@ generatedFiles:
   - /models/components/nullablerunbooksactionsentity.go
   - /models/components/nullablerunbookselementdynamicselectentity.go
   - /models/components/nullablerunbookselementdynamicselectentityselectoptionentity.go
-  - /models/components/nullablerunbookselemententity.go
   - /models/components/nullablerunbookselementinputentity.go
   - /models/components/nullablerunbookselementmarkdownentity.go
   - /models/components/nullablerunbookselementtextareaentity.go
   - /models/components/nullablerunbooksexecutionentityexecutedforentity.go
   - /models/components/nullablerunbooksexecutionstepentity.go
   - /models/components/nullablerunbooksexecutionstepexecutionentity.go
-  - /models/components/nullablerunbookstepentity.go
   - /models/components/nullablerunbookswebhookdeliveryentity.go
   - /models/components/nullablescheduleentity.go
   - /models/components/nullableserviceentity.go
@@ -332,8 +330,10 @@ generatedFiles:
   - /models/components/runbooksactionsentity.go
   - /models/components/runbooksactionsentitypaginated.go
   - /models/components/runbookselementdynamicselectentityselectoptionentity.go
+  - /models/components/runbookselemententity.go
   - /models/components/runbooksexecutionentity.go
   - /models/components/runbooksexecutionentitypaginated.go
+  - /models/components/runbookstepentity.go
   - /models/components/savedsearchentity.go
   - /models/components/scheduledmaintenanceentity.go
   - /models/components/scheduledmaintenancesimpactentity.go
@@ -1232,7 +1232,6 @@ generatedFiles:
   - docs/models/components/nullablerunbooksactionsentityprerequisites.md
   - docs/models/components/nullablerunbookselementdynamicselectentity.md
   - docs/models/components/nullablerunbookselementdynamicselectentityselectoptionentity.md
-  - docs/models/components/nullablerunbookselemententity.md
   - docs/models/components/nullablerunbookselementinputentity.md
   - docs/models/components/nullablerunbookselementmarkdownentity.md
   - docs/models/components/nullablerunbookselementtextareaentity.md
@@ -1243,9 +1242,6 @@ generatedFiles:
   - docs/models/components/nullablerunbooksexecutionstepexecutionentity.md
   - docs/models/components/nullablerunbooksexecutionstepexecutionentitydata.md
   - docs/models/components/nullablerunbooksexecutionstepexecutionentitystate.md
-  - docs/models/components/nullablerunbookstepentity.md
-  - docs/models/components/nullablerunbookstepentityconfig.md
-  - docs/models/components/nullablerunbookstepentitystepelement.md
   - docs/models/components/nullablerunbookswebhookdeliveryentity.md
   - docs/models/components/nullablescheduleentity.md
   - docs/models/components/nullableserviceentity.md
@@ -1330,8 +1326,12 @@ generatedFiles:
   - docs/models/components/runbooksactionsentitypaginated.md
   - docs/models/components/runbooksactionsentityprerequisites.md
   - docs/models/components/runbookselementdynamicselectentityselectoptionentity.md
+  - docs/models/components/runbookselemententity.md
   - docs/models/components/runbooksexecutionentity.md
   - docs/models/components/runbooksexecutionentitypaginated.md
+  - docs/models/components/runbookstepentity.md
+  - docs/models/components/runbookstepentityconfig.md
+  - docs/models/components/runbookstepentitystepelement.md
   - docs/models/components/savedsearchentity.md
   - docs/models/components/scheduledmaintenanceentity.md
   - docs/models/components/scheduledmaintenanceentitylabels.md
