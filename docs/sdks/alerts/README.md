@@ -14,6 +14,7 @@ Operations related to Alerts
 * [ListAlerts](#listalerts) - List alerts
 * [GetAlert](#getalert) - Get an alert
 * [ListProcessingLogEntries](#listprocessinglogentries) - List alert processing log entries
+* [UpdateSignalsAlert](#updatesignalsalert) - Update a Signal alert
 
 ## ListIncidentAlerts
 
@@ -383,6 +384,62 @@ func main() {
 ### Response
 
 **[*components.AlertsProcessingLogEntryEntityPaginated](../../models/components/alertsprocessinglogentryentitypaginated.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## UpdateSignalsAlert
+
+Update a Signal alert
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Alerts.UpdateSignalsAlert(ctx, "<id>", components.UpdateSignalsAlert{
+        Noise: true,
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `ctx`                                                                          | [context.Context](https://pkg.go.dev/context#Context)                          | :heavy_check_mark:                                                             | The context to use for the request.                                            |
+| `id`                                                                           | *string*                                                                       | :heavy_check_mark:                                                             | N/A                                                                            |
+| `updateSignalsAlert`                                                           | [components.UpdateSignalsAlert](../../models/components/updatesignalsalert.md) | :heavy_check_mark:                                                             | N/A                                                                            |
+| `opts`                                                                         | [][operations.Option](../../models/operations/option.md)                       | :heavy_minus_sign:                                                             | The options for this request.                                                  |
+
+### Response
+
+**[*components.AlertsSignalAlertEntity](../../models/components/alertssignalalertentity.md), error**
 
 ### Errors
 

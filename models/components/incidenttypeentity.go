@@ -11,6 +11,7 @@ import (
 type IncidentTypeEntity struct {
 	ID             *string                                         `json:"id,omitempty"`
 	Name           *string                                         `json:"name,omitempty"`
+	Description    *string                                         `json:"description,omitempty"`
 	Template       *NullableIncidentTypeEntityTemplateEntity       `json:"template,omitempty"`
 	TemplateValues *NullableIncidentTypeEntityTemplateValuesEntity `json:"template_values,omitempty"`
 	CreatedAt      *time.Time                                      `json:"created_at,omitempty"`
@@ -40,6 +41,13 @@ func (o *IncidentTypeEntity) GetName() *string {
 		return nil
 	}
 	return o.Name
+}
+
+func (o *IncidentTypeEntity) GetDescription() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Description
 }
 
 func (o *IncidentTypeEntity) GetTemplate() *NullableIncidentTypeEntityTemplateEntity {

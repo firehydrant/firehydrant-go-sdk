@@ -40,6 +40,7 @@ type NullableAlertsAlertEntity struct {
 	Incidents     []PublicAPIV1IncidentsSuccinctEntity `json:"incidents,omitempty"`
 	Events        []AlertsSirenEventEntity             `json:"events,omitempty"`
 	IsExpired     *bool                                `json:"is_expired,omitempty"`
+	IsNoise       *bool                                `json:"is_noise,omitempty"`
 	ParentAlerts  []AlertsSirenAlertEntity             `json:"parent_alerts,omitempty"`
 	ChildAlerts   []AlertsSirenAlertEntity             `json:"child_alerts,omitempty"`
 	Conversations []ConversationsAPIEntitiesReference  `json:"conversations,omitempty"`
@@ -236,6 +237,13 @@ func (o *NullableAlertsAlertEntity) GetIsExpired() *bool {
 		return nil
 	}
 	return o.IsExpired
+}
+
+func (o *NullableAlertsAlertEntity) GetIsNoise() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.IsNoise
 }
 
 func (o *NullableAlertsAlertEntity) GetParentAlerts() []AlertsSirenAlertEntity {
