@@ -9,19 +9,19 @@ import (
 	"time"
 )
 
-// Bucket - String that determines how records are grouped
-type Bucket string
+// GetSignalsTimeseriesAnalyticsBucket - String that determines how records are grouped
+type GetSignalsTimeseriesAnalyticsBucket string
 
 const (
-	BucketMonth Bucket = "month"
-	BucketWeek  Bucket = "week"
-	BucketDay   Bucket = "day"
+	GetSignalsTimeseriesAnalyticsBucketMonth GetSignalsTimeseriesAnalyticsBucket = "month"
+	GetSignalsTimeseriesAnalyticsBucketWeek  GetSignalsTimeseriesAnalyticsBucket = "week"
+	GetSignalsTimeseriesAnalyticsBucketDay   GetSignalsTimeseriesAnalyticsBucket = "day"
 )
 
-func (e Bucket) ToPointer() *Bucket {
+func (e GetSignalsTimeseriesAnalyticsBucket) ToPointer() *GetSignalsTimeseriesAnalyticsBucket {
 	return &e
 }
-func (e *Bucket) UnmarshalJSON(data []byte) error {
+func (e *GetSignalsTimeseriesAnalyticsBucket) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -32,10 +32,10 @@ func (e *Bucket) UnmarshalJSON(data []byte) error {
 	case "week":
 		fallthrough
 	case "day":
-		*e = Bucket(v)
+		*e = GetSignalsTimeseriesAnalyticsBucket(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for Bucket: %v", v)
+		return fmt.Errorf("invalid value for GetSignalsTimeseriesAnalyticsBucket: %v", v)
 	}
 }
 
@@ -140,7 +140,7 @@ func (e *GetSignalsTimeseriesAnalyticsSortDirection) UnmarshalJSON(data []byte) 
 
 type GetSignalsTimeseriesAnalyticsRequest struct {
 	// String that determines how records are grouped
-	Bucket *Bucket `queryParam:"style=form,explode=true,name=bucket"`
+	Bucket *GetSignalsTimeseriesAnalyticsBucket `queryParam:"style=form,explode=true,name=bucket"`
 	// A comma separated list of signal rule IDs
 	SignalRules *string `queryParam:"style=form,explode=true,name=signal_rules"`
 	// A comma separated list of team IDs
@@ -176,7 +176,7 @@ func (g *GetSignalsTimeseriesAnalyticsRequest) UnmarshalJSON(data []byte) error 
 	return nil
 }
 
-func (o *GetSignalsTimeseriesAnalyticsRequest) GetBucket() *Bucket {
+func (o *GetSignalsTimeseriesAnalyticsRequest) GetBucket() *GetSignalsTimeseriesAnalyticsBucket {
 	if o == nil {
 		return nil
 	}

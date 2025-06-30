@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-type NullableRunbooksActionsEntityPrerequisites struct {
+type NullableRunbooksActionsEntityPrerequisite struct {
 }
 
 type NullableRunbooksActionsEntityDefaultLogic struct {
@@ -23,7 +23,7 @@ type NullableRunbooksActionsEntity struct {
 	Description           *string                                       `json:"description,omitempty"`
 	Config                *NullableRunbooksActionConfigEntity           `json:"config,omitempty"`
 	Category              *string                                       `json:"category,omitempty"`
-	Prerequisites         *NullableRunbooksActionsEntityPrerequisites   `json:"prerequisites,omitempty"`
+	Prerequisites         []NullableRunbooksActionsEntityPrerequisite   `json:"prerequisites,omitempty"`
 	Integration           *NullableIntegrationsIntegrationEntity        `json:"integration,omitempty"`
 	SupportedRunbookTypes []string                                      `json:"supported_runbook_types,omitempty"`
 	CreatedAt             *time.Time                                    `json:"created_at,omitempty"`
@@ -88,7 +88,7 @@ func (o *NullableRunbooksActionsEntity) GetCategory() *string {
 	return o.Category
 }
 
-func (o *NullableRunbooksActionsEntity) GetPrerequisites() *NullableRunbooksActionsEntityPrerequisites {
+func (o *NullableRunbooksActionsEntity) GetPrerequisites() []NullableRunbooksActionsEntityPrerequisite {
 	if o == nil {
 		return nil
 	}

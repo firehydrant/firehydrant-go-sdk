@@ -1,4 +1,4 @@
-# NullableRunbookStepEntityStepElement
+# RunbookStepEntityStepElement
 
 
 ## Fields

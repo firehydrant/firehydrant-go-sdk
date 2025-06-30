@@ -1,4 +1,4 @@
-# NullableRunbooksElementEntity
+# RunbooksElementEntity
 
 
 ## Fields
