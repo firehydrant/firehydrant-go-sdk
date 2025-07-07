@@ -30,6 +30,7 @@ Operations related to Signals
 * [CreateSignalsEventSource](#createsignalseventsource) - Create an event source for Signals
 * [GetSignalsEventSource](#getsignalseventsource) - Get an event source for Signals
 * [DeleteSignalsEventSource](#deletesignalseventsource) - Delete an event source for Signals
+* [GetSignalsHackerMode](#getsignalshackermode) - Get hacker mode status
 * [ListSignalsAlertGroupingConfigurations](#listsignalsalertgroupingconfigurations) - List alert grouping configurations.
 * [CreateSignalsAlertGroupingConfiguration](#createsignalsalertgroupingconfiguration) - Create an alert grouping configuration.
 * [GetSignalsAlertGroupingConfiguration](#getsignalsalertgroupingconfiguration) - Get an alert grouping configuration.
@@ -1309,6 +1310,58 @@ func main() {
 ### Response
 
 **[*components.SignalsAPITransposerEntity](../../models/components/signalsapitransposerentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## GetSignalsHackerMode
+
+Get the status of the hacker mode for the current user
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Signals.GetSignalsHackerMode(ctx)
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.SignalsAPIHackerModeEntity](../../models/components/signalsapihackermodeentity.md), error**
 
 ### Errors
 

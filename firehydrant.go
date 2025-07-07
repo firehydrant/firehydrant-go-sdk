@@ -2,7 +2,7 @@
 
 package firehydrant
 
-// Generated from OpenAPI doc version 0.0.1 and generator version 2.630.8
+// Generated from OpenAPI doc version 0.0.1 and generator version 2.648.7
 
 import (
 	"context"
@@ -269,9 +269,9 @@ func WithTimeout(timeout time.Duration) SDKOption {
 // New creates a new instance of the SDK with the provided options
 func New(opts ...SDKOption) *FireHydrant {
 	sdk := &FireHydrant{
-		SDKVersion: "1.1.0",
+		SDKVersion: "1.1.1",
 		sdkConfiguration: config.SDKConfiguration{
-			UserAgent:  "speakeasy-sdk/go 1.1.0 2.630.8 0.0.1 firehydrant",
+			UserAgent:  "speakeasy-sdk/go 1.1.1 2.648.7 0.0.1 firehydrant",
 			ServerList: ServerList,
 		},
 		hooks: hooks.New(),

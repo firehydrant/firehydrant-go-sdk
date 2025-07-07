@@ -15,7 +15,7 @@ type NullableIntegrationsIntegrationEntity struct {
 	Description *string                                          `json:"description,omitempty"`
 	SetupURL    *string                                          `json:"setup_url,omitempty"`
 	CreatedAt   *time.Time                                       `json:"created_at,omitempty"`
-	Connections *NullableIntegrationsConnectionEntity            `json:"connections,omitempty"`
+	Connections []IntegrationsConnectionEntity                   `json:"connections,omitempty"`
 	Enabled     *bool                                            `json:"enabled,omitempty"`
 	Installed   *bool                                            `json:"installed,omitempty"`
 	Deprecated  *bool                                            `json:"deprecated,omitempty"`
@@ -76,7 +76,7 @@ func (o *NullableIntegrationsIntegrationEntity) GetCreatedAt() *time.Time {
 	return o.CreatedAt
 }
 
-func (o *NullableIntegrationsIntegrationEntity) GetConnections() *NullableIntegrationsConnectionEntity {
+func (o *NullableIntegrationsIntegrationEntity) GetConnections() []IntegrationsConnectionEntity {
 	if o == nil {
 		return nil
 	}

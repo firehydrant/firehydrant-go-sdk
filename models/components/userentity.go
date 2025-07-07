@@ -9,14 +9,15 @@ import (
 
 // UserEntity model
 type UserEntity struct {
-	ID                              *string    `json:"id,omitempty"`
-	Name                            *string    `json:"name,omitempty"`
-	Email                           *string    `json:"email,omitempty"`
-	SlackUserID                     *string    `json:"slack_user_id,omitempty"`
-	SlackLinked                     *bool      `json:"slack_linked?,omitempty"`
-	CreatedAt                       *time.Time `json:"created_at,omitempty"`
-	UpdatedAt                       *time.Time `json:"updated_at,omitempty"`
-	SignalsEnabledNotificationTypes []string   `json:"signals_enabled_notification_types,omitempty"`
+	ID                                  *string                                            `json:"id,omitempty"`
+	Name                                *string                                            `json:"name,omitempty"`
+	Email                               *string                                            `json:"email,omitempty"`
+	SlackUserID                         *string                                            `json:"slack_user_id,omitempty"`
+	SlackLinked                         *bool                                              `json:"slack_linked?,omitempty"`
+	CreatedAt                           *time.Time                                         `json:"created_at,omitempty"`
+	UpdatedAt                           *time.Time                                         `json:"updated_at,omitempty"`
+	SignalsEnabledNotificationTypes     []string                                           `json:"signals_enabled_notification_types,omitempty"`
+	SignalsNotificationPolicyCompliance []SignalsAPINotificationPolicyItemComplianceEntity `json:"signals_notification_policy_compliance,omitempty"`
 }
 
 func (u UserEntity) MarshalJSON() ([]byte, error) {
@@ -84,4 +85,11 @@ func (o *UserEntity) GetSignalsEnabledNotificationTypes() []string {
 		return nil
 	}
 	return o.SignalsEnabledNotificationTypes
+}
+
+func (o *UserEntity) GetSignalsNotificationPolicyCompliance() []SignalsAPINotificationPolicyItemComplianceEntity {
+	if o == nil {
+		return nil
+	}
+	return o.SignalsNotificationPolicyCompliance
 }

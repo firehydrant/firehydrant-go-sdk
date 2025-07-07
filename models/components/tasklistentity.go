@@ -9,13 +9,13 @@ import (
 
 // TaskListEntity model
 type TaskListEntity struct {
-	ID            *string                     `json:"id,omitempty"`
-	Name          *string                     `json:"name,omitempty"`
-	Description   *string                     `json:"description,omitempty"`
-	CreatedAt     *time.Time                  `json:"created_at,omitempty"`
-	UpdatedAt     *time.Time                  `json:"updated_at,omitempty"`
-	CreatedBy     *NullableAuthorEntity       `json:"created_by,omitempty"`
-	TaskListItems *NullableTaskListItemEntity `json:"task_list_items,omitempty"`
+	ID            *string               `json:"id,omitempty"`
+	Name          *string               `json:"name,omitempty"`
+	Description   *string               `json:"description,omitempty"`
+	CreatedAt     *time.Time            `json:"created_at,omitempty"`
+	UpdatedAt     *time.Time            `json:"updated_at,omitempty"`
+	CreatedBy     *NullableAuthorEntity `json:"created_by,omitempty"`
+	TaskListItems []TaskListItemEntity  `json:"task_list_items,omitempty"`
 }
 
 func (t TaskListEntity) MarshalJSON() ([]byte, error) {
@@ -71,7 +71,7 @@ func (o *TaskListEntity) GetCreatedBy() *NullableAuthorEntity {
 	return o.CreatedBy
 }
 
-func (o *TaskListEntity) GetTaskListItems() *NullableTaskListItemEntity {
+func (o *TaskListEntity) GetTaskListItems() []TaskListItemEntity {
 	if o == nil {
 		return nil
 	}

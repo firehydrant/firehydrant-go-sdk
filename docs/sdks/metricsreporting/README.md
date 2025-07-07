@@ -24,6 +24,7 @@ Operations related to Metrics & Reporting
 * [GetSignalsTimeseriesAnalytics](#getsignalstimeseriesanalytics) - Generate timeseries alert metrics
 * [GetSignalsGroupedMetrics](#getsignalsgroupedmetrics) - Generate grouped alert metrics
 * [GetSignalsMttxAnalytics](#getsignalsmttxanalytics) - Get MTTX analytics for signals
+* [GetSignalsNoiseAnalytics](#getsignalsnoiseanalytics) - Get noise analytics for signals
 * [ExportSignalsShiftAnalytics](#exportsignalsshiftanalytics) - Export on-call hours report
 
 ## GetMeanTimeReport
@@ -958,6 +959,60 @@ func main() {
 ### Response
 
 **[*components.SignalsAPIAnalyticsMttxMetricsEntity](../../models/components/signalsapianalyticsmttxmetricsentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## GetSignalsNoiseAnalytics
+
+Get noise metrics for Signals alerts
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"firehydrant/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.MetricsReporting.GetSignalsNoiseAnalytics(ctx, operations.GetSignalsNoiseAnalyticsRequest{})
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                    | :heavy_check_mark:                                                                                       | The context to use for the request.                                                                      |
+| `request`                                                                                                | [operations.GetSignalsNoiseAnalyticsRequest](../../models/operations/getsignalsnoiseanalyticsrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `opts`                                                                                                   | [][operations.Option](../../models/operations/option.md)                                                 | :heavy_minus_sign:                                                                                       | The options for this request.                                                                            |
+
+### Response
+
+**[*components.SignalsAPIAnalyticsNoiseMetricsEntity](../../models/components/signalsapianalyticsnoisemetricsentity.md), error**
 
 ### Errors
 

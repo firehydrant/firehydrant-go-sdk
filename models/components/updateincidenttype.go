@@ -113,8 +113,10 @@ func (o *UpdateIncidentTypeTemplate) GetImpacts() []UpdateIncidentTypeImpact {
 
 // UpdateIncidentType - Update a single incident type from its ID
 type UpdateIncidentType struct {
-	Name     string                     `json:"name"`
-	Template UpdateIncidentTypeTemplate `json:"template"`
+	Name string `json:"name"`
+	// A description of the incident type
+	Description *string                    `json:"description,omitempty"`
+	Template    UpdateIncidentTypeTemplate `json:"template"`
 }
 
 func (o *UpdateIncidentType) GetName() string {
@@ -122,6 +124,13 @@ func (o *UpdateIncidentType) GetName() string {
 		return ""
 	}
 	return o.Name
+}
+
+func (o *UpdateIncidentType) GetDescription() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Description
 }
 
 func (o *UpdateIncidentType) GetTemplate() UpdateIncidentTypeTemplate {
