@@ -2,7 +2,7 @@
 
 package components
 
-type NullableRunbooksElementEntity struct {
+type RunbooksElementEntity struct {
 	ID            *string                                     `json:"id,omitempty"`
 	Type          *string                                     `json:"type,omitempty"`
 	Markdown      *NullableRunbooksElementMarkdownEntity      `json:"markdown,omitempty"`
@@ -12,49 +12,49 @@ type NullableRunbooksElementEntity struct {
 	DynamicSelect *NullableRunbooksElementDynamicSelectEntity `json:"dynamic_select,omitempty"`
 }
 
-func (o *NullableRunbooksElementEntity) GetID() *string {
+func (o *RunbooksElementEntity) GetID() *string {
 	if o == nil {
 		return nil
 	}
 	return o.ID
 }
 
-func (o *NullableRunbooksElementEntity) GetType() *string {
+func (o *RunbooksElementEntity) GetType() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Type
 }
 
-func (o *NullableRunbooksElementEntity) GetMarkdown() *NullableRunbooksElementMarkdownEntity {
+func (o *RunbooksElementEntity) GetMarkdown() *NullableRunbooksElementMarkdownEntity {
 	if o == nil {
 		return nil
 	}
 	return o.Markdown
 }
 
-func (o *NullableRunbooksElementEntity) GetTextarea() *NullableRunbooksElementTextareaEntity {
+func (o *RunbooksElementEntity) GetTextarea() *NullableRunbooksElementTextareaEntity {
 	if o == nil {
 		return nil
 	}
 	return o.Textarea
 }
 
-func (o *NullableRunbooksElementEntity) GetInput() *NullableRunbooksElementInputEntity {
+func (o *RunbooksElementEntity) GetInput() *NullableRunbooksElementInputEntity {
 	if o == nil {
 		return nil
 	}
 	return o.Input
 }
 
-func (o *NullableRunbooksElementEntity) GetPlainText() *NullableRunbooksElementMarkdownEntity {
+func (o *RunbooksElementEntity) GetPlainText() *NullableRunbooksElementMarkdownEntity {
 	if o == nil {
 		return nil
 	}
 	return o.PlainText
 }
 
-func (o *NullableRunbooksElementEntity) GetDynamicSelect() *NullableRunbooksElementDynamicSelectEntity {
+func (o *RunbooksElementEntity) GetDynamicSelect() *NullableRunbooksElementDynamicSelectEntity {
 	if o == nil {
 		return nil
 	}

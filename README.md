@@ -245,6 +245,7 @@ func main() {
 * [ListAlerts](docs/sdks/alerts/README.md#listalerts) - List alerts
 * [GetAlert](docs/sdks/alerts/README.md#getalert) - Get an alert
 * [ListProcessingLogEntries](docs/sdks/alerts/README.md#listprocessinglogentries) - List alert processing log entries
+* [UpdateSignalsAlert](docs/sdks/alerts/README.md#updatesignalsalert) - Update a Signal alert
 
 ### [Audiences](docs/sdks/audiences/README.md)
 
@@ -514,6 +515,7 @@ func main() {
 * [GetSignalsTimeseriesAnalytics](docs/sdks/metricsreporting/README.md#getsignalstimeseriesanalytics) - Generate timeseries alert metrics
 * [GetSignalsGroupedMetrics](docs/sdks/metricsreporting/README.md#getsignalsgroupedmetrics) - Generate grouped alert metrics
 * [GetSignalsMttxAnalytics](docs/sdks/metricsreporting/README.md#getsignalsmttxanalytics) - Get MTTX analytics for signals
+* [GetSignalsNoiseAnalytics](docs/sdks/metricsreporting/README.md#getsignalsnoiseanalytics) - Get noise analytics for signals
 * [ExportSignalsShiftAnalytics](docs/sdks/metricsreporting/README.md#exportsignalsshiftanalytics) - Export on-call hours report
 
 ### [Retrospectives](docs/sdks/retrospectives/README.md)
@@ -606,6 +608,7 @@ func main() {
 * [CreateSignalsEventSource](docs/sdks/signals/README.md#createsignalseventsource) - Create an event source for Signals
 * [GetSignalsEventSource](docs/sdks/signals/README.md#getsignalseventsource) - Get an event source for Signals
 * [DeleteSignalsEventSource](docs/sdks/signals/README.md#deletesignalseventsource) - Delete an event source for Signals
+* [GetSignalsHackerMode](docs/sdks/signals/README.md#getsignalshackermode) - Get hacker mode status
 * [ListSignalsAlertGroupingConfigurations](docs/sdks/signals/README.md#listsignalsalertgroupingconfigurations) - List alert grouping configurations.
 * [CreateSignalsAlertGroupingConfiguration](docs/sdks/signals/README.md#createsignalsalertgroupingconfiguration) - Create an alert grouping configuration.
 * [GetSignalsAlertGroupingConfiguration](docs/sdks/signals/README.md#getsignalsalertgroupingconfiguration) - Get an alert grouping configuration.

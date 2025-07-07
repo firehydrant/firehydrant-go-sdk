@@ -3,12 +3,13 @@
 package components
 
 type NullableRunbooksActionConfigEntity struct {
-	Elements *NullableRunbooksElementEntity `json:"elements,omitempty"`
+	// A list of elements that can be used in this action configuration
+	Elements []RunbooksElementEntity `json:"elements,omitempty"`
 	// Location of documentation for this action
 	DocumentationURL *string `json:"documentation_url,omitempty"`
 }
 
-func (o *NullableRunbooksActionConfigEntity) GetElements() *NullableRunbooksElementEntity {
+func (o *NullableRunbooksActionConfigEntity) GetElements() []RunbooksElementEntity {
 	if o == nil {
 		return nil
 	}

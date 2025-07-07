@@ -1,4 +1,4 @@
-# RunbooksActionsEntityPrerequisites
+# RunbooksActionsEntityPrerequisite
 
 
 ## Fields
