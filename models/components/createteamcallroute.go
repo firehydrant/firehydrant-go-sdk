@@ -95,6 +95,8 @@ type CreateTeamCallRouteStep struct {
 	TargetID string `json:"target_id"`
 	// Timeout in seconds for the step
 	Timeout string `json:"timeout"`
+	// The ID of a specific on-call rotation that should be routed to if the `target_type` is `OnCallSchedule`. If not provided, the schedule's first rotation will be used.
+	OnCallRotationID *string `json:"on_call_rotation_id,omitempty"`
 }
 
 func (o *CreateTeamCallRouteStep) GetTargetType() CreateTeamCallRouteTargetType {
@@ -116,6 +118,13 @@ func (o *CreateTeamCallRouteStep) GetTimeout() string {
 		return ""
 	}
 	return o.Timeout
+}
+
+func (o *CreateTeamCallRouteStep) GetOnCallRotationID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.OnCallRotationID
 }
 
 // CreateTeamCallRouteTarget - Target for the call route (required unless connect_mode is direct_dial)

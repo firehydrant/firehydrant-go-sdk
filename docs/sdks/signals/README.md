@@ -46,6 +46,11 @@ Operations related to Signals
 * [GetSignalsWebhookTarget](#getsignalswebhooktarget) - Get a webhook target
 * [DeleteSignalsWebhookTarget](#deletesignalswebhooktarget) - Delete a webhook target
 * [UpdateSignalsWebhookTarget](#updatesignalswebhooktarget) - Update a webhook target
+* [ListNotificationPolicySettings](#listnotificationpolicysettings) - List notification policies
+* [CreateHandoffNotificationSetting](#createhandoffnotificationsetting) - Create a notification policy
+* [GetNotificationPolicy](#getnotificationpolicy) - Get a notification policy
+* [DeleteNotificationPolicy](#deletenotificationpolicy) - Delete a notification policy
+* [UpdateNotificationPolicy](#updatenotificationpolicy) - Update a notification policy
 * [ListSignalsTransposers](#listsignalstransposers) - List signal transposers
 * [GetSignalsIngestURL](#getsignalsingesturl) - Get the signals ingestion URL
 * [DebugSignalsExpression](#debugsignalsexpression) - Debug Signals expressions
@@ -2163,6 +2168,272 @@ func main() {
 ### Response
 
 **[*components.SignalsAPIWebhookTargetEntity](../../models/components/signalsapiwebhooktargetentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## ListNotificationPolicySettings
+
+List all Signals notification policies.
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Signals.ListNotificationPolicySettings(ctx, nil, nil)
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `page`                                                   | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
+| `perPage`                                                | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.SignalsAPINotificationPolicyItemEntityPaginated](../../models/components/signalsapinotificationpolicyitementitypaginated.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## CreateHandoffNotificationSetting
+
+Create a Signals notification policy.
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"firehydrant/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Signals.CreateHandoffNotificationSetting(ctx, operations.CreateHandoffNotificationSettingRequest{
+        NotificationGroupMethod: operations.CreateHandoffNotificationSettingNotificationGroupMethodEmail,
+        MaxDelay: "<value>",
+        Priority: operations.CreateHandoffNotificationSettingPriorityHigh,
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
+| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                                    | :heavy_check_mark:                                                                                                       | The context to use for the request.                                                                                      |
+| `request`                                                                                                                | [operations.CreateHandoffNotificationSettingRequest](../../models/operations/createhandoffnotificationsettingrequest.md) | :heavy_check_mark:                                                                                                       | The request object to use for the request.                                                                               |
+| `opts`                                                                                                                   | [][operations.Option](../../models/operations/option.md)                                                                 | :heavy_minus_sign:                                                                                                       | The options for this request.                                                                                            |
+
+### Response
+
+**[*components.SignalsAPINotificationPolicyItemEntity](../../models/components/signalsapinotificationpolicyitementity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## GetNotificationPolicy
+
+Get a Signals notification policy by ID
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Signals.GetNotificationPolicy(ctx, "<id>")
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `id`                                                     | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.SignalsAPINotificationPolicyItemEntity](../../models/components/signalsapinotificationpolicyitementity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## DeleteNotificationPolicy
+
+Delete a Signals notification policy by ID
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    err := s.Signals.DeleteNotificationPolicy(ctx, "<id>")
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `id`                                                     | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## UpdateNotificationPolicy
+
+Update a Signals notification policy by ID
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"firehydrant"
+	"firehydrant/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrant.New(
+        firehydrant.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    err := s.Signals.UpdateNotificationPolicy(ctx, "<id>", nil)
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                         | Type                                                                                                              | Required                                                                                                          | Description                                                                                                       |
+| ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                             | [context.Context](https://pkg.go.dev/context#Context)                                                             | :heavy_check_mark:                                                                                                | The context to use for the request.                                                                               |
+| `id`                                                                                                              | *string*                                                                                                          | :heavy_check_mark:                                                                                                | N/A                                                                                                               |
+| `requestBody`                                                                                                     | [*operations.UpdateNotificationPolicyRequestBody](../../models/operations/updatenotificationpolicyrequestbody.md) | :heavy_minus_sign:                                                                                                | N/A                                                                                                               |
+| `opts`                                                                                                            | [][operations.Option](../../models/operations/option.md)                                                          | :heavy_minus_sign:                                                                                                | The options for this request.                                                                                     |
+
+### Response
+
+**error**
 
 ### Errors
 

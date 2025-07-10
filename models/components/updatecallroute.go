@@ -95,6 +95,8 @@ type UpdateCallRouteStep struct {
 	TargetID string `json:"target_id"`
 	// Timeout in seconds for the step
 	Timeout string `json:"timeout"`
+	// The ID of a specific on-call rotation that should be routed to if the `target_type` is `OnCallSchedule`. If not provided, the schedule's first rotation will be used.
+	OnCallRotationID *string `json:"on_call_rotation_id,omitempty"`
 }
 
 func (o *UpdateCallRouteStep) GetTargetType() UpdateCallRouteTargetType {
@@ -116,6 +118,13 @@ func (o *UpdateCallRouteStep) GetTimeout() string {
 		return ""
 	}
 	return o.Timeout
+}
+
+func (o *UpdateCallRouteStep) GetOnCallRotationID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.OnCallRotationID
 }
 
 // UpdateCallRouteType - Type of target
