@@ -6,6 +6,7 @@ type SignalsAPITargetEntity struct {
 	ID         *string `json:"id,omitempty"`
 	Name       *string `json:"name,omitempty"`
 	Type       *string `json:"type,omitempty"`
+	TeamID     *string `json:"team_id,omitempty"`
 	IsPageable *bool   `json:"is_pageable,omitempty"`
 }
 
@@ -28,6 +29,13 @@ func (o *SignalsAPITargetEntity) GetType() *string {
 		return nil
 	}
 	return o.Type
+}
+
+func (o *SignalsAPITargetEntity) GetTeamID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.TeamID
 }
 
 func (o *SignalsAPITargetEntity) GetIsPageable() *bool {

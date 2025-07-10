@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 39357612-0c85-4a96-a549-e2d920c4a065
 management:
-  docChecksum: a9892ed153266c5a7f383514fa86cec1
+  docChecksum: 7a7818352e3604d0476f34ba5198fedf
   docVersion: 0.0.1
-  speakeasyVersion: 1.575.5
-  generationVersion: 2.648.7
-  releaseVersion: 1.1.1
-  configChecksum: 9f1dbff4e470d663c17203316d8c5507
+  speakeasyVersion: 1.580.1
+  generationVersion: 2.656.3
+  releaseVersion: 1.1.2
+  configChecksum: e4b7daf5ed1d2d0f61e51a4dc3b96f22
   repoURL: https://github.com/firehydrant/firehydrant-go-sdk.git
   installationURL: https://github.com/firehydrant/firehydrant-go-sdk
 features:
@@ -372,6 +372,8 @@ generatedFiles:
   - /models/components/signalsapihackermodeentity.go
   - /models/components/signalsapiingestkeyentity.go
   - /models/components/signalsapinotificationpolicyitemcomplianceentity.go
+  - /models/components/signalsapinotificationpolicyitementity.go
+  - /models/components/signalsapinotificationpolicyitementitypaginated.go
   - /models/components/signalsapinotificationprioritypolicyentity.go
   - /models/components/signalsapioncallrestrictionentity.go
   - /models/components/signalsapioncallrotationentity.go
@@ -484,6 +486,7 @@ generatedFiles:
   - /models/operations/createcommentreaction.go
   - /models/operations/createconnection.go
   - /models/operations/createemailsubscriber.go
+  - /models/operations/createhandoffnotificationsetting.go
   - /models/operations/createinboundfieldmap.go
   - /models/operations/createincidentalert.go
   - /models/operations/createincidentattachment.go
@@ -544,6 +547,7 @@ generatedFiles:
   - /models/operations/deleteincidenttype.go
   - /models/operations/deletelifecyclemeasurementdefinition.go
   - /models/operations/deletelifecyclemilestone.go
+  - /models/operations/deletenotificationpolicy.go
   - /models/operations/deletenunccomponentgroup.go
   - /models/operations/deletenuncconnection.go
   - /models/operations/deletenuncimage.go
@@ -616,6 +620,7 @@ generatedFiles:
   - /models/operations/getlifecyclemeasurementdefinition.go
   - /models/operations/getmeantimereport.go
   - /models/operations/getmemberdefaultaudience.go
+  - /models/operations/getnotificationpolicy.go
   - /models/operations/getnuncconnection.go
   - /models/operations/getoncallshift.go
   - /models/operations/getoptionsforfield.go
@@ -715,6 +720,7 @@ generatedFiles:
   - /models/operations/listlifecyclemeasurementdefinitions.go
   - /models/operations/listmilestonefunnelmetrics.go
   - /models/operations/listmttxmetrics.go
+  - /models/operations/listnotificationpolicysettings.go
   - /models/operations/listorganizationoncallschedules.go
   - /models/operations/listpostmortemquestions.go
   - /models/operations/listpostmortemreasons.go
@@ -809,6 +815,7 @@ generatedFiles:
   - /models/operations/updateincidenttype.go
   - /models/operations/updatelifecyclemeasurementdefinition.go
   - /models/operations/updatelifecyclemilestone.go
+  - /models/operations/updatenotificationpolicy.go
   - /models/operations/updatenunccomponentgroup.go
   - /models/operations/updatenuncconnection.go
   - /models/operations/updatenuncimage.go
@@ -1179,6 +1186,7 @@ generatedFiles:
   - docs/models/components/metricsticketfunnelmetricsentity.md
   - docs/models/components/metricsticketfunnelmetricsentitydatabucketentity.md
   - docs/models/components/milestonemapping.md
+  - docs/models/components/notificationgroupmethod.md
   - docs/models/components/nullableactorentity.md
   - docs/models/components/nullableactorentitytype.md
   - docs/models/components/nullablealertsalertentity.md
@@ -1304,6 +1312,7 @@ generatedFiles:
   - docs/models/components/postmortemsreasonentity.md
   - docs/models/components/postmortemsreasonentitypaginated.md
   - docs/models/components/postmortemssectionfieldentity.md
+  - docs/models/components/priority.md
   - docs/models/components/priorityentity.md
   - docs/models/components/publicapiv1bootstrapentity.md
   - docs/models/components/publicapiv1formconfigurationsselectedvalueentity.md
@@ -1386,6 +1395,8 @@ generatedFiles:
   - docs/models/components/signalsapihackermodeentity.md
   - docs/models/components/signalsapiingestkeyentity.md
   - docs/models/components/signalsapinotificationpolicyitemcomplianceentity.md
+  - docs/models/components/signalsapinotificationpolicyitementity.md
+  - docs/models/components/signalsapinotificationpolicyitementitypaginated.md
   - docs/models/components/signalsapinotificationprioritypolicyentity.md
   - docs/models/components/signalsapioncallrestrictionentity.md
   - docs/models/components/signalsapioncallrotationentity.md
@@ -1603,6 +1614,9 @@ generatedFiles:
   - docs/models/operations/createconnectionrequest.md
   - docs/models/operations/createemailsubscriberrequest.md
   - docs/models/operations/createemailsubscriberrequestbody.md
+  - docs/models/operations/createhandoffnotificationsettingnotificationgroupmethod.md
+  - docs/models/operations/createhandoffnotificationsettingpriority.md
+  - docs/models/operations/createhandoffnotificationsettingrequest.md
   - docs/models/operations/createinboundfieldmaprequest.md
   - docs/models/operations/createincidentalertrequest.md
   - docs/models/operations/createincidentattachmentfile.md
@@ -1676,6 +1690,7 @@ generatedFiles:
   - docs/models/operations/deleteincidenttyperequest.md
   - docs/models/operations/deletelifecyclemeasurementdefinitionrequest.md
   - docs/models/operations/deletelifecyclemilestonerequest.md
+  - docs/models/operations/deletenotificationpolicyrequest.md
   - docs/models/operations/deletenunccomponentgrouprequest.md
   - docs/models/operations/deletenuncconnectionrequest.md
   - docs/models/operations/deletenuncimagerequest.md
@@ -1754,6 +1769,7 @@ generatedFiles:
   - docs/models/operations/getlifecyclemeasurementdefinitionrequest.md
   - docs/models/operations/getmeantimereportrequest.md
   - docs/models/operations/getmemberdefaultaudiencerequest.md
+  - docs/models/operations/getnotificationpolicyrequest.md
   - docs/models/operations/getnuncconnectionrequest.md
   - docs/models/operations/getoncallshiftrequest.md
   - docs/models/operations/getoptionsforfieldrequest.md
@@ -1886,6 +1902,7 @@ generatedFiles:
   - docs/models/operations/listmttxmetricsrequestbody.md
   - docs/models/operations/listmttxmetricssortby.md
   - docs/models/operations/listmttxmetricstagmatchstrategy.md
+  - docs/models/operations/listnotificationpolicysettingsrequest.md
   - docs/models/operations/listorganizationoncallschedulesrequest.md
   - docs/models/operations/listpostmortemquestionsrequest.md
   - docs/models/operations/listpostmortemreasonsrequest.md
@@ -2005,6 +2022,10 @@ generatedFiles:
   - docs/models/operations/updatelifecyclemilestoneautoassigntimestamponcreate.md
   - docs/models/operations/updatelifecyclemilestonerequest.md
   - docs/models/operations/updatelifecyclemilestonerequestbody.md
+  - docs/models/operations/updatenotificationpolicynotificationgroupmethod.md
+  - docs/models/operations/updatenotificationpolicypriority.md
+  - docs/models/operations/updatenotificationpolicyrequest.md
+  - docs/models/operations/updatenotificationpolicyrequestbody.md
   - docs/models/operations/updatenunccomponentgrouprequest.md
   - docs/models/operations/updatenunccomponentgrouprequestbody.md
   - docs/models/operations/updatenuncconnectionrequest.md
@@ -5418,5 +5439,35 @@ examples:
       responses:
         "200":
           application/json: {}
+  list_notification_policy_settings:
+    speakeasy-default-list-notification-policy-settings:
+      responses:
+        "200":
+          application/json: {}
+  create_handoff_notification_setting:
+    speakeasy-default-create-handoff-notification-setting:
+      requestBody:
+        application/json: {"notification_group_method": "email", "max_delay": "<value>", "priority": "HIGH"}
+      responses:
+        "201":
+          application/json: {}
+  get_notification_policy:
+    speakeasy-default-get-notification-policy:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  delete_notification_policy:
+    speakeasy-default-delete-notification-policy:
+      parameters:
+        path:
+          id: "<id>"
+  update_notification_policy:
+    speakeasy-default-update-notification-policy:
+      parameters:
+        path:
+          id: "<id>"
 examplesVersion: 1.0.2
 generatedTests: {}

@@ -624,6 +624,11 @@ func main() {
 * [GetSignalsWebhookTarget](docs/sdks/signals/README.md#getsignalswebhooktarget) - Get a webhook target
 * [DeleteSignalsWebhookTarget](docs/sdks/signals/README.md#deletesignalswebhooktarget) - Delete a webhook target
 * [UpdateSignalsWebhookTarget](docs/sdks/signals/README.md#updatesignalswebhooktarget) - Update a webhook target
+* [ListNotificationPolicySettings](docs/sdks/signals/README.md#listnotificationpolicysettings) - List notification policies
+* [CreateHandoffNotificationSetting](docs/sdks/signals/README.md#createhandoffnotificationsetting) - Create a notification policy
+* [GetNotificationPolicy](docs/sdks/signals/README.md#getnotificationpolicy) - Get a notification policy
+* [DeleteNotificationPolicy](docs/sdks/signals/README.md#deletenotificationpolicy) - Delete a notification policy
+* [UpdateNotificationPolicy](docs/sdks/signals/README.md#updatenotificationpolicy) - Update a notification policy
 * [ListSignalsTransposers](docs/sdks/signals/README.md#listsignalstransposers) - List signal transposers
 * [GetSignalsIngestURL](docs/sdks/signals/README.md#getsignalsingesturl) - Get the signals ingestion URL
 * [DebugSignalsExpression](docs/sdks/signals/README.md#debugsignalsexpression) - Debug Signals expressions
