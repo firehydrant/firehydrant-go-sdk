@@ -4,8 +4,8 @@ package components
 
 import (
 	"encoding/json"
-	"firehydrant/internal/utils"
 	"fmt"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
 // UpdateTeamEscalationPolicyType - The type of target that the step will notify.

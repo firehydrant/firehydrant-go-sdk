@@ -5,8 +5,8 @@ package utils
 import (
 	"context"
 	"errors"
-	"firehydrant/retry"
 	"fmt"
+	"github.com/firehydrant/firehydrant-go-sdk/retry"
 	"math"
 	"math/rand"
 	"net/http"

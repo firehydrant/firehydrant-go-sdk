@@ -3,7 +3,7 @@
 package operations
 
 import (
-	"firehydrant/internal/utils"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
 type ListAudiencesRequest struct {

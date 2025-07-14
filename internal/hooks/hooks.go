@@ -5,7 +5,7 @@ package hooks
 import (
 	"context"
 	"errors"
-	"firehydrant/internal/config"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/config"
 	"net/http"
 )
 
