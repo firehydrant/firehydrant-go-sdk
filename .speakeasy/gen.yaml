@@ -40,6 +40,6 @@ go:
   maxMethodParams: 4
   methodArguments: require-security-and-request
   outputModelSuffix: output
-  packageName: firehydrant
+  packageName: github.com/firehydrant/firehydrant-go-sdk
   responseFormat: flat
   templateVersion: v2
