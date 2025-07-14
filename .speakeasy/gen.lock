@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 39357612-0c85-4a96-a549-e2d920c4a065
 management:
-  docChecksum: 7a7818352e3604d0476f34ba5198fedf
+  docChecksum: 909ec237af1d3b3dca00dad03e0576bd
   docVersion: 0.0.1
-  speakeasyVersion: 1.580.1
-  generationVersion: 2.656.3
-  releaseVersion: 1.1.2
-  configChecksum: e4b7daf5ed1d2d0f61e51a4dc3b96f22
+  speakeasyVersion: 1.581.0
+  generationVersion: 2.656.5
+  releaseVersion: 1.1.3
+  configChecksum: c429f0fc9fb51715b569e5ffe778aaa6
   repoURL: https://github.com/firehydrant/firehydrant-go-sdk.git
   installationURL: https://github.com/firehydrant/firehydrant-go-sdk
 features:
