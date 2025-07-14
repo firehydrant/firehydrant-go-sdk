@@ -3,7 +3,7 @@
 package components
 
 import (
-	"firehydrant/internal/utils"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 	"time"
 )
 

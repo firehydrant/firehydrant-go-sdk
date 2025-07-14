@@ -30,16 +30,16 @@ package main
 
 import(
 	"context"
-	"firehydrant"
-	"firehydrant/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
 
-    s := firehydrant.New(
-        firehydrant.WithSecurity(components.Security{
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
             APIKey: "<YOUR_API_KEY_HERE>",
         }),
     )
@@ -80,16 +80,16 @@ package main
 
 import(
 	"context"
-	"firehydrant"
-	"firehydrant/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
 
-    s := firehydrant.New(
-        firehydrant.WithSecurity(components.Security{
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
             APIKey: "<YOUR_API_KEY_HERE>",
         }),
     )
@@ -138,16 +138,16 @@ package main
 
 import(
 	"context"
-	"firehydrant"
-	"firehydrant/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
 
-    s := firehydrant.New(
-        firehydrant.WithSecurity(components.Security{
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
             APIKey: "<YOUR_API_KEY_HERE>",
         }),
     )
@@ -188,16 +188,16 @@ package main
 
 import(
 	"context"
-	"firehydrant"
-	"firehydrant/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
 
-    s := firehydrant.New(
-        firehydrant.WithSecurity(components.Security{
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
             APIKey: "<YOUR_API_KEY_HERE>",
         }),
     )
@@ -240,16 +240,16 @@ package main
 
 import(
 	"context"
-	"firehydrant"
-	"firehydrant/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
 
-    s := firehydrant.New(
-        firehydrant.WithSecurity(components.Security{
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
             APIKey: "<YOUR_API_KEY_HERE>",
         }),
     )
@@ -297,16 +297,16 @@ package main
 
 import(
 	"context"
-	"firehydrant"
-	"firehydrant/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
 
-    s := firehydrant.New(
-        firehydrant.WithSecurity(components.Security{
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
             APIKey: "<YOUR_API_KEY_HERE>",
         }),
     )
@@ -347,16 +347,16 @@ package main
 
 import(
 	"context"
-	"firehydrant"
-	"firehydrant/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
 
-    s := firehydrant.New(
-        firehydrant.WithSecurity(components.Security{
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
             APIKey: "<YOUR_API_KEY_HERE>",
         }),
     )
@@ -398,16 +398,16 @@ package main
 
 import(
 	"context"
-	"firehydrant"
-	"firehydrant/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
 
-    s := firehydrant.New(
-        firehydrant.WithSecurity(components.Security{
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
             APIKey: "<YOUR_API_KEY_HERE>",
         }),
     )
@@ -448,16 +448,16 @@ package main
 
 import(
 	"context"
-	"firehydrant"
-	"firehydrant/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
 
-    s := firehydrant.New(
-        firehydrant.WithSecurity(components.Security{
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
             APIKey: "<YOUR_API_KEY_HERE>",
         }),
     )
@@ -501,16 +501,16 @@ package main
 
 import(
 	"context"
-	"firehydrant"
-	"firehydrant/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
 
-    s := firehydrant.New(
-        firehydrant.WithSecurity(components.Security{
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
             APIKey: "<YOUR_API_KEY_HERE>",
         }),
     )
@@ -553,16 +553,16 @@ package main
 
 import(
 	"context"
-	"firehydrant"
-	"firehydrant/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
 
-    s := firehydrant.New(
-        firehydrant.WithSecurity(components.Security{
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
             APIKey: "<YOUR_API_KEY_HERE>",
         }),
     )

@@ -4,8 +4,8 @@ package operations
 
 import (
 	"encoding/json"
-	"firehydrant/models/components"
 	"fmt"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
 )
 
 type UpdateSavedSearchResourceType string

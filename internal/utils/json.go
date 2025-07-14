@@ -13,7 +13,7 @@ import (
 	"time"
 	"unsafe"
 
-	"firehydrant/types"
+	"github.com/firehydrant/firehydrant-go-sdk/types"
 
 	"github.com/ericlagergren/decimal"
 )

@@ -3,8 +3,8 @@
 package operations
 
 import (
-	"firehydrant/internal/utils"
-	"firehydrant/types"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+	"github.com/firehydrant/firehydrant-go-sdk/types"
 )
 
 type ListRetrospectiveMetricsRequest struct {

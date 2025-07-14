@@ -4,9 +4,9 @@ package operations
 
 import (
 	"encoding/json"
-	"firehydrant/internal/utils"
-	"firehydrant/types"
 	"fmt"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+	"github.com/firehydrant/firehydrant-go-sdk/types"
 )
 
 type BucketSize string

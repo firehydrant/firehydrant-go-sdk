@@ -4,8 +4,8 @@ package operations
 
 import (
 	"encoding/json"
-	"firehydrant/internal/utils"
 	"fmt"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
 // ListTranscriptEntriesSort - The order to sort the transcript entries.

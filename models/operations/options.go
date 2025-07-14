@@ -4,8 +4,8 @@ package operations
 
 import (
 	"errors"
-	"firehydrant/internal/utils"
-	"firehydrant/retry"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+	"github.com/firehydrant/firehydrant-go-sdk/retry"
 	"time"
 )
 

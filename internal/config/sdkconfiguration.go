@@ -4,7 +4,7 @@ package config
 
 import (
 	"context"
-	"firehydrant/retry"
+	"github.com/firehydrant/firehydrant-go-sdk/retry"
 	"net/http"
 	"time"
 )

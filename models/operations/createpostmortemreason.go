@@ -3,7 +3,7 @@
 package operations
 
 import (
-	"firehydrant/models/components"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
 )
 
 type CreatePostMortemReasonRequest struct {
