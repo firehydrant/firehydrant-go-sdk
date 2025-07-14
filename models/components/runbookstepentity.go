@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"firehydrant/internal/utils"
-	"time"
-)
-
 // RunbookStepEntityConfig - An unstructured object of key/value pairs describing the config settings for the step.
 type RunbookStepEntityConfig struct {
 }
@@ -28,24 +23,13 @@ type RunbookStepEntity struct {
 	// A list of step elements
 	StepElements    []RunbookStepEntityStepElement `json:"step_elements,omitempty"`
 	Automatic       *bool                          `json:"automatic,omitempty"`
-	DelayDuration   *time.Time                     `json:"delay_duration,omitempty"`
+	DelayDuration   *string                        `json:"delay_duration,omitempty"`
 	Action          *NullableRunbooksActionsEntity `json:"action,omitempty"`
 	Reruns          *bool                          `json:"reruns,omitempty"`
 	Repeats         *bool                          `json:"repeats,omitempty"`
-	RepeatsDuration *time.Time                     `json:"repeats_duration,omitempty"`
+	RepeatsDuration *string                        `json:"repeats_duration,omitempty"`
 	Votes           *NullableVotesEntity           `json:"votes,omitempty"`
 	Rule            *NullableRulesRuleEntity       `json:"rule,omitempty"`
-}
-
-func (r RunbookStepEntity) MarshalJSON() ([]byte, error) {
-	return utils.MarshalJSON(r, "", false)
-}
-
-func (r *RunbookStepEntity) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &r, "", false, false); err != nil {
-		return err
-	}
-	return nil
 }
 
 func (o *RunbookStepEntity) GetName() *string {
@@ -97,7 +81,7 @@ func (o *RunbookStepEntity) GetAutomatic() *bool {
 	return o.Automatic
 }
 
-func (o *RunbookStepEntity) GetDelayDuration() *time.Time {
+func (o *RunbookStepEntity) GetDelayDuration() *string {
 	if o == nil {
 		return nil
 	}
@@ -125,7 +109,7 @@ func (o *RunbookStepEntity) GetRepeats() *bool {
 	return o.Repeats
 }
 
-func (o *RunbookStepEntity) GetRepeatsDuration() *time.Time {
+func (o *RunbookStepEntity) GetRepeatsDuration() *string {
 	if o == nil {
 		return nil
 	}
