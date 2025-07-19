@@ -1,4 +1,4 @@
-# NullableRulesRuleEntityLogic
+# Logic
 
 An unstructured object of key/value pairs describing the logic for applying the rule.
 

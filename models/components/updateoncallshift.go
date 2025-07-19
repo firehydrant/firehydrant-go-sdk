@@ -2,26 +2,42 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+	"time"
+)
+
 // UpdateOnCallShift - Update a Signals on-call shift by ID
 type UpdateOnCallShift struct {
 	// The start time of the shift in ISO8601 format.
-	StartTime *string `json:"start_time,omitempty"`
+	StartTime *time.Time `json:"start_time,omitempty"`
 	// The end time of the shift in ISO8601 format.
-	EndTime *string `json:"end_time,omitempty"`
+	EndTime *time.Time `json:"end_time,omitempty"`
 	// The ID of the user who is on-call for the shift. If not provided, the shift will be unassigned.
 	UserID *string `json:"user_id,omitempty"`
 	// A description of why coverage is needed for this shift. If the shift is re-assigned, this will automatically be cleared unless provided again.
 	CoverageRequest *string `json:"coverage_request,omitempty"`
 }
 
-func (o *UpdateOnCallShift) GetStartTime() *string {
+func (u UpdateOnCallShift) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UpdateOnCallShift) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, false); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (o *UpdateOnCallShift) GetStartTime() *time.Time {
 	if o == nil {
 		return nil
 	}
 	return o.StartTime
 }
 
-func (o *UpdateOnCallShift) GetEndTime() *string {
+func (o *UpdateOnCallShift) GetEndTime() *time.Time {
 	if o == nil {
 		return nil
 	}
