@@ -2,28 +2,44 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+	"time"
+)
+
 // CreateOnCallShift - Create a Signals on-call shift in a schedule.
 type CreateOnCallShift struct {
 	// The start time of the shift in ISO8601 format.
-	StartTime string `json:"start_time"`
+	StartTime time.Time `json:"start_time"`
 	// The end time of the shift in ISO8601 format.
-	EndTime string `json:"end_time"`
+	EndTime time.Time `json:"end_time"`
 	// The ID of the user who is on-call for the shift. If not provided, the shift will be unassigned.
 	UserID *string `json:"user_id,omitempty"`
 	// The ID of the on-call rotation you want to create the shift in. This parameter is optional for backwards compatibility but must be provided if the schedule has multiple rotations.
 	RotationID *string `json:"rotation_id,omitempty"`
 }
 
-func (o *CreateOnCallShift) GetStartTime() string {
+func (c CreateOnCallShift) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *CreateOnCallShift) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, false); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (o *CreateOnCallShift) GetStartTime() time.Time {
 	if o == nil {
-		return ""
+		return time.Time{}
 	}
 	return o.StartTime
 }
 
-func (o *CreateOnCallShift) GetEndTime() string {
+func (o *CreateOnCallShift) GetEndTime() time.Time {
 	if o == nil {
-		return ""
+		return time.Time{}
 	}
 	return o.EndTime
 }
