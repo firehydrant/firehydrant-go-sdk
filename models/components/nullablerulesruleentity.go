@@ -2,17 +2,13 @@
 
 package components
 
-// NullableRulesRuleEntityLogic - An unstructured object of key/value pairs describing the logic for applying the rule.
-type NullableRulesRuleEntityLogic struct {
-}
-
 type NullableRulesRuleEntity struct {
-	// An unstructured object of key/value pairs describing the logic for applying the rule.
-	Logic    *NullableRulesRuleEntityLogic `json:"logic,omitempty"`
+	// JSON stringified object of key/value pairs describing the logic for applying the rule.
+	Logic    *string                       `json:"logic,omitempty"`
 	UserData *NullableFHTypesGenericEntity `json:"user_data,omitempty"`
 }
 
-func (o *NullableRulesRuleEntity) GetLogic() *NullableRulesRuleEntityLogic {
+func (o *NullableRulesRuleEntity) GetLogic() *string {
 	if o == nil {
 		return nil
 	}

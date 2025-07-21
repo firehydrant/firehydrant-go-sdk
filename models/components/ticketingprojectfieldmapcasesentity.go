@@ -2,17 +2,17 @@
 
 package components
 
-// TicketingProjectFieldMapCasesEntityLogic - An unstructured object of key/value pairs describing the logic for applying the rule.
-type TicketingProjectFieldMapCasesEntityLogic struct {
+// Logic - An unstructured object of key/value pairs describing the logic for applying the rule.
+type Logic struct {
 }
 
 type TicketingProjectFieldMapCasesEntity struct {
 	// An unstructured object of key/value pairs describing the logic for applying the rule.
-	Logic         *TicketingProjectFieldMapCasesEntityLogic            `json:"logic,omitempty"`
+	Logic         *Logic                                               `json:"logic,omitempty"`
 	ExternalValue *NullableTicketingProjectFieldMapExternalValueEntity `json:"external_value,omitempty"`
 }
 
-func (o *TicketingProjectFieldMapCasesEntity) GetLogic() *TicketingProjectFieldMapCasesEntityLogic {
+func (o *TicketingProjectFieldMapCasesEntity) GetLogic() *Logic {
 	if o == nil {
 		return nil
 	}
