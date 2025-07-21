@@ -23,9 +23,13 @@ func (o *CreateTeamMsTeamsChannel) GetMsTeamID() string {
 }
 
 type CreateTeamMembership struct {
-	UserID     *string `json:"user_id,omitempty"`
+	// The ID of a user to add to the team. This parameter is mutually exclusive with schedule_id and signals_on_call_schedule_id.
+	UserID *string `json:"user_id,omitempty"`
+	// The ID of a third-party on-call schedule to add to the team, allowing you to specify that whoever is on call for this schedule when the team is assigned to an incident gets added to the incident and optionally assigned to the configured incident role. This parameter is mutually exclusive with user_id and signals_on_call_schedule_id.
 	ScheduleID *string `json:"schedule_id,omitempty"`
-	// An incident role ID that this user will automatically assigned if this team is assigned to an incident
+	// The ID of a Signals on-call schedule to add to the team, allowing you to specify that whoever is on call for this schedule when the team is assigned to an incident gets added to the incident and optionally assigned to the configured incident role.. This parameter is mutually exclusive with user_id and schedule_id.
+	SignalsOnCallScheduleID *string `json:"signals_on_call_schedule_id,omitempty"`
+	// An incident role ID that the user will automatically assigned if this team is assigned to an incident
 	IncidentRoleID *string `json:"incident_role_id,omitempty"`
 }
 
@@ -41,6 +45,13 @@ func (o *CreateTeamMembership) GetScheduleID() *string {
 		return nil
 	}
 	return o.ScheduleID
+}
+
+func (o *CreateTeamMembership) GetSignalsOnCallScheduleID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.SignalsOnCallScheduleID
 }
 
 func (o *CreateTeamMembership) GetIncidentRoleID() *string {

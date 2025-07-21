@@ -619,6 +619,7 @@ import(
 	"context"
 	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	"github.com/firehydrant/firehydrant-go-sdk/types"
 	"log"
 )
 
@@ -632,8 +633,8 @@ func main() {
     )
 
     res, err := s.Signals.CreateOnCallShift(ctx, "<id>", "<id>", components.CreateOnCallShift{
-        StartTime: "<value>",
-        EndTime: "<value>",
+        StartTime: types.MustTimeFromString("<value>"),
+        EndTime: types.MustTimeFromString("<value>"),
     })
     if err != nil {
         log.Fatal(err)
