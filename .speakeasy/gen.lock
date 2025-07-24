@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 39357612-0c85-4a96-a549-e2d920c4a065
 management:
-  docChecksum: 909ec237af1d3b3dca00dad03e0576bd
+  docChecksum: 5f0ec54777c11a6c24136f52886e9b22
   docVersion: 0.0.1
-  speakeasyVersion: 1.581.2
-  generationVersion: 2.656.9
-  releaseVersion: 1.1.4
-  configChecksum: 0cee836fa1e434e7d112047565a8c228
+  speakeasyVersion: 1.587.1
+  generationVersion: 2.662.0
+  releaseVersion: 1.1.5
+  configChecksum: b5ed2fc5b56ce7b11896742da1e349bf
   repoURL: https://github.com/firehydrant/firehydrant-go-sdk.git
   installationURL: https://github.com/firehydrant/firehydrant-go-sdk
 features:
@@ -979,6 +979,7 @@ generatedFiles:
   - docs/models/components/createscimuser.md
   - docs/models/components/createscimuseremail.md
   - docs/models/components/createscimusername.md
+  - docs/models/components/createscimuserphonenumber.md
   - docs/models/components/createscimuserroles.md
   - docs/models/components/createservice.md
   - docs/models/components/createservicechecklistresponse.md
@@ -1169,6 +1170,7 @@ generatedFiles:
   - docs/models/components/lifecyclesphaseentity.md
   - docs/models/components/lifecyclesphaseentitylist.md
   - docs/models/components/linksentity.md
+  - docs/models/components/logic.md
   - docs/models/components/membershipentity.md
   - docs/models/components/messagetype.md
   - docs/models/components/metricsinfrastructurelistentity.md
@@ -1238,7 +1240,6 @@ generatedFiles:
   - docs/models/components/nullablepostmortemsquestionentity.md
   - docs/models/components/nullablepublicapiv1incidentssuccinctentity.md
   - docs/models/components/nullablerulesruleentity.md
-  - docs/models/components/nullablerulesruleentitylogic.md
   - docs/models/components/nullablerunbooksactionconfigentity.md
   - docs/models/components/nullablerunbooksactionsentity.md
   - docs/models/components/nullablerunbooksactionsentitydefaultlogic.md
@@ -1437,7 +1438,6 @@ generatedFiles:
   - docs/models/components/ticketingprojectconfigentitydetails.md
   - docs/models/components/ticketingprojectfieldmapbodyentity.md
   - docs/models/components/ticketingprojectfieldmapcasesentity.md
-  - docs/models/components/ticketingprojectfieldmapcasesentitylogic.md
   - docs/models/components/ticketingprojectfieldmapentity.md
   - docs/models/components/ticketingprojectinboundfieldmapentity.md
   - docs/models/components/ticketingprojectinboundmappablefieldentity.md
@@ -1521,6 +1521,7 @@ generatedFiles:
   - docs/models/components/updatescimuser.md
   - docs/models/components/updatescimuseremail.md
   - docs/models/components/updatescimusername.md
+  - docs/models/components/updatescimuserphonenumber.md
   - docs/models/components/updatescimuserroles.md
   - docs/models/components/updateservice.md
   - docs/models/components/updateservicedependency.md
