@@ -942,12 +942,13 @@ The built-in `net/http` client satisfies this interface and a default client bas
 import (
 	"net/http"
 	"time"
-	"github.com/myorg/your-go-sdk"
+
+	"github.com/firehydrant/firehydrant-go-sdk"
 )
 
 var (
 	httpClient = &http.Client{Timeout: 30 * time.Second}
-	sdkClient  = sdk.New(sdk.WithClient(httpClient))
+	sdkClient  = firehydrantgosdk.New(firehydrantgosdk.WithClient(httpClient))
 )
 ```
 

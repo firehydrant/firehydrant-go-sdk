@@ -24,6 +24,7 @@ Get an object's current vote counts
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_vote_status" method="get" path="/v1/incidents/{incident_id}/events/{event_id}/votes/status" -->
 ```go
 package main
 
@@ -78,6 +79,7 @@ Upvote or downvote an object
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_vote" method="patch" path="/v1/incidents/{incident_id}/events/{event_id}/votes" -->
 ```go
 package main
 
@@ -135,6 +137,7 @@ Archive a reaction
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_comment_reaction" method="delete" path="/v1/conversations/{conversation_id}/comments/{comment_id}/reactions/{reaction_id}" -->
 ```go
 package main
 
@@ -187,6 +190,7 @@ List all of the reactions that have been added to a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_comment_reactions" method="get" path="/v1/conversations/{conversation_id}/comments/{comment_id}/reactions" -->
 ```go
 package main
 
@@ -238,6 +242,7 @@ Create a reaction on a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_comment_reaction" method="post" path="/v1/conversations/{conversation_id}/comments/{comment_id}/reactions" -->
 ```go
 package main
 
@@ -292,6 +297,7 @@ Retrieves a single comment by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_comment" method="get" path="/v1/conversations/{conversation_id}/comments/{comment_id}" -->
 ```go
 package main
 
@@ -343,6 +349,7 @@ Archive a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_comment" method="delete" path="/v1/conversations/{conversation_id}/comments/{comment_id}" -->
 ```go
 package main
 
@@ -394,6 +401,7 @@ Update a comment's attributes
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_comment" method="patch" path="/v1/conversations/{conversation_id}/comments/{comment_id}" -->
 ```go
 package main
 
@@ -446,6 +454,7 @@ List all of the comments that have been added to the organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_comments" method="get" path="/v1/conversations/{conversation_id}/comments" -->
 ```go
 package main
 
@@ -500,6 +509,7 @@ Creates a comment for a project
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_comment" method="post" path="/v1/conversations/{conversation_id}/comments" -->
 ```go
 package main
 

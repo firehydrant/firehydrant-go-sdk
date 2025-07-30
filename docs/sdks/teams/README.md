@@ -20,6 +20,7 @@ List all of the teams in the organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_teams" method="get" path="/v1/teams" -->
 ```go
 package main
 
@@ -74,6 +75,7 @@ Create a new team
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_team" method="post" path="/v1/teams" -->
 ```go
 package main
 
@@ -129,6 +131,7 @@ Retrieve a single team from its ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_team" method="get" path="/v1/teams/{team_id}" -->
 ```go
 package main
 
@@ -183,6 +186,7 @@ Archives an team which will hide it from lists and metrics
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_team" method="delete" path="/v1/teams/{team_id}" -->
 ```go
 package main
 
@@ -236,6 +240,7 @@ Update a single team from its ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_team" method="patch" path="/v1/teams/{team_id}" -->
 ```go
 package main
 
@@ -290,6 +295,7 @@ List all known schedules in FireHydrant as pulled from external sources
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_schedules" method="get" path="/v1/schedules" -->
 ```go
 package main
 

@@ -20,6 +20,7 @@ Lists webhooks
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_webhooks" method="get" path="/v1/webhooks" -->
 ```go
 package main
 
@@ -74,6 +75,7 @@ Create a new webhook
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_webhook" method="post" path="/v1/webhooks" -->
 ```go
 package main
 
@@ -129,6 +131,7 @@ Get webhook deliveries
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_webhook_deliveries" method="get" path="/v1/webhooks/{webhook_id}/deliveries" -->
 ```go
 package main
 
@@ -179,6 +182,7 @@ Retrieve a specific webhook
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_webhook" method="get" path="/v1/webhooks/{webhook_id}" -->
 ```go
 package main
 
@@ -232,6 +236,7 @@ Delete a specific webhook
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_webhook" method="delete" path="/v1/webhooks/{webhook_id}" -->
 ```go
 package main
 
@@ -282,6 +287,7 @@ Update a specific webhook
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_webhook" method="patch" path="/v1/webhooks/{webhook_id}" -->
 ```go
 package main
 

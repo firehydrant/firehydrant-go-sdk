@@ -49,6 +49,7 @@ Lists the available and configured integrations
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_integrations" method="get" path="/v1/integrations" -->
 ```go
 package main
 
@@ -101,6 +102,7 @@ Retrieve a single integration
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_integration" method="get" path="/v1/integrations/{integration_id}" -->
 ```go
 package main
 
@@ -154,6 +156,7 @@ Update field mapping
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_field_map" method="patch" path="/v1/integrations/field_maps/{field_map_id}" -->
 ```go
 package main
 
@@ -207,6 +210,7 @@ Get a description of the fields to which data can be mapped
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_field_map_available_fields" method="get" path="/v1/integrations/field_maps/{field_map_id}/available_fields" -->
 ```go
 package main
 
@@ -260,6 +264,7 @@ Lists the available and configured integrations
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_authed_providers" method="get" path="/v1/integrations/authed_providers/{integration_slug}/{connection_id}" -->
 ```go
 package main
 
@@ -315,6 +320,7 @@ Retrieve a single authed provider
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_authed_provider" method="patch" path="/v1/integrations/authed_providers/{integration_slug}/{connection_id}/{authed_provider_id}" -->
 ```go
 package main
 
@@ -371,6 +377,7 @@ List available integration connections
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_connections" method="get" path="/v1/integrations/connections" -->
 ```go
 package main
 
@@ -424,6 +431,7 @@ Create a new integration connection
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_connection" method="post" path="/v1/integrations/connections/{slug}" -->
 ```go
 package main
 
@@ -477,6 +485,7 @@ Refresh the integration connection with the provided data
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="refresh_connection" method="patch" path="/v1/integrations/connections/{slug}/{connection_id}/refresh" -->
 ```go
 package main
 
@@ -531,6 +540,7 @@ Update the integration connection with the provided data
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_connection" method="patch" path="/v1/integrations/connections/{slug}/{connection_id}" -->
 ```go
 package main
 
@@ -585,6 +595,7 @@ Retrieve overall integration connection status
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_connection_statuses" method="get" path="/v1/integrations/statuses" -->
 ```go
 package main
 
@@ -637,6 +648,7 @@ Retrieve a single integration connection status
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_connection_statuses_by_slug" method="get" path="/v1/integrations/statuses/{slug}" -->
 ```go
 package main
 
@@ -690,6 +702,7 @@ Retrieve a single integration connection status
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_connection_statuses_by_slug_and_id" method="get" path="/v1/integrations/statuses/{slug}/{by_connection_id}" -->
 ```go
 package main
 
@@ -744,6 +757,7 @@ Lists the available and configured AWS integration connections for the authentic
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_aws_connections" method="get" path="/v1/integrations/aws/connections" -->
 ```go
 package main
 
@@ -798,6 +812,7 @@ Retrieves the information about the AWS connection.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_aws_connection" method="get" path="/v1/integrations/aws/connections/{id}" -->
 ```go
 package main
 
@@ -851,6 +866,7 @@ Update the AWS connection with the provided data.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_aws_connection" method="patch" path="/v1/integrations/aws/connections/{id}" -->
 ```go
 package main
 
@@ -905,6 +921,7 @@ Lists CloudTrail batches for the authenticated organization.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_aws_cloudtrail_batches" method="get" path="/v1/integrations/aws/cloudtrail_batches" -->
 ```go
 package main
 
@@ -960,6 +977,7 @@ Retrieve a single CloudTrail batch.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_aws_cloudtrail_batch" method="get" path="/v1/integrations/aws/cloudtrail_batches/{id}" -->
 ```go
 package main
 
@@ -1013,6 +1031,7 @@ Update a CloudTrail batch with new information.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_aws_cloudtrail_batch" method="patch" path="/v1/integrations/aws/cloudtrail_batches/{id}" -->
 ```go
 package main
 
@@ -1067,6 +1086,7 @@ List events for an AWS CloudTrail batch
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_aws_cloudtrail_batch_events" method="get" path="/v1/integrations/aws/cloudtrail_batches/{id}/events" -->
 ```go
 package main
 
@@ -1120,6 +1140,7 @@ Lists available space keys for the Confluence integration connection.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="search_confluence_spaces" method="get" path="/v1/integrations/confluence_cloud/connections/{id}/space/search" -->
 ```go
 package main
 
@@ -1174,6 +1195,7 @@ Lists all Slack workspaces
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_slack_workspaces" method="get" path="/v1/integrations/slack/connections/{connection_id}/workspaces" -->
 ```go
 package main
 
@@ -1227,6 +1249,7 @@ Lists all Slack user groups
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_slack_usergroups" method="get" path="/v1/integrations/slack/usergroups" -->
 ```go
 package main
 
@@ -1279,6 +1302,7 @@ Lists Slack emoji actions
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_slack_emoji_actions" method="get" path="/v1/integrations/slack/connections/{connection_id}/emoji_actions" -->
 ```go
 package main
 
@@ -1331,6 +1355,7 @@ Creates a new Slack emoji action
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_slack_emoji_action" method="post" path="/v1/integrations/slack/connections/{connection_id}/emoji_actions" -->
 ```go
 package main
 
@@ -1385,6 +1410,7 @@ Retrieves a Slack emoji action
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_slack_emoji_action" method="get" path="/v1/integrations/slack/connections/{connection_id}/emoji_actions/{emoji_action_id}" -->
 ```go
 package main
 
@@ -1436,6 +1462,7 @@ Deletes a Slack emoji action
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_slack_emoji_action" method="delete" path="/v1/integrations/slack/connections/{connection_id}/emoji_actions/{emoji_action_id}" -->
 ```go
 package main
 
@@ -1487,6 +1514,7 @@ Updates a Slack emoji action
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_slack_emoji_action" method="patch" path="/v1/integrations/slack/connections/{connection_id}/emoji_actions/{emoji_action_id}" -->
 ```go
 package main
 
@@ -1539,6 +1567,7 @@ Lists the available and configured Statuspage integrations connections for the a
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_statuspage_connections" method="get" path="/v1/integrations/statuspage/connections" -->
 ```go
 package main
 
@@ -1593,6 +1622,7 @@ Retrieve the information about the Statuspage connection.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_statuspage_connection" method="get" path="/v1/integrations/statuspage/connections/{connection_id}" -->
 ```go
 package main
 
@@ -1646,6 +1676,7 @@ Deletes the given Statuspage integration connection.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_statuspage_connection" method="delete" path="/v1/integrations/statuspage/connections/{connection_id}" -->
 ```go
 package main
 
@@ -1699,6 +1730,7 @@ Update the given Statuspage integration connection.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_statuspage_connection" method="patch" path="/v1/integrations/statuspage/connections/{connection_id}" -->
 ```go
 package main
 
@@ -1753,6 +1785,7 @@ Lists available page IDs for the Statuspage integration connection.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_statuspage_connection_pages" method="get" path="/v1/integrations/statuspage/connections/{connection_id}/pages" -->
 ```go
 package main
 
@@ -1806,6 +1839,7 @@ Search for Zendesk tickets
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="search_zendesk_tickets" method="get" path="/v1/integrations/zendesk/{connection_id}/tickets/search" -->
 ```go
 package main
 
@@ -1862,6 +1896,7 @@ Search for Zendesk tickets
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_zendesk_customer_support_issue" method="get" path="/v1/integrations/zendesk/search" -->
 ```go
 package main
 

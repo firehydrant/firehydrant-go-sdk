@@ -44,6 +44,7 @@ Share incident retrospectives with users or teams
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="share_incident_retrospectives" method="post" path="/v1/incidents/{incident_id}/retrospectives/share" -->
 ```go
 package main
 
@@ -104,6 +105,7 @@ Export incident's retrospective(s) using their templates
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="export_incident_retrospectives" method="post" path="/v1/incidents/{incident_id}/retrospectives/export" -->
 ```go
 package main
 
@@ -161,6 +163,7 @@ Retrieve retrospectives attached to an incident
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_incident_retrospectives" method="get" path="/v1/incidents/{incident_id}/retrospectives" -->
 ```go
 package main
 
@@ -217,6 +220,7 @@ Create a new retrospective for an incident
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_incident_retrospective" method="post" path="/v1/incidents/{incident_id}/retrospectives" -->
 ```go
 package main
 
@@ -274,6 +278,7 @@ Update a retrospective attached to an incident
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_incident_retrospective" method="patch" path="/v1/incidents/{incident_id}/retrospectives/{retrospective_id}" -->
 ```go
 package main
 
@@ -329,6 +334,7 @@ Add a new field to an incident retrospective
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_incident_retrospective_field" method="patch" path="/v1/incidents/{incident_id}/retrospectives/{retrospective_id}/fields" -->
 ```go
 package main
 
@@ -388,6 +394,7 @@ Retrieve a field on an incident retrospective
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_incident_retrospective_field" method="get" path="/v1/incidents/{incident_id}/retrospectives/{retrospective_id}/fields/{field_id}" -->
 ```go
 package main
 
@@ -443,6 +450,7 @@ Update retrospective field value
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_incident_retrospective_field" method="patch" path="/v1/incidents/{incident_id}/retrospectives/{retrospective_id}/fields/{field_id}" -->
 ```go
 package main
 
@@ -501,6 +509,7 @@ Add a new dynamic input field to a dynamic input group
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_incident_retrospective_dynamic_input" method="post" path="/v1/incidents/{incident_id}/retrospectives/{retrospective_id}/fields/{field_id}/inputs" -->
 ```go
 package main
 
@@ -556,6 +565,7 @@ Delete a dynamic input on a dynamic input group
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_incident_retrospective_dynamic_input" method="delete" path="/v1/incidents/{incident_id}/retrospectives/{retrospective_id}/fields/{field_id}/inputs" -->
 ```go
 package main
 
@@ -612,6 +622,7 @@ List all retrospective reports
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_retrospectives" method="get" path="/v1/retrospectives" -->
 ```go
 package main
 
@@ -668,6 +679,7 @@ List all reports
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_post_mortem_reports" method="get" path="/v1/post_mortems/reports" -->
 ```go
 package main
 
@@ -724,6 +736,7 @@ Create a report
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_post_mortem_report" method="post" path="/v1/post_mortems/reports" -->
 ```go
 package main
 
@@ -779,6 +792,7 @@ Get a report
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_post_mortem_report" method="get" path="/v1/post_mortems/reports/{report_id}" -->
 ```go
 package main
 
@@ -832,6 +846,7 @@ Update a report
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_post_mortem_report" method="patch" path="/v1/post_mortems/reports/{report_id}" -->
 ```go
 package main
 
@@ -886,6 +901,7 @@ List all contributing factors to an incident
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_post_mortem_reasons" method="get" path="/v1/post_mortems/reports/{report_id}/reasons" -->
 ```go
 package main
 
@@ -941,6 +957,7 @@ Add a new contributing factor to an incident
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_post_mortem_reason" method="post" path="/v1/post_mortems/reports/{report_id}/reasons" -->
 ```go
 package main
 
@@ -997,6 +1014,7 @@ Delete a contributing factor
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_post_mortem_reason" method="delete" path="/v1/post_mortems/reports/{report_id}/reasons/{reason_id}" -->
 ```go
 package main
 
@@ -1051,6 +1069,7 @@ Update a contributing factor
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_post_mortem_reason" method="patch" path="/v1/post_mortems/reports/{report_id}/reasons/{reason_id}" -->
 ```go
 package main
 
@@ -1106,6 +1125,7 @@ Update the order of contributing factors in a retrospective report
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="reorder_post_mortem_reasons" method="put" path="/v1/post_mortems/reports/{report_id}/reasons/order" -->
 ```go
 package main
 
@@ -1163,6 +1183,7 @@ Marks an incident retrospective as published and emails all of the participants 
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="publish_post_mortem_report" method="post" path="/v1/post_mortems/reports/{report_id}/publish" -->
 ```go
 package main
 
@@ -1218,6 +1239,7 @@ Update a field value on a post mortem report
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_post_mortem_field" method="patch" path="/v1/post_mortems/reports/{report_id}/fields/{field_id}" -->
 ```go
 package main
 
@@ -1275,6 +1297,7 @@ List the questions configured to be provided and filled out on each retrospectiv
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_post_mortem_questions" method="get" path="/v1/post_mortems/questions" -->
 ```go
 package main
 
@@ -1329,6 +1352,7 @@ Update the questions configured to be provided and filled out on future retrospe
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_post_mortem_questions" method="put" path="/v1/post_mortems/questions" -->
 ```go
 package main
 
@@ -1382,6 +1406,7 @@ Get an incident retrospective question configured to be provided and filled out 
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_post_mortem_question" method="get" path="/v1/post_mortems/questions/{question_id}" -->
 ```go
 package main
 
@@ -1432,6 +1457,7 @@ List all retrospective templates
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_retrospective_templates" method="get" path="/v1/retrospective_templates" -->
 ```go
 package main
 
@@ -1487,6 +1513,7 @@ Create a new retrospective template
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_retrospective_template" method="post" path="/v1/retrospective_templates" -->
 ```go
 package main
 
@@ -1556,6 +1583,7 @@ Retrieve a single retrospective template by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_retrospective_template" method="get" path="/v1/retrospective_templates/{retrospective_template_id}" -->
 ```go
 package main
 
@@ -1609,6 +1637,7 @@ Delete a single retrospective template
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_retrospective_template" method="delete" path="/v1/retrospective_templates/{retrospective_template_id}" -->
 ```go
 package main
 
@@ -1662,6 +1691,7 @@ Update a single retrospective template
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_retrospective_template" method="patch" path="/v1/retrospective_templates/{retrospective_template_id}" -->
 ```go
 package main
 

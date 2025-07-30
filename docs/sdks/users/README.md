@@ -17,6 +17,7 @@ Retrieve a list of all users in an organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_users" method="get" path="/v1/users" -->
 ```go
 package main
 
@@ -73,6 +74,7 @@ Retrieve a single user by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_user" method="get" path="/v1/users/{id}" -->
 ```go
 package main
 
@@ -126,6 +128,7 @@ Retrieve the current user
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_current_user" method="get" path="/v1/current_user" -->
 ```go
 package main
 

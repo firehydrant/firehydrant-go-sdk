@@ -62,6 +62,7 @@ List all Signals escalation policies for a team.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_team_escalation_policies" method="get" path="/v1/teams/{team_id}/escalation_policies" -->
 ```go
 package main
 
@@ -118,6 +119,7 @@ Create a Signals escalation policy for a team.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_team_escalation_policy" method="post" path="/v1/teams/{team_id}/escalation_policies" -->
 ```go
 package main
 
@@ -175,6 +177,7 @@ Get a Signals escalation policy by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_team_escalation_policy" method="get" path="/v1/teams/{team_id}/escalation_policies/{id}" -->
 ```go
 package main
 
@@ -229,6 +232,7 @@ Delete a Signals escalation policy by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_team_escalation_policy" method="delete" path="/v1/teams/{team_id}/escalation_policies/{id}" -->
 ```go
 package main
 
@@ -280,6 +284,7 @@ Update a Signals escalation policy by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_team_escalation_policy" method="patch" path="/v1/teams/{team_id}/escalation_policies/{id}" -->
 ```go
 package main
 
@@ -335,6 +340,7 @@ List all Signals on-call schedules for a team.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_team_on_call_schedules" method="get" path="/v1/teams/{team_id}/on_call_schedules" -->
 ```go
 package main
 
@@ -391,6 +397,7 @@ Create a Signals on-call schedule for a team with a single rotation. More rotati
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_team_on_call_schedule" method="post" path="/v1/teams/{team_id}/on_call_schedules" -->
 ```go
 package main
 
@@ -447,6 +454,7 @@ Get a Signals on-call schedule by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_team_on_call_schedule" method="get" path="/v1/teams/{team_id}/on_call_schedules/{schedule_id}" -->
 ```go
 package main
 
@@ -503,6 +511,7 @@ Delete a Signals on-call schedule by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_team_on_call_schedule" method="delete" path="/v1/teams/{team_id}/on_call_schedules/{schedule_id}" -->
 ```go
 package main
 
@@ -557,6 +566,7 @@ has only one rotation, you can continue to update that rotation using the rotati
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_team_on_call_schedule" method="patch" path="/v1/teams/{team_id}/on_call_schedules/{schedule_id}" -->
 ```go
 package main
 
@@ -612,6 +622,7 @@ Create a Signals on-call shift in a schedule.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_on_call_shift" method="post" path="/v1/teams/{team_id}/on_call_schedules/{schedule_id}/shifts" -->
 ```go
 package main
 
@@ -671,6 +682,7 @@ Get a Signals on-call shift by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_on_call_shift" method="get" path="/v1/teams/{team_id}/on_call_schedules/{schedule_id}/shifts/{id}" -->
 ```go
 package main
 
@@ -726,6 +738,7 @@ Delete a Signals on-call shift by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_on_call_shift" method="delete" path="/v1/teams/{team_id}/on_call_schedules/{schedule_id}/shifts/{id}" -->
 ```go
 package main
 
@@ -778,6 +791,7 @@ Update a Signals on-call shift by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_on_call_shift" method="patch" path="/v1/teams/{team_id}/on_call_schedules/{schedule_id}/shifts/{id}" -->
 ```go
 package main
 
@@ -834,6 +848,7 @@ List all Signals rules for a team.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_team_signal_rules" method="get" path="/v1/teams/{team_id}/signal_rules" -->
 ```go
 package main
 
@@ -890,6 +905,7 @@ Create a Signals rule for a team.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_team_signal_rule" method="post" path="/v1/teams/{team_id}/signal_rules" -->
 ```go
 package main
 
@@ -949,6 +965,7 @@ Get a Signals rule by ID.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_team_signal_rule" method="get" path="/v1/teams/{team_id}/signal_rules/{id}" -->
 ```go
 package main
 
@@ -1003,6 +1020,7 @@ Delete a Signals rule by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_team_signal_rule" method="delete" path="/v1/teams/{team_id}/signal_rules/{id}" -->
 ```go
 package main
 
@@ -1054,6 +1072,7 @@ Update a Signals rule by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_team_signal_rule" method="patch" path="/v1/teams/{team_id}/signal_rules/{id}" -->
 ```go
 package main
 
@@ -1109,6 +1128,7 @@ List all Signals event sources for the authenticated user.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_signals_event_sources" method="get" path="/v1/signals/event_sources" -->
 ```go
 package main
 
@@ -1165,6 +1185,7 @@ Create a Signals event source for the authenticated user.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_signals_event_source" method="put" path="/v1/signals/event_sources" -->
 ```go
 package main
 
@@ -1223,6 +1244,7 @@ Get a Signals event source by slug
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_signals_event_source" method="get" path="/v1/signals/event_sources/{transposer_slug}" -->
 ```go
 package main
 
@@ -1276,6 +1298,7 @@ Delete a Signals event source by slug
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_signals_event_source" method="delete" path="/v1/signals/event_sources/{transposer_slug}" -->
 ```go
 package main
 
@@ -1329,6 +1352,7 @@ Get the status of the hacker mode for the current user
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_signals_hacker_mode" method="get" path="/v1/signals/hacker_mode" -->
 ```go
 package main
 
@@ -1381,6 +1405,7 @@ List all Signals alert grouping rules for the organization.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_signals_alert_grouping_configurations" method="get" path="/v1/signals/grouping" -->
 ```go
 package main
 
@@ -1433,6 +1458,7 @@ Create a Signals alert grouping rule for the organization.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_signals_alert_grouping_configuration" method="post" path="/v1/signals/grouping" -->
 ```go
 package main
 
@@ -1489,6 +1515,7 @@ Get a Signals alert grouping rule by ID.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_signals_alert_grouping_configuration" method="get" path="/v1/signals/grouping/{id}" -->
 ```go
 package main
 
@@ -1542,6 +1569,7 @@ Delete a Signals alert grouping rule by ID.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_signals_alert_grouping_configuration" method="delete" path="/v1/signals/grouping/{id}" -->
 ```go
 package main
 
@@ -1595,6 +1623,7 @@ Update a Signals alert grouping rule for the organization.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_signals_alert_grouping_configuration" method="patch" path="/v1/signals/grouping/{id}" -->
 ```go
 package main
 
@@ -1649,6 +1678,7 @@ List all Signals email targets for a team.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_signals_email_targets" method="get" path="/v1/signals/email_targets" -->
 ```go
 package main
 
@@ -1702,6 +1732,7 @@ Create a Signals email target for a team.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_signals_email_target" method="post" path="/v1/signals/email_targets" -->
 ```go
 package main
 
@@ -1757,6 +1788,7 @@ Get a Signals email target by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_signals_email_target" method="get" path="/v1/signals/email_targets/{id}" -->
 ```go
 package main
 
@@ -1810,6 +1842,7 @@ Delete a Signals email target by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_signals_email_target" method="delete" path="/v1/signals/email_targets/{id}" -->
 ```go
 package main
 
@@ -1860,6 +1893,7 @@ Update a Signals email target by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_signals_email_target" method="patch" path="/v1/signals/email_targets/{id}" -->
 ```go
 package main
 
@@ -1914,6 +1948,7 @@ List all Signals webhook targets.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_signals_webhook_targets" method="get" path="/v1/signals/webhook_targets" -->
 ```go
 package main
 
@@ -1969,6 +2004,7 @@ Create a Signals webhook target.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_signals_webhook_target" method="post" path="/v1/signals/webhook_targets" -->
 ```go
 package main
 
@@ -2025,6 +2061,7 @@ Get a Signals webhook target by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_signals_webhook_target" method="get" path="/v1/signals/webhook_targets/{id}" -->
 ```go
 package main
 
@@ -2078,6 +2115,7 @@ Delete a Signals webhook target by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_signals_webhook_target" method="delete" path="/v1/signals/webhook_targets/{id}" -->
 ```go
 package main
 
@@ -2128,6 +2166,7 @@ Update a Signals webhook target by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_signals_webhook_target" method="patch" path="/v1/signals/webhook_targets/{id}" -->
 ```go
 package main
 
@@ -2182,6 +2221,7 @@ List all Signals notification policies.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_notification_policy_settings" method="get" path="/v1/signals/notification_policy_items" -->
 ```go
 package main
 
@@ -2236,6 +2276,7 @@ Create a Signals notification policy.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_handoff_notification_setting" method="post" path="/v1/signals/notification_policy_items" -->
 ```go
 package main
 
@@ -2294,6 +2335,7 @@ Get a Signals notification policy by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_notification_policy" method="get" path="/v1/signals/notification_policy_items/{id}" -->
 ```go
 package main
 
@@ -2347,6 +2389,7 @@ Delete a Signals notification policy by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_notification_policy" method="delete" path="/v1/signals/notification_policy_items/{id}" -->
 ```go
 package main
 
@@ -2397,6 +2440,7 @@ Update a Signals notification policy by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_notification_policy" method="patch" path="/v1/signals/notification_policy_items/{id}" -->
 ```go
 package main
 
@@ -2448,6 +2492,7 @@ List all transposers for your organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_signals_transposers" method="get" path="/v1/signals/transposers" -->
 ```go
 package main
 
@@ -2500,6 +2545,7 @@ Retrieve the url for ingesting signals for your organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_signals_ingest_url" method="get" path="/v1/signals/ingest_url" -->
 ```go
 package main
 
@@ -2556,6 +2602,7 @@ Debug Signals expressions
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="debug_signals_expression" method="post" path="/v1/signals/debugger" -->
 ```go
 package main
 
@@ -2609,6 +2656,7 @@ List all users who are currently on-call across the entire organization.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_organization_on_call_schedules" method="get" path="/v1/signals_on_call" -->
 ```go
 package main
 

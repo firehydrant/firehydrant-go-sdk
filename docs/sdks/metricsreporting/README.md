@@ -33,6 +33,7 @@ Returns a report with time bucketed analytics data
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_mean_time_report" method="get" path="/v1/reports/mean_time" -->
 ```go
 package main
 
@@ -87,6 +88,7 @@ Returns a report with task and follow up creation and completion data
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_ticket_funnel_metrics" method="get" path="/v1/metrics/ticket_funnel" -->
 ```go
 package main
 
@@ -141,6 +143,7 @@ Returns a report with retrospective analytics data
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_retrospective_metrics" method="get" path="/v1/metrics/retrospectives" -->
 ```go
 package main
 
@@ -195,6 +198,7 @@ Returns a report with time bucketed milestone data
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_milestone_funnel_metrics" method="get" path="/v1/metrics/milestone_funnel" -->
 ```go
 package main
 
@@ -249,6 +253,7 @@ Returns a report with time bucketed analytics data
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_user_involvement_metrics" method="get" path="/v1/metrics/user_involvements" -->
 ```go
 package main
 
@@ -303,6 +308,7 @@ Returns a report with time bucketed analytics data
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_incident_metrics" method="get" path="/v1/metrics/incidents" -->
 ```go
 package main
 
@@ -357,6 +363,7 @@ Fetch infrastructure metrics based on custom query
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_mttx_metrics" method="get" path="/v1/metrics/mttx" -->
 ```go
 package main
 
@@ -415,6 +422,7 @@ Returns metrics for all components of a given type
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_infrastructure_type_metrics" method="get" path="/v1/metrics/{infra_type}" -->
 ```go
 package main
 
@@ -471,6 +479,7 @@ Return metrics for a specific component
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_infrastructure_metrics" method="get" path="/v1/metrics/{infra_type}/{infra_id}" -->
 ```go
 package main
 
@@ -528,6 +537,7 @@ Retrieve a specific save search
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_saved_search" method="get" path="/v1/saved_searches/{resource_type}/{saved_search_id}" -->
 ```go
 package main
 
@@ -583,6 +593,7 @@ Delete a specific saved search
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_saved_search" method="delete" path="/v1/saved_searches/{resource_type}/{saved_search_id}" -->
 ```go
 package main
 
@@ -638,6 +649,7 @@ Update a specific saved search
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_saved_search" method="patch" path="/v1/saved_searches/{resource_type}/{saved_search_id}" -->
 ```go
 package main
 
@@ -694,6 +706,7 @@ Lists saved searches
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_saved_searches" method="get" path="/v1/saved_searches/{resource_type}" -->
 ```go
 package main
 
@@ -750,6 +763,7 @@ Create a new saved search for a particular resource type
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_saved_search" method="post" path="/v1/saved_searches/{resource_type}" -->
 ```go
 package main
 
@@ -810,6 +824,7 @@ Generate a timeseries-based report of metrics for Signals alerts
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_signals_timeseries_analytics" method="get" path="/v1/signals/analytics/timeseries" -->
 ```go
 package main
 
@@ -864,6 +879,7 @@ Generate a report of grouped metrics for Signals alerts
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_signals_grouped_metrics" method="get" path="/v1/signals/analytics/grouped_metrics" -->
 ```go
 package main
 
@@ -918,6 +934,7 @@ Get mean-time-to-acknowledged (MTTA) and mean-time-to-resolved (MTTR) metrics fo
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_signals_mttx_analytics" method="get" path="/v1/signals/analytics/mttx" -->
 ```go
 package main
 
@@ -972,6 +989,7 @@ Get noise metrics for Signals alerts
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_signals_noise_analytics" method="get" path="/v1/signals/analytics/noise/metrics" -->
 ```go
 package main
 
@@ -1026,6 +1044,7 @@ Export on-call hours report for users/teams during a time period
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="export_signals_shift_analytics" method="get" path="/v1/signals/analytics/shifts/export" -->
 ```go
 package main
 

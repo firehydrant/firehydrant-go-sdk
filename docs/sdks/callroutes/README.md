@@ -20,6 +20,7 @@ List call routes for a team
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_team_call_routes" method="get" path="/v1/teams/{team_id}/call_routes" -->
 ```go
 package main
 
@@ -73,6 +74,7 @@ Create a call route for a team
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_team_call_route" method="post" path="/v1/teams/{team_id}/call_routes" -->
 ```go
 package main
 
@@ -131,6 +133,7 @@ List call routes for the organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_call_routes" method="get" path="/v1/signals/call_routes" -->
 ```go
 package main
 
@@ -185,6 +188,7 @@ Retrieve a call route by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_call_route" method="get" path="/v1/signals/call_routes/{id}" -->
 ```go
 package main
 
@@ -238,6 +242,7 @@ Delete a call route by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_call_route" method="delete" path="/v1/signals/call_routes/{id}" -->
 ```go
 package main
 
@@ -291,6 +296,7 @@ Update a call route by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_call_route" method="patch" path="/v1/signals/call_routes/{id}" -->
 ```go
 package main
 

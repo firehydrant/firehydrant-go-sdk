@@ -44,6 +44,7 @@ List all of the environments that have been added to the organiation
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_environments" method="get" path="/v1/environments" -->
 ```go
 package main
 
@@ -100,6 +101,7 @@ Creates an environment for the organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_environment" method="post" path="/v1/environments" -->
 ```go
 package main
 
@@ -155,6 +157,7 @@ Retrieves a single environment by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_environment" method="get" path="/v1/environments/{environment_id}" -->
 ```go
 package main
 
@@ -208,6 +211,7 @@ Archive an environment
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_environment" method="delete" path="/v1/environments/{environment_id}" -->
 ```go
 package main
 
@@ -261,6 +265,7 @@ Update a environments attributes
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_environment" method="patch" path="/v1/environments/{environment_id}" -->
 ```go
 package main
 
@@ -317,6 +322,7 @@ List all of the services that have been added to the organization.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_services" method="get" path="/v1/services" -->
 ```go
 package main
 
@@ -371,6 +377,7 @@ Creates a service for the organization, you may also create or attach functional
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_service" method="post" path="/v1/services" -->
 ```go
 package main
 
@@ -427,6 +434,7 @@ Creates a service with the appropriate integration for each external service ID 
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_service_links" method="post" path="/v1/services/service_links" -->
 ```go
 package main
 
@@ -484,6 +492,7 @@ Retrieves a single service by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_service" method="get" path="/v1/services/{service_id}" -->
 ```go
 package main
 
@@ -537,6 +546,7 @@ Deletes the service from FireHydrant.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_service" method="delete" path="/v1/services/{service_id}" -->
 ```go
 package main
 
@@ -592,6 +602,7 @@ Note: You may not remove or add individual label key/value pairs. You must inclu
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_service" method="patch" path="/v1/services/{service_id}" -->
 ```go
 package main
 
@@ -646,6 +657,7 @@ Retrieves a service's dependencies
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_service_dependencies" method="get" path="/v1/services/{service_id}/dependencies" -->
 ```go
 package main
 
@@ -700,6 +712,7 @@ Retrieves all services that are available to be upstream dependencies
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_service_available_upstream_dependencies" method="get" path="/v1/services/{service_id}/available_upstream_dependencies" -->
 ```go
 package main
 
@@ -753,6 +766,7 @@ Retrieves all services that are available to be downstream dependencies
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_service_available_downstream_dependencies" method="get" path="/v1/services/{service_id}/available_downstream_dependencies" -->
 ```go
 package main
 
@@ -806,6 +820,7 @@ Deletes a service link from FireHydrant.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_service_link" method="delete" path="/v1/services/{service_id}/service_links/{remote_id}" -->
 ```go
 package main
 
@@ -857,6 +872,7 @@ Creates a response for a checklist item
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_service_checklist_response" method="post" path="/v1/services/{service_id}/checklist_response/{checklist_id}" -->
 ```go
 package main
 
@@ -912,6 +928,7 @@ Creates a service dependency relationship between two services
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_service_dependency" method="post" path="/v1/service_dependencies" -->
 ```go
 package main
 
@@ -968,6 +985,7 @@ Retrieves a single service dependency by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_service_dependency" method="get" path="/v1/service_dependencies/{service_dependency_id}" -->
 ```go
 package main
 
@@ -1021,6 +1039,7 @@ Deletes a single service dependency
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_service_dependency" method="delete" path="/v1/service_dependencies/{service_dependency_id}" -->
 ```go
 package main
 
@@ -1074,6 +1093,7 @@ Update the notes of the service dependency
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_service_dependency" method="patch" path="/v1/service_dependencies/{service_dependency_id}" -->
 ```go
 package main
 
@@ -1128,6 +1148,7 @@ List all of the functionalities that have been added to the organiation
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_functionalities" method="get" path="/v1/functionalities" -->
 ```go
 package main
 
@@ -1182,6 +1203,7 @@ Creates a functionality for the organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_functionality" method="post" path="/v1/functionalities" -->
 ```go
 package main
 
@@ -1237,6 +1259,7 @@ Retrieves a single functionality by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_functionality" method="get" path="/v1/functionalities/{functionality_id}" -->
 ```go
 package main
 
@@ -1290,6 +1313,7 @@ Archive a functionality
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_functionality" method="delete" path="/v1/functionalities/{functionality_id}" -->
 ```go
 package main
 
@@ -1343,6 +1367,7 @@ Update a functionalities attributes
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_functionality" method="patch" path="/v1/functionalities/{functionality_id}" -->
 ```go
 package main
 
@@ -1397,6 +1422,7 @@ List services for a functionality
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_functionality_services" method="get" path="/v1/functionalities/{functionality_id}/services" -->
 ```go
 package main
 
@@ -1450,6 +1476,7 @@ Retrieves a list of services owned by the teams a user is on
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_user_owned_services" method="get" path="/v1/users/{id}/services" -->
 ```go
 package main
 
@@ -1505,6 +1532,7 @@ Lists functionality, service and environment objects
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_infrastructures" method="get" path="/v1/infrastructures" -->
 ```go
 package main
 
@@ -1559,6 +1587,7 @@ Schedules an async task to re-import catalog info and update catalog data accord
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="refresh_catalog" method="get" path="/v1/catalogs/{catalog_id}/refresh" -->
 ```go
 package main
 
@@ -1609,6 +1638,7 @@ Accepts catalog data in the configured format and asyncronously processes the da
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="ingest_catalog_data" method="post" path="/v1/catalogs/{catalog_id}/ingest" -->
 ```go
 package main
 

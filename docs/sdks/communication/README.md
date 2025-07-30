@@ -19,6 +19,7 @@ List all status update templates for your organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_status_update_templates" method="get" path="/v1/status_update_templates" -->
 ```go
 package main
 
@@ -73,6 +74,7 @@ Create a status update template for your organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_status_update_template" method="post" path="/v1/status_update_templates" -->
 ```go
 package main
 
@@ -129,6 +131,7 @@ Get a single status update template by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_status_update_template" method="get" path="/v1/status_update_templates/{status_update_template_id}" -->
 ```go
 package main
 
@@ -182,6 +185,7 @@ Delete a single status update template
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_status_update_template" method="delete" path="/v1/status_update_templates/{status_update_template_id}" -->
 ```go
 package main
 
@@ -235,6 +239,7 @@ Update a single status update template
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_status_update_template" method="patch" path="/v1/status_update_templates/{status_update_template_id}" -->
 ```go
 package main
 

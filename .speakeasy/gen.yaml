@@ -21,7 +21,7 @@ generation:
     generateNewTests: false
     skipResponseBodyAssertions: false
 go:
-  version: 1.1.5
+  version: 1.2.0
   additionalDependencies: {}
   allowUnknownFieldsInWeakUnions: false
   baseErrorName: FireHydrantError
@@ -39,7 +39,9 @@ go:
   inputModelSuffix: input
   maxMethodParams: 4
   methodArguments: require-security-and-request
+  modulePath: ""
   outputModelSuffix: output
   packageName: github.com/firehydrant/firehydrant-go-sdk
   responseFormat: flat
+  sdkPackageName: ""
   templateVersion: v2
