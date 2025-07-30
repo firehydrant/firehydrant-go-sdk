@@ -22,6 +22,7 @@ List alerts that have been attached to an incident
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_incident_alerts" method="get" path="/v1/incidents/{incident_id}/alerts" -->
 ```go
 package main
 
@@ -75,6 +76,7 @@ Add an alert to an incident. FireHydrant needs to have ingested the alert from a
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_incident_alert" method="post" path="/v1/incidents/{incident_id}/alerts" -->
 ```go
 package main
 
@@ -128,6 +130,7 @@ Setting an alert as primary will overwrite milestone times in the FireHydrant in
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_incident_alert_primary" method="patch" path="/v1/incidents/{incident_id}/alerts/{incident_alert_id}/primary" -->
 ```go
 package main
 
@@ -185,6 +188,7 @@ Remove an alert from an incident
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_incident_alert" method="delete" path="/v1/incidents/{incident_id}/alerts/{incident_alert_id}" -->
 ```go
 package main
 
@@ -236,6 +240,7 @@ Retrieve all alerts from third parties
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_alerts" method="get" path="/v1/alerts" -->
 ```go
 package main
 
@@ -290,6 +295,7 @@ Retrieve a single alert
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_alert" method="get" path="/v1/alerts/{alert_id}" -->
 ```go
 package main
 
@@ -343,6 +349,7 @@ Processing Log Entries for a specific alert
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_processing_log_entries" method="get" path="/v1/processing_log_entries" -->
 ```go
 package main
 
@@ -397,6 +404,7 @@ Update a Signal alert
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_signals_alert" method="patch" path="/v1/signals/alerts/{id}" -->
 ```go
 package main
 

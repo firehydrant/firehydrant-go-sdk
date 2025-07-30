@@ -20,6 +20,7 @@ Simple endpoint to verify your API connection is working
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="ping" method="get" path="/v1/ping" -->
 ```go
 package main
 
@@ -72,6 +73,7 @@ List the organization's entitlements
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_entitlements" method="get" path="/v1/entitlements" -->
 ```go
 package main
 
@@ -126,6 +128,7 @@ Simple endpoint to verify your API connection is working
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="ping_noauth" method="get" path="/v1/noauth/ping" -->
 ```go
 package main
 
@@ -178,6 +181,7 @@ Get initial application configuration
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_bootstrap" method="get" path="/v1/bootstrap" -->
 ```go
 package main
 
@@ -230,6 +234,7 @@ Retrieves the current AI preferences
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_ai_preferences" method="get" path="/v1/ai/preferences" -->
 ```go
 package main
 
@@ -282,6 +287,7 @@ Updates the AI preferences
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_ai_preferences" method="patch" path="/v1/ai/preferences" -->
 ```go
 package main
 

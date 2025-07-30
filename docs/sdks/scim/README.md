@@ -25,6 +25,7 @@ SCIM endpoint that lists a Team (Colloquial for Group in the SCIM protocol)
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_scim_group" method="get" path="/v1/scim/v2/Groups/{id}" -->
 ```go
 package main
 
@@ -75,6 +76,7 @@ SCIM endpoint to update a Team (Colloquial for Group in the SCIM protocol). Any 
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_scim_group" method="put" path="/v1/scim/v2/Groups/{id}" -->
 ```go
 package main
 
@@ -133,6 +135,7 @@ SCIM endpoint to delete a Team (Colloquial for Group in the SCIM protocol).
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_scim_group" method="delete" path="/v1/scim/v2/Groups/{id}" -->
 ```go
 package main
 
@@ -183,6 +186,7 @@ SCIM endpoint that lists all Teams (Colloquial for Group in the SCIM protocol)
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_scim_groups" method="get" path="/v1/scim/v2/Groups" -->
 ```go
 package main
 
@@ -235,6 +239,7 @@ SCIM endpoint to create a new Team (Colloquial for Group in the SCIM protocol). 
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_scim_group" method="post" path="/v1/scim/v2/Groups" -->
 ```go
 package main
 
@@ -292,6 +297,7 @@ SCIM endpoint that lists a User
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_scim_user" method="get" path="/v1/scim/v2/Users/{id}" -->
 ```go
 package main
 
@@ -342,6 +348,7 @@ PUT SCIM endpoint to update a User. This endpoint is used to replace a resource'
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_scim_user" method="put" path="/v1/scim/v2/Users/{id}" -->
 ```go
 package main
 
@@ -393,6 +400,7 @@ SCIM endpoint to delete a User. This endpoint will deactivate a confirmed User r
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_scim_user" method="delete" path="/v1/scim/v2/Users/{id}" -->
 ```go
 package main
 
@@ -443,6 +451,7 @@ PATCH SCIM endpoint to update a User. This endpoint is used to update a resource
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="patch_scim_user" method="patch" path="/v1/scim/v2/Users/{id}" -->
 ```go
 package main
 
@@ -496,6 +505,7 @@ SCIM endpoint that lists users. This endpoint will display a list of Users curre
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_scim_users" method="get" path="/v1/scim/v2/Users" -->
 ```go
 package main
 
@@ -548,6 +558,7 @@ SCIM endpoint to create and provision a new User. This endpoint will provision t
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_scim_user" method="post" path="/v1/scim/v2/Users" -->
 ```go
 package main
 

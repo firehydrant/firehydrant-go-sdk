@@ -25,6 +25,7 @@ List all audiences
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_audiences" method="get" path="/v1/audiences" -->
 ```go
 package main
 
@@ -78,6 +79,7 @@ Create a new audience
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_audience" method="post" path="/v1/audiences" -->
 ```go
 package main
 
@@ -141,6 +143,7 @@ Get audience details
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_audience" method="get" path="/v1/audiences/{audience_id}" -->
 ```go
 package main
 
@@ -194,6 +197,7 @@ Archive an audience
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="archive_audience" method="delete" path="/v1/audiences/{audience_id}" -->
 ```go
 package main
 
@@ -247,6 +251,7 @@ Update an existing audience
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_audience" method="patch" path="/v1/audiences/{audience_id}" -->
 ```go
 package main
 
@@ -301,6 +306,7 @@ Restore a previously archived audience
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="restore_audience" method="patch" path="/v1/audiences/{audience_id}/restore" -->
 ```go
 package main
 
@@ -354,6 +360,7 @@ Get member's default audience
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_member_default_audience" method="get" path="/v1/audiences/member/{member_id}/default" -->
 ```go
 package main
 
@@ -407,6 +414,7 @@ Set member's default audience
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="set_member_default_audience" method="put" path="/v1/audiences/member/{member_id}/default" -->
 ```go
 package main
 
@@ -464,6 +472,7 @@ Get the latest audience-specific summary for an incident
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_audience_summary" method="get" path="/v1/audiences/{audience_id}/summaries/{incident_id}" -->
 ```go
 package main
 
@@ -518,6 +527,7 @@ Generate a new audience-specific summary for an incident
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="generate_audience_summary" method="post" path="/v1/audiences/{audience_id}/summaries/{incident_id}" -->
 ```go
 package main
 
@@ -573,6 +583,7 @@ List all audience summaries for an incident
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_audience_summaries" method="get" path="/v1/audiences/summaries/{incident_id}" -->
 ```go
 package main
 

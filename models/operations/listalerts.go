@@ -58,7 +58,7 @@ type ListAlertsRequest struct {
 	Tags *string `queryParam:"style=form,explode=true,name=tags"`
 	// The strategy to match tags. `any` will return alerts that have at least one of the supplied tags, `match_all` will return only alerts that have all of the supplied tags, and `exclude` will only return alerts that have none of the supplied tags. This currently only works for Signals alerts.
 	TagMatchStrategy *ListAlertsTagMatchStrategy `queryParam:"style=form,explode=true,name=tag_match_strategy"`
-	// A comma separated list of statuses to filter by. Valid statuses are: opened, acknowledged, resolved, ignored, expired, or linked
+	// A comma separated list of statuses to filter by. Valid statuses are: opened, acknowledged, resolved, ignored, expired, linked, or snoozed
 	Statuses *string `queryParam:"style=form,explode=true,name=statuses"`
 }
 

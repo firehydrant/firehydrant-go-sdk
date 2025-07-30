@@ -28,6 +28,7 @@ List changes for the organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_changes" method="get" path="/v1/changes" -->
 ```go
 package main
 
@@ -80,6 +81,7 @@ Create a new change entry
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_change" method="post" path="/v1/changes" -->
 ```go
 package main
 
@@ -134,6 +136,7 @@ Archive a change entry
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_change" method="delete" path="/v1/changes/{change_id}" -->
 ```go
 package main
 
@@ -184,6 +187,7 @@ Update a change entry
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_change" method="patch" path="/v1/changes/{change_id}" -->
 ```go
 package main
 
@@ -238,6 +242,7 @@ Retrieve all identities for the change entry
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_change_identities" method="get" path="/v1/changes/{change_id}/identities" -->
 ```go
 package main
 
@@ -293,6 +298,7 @@ Create an identity for the change entry
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_change_identity" method="post" path="/v1/changes/{change_id}/identities" -->
 ```go
 package main
 
@@ -351,6 +357,7 @@ Delete an identity from the change entry
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_change_identity" method="delete" path="/v1/changes/{change_id}/identities/{identity_id}" -->
 ```go
 package main
 
@@ -403,6 +410,7 @@ Update an identity for the change entry
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_change_identity" method="patch" path="/v1/changes/{change_id}/identities/{identity_id}" -->
 ```go
 package main
 
@@ -462,6 +470,7 @@ List change events for the organization. Note: Not all information is included o
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_change_events" method="get" path="/v1/changes/events" -->
 ```go
 package main
 
@@ -516,6 +525,7 @@ Create a change event
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_change_event" method="post" path="/v1/changes/events" -->
 ```go
 package main
 
@@ -571,6 +581,7 @@ Retrieve a change event
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_change_event" method="get" path="/v1/changes/events/{change_event_id}" -->
 ```go
 package main
 
@@ -624,6 +635,7 @@ Delete a change event
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_change_event" method="delete" path="/v1/changes/events/{change_event_id}" -->
 ```go
 package main
 
@@ -674,6 +686,7 @@ Update a change event
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_change_event" method="patch" path="/v1/changes/events/{change_event_id}" -->
 ```go
 package main
 
@@ -728,6 +741,7 @@ List change types for the organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_change_types" method="get" path="/v1/change_types" -->
 ```go
 package main
 

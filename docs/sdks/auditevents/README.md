@@ -16,6 +16,7 @@ List audit events
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_audit_events" method="get" path="/v1/audit_events" -->
 ```go
 package main
 
@@ -68,6 +69,7 @@ Get a single audit event
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_audit_event" method="get" path="/v1/audit_events/{id}" -->
 ```go
 package main
 

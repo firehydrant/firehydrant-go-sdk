@@ -29,6 +29,7 @@ List all runbook actions available through your connected integrations
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_runbook_actions" method="get" path="/v1/runbooks/actions" -->
 ```go
 package main
 
@@ -85,6 +86,7 @@ List all runbook executions across all runbooks
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_runbook_executions" method="get" path="/v1/runbooks/executions" -->
 ```go
 package main
 
@@ -139,6 +141,7 @@ Attaches a runbook to an incident and executes it
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_runbook_execution" method="post" path="/v1/runbooks/executions" -->
 ```go
 package main
 
@@ -195,6 +198,7 @@ Retrieve a runbook execution by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_runbook_execution" method="get" path="/v1/runbooks/executions/{execution_id}" -->
 ```go
 package main
 
@@ -248,6 +252,7 @@ Terminates a runbook execution, preventing any further steps from being executed
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_runbook_execution" method="delete" path="/v1/runbooks/executions/{execution_id}" -->
 ```go
 package main
 
@@ -299,6 +304,7 @@ Updates a runbook step execution, especially for changing the state of a step ex
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_runbook_execution_step" method="put" path="/v1/runbooks/executions/{execution_id}/steps/{step_id}" -->
 ```go
 package main
 
@@ -356,6 +362,7 @@ Retrieves the bash script from a "script" step.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_runbook_execution_step_script" method="get" path="/v1/runbooks/executions/{execution_id}/steps/{step_id}/script" -->
 ```go
 package main
 
@@ -410,6 +417,7 @@ Updates the execution's step.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_runbook_execution_step_script" method="put" path="/v1/runbooks/executions/{execution_id}/steps/{step_id}/script/{state}" -->
 ```go
 package main
 
@@ -465,6 +473,7 @@ List select options for a runbook integration action field
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_runbook_action_field_options" method="get" path="/v1/runbooks/select_options/{integration_slug}/{action_slug}/{field}" -->
 ```go
 package main
 
@@ -520,6 +529,7 @@ Lists all available runbooks.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_runbooks" method="get" path="/v1/runbooks" -->
 ```go
 package main
 
@@ -574,6 +584,7 @@ Create a new runbook for use with incidents.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_runbook" method="post" path="/v1/runbooks" -->
 ```go
 package main
 
@@ -630,6 +641,7 @@ Get a runbook and all its configuration
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_runbook" method="get" path="/v1/runbooks/{runbook_id}" -->
 ```go
 package main
 
@@ -685,6 +697,7 @@ about a runbook, including but not limited to the steps, environments, attachmen
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_runbook" method="put" path="/v1/runbooks/{runbook_id}" -->
 ```go
 package main
 
@@ -739,6 +752,7 @@ Delete a runbook and make it unavailable for any future incidents.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_runbook" method="delete" path="/v1/runbooks/{runbook_id}" -->
 ```go
 package main
 
@@ -792,6 +806,7 @@ Please contact support to enable audit logging for your account.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_runbook_audits" method="get" path="/v1/runbook_audits" -->
 ```go
 package main
 

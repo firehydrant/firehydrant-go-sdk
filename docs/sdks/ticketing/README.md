@@ -44,6 +44,7 @@ List all of the tickets that have been added to the organiation
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_tickets" method="get" path="/v1/ticketing/tickets" -->
 ```go
 package main
 
@@ -98,6 +99,7 @@ Creates a ticket for a project
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_ticket" method="post" path="/v1/ticketing/tickets" -->
 ```go
 package main
 
@@ -153,6 +155,7 @@ Retrieves a single ticket by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_ticket" method="get" path="/v1/ticketing/tickets/{ticket_id}" -->
 ```go
 package main
 
@@ -206,6 +209,7 @@ Archive a ticket
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_ticket" method="delete" path="/v1/ticketing/tickets/{ticket_id}" -->
 ```go
 package main
 
@@ -256,6 +260,7 @@ Update a ticket's attributes
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_ticket" method="patch" path="/v1/ticketing/tickets/{ticket_id}" -->
 ```go
 package main
 
@@ -310,6 +315,7 @@ List all ticketing projects available to the organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_ticketing_projects" method="get" path="/v1/ticketing/projects" -->
 ```go
 package main
 
@@ -364,6 +370,7 @@ Retrieve a single ticketing project by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_ticketing_project" method="get" path="/v1/ticketing/projects/{ticketing_project_id}" -->
 ```go
 package main
 
@@ -417,6 +424,7 @@ List all configuration options for a ticketing project
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_configuration_options" method="get" path="/v1/ticketing/projects/{ticketing_project_id}/configuration_options" -->
 ```go
 package main
 
@@ -467,6 +475,7 @@ List a field's configuration options for a ticketing project
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_options_for_field" method="get" path="/v1/ticketing/projects/{ticketing_project_id}/configuration_options/options_for/{field_id}" -->
 ```go
 package main
 
@@ -518,6 +527,7 @@ Returns metadata for the fields that are available for field mapping.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_available_ticketing_field_maps" method="get" path="/v1/ticketing/projects/{ticketing_project_id}/field_maps/available_fields" -->
 ```go
 package main
 
@@ -571,6 +581,7 @@ Creates field map for a ticketing project
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_ticketing_field_map" method="post" path="/v1/ticketing/projects/{ticketing_project_id}/field_maps" -->
 ```go
 package main
 
@@ -624,6 +635,7 @@ Retrieve field map for a ticketing project
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_ticketing_field_map" method="get" path="/v1/ticketing/projects/{ticketing_project_id}/field_maps/{map_id}" -->
 ```go
 package main
 
@@ -678,6 +690,7 @@ Archive field map for a ticketing project
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_ticketing_field_map" method="delete" path="/v1/ticketing/projects/{ticketing_project_id}/field_maps/{map_id}" -->
 ```go
 package main
 
@@ -729,6 +742,7 @@ Update field map for a ticketing project
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_ticketing_field_map" method="patch" path="/v1/ticketing/projects/{ticketing_project_id}/field_maps/{map_id}" -->
 ```go
 package main
 
@@ -783,6 +797,7 @@ Returns metadata for the fields that are available for inbound field mapping.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_available_inbound_field_maps" method="get" path="/v1/ticketing/projects/{ticketing_project_id}/inbound_field_maps/available_fields" -->
 ```go
 package main
 
@@ -836,6 +851,7 @@ List all inbound field maps for a ticketing project
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_inbound_field_maps" method="get" path="/v1/ticketing/projects/{ticketing_project_id}/inbound_field_maps" -->
 ```go
 package main
 
@@ -892,6 +908,7 @@ Creates inbound field map for a ticketing project
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_inbound_field_map" method="post" path="/v1/ticketing/projects/{ticketing_project_id}/inbound_field_maps" -->
 ```go
 package main
 
@@ -945,6 +962,7 @@ Retrieve inbound field map for a ticketing project
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_inbound_field_map" method="get" path="/v1/ticketing/projects/{ticketing_project_id}/inbound_field_maps/{map_id}" -->
 ```go
 package main
 
@@ -999,6 +1017,7 @@ Update inbound field map for a ticketing project
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_inbound_field_map" method="put" path="/v1/ticketing/projects/{ticketing_project_id}/inbound_field_maps/{map_id}" -->
 ```go
 package main
 
@@ -1053,6 +1072,7 @@ Archive inbound field map for a ticketing project
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_inbound_field_map" method="delete" path="/v1/ticketing/projects/{ticketing_project_id}/inbound_field_maps/{map_id}" -->
 ```go
 package main
 
@@ -1104,6 +1124,7 @@ Creates configuration for a ticketing project
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_ticketing_project_config" method="post" path="/v1/ticketing/projects/{ticketing_project_id}/provider_project_configurations" -->
 ```go
 package main
 
@@ -1157,6 +1178,7 @@ Retrieve configuration for a ticketing project
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_ticketing_project_config" method="get" path="/v1/ticketing/projects/{ticketing_project_id}/provider_project_configurations/{config_id}" -->
 ```go
 package main
 
@@ -1211,6 +1233,7 @@ Archive configuration for a ticketing project
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_ticketing_project_config" method="delete" path="/v1/ticketing/projects/{ticketing_project_id}/provider_project_configurations/{config_id}" -->
 ```go
 package main
 
@@ -1265,6 +1288,7 @@ Update configuration for a ticketing project
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_ticketing_project_config" method="patch" path="/v1/ticketing/projects/{ticketing_project_id}/provider_project_configurations/{config_id}" -->
 ```go
 package main
 
@@ -1319,6 +1343,7 @@ List all ticketing priorities available to the organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_ticketing_priorities" method="get" path="/v1/ticketing/priorities" -->
 ```go
 package main
 
@@ -1371,6 +1396,7 @@ Create a single ticketing priority
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="create_ticketing_priority" method="post" path="/v1/ticketing/priorities" -->
 ```go
 package main
 
@@ -1426,6 +1452,7 @@ Retrieve a single ticketing priority by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="get_ticketing_priority" method="get" path="/v1/ticketing/priorities/{id}" -->
 ```go
 package main
 
@@ -1479,6 +1506,7 @@ Delete a single ticketing priority by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="delete_ticketing_priority" method="delete" path="/v1/ticketing/priorities/{id}" -->
 ```go
 package main
 
@@ -1532,6 +1560,7 @@ Update a single ticketing priority's attributes
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="update_ticketing_priority" method="patch" path="/v1/ticketing/priorities/{id}" -->
 ```go
 package main
 
@@ -1586,6 +1615,7 @@ List all of the ticket tags in the organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="list_ticket_tags" method="get" path="/v1/ticketing/ticket_tags" -->
 ```go
 package main
 
