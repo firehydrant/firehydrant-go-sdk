@@ -3,9 +3,10 @@
 package components
 
 type NullableSignalsAPICallRouteStepEntity struct {
-	Target   *NullableSignalsAPITargetEntity `json:"target,omitempty"`
-	Position *int                            `json:"position,omitempty"`
-	Timeout  *string                         `json:"timeout,omitempty"`
+	Target         *NullableSignalsAPITargetEntity `json:"target,omitempty"`
+	Position       *int                            `json:"position,omitempty"`
+	Timeout        *string                         `json:"timeout,omitempty"`
+	OnCallRotation *NullableSuccinctEntity         `json:"on_call_rotation,omitempty"`
 }
 
 func (o *NullableSignalsAPICallRouteStepEntity) GetTarget() *NullableSignalsAPITargetEntity {
@@ -27,4 +28,11 @@ func (o *NullableSignalsAPICallRouteStepEntity) GetTimeout() *string {
 		return nil
 	}
 	return o.Timeout
+}
+
+func (o *NullableSignalsAPICallRouteStepEntity) GetOnCallRotation() *NullableSuccinctEntity {
+	if o == nil {
+		return nil
+	}
+	return o.OnCallRotation
 }

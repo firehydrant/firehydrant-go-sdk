@@ -7,6 +7,367 @@ import (
 	"fmt"
 )
 
+type CreateTeamOnCallScheduleRotationMember struct {
+	// The ID of a user who should be added to the rotation. You can add a user to the rotation
+	// multiple times to construct more complex rotations, and you can specify a `null` user ID to create
+	// unassigned slots in the rotation.
+	//
+	UserID *string `json:"user_id,omitempty"`
+}
+
+func (o *CreateTeamOnCallScheduleRotationMember) GetUserID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.UserID
+}
+
+// CreateTeamOnCallScheduleRotationType - The type of strategy. Must be one of "daily", "weekly", or "custom".
+type CreateTeamOnCallScheduleRotationType string
+
+const (
+	CreateTeamOnCallScheduleRotationTypeDaily  CreateTeamOnCallScheduleRotationType = "daily"
+	CreateTeamOnCallScheduleRotationTypeWeekly CreateTeamOnCallScheduleRotationType = "weekly"
+	CreateTeamOnCallScheduleRotationTypeCustom CreateTeamOnCallScheduleRotationType = "custom"
+)
+
+func (e CreateTeamOnCallScheduleRotationType) ToPointer() *CreateTeamOnCallScheduleRotationType {
+	return &e
+}
+func (e *CreateTeamOnCallScheduleRotationType) UnmarshalJSON(data []byte) error {
+	var v string
+	if err := json.Unmarshal(data, &v); err != nil {
+		return err
+	}
+	switch v {
+	case "daily":
+		fallthrough
+	case "weekly":
+		fallthrough
+	case "custom":
+		*e = CreateTeamOnCallScheduleRotationType(v)
+		return nil
+	default:
+		return fmt.Errorf("invalid value for CreateTeamOnCallScheduleRotationType: %v", v)
+	}
+}
+
+// CreateTeamOnCallScheduleRotationHandoffDay - The day of the week on which on-call shifts should hand off, as its long-form name (e.g. "monday", "tuesday", etc). This value is only used if the strategy type is "weekly".
+type CreateTeamOnCallScheduleRotationHandoffDay string
+
+const (
+	CreateTeamOnCallScheduleRotationHandoffDayMonday    CreateTeamOnCallScheduleRotationHandoffDay = "monday"
+	CreateTeamOnCallScheduleRotationHandoffDayTuesday   CreateTeamOnCallScheduleRotationHandoffDay = "tuesday"
+	CreateTeamOnCallScheduleRotationHandoffDayWednesday CreateTeamOnCallScheduleRotationHandoffDay = "wednesday"
+	CreateTeamOnCallScheduleRotationHandoffDayThursday  CreateTeamOnCallScheduleRotationHandoffDay = "thursday"
+	CreateTeamOnCallScheduleRotationHandoffDayFriday    CreateTeamOnCallScheduleRotationHandoffDay = "friday"
+	CreateTeamOnCallScheduleRotationHandoffDaySaturday  CreateTeamOnCallScheduleRotationHandoffDay = "saturday"
+	CreateTeamOnCallScheduleRotationHandoffDaySunday    CreateTeamOnCallScheduleRotationHandoffDay = "sunday"
+)
+
+func (e CreateTeamOnCallScheduleRotationHandoffDay) ToPointer() *CreateTeamOnCallScheduleRotationHandoffDay {
+	return &e
+}
+func (e *CreateTeamOnCallScheduleRotationHandoffDay) UnmarshalJSON(data []byte) error {
+	var v string
+	if err := json.Unmarshal(data, &v); err != nil {
+		return err
+	}
+	switch v {
+	case "monday":
+		fallthrough
+	case "tuesday":
+		fallthrough
+	case "wednesday":
+		fallthrough
+	case "thursday":
+		fallthrough
+	case "friday":
+		fallthrough
+	case "saturday":
+		fallthrough
+	case "sunday":
+		*e = CreateTeamOnCallScheduleRotationHandoffDay(v)
+		return nil
+	default:
+		return fmt.Errorf("invalid value for CreateTeamOnCallScheduleRotationHandoffDay: %v", v)
+	}
+}
+
+// CreateTeamOnCallScheduleRotationStrategy - An object that specifies how the rotation's on-call shifts should be generated.
+type CreateTeamOnCallScheduleRotationStrategy struct {
+	// The type of strategy. Must be one of "daily", "weekly", or "custom".
+	Type CreateTeamOnCallScheduleRotationType `json:"type"`
+	// An ISO8601 time string specifying when on-call shifts should hand off. This value is only used if the strategy type is "daily" or "weekly".
+	HandoffTime *string `json:"handoff_time,omitempty"`
+	// The day of the week on which on-call shifts should hand off, as its long-form name (e.g. "monday", "tuesday", etc). This value is only used if the strategy type is "weekly".
+	HandoffDay *CreateTeamOnCallScheduleRotationHandoffDay `json:"handoff_day,omitempty"`
+	// An ISO8601 duration string specifying how long each shift should last. This value is only used if the strategy type is "custom".
+	ShiftDuration *string `json:"shift_duration,omitempty"`
+}
+
+func (o *CreateTeamOnCallScheduleRotationStrategy) GetType() CreateTeamOnCallScheduleRotationType {
+	if o == nil {
+		return CreateTeamOnCallScheduleRotationType("")
+	}
+	return o.Type
+}
+
+func (o *CreateTeamOnCallScheduleRotationStrategy) GetHandoffTime() *string {
+	if o == nil {
+		return nil
+	}
+	return o.HandoffTime
+}
+
+func (o *CreateTeamOnCallScheduleRotationStrategy) GetHandoffDay() *CreateTeamOnCallScheduleRotationHandoffDay {
+	if o == nil {
+		return nil
+	}
+	return o.HandoffDay
+}
+
+func (o *CreateTeamOnCallScheduleRotationStrategy) GetShiftDuration() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ShiftDuration
+}
+
+// CreateTeamOnCallScheduleRotationStartDay - The day of the week on which the restriction should start, as its long-form name (e.g. "monday", "tuesday", etc).
+type CreateTeamOnCallScheduleRotationStartDay string
+
+const (
+	CreateTeamOnCallScheduleRotationStartDayMonday    CreateTeamOnCallScheduleRotationStartDay = "monday"
+	CreateTeamOnCallScheduleRotationStartDayTuesday   CreateTeamOnCallScheduleRotationStartDay = "tuesday"
+	CreateTeamOnCallScheduleRotationStartDayWednesday CreateTeamOnCallScheduleRotationStartDay = "wednesday"
+	CreateTeamOnCallScheduleRotationStartDayThursday  CreateTeamOnCallScheduleRotationStartDay = "thursday"
+	CreateTeamOnCallScheduleRotationStartDayFriday    CreateTeamOnCallScheduleRotationStartDay = "friday"
+	CreateTeamOnCallScheduleRotationStartDaySaturday  CreateTeamOnCallScheduleRotationStartDay = "saturday"
+	CreateTeamOnCallScheduleRotationStartDaySunday    CreateTeamOnCallScheduleRotationStartDay = "sunday"
+)
+
+func (e CreateTeamOnCallScheduleRotationStartDay) ToPointer() *CreateTeamOnCallScheduleRotationStartDay {
+	return &e
+}
+func (e *CreateTeamOnCallScheduleRotationStartDay) UnmarshalJSON(data []byte) error {
+	var v string
+	if err := json.Unmarshal(data, &v); err != nil {
+		return err
+	}
+	switch v {
+	case "monday":
+		fallthrough
+	case "tuesday":
+		fallthrough
+	case "wednesday":
+		fallthrough
+	case "thursday":
+		fallthrough
+	case "friday":
+		fallthrough
+	case "saturday":
+		fallthrough
+	case "sunday":
+		*e = CreateTeamOnCallScheduleRotationStartDay(v)
+		return nil
+	default:
+		return fmt.Errorf("invalid value for CreateTeamOnCallScheduleRotationStartDay: %v", v)
+	}
+}
+
+// CreateTeamOnCallScheduleRotationEndDay - The day of the week on which the restriction should end, as its long-form name (e.g. "monday", "tuesday", etc).
+type CreateTeamOnCallScheduleRotationEndDay string
+
+const (
+	CreateTeamOnCallScheduleRotationEndDayMonday    CreateTeamOnCallScheduleRotationEndDay = "monday"
+	CreateTeamOnCallScheduleRotationEndDayTuesday   CreateTeamOnCallScheduleRotationEndDay = "tuesday"
+	CreateTeamOnCallScheduleRotationEndDayWednesday CreateTeamOnCallScheduleRotationEndDay = "wednesday"
+	CreateTeamOnCallScheduleRotationEndDayThursday  CreateTeamOnCallScheduleRotationEndDay = "thursday"
+	CreateTeamOnCallScheduleRotationEndDayFriday    CreateTeamOnCallScheduleRotationEndDay = "friday"
+	CreateTeamOnCallScheduleRotationEndDaySaturday  CreateTeamOnCallScheduleRotationEndDay = "saturday"
+	CreateTeamOnCallScheduleRotationEndDaySunday    CreateTeamOnCallScheduleRotationEndDay = "sunday"
+)
+
+func (e CreateTeamOnCallScheduleRotationEndDay) ToPointer() *CreateTeamOnCallScheduleRotationEndDay {
+	return &e
+}
+func (e *CreateTeamOnCallScheduleRotationEndDay) UnmarshalJSON(data []byte) error {
+	var v string
+	if err := json.Unmarshal(data, &v); err != nil {
+		return err
+	}
+	switch v {
+	case "monday":
+		fallthrough
+	case "tuesday":
+		fallthrough
+	case "wednesday":
+		fallthrough
+	case "thursday":
+		fallthrough
+	case "friday":
+		fallthrough
+	case "saturday":
+		fallthrough
+	case "sunday":
+		*e = CreateTeamOnCallScheduleRotationEndDay(v)
+		return nil
+	default:
+		return fmt.Errorf("invalid value for CreateTeamOnCallScheduleRotationEndDay: %v", v)
+	}
+}
+
+type CreateTeamOnCallScheduleRotationRestriction struct {
+	// The day of the week on which the restriction should start, as its long-form name (e.g. "monday", "tuesday", etc).
+	StartDay CreateTeamOnCallScheduleRotationStartDay `json:"start_day"`
+	// An ISO8601 time string specifying when the restriction should start.
+	StartTime string `json:"start_time"`
+	// The day of the week on which the restriction should end, as its long-form name (e.g. "monday", "tuesday", etc).
+	EndDay CreateTeamOnCallScheduleRotationEndDay `json:"end_day"`
+	// An ISO8601 time string specifying when the restriction should end.
+	EndTime string `json:"end_time"`
+}
+
+func (o *CreateTeamOnCallScheduleRotationRestriction) GetStartDay() CreateTeamOnCallScheduleRotationStartDay {
+	if o == nil {
+		return CreateTeamOnCallScheduleRotationStartDay("")
+	}
+	return o.StartDay
+}
+
+func (o *CreateTeamOnCallScheduleRotationRestriction) GetStartTime() string {
+	if o == nil {
+		return ""
+	}
+	return o.StartTime
+}
+
+func (o *CreateTeamOnCallScheduleRotationRestriction) GetEndDay() CreateTeamOnCallScheduleRotationEndDay {
+	if o == nil {
+		return CreateTeamOnCallScheduleRotationEndDay("")
+	}
+	return o.EndDay
+}
+
+func (o *CreateTeamOnCallScheduleRotationRestriction) GetEndTime() string {
+	if o == nil {
+		return ""
+	}
+	return o.EndTime
+}
+
+type CreateTeamOnCallScheduleRotation struct {
+	// The name of the on-call rotation
+	Name string `json:"name"`
+	// A detailed description of the on-call schedule.
+	Description *string `json:"description,omitempty"`
+	// The timezone of the on-call rotation as a string
+	TimeZone string `json:"time_zone"`
+	// The Slack Usergroup ID for the on-call rotation
+	SlackUserGroupID *string `json:"slack_user_group_id,omitempty"`
+	// Notify the team's Slack channel when handoffs occur
+	EnableSlackChannelNotifications *bool `json:"enable_slack_channel_notifications,omitempty"`
+	// Prevent shifts from being deleted by users and leading to gaps in coverage.
+	PreventShiftDeletion *bool `json:"prevent_shift_deletion,omitempty"`
+	// An ISO8601 duration string specifying that the team should be notified about gaps in coverage for the upcoming interval. Notifications are sent at 9am daily in the rotation's time zone via email and, if enabled, the team's Slack channel.
+	CoverageGapNotificationInterval *string `json:"coverage_gap_notification_interval,omitempty"`
+	// A hex color code that will be used to represent the rotation in FireHydrant's UI.
+	Color *string `json:"color,omitempty"`
+	// An ordered list of objects that specify members of the schedule's rotation.
+	Members []CreateTeamOnCallScheduleRotationMember `json:"members,omitempty"`
+	// An object that specifies how the rotation's on-call shifts should be generated.
+	Strategy CreateTeamOnCallScheduleRotationStrategy `json:"strategy"`
+	// A list of objects that restrict the rotation to specific on-call periods.
+	Restrictions []CreateTeamOnCallScheduleRotationRestriction `json:"restrictions,omitempty"`
+	// An ISO8601 time string specifying when the initial rotation should start. This value is only used if the rotation's strategy type is "custom".
+	StartTime *string `json:"start_time,omitempty"`
+}
+
+func (o *CreateTeamOnCallScheduleRotation) GetName() string {
+	if o == nil {
+		return ""
+	}
+	return o.Name
+}
+
+func (o *CreateTeamOnCallScheduleRotation) GetDescription() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Description
+}
+
+func (o *CreateTeamOnCallScheduleRotation) GetTimeZone() string {
+	if o == nil {
+		return ""
+	}
+	return o.TimeZone
+}
+
+func (o *CreateTeamOnCallScheduleRotation) GetSlackUserGroupID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.SlackUserGroupID
+}
+
+func (o *CreateTeamOnCallScheduleRotation) GetEnableSlackChannelNotifications() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.EnableSlackChannelNotifications
+}
+
+func (o *CreateTeamOnCallScheduleRotation) GetPreventShiftDeletion() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.PreventShiftDeletion
+}
+
+func (o *CreateTeamOnCallScheduleRotation) GetCoverageGapNotificationInterval() *string {
+	if o == nil {
+		return nil
+	}
+	return o.CoverageGapNotificationInterval
+}
+
+func (o *CreateTeamOnCallScheduleRotation) GetColor() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Color
+}
+
+func (o *CreateTeamOnCallScheduleRotation) GetMembers() []CreateTeamOnCallScheduleRotationMember {
+	if o == nil {
+		return nil
+	}
+	return o.Members
+}
+
+func (o *CreateTeamOnCallScheduleRotation) GetStrategy() CreateTeamOnCallScheduleRotationStrategy {
+	if o == nil {
+		return CreateTeamOnCallScheduleRotationStrategy{}
+	}
+	return o.Strategy
+}
+
+func (o *CreateTeamOnCallScheduleRotation) GetRestrictions() []CreateTeamOnCallScheduleRotationRestriction {
+	if o == nil {
+		return nil
+	}
+	return o.Restrictions
+}
+
+func (o *CreateTeamOnCallScheduleRotation) GetStartTime() *string {
+	if o == nil {
+		return nil
+	}
+	return o.StartTime
+}
+
 type CreateTeamOnCallScheduleMember struct {
 	// The ID of a user who should be added to the schedule's initial rotation. You can add a user to the
 	// schedule multiple times to construct more complex rotations, and you can specify a `null` user ID
@@ -263,6 +624,8 @@ type CreateTeamOnCallSchedule struct {
 	Name string `json:"name"`
 	// A detailed description of the on-call schedule.
 	Description *string `json:"description,omitempty"`
+	// An array of objects that specify rotations for the schedule. If not provided, the deprecated single-rotation parameters can be used instead, with `time_zone` and `strategy` being required.
+	Rotations []CreateTeamOnCallScheduleRotation `json:"rotations,omitempty"`
 	// An optional name for the initial rotation. If not provided, the schedule's name will be used.
 	RotationName *string `json:"rotation_name,omitempty"`
 	// An optional description for the initial rotation. If not provided, the schedule's description will be used.
@@ -297,6 +660,13 @@ func (o *CreateTeamOnCallSchedule) GetDescription() *string {
 		return nil
 	}
 	return o.Description
+}
+
+func (o *CreateTeamOnCallSchedule) GetRotations() []CreateTeamOnCallScheduleRotation {
+	if o == nil {
+		return nil
+	}
+	return o.Rotations
 }
 
 func (o *CreateTeamOnCallSchedule) GetRotationName() *string {

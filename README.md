@@ -590,11 +590,19 @@ func main() {
 * [GetTeamEscalationPolicy](docs/sdks/signals/README.md#getteamescalationpolicy) - Get an escalation policy for a team
 * [DeleteTeamEscalationPolicy](docs/sdks/signals/README.md#deleteteamescalationpolicy) - Delete an escalation policy for a team
 * [UpdateTeamEscalationPolicy](docs/sdks/signals/README.md#updateteamescalationpolicy) - Update an escalation policy for a team
+* [PreviewTeamOnCallSchedule](docs/sdks/signals/README.md#previewteamoncallschedule) - Preview a new on-call schedule for a team
 * [ListTeamOnCallSchedules](docs/sdks/signals/README.md#listteamoncallschedules) - List on-call schedules for a team
 * [CreateTeamOnCallSchedule](docs/sdks/signals/README.md#createteamoncallschedule) - Create an on-call schedule for a team
 * [GetTeamOnCallSchedule](docs/sdks/signals/README.md#getteamoncallschedule) - Get an on-call schedule for a team
 * [DeleteTeamOnCallSchedule](docs/sdks/signals/README.md#deleteteamoncallschedule) - Delete an on-call schedule for a team
 * [UpdateTeamOnCallSchedule](docs/sdks/signals/README.md#updateteamoncallschedule) - Update an on-call schedule for a team
+* [PreviewOnCallScheduleRotation](docs/sdks/signals/README.md#previewoncallschedulerotation) - Preview an on-call rotation
+* [CreateOnCallScheduleRotation](docs/sdks/signals/README.md#createoncallschedulerotation) - Create a new on-call rotation
+* [CopyOnCallScheduleRotation](docs/sdks/signals/README.md#copyoncallschedulerotation) - Copy an on-call schedule's rotation
+* [GetOnCallScheduleRotation](docs/sdks/signals/README.md#getoncallschedulerotation) - Get an on-call rotation
+* [DeleteOnCallScheduleRotation](docs/sdks/signals/README.md#deleteoncallschedulerotation) - Delete an on-call schedule's rotation
+* [UpdateOnCallScheduleRotation](docs/sdks/signals/README.md#updateoncallschedulerotation) - Update an on-call schedule's rotation
+* [OverrideOnCallScheduleRotationShifts](docs/sdks/signals/README.md#overrideoncallschedulerotationshifts) - Override one or more shifts in an on-call rotation
 * [CreateOnCallShift](docs/sdks/signals/README.md#createoncallshift) - Create a shift for an on-call schedule
 * [GetOnCallShift](docs/sdks/signals/README.md#getoncallshift) - Get an on-call shift for a team schedule
 * [DeleteOnCallShift](docs/sdks/signals/README.md#deleteoncallshift) - Delete an on-call shift from a team schedule
