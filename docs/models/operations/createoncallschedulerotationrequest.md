@@ -1,0 +1,10 @@
+# CreateOnCallScheduleRotationRequest
+
+
+## Fields
+
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `TeamID`                                                                                           | *string*                                                                                           | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `ScheduleID`                                                                                       | *string*                                                                                           | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `CreateOnCallScheduleRotation`                                                                     | [components.CreateOnCallScheduleRotation](../../models/components/createoncallschedulerotation.md) | :heavy_check_mark:                                                                                 | N/A                                                                                                |

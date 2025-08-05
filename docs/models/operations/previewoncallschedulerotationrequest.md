@@ -1,0 +1,10 @@
+# PreviewOnCallScheduleRotationRequest
+
+
+## Fields
+
+| Field                                                                                                | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `TeamID`                                                                                             | *string*                                                                                             | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
+| `ScheduleID`                                                                                         | *string*                                                                                             | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
+| `PreviewOnCallScheduleRotation`                                                                      | [components.PreviewOnCallScheduleRotation](../../models/components/previewoncallschedulerotation.md) | :heavy_check_mark:                                                                                   | N/A                                                                                                  |

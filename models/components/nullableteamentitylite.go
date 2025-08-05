@@ -8,15 +8,16 @@ import (
 )
 
 type NullableTeamEntityLite struct {
-	ID             *string               `json:"id,omitempty"`
-	Name           *string               `json:"name,omitempty"`
-	Description    *string               `json:"description,omitempty"`
-	Slug           *string               `json:"slug,omitempty"`
-	CreatedAt      *time.Time            `json:"created_at,omitempty"`
-	UpdatedAt      *time.Time            `json:"updated_at,omitempty"`
-	SignalsIcalURL *string               `json:"signals_ical_url,omitempty"`
-	CreatedBy      *NullableAuthorEntity `json:"created_by,omitempty"`
-	InSupportHours *bool                 `json:"in_support_hours,omitempty"`
+	ID                                *string               `json:"id,omitempty"`
+	Name                              *string               `json:"name,omitempty"`
+	Description                       *string               `json:"description,omitempty"`
+	Slug                              *string               `json:"slug,omitempty"`
+	CreatedAt                         *time.Time            `json:"created_at,omitempty"`
+	UpdatedAt                         *time.Time            `json:"updated_at,omitempty"`
+	SignalsIcalURL                    *string               `json:"signals_ical_url,omitempty"`
+	CreatedBy                         *NullableAuthorEntity `json:"created_by,omitempty"`
+	InSupportHours                    *bool                 `json:"in_support_hours,omitempty"`
+	RestrictSignalsResourceManagement *bool                 `json:"restrict_signals_resource_management,omitempty"`
 }
 
 func (n NullableTeamEntityLite) MarshalJSON() ([]byte, error) {
@@ -91,4 +92,11 @@ func (o *NullableTeamEntityLite) GetInSupportHours() *bool {
 		return nil
 	}
 	return o.InSupportHours
+}
+
+func (o *NullableTeamEntityLite) GetRestrictSignalsResourceManagement() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.RestrictSignalsResourceManagement
 }

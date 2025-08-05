@@ -12,11 +12,19 @@ Operations related to Signals
 * [GetTeamEscalationPolicy](#getteamescalationpolicy) - Get an escalation policy for a team
 * [DeleteTeamEscalationPolicy](#deleteteamescalationpolicy) - Delete an escalation policy for a team
 * [UpdateTeamEscalationPolicy](#updateteamescalationpolicy) - Update an escalation policy for a team
+* [PreviewTeamOnCallSchedule](#previewteamoncallschedule) - Preview a new on-call schedule for a team
 * [ListTeamOnCallSchedules](#listteamoncallschedules) - List on-call schedules for a team
 * [CreateTeamOnCallSchedule](#createteamoncallschedule) - Create an on-call schedule for a team
 * [GetTeamOnCallSchedule](#getteamoncallschedule) - Get an on-call schedule for a team
 * [DeleteTeamOnCallSchedule](#deleteteamoncallschedule) - Delete an on-call schedule for a team
 * [UpdateTeamOnCallSchedule](#updateteamoncallschedule) - Update an on-call schedule for a team
+* [PreviewOnCallScheduleRotation](#previewoncallschedulerotation) - Preview an on-call rotation
+* [CreateOnCallScheduleRotation](#createoncallschedulerotation) - Create a new on-call rotation
+* [CopyOnCallScheduleRotation](#copyoncallschedulerotation) - Copy an on-call schedule's rotation
+* [GetOnCallScheduleRotation](#getoncallschedulerotation) - Get an on-call rotation
+* [DeleteOnCallScheduleRotation](#deleteoncallschedulerotation) - Delete an on-call schedule's rotation
+* [UpdateOnCallScheduleRotation](#updateoncallschedulerotation) - Update an on-call schedule's rotation
+* [OverrideOnCallScheduleRotationShifts](#overrideoncallschedulerotationshifts) - Override one or more shifts in an on-call rotation
 * [CreateOnCallShift](#createoncallshift) - Create a shift for an on-call schedule
 * [GetOnCallShift](#getoncallshift) - Get an on-call shift for a team schedule
 * [DeleteOnCallShift](#deleteoncallshift) - Delete an on-call shift from a team schedule
@@ -334,6 +342,72 @@ func main() {
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
+## PreviewTeamOnCallSchedule
+
+Preview a new on-call schedule based on the provided rotations, allowing you to see how the schedule will look before saving it.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="preview_team_on_call_schedule" method="post" path="/v1/teams/{team_id}/on_call_schedules/preview" -->
+```go
+package main
+
+import(
+	"context"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Signals.PreviewTeamOnCallSchedule(ctx, "<id>", components.PreviewTeamOnCallSchedule{
+        Name: "<value>",
+        Rotations: []components.PreviewTeamOnCallScheduleRotation{
+            components.PreviewTeamOnCallScheduleRotation{
+                Name: "<value>",
+                TimeZone: "Europe/Prague",
+                Strategy: components.PreviewTeamOnCallScheduleStrategy{
+                    Type: components.PreviewTeamOnCallScheduleTypeCustom,
+                },
+            },
+        },
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                        | :heavy_check_mark:                                                                           | The context to use for the request.                                                          |
+| `teamID`                                                                                     | *string*                                                                                     | :heavy_check_mark:                                                                           | N/A                                                                                          |
+| `previewTeamOnCallSchedule`                                                                  | [components.PreviewTeamOnCallSchedule](../../models/components/previewteamoncallschedule.md) | :heavy_check_mark:                                                                           | N/A                                                                                          |
+| `opts`                                                                                       | [][operations.Option](../../models/operations/option.md)                                     | :heavy_minus_sign:                                                                           | The options for this request.                                                                |
+
+### Response
+
+**[*components.SignalsAPIOnCallSchedulePreviewEntity](../../models/components/signalsapioncallschedulepreviewentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
 ## ListTeamOnCallSchedules
 
 List all Signals on-call schedules for a team.
@@ -609,6 +683,397 @@ func main() {
 ### Response
 
 **[*components.SignalsAPIOnCallScheduleEntity](../../models/components/signalsapioncallscheduleentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## PreviewOnCallScheduleRotation
+
+Preview a new on-call rotation orchanges to an existing on-call rotation
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="preview_on_call_schedule_rotation" method="post" path="/v1/teams/{team_id}/on_call_schedules/{schedule_id}/rotations/preview" -->
+```go
+package main
+
+import(
+	"context"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Signals.PreviewOnCallScheduleRotation(ctx, "<id>", "<id>", components.PreviewOnCallScheduleRotation{})
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                                | :heavy_check_mark:                                                                                   | The context to use for the request.                                                                  |
+| `teamID`                                                                                             | *string*                                                                                             | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
+| `scheduleID`                                                                                         | *string*                                                                                             | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
+| `previewOnCallScheduleRotation`                                                                      | [components.PreviewOnCallScheduleRotation](../../models/components/previewoncallschedulerotation.md) | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
+| `opts`                                                                                               | [][operations.Option](../../models/operations/option.md)                                             | :heavy_minus_sign:                                                                                   | The options for this request.                                                                        |
+
+### Response
+
+**[*components.SignalsAPIOnCallSchedulePreviewEntityRotationPreviewEntity](../../models/components/signalsapioncallschedulepreviewentityrotationpreviewentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## CreateOnCallScheduleRotation
+
+Add a new rotation to an existing on-call schedule
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="create_on_call_schedule_rotation" method="post" path="/v1/teams/{team_id}/on_call_schedules/{schedule_id}/rotations" -->
+```go
+package main
+
+import(
+	"context"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    err := s.Signals.CreateOnCallScheduleRotation(ctx, "<id>", "<id>", components.CreateOnCallScheduleRotation{
+        Name: "<value>",
+        TimeZone: "Antarctica/DumontDUrville",
+        Strategy: components.CreateOnCallScheduleRotationStrategy{
+            Type: components.CreateOnCallScheduleRotationTypeWeekly,
+        },
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                              | :heavy_check_mark:                                                                                 | The context to use for the request.                                                                |
+| `teamID`                                                                                           | *string*                                                                                           | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `scheduleID`                                                                                       | *string*                                                                                           | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `createOnCallScheduleRotation`                                                                     | [components.CreateOnCallScheduleRotation](../../models/components/createoncallschedulerotation.md) | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `opts`                                                                                             | [][operations.Option](../../models/operations/option.md)                                           | :heavy_minus_sign:                                                                                 | The options for this request.                                                                      |
+
+### Response
+
+**error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## CopyOnCallScheduleRotation
+
+Copy an on-call rotation into a different schedule, allowing you to merge them together safely.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="copy_on_call_schedule_rotation" method="post" path="/v1/teams/{team_id}/on_call_schedules/{schedule_id}/rotations/{rotation_id}/copy" -->
+```go
+package main
+
+import(
+	"context"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    err := s.Signals.CopyOnCallScheduleRotation(ctx, "<id>", "<id>", "<id>", components.CopyOnCallScheduleRotation{
+        TargetScheduleID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                          | :heavy_check_mark:                                                                             | The context to use for the request.                                                            |
+| `rotationID`                                                                                   | *string*                                                                                       | :heavy_check_mark:                                                                             | N/A                                                                                            |
+| `teamID`                                                                                       | *string*                                                                                       | :heavy_check_mark:                                                                             | N/A                                                                                            |
+| `scheduleID`                                                                                   | *string*                                                                                       | :heavy_check_mark:                                                                             | N/A                                                                                            |
+| `copyOnCallScheduleRotation`                                                                   | [components.CopyOnCallScheduleRotation](../../models/components/copyoncallschedulerotation.md) | :heavy_check_mark:                                                                             | N/A                                                                                            |
+| `opts`                                                                                         | [][operations.Option](../../models/operations/option.md)                                       | :heavy_minus_sign:                                                                             | The options for this request.                                                                  |
+
+### Response
+
+**error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## GetOnCallScheduleRotation
+
+Get an on-call rotation by ID
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="get_on_call_schedule_rotation" method="get" path="/v1/teams/{team_id}/on_call_schedules/{schedule_id}/rotations/{rotation_id}" -->
+```go
+package main
+
+import(
+	"context"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    err := s.Signals.GetOnCallScheduleRotation(ctx, "<id>", "<id>", "<id>")
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `rotationID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `teamID`                                                 | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `scheduleID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## DeleteOnCallScheduleRotation
+
+Delete an on-call schedule's rotation by ID
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="delete_on_call_schedule_rotation" method="delete" path="/v1/teams/{team_id}/on_call_schedules/{schedule_id}/rotations/{rotation_id}" -->
+```go
+package main
+
+import(
+	"context"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    err := s.Signals.DeleteOnCallScheduleRotation(ctx, "<id>", "<id>", "<id>")
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `rotationID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `teamID`                                                 | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `scheduleID`                                             | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## UpdateOnCallScheduleRotation
+
+Update an on-call schedule's rotation by ID
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="update_on_call_schedule_rotation" method="patch" path="/v1/teams/{team_id}/on_call_schedules/{schedule_id}/rotations/{rotation_id}" -->
+```go
+package main
+
+import(
+	"context"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    err := s.Signals.UpdateOnCallScheduleRotation(ctx, "<id>", "<id>", "<id>", components.UpdateOnCallScheduleRotation{})
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                              | :heavy_check_mark:                                                                                 | The context to use for the request.                                                                |
+| `rotationID`                                                                                       | *string*                                                                                           | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `teamID`                                                                                           | *string*                                                                                           | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `scheduleID`                                                                                       | *string*                                                                                           | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `updateOnCallScheduleRotation`                                                                     | [components.UpdateOnCallScheduleRotation](../../models/components/updateoncallschedulerotation.md) | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `opts`                                                                                             | [][operations.Option](../../models/operations/option.md)                                           | :heavy_minus_sign:                                                                                 | The options for this request.                                                                      |
+
+### Response
+
+**error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## OverrideOnCallScheduleRotationShifts
+
+Create an override covering a specific time period in an on-call rotation, re-assigning that period to a specific user.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="override_on_call_schedule_rotation_shifts" method="post" path="/v1/teams/{team_id}/on_call_schedules/{schedule_id}/rotations/{rotation_id}/overrides" -->
+```go
+package main
+
+import(
+	"context"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Signals.OverrideOnCallScheduleRotationShifts(ctx, "<id>", "<id>", "<id>", components.OverrideOnCallScheduleRotationShifts{
+        StartTime: "<value>",
+        EndTime: "<value>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                                              | :heavy_check_mark:                                                                                                 | The context to use for the request.                                                                                |
+| `rotationID`                                                                                                       | *string*                                                                                                           | :heavy_check_mark:                                                                                                 | N/A                                                                                                                |
+| `teamID`                                                                                                           | *string*                                                                                                           | :heavy_check_mark:                                                                                                 | N/A                                                                                                                |
+| `scheduleID`                                                                                                       | *string*                                                                                                           | :heavy_check_mark:                                                                                                 | N/A                                                                                                                |
+| `overrideOnCallScheduleRotationShifts`                                                                             | [components.OverrideOnCallScheduleRotationShifts](../../models/components/overrideoncallschedulerotationshifts.md) | :heavy_check_mark:                                                                                                 | N/A                                                                                                                |
+| `opts`                                                                                                             | [][operations.Option](../../models/operations/option.md)                                                           | :heavy_minus_sign:                                                                                                 | The options for this request.                                                                                      |
+
+### Response
+
+**[*components.SignalsAPIOnCallShiftEntity](../../models/components/signalsapioncallshiftentity.md), error**
 
 ### Errors
 
