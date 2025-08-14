@@ -206,12 +206,9 @@ func main() {
         }),
     )
 
-    res, err := s.Teams.DeleteTeam(ctx, "<id>")
+    err := s.Teams.DeleteTeam(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -226,7 +223,7 @@ func main() {
 
 ### Response
 
-**[*components.TeamEntity](../../models/components/teamentity.md), error**
+**error**
 
 ### Errors
 

@@ -585,12 +585,9 @@ func main() {
         }),
     )
 
-    res, err := s.Retrospectives.DeleteIncidentRetrospectiveDynamicInput(ctx, "<id>", "<id>", "<id>", "<id>")
+    err := s.Retrospectives.DeleteIncidentRetrospectiveDynamicInput(ctx, "<id>", "<id>", "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -608,7 +605,7 @@ func main() {
 
 ### Response
 
-**[*components.IncidentsRetrospectiveFieldEntity](../../models/components/incidentsretrospectivefieldentity.md), error**
+**error**
 
 ### Errors
 
@@ -1034,12 +1031,9 @@ func main() {
         }),
     )
 
-    res, err := s.Retrospectives.DeletePostMortemReason(ctx, "<id>", "<id>")
+    err := s.Retrospectives.DeletePostMortemReason(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -1055,7 +1049,7 @@ func main() {
 
 ### Response
 
-**[*components.PostMortemsReasonEntity](../../models/components/postmortemsreasonentity.md), error**
+**error**
 
 ### Errors
 
@@ -1657,12 +1651,9 @@ func main() {
         }),
     )
 
-    res, err := s.Retrospectives.DeleteRetrospectiveTemplate(ctx, "<id>")
+    err := s.Retrospectives.DeleteRetrospectiveTemplate(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -1677,7 +1668,7 @@ func main() {
 
 ### Response
 
-**[*components.RetrospectivesTemplateEntity](../../models/components/retrospectivestemplateentity.md), error**
+**error**
 
 ### Errors
 

@@ -1253,12 +1253,9 @@ func main() {
         }),
     )
 
-    res, err := s.Ticketing.DeleteTicketingProjectConfig(ctx, "<id>", "<id>")
+    err := s.Ticketing.DeleteTicketingProjectConfig(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -1274,7 +1271,7 @@ func main() {
 
 ### Response
 
-**[*components.TicketingProjectConfigEntity](../../models/components/ticketingprojectconfigentity.md), error**
+**error**
 
 ### Errors
 
@@ -1526,12 +1523,9 @@ func main() {
         }),
     )
 
-    res, err := s.Ticketing.DeleteTicketingPriority(ctx, "<id>")
+    err := s.Ticketing.DeleteTicketingPriority(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -1546,7 +1540,7 @@ func main() {
 
 ### Response
 
-**[*components.TicketingPriorityEntity](../../models/components/ticketingpriorityentity.md), error**
+**error**
 
 ### Errors
 

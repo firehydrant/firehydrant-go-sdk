@@ -205,12 +205,9 @@ func main() {
         }),
     )
 
-    res, err := s.Communication.DeleteStatusUpdateTemplate(ctx, "<id>")
+    err := s.Communication.DeleteStatusUpdateTemplate(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -225,7 +222,7 @@ func main() {
 
 ### Response
 
-**[*components.StatusUpdateTemplateEntity](../../models/components/statusupdatetemplateentity.md), error**
+**error**
 
 ### Errors
 

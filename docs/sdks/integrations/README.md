@@ -1696,12 +1696,9 @@ func main() {
         }),
     )
 
-    res, err := s.Integrations.DeleteStatuspageConnection(ctx, "<id>")
+    err := s.Integrations.DeleteStatuspageConnection(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -1716,7 +1713,7 @@ func main() {
 
 ### Response
 
-**[*components.IntegrationsStatuspageConnectionEntity](../../models/components/integrationsstatuspageconnectionentity.md), error**
+**error**
 
 ### Errors
 

@@ -2498,7 +2498,7 @@ func (s *Signals) PreviewOnCallScheduleRotation(ctx context.Context, teamID stri
 
 // CreateOnCallScheduleRotation - Create a new on-call rotation
 // Add a new rotation to an existing on-call schedule
-func (s *Signals) CreateOnCallScheduleRotation(ctx context.Context, teamID string, scheduleID string, createOnCallScheduleRotation components.CreateOnCallScheduleRotation, opts ...operations.Option) error {
+func (s *Signals) CreateOnCallScheduleRotation(ctx context.Context, teamID string, scheduleID string, createOnCallScheduleRotation components.CreateOnCallScheduleRotation, opts ...operations.Option) (*components.SignalsAPIOnCallRotationEntity, error) {
 	request := operations.CreateOnCallScheduleRotationRequest{
 		TeamID:                       teamID,
 		ScheduleID:                   scheduleID,
@@ -2513,7 +2513,7 @@ func (s *Signals) CreateOnCallScheduleRotation(ctx context.Context, teamID strin
 
 	for _, opt := range opts {
 		if err := opt(&o, supportedOptions...); err != nil {
-			return fmt.Errorf("error applying option: %w", err)
+			return nil, fmt.Errorf("error applying option: %w", err)
 		}
 	}
 
@@ -2525,7 +2525,7 @@ func (s *Signals) CreateOnCallScheduleRotation(ctx context.Context, teamID strin
 	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/v1/teams/{team_id}/on_call_schedules/{schedule_id}/rotations", request, nil)
 	if err != nil {
-		return fmt.Errorf("error generating URL: %w", err)
+		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
 	hookCtx := hooks.HookContext{
@@ -2539,7 +2539,7 @@ func (s *Signals) CreateOnCallScheduleRotation(ctx context.Context, teamID strin
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreateOnCallScheduleRotation", "json", `request:"mediaType=application/json"`)
 	if err != nil {
-		return err
+		return nil, err
 	}
 
 	timeout := o.Timeout
@@ -2555,16 +2555,16 @@ func (s *Signals) CreateOnCallScheduleRotation(ctx context.Context, teamID strin
 
 	req, err := http.NewRequestWithContext(ctx, "POST", opURL, bodyReader)
 	if err != nil {
-		return fmt.Errorf("error creating request: %w", err)
+		return nil, fmt.Errorf("error creating request: %w", err)
 	}
-	req.Header.Set("Accept", "*/*")
+	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
-		return err
+		return nil, err
 	}
 
 	for k, v := range o.SetHeaders {
@@ -2624,17 +2624,17 @@ func (s *Signals) CreateOnCallScheduleRotation(ctx context.Context, teamID strin
 		})
 
 		if err != nil {
-			return err
+			return nil, err
 		} else {
 			httpRes, err = s.hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 			if err != nil {
-				return err
+				return nil, err
 			}
 		}
 	} else {
 		req, err = s.hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 		if err != nil {
-			return err
+			return nil, err
 		}
 
 		httpRes, err = s.sdkConfiguration.Client.Do(req)
@@ -2646,50 +2646,71 @@ func (s *Signals) CreateOnCallScheduleRotation(ctx context.Context, teamID strin
 			}
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
-			return err
+			return nil, err
 		} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
-				return err
+				return nil, err
 			} else if _httpRes != nil {
 				httpRes = _httpRes
 			}
 		} else {
 			httpRes, err = s.hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 			if err != nil {
-				return err
+				return nil, err
 			}
 		}
 	}
 
 	switch {
 	case httpRes.StatusCode == 201:
+		switch {
+		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
+			rawBody, err := utils.ConsumeRawBody(httpRes)
+			if err != nil {
+				return nil, err
+			}
+
+			var out components.SignalsAPIOnCallRotationEntity
+			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
+				return nil, err
+			}
+
+			return &out, nil
+		default:
+			rawBody, err := utils.ConsumeRawBody(httpRes)
+			if err != nil {
+				return nil, err
+			}
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
+		}
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return err
+			return nil, err
 		}
-		return sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return err
+			return nil, err
 		}
-		return sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	default:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return err
+			return nil, err
 		}
-		return sdkerrors.NewSDKError("unknown status code returned", httpRes.StatusCode, string(rawBody), httpRes)
+		return nil, sdkerrors.NewSDKError("unknown status code returned", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
-	return nil
+	return nil, nil
+
 }
 
 // CopyOnCallScheduleRotation - Copy an on-call schedule's rotation
 // Copy an on-call rotation into a different schedule, allowing you to merge them together safely.
-func (s *Signals) CopyOnCallScheduleRotation(ctx context.Context, rotationID string, teamID string, scheduleID string, copyOnCallScheduleRotation components.CopyOnCallScheduleRotation, opts ...operations.Option) error {
+func (s *Signals) CopyOnCallScheduleRotation(ctx context.Context, rotationID string, teamID string, scheduleID string, copyOnCallScheduleRotation components.CopyOnCallScheduleRotation, opts ...operations.Option) (*components.SignalsAPIOnCallRotationEntity, error) {
 	request := operations.CopyOnCallScheduleRotationRequest{
 		RotationID:                 rotationID,
 		TeamID:                     teamID,
@@ -2705,7 +2726,7 @@ func (s *Signals) CopyOnCallScheduleRotation(ctx context.Context, rotationID str
 
 	for _, opt := range opts {
 		if err := opt(&o, supportedOptions...); err != nil {
-			return fmt.Errorf("error applying option: %w", err)
+			return nil, fmt.Errorf("error applying option: %w", err)
 		}
 	}
 
@@ -2717,7 +2738,7 @@ func (s *Signals) CopyOnCallScheduleRotation(ctx context.Context, rotationID str
 	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/v1/teams/{team_id}/on_call_schedules/{schedule_id}/rotations/{rotation_id}/copy", request, nil)
 	if err != nil {
-		return fmt.Errorf("error generating URL: %w", err)
+		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
 	hookCtx := hooks.HookContext{
@@ -2731,7 +2752,7 @@ func (s *Signals) CopyOnCallScheduleRotation(ctx context.Context, rotationID str
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CopyOnCallScheduleRotation", "json", `request:"mediaType=application/json"`)
 	if err != nil {
-		return err
+		return nil, err
 	}
 
 	timeout := o.Timeout
@@ -2747,16 +2768,16 @@ func (s *Signals) CopyOnCallScheduleRotation(ctx context.Context, rotationID str
 
 	req, err := http.NewRequestWithContext(ctx, "POST", opURL, bodyReader)
 	if err != nil {
-		return fmt.Errorf("error creating request: %w", err)
+		return nil, fmt.Errorf("error creating request: %w", err)
 	}
-	req.Header.Set("Accept", "*/*")
+	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
-		return err
+		return nil, err
 	}
 
 	for k, v := range o.SetHeaders {
@@ -2816,17 +2837,17 @@ func (s *Signals) CopyOnCallScheduleRotation(ctx context.Context, rotationID str
 		})
 
 		if err != nil {
-			return err
+			return nil, err
 		} else {
 			httpRes, err = s.hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 			if err != nil {
-				return err
+				return nil, err
 			}
 		}
 	} else {
 		req, err = s.hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 		if err != nil {
-			return err
+			return nil, err
 		}
 
 		httpRes, err = s.sdkConfiguration.Client.Do(req)
@@ -2838,50 +2859,71 @@ func (s *Signals) CopyOnCallScheduleRotation(ctx context.Context, rotationID str
 			}
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
-			return err
+			return nil, err
 		} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
-				return err
+				return nil, err
 			} else if _httpRes != nil {
 				httpRes = _httpRes
 			}
 		} else {
 			httpRes, err = s.hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 			if err != nil {
-				return err
+				return nil, err
 			}
 		}
 	}
 
 	switch {
 	case httpRes.StatusCode == 201:
+		switch {
+		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
+			rawBody, err := utils.ConsumeRawBody(httpRes)
+			if err != nil {
+				return nil, err
+			}
+
+			var out components.SignalsAPIOnCallRotationEntity
+			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
+				return nil, err
+			}
+
+			return &out, nil
+		default:
+			rawBody, err := utils.ConsumeRawBody(httpRes)
+			if err != nil {
+				return nil, err
+			}
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
+		}
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return err
+			return nil, err
 		}
-		return sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return err
+			return nil, err
 		}
-		return sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	default:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return err
+			return nil, err
 		}
-		return sdkerrors.NewSDKError("unknown status code returned", httpRes.StatusCode, string(rawBody), httpRes)
+		return nil, sdkerrors.NewSDKError("unknown status code returned", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
-	return nil
+	return nil, nil
+
 }
 
 // GetOnCallScheduleRotation - Get an on-call rotation
 // Get an on-call rotation by ID
-func (s *Signals) GetOnCallScheduleRotation(ctx context.Context, rotationID string, teamID string, scheduleID string, opts ...operations.Option) error {
+func (s *Signals) GetOnCallScheduleRotation(ctx context.Context, rotationID string, teamID string, scheduleID string, opts ...operations.Option) (*components.SignalsAPIOnCallRotationEntity, error) {
 	request := operations.GetOnCallScheduleRotationRequest{
 		RotationID: rotationID,
 		TeamID:     teamID,
@@ -2896,7 +2938,7 @@ func (s *Signals) GetOnCallScheduleRotation(ctx context.Context, rotationID stri
 
 	for _, opt := range opts {
 		if err := opt(&o, supportedOptions...); err != nil {
-			return fmt.Errorf("error applying option: %w", err)
+			return nil, fmt.Errorf("error applying option: %w", err)
 		}
 	}
 
@@ -2908,7 +2950,7 @@ func (s *Signals) GetOnCallScheduleRotation(ctx context.Context, rotationID stri
 	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/v1/teams/{team_id}/on_call_schedules/{schedule_id}/rotations/{rotation_id}", request, nil)
 	if err != nil {
-		return fmt.Errorf("error generating URL: %w", err)
+		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
 	hookCtx := hooks.HookContext{
@@ -2934,13 +2976,13 @@ func (s *Signals) GetOnCallScheduleRotation(ctx context.Context, rotationID stri
 
 	req, err := http.NewRequestWithContext(ctx, "GET", opURL, nil)
 	if err != nil {
-		return fmt.Errorf("error creating request: %w", err)
+		return nil, fmt.Errorf("error creating request: %w", err)
 	}
-	req.Header.Set("Accept", "*/*")
+	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
-		return err
+		return nil, err
 	}
 
 	for k, v := range o.SetHeaders {
@@ -3000,17 +3042,17 @@ func (s *Signals) GetOnCallScheduleRotation(ctx context.Context, rotationID stri
 		})
 
 		if err != nil {
-			return err
+			return nil, err
 		} else {
 			httpRes, err = s.hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 			if err != nil {
-				return err
+				return nil, err
 			}
 		}
 	} else {
 		req, err = s.hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 		if err != nil {
-			return err
+			return nil, err
 		}
 
 		httpRes, err = s.sdkConfiguration.Client.Do(req)
@@ -3022,45 +3064,66 @@ func (s *Signals) GetOnCallScheduleRotation(ctx context.Context, rotationID stri
 			}
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
-			return err
+			return nil, err
 		} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
-				return err
+				return nil, err
 			} else if _httpRes != nil {
 				httpRes = _httpRes
 			}
 		} else {
 			httpRes, err = s.hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 			if err != nil {
-				return err
+				return nil, err
 			}
 		}
 	}
 
 	switch {
 	case httpRes.StatusCode == 200:
+		switch {
+		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
+			rawBody, err := utils.ConsumeRawBody(httpRes)
+			if err != nil {
+				return nil, err
+			}
+
+			var out components.SignalsAPIOnCallRotationEntity
+			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
+				return nil, err
+			}
+
+			return &out, nil
+		default:
+			rawBody, err := utils.ConsumeRawBody(httpRes)
+			if err != nil {
+				return nil, err
+			}
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
+		}
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return err
+			return nil, err
 		}
-		return sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return err
+			return nil, err
 		}
-		return sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	default:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return err
+			return nil, err
 		}
-		return sdkerrors.NewSDKError("unknown status code returned", httpRes.StatusCode, string(rawBody), httpRes)
+		return nil, sdkerrors.NewSDKError("unknown status code returned", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
-	return nil
+	return nil, nil
+
 }
 
 // DeleteOnCallScheduleRotation - Delete an on-call schedule's rotation
@@ -3249,7 +3312,7 @@ func (s *Signals) DeleteOnCallScheduleRotation(ctx context.Context, rotationID s
 
 // UpdateOnCallScheduleRotation - Update an on-call schedule's rotation
 // Update an on-call schedule's rotation by ID
-func (s *Signals) UpdateOnCallScheduleRotation(ctx context.Context, rotationID string, teamID string, scheduleID string, updateOnCallScheduleRotation components.UpdateOnCallScheduleRotation, opts ...operations.Option) error {
+func (s *Signals) UpdateOnCallScheduleRotation(ctx context.Context, rotationID string, teamID string, scheduleID string, updateOnCallScheduleRotation components.UpdateOnCallScheduleRotation, opts ...operations.Option) (*components.SignalsAPIOnCallRotationEntity, error) {
 	request := operations.UpdateOnCallScheduleRotationRequest{
 		RotationID:                   rotationID,
 		TeamID:                       teamID,
@@ -3265,7 +3328,7 @@ func (s *Signals) UpdateOnCallScheduleRotation(ctx context.Context, rotationID s
 
 	for _, opt := range opts {
 		if err := opt(&o, supportedOptions...); err != nil {
-			return fmt.Errorf("error applying option: %w", err)
+			return nil, fmt.Errorf("error applying option: %w", err)
 		}
 	}
 
@@ -3277,7 +3340,7 @@ func (s *Signals) UpdateOnCallScheduleRotation(ctx context.Context, rotationID s
 	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/v1/teams/{team_id}/on_call_schedules/{schedule_id}/rotations/{rotation_id}", request, nil)
 	if err != nil {
-		return fmt.Errorf("error generating URL: %w", err)
+		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
 	hookCtx := hooks.HookContext{
@@ -3291,7 +3354,7 @@ func (s *Signals) UpdateOnCallScheduleRotation(ctx context.Context, rotationID s
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateOnCallScheduleRotation", "json", `request:"mediaType=application/json"`)
 	if err != nil {
-		return err
+		return nil, err
 	}
 
 	timeout := o.Timeout
@@ -3307,16 +3370,16 @@ func (s *Signals) UpdateOnCallScheduleRotation(ctx context.Context, rotationID s
 
 	req, err := http.NewRequestWithContext(ctx, "PATCH", opURL, bodyReader)
 	if err != nil {
-		return fmt.Errorf("error creating request: %w", err)
+		return nil, fmt.Errorf("error creating request: %w", err)
 	}
-	req.Header.Set("Accept", "*/*")
+	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
-		return err
+		return nil, err
 	}
 
 	for k, v := range o.SetHeaders {
@@ -3376,17 +3439,17 @@ func (s *Signals) UpdateOnCallScheduleRotation(ctx context.Context, rotationID s
 		})
 
 		if err != nil {
-			return err
+			return nil, err
 		} else {
 			httpRes, err = s.hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 			if err != nil {
-				return err
+				return nil, err
 			}
 		}
 	} else {
 		req, err = s.hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 		if err != nil {
-			return err
+			return nil, err
 		}
 
 		httpRes, err = s.sdkConfiguration.Client.Do(req)
@@ -3398,45 +3461,66 @@ func (s *Signals) UpdateOnCallScheduleRotation(ctx context.Context, rotationID s
 			}
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
-			return err
+			return nil, err
 		} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
-				return err
+				return nil, err
 			} else if _httpRes != nil {
 				httpRes = _httpRes
 			}
 		} else {
 			httpRes, err = s.hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 			if err != nil {
-				return err
+				return nil, err
 			}
 		}
 	}
 
 	switch {
 	case httpRes.StatusCode == 200:
+		switch {
+		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
+			rawBody, err := utils.ConsumeRawBody(httpRes)
+			if err != nil {
+				return nil, err
+			}
+
+			var out components.SignalsAPIOnCallRotationEntity
+			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
+				return nil, err
+			}
+
+			return &out, nil
+		default:
+			rawBody, err := utils.ConsumeRawBody(httpRes)
+			if err != nil {
+				return nil, err
+			}
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
+		}
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return err
+			return nil, err
 		}
-		return sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return err
+			return nil, err
 		}
-		return sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	default:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return err
+			return nil, err
 		}
-		return sdkerrors.NewSDKError("unknown status code returned", httpRes.StatusCode, string(rawBody), httpRes)
+		return nil, sdkerrors.NewSDKError("unknown status code returned", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
-	return nil
+	return nil, nil
+
 }
 
 // OverrideOnCallScheduleRotationShifts - Override one or more shifts in an on-call rotation
@@ -6107,7 +6191,7 @@ func (s *Signals) GetSignalsEventSource(ctx context.Context, transposerSlug stri
 
 // DeleteSignalsEventSource - Delete an event source for Signals
 // Delete a Signals event source by slug
-func (s *Signals) DeleteSignalsEventSource(ctx context.Context, transposerSlug string, opts ...operations.Option) (*components.SignalsAPITransposerEntity, error) {
+func (s *Signals) DeleteSignalsEventSource(ctx context.Context, transposerSlug string, opts ...operations.Option) error {
 	request := operations.DeleteSignalsEventSourceRequest{
 		TransposerSlug: transposerSlug,
 	}
@@ -6120,7 +6204,7 @@ func (s *Signals) DeleteSignalsEventSource(ctx context.Context, transposerSlug s
 
 	for _, opt := range opts {
 		if err := opt(&o, supportedOptions...); err != nil {
-			return nil, fmt.Errorf("error applying option: %w", err)
+			return fmt.Errorf("error applying option: %w", err)
 		}
 	}
 
@@ -6132,7 +6216,7 @@ func (s *Signals) DeleteSignalsEventSource(ctx context.Context, transposerSlug s
 	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/v1/signals/event_sources/{transposer_slug}", request, nil)
 	if err != nil {
-		return nil, fmt.Errorf("error generating URL: %w", err)
+		return fmt.Errorf("error generating URL: %w", err)
 	}
 
 	hookCtx := hooks.HookContext{
@@ -6158,13 +6242,13 @@ func (s *Signals) DeleteSignalsEventSource(ctx context.Context, transposerSlug s
 
 	req, err := http.NewRequestWithContext(ctx, "DELETE", opURL, nil)
 	if err != nil {
-		return nil, fmt.Errorf("error creating request: %w", err)
+		return fmt.Errorf("error creating request: %w", err)
 	}
-	req.Header.Set("Accept", "application/json")
+	req.Header.Set("Accept", "*/*")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
-		return nil, err
+		return err
 	}
 
 	for k, v := range o.SetHeaders {
@@ -6224,17 +6308,17 @@ func (s *Signals) DeleteSignalsEventSource(ctx context.Context, transposerSlug s
 		})
 
 		if err != nil {
-			return nil, err
+			return err
 		} else {
 			httpRes, err = s.hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 			if err != nil {
-				return nil, err
+				return err
 			}
 		}
 	} else {
 		req, err = s.hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 		if err != nil {
-			return nil, err
+			return err
 		}
 
 		httpRes, err = s.sdkConfiguration.Client.Do(req)
@@ -6246,66 +6330,45 @@ func (s *Signals) DeleteSignalsEventSource(ctx context.Context, transposerSlug s
 			}
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
-			return nil, err
+			return err
 		} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
-				return nil, err
+				return err
 			} else if _httpRes != nil {
 				httpRes = _httpRes
 			}
 		} else {
 			httpRes, err = s.hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 			if err != nil {
-				return nil, err
+				return err
 			}
 		}
 	}
 
 	switch {
-	case httpRes.StatusCode == 200:
-		switch {
-		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
-			rawBody, err := utils.ConsumeRawBody(httpRes)
-			if err != nil {
-				return nil, err
-			}
-
-			var out components.SignalsAPITransposerEntity
-			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
-			}
-
-			return &out, nil
-		default:
-			rawBody, err := utils.ConsumeRawBody(httpRes)
-			if err != nil {
-				return nil, err
-			}
-			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
-		}
+	case httpRes.StatusCode == 204:
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return nil, err
+			return err
 		}
-		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
+		return sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return nil, err
+			return err
 		}
-		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
+		return sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	default:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return nil, err
+			return err
 		}
-		return nil, sdkerrors.NewSDKError("unknown status code returned", httpRes.StatusCode, string(rawBody), httpRes)
+		return sdkerrors.NewSDKError("unknown status code returned", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
-	return nil, nil
-
+	return nil
 }
 
 // GetSignalsHackerMode - Get hacker mode status
@@ -7117,7 +7180,7 @@ func (s *Signals) GetSignalsAlertGroupingConfiguration(ctx context.Context, id s
 
 // DeleteSignalsAlertGroupingConfiguration - Delete an alert grouping configuration.
 // Delete a Signals alert grouping rule by ID.
-func (s *Signals) DeleteSignalsAlertGroupingConfiguration(ctx context.Context, id string, opts ...operations.Option) (*components.SignalsAPIGroupingEntity, error) {
+func (s *Signals) DeleteSignalsAlertGroupingConfiguration(ctx context.Context, id string, opts ...operations.Option) error {
 	request := operations.DeleteSignalsAlertGroupingConfigurationRequest{
 		ID: id,
 	}
@@ -7130,7 +7193,7 @@ func (s *Signals) DeleteSignalsAlertGroupingConfiguration(ctx context.Context, i
 
 	for _, opt := range opts {
 		if err := opt(&o, supportedOptions...); err != nil {
-			return nil, fmt.Errorf("error applying option: %w", err)
+			return fmt.Errorf("error applying option: %w", err)
 		}
 	}
 
@@ -7142,7 +7205,7 @@ func (s *Signals) DeleteSignalsAlertGroupingConfiguration(ctx context.Context, i
 	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/v1/signals/grouping/{id}", request, nil)
 	if err != nil {
-		return nil, fmt.Errorf("error generating URL: %w", err)
+		return fmt.Errorf("error generating URL: %w", err)
 	}
 
 	hookCtx := hooks.HookContext{
@@ -7168,13 +7231,13 @@ func (s *Signals) DeleteSignalsAlertGroupingConfiguration(ctx context.Context, i
 
 	req, err := http.NewRequestWithContext(ctx, "DELETE", opURL, nil)
 	if err != nil {
-		return nil, fmt.Errorf("error creating request: %w", err)
+		return fmt.Errorf("error creating request: %w", err)
 	}
-	req.Header.Set("Accept", "application/json")
+	req.Header.Set("Accept", "*/*")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
-		return nil, err
+		return err
 	}
 
 	for k, v := range o.SetHeaders {
@@ -7234,17 +7297,17 @@ func (s *Signals) DeleteSignalsAlertGroupingConfiguration(ctx context.Context, i
 		})
 
 		if err != nil {
-			return nil, err
+			return err
 		} else {
 			httpRes, err = s.hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 			if err != nil {
-				return nil, err
+				return err
 			}
 		}
 	} else {
 		req, err = s.hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 		if err != nil {
-			return nil, err
+			return err
 		}
 
 		httpRes, err = s.sdkConfiguration.Client.Do(req)
@@ -7256,66 +7319,45 @@ func (s *Signals) DeleteSignalsAlertGroupingConfiguration(ctx context.Context, i
 			}
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
-			return nil, err
+			return err
 		} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
-				return nil, err
+				return err
 			} else if _httpRes != nil {
 				httpRes = _httpRes
 			}
 		} else {
 			httpRes, err = s.hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 			if err != nil {
-				return nil, err
+				return err
 			}
 		}
 	}
 
 	switch {
-	case httpRes.StatusCode == 200:
-		switch {
-		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
-			rawBody, err := utils.ConsumeRawBody(httpRes)
-			if err != nil {
-				return nil, err
-			}
-
-			var out components.SignalsAPIGroupingEntity
-			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
-			}
-
-			return &out, nil
-		default:
-			rawBody, err := utils.ConsumeRawBody(httpRes)
-			if err != nil {
-				return nil, err
-			}
-			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
-		}
+	case httpRes.StatusCode == 204:
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return nil, err
+			return err
 		}
-		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
+		return sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return nil, err
+			return err
 		}
-		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
+		return sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	default:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return nil, err
+			return err
 		}
-		return nil, sdkerrors.NewSDKError("unknown status code returned", httpRes.StatusCode, string(rawBody), httpRes)
+		return sdkerrors.NewSDKError("unknown status code returned", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
-	return nil, nil
-
+	return nil
 }
 
 // UpdateSignalsAlertGroupingConfiguration - Update an alert grouping configuration.

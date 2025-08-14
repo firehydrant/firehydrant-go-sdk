@@ -772,12 +772,9 @@ func main() {
         }),
     )
 
-    res, err := s.Runbooks.DeleteRunbook(ctx, "<id>")
+    err := s.Runbooks.DeleteRunbook(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -792,7 +789,7 @@ func main() {
 
 ### Response
 
-**[*components.RunbookEntity](../../models/components/runbookentity.md), error**
+**error**
 
 ### Errors
 

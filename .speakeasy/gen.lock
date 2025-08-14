@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 39357612-0c85-4a96-a549-e2d920c4a065
 management:
-  docChecksum: 500875f6b0d7629920c9a61cc6c87a1e
+  docChecksum: 6d3a0f06f0c5518145562d427808ec63
   docVersion: 0.0.1
-  speakeasyVersion: 1.598.0
-  generationVersion: 2.674.1
-  releaseVersion: 1.3.0
-  configChecksum: 0fbaf403d95b5c6087f7fab57fcc4fed
+  speakeasyVersion: 1.603.2
+  generationVersion: 2.681.8
+  releaseVersion: 1.3.1
+  configChecksum: a1c988cfa102196bf3ffbae6c7e67fc9
   repoURL: https://github.com/firehydrant/firehydrant-go-sdk.git
   installationURL: https://github.com/firehydrant/firehydrant-go-sdk
 features:
@@ -24,7 +24,7 @@ features:
     intellisenseMarkdownSupport: 0.1.0
     nullables: 0.1.1
     responseFormat: 0.1.2
-    retries: 2.84.0
+    retries: 2.84.2
     sdkHooks: 0.2.0
     uploadStreams: 0.1.0
 generatedFiles:
@@ -5570,6 +5570,9 @@ examples:
           schedule_id: "<id>"
       requestBody:
         application/json: {"name": "<value>", "time_zone": "Antarctica/DumontDUrville", "strategy": {"type": "weekly"}}
+      responses:
+        "201":
+          application/json: {}
   copy_on_call_schedule_rotation:
     speakeasy-default-copy-on-call-schedule-rotation:
       parameters:
@@ -5579,6 +5582,9 @@ examples:
           schedule_id: "<id>"
       requestBody:
         application/json: {"target_schedule_id": "<id>"}
+      responses:
+        "201":
+          application/json: {}
   get_on_call_schedule_rotation:
     speakeasy-default-get-on-call-schedule-rotation:
       parameters:
@@ -5586,6 +5592,9 @@ examples:
           rotation_id: "<id>"
           team_id: "<id>"
           schedule_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   delete_on_call_schedule_rotation:
     speakeasy-default-delete-on-call-schedule-rotation:
       parameters:
@@ -5602,6 +5611,9 @@ examples:
           schedule_id: "<id>"
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   override_on_call_schedule_rotation_shifts:
     speakeasy-default-override-on-call-schedule-rotation-shifts:
       parameters:
