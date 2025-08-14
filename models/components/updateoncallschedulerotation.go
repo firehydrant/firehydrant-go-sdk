@@ -269,6 +269,8 @@ type UpdateOnCallScheduleRotation struct {
 	SlackUserGroupID *string `json:"slack_user_group_id,omitempty"`
 	// Notify the team's Slack channel when handoffs occur
 	EnableSlackChannelNotifications *bool `json:"enable_slack_channel_notifications,omitempty"`
+	// An ISO8601 duration string specifying that the team should be notified about gaps in coverage for the upcoming interval. Notifications are sent at 9am daily in the rotation's time zone via email and, if enabled, the team's Slack channel.
+	CoverageGapNotificationInterval *string `json:"coverage_gap_notification_interval,omitempty"`
 	// Prevent shifts from being deleted by users and leading to gaps in coverage.
 	PreventShiftDeletion *bool `json:"prevent_shift_deletion,omitempty"`
 	// A hex color code that will be used to represent the rotation in FireHydrant's UI.
@@ -319,6 +321,13 @@ func (o *UpdateOnCallScheduleRotation) GetEnableSlackChannelNotifications() *boo
 		return nil
 	}
 	return o.EnableSlackChannelNotifications
+}
+
+func (o *UpdateOnCallScheduleRotation) GetCoverageGapNotificationInterval() *string {
+	if o == nil {
+		return nil
+	}
+	return o.CoverageGapNotificationInterval
 }
 
 func (o *UpdateOnCallScheduleRotation) GetPreventShiftDeletion() *bool {

@@ -249,12 +249,9 @@ func main() {
         }),
     )
 
-    res, err := s.IncidentSettings.DeleteIncidentRole(ctx, "<id>")
+    err := s.IncidentSettings.DeleteIncidentRole(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -269,7 +266,7 @@ func main() {
 
 ### Response
 
-**[*components.IncidentRoleEntity](../../models/components/incidentroleentity.md), error**
+**error**
 
 ### Errors
 
@@ -635,12 +632,9 @@ func main() {
         }),
     )
 
-    res, err := s.IncidentSettings.DeleteIncidentType(ctx, "<id>")
+    err := s.IncidentSettings.DeleteIncidentType(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -655,7 +649,7 @@ func main() {
 
 ### Response
 
-**[*components.IncidentTypeEntity](../../models/components/incidenttypeentity.md), error**
+**error**
 
 ### Errors
 
@@ -1121,12 +1115,9 @@ func main() {
         }),
     )
 
-    res, err := s.IncidentSettings.DeleteLifecycleMilestone(ctx, "<id>")
+    err := s.IncidentSettings.DeleteLifecycleMilestone(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -1141,7 +1132,7 @@ func main() {
 
 ### Response
 
-**[*components.LifecyclesPhaseEntity](../../models/components/lifecyclesphaseentity.md), error**
+**error**
 
 ### Errors
 
@@ -1395,12 +1386,9 @@ func main() {
         }),
     )
 
-    res, err := s.IncidentSettings.DeletePriority(ctx, "<value>")
+    err := s.IncidentSettings.DeletePriority(ctx, "<value>")
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -1415,7 +1403,7 @@ func main() {
 
 ### Response
 
-**[*components.PriorityEntity](../../models/components/priorityentity.md), error**
+**error**
 
 ### Errors
 
@@ -1669,12 +1657,9 @@ func main() {
         }),
     )
 
-    res, err := s.IncidentSettings.DeleteSeverity(ctx, "<value>")
+    err := s.IncidentSettings.DeleteSeverity(ctx, "<value>")
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -1689,7 +1674,7 @@ func main() {
 
 ### Response
 
-**[*components.SeverityEntity](../../models/components/severityentity.md), error**
+**error**
 
 ### Errors
 
@@ -2052,12 +2037,9 @@ func main() {
         }),
     )
 
-    res, err := s.IncidentSettings.DeleteSeverityMatrixCondition(ctx, "<id>")
+    err := s.IncidentSettings.DeleteSeverityMatrixCondition(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -2072,7 +2054,7 @@ func main() {
 
 ### Response
 
-**[*components.SeverityMatrixConditionEntity](../../models/components/severitymatrixconditionentity.md), error**
+**error**
 
 ### Errors
 
@@ -2273,12 +2255,9 @@ func main() {
         }),
     )
 
-    res, err := s.IncidentSettings.DeleteSeverityMatrixImpact(ctx, "<id>")
+    err := s.IncidentSettings.DeleteSeverityMatrixImpact(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -2293,7 +2272,7 @@ func main() {
 
 ### Response
 
-**[*components.SeverityMatrixImpactEntity](../../models/components/severitymatriximpactentity.md), error**
+**error**
 
 ### Errors
 
@@ -2382,12 +2361,9 @@ func main() {
         }),
     )
 
-    res, err := s.IncidentSettings.DeleteCustomFieldDefinition(ctx, "<id>")
+    err := s.IncidentSettings.DeleteCustomFieldDefinition(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -2402,7 +2378,7 @@ func main() {
 
 ### Response
 
-**[*components.OrganizationsCustomFieldDefinitionEntity](../../models/components/organizationscustomfielddefinitionentity.md), error**
+**error**
 
 ### Errors
 

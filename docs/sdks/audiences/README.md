@@ -217,12 +217,9 @@ func main() {
         }),
     )
 
-    res, err := s.Audiences.ArchiveAudience(ctx, "<id>")
+    err := s.Audiences.ArchiveAudience(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -237,7 +234,7 @@ func main() {
 
 ### Response
 
-**[*components.AudiencesEntitiesAudienceEntity](../../models/components/audiencesentitiesaudienceentity.md), error**
+**error**
 
 ### Errors
 

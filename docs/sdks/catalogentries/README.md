@@ -231,12 +231,9 @@ func main() {
         }),
     )
 
-    res, err := s.CatalogEntries.DeleteEnvironment(ctx, "<id>")
+    err := s.CatalogEntries.DeleteEnvironment(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -251,7 +248,7 @@ func main() {
 
 ### Response
 
-**[*components.EnvironmentEntryEntity](../../models/components/environmententryentity.md), error**
+**error**
 
 ### Errors
 
@@ -566,12 +563,9 @@ func main() {
         }),
     )
 
-    res, err := s.CatalogEntries.DeleteService(ctx, "<id>")
+    err := s.CatalogEntries.DeleteService(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -586,7 +580,7 @@ func main() {
 
 ### Response
 
-**[*components.ServiceEntity](../../models/components/serviceentity.md), error**
+**error**
 
 ### Errors
 
@@ -1059,12 +1053,9 @@ func main() {
         }),
     )
 
-    res, err := s.CatalogEntries.DeleteServiceDependency(ctx, "<id>")
+    err := s.CatalogEntries.DeleteServiceDependency(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -1079,7 +1070,7 @@ func main() {
 
 ### Response
 
-**[*components.ServiceDependencyEntity](../../models/components/servicedependencyentity.md), error**
+**error**
 
 ### Errors
 
@@ -1333,12 +1324,9 @@ func main() {
         }),
     )
 
-    res, err := s.CatalogEntries.DeleteFunctionality(ctx, "<id>")
+    err := s.CatalogEntries.DeleteFunctionality(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -1353,7 +1341,7 @@ func main() {
 
 ### Response
 
-**[*components.FunctionalityEntity](../../models/components/functionalityentity.md), error**
+**error**
 
 ### Errors
 

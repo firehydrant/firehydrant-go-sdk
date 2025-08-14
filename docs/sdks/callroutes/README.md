@@ -262,12 +262,9 @@ func main() {
         }),
     )
 
-    res, err := s.CallRoutes.DeleteCallRoute(ctx, "<id>")
+    err := s.CallRoutes.DeleteCallRoute(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -282,7 +279,7 @@ func main() {
 
 ### Response
 
-**[*components.SignalsAPICallRouteEntity](../../models/components/signalsapicallrouteentity.md), error**
+**error**
 
 ### Errors
 

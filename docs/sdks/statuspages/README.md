@@ -337,12 +337,9 @@ func main() {
         }),
     )
 
-    res, err := s.StatusPages.DeleteEmailSubscriber(ctx, "<id>", "<value>")
+    err := s.StatusPages.DeleteEmailSubscriber(ctx, "<id>", "<value>")
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -358,7 +355,7 @@ func main() {
 
 ### Response
 
-**[*components.NuncEmailSubscribersEntity](../../models/components/nuncemailsubscribersentity.md), error**
+**error**
 
 ### Errors
 
@@ -516,12 +513,9 @@ func main() {
         }),
     )
 
-    res, err := s.StatusPages.DeleteNuncConnection(ctx, "<id>")
+    err := s.StatusPages.DeleteNuncConnection(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -536,7 +530,7 @@ func main() {
 
 ### Response
 
-**[*components.NuncConnectionEntity](../../models/components/nuncconnectionentity.md), error**
+**error**
 
 ### Errors
 
@@ -948,12 +942,9 @@ func main() {
         }),
     )
 
-    res, err := s.StatusPages.DeleteNuncImage(ctx, "<id>", "<value>")
+    err := s.StatusPages.DeleteNuncImage(ctx, "<id>", "<value>")
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -969,7 +960,7 @@ func main() {
 
 ### Response
 
-**[*components.NuncConnectionEntity](../../models/components/nuncconnectionentity.md), error**
+**error**
 
 ### Errors
 
@@ -1003,12 +994,9 @@ func main() {
         }),
     )
 
-    res, err := s.StatusPages.DeleteNuncSubscription(ctx, "<value>")
+    err := s.StatusPages.DeleteNuncSubscription(ctx, "<value>")
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -1023,7 +1011,7 @@ func main() {
 
 ### Response
 
-**[*components.NuncNuncSubscription](../../models/components/nuncnuncsubscription.md), error**
+**error**
 
 ### Errors
 

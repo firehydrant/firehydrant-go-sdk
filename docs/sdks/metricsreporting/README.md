@@ -614,12 +614,9 @@ func main() {
         }),
     )
 
-    res, err := s.MetricsReporting.DeleteSavedSearch(ctx, operations.DeleteSavedSearchResourceTypeTicketFollowUps, "<id>")
+    err := s.MetricsReporting.DeleteSavedSearch(ctx, operations.DeleteSavedSearchResourceTypeTicketFollowUps, "<id>")
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -635,7 +632,7 @@ func main() {
 
 ### Response
 
-**[*components.SavedSearchEntity](../../models/components/savedsearchentity.md), error**
+**error**
 
 ### Errors
 

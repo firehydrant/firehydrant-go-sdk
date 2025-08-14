@@ -607,12 +607,9 @@ func main() {
         }),
     )
 
-    res, err := s.Tasks.DeleteTaskList(ctx, "<id>")
+    err := s.Tasks.DeleteTaskList(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -627,7 +624,7 @@ func main() {
 
 ### Response
 
-**[*components.TaskListEntity](../../models/components/tasklistentity.md), error**
+**error**
 
 ### Errors
 
@@ -888,12 +885,9 @@ func main() {
         }),
     )
 
-    res, err := s.Tasks.DeleteChecklistTemplate(ctx, "<id>")
+    err := s.Tasks.DeleteChecklistTemplate(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -908,7 +902,7 @@ func main() {
 
 ### Response
 
-**[*components.ChecklistTemplateEntity](../../models/components/checklisttemplateentity.md), error**
+**error**
 
 ### Errors
 

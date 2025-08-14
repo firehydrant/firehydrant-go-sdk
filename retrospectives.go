@@ -1925,7 +1925,7 @@ func (s *Retrospectives) CreateIncidentRetrospectiveDynamicInput(ctx context.Con
 
 // DeleteIncidentRetrospectiveDynamicInput - Removes a dynamic input from a retrospective's dynamic input group field
 // Delete a dynamic input on a dynamic input group
-func (s *Retrospectives) DeleteIncidentRetrospectiveDynamicInput(ctx context.Context, retrospectiveID string, fieldID string, dynamicInputFieldID string, incidentID string, opts ...operations.Option) (*components.IncidentsRetrospectiveFieldEntity, error) {
+func (s *Retrospectives) DeleteIncidentRetrospectiveDynamicInput(ctx context.Context, retrospectiveID string, fieldID string, dynamicInputFieldID string, incidentID string, opts ...operations.Option) error {
 	request := operations.DeleteIncidentRetrospectiveDynamicInputRequest{
 		RetrospectiveID:     retrospectiveID,
 		FieldID:             fieldID,
@@ -1941,7 +1941,7 @@ func (s *Retrospectives) DeleteIncidentRetrospectiveDynamicInput(ctx context.Con
 
 	for _, opt := range opts {
 		if err := opt(&o, supportedOptions...); err != nil {
-			return nil, fmt.Errorf("error applying option: %w", err)
+			return fmt.Errorf("error applying option: %w", err)
 		}
 	}
 
@@ -1953,7 +1953,7 @@ func (s *Retrospectives) DeleteIncidentRetrospectiveDynamicInput(ctx context.Con
 	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/v1/incidents/{incident_id}/retrospectives/{retrospective_id}/fields/{field_id}/inputs", request, nil)
 	if err != nil {
-		return nil, fmt.Errorf("error generating URL: %w", err)
+		return fmt.Errorf("error generating URL: %w", err)
 	}
 
 	hookCtx := hooks.HookContext{
@@ -1979,17 +1979,17 @@ func (s *Retrospectives) DeleteIncidentRetrospectiveDynamicInput(ctx context.Con
 
 	req, err := http.NewRequestWithContext(ctx, "DELETE", opURL, nil)
 	if err != nil {
-		return nil, fmt.Errorf("error creating request: %w", err)
+		return fmt.Errorf("error creating request: %w", err)
 	}
-	req.Header.Set("Accept", "application/json")
+	req.Header.Set("Accept", "*/*")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
 	if err := utils.PopulateQueryParams(ctx, req, request, nil); err != nil {
-		return nil, fmt.Errorf("error populating query params: %w", err)
+		return fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
-		return nil, err
+		return err
 	}
 
 	for k, v := range o.SetHeaders {
@@ -2049,17 +2049,17 @@ func (s *Retrospectives) DeleteIncidentRetrospectiveDynamicInput(ctx context.Con
 		})
 
 		if err != nil {
-			return nil, err
+			return err
 		} else {
 			httpRes, err = s.hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 			if err != nil {
-				return nil, err
+				return err
 			}
 		}
 	} else {
 		req, err = s.hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 		if err != nil {
-			return nil, err
+			return err
 		}
 
 		httpRes, err = s.sdkConfiguration.Client.Do(req)
@@ -2071,66 +2071,45 @@ func (s *Retrospectives) DeleteIncidentRetrospectiveDynamicInput(ctx context.Con
 			}
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
-			return nil, err
+			return err
 		} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
-				return nil, err
+				return err
 			} else if _httpRes != nil {
 				httpRes = _httpRes
 			}
 		} else {
 			httpRes, err = s.hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 			if err != nil {
-				return nil, err
+				return err
 			}
 		}
 	}
 
 	switch {
-	case httpRes.StatusCode == 200:
-		switch {
-		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
-			rawBody, err := utils.ConsumeRawBody(httpRes)
-			if err != nil {
-				return nil, err
-			}
-
-			var out components.IncidentsRetrospectiveFieldEntity
-			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
-			}
-
-			return &out, nil
-		default:
-			rawBody, err := utils.ConsumeRawBody(httpRes)
-			if err != nil {
-				return nil, err
-			}
-			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
-		}
+	case httpRes.StatusCode == 204:
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return nil, err
+			return err
 		}
-		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
+		return sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return nil, err
+			return err
 		}
-		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
+		return sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	default:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return nil, err
+			return err
 		}
-		return nil, sdkerrors.NewSDKError("unknown status code returned", httpRes.StatusCode, string(rawBody), httpRes)
+		return sdkerrors.NewSDKError("unknown status code returned", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
-	return nil, nil
-
+	return nil
 }
 
 // ListRetrospectives - List retrospective reports
@@ -3595,7 +3574,7 @@ func (s *Retrospectives) CreatePostMortemReason(ctx context.Context, reportID st
 
 // DeletePostMortemReason - Delete a contributing factor from a retrospective report
 // Delete a contributing factor
-func (s *Retrospectives) DeletePostMortemReason(ctx context.Context, reportID string, reasonID string, opts ...operations.Option) (*components.PostMortemsReasonEntity, error) {
+func (s *Retrospectives) DeletePostMortemReason(ctx context.Context, reportID string, reasonID string, opts ...operations.Option) error {
 	request := operations.DeletePostMortemReasonRequest{
 		ReportID: reportID,
 		ReasonID: reasonID,
@@ -3609,7 +3588,7 @@ func (s *Retrospectives) DeletePostMortemReason(ctx context.Context, reportID st
 
 	for _, opt := range opts {
 		if err := opt(&o, supportedOptions...); err != nil {
-			return nil, fmt.Errorf("error applying option: %w", err)
+			return fmt.Errorf("error applying option: %w", err)
 		}
 	}
 
@@ -3621,7 +3600,7 @@ func (s *Retrospectives) DeletePostMortemReason(ctx context.Context, reportID st
 	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/v1/post_mortems/reports/{report_id}/reasons/{reason_id}", request, nil)
 	if err != nil {
-		return nil, fmt.Errorf("error generating URL: %w", err)
+		return fmt.Errorf("error generating URL: %w", err)
 	}
 
 	hookCtx := hooks.HookContext{
@@ -3647,13 +3626,13 @@ func (s *Retrospectives) DeletePostMortemReason(ctx context.Context, reportID st
 
 	req, err := http.NewRequestWithContext(ctx, "DELETE", opURL, nil)
 	if err != nil {
-		return nil, fmt.Errorf("error creating request: %w", err)
+		return fmt.Errorf("error creating request: %w", err)
 	}
-	req.Header.Set("Accept", "application/json")
+	req.Header.Set("Accept", "*/*")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
-		return nil, err
+		return err
 	}
 
 	for k, v := range o.SetHeaders {
@@ -3713,17 +3692,17 @@ func (s *Retrospectives) DeletePostMortemReason(ctx context.Context, reportID st
 		})
 
 		if err != nil {
-			return nil, err
+			return err
 		} else {
 			httpRes, err = s.hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 			if err != nil {
-				return nil, err
+				return err
 			}
 		}
 	} else {
 		req, err = s.hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 		if err != nil {
-			return nil, err
+			return err
 		}
 
 		httpRes, err = s.sdkConfiguration.Client.Do(req)
@@ -3735,66 +3714,45 @@ func (s *Retrospectives) DeletePostMortemReason(ctx context.Context, reportID st
 			}
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
-			return nil, err
+			return err
 		} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
-				return nil, err
+				return err
 			} else if _httpRes != nil {
 				httpRes = _httpRes
 			}
 		} else {
 			httpRes, err = s.hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 			if err != nil {
-				return nil, err
+				return err
 			}
 		}
 	}
 
 	switch {
-	case httpRes.StatusCode == 200:
-		switch {
-		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
-			rawBody, err := utils.ConsumeRawBody(httpRes)
-			if err != nil {
-				return nil, err
-			}
-
-			var out components.PostMortemsReasonEntity
-			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
-			}
-
-			return &out, nil
-		default:
-			rawBody, err := utils.ConsumeRawBody(httpRes)
-			if err != nil {
-				return nil, err
-			}
-			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
-		}
+	case httpRes.StatusCode == 204:
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return nil, err
+			return err
 		}
-		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
+		return sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return nil, err
+			return err
 		}
-		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
+		return sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	default:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return nil, err
+			return err
 		}
-		return nil, sdkerrors.NewSDKError("unknown status code returned", httpRes.StatusCode, string(rawBody), httpRes)
+		return sdkerrors.NewSDKError("unknown status code returned", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
-	return nil, nil
-
+	return nil
 }
 
 // UpdatePostMortemReason - Update a contributing factor in a retrospective report
@@ -5880,7 +5838,7 @@ func (s *Retrospectives) GetRetrospectiveTemplate(ctx context.Context, retrospec
 
 // DeleteRetrospectiveTemplate - Delete a retrospective template
 // Delete a single retrospective template
-func (s *Retrospectives) DeleteRetrospectiveTemplate(ctx context.Context, retrospectiveTemplateID string, opts ...operations.Option) (*components.RetrospectivesTemplateEntity, error) {
+func (s *Retrospectives) DeleteRetrospectiveTemplate(ctx context.Context, retrospectiveTemplateID string, opts ...operations.Option) error {
 	request := operations.DeleteRetrospectiveTemplateRequest{
 		RetrospectiveTemplateID: retrospectiveTemplateID,
 	}
@@ -5893,7 +5851,7 @@ func (s *Retrospectives) DeleteRetrospectiveTemplate(ctx context.Context, retros
 
 	for _, opt := range opts {
 		if err := opt(&o, supportedOptions...); err != nil {
-			return nil, fmt.Errorf("error applying option: %w", err)
+			return fmt.Errorf("error applying option: %w", err)
 		}
 	}
 
@@ -5905,7 +5863,7 @@ func (s *Retrospectives) DeleteRetrospectiveTemplate(ctx context.Context, retros
 	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/v1/retrospective_templates/{retrospective_template_id}", request, nil)
 	if err != nil {
-		return nil, fmt.Errorf("error generating URL: %w", err)
+		return fmt.Errorf("error generating URL: %w", err)
 	}
 
 	hookCtx := hooks.HookContext{
@@ -5931,13 +5889,13 @@ func (s *Retrospectives) DeleteRetrospectiveTemplate(ctx context.Context, retros
 
 	req, err := http.NewRequestWithContext(ctx, "DELETE", opURL, nil)
 	if err != nil {
-		return nil, fmt.Errorf("error creating request: %w", err)
+		return fmt.Errorf("error creating request: %w", err)
 	}
-	req.Header.Set("Accept", "application/json")
+	req.Header.Set("Accept", "*/*")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
-		return nil, err
+		return err
 	}
 
 	for k, v := range o.SetHeaders {
@@ -5997,17 +5955,17 @@ func (s *Retrospectives) DeleteRetrospectiveTemplate(ctx context.Context, retros
 		})
 
 		if err != nil {
-			return nil, err
+			return err
 		} else {
 			httpRes, err = s.hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 			if err != nil {
-				return nil, err
+				return err
 			}
 		}
 	} else {
 		req, err = s.hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 		if err != nil {
-			return nil, err
+			return err
 		}
 
 		httpRes, err = s.sdkConfiguration.Client.Do(req)
@@ -6019,66 +5977,45 @@ func (s *Retrospectives) DeleteRetrospectiveTemplate(ctx context.Context, retros
 			}
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
-			return nil, err
+			return err
 		} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
-				return nil, err
+				return err
 			} else if _httpRes != nil {
 				httpRes = _httpRes
 			}
 		} else {
 			httpRes, err = s.hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 			if err != nil {
-				return nil, err
+				return err
 			}
 		}
 	}
 
 	switch {
-	case httpRes.StatusCode == 200:
-		switch {
-		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
-			rawBody, err := utils.ConsumeRawBody(httpRes)
-			if err != nil {
-				return nil, err
-			}
-
-			var out components.RetrospectivesTemplateEntity
-			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
-			}
-
-			return &out, nil
-		default:
-			rawBody, err := utils.ConsumeRawBody(httpRes)
-			if err != nil {
-				return nil, err
-			}
-			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
-		}
+	case httpRes.StatusCode == 204:
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return nil, err
+			return err
 		}
-		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
+		return sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return nil, err
+			return err
 		}
-		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
+		return sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	default:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return nil, err
+			return err
 		}
-		return nil, sdkerrors.NewSDKError("unknown status code returned", httpRes.StatusCode, string(rawBody), httpRes)
+		return sdkerrors.NewSDKError("unknown status code returned", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
-	return nil, nil
-
+	return nil
 }
 
 // UpdateRetrospectiveTemplate - Update a retrospective template

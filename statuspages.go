@@ -1036,7 +1036,7 @@ func (s *StatusPages) CreateEmailSubscriber(ctx context.Context, nuncConnectionI
 
 // DeleteEmailSubscriber - Remove subscribers from a status page
 // Unsubscribes one or more status page subscribers.
-func (s *StatusPages) DeleteEmailSubscriber(ctx context.Context, nuncConnectionID string, subscriberIds string, opts ...operations.Option) (*components.NuncEmailSubscribersEntity, error) {
+func (s *StatusPages) DeleteEmailSubscriber(ctx context.Context, nuncConnectionID string, subscriberIds string, opts ...operations.Option) error {
 	request := operations.DeleteEmailSubscriberRequest{
 		NuncConnectionID: nuncConnectionID,
 		SubscriberIds:    subscriberIds,
@@ -1050,7 +1050,7 @@ func (s *StatusPages) DeleteEmailSubscriber(ctx context.Context, nuncConnectionI
 
 	for _, opt := range opts {
 		if err := opt(&o, supportedOptions...); err != nil {
-			return nil, fmt.Errorf("error applying option: %w", err)
+			return fmt.Errorf("error applying option: %w", err)
 		}
 	}
 
@@ -1062,7 +1062,7 @@ func (s *StatusPages) DeleteEmailSubscriber(ctx context.Context, nuncConnectionI
 	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/v1/nunc_connections/{nunc_connection_id}/subscribers", request, nil)
 	if err != nil {
-		return nil, fmt.Errorf("error generating URL: %w", err)
+		return fmt.Errorf("error generating URL: %w", err)
 	}
 
 	hookCtx := hooks.HookContext{
@@ -1088,17 +1088,17 @@ func (s *StatusPages) DeleteEmailSubscriber(ctx context.Context, nuncConnectionI
 
 	req, err := http.NewRequestWithContext(ctx, "DELETE", opURL, nil)
 	if err != nil {
-		return nil, fmt.Errorf("error creating request: %w", err)
+		return fmt.Errorf("error creating request: %w", err)
 	}
-	req.Header.Set("Accept", "application/json")
+	req.Header.Set("Accept", "*/*")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
 	if err := utils.PopulateQueryParams(ctx, req, request, nil); err != nil {
-		return nil, fmt.Errorf("error populating query params: %w", err)
+		return fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
-		return nil, err
+		return err
 	}
 
 	for k, v := range o.SetHeaders {
@@ -1158,17 +1158,17 @@ func (s *StatusPages) DeleteEmailSubscriber(ctx context.Context, nuncConnectionI
 		})
 
 		if err != nil {
-			return nil, err
+			return err
 		} else {
 			httpRes, err = s.hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 			if err != nil {
-				return nil, err
+				return err
 			}
 		}
 	} else {
 		req, err = s.hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 		if err != nil {
-			return nil, err
+			return err
 		}
 
 		httpRes, err = s.sdkConfiguration.Client.Do(req)
@@ -1180,66 +1180,45 @@ func (s *StatusPages) DeleteEmailSubscriber(ctx context.Context, nuncConnectionI
 			}
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
-			return nil, err
+			return err
 		} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
-				return nil, err
+				return err
 			} else if _httpRes != nil {
 				httpRes = _httpRes
 			}
 		} else {
 			httpRes, err = s.hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 			if err != nil {
-				return nil, err
+				return err
 			}
 		}
 	}
 
 	switch {
-	case httpRes.StatusCode == 200:
-		switch {
-		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
-			rawBody, err := utils.ConsumeRawBody(httpRes)
-			if err != nil {
-				return nil, err
-			}
-
-			var out components.NuncEmailSubscribersEntity
-			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
-			}
-
-			return &out, nil
-		default:
-			rawBody, err := utils.ConsumeRawBody(httpRes)
-			if err != nil {
-				return nil, err
-			}
-			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
-		}
+	case httpRes.StatusCode == 204:
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return nil, err
+			return err
 		}
-		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
+		return sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return nil, err
+			return err
 		}
-		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
+		return sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	default:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return nil, err
+			return err
 		}
-		return nil, sdkerrors.NewSDKError("unknown status code returned", httpRes.StatusCode, string(rawBody), httpRes)
+		return sdkerrors.NewSDKError("unknown status code returned", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
-	return nil, nil
-
+	return nil
 }
 
 // GetNuncConnection - Get a status page
@@ -1658,7 +1637,7 @@ func (s *StatusPages) UpdateNuncConnection(ctx context.Context, nuncConnectionID
 
 // DeleteNuncConnection - Delete a status page
 // Delete a FireHydrant hosted status page, stopping updates of your incidents to it.
-func (s *StatusPages) DeleteNuncConnection(ctx context.Context, nuncConnectionID string, opts ...operations.Option) (*components.NuncConnectionEntity, error) {
+func (s *StatusPages) DeleteNuncConnection(ctx context.Context, nuncConnectionID string, opts ...operations.Option) error {
 	request := operations.DeleteNuncConnectionRequest{
 		NuncConnectionID: nuncConnectionID,
 	}
@@ -1671,7 +1650,7 @@ func (s *StatusPages) DeleteNuncConnection(ctx context.Context, nuncConnectionID
 
 	for _, opt := range opts {
 		if err := opt(&o, supportedOptions...); err != nil {
-			return nil, fmt.Errorf("error applying option: %w", err)
+			return fmt.Errorf("error applying option: %w", err)
 		}
 	}
 
@@ -1683,7 +1662,7 @@ func (s *StatusPages) DeleteNuncConnection(ctx context.Context, nuncConnectionID
 	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/v1/nunc_connections/{nunc_connection_id}", request, nil)
 	if err != nil {
-		return nil, fmt.Errorf("error generating URL: %w", err)
+		return fmt.Errorf("error generating URL: %w", err)
 	}
 
 	hookCtx := hooks.HookContext{
@@ -1709,13 +1688,13 @@ func (s *StatusPages) DeleteNuncConnection(ctx context.Context, nuncConnectionID
 
 	req, err := http.NewRequestWithContext(ctx, "DELETE", opURL, nil)
 	if err != nil {
-		return nil, fmt.Errorf("error creating request: %w", err)
+		return fmt.Errorf("error creating request: %w", err)
 	}
-	req.Header.Set("Accept", "application/json")
+	req.Header.Set("Accept", "*/*")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
-		return nil, err
+		return err
 	}
 
 	for k, v := range o.SetHeaders {
@@ -1775,17 +1754,17 @@ func (s *StatusPages) DeleteNuncConnection(ctx context.Context, nuncConnectionID
 		})
 
 		if err != nil {
-			return nil, err
+			return err
 		} else {
 			httpRes, err = s.hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 			if err != nil {
-				return nil, err
+				return err
 			}
 		}
 	} else {
 		req, err = s.hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 		if err != nil {
-			return nil, err
+			return err
 		}
 
 		httpRes, err = s.sdkConfiguration.Client.Do(req)
@@ -1797,66 +1776,45 @@ func (s *StatusPages) DeleteNuncConnection(ctx context.Context, nuncConnectionID
 			}
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
-			return nil, err
+			return err
 		} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
-				return nil, err
+				return err
 			} else if _httpRes != nil {
 				httpRes = _httpRes
 			}
 		} else {
 			httpRes, err = s.hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 			if err != nil {
-				return nil, err
+				return err
 			}
 		}
 	}
 
 	switch {
-	case httpRes.StatusCode == 200:
-		switch {
-		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
-			rawBody, err := utils.ConsumeRawBody(httpRes)
-			if err != nil {
-				return nil, err
-			}
-
-			var out components.NuncConnectionEntity
-			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
-			}
-
-			return &out, nil
-		default:
-			rawBody, err := utils.ConsumeRawBody(httpRes)
-			if err != nil {
-				return nil, err
-			}
-			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
-		}
+	case httpRes.StatusCode == 204:
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return nil, err
+			return err
 		}
-		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
+		return sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return nil, err
+			return err
 		}
-		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
+		return sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	default:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return nil, err
+			return err
 		}
-		return nil, sdkerrors.NewSDKError("unknown status code returned", httpRes.StatusCode, string(rawBody), httpRes)
+		return sdkerrors.NewSDKError("unknown status code returned", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
-	return nil, nil
-
+	return nil
 }
 
 // DeleteNuncComponentGroup - Delete a status page component group
@@ -3235,7 +3193,7 @@ func (s *StatusPages) UpdateNuncImage(ctx context.Context, nuncConnectionID stri
 
 // DeleteNuncImage - Delete an image from a status page
 // Delete an image attached to a FireHydrant status page
-func (s *StatusPages) DeleteNuncImage(ctx context.Context, nuncConnectionID string, type_ string, opts ...operations.Option) (*components.NuncConnectionEntity, error) {
+func (s *StatusPages) DeleteNuncImage(ctx context.Context, nuncConnectionID string, type_ string, opts ...operations.Option) error {
 	request := operations.DeleteNuncImageRequest{
 		NuncConnectionID: nuncConnectionID,
 		Type:             type_,
@@ -3249,7 +3207,7 @@ func (s *StatusPages) DeleteNuncImage(ctx context.Context, nuncConnectionID stri
 
 	for _, opt := range opts {
 		if err := opt(&o, supportedOptions...); err != nil {
-			return nil, fmt.Errorf("error applying option: %w", err)
+			return fmt.Errorf("error applying option: %w", err)
 		}
 	}
 
@@ -3261,7 +3219,7 @@ func (s *StatusPages) DeleteNuncImage(ctx context.Context, nuncConnectionID stri
 	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/v1/nunc_connections/{nunc_connection_id}/images/{type}", request, nil)
 	if err != nil {
-		return nil, fmt.Errorf("error generating URL: %w", err)
+		return fmt.Errorf("error generating URL: %w", err)
 	}
 
 	hookCtx := hooks.HookContext{
@@ -3287,13 +3245,13 @@ func (s *StatusPages) DeleteNuncImage(ctx context.Context, nuncConnectionID stri
 
 	req, err := http.NewRequestWithContext(ctx, "DELETE", opURL, nil)
 	if err != nil {
-		return nil, fmt.Errorf("error creating request: %w", err)
+		return fmt.Errorf("error creating request: %w", err)
 	}
-	req.Header.Set("Accept", "application/json")
+	req.Header.Set("Accept", "*/*")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
-		return nil, err
+		return err
 	}
 
 	for k, v := range o.SetHeaders {
@@ -3353,17 +3311,17 @@ func (s *StatusPages) DeleteNuncImage(ctx context.Context, nuncConnectionID stri
 		})
 
 		if err != nil {
-			return nil, err
+			return err
 		} else {
 			httpRes, err = s.hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 			if err != nil {
-				return nil, err
+				return err
 			}
 		}
 	} else {
 		req, err = s.hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 		if err != nil {
-			return nil, err
+			return err
 		}
 
 		httpRes, err = s.sdkConfiguration.Client.Do(req)
@@ -3375,71 +3333,50 @@ func (s *StatusPages) DeleteNuncImage(ctx context.Context, nuncConnectionID stri
 			}
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
-			return nil, err
+			return err
 		} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
-				return nil, err
+				return err
 			} else if _httpRes != nil {
 				httpRes = _httpRes
 			}
 		} else {
 			httpRes, err = s.hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 			if err != nil {
-				return nil, err
+				return err
 			}
 		}
 	}
 
 	switch {
-	case httpRes.StatusCode == 200:
-		switch {
-		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
-			rawBody, err := utils.ConsumeRawBody(httpRes)
-			if err != nil {
-				return nil, err
-			}
-
-			var out components.NuncConnectionEntity
-			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
-			}
-
-			return &out, nil
-		default:
-			rawBody, err := utils.ConsumeRawBody(httpRes)
-			if err != nil {
-				return nil, err
-			}
-			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
-		}
+	case httpRes.StatusCode == 204:
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return nil, err
+			return err
 		}
-		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
+		return sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return nil, err
+			return err
 		}
-		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
+		return sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	default:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return nil, err
+			return err
 		}
-		return nil, sdkerrors.NewSDKError("unknown status code returned", httpRes.StatusCode, string(rawBody), httpRes)
+		return sdkerrors.NewSDKError("unknown status code returned", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
-	return nil, nil
-
+	return nil
 }
 
 // DeleteNuncSubscription - Unsubscribe from status page notifications
 // Unsubscribe from status page updates
-func (s *StatusPages) DeleteNuncSubscription(ctx context.Context, unsubscribeToken string, opts ...operations.Option) (*components.NuncNuncSubscription, error) {
+func (s *StatusPages) DeleteNuncSubscription(ctx context.Context, unsubscribeToken string, opts ...operations.Option) error {
 	request := operations.DeleteNuncSubscriptionRequest{
 		UnsubscribeToken: unsubscribeToken,
 	}
@@ -3452,7 +3389,7 @@ func (s *StatusPages) DeleteNuncSubscription(ctx context.Context, unsubscribeTok
 
 	for _, opt := range opts {
 		if err := opt(&o, supportedOptions...); err != nil {
-			return nil, fmt.Errorf("error applying option: %w", err)
+			return fmt.Errorf("error applying option: %w", err)
 		}
 	}
 
@@ -3464,7 +3401,7 @@ func (s *StatusPages) DeleteNuncSubscription(ctx context.Context, unsubscribeTok
 	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/v1/nunc/subscriptions/{unsubscribe_token}", request, nil)
 	if err != nil {
-		return nil, fmt.Errorf("error generating URL: %w", err)
+		return fmt.Errorf("error generating URL: %w", err)
 	}
 
 	hookCtx := hooks.HookContext{
@@ -3490,13 +3427,13 @@ func (s *StatusPages) DeleteNuncSubscription(ctx context.Context, unsubscribeTok
 
 	req, err := http.NewRequestWithContext(ctx, "DELETE", opURL, nil)
 	if err != nil {
-		return nil, fmt.Errorf("error creating request: %w", err)
+		return fmt.Errorf("error creating request: %w", err)
 	}
-	req.Header.Set("Accept", "application/json")
+	req.Header.Set("Accept", "*/*")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
-		return nil, err
+		return err
 	}
 
 	for k, v := range o.SetHeaders {
@@ -3556,17 +3493,17 @@ func (s *StatusPages) DeleteNuncSubscription(ctx context.Context, unsubscribeTok
 		})
 
 		if err != nil {
-			return nil, err
+			return err
 		} else {
 			httpRes, err = s.hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 			if err != nil {
-				return nil, err
+				return err
 			}
 		}
 	} else {
 		req, err = s.hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 		if err != nil {
-			return nil, err
+			return err
 		}
 
 		httpRes, err = s.sdkConfiguration.Client.Do(req)
@@ -3578,66 +3515,45 @@ func (s *StatusPages) DeleteNuncSubscription(ctx context.Context, unsubscribeTok
 			}
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
-			return nil, err
+			return err
 		} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
-				return nil, err
+				return err
 			} else if _httpRes != nil {
 				httpRes = _httpRes
 			}
 		} else {
 			httpRes, err = s.hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 			if err != nil {
-				return nil, err
+				return err
 			}
 		}
 	}
 
 	switch {
-	case httpRes.StatusCode == 200:
-		switch {
-		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
-			rawBody, err := utils.ConsumeRawBody(httpRes)
-			if err != nil {
-				return nil, err
-			}
-
-			var out components.NuncNuncSubscription
-			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
-			}
-
-			return &out, nil
-		default:
-			rawBody, err := utils.ConsumeRawBody(httpRes)
-			if err != nil {
-				return nil, err
-			}
-			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
-		}
+	case httpRes.StatusCode == 204:
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return nil, err
+			return err
 		}
-		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
+		return sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return nil, err
+			return err
 		}
-		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
+		return sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	default:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return nil, err
+			return err
 		}
-		return nil, sdkerrors.NewSDKError("unknown status code returned", httpRes.StatusCode, string(rawBody), httpRes)
+		return sdkerrors.NewSDKError("unknown status code returned", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
-	return nil, nil
-
+	return nil
 }
 
 // CreateNuncSubscription - Create a status page subscription

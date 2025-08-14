@@ -418,12 +418,9 @@ func main() {
         }),
     )
 
-    res, err := s.Incidents.DeleteIncident(ctx, "<id>")
+    err := s.Incidents.DeleteIncident(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -438,7 +435,7 @@ func main() {
 
 ### Response
 
-**[*components.IncidentEntity](../../models/components/incidententity.md), error**
+**error**
 
 ### Errors
 
@@ -1320,12 +1317,9 @@ func main() {
         }),
     )
 
-    res, err := s.Incidents.DeleteTranscriptEntry(ctx, "<id>", "<id>")
+    err := s.Incidents.DeleteTranscriptEntry(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -1341,7 +1335,7 @@ func main() {
 
 ### Response
 
-**[*components.PublicAPIV1IncidentsTranscriptEntity](../../models/components/publicapiv1incidentstranscriptentity.md), error**
+**error**
 
 ### Errors
 
@@ -1777,12 +1771,9 @@ func main() {
         }),
     )
 
-    res, err := s.Incidents.DeleteIncidentEvent(ctx, "<id>", "<id>")
+    err := s.Incidents.DeleteIncidentEvent(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -1798,7 +1789,7 @@ func main() {
 
 ### Response
 
-**[*components.IncidentEventEntity](../../models/components/incidentevententity.md), error**
+**error**
 
 ### Errors
 
@@ -2354,12 +2345,9 @@ func main() {
         }),
     )
 
-    res, err := s.Incidents.DeleteIncidentChatMessage(ctx, "<id>", "<id>")
+    err := s.Incidents.DeleteIncidentChatMessage(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -2375,7 +2363,7 @@ func main() {
 
 ### Response
 
-**[*components.EventGenericChatMessageEntity](../../models/components/eventgenericchatmessageentity.md), error**
+**error**
 
 ### Errors
 
@@ -2580,12 +2568,9 @@ func main() {
         }),
     )
 
-    res, err := s.Incidents.DeleteIncidentRoleAssignment(ctx, "<id>", "<id>")
+    err := s.Incidents.DeleteIncidentRoleAssignment(ctx, "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -2601,7 +2586,7 @@ func main() {
 
 ### Response
 
-**[*components.IncidentsRoleAssignmentEntity](../../models/components/incidentsroleassignmententity.md), error**
+**error**
 
 ### Errors
 

@@ -772,7 +772,7 @@ func main() {
         }),
     )
 
-    err := s.Signals.CreateOnCallScheduleRotation(ctx, "<id>", "<id>", components.CreateOnCallScheduleRotation{
+    res, err := s.Signals.CreateOnCallScheduleRotation(ctx, "<id>", "<id>", components.CreateOnCallScheduleRotation{
         Name: "<value>",
         TimeZone: "Antarctica/DumontDUrville",
         Strategy: components.CreateOnCallScheduleRotationStrategy{
@@ -781,6 +781,9 @@ func main() {
     })
     if err != nil {
         log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
     }
 }
 ```
@@ -797,7 +800,7 @@ func main() {
 
 ### Response
 
-**error**
+**[*components.SignalsAPIOnCallRotationEntity](../../models/components/signalsapioncallrotationentity.md), error**
 
 ### Errors
 
@@ -831,11 +834,14 @@ func main() {
         }),
     )
 
-    err := s.Signals.CopyOnCallScheduleRotation(ctx, "<id>", "<id>", "<id>", components.CopyOnCallScheduleRotation{
+    res, err := s.Signals.CopyOnCallScheduleRotation(ctx, "<id>", "<id>", "<id>", components.CopyOnCallScheduleRotation{
         TargetScheduleID: "<id>",
     })
     if err != nil {
         log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
     }
 }
 ```
@@ -853,7 +859,7 @@ func main() {
 
 ### Response
 
-**error**
+**[*components.SignalsAPIOnCallRotationEntity](../../models/components/signalsapioncallrotationentity.md), error**
 
 ### Errors
 
@@ -887,9 +893,12 @@ func main() {
         }),
     )
 
-    err := s.Signals.GetOnCallScheduleRotation(ctx, "<id>", "<id>", "<id>")
+    res, err := s.Signals.GetOnCallScheduleRotation(ctx, "<id>", "<id>", "<id>")
     if err != nil {
         log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
     }
 }
 ```
@@ -906,7 +915,7 @@ func main() {
 
 ### Response
 
-**error**
+**[*components.SignalsAPIOnCallRotationEntity](../../models/components/signalsapioncallrotationentity.md), error**
 
 ### Errors
 
@@ -993,9 +1002,12 @@ func main() {
         }),
     )
 
-    err := s.Signals.UpdateOnCallScheduleRotation(ctx, "<id>", "<id>", "<id>", components.UpdateOnCallScheduleRotation{})
+    res, err := s.Signals.UpdateOnCallScheduleRotation(ctx, "<id>", "<id>", "<id>", components.UpdateOnCallScheduleRotation{})
     if err != nil {
         log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
     }
 }
 ```
@@ -1013,7 +1025,7 @@ func main() {
 
 ### Response
 
-**error**
+**[*components.SignalsAPIOnCallRotationEntity](../../models/components/signalsapioncallrotationentity.md), error**
 
 ### Errors
 
@@ -1783,12 +1795,9 @@ func main() {
         }),
     )
 
-    res, err := s.Signals.DeleteSignalsEventSource(ctx, "<value>")
+    err := s.Signals.DeleteSignalsEventSource(ctx, "<value>")
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -1803,7 +1812,7 @@ func main() {
 
 ### Response
 
-**[*components.SignalsAPITransposerEntity](../../models/components/signalsapitransposerentity.md), error**
+**error**
 
 ### Errors
 
@@ -2054,12 +2063,9 @@ func main() {
         }),
     )
 
-    res, err := s.Signals.DeleteSignalsAlertGroupingConfiguration(ctx, "<id>")
+    err := s.Signals.DeleteSignalsAlertGroupingConfiguration(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -2074,7 +2080,7 @@ func main() {
 
 ### Response
 
-**[*components.SignalsAPIGroupingEntity](../../models/components/signalsapigroupingentity.md), error**
+**error**
 
 ### Errors
 
