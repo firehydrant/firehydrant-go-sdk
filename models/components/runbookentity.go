@@ -28,6 +28,9 @@ type RunbookEntity struct {
 	Categories                      []string `json:"categories,omitempty"`
 	AutoAttachToRestrictedIncidents *bool    `json:"auto_attach_to_restricted_incidents,omitempty"`
 	Tutorial                        *bool    `json:"tutorial,omitempty"`
+	// The timestamp when this runbook was last executed
+	LastExecutedAt          *time.Time                                  `json:"last_executed_at,omitempty"`
+	LastExecutedForIncident *NullablePublicAPIV1IncidentsSuccinctEntity `json:"last_executed_for_incident,omitempty"`
 }
 
 func (r RunbookEntity) MarshalJSON() ([]byte, error) {
@@ -165,4 +168,18 @@ func (o *RunbookEntity) GetTutorial() *bool {
 		return nil
 	}
 	return o.Tutorial
+}
+
+func (o *RunbookEntity) GetLastExecutedAt() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.LastExecutedAt
+}
+
+func (o *RunbookEntity) GetLastExecutedForIncident() *NullablePublicAPIV1IncidentsSuccinctEntity {
+	if o == nil {
+		return nil
+	}
+	return o.LastExecutedForIncident
 }

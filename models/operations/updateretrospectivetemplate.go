@@ -52,18 +52,19 @@ func (e *UpdateRetrospectiveTemplateFieldsType) UnmarshalJSON(data []byte) error
 }
 
 type UpdateRetrospectiveTemplateRequestBody struct {
-	Name                    *string                                 `json:"name,omitempty"`
-	Description             *string                                 `json:"description,omitempty"`
-	IsDefault               *bool                                   `json:"is_default,omitempty"`
-	SectionsSlug            []string                                `json:"sections[slug]"`
-	SectionsElements        []string                                `json:"sections[elements]"`
-	FieldsID                []string                                `json:"fields[id],omitempty"`
-	FieldsLabel             []string                                `json:"fields[label]"`
-	FieldsType              []UpdateRetrospectiveTemplateFieldsType `json:"fields[type]"`
-	FieldsHelpText          []string                                `json:"fields[help_text],omitempty"`
-	FieldsPermissibleValues []string                                `json:"fields[permissible_values],omitempty"`
-	FieldsIsRequired        []bool                                  `json:"fields[is_required],omitempty"`
-	FieldsSchema            []string                                `json:"fields[schema],omitempty"`
+	Name                        *string                                 `json:"name,omitempty"`
+	Description                 *string                                 `json:"description,omitempty"`
+	IsDefault                   *bool                                   `json:"is_default,omitempty"`
+	SectionsSlug                []string                                `json:"sections[slug]"`
+	SectionsElements            []string                                `json:"sections[elements]"`
+	FieldsID                    []string                                `json:"fields[id],omitempty"`
+	FieldsLabel                 []string                                `json:"fields[label]"`
+	FieldsType                  []UpdateRetrospectiveTemplateFieldsType `json:"fields[type]"`
+	FieldsHelpText              []string                                `json:"fields[help_text],omitempty"`
+	FieldsPermissibleValues     []string                                `json:"fields[permissible_values],omitempty"`
+	FieldsIsRequired            []bool                                  `json:"fields[is_required],omitempty"`
+	FieldsRequiredAtMilestoneID []string                                `json:"fields[required_at_milestone_id],omitempty"`
+	FieldsSchema                []string                                `json:"fields[schema],omitempty"`
 }
 
 func (o *UpdateRetrospectiveTemplateRequestBody) GetName() *string {
@@ -141,6 +142,13 @@ func (o *UpdateRetrospectiveTemplateRequestBody) GetFieldsIsRequired() []bool {
 		return nil
 	}
 	return o.FieldsIsRequired
+}
+
+func (o *UpdateRetrospectiveTemplateRequestBody) GetFieldsRequiredAtMilestoneID() []string {
+	if o == nil {
+		return nil
+	}
+	return o.FieldsRequiredAtMilestoneID
 }
 
 func (o *UpdateRetrospectiveTemplateRequestBody) GetFieldsSchema() []string {
