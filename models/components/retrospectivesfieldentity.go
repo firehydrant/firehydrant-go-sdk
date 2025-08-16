@@ -52,13 +52,14 @@ func (e *RetrospectivesFieldEntityType) UnmarshalJSON(data []byte) error {
 }
 
 type RetrospectivesFieldEntity struct {
-	ID                *string                        `json:"id,omitempty"`
-	Label             *string                        `json:"label,omitempty"`
-	Type              *RetrospectivesFieldEntityType `json:"type,omitempty"`
-	HelpText          *string                        `json:"help_text,omitempty"`
-	PermissibleValues []string                       `json:"permissible_values,omitempty"`
-	IsRequired        *bool                          `json:"is_required,omitempty"`
-	Schema            []string                       `json:"schema,omitempty"`
+	ID                    *string                        `json:"id,omitempty"`
+	Label                 *string                        `json:"label,omitempty"`
+	Type                  *RetrospectivesFieldEntityType `json:"type,omitempty"`
+	HelpText              *string                        `json:"help_text,omitempty"`
+	PermissibleValues     []string                       `json:"permissible_values,omitempty"`
+	IsRequired            *bool                          `json:"is_required,omitempty"`
+	RequiredAtMilestoneID *string                        `json:"required_at_milestone_id,omitempty"`
+	Schema                []string                       `json:"schema,omitempty"`
 }
 
 func (o *RetrospectivesFieldEntity) GetID() *string {
@@ -101,6 +102,13 @@ func (o *RetrospectivesFieldEntity) GetIsRequired() *bool {
 		return nil
 	}
 	return o.IsRequired
+}
+
+func (o *RetrospectivesFieldEntity) GetRequiredAtMilestoneID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.RequiredAtMilestoneID
 }
 
 func (o *RetrospectivesFieldEntity) GetSchema() []string {

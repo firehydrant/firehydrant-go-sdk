@@ -518,6 +518,10 @@ func main() {
 * [GetSignalsNoiseAnalytics](docs/sdks/metricsreporting/README.md#getsignalsnoiseanalytics) - Get noise analytics for signals
 * [ExportSignalsShiftAnalytics](docs/sdks/metricsreporting/README.md#exportsignalsshiftanalytics) - Export on-call hours report
 
+### [Pages](docs/sdks/pages/README.md)
+
+* [CreateSignalsPage](docs/sdks/pages/README.md#createsignalspage) - Pages a target
+
 ### [Retrospectives](docs/sdks/retrospectives/README.md)
 
 * [ShareIncidentRetrospectives](docs/sdks/retrospectives/README.md#shareincidentretrospectives) - Share an incident's retrospective

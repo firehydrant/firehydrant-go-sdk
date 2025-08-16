@@ -52,12 +52,13 @@ func (e *CreateIncidentRetrospectiveFieldType) UnmarshalJSON(data []byte) error 
 }
 
 type CreateIncidentRetrospectiveFieldRequestBody struct {
-	Label             string                               `json:"label"`
-	Type              CreateIncidentRetrospectiveFieldType `json:"type"`
-	HelpText          *string                              `json:"help_text,omitempty"`
-	PermissibleValues []string                             `json:"permissible_values,omitempty"`
-	IsRequired        *bool                                `json:"is_required,omitempty"`
-	Schema            []string                             `json:"schema,omitempty"`
+	Label                 string                               `json:"label"`
+	Type                  CreateIncidentRetrospectiveFieldType `json:"type"`
+	HelpText              *string                              `json:"help_text,omitempty"`
+	PermissibleValues     []string                             `json:"permissible_values,omitempty"`
+	IsRequired            *bool                                `json:"is_required,omitempty"`
+	Schema                []string                             `json:"schema,omitempty"`
+	RequiredAtMilestoneID *string                              `json:"required_at_milestone_id,omitempty"`
 }
 
 func (o *CreateIncidentRetrospectiveFieldRequestBody) GetLabel() string {
@@ -100,6 +101,13 @@ func (o *CreateIncidentRetrospectiveFieldRequestBody) GetSchema() []string {
 		return nil
 	}
 	return o.Schema
+}
+
+func (o *CreateIncidentRetrospectiveFieldRequestBody) GetRequiredAtMilestoneID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.RequiredAtMilestoneID
 }
 
 type CreateIncidentRetrospectiveFieldRequest struct {

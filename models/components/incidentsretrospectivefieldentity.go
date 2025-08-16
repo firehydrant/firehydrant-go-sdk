@@ -53,14 +53,15 @@ func (e *IncidentsRetrospectiveFieldEntityType) UnmarshalJSON(data []byte) error
 
 // IncidentsRetrospectiveFieldEntity - Incidents_RetrospectiveFieldEntity model
 type IncidentsRetrospectiveFieldEntity struct {
-	ID                *string                                `json:"id,omitempty"`
-	Label             *string                                `json:"label,omitempty"`
-	Type              *IncidentsRetrospectiveFieldEntityType `json:"type,omitempty"`
-	HelpText          *string                                `json:"help_text,omitempty"`
-	PermissibleValues []string                               `json:"permissible_values,omitempty"`
-	IsRequired        *bool                                  `json:"is_required,omitempty"`
-	Value             *string                                `json:"value,omitempty"`
-	Schema            []string                               `json:"schema,omitempty"`
+	ID                    *string                                `json:"id,omitempty"`
+	Label                 *string                                `json:"label,omitempty"`
+	Type                  *IncidentsRetrospectiveFieldEntityType `json:"type,omitempty"`
+	HelpText              *string                                `json:"help_text,omitempty"`
+	PermissibleValues     []string                               `json:"permissible_values,omitempty"`
+	IsRequired            *bool                                  `json:"is_required,omitempty"`
+	Value                 *string                                `json:"value,omitempty"`
+	Schema                []string                               `json:"schema,omitempty"`
+	RequiredAtMilestoneID *string                                `json:"required_at_milestone_id,omitempty"`
 }
 
 func (o *IncidentsRetrospectiveFieldEntity) GetID() *string {
@@ -117,4 +118,11 @@ func (o *IncidentsRetrospectiveFieldEntity) GetSchema() []string {
 		return nil
 	}
 	return o.Schema
+}
+
+func (o *IncidentsRetrospectiveFieldEntity) GetRequiredAtMilestoneID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.RequiredAtMilestoneID
 }

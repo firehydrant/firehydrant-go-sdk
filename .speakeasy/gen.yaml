@@ -21,7 +21,7 @@ generation:
     generateNewTests: false
     skipResponseBodyAssertions: false
 go:
-  version: 1.3.1
+  version: 1.3.2
   additionalDependencies: {}
   allowUnknownFieldsInWeakUnions: false
   baseErrorName: FireHydrantError
