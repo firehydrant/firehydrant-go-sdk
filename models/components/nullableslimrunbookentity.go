@@ -19,6 +19,9 @@ type NullableSlimRunbookEntity struct {
 	Owner          *NullableTeamEntityLite  `json:"owner,omitempty"`
 	// categories the runbook applies to
 	Categories []string `json:"categories,omitempty"`
+	// The timestamp when this runbook was last executed
+	LastExecutedAt          *time.Time                                  `json:"last_executed_at,omitempty"`
+	LastExecutedForIncident *NullablePublicAPIV1IncidentsSuccinctEntity `json:"last_executed_for_incident,omitempty"`
 }
 
 func (n NullableSlimRunbookEntity) MarshalJSON() ([]byte, error) {
@@ -100,4 +103,18 @@ func (o *NullableSlimRunbookEntity) GetCategories() []string {
 		return nil
 	}
 	return o.Categories
+}
+
+func (o *NullableSlimRunbookEntity) GetLastExecutedAt() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.LastExecutedAt
+}
+
+func (o *NullableSlimRunbookEntity) GetLastExecutedForIncident() *NullablePublicAPIV1IncidentsSuccinctEntity {
+	if o == nil {
+		return nil
+	}
+	return o.LastExecutedForIncident
 }

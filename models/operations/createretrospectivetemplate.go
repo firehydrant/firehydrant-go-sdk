@@ -87,17 +87,18 @@ func (e *CreateRetrospectiveTemplateFieldsType) UnmarshalJSON(data []byte) error
 }
 
 type CreateRetrospectiveTemplateRequest struct {
-	Name                    string                                  `json:"name"`
-	Description             string                                  `json:"description"`
-	IsDefault               *bool                                   `json:"is_default,omitempty"`
-	SectionsSlug            []SectionsSlug                          `json:"sections[slug]"`
-	SectionsElements        []string                                `json:"sections[elements]"`
-	FieldsLabel             []string                                `json:"fields[label]"`
-	FieldsType              []CreateRetrospectiveTemplateFieldsType `json:"fields[type]"`
-	FieldsHelpText          []string                                `json:"fields[help_text],omitempty"`
-	FieldsPermissibleValues []string                                `json:"fields[permissible_values],omitempty"`
-	FieldsIsRequired        []bool                                  `json:"fields[is_required],omitempty"`
-	FieldsSchema            []string                                `json:"fields[schema],omitempty"`
+	Name                        string                                  `json:"name"`
+	Description                 string                                  `json:"description"`
+	IsDefault                   *bool                                   `json:"is_default,omitempty"`
+	SectionsSlug                []SectionsSlug                          `json:"sections[slug]"`
+	SectionsElements            []string                                `json:"sections[elements]"`
+	FieldsLabel                 []string                                `json:"fields[label]"`
+	FieldsType                  []CreateRetrospectiveTemplateFieldsType `json:"fields[type]"`
+	FieldsHelpText              []string                                `json:"fields[help_text],omitempty"`
+	FieldsPermissibleValues     []string                                `json:"fields[permissible_values],omitempty"`
+	FieldsIsRequired            []bool                                  `json:"fields[is_required],omitempty"`
+	FieldsRequiredAtMilestoneID []string                                `json:"fields[required_at_milestone_id],omitempty"`
+	FieldsSchema                []string                                `json:"fields[schema],omitempty"`
 }
 
 func (o *CreateRetrospectiveTemplateRequest) GetName() string {
@@ -168,6 +169,13 @@ func (o *CreateRetrospectiveTemplateRequest) GetFieldsIsRequired() []bool {
 		return nil
 	}
 	return o.FieldsIsRequired
+}
+
+func (o *CreateRetrospectiveTemplateRequest) GetFieldsRequiredAtMilestoneID() []string {
+	if o == nil {
+		return nil
+	}
+	return o.FieldsRequiredAtMilestoneID
 }
 
 func (o *CreateRetrospectiveTemplateRequest) GetFieldsSchema() []string {

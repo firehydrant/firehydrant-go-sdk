@@ -2,7 +2,7 @@
 
 package firehydrantgosdk
 
-// Generated from OpenAPI doc version 0.0.1 and generator version 2.681.8
+// Generated from OpenAPI doc version 0.0.1 and generator version 2.686.7
 
 import (
 	"context"
@@ -186,6 +186,8 @@ type FireHydrant struct {
 	AuditEvents *AuditEvents
 	// Operations related to Communication
 	Communication *Communication
+	// Operations about Pages
+	Pages *Pages
 	// Operations related to Ticketing
 	Ticketing *Ticketing
 	// Operations related to SCIM
@@ -269,9 +271,9 @@ func WithTimeout(timeout time.Duration) SDKOption {
 // New creates a new instance of the SDK with the provided options
 func New(opts ...SDKOption) *FireHydrant {
 	sdk := &FireHydrant{
-		SDKVersion: "1.3.1",
+		SDKVersion: "1.3.2",
 		sdkConfiguration: config.SDKConfiguration{
-			UserAgent:  "speakeasy-sdk/go 1.3.1 2.681.8 0.0.1 github.com/firehydrant/firehydrant-go-sdk",
+			UserAgent:  "speakeasy-sdk/go 1.3.2 2.686.7 0.0.1 github.com/firehydrant/firehydrant-go-sdk",
 			ServerList: ServerList,
 		},
 		hooks: hooks.New(),
@@ -311,6 +313,7 @@ func New(opts ...SDKOption) *FireHydrant {
 	sdk.Runbooks = newRunbooks(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.AuditEvents = newAuditEvents(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.Communication = newCommunication(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.Pages = newPages(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.Ticketing = newTicketing(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.Scim = newScim(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.Webhooks = newWebhooks(sdk, sdk.sdkConfiguration, sdk.hooks)
