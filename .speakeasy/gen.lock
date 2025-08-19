@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 39357612-0c85-4a96-a549-e2d920c4a065
 management:
-  docChecksum: 6d3a0f06f0c5518145562d427808ec63
+  docChecksum: b1439308dee4a5686928d6f46f89a732
   docVersion: 0.0.1
-  speakeasyVersion: 1.603.2
-  generationVersion: 2.681.8
-  releaseVersion: 1.3.1
-  configChecksum: a1c988cfa102196bf3ffbae6c7e67fc9
+  speakeasyVersion: 1.606.0
+  generationVersion: 2.686.7
+  releaseVersion: 1.3.2
+  configChecksum: 62da6d716cc367d1eee99cd96334a006
   repoURL: https://github.com/firehydrant/firehydrant-go-sdk.git
   installationURL: https://github.com/firehydrant/firehydrant-go-sdk
 features:
@@ -524,6 +524,7 @@ generatedFiles:
   - /models/operations/createretrospectivetemplate.go
   - /models/operations/createsavedsearch.go
   - /models/operations/createservicechecklistresponse.go
+  - /models/operations/createsignalspage.go
   - /models/operations/createslackemojiaction.go
   - /models/operations/createteamcallroute.go
   - /models/operations/createteamescalationpolicy.go
@@ -1407,6 +1408,7 @@ generatedFiles:
   - docs/models/components/scheduledmaintenancesstatuspageentity.md
   - docs/models/components/scheduleentity.md
   - docs/models/components/scheduleentitypaginated.md
+  - docs/models/components/schema.md
   - docs/models/components/security.md
   - docs/models/components/servicechilddependencyentity.md
   - docs/models/components/servicedependency.md
@@ -1719,6 +1721,7 @@ generatedFiles:
   - docs/models/operations/createsavedsearchrequest.md
   - docs/models/operations/createsavedsearchresourcetype.md
   - docs/models/operations/createservicechecklistresponserequest.md
+  - docs/models/operations/createsignalspagerequest.md
   - docs/models/operations/createslackemojiactionrequest.md
   - docs/models/operations/createslackemojiactionrequestbody.md
   - docs/models/operations/createteamcallrouterequest.md
@@ -2167,6 +2170,7 @@ generatedFiles:
   - docs/sdks/incidentsettings/README.md
   - docs/sdks/integrations/README.md
   - docs/sdks/metricsreporting/README.md
+  - docs/sdks/pages/README.md
   - docs/sdks/retrospectives/README.md
   - docs/sdks/runbooks/README.md
   - docs/sdks/scim/README.md
@@ -2199,6 +2203,7 @@ generatedFiles:
   - metricsreporting.go
   - models/operations/options.go
   - models/sdkerrors/sdkerror.go
+  - pages.go
   - retrospectives.go
   - retry/config.go
   - runbooks.go
@@ -5626,5 +5631,12 @@ examples:
       responses:
         "201":
           application/json: {}
+  create_signals_page:
+    speakeasy-default-create-signals-page:
+      requestBody:
+        application/json: {"summary": "<value>", "target_type": "<value>", "target_id": "<id>"}
+      responses:
+        "201":
+          application/json: {"signal_rule": {"deduplication_expiry": "PT1H"}, "parent_alerts": [{"signal_rule": {"deduplication_expiry": "PT1H"}}], "child_alerts": [{"signal_rule": {"deduplication_expiry": "PT1H"}}]}
 examplesVersion: 1.0.2
 generatedTests: {}
