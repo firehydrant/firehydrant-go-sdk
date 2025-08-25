@@ -34,13 +34,15 @@ func (e *ListRunbooksSort) UnmarshalJSON(data []byte) error {
 	}
 }
 
-// OrderBy - Sort runbooks by their updated date or name. Accepts 'updated_at', 'name', and 'created_at'.
+// OrderBy - Sort runbooks by their updated date or name. Accepts 'updated_at', 'name', 'owner', 'last_executed_at', and 'created_at'.
 type OrderBy string
 
 const (
-	OrderByUpdatedAt OrderBy = "updated_at"
-	OrderByName      OrderBy = "name"
-	OrderByCreatedAt OrderBy = "created_at"
+	OrderByUpdatedAt      OrderBy = "updated_at"
+	OrderByName           OrderBy = "name"
+	OrderByCreatedAt      OrderBy = "created_at"
+	OrderByLastExecutedAt OrderBy = "last_executed_at"
+	OrderByOwner          OrderBy = "owner"
 )
 
 func (e OrderBy) ToPointer() *OrderBy {
@@ -57,6 +59,10 @@ func (e *OrderBy) UnmarshalJSON(data []byte) error {
 	case "name":
 		fallthrough
 	case "created_at":
+		fallthrough
+	case "last_executed_at":
+		fallthrough
+	case "owner":
 		*e = OrderBy(v)
 		return nil
 	default:
@@ -100,7 +106,7 @@ type ListRunbooksRequest struct {
 	Owners *string `queryParam:"style=form,explode=true,name=owners"`
 	// Sort runbooks by their updated date. Accepts 'asc', 'desc'. This parameter is deprecated in favor of 'order_by' and 'order_direction'.
 	Sort *ListRunbooksSort `queryParam:"style=form,explode=true,name=sort"`
-	// Sort runbooks by their updated date or name. Accepts 'updated_at', 'name', and 'created_at'.
+	// Sort runbooks by their updated date or name. Accepts 'updated_at', 'name', 'owner', 'last_executed_at', and 'created_at'.
 	OrderBy *OrderBy `queryParam:"style=form,explode=true,name=order_by"`
 	// Allows assigning a direction to how the specified `order_by` parameter is sorted. This parameter must be paired with `order_by` and does nothing on its own.
 	OrderDirection *OrderDirection `queryParam:"style=form,explode=true,name=order_direction"`
