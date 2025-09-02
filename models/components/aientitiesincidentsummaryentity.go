@@ -22,7 +22,7 @@ func (a AIEntitiesIncidentSummaryEntity) MarshalJSON() ([]byte, error) {
 }
 
 func (a *AIEntitiesIncidentSummaryEntity) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &a, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &a, "", false, nil); err != nil {
 		return err
 	}
 	return nil

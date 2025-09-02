@@ -31,7 +31,7 @@ func (p PublicAPIV1IncidentsTranscriptEntity) MarshalJSON() ([]byte, error) {
 }
 
 func (p *PublicAPIV1IncidentsTranscriptEntity) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &p, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &p, "", false, nil); err != nil {
 		return err
 	}
 	return nil

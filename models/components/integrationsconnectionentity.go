@@ -32,7 +32,7 @@ func (i IntegrationsConnectionEntity) MarshalJSON() ([]byte, error) {
 }
 
 func (i *IntegrationsConnectionEntity) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &i, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &i, "", false, nil); err != nil {
 		return err
 	}
 	return nil

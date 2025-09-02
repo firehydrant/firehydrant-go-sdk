@@ -117,7 +117,7 @@ func (c CreateChangeEvent) MarshalJSON() ([]byte, error) {
 }
 
 func (c *CreateChangeEvent) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &c, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"summary"}); err != nil {
 		return err
 	}
 	return nil

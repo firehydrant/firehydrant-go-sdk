@@ -71,7 +71,7 @@ func (c CreateIncidentNote) MarshalJSON() ([]byte, error) {
 }
 
 func (c *CreateIncidentNote) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &c, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"body"}); err != nil {
 		return err
 	}
 	return nil

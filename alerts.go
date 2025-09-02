@@ -821,7 +821,7 @@ func (s *Alerts) DeleteIncidentAlert(ctx context.Context, incidentAlertID string
 }
 
 // ListAlerts - List alerts
-// Retrieve all alerts from third parties
+// Retrieve all alerts, including Signals alerts and third-party
 func (s *Alerts) ListAlerts(ctx context.Context, request operations.ListAlertsRequest, opts ...operations.Option) (*components.AlertsAlertEntityPaginated, error) {
 	o := operations.Options{}
 	supportedOptions := []string{

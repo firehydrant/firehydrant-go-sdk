@@ -26,7 +26,7 @@ func (c CreateAudienceRequest) MarshalJSON() ([]byte, error) {
 }
 
 func (c *CreateAudienceRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &c, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"name", "description", "details[question]", "details[prompt]"}); err != nil {
 		return err
 	}
 	return nil

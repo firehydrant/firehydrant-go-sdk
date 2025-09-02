@@ -17,7 +17,7 @@ func (l ListSimilarIncidentsRequest) MarshalJSON() ([]byte, error) {
 }
 
 func (l *ListSimilarIncidentsRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &l, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &l, "", false, []string{"incident_id"}); err != nil {
 		return err
 	}
 	return nil

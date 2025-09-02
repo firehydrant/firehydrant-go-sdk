@@ -26,7 +26,7 @@ func (m MetricsTicketFunnelMetricsEntityDataBucketEntity) MarshalJSON() ([]byte,
 }
 
 func (m *MetricsTicketFunnelMetricsEntityDataBucketEntity) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &m, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &m, "", false, nil); err != nil {
 		return err
 	}
 	return nil

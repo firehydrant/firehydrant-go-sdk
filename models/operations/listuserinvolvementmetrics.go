@@ -81,7 +81,7 @@ func (l ListUserInvolvementMetricsRequest) MarshalJSON() ([]byte, error) {
 }
 
 func (l *ListUserInvolvementMetricsRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &l, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &l, "", false, nil); err != nil {
 		return err
 	}
 	return nil

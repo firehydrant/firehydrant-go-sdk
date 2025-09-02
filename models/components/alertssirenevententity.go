@@ -24,7 +24,7 @@ func (a AlertsSirenEventEntity) MarshalJSON() ([]byte, error) {
 }
 
 func (a *AlertsSirenEventEntity) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &a, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &a, "", false, nil); err != nil {
 		return err
 	}
 	return nil

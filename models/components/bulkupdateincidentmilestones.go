@@ -46,7 +46,7 @@ func (b BulkUpdateIncidentMilestonesMilestone) MarshalJSON() ([]byte, error) {
 }
 
 func (b *BulkUpdateIncidentMilestonesMilestone) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &b, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &b, "", false, []string{"type", "occurred_at"}); err != nil {
 		return err
 	}
 	return nil
