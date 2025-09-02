@@ -67,7 +67,7 @@ func (c CreateIncidentAttachmentRequestBody) MarshalJSON() ([]byte, error) {
 }
 
 func (c *CreateIncidentAttachmentRequestBody) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &c, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"file"}); err != nil {
 		return err
 	}
 	return nil

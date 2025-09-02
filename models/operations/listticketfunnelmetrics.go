@@ -153,7 +153,7 @@ func (l ListTicketFunnelMetricsRequest) MarshalJSON() ([]byte, error) {
 }
 
 func (l *ListTicketFunnelMetricsRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &l, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &l, "", false, nil); err != nil {
 		return err
 	}
 	return nil

@@ -25,7 +25,7 @@ func (n NullableUserEntity) MarshalJSON() ([]byte, error) {
 }
 
 func (n *NullableUserEntity) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &n, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &n, "", false, nil); err != nil {
 		return err
 	}
 	return nil

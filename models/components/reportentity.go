@@ -20,7 +20,7 @@ func (r ReportEntity) MarshalJSON() ([]byte, error) {
 }
 
 func (r *ReportEntity) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &r, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &r, "", false, nil); err != nil {
 		return err
 	}
 	return nil

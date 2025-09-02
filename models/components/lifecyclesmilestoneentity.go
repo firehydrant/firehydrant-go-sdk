@@ -25,7 +25,7 @@ func (l LifecyclesMilestoneEntity) MarshalJSON() ([]byte, error) {
 }
 
 func (l *LifecyclesMilestoneEntity) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &l, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &l, "", false, nil); err != nil {
 		return err
 	}
 	return nil

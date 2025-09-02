@@ -51,7 +51,7 @@ func (l ListCommentsRequest) MarshalJSON() ([]byte, error) {
 }
 
 func (l *ListCommentsRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &l, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &l, "", false, []string{"conversation_id"}); err != nil {
 		return err
 	}
 	return nil

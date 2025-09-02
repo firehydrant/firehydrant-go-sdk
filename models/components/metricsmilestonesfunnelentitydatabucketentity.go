@@ -19,7 +19,7 @@ func (m MetricsMilestonesFunnelEntityDataBucketEntity) MarshalJSON() ([]byte, er
 }
 
 func (m *MetricsMilestonesFunnelEntityDataBucketEntity) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &m, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &m, "", false, nil); err != nil {
 		return err
 	}
 	return nil

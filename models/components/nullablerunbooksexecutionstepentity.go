@@ -41,7 +41,7 @@ func (n NullableRunbooksExecutionStepEntity) MarshalJSON() ([]byte, error) {
 }
 
 func (n *NullableRunbooksExecutionStepEntity) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &n, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &n, "", false, nil); err != nil {
 		return err
 	}
 	return nil

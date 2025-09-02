@@ -23,7 +23,7 @@ func (i IncidentsMilestoneEntity) MarshalJSON() ([]byte, error) {
 }
 
 func (i *IncidentsMilestoneEntity) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &i, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &i, "", false, nil); err != nil {
 		return err
 	}
 	return nil

@@ -236,7 +236,7 @@ func main() {
 
 ## ListAlerts
 
-Retrieve all alerts from third parties
+Retrieve all alerts, including Signals alerts and third-party
 
 ### Example Usage
 

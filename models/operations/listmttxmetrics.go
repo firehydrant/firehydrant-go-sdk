@@ -243,7 +243,7 @@ func (l ListMttxMetricsRequest) MarshalJSON() ([]byte, error) {
 }
 
 func (l *ListMttxMetricsRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &l, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &l, "", false, []string{"start_date", "end_date"}); err != nil {
 		return err
 	}
 	return nil
