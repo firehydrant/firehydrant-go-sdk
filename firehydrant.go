@@ -2,7 +2,7 @@
 
 package firehydrantgosdk
 
-// Generated from OpenAPI doc version 0.0.1 and generator version 2.687.13
+// Generated from OpenAPI doc version 0.0.1 and generator version 2.692.0
 
 import (
 	"context"
@@ -178,8 +178,12 @@ type FireHydrant struct {
 	Integrations *Integrations
 	// Operations related to Users
 	Users *Users
+	// Operations about Permissions
+	Permissions *Permissions
 	// Operations related to Metrics & Reporting
 	MetricsReporting *MetricsReporting
+	// Operations about Roles
+	Roles *Roles
 	// Operations related to Runbooks
 	Runbooks *Runbooks
 	// Operations about Audit Events
@@ -271,9 +275,9 @@ func WithTimeout(timeout time.Duration) SDKOption {
 // New creates a new instance of the SDK with the provided options
 func New(opts ...SDKOption) *FireHydrant {
 	sdk := &FireHydrant{
-		SDKVersion: "1.3.4",
+		SDKVersion: "1.3.5",
 		sdkConfiguration: config.SDKConfiguration{
-			UserAgent:  "speakeasy-sdk/go 1.3.4 2.687.13 0.0.1 github.com/firehydrant/firehydrant-go-sdk",
+			UserAgent:  "speakeasy-sdk/go 1.3.5 2.692.0 0.0.1 github.com/firehydrant/firehydrant-go-sdk",
 			ServerList: ServerList,
 		},
 		hooks: hooks.New(),
@@ -309,7 +313,9 @@ func New(opts ...SDKOption) *FireHydrant {
 	sdk.IncidentSettings = newIncidentSettings(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.Integrations = newIntegrations(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.Users = newUsers(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.Permissions = newPermissions(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.MetricsReporting = newMetricsReporting(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.Roles = newRoles(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.Runbooks = newRunbooks(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.AuditEvents = newAuditEvents(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.Communication = newCommunication(sdk, sdk.sdkConfiguration, sdk.hooks)

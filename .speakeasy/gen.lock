@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 39357612-0c85-4a96-a549-e2d920c4a065
 management:
-  docChecksum: e344d3248cac62f007bfc04f1e1ff9f0
+  docChecksum: 1cf21ef1e0362daa534ba0a0c24a7cf8
   docVersion: 0.0.1
-  speakeasyVersion: 1.606.10
-  generationVersion: 2.687.13
-  releaseVersion: 1.3.4
-  configChecksum: 6267c80630f4481a7ec28885b3601482
+  speakeasyVersion: 1.609.0
+  generationVersion: 2.692.0
+  releaseVersion: 1.3.5
+  configChecksum: 54d69bcc02e44a4f4984fd4e7f801d4d
   repoURL: https://github.com/firehydrant/firehydrant-go-sdk.git
   installationURL: https://github.com/firehydrant/firehydrant-go-sdk
 features:
   go:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.12
-    core: 3.9.3
+    core: 3.9.6
     defaultEnabledRetries: 0.2.0
     envVarSecurityUsage: 0.3.2
     flattening: 2.81.1
@@ -89,6 +89,7 @@ generatedFiles:
   - /models/components/createpostmortemreason.go
   - /models/components/createpostmortemreport.go
   - /models/components/createpriority.go
+  - /models/components/createrole.go
   - /models/components/createrunbook.go
   - /models/components/createrunbookexecution.go
   - /models/components/createsavedsearch.go
@@ -222,6 +223,7 @@ generatedFiles:
   - /models/components/nullablecalendarsevententity.go
   - /models/components/nullablechangeevententity.go
   - /models/components/nullableconversationsapientitieschannel.go
+  - /models/components/nullableemptyvotesentity.go
   - /models/components/nullableeventnoteentity.go
   - /models/components/nullableexternalresourceentity.go
   - /models/components/nullablefhtypesgenericentity.go
@@ -304,6 +306,7 @@ generatedFiles:
   - /models/components/organizationscustomfielddefinitionentity.go
   - /models/components/overrideoncallschedulerotationshifts.go
   - /models/components/patchscimuser.go
+  - /models/components/permissionentitylist.go
   - /models/components/pongentity.go
   - /models/components/postmortemspostmortemreportentity.go
   - /models/components/postmortemspostmortemreportentitypaginated.go
@@ -320,6 +323,8 @@ generatedFiles:
   - /models/components/publicapiv1incidentssuccinctentity.go
   - /models/components/publicapiv1incidentstranscriptentity.go
   - /models/components/publicapiv1integrationsauthedproviderentity.go
+  - /models/components/publicapiv1permissionentity.go
+  - /models/components/publicapiv1roleentity.go
   - /models/components/publicapiv1similarincidententity.go
   - /models/components/publishpostmortemreport.go
   - /models/components/reorderpostmortemreasons.go
@@ -331,6 +336,7 @@ generatedFiles:
   - /models/components/retrospectivesindextemplateentitypaginated.go
   - /models/components/retrospectivestemplateentity.go
   - /models/components/retrospectivestemplateentityincidentsectionentity.go
+  - /models/components/roleentitypaginated.go
   - /models/components/runbookentity.go
   - /models/components/runbooksactionsentity.go
   - /models/components/runbooksactionsentitypaginated.go
@@ -453,6 +459,7 @@ generatedFiles:
   - /models/components/updatepostmortemreason.go
   - /models/components/updatepostmortemreport.go
   - /models/components/updatepriority.go
+  - /models/components/updaterole.go
   - /models/components/updaterunbook.go
   - /models/components/updaterunbookexecutionstep.go
   - /models/components/updatesavedsearch.go
@@ -570,6 +577,7 @@ generatedFiles:
   - /models/operations/deletepostmortemreason.go
   - /models/operations/deletepriority.go
   - /models/operations/deleteretrospectivetemplate.go
+  - /models/operations/deleterole.go
   - /models/operations/deleterunbook.go
   - /models/operations/deleterunbookexecution.go
   - /models/operations/deletesavedsearch.go
@@ -642,6 +650,7 @@ generatedFiles:
   - /models/operations/getpostmortemreport.go
   - /models/operations/getpriority.go
   - /models/operations/getretrospectivetemplate.go
+  - /models/operations/getrole.go
   - /models/operations/getrunbook.go
   - /models/operations/getrunbookactionfieldoptions.go
   - /models/operations/getrunbookexecution.go
@@ -744,6 +753,7 @@ generatedFiles:
   - /models/operations/listretrospectivemetrics.go
   - /models/operations/listretrospectives.go
   - /models/operations/listretrospectivetemplates.go
+  - /models/operations/listroles.go
   - /models/operations/listrunbookactions.go
   - /models/operations/listrunbookaudits.go
   - /models/operations/listrunbookexecutions.go
@@ -844,6 +854,7 @@ generatedFiles:
   - /models/operations/updatepostmortemreport.go
   - /models/operations/updatepriority.go
   - /models/operations/updateretrospectivetemplate.go
+  - /models/operations/updaterole.go
   - /models/operations/updaterunbook.go
   - /models/operations/updaterunbookexecutionstep.go
   - /models/operations/updaterunbookexecutionstepscript.go
@@ -990,6 +1001,8 @@ generatedFiles:
   - docs/models/components/createpostmortemreason.md
   - docs/models/components/createpostmortemreport.md
   - docs/models/components/createpriority.md
+  - docs/models/components/createrole.md
+  - docs/models/components/createrolepermission.md
   - docs/models/components/createrunbook.md
   - docs/models/components/createrunbookattachmentrule.md
   - docs/models/components/createrunbookexecution.md
@@ -1235,6 +1248,7 @@ generatedFiles:
   - docs/models/components/nullablechangeevententityattachment.md
   - docs/models/components/nullablechangeevententitylabels.md
   - docs/models/components/nullableconversationsapientitieschannel.md
+  - docs/models/components/nullableemptyvotesentity.md
   - docs/models/components/nullableeventnoteentity.md
   - docs/models/components/nullableexternalresourceentity.md
   - docs/models/components/nullablefhtypesgenericentity.md
@@ -1341,6 +1355,7 @@ generatedFiles:
   - docs/models/components/organizationscustomfielddefinitionentity.md
   - docs/models/components/overrideoncallschedulerotationshifts.md
   - docs/models/components/patchscimuser.md
+  - docs/models/components/permissionentitylist.md
   - docs/models/components/pongentity.md
   - docs/models/components/postmortemspostmortemreportentity.md
   - docs/models/components/postmortemspostmortemreportentitypaginated.md
@@ -1374,6 +1389,8 @@ generatedFiles:
   - docs/models/components/publicapiv1incidentssuccinctentity.md
   - docs/models/components/publicapiv1incidentstranscriptentity.md
   - docs/models/components/publicapiv1integrationsauthedproviderentity.md
+  - docs/models/components/publicapiv1permissionentity.md
+  - docs/models/components/publicapiv1roleentity.md
   - docs/models/components/publicapiv1similarincidententity.md
   - docs/models/components/publish.md
   - docs/models/components/publishpostmortemreport.md
@@ -1387,6 +1404,7 @@ generatedFiles:
   - docs/models/components/retrospectivesindextemplateentitypaginated.md
   - docs/models/components/retrospectivestemplateentity.md
   - docs/models/components/retrospectivestemplateentityincidentsectionentity.md
+  - docs/models/components/roleentitypaginated.md
   - docs/models/components/runbookentity.md
   - docs/models/components/runbooks.md
   - docs/models/components/runbooksactionsentity.md
@@ -1569,6 +1587,8 @@ generatedFiles:
   - docs/models/components/updatepostmortemreport.md
   - docs/models/components/updatepostmortemreportquestion.md
   - docs/models/components/updatepriority.md
+  - docs/models/components/updaterole.md
+  - docs/models/components/updaterolepermission.md
   - docs/models/components/updaterunbook.md
   - docs/models/components/updaterunbookattachmentrule.md
   - docs/models/components/updaterunbookexecutionstep.md
@@ -1770,6 +1790,7 @@ generatedFiles:
   - docs/models/operations/deletepostmortemreasonrequest.md
   - docs/models/operations/deletepriorityrequest.md
   - docs/models/operations/deleteretrospectivetemplaterequest.md
+  - docs/models/operations/deleterolerequest.md
   - docs/models/operations/deleterunbookexecutionrequest.md
   - docs/models/operations/deleterunbookrequest.md
   - docs/models/operations/deletesavedsearchrequest.md
@@ -1848,6 +1869,7 @@ generatedFiles:
   - docs/models/operations/getpostmortemreportrequest.md
   - docs/models/operations/getpriorityrequest.md
   - docs/models/operations/getretrospectivetemplaterequest.md
+  - docs/models/operations/getrolerequest.md
   - docs/models/operations/getrunbookactionfieldoptionsrequest.md
   - docs/models/operations/getrunbookexecutionrequest.md
   - docs/models/operations/getrunbookexecutionstepscriptrequest.md
@@ -1983,6 +2005,7 @@ generatedFiles:
   - docs/models/operations/listretrospectivemetricsrequest.md
   - docs/models/operations/listretrospectivesrequest.md
   - docs/models/operations/listretrospectivetemplatesrequest.md
+  - docs/models/operations/listrolesrequest.md
   - docs/models/operations/listrunbookactionsrequest.md
   - docs/models/operations/listrunbookauditsrequest.md
   - docs/models/operations/listrunbookexecutionsrequest.md
@@ -2117,6 +2140,7 @@ generatedFiles:
   - docs/models/operations/updateretrospectivetemplatefieldstype.md
   - docs/models/operations/updateretrospectivetemplaterequest.md
   - docs/models/operations/updateretrospectivetemplaterequestbody.md
+  - docs/models/operations/updaterolerequest.md
   - docs/models/operations/updaterunbookexecutionsteprequest.md
   - docs/models/operations/updaterunbookexecutionstepscriptrequest.md
   - docs/models/operations/updaterunbookrequest.md
@@ -2171,7 +2195,9 @@ generatedFiles:
   - docs/sdks/integrations/README.md
   - docs/sdks/metricsreporting/README.md
   - docs/sdks/pages/README.md
+  - docs/sdks/permissions/README.md
   - docs/sdks/retrospectives/README.md
+  - docs/sdks/roles/README.md
   - docs/sdks/runbooks/README.md
   - docs/sdks/scim/README.md
   - docs/sdks/signals/README.md
@@ -2204,8 +2230,10 @@ generatedFiles:
   - models/operations/options.go
   - models/sdkerrors/sdkerror.go
   - pages.go
+  - permissions.go
   - retrospectives.go
   - retry/config.go
+  - roles.go
   - runbooks.go
   - scim.go
   - signals.go
@@ -5638,5 +5666,55 @@ examples:
       responses:
         "201":
           application/json: {"signal_rule": {"deduplication_expiry": "PT1H"}, "parent_alerts": [{"signal_rule": {"deduplication_expiry": "PT1H"}}], "child_alerts": [{"signal_rule": {"deduplication_expiry": "PT1H"}}]}
+  list_permissions:
+    speakeasy-default-list-permissions:
+      responses:
+        "200":
+          application/json: {}
+  list_current_user_permissions:
+    speakeasy-default-list-current-user-permissions:
+      responses:
+        "200":
+          application/json: {}
+  list_team_permissions:
+    speakeasy-default-list-team-permissions:
+      responses:
+        "200":
+          application/json: {}
+  list_roles:
+    speakeasy-default-list-roles:
+      responses:
+        "200":
+          application/json: {}
+  create_role:
+    speakeasy-default-create-role:
+      requestBody:
+        application/json: {"name": "<value>"}
+      responses:
+        "201":
+          application/json: {}
+  get_role:
+    speakeasy-default-get-role:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  delete_role:
+    speakeasy-default-delete-role:
+      parameters:
+        path:
+          id: "<id>"
+  update_role:
+    speakeasy-default-update-role:
+      parameters:
+        path:
+          id: "<id>"
+      requestBody:
+        application/json: {"name": "<value>"}
+      responses:
+        "200":
+          application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
