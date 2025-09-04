@@ -9,21 +9,21 @@ import (
 
 // RunbookEntity model
 type RunbookEntity struct {
-	ID                *string                  `json:"id,omitempty"`
-	Name              *string                  `json:"name,omitempty"`
-	Summary           *string                  `json:"summary,omitempty"`
-	Description       *string                  `json:"description,omitempty"`
-	Type              *string                  `json:"type,omitempty"`
-	RunbookTemplateID *string                  `json:"runbook_template_id,omitempty"`
-	CreatedAt         *time.Time               `json:"created_at,omitempty"`
-	UpdatedAt         *time.Time               `json:"updated_at,omitempty"`
-	CreatedBy         *NullableAuthorEntity    `json:"created_by,omitempty"`
-	UpdatedBy         *NullableAuthorEntity    `json:"updated_by,omitempty"`
-	Steps             []RunbookStepEntity      `json:"steps,omitempty"`
-	AttachmentRule    *NullableRulesRuleEntity `json:"attachment_rule,omitempty"`
-	Votes             *NullableVotesEntity     `json:"votes,omitempty"`
-	IsEditable        *bool                    `json:"is_editable,omitempty"`
-	Owner             *NullableTeamEntityLite  `json:"owner,omitempty"`
+	ID                *string                   `json:"id,omitempty"`
+	Name              *string                   `json:"name,omitempty"`
+	Summary           *string                   `json:"summary,omitempty"`
+	Description       *string                   `json:"description,omitempty"`
+	Type              *string                   `json:"type,omitempty"`
+	RunbookTemplateID *string                   `json:"runbook_template_id,omitempty"`
+	CreatedAt         *time.Time                `json:"created_at,omitempty"`
+	UpdatedAt         *time.Time                `json:"updated_at,omitempty"`
+	CreatedBy         *NullableAuthorEntity     `json:"created_by,omitempty"`
+	UpdatedBy         *NullableAuthorEntity     `json:"updated_by,omitempty"`
+	Steps             []RunbookStepEntity       `json:"steps,omitempty"`
+	AttachmentRule    *NullableRulesRuleEntity  `json:"attachment_rule,omitempty"`
+	Votes             *NullableEmptyVotesEntity `json:"votes,omitempty"`
+	IsEditable        *bool                     `json:"is_editable,omitempty"`
+	Owner             *NullableTeamEntityLite   `json:"owner,omitempty"`
 	// categories the runbook applies to
 	Categories                      []string `json:"categories,omitempty"`
 	AutoAttachToRestrictedIncidents *bool    `json:"auto_attach_to_restricted_incidents,omitempty"`
@@ -128,7 +128,7 @@ func (o *RunbookEntity) GetAttachmentRule() *NullableRulesRuleEntity {
 	return o.AttachmentRule
 }
 
-func (o *RunbookEntity) GetVotes() *NullableVotesEntity {
+func (o *RunbookEntity) GetVotes() *NullableEmptyVotesEntity {
 	if o == nil {
 		return nil
 	}

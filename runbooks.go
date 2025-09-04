@@ -2856,7 +2856,7 @@ func (s *Runbooks) DeleteRunbook(ctx context.Context, runbookID string, opts ...
 }
 
 // ListRunbookAudits - List runbook audits
-// Please contact support to enable audit logging for your account.
+// This endpoint is deprecated.
 func (s *Runbooks) ListRunbookAudits(ctx context.Context, page *int, perPage *int, auditableType *operations.AuditableType, sort *string, opts ...operations.Option) error {
 	request := operations.ListRunbookAuditsRequest{
 		Page:          page,

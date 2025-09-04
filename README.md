@@ -522,6 +522,12 @@ func main() {
 
 * [CreateSignalsPage](docs/sdks/pages/README.md#createsignalspage) - Pages a target
 
+### [Permissions](docs/sdks/permissions/README.md)
+
+* [ListPermissions](docs/sdks/permissions/README.md#listpermissions) - List permissions
+* [ListCurrentUserPermissions](docs/sdks/permissions/README.md#listcurrentuserpermissions) - Get all permissions for the current user
+* [ListTeamPermissions](docs/sdks/permissions/README.md#listteampermissions) - Get all permissions for a team
+
 ### [Retrospectives](docs/sdks/retrospectives/README.md)
 
 * [ShareIncidentRetrospectives](docs/sdks/retrospectives/README.md#shareincidentretrospectives) - Share an incident's retrospective
@@ -554,6 +560,14 @@ func main() {
 * [GetRetrospectiveTemplate](docs/sdks/retrospectives/README.md#getretrospectivetemplate) - Get a retrospective template
 * [DeleteRetrospectiveTemplate](docs/sdks/retrospectives/README.md#deleteretrospectivetemplate) - Delete a retrospective template
 * [UpdateRetrospectiveTemplate](docs/sdks/retrospectives/README.md#updateretrospectivetemplate) - Update a retrospective template
+
+### [Roles](docs/sdks/roles/README.md)
+
+* [ListRoles](docs/sdks/roles/README.md#listroles) - Get all roles
+* [CreateRole](docs/sdks/roles/README.md#createrole) - Create a role
+* [GetRole](docs/sdks/roles/README.md#getrole) - Get a role
+* [DeleteRole](docs/sdks/roles/README.md#deleterole) - Delete a role
+* [UpdateRole](docs/sdks/roles/README.md#updaterole) - Update a role
 
 ### [Runbooks](docs/sdks/runbooks/README.md)
 

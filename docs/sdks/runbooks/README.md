@@ -799,7 +799,7 @@ func main() {
 
 ## ListRunbookAudits
 
-Please contact support to enable audit logging for your account.
+This endpoint is deprecated.
 
 ### Example Usage
 

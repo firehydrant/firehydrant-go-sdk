@@ -28,7 +28,7 @@ type RunbookStepEntity struct {
 	Reruns          *bool                          `json:"reruns,omitempty"`
 	Repeats         *bool                          `json:"repeats,omitempty"`
 	RepeatsDuration *string                        `json:"repeats_duration,omitempty"`
-	Votes           *NullableVotesEntity           `json:"votes,omitempty"`
+	Votes           *NullableEmptyVotesEntity      `json:"votes,omitempty"`
 	Rule            *NullableRulesRuleEntity       `json:"rule,omitempty"`
 }
 
@@ -116,7 +116,7 @@ func (o *RunbookStepEntity) GetRepeatsDuration() *string {
 	return o.RepeatsDuration
 }
 
-func (o *RunbookStepEntity) GetVotes() *NullableVotesEntity {
+func (o *RunbookStepEntity) GetVotes() *NullableEmptyVotesEntity {
 	if o == nil {
 		return nil
 	}
