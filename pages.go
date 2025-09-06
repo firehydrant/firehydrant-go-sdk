@@ -32,9 +32,9 @@ func newPages(rootSDK *FireHydrant, sdkConfig config.SDKConfiguration, hooks *ho
 	}
 }
 
-// CreateSignalsPage - Pages a target
-// Pages a target
-func (s *Pages) CreateSignalsPage(ctx context.Context, request operations.CreateSignalsPageRequest, opts ...operations.Option) (*components.AlertsAlertEntity, error) {
+// CreateSignalsPage - Page a user, team, on-call schedule, or escalation policy
+// Used for paging an on-call target within FireHydrant's signals product. This can be used for paging users, teams, on-call schedules, and escalation policies.
+func (s *Pages) CreateSignalsPage(ctx context.Context, request components.CreateSignalsPage, opts ...operations.Option) (*components.AlertsAlertEntity, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
