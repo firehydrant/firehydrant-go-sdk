@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 39357612-0c85-4a96-a549-e2d920c4a065
 management:
-  docChecksum: 1cf21ef1e0362daa534ba0a0c24a7cf8
+  docChecksum: d98f0589e147bdaa0eed5cc27427a177
   docVersion: 0.0.1
-  speakeasyVersion: 1.609.0
-  generationVersion: 2.692.0
-  releaseVersion: 1.3.5
-  configChecksum: 54d69bcc02e44a4f4984fd4e7f801d4d
+  speakeasyVersion: 1.611.1
+  generationVersion: 2.694.1
+  releaseVersion: 1.3.6
+  configChecksum: 3edc8261b25a1b338d8e4baa77f5bf65
   repoURL: https://github.com/firehydrant/firehydrant-go-sdk.git
   installationURL: https://github.com/firehydrant/firehydrant-go-sdk
 features:
@@ -106,6 +106,7 @@ generatedFiles:
   - /models/components/createsignalsalertgroupingconfiguration.go
   - /models/components/createsignalsemailtarget.go
   - /models/components/createsignalseventsource.go
+  - /models/components/createsignalspage.go
   - /models/components/createsignalswebhooktarget.go
   - /models/components/createstatusupdatetemplate.go
   - /models/components/createtasklist.go
@@ -531,7 +532,6 @@ generatedFiles:
   - /models/operations/createretrospectivetemplate.go
   - /models/operations/createsavedsearch.go
   - /models/operations/createservicechecklistresponse.go
-  - /models/operations/createsignalspage.go
   - /models/operations/createslackemojiaction.go
   - /models/operations/createteamcallroute.go
   - /models/operations/createteamescalationpolicy.go
@@ -1048,6 +1048,8 @@ generatedFiles:
   - docs/models/components/createsignalseventsource.md
   - docs/models/components/createsignalseventsourcedata.md
   - docs/models/components/createsignalseventsourceexamplepayload.md
+  - docs/models/components/createsignalspage.md
+  - docs/models/components/createsignalspagetargettype.md
   - docs/models/components/createsignalswebhooktarget.md
   - docs/models/components/createstatusupdatetemplate.md
   - docs/models/components/createtasklist.md
@@ -1741,7 +1743,6 @@ generatedFiles:
   - docs/models/operations/createsavedsearchrequest.md
   - docs/models/operations/createsavedsearchresourcetype.md
   - docs/models/operations/createservicechecklistresponserequest.md
-  - docs/models/operations/createsignalspagerequest.md
   - docs/models/operations/createslackemojiactionrequest.md
   - docs/models/operations/createslackemojiactionrequestbody.md
   - docs/models/operations/createteamcallrouterequest.md
@@ -5662,7 +5663,7 @@ examples:
   create_signals_page:
     speakeasy-default-create-signals-page:
       requestBody:
-        application/json: {"summary": "<value>", "target_type": "<value>", "target_id": "<id>"}
+        application/json: {"summary": "<value>", "target_type": "Team", "target_id": "<id>"}
       responses:
         "201":
           application/json: {"signal_rule": {"deduplication_expiry": "PT1H"}, "parent_alerts": [{"signal_rule": {"deduplication_expiry": "PT1H"}}], "child_alerts": [{"signal_rule": {"deduplication_expiry": "PT1H"}}]}
