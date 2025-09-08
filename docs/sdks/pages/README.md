@@ -7,11 +7,11 @@ Operations about Pages
 
 ### Available Operations
 
-* [CreateSignalsPage](#createsignalspage) - Pages a target
+* [CreateSignalsPage](#createsignalspage) - Page a user, team, on-call schedule, or escalation policy
 
 ## CreateSignalsPage
 
-Pages a target
+Used for paging an on-call target within FireHydrant's signals product. This can be used for paging users, teams, on-call schedules, and escalation policies.
 
 ### Example Usage
 
@@ -23,7 +23,6 @@ import(
 	"context"
 	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"github.com/firehydrant/firehydrant-go-sdk/models/components"
-	"github.com/firehydrant/firehydrant-go-sdk/models/operations"
 	"log"
 )
 
@@ -36,9 +35,9 @@ func main() {
         }),
     )
 
-    res, err := s.Pages.CreateSignalsPage(ctx, operations.CreateSignalsPageRequest{
+    res, err := s.Pages.CreateSignalsPage(ctx, components.CreateSignalsPage{
         Summary: "<value>",
-        TargetType: "<value>",
+        TargetType: components.CreateSignalsPageTargetTypeTeam,
         TargetID: "<id>",
     })
     if err != nil {
@@ -52,11 +51,11 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `ctx`                                                                                      | [context.Context](https://pkg.go.dev/context#Context)                                      | :heavy_check_mark:                                                                         | The context to use for the request.                                                        |
-| `request`                                                                                  | [operations.CreateSignalsPageRequest](../../models/operations/createsignalspagerequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
-| `opts`                                                                                     | [][operations.Option](../../models/operations/option.md)                                   | :heavy_minus_sign:                                                                         | The options for this request.                                                              |
+| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `ctx`                                                                        | [context.Context](https://pkg.go.dev/context#Context)                        | :heavy_check_mark:                                                           | The context to use for the request.                                          |
+| `request`                                                                    | [components.CreateSignalsPage](../../models/components/createsignalspage.md) | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
+| `opts`                                                                       | [][operations.Option](../../models/operations/option.md)                     | :heavy_minus_sign:                                                           | The options for this request.                                                |
 
 ### Response
 

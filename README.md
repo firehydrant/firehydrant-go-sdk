@@ -520,7 +520,7 @@ func main() {
 
 ### [Pages](docs/sdks/pages/README.md)
 
-* [CreateSignalsPage](docs/sdks/pages/README.md#createsignalspage) - Pages a target
+* [CreateSignalsPage](docs/sdks/pages/README.md#createsignalspage) - Page a user, team, on-call schedule, or escalation policy
 
 ### [Permissions](docs/sdks/permissions/README.md)
 
