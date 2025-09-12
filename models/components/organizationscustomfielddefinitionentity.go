@@ -9,7 +9,8 @@ type OrganizationsCustomFieldDefinitionEntity struct {
 	FieldType   *string `json:"field_type,omitempty"`
 	Slug        *string `json:"slug,omitempty"`
 	Description *string `json:"description,omitempty"`
-	Required    *bool   `json:"required,omitempty"`
+	// Whether this field is required for all incidents.
+	Required *bool `json:"required,omitempty"`
 	// The milestone at which this field is required, if `required` is set to `true`. When null, a required field is always required.
 	RequiredAtMilestoneID *string  `json:"required_at_milestone_id,omitempty"`
 	PermissibleValues     []string `json:"permissible_values,omitempty"`

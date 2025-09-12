@@ -8,7 +8,8 @@ type CreateCustomFieldDefinition struct {
 	Description       *string  `json:"description,omitempty"`
 	FieldType         string   `json:"field_type"`
 	PermissibleValues []string `json:"permissible_values,omitempty"`
-	Required          bool     `json:"required"`
+	// Whether this field should be required for all incidents.
+	Required bool `json:"required"`
 	// An optional milestone ID to specify when the field should become required, if `required` is set to `true`. If not provided, required fields are always required.
 	RequiredAtMilestoneID *string `json:"required_at_milestone_id,omitempty"`
 }
