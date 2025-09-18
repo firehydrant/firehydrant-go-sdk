@@ -6,9 +6,9 @@ type DeleteSignalsAlertGroupingConfigurationRequest struct {
 	ID string `pathParam:"style=simple,explode=false,name=id"`
 }
 
-func (o *DeleteSignalsAlertGroupingConfigurationRequest) GetID() string {
-	if o == nil {
+func (d *DeleteSignalsAlertGroupingConfigurationRequest) GetID() string {
+	if d == nil {
 		return ""
 	}
-	return o.ID
+	return d.ID
 }

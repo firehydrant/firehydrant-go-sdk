@@ -11,16 +11,16 @@ type UpdateChecklistTemplateRequest struct {
 	UpdateChecklistTemplate components.UpdateChecklistTemplate `request:"mediaType=application/json"`
 }
 
-func (o *UpdateChecklistTemplateRequest) GetID() string {
-	if o == nil {
+func (u *UpdateChecklistTemplateRequest) GetID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ID
+	return u.ID
 }
 
-func (o *UpdateChecklistTemplateRequest) GetUpdateChecklistTemplate() components.UpdateChecklistTemplate {
-	if o == nil {
+func (u *UpdateChecklistTemplateRequest) GetUpdateChecklistTemplate() components.UpdateChecklistTemplate {
+	if u == nil {
 		return components.UpdateChecklistTemplate{}
 	}
-	return o.UpdateChecklistTemplate
+	return u.UpdateChecklistTemplate
 }

@@ -12,23 +12,23 @@ type CreateOnCallShiftRequest struct {
 	CreateOnCallShift components.CreateOnCallShift `request:"mediaType=application/json"`
 }
 
-func (o *CreateOnCallShiftRequest) GetTeamID() string {
-	if o == nil {
+func (c *CreateOnCallShiftRequest) GetTeamID() string {
+	if c == nil {
 		return ""
 	}
-	return o.TeamID
+	return c.TeamID
 }
 
-func (o *CreateOnCallShiftRequest) GetScheduleID() string {
-	if o == nil {
+func (c *CreateOnCallShiftRequest) GetScheduleID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ScheduleID
+	return c.ScheduleID
 }
 
-func (o *CreateOnCallShiftRequest) GetCreateOnCallShift() components.CreateOnCallShift {
-	if o == nil {
+func (c *CreateOnCallShiftRequest) GetCreateOnCallShift() components.CreateOnCallShift {
+	if c == nil {
 		return components.CreateOnCallShift{}
 	}
-	return o.CreateOnCallShift
+	return c.CreateOnCallShift
 }

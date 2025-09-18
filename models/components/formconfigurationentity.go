@@ -8,16 +8,16 @@ type FormConfigurationEntity struct {
 	ShowIncidentTypes *string `json:"show_incident_types,omitempty"`
 }
 
-func (o *FormConfigurationEntity) GetFields() *string {
-	if o == nil {
+func (f *FormConfigurationEntity) GetFields() *string {
+	if f == nil {
 		return nil
 	}
-	return o.Fields
+	return f.Fields
 }
 
-func (o *FormConfigurationEntity) GetShowIncidentTypes() *string {
-	if o == nil {
+func (f *FormConfigurationEntity) GetShowIncidentTypes() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ShowIncidentTypes
+	return f.ShowIncidentTypes
 }

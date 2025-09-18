@@ -50,58 +50,58 @@ type SignalsAPIEscalationPolicyStepEntity struct {
 	Priorities []string `json:"priorities,omitempty"`
 }
 
-func (o *SignalsAPIEscalationPolicyStepEntity) GetID() *string {
-	if o == nil {
+func (s *SignalsAPIEscalationPolicyStepEntity) GetID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *SignalsAPIEscalationPolicyStepEntity) GetPosition() *int {
-	if o == nil {
+func (s *SignalsAPIEscalationPolicyStepEntity) GetPosition() *int {
+	if s == nil {
 		return nil
 	}
-	return o.Position
+	return s.Position
 }
 
-func (o *SignalsAPIEscalationPolicyStepEntity) GetParentPosition() *int {
-	if o == nil {
+func (s *SignalsAPIEscalationPolicyStepEntity) GetParentPosition() *int {
+	if s == nil {
 		return nil
 	}
-	return o.ParentPosition
+	return s.ParentPosition
 }
 
-func (o *SignalsAPIEscalationPolicyStepEntity) GetTargets() []SignalsAPITargetEntity {
-	if o == nil {
+func (s *SignalsAPIEscalationPolicyStepEntity) GetTargets() []SignalsAPITargetEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Targets
+	return s.Targets
 }
 
-func (o *SignalsAPIEscalationPolicyStepEntity) GetTimeout() *string {
-	if o == nil {
+func (s *SignalsAPIEscalationPolicyStepEntity) GetTimeout() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Timeout
+	return s.Timeout
 }
 
-func (o *SignalsAPIEscalationPolicyStepEntity) GetDistributionType() *SignalsAPIEscalationPolicyStepEntityDistributionType {
-	if o == nil {
+func (s *SignalsAPIEscalationPolicyStepEntity) GetDistributionType() *SignalsAPIEscalationPolicyStepEntityDistributionType {
+	if s == nil {
 		return nil
 	}
-	return o.DistributionType
+	return s.DistributionType
 }
 
-func (o *SignalsAPIEscalationPolicyStepEntity) GetNextTargetForRoundRobin() *NullableSignalsAPITargetEntity {
-	if o == nil {
+func (s *SignalsAPIEscalationPolicyStepEntity) GetNextTargetForRoundRobin() *NullableSignalsAPITargetEntity {
+	if s == nil {
 		return nil
 	}
-	return o.NextTargetForRoundRobin
+	return s.NextTargetForRoundRobin
 }
 
-func (o *SignalsAPIEscalationPolicyStepEntity) GetPriorities() []string {
-	if o == nil {
+func (s *SignalsAPIEscalationPolicyStepEntity) GetPriorities() []string {
+	if s == nil {
 		return nil
 	}
-	return o.Priorities
+	return s.Priorities
 }

@@ -9,16 +9,16 @@ type UpdateTicketingPriority struct {
 	Position *int `json:"position,omitempty"`
 }
 
-func (o *UpdateTicketingPriority) GetName() *string {
-	if o == nil {
+func (u *UpdateTicketingPriority) GetName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Name
+	return u.Name
 }
 
-func (o *UpdateTicketingPriority) GetPosition() *int {
-	if o == nil {
+func (u *UpdateTicketingPriority) GetPosition() *int {
+	if u == nil {
 		return nil
 	}
-	return o.Position
+	return u.Position
 }

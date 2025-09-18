@@ -7,16 +7,16 @@ type ReportsDataPointEntity struct {
 	Value *int    `json:"value,omitempty"`
 }
 
-func (o *ReportsDataPointEntity) GetKey() *string {
-	if o == nil {
+func (r *ReportsDataPointEntity) GetKey() *string {
+	if r == nil {
 		return nil
 	}
-	return o.Key
+	return r.Key
 }
 
-func (o *ReportsDataPointEntity) GetValue() *int {
-	if o == nil {
+func (r *ReportsDataPointEntity) GetValue() *int {
+	if r == nil {
 		return nil
 	}
-	return o.Value
+	return r.Value
 }

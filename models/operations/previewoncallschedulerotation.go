@@ -12,23 +12,23 @@ type PreviewOnCallScheduleRotationRequest struct {
 	PreviewOnCallScheduleRotation components.PreviewOnCallScheduleRotation `request:"mediaType=application/json"`
 }
 
-func (o *PreviewOnCallScheduleRotationRequest) GetTeamID() string {
-	if o == nil {
+func (p *PreviewOnCallScheduleRotationRequest) GetTeamID() string {
+	if p == nil {
 		return ""
 	}
-	return o.TeamID
+	return p.TeamID
 }
 
-func (o *PreviewOnCallScheduleRotationRequest) GetScheduleID() string {
-	if o == nil {
+func (p *PreviewOnCallScheduleRotationRequest) GetScheduleID() string {
+	if p == nil {
 		return ""
 	}
-	return o.ScheduleID
+	return p.ScheduleID
 }
 
-func (o *PreviewOnCallScheduleRotationRequest) GetPreviewOnCallScheduleRotation() components.PreviewOnCallScheduleRotation {
-	if o == nil {
+func (p *PreviewOnCallScheduleRotationRequest) GetPreviewOnCallScheduleRotation() components.PreviewOnCallScheduleRotation {
+	if p == nil {
 		return components.PreviewOnCallScheduleRotation{}
 	}
-	return o.PreviewOnCallScheduleRotation
+	return p.PreviewOnCallScheduleRotation
 }

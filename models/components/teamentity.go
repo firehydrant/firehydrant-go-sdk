@@ -43,149 +43,149 @@ func (t *TeamEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *TeamEntity) GetID() *string {
-	if o == nil {
+func (t *TeamEntity) GetID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.ID
+	return t.ID
 }
 
-func (o *TeamEntity) GetName() *string {
-	if o == nil {
+func (t *TeamEntity) GetName() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Name
+	return t.Name
 }
 
-func (o *TeamEntity) GetDescription() *string {
-	if o == nil {
+func (t *TeamEntity) GetDescription() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Description
+	return t.Description
 }
 
-func (o *TeamEntity) GetSlug() *string {
-	if o == nil {
+func (t *TeamEntity) GetSlug() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Slug
+	return t.Slug
 }
 
-func (o *TeamEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (t *TeamEntity) GetCreatedAt() *time.Time {
+	if t == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return t.CreatedAt
 }
 
-func (o *TeamEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (t *TeamEntity) GetUpdatedAt() *time.Time {
+	if t == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return t.UpdatedAt
 }
 
-func (o *TeamEntity) GetSignalsIcalURL() *string {
-	if o == nil {
+func (t *TeamEntity) GetSignalsIcalURL() *string {
+	if t == nil {
 		return nil
 	}
-	return o.SignalsIcalURL
+	return t.SignalsIcalURL
 }
 
-func (o *TeamEntity) GetCreatedBy() *NullableAuthorEntity {
-	if o == nil {
+func (t *TeamEntity) GetCreatedBy() *NullableAuthorEntity {
+	if t == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return t.CreatedBy
 }
 
-func (o *TeamEntity) GetInSupportHours() *bool {
-	if o == nil {
+func (t *TeamEntity) GetInSupportHours() *bool {
+	if t == nil {
 		return nil
 	}
-	return o.InSupportHours
+	return t.InSupportHours
 }
 
-func (o *TeamEntity) GetRestrictSignalsResourceManagement() *bool {
-	if o == nil {
+func (t *TeamEntity) GetRestrictSignalsResourceManagement() *bool {
+	if t == nil {
 		return nil
 	}
-	return o.RestrictSignalsResourceManagement
+	return t.RestrictSignalsResourceManagement
 }
 
-func (o *TeamEntity) GetSlackChannel() *NullableIntegrationsSlackSlackChannelEntity {
-	if o == nil {
+func (t *TeamEntity) GetSlackChannel() *NullableIntegrationsSlackSlackChannelEntity {
+	if t == nil {
 		return nil
 	}
-	return o.SlackChannel
+	return t.SlackChannel
 }
 
-func (o *TeamEntity) GetMsTeamsChannel() *NullableIntegrationsMicrosoftTeamsV2ChannelEntity {
-	if o == nil {
+func (t *TeamEntity) GetMsTeamsChannel() *NullableIntegrationsMicrosoftTeamsV2ChannelEntity {
+	if t == nil {
 		return nil
 	}
-	return o.MsTeamsChannel
+	return t.MsTeamsChannel
 }
 
-func (o *TeamEntity) GetMemberships() []MembershipEntity {
-	if o == nil {
+func (t *TeamEntity) GetMemberships() []MembershipEntity {
+	if t == nil {
 		return nil
 	}
-	return o.Memberships
+	return t.Memberships
 }
 
-func (o *TeamEntity) GetOwnedChecklistTemplates() []ChecklistTemplateEntity {
-	if o == nil {
+func (t *TeamEntity) GetOwnedChecklistTemplates() []ChecklistTemplateEntity {
+	if t == nil {
 		return nil
 	}
-	return o.OwnedChecklistTemplates
+	return t.OwnedChecklistTemplates
 }
 
-func (o *TeamEntity) GetOwnedFunctionalities() []FunctionalityEntityLite {
-	if o == nil {
+func (t *TeamEntity) GetOwnedFunctionalities() []FunctionalityEntityLite {
+	if t == nil {
 		return nil
 	}
-	return o.OwnedFunctionalities
+	return t.OwnedFunctionalities
 }
 
-func (o *TeamEntity) GetOwnedServices() []ServiceEntityLite {
-	if o == nil {
+func (t *TeamEntity) GetOwnedServices() []ServiceEntityLite {
+	if t == nil {
 		return nil
 	}
-	return o.OwnedServices
+	return t.OwnedServices
 }
 
-func (o *TeamEntity) GetOwnedRunbooks() []SlimRunbookEntity {
-	if o == nil {
+func (t *TeamEntity) GetOwnedRunbooks() []SlimRunbookEntity {
+	if t == nil {
 		return nil
 	}
-	return o.OwnedRunbooks
+	return t.OwnedRunbooks
 }
 
-func (o *TeamEntity) GetRespondingServices() []ServiceEntityLite {
-	if o == nil {
+func (t *TeamEntity) GetRespondingServices() []ServiceEntityLite {
+	if t == nil {
 		return nil
 	}
-	return o.RespondingServices
+	return t.RespondingServices
 }
 
-func (o *TeamEntity) GetServices() []ServiceEntityLite {
-	if o == nil {
+func (t *TeamEntity) GetServices() []ServiceEntityLite {
+	if t == nil {
 		return nil
 	}
-	return o.Services
+	return t.Services
 }
 
-func (o *TeamEntity) GetFunctionalities() []FunctionalityEntityLite {
-	if o == nil {
+func (t *TeamEntity) GetFunctionalities() []FunctionalityEntityLite {
+	if t == nil {
 		return nil
 	}
-	return o.Functionalities
+	return t.Functionalities
 }
 
-func (o *TeamEntity) GetDefaultSignalsEscalationPolicy() *NullableSuccinctEntity {
-	if o == nil {
+func (t *TeamEntity) GetDefaultSignalsEscalationPolicy() *NullableSuccinctEntity {
+	if t == nil {
 		return nil
 	}
-	return o.DefaultSignalsEscalationPolicy
+	return t.DefaultSignalsEscalationPolicy
 }

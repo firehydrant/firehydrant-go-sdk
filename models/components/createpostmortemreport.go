@@ -7,9 +7,9 @@ type CreatePostMortemReport struct {
 	IncidentID string `json:"incident_id"`
 }
 
-func (o *CreatePostMortemReport) GetIncidentID() string {
-	if o == nil {
+func (c *CreatePostMortemReport) GetIncidentID() string {
+	if c == nil {
 		return ""
 	}
-	return o.IncidentID
+	return c.IncidentID
 }

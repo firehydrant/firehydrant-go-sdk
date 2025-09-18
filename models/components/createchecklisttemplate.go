@@ -9,29 +9,29 @@ type CreateChecklistTemplateCheck struct {
 	Description *string `json:"description,omitempty"`
 }
 
-func (o *CreateChecklistTemplateCheck) GetName() string {
-	if o == nil {
+func (c *CreateChecklistTemplateCheck) GetName() string {
+	if c == nil {
 		return ""
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CreateChecklistTemplateCheck) GetDescription() *string {
-	if o == nil {
+func (c *CreateChecklistTemplateCheck) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
 type CreateChecklistTemplateConnectedService struct {
 	ID string `json:"id"`
 }
 
-func (o *CreateChecklistTemplateConnectedService) GetID() string {
-	if o == nil {
+func (c *CreateChecklistTemplateConnectedService) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
 // CreateChecklistTemplate - Creates a checklist template for the organization
@@ -46,37 +46,37 @@ type CreateChecklistTemplate struct {
 	ConnectedServices []CreateChecklistTemplateConnectedService `json:"connected_services,omitempty"`
 }
 
-func (o *CreateChecklistTemplate) GetName() string {
-	if o == nil {
+func (c *CreateChecklistTemplate) GetName() string {
+	if c == nil {
 		return ""
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CreateChecklistTemplate) GetChecks() []CreateChecklistTemplateCheck {
-	if o == nil {
+func (c *CreateChecklistTemplate) GetChecks() []CreateChecklistTemplateCheck {
+	if c == nil {
 		return []CreateChecklistTemplateCheck{}
 	}
-	return o.Checks
+	return c.Checks
 }
 
-func (o *CreateChecklistTemplate) GetDescription() *string {
-	if o == nil {
+func (c *CreateChecklistTemplate) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *CreateChecklistTemplate) GetTeamID() *string {
-	if o == nil {
+func (c *CreateChecklistTemplate) GetTeamID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.TeamID
+	return c.TeamID
 }
 
-func (o *CreateChecklistTemplate) GetConnectedServices() []CreateChecklistTemplateConnectedService {
-	if o == nil {
+func (c *CreateChecklistTemplate) GetConnectedServices() []CreateChecklistTemplateConnectedService {
+	if c == nil {
 		return nil
 	}
-	return o.ConnectedServices
+	return c.ConnectedServices
 }

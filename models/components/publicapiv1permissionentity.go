@@ -13,58 +13,58 @@ type PublicAPIV1PermissionEntity struct {
 	DependencySlugs     []string `json:"dependency_slugs,omitempty"`
 }
 
-func (o *PublicAPIV1PermissionEntity) GetSlug() *string {
-	if o == nil {
+func (p *PublicAPIV1PermissionEntity) GetSlug() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Slug
+	return p.Slug
 }
 
-func (o *PublicAPIV1PermissionEntity) GetDisplayName() *string {
-	if o == nil {
+func (p *PublicAPIV1PermissionEntity) GetDisplayName() *string {
+	if p == nil {
 		return nil
 	}
-	return o.DisplayName
+	return p.DisplayName
 }
 
-func (o *PublicAPIV1PermissionEntity) GetDescription() *string {
-	if o == nil {
+func (p *PublicAPIV1PermissionEntity) GetDescription() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Description
+	return p.Description
 }
 
-func (o *PublicAPIV1PermissionEntity) GetCategoryDisplayName() *string {
-	if o == nil {
+func (p *PublicAPIV1PermissionEntity) GetCategoryDisplayName() *string {
+	if p == nil {
 		return nil
 	}
-	return o.CategoryDisplayName
+	return p.CategoryDisplayName
 }
 
-func (o *PublicAPIV1PermissionEntity) GetCategorySlug() *string {
-	if o == nil {
+func (p *PublicAPIV1PermissionEntity) GetCategorySlug() *string {
+	if p == nil {
 		return nil
 	}
-	return o.CategorySlug
+	return p.CategorySlug
 }
 
-func (o *PublicAPIV1PermissionEntity) GetParentSlug() *string {
-	if o == nil {
+func (p *PublicAPIV1PermissionEntity) GetParentSlug() *string {
+	if p == nil {
 		return nil
 	}
-	return o.ParentSlug
+	return p.ParentSlug
 }
 
-func (o *PublicAPIV1PermissionEntity) GetAvailable() *bool {
-	if o == nil {
+func (p *PublicAPIV1PermissionEntity) GetAvailable() *bool {
+	if p == nil {
 		return nil
 	}
-	return o.Available
+	return p.Available
 }
 
-func (o *PublicAPIV1PermissionEntity) GetDependencySlugs() []string {
-	if o == nil {
+func (p *PublicAPIV1PermissionEntity) GetDependencySlugs() []string {
+	if p == nil {
 		return nil
 	}
-	return o.DependencySlugs
+	return p.DependencySlugs
 }

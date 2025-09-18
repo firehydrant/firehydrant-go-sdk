@@ -13,18 +13,18 @@ type UpdateFunctionalityService struct {
 	Remove *bool `json:"remove,omitempty"`
 }
 
-func (o *UpdateFunctionalityService) GetID() string {
-	if o == nil {
+func (u *UpdateFunctionalityService) GetID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ID
+	return u.ID
 }
 
-func (o *UpdateFunctionalityService) GetRemove() *bool {
-	if o == nil {
+func (u *UpdateFunctionalityService) GetRemove() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.Remove
+	return u.Remove
 }
 
 type UpdateFunctionalityLink struct {
@@ -40,39 +40,39 @@ type UpdateFunctionalityLink struct {
 	ID *string `json:"id,omitempty"`
 }
 
-func (o *UpdateFunctionalityLink) GetHrefURL() string {
-	if o == nil {
+func (u *UpdateFunctionalityLink) GetHrefURL() string {
+	if u == nil {
 		return ""
 	}
-	return o.HrefURL
+	return u.HrefURL
 }
 
-func (o *UpdateFunctionalityLink) GetName() string {
-	if o == nil {
+func (u *UpdateFunctionalityLink) GetName() string {
+	if u == nil {
 		return ""
 	}
-	return o.Name
+	return u.Name
 }
 
-func (o *UpdateFunctionalityLink) GetIconURL() *string {
-	if o == nil {
+func (u *UpdateFunctionalityLink) GetIconURL() *string {
+	if u == nil {
 		return nil
 	}
-	return o.IconURL
+	return u.IconURL
 }
 
-func (o *UpdateFunctionalityLink) GetRemove() *bool {
-	if o == nil {
+func (u *UpdateFunctionalityLink) GetRemove() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.Remove
+	return u.Remove
 }
 
-func (o *UpdateFunctionalityLink) GetID() *string {
-	if o == nil {
+func (u *UpdateFunctionalityLink) GetID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.ID
+	return u.ID
 }
 
 // UpdateFunctionalityOwner - An object representing a Team that owns the functionality
@@ -80,11 +80,11 @@ type UpdateFunctionalityOwner struct {
 	ID string `json:"id"`
 }
 
-func (o *UpdateFunctionalityOwner) GetID() string {
-	if o == nil {
+func (u *UpdateFunctionalityOwner) GetID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ID
+	return u.ID
 }
 
 type UpdateFunctionalityTeam struct {
@@ -93,18 +93,18 @@ type UpdateFunctionalityTeam struct {
 	Remove *bool `json:"remove,omitempty"`
 }
 
-func (o *UpdateFunctionalityTeam) GetID() string {
-	if o == nil {
+func (u *UpdateFunctionalityTeam) GetID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ID
+	return u.ID
 }
 
-func (o *UpdateFunctionalityTeam) GetRemove() *bool {
-	if o == nil {
+func (u *UpdateFunctionalityTeam) GetRemove() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.Remove
+	return u.Remove
 }
 
 type UpdateFunctionalityExternalResource struct {
@@ -115,25 +115,25 @@ type UpdateFunctionalityExternalResource struct {
 	Remove *bool `json:"remove,omitempty"`
 }
 
-func (o *UpdateFunctionalityExternalResource) GetRemoteID() string {
-	if o == nil {
+func (u *UpdateFunctionalityExternalResource) GetRemoteID() string {
+	if u == nil {
 		return ""
 	}
-	return o.RemoteID
+	return u.RemoteID
 }
 
-func (o *UpdateFunctionalityExternalResource) GetConnectionType() *string {
-	if o == nil {
+func (u *UpdateFunctionalityExternalResource) GetConnectionType() *string {
+	if u == nil {
 		return nil
 	}
-	return o.ConnectionType
+	return u.ConnectionType
 }
 
-func (o *UpdateFunctionalityExternalResource) GetRemove() *bool {
-	if o == nil {
+func (u *UpdateFunctionalityExternalResource) GetRemove() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.Remove
+	return u.Remove
 }
 
 // UpdateFunctionality - Update a functionalities attributes
@@ -174,100 +174,100 @@ func (u *UpdateFunctionality) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *UpdateFunctionality) GetName() *string {
-	if o == nil {
+func (u *UpdateFunctionality) GetName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Name
+	return u.Name
 }
 
-func (o *UpdateFunctionality) GetDescription() *string {
-	if o == nil {
+func (u *UpdateFunctionality) GetDescription() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Description
+	return u.Description
 }
 
-func (o *UpdateFunctionality) GetServices() []UpdateFunctionalityService {
-	if o == nil {
+func (u *UpdateFunctionality) GetServices() []UpdateFunctionalityService {
+	if u == nil {
 		return nil
 	}
-	return o.Services
+	return u.Services
 }
 
-func (o *UpdateFunctionality) GetLinks() []UpdateFunctionalityLink {
-	if o == nil {
+func (u *UpdateFunctionality) GetLinks() []UpdateFunctionalityLink {
+	if u == nil {
 		return nil
 	}
-	return o.Links
+	return u.Links
 }
 
-func (o *UpdateFunctionality) GetOwner() *UpdateFunctionalityOwner {
-	if o == nil {
+func (u *UpdateFunctionality) GetOwner() *UpdateFunctionalityOwner {
+	if u == nil {
 		return nil
 	}
-	return o.Owner
+	return u.Owner
 }
 
-func (o *UpdateFunctionality) GetRemoveOwner() *bool {
-	if o == nil {
+func (u *UpdateFunctionality) GetRemoveOwner() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.RemoveOwner
+	return u.RemoveOwner
 }
 
-func (o *UpdateFunctionality) GetTeams() []UpdateFunctionalityTeam {
-	if o == nil {
+func (u *UpdateFunctionality) GetTeams() []UpdateFunctionalityTeam {
+	if u == nil {
 		return nil
 	}
-	return o.Teams
+	return u.Teams
 }
 
-func (o *UpdateFunctionality) GetRemoveRemainingTeams() *bool {
-	if o == nil {
+func (u *UpdateFunctionality) GetRemoveRemainingTeams() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.RemoveRemainingTeams
+	return u.RemoveRemainingTeams
 }
 
-func (o *UpdateFunctionality) GetExternalResources() []UpdateFunctionalityExternalResource {
-	if o == nil {
+func (u *UpdateFunctionality) GetExternalResources() []UpdateFunctionalityExternalResource {
+	if u == nil {
 		return nil
 	}
-	return o.ExternalResources
+	return u.ExternalResources
 }
 
-func (o *UpdateFunctionality) GetRemoveRemainingExternalResources() *bool {
-	if o == nil {
+func (u *UpdateFunctionality) GetRemoveRemainingExternalResources() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.RemoveRemainingExternalResources
+	return u.RemoveRemainingExternalResources
 }
 
-func (o *UpdateFunctionality) GetLabels() map[string]string {
-	if o == nil {
+func (u *UpdateFunctionality) GetLabels() map[string]string {
+	if u == nil {
 		return nil
 	}
-	return o.Labels
+	return u.Labels
 }
 
-func (o *UpdateFunctionality) GetAlertOnAdd() *bool {
-	if o == nil {
+func (u *UpdateFunctionality) GetAlertOnAdd() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.AlertOnAdd
+	return u.AlertOnAdd
 }
 
-func (o *UpdateFunctionality) GetAutoAddRespondingTeam() *bool {
-	if o == nil {
+func (u *UpdateFunctionality) GetAutoAddRespondingTeam() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.AutoAddRespondingTeam
+	return u.AutoAddRespondingTeam
 }
 
-func (o *UpdateFunctionality) GetRemoveRemainingServices() *bool {
-	if o == nil {
+func (u *UpdateFunctionality) GetRemoveRemainingServices() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.RemoveRemainingServices
+	return u.RemoveRemainingServices
 }

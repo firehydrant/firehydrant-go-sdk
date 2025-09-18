@@ -14,18 +14,18 @@ type ExportSignalsShiftAnalyticsRequestBody struct {
 	TeamIds []string `multipartForm:"name=team_ids"`
 }
 
-func (o *ExportSignalsShiftAnalyticsRequestBody) GetUserIds() []string {
-	if o == nil {
+func (e *ExportSignalsShiftAnalyticsRequestBody) GetUserIds() []string {
+	if e == nil {
 		return nil
 	}
-	return o.UserIds
+	return e.UserIds
 }
 
-func (o *ExportSignalsShiftAnalyticsRequestBody) GetTeamIds() []string {
-	if o == nil {
+func (e *ExportSignalsShiftAnalyticsRequestBody) GetTeamIds() []string {
+	if e == nil {
 		return nil
 	}
-	return o.TeamIds
+	return e.TeamIds
 }
 
 type ExportSignalsShiftAnalyticsRequest struct {
@@ -47,23 +47,23 @@ func (e *ExportSignalsShiftAnalyticsRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ExportSignalsShiftAnalyticsRequest) GetPeriodStart() time.Time {
-	if o == nil {
+func (e *ExportSignalsShiftAnalyticsRequest) GetPeriodStart() time.Time {
+	if e == nil {
 		return time.Time{}
 	}
-	return o.PeriodStart
+	return e.PeriodStart
 }
 
-func (o *ExportSignalsShiftAnalyticsRequest) GetPeriodEnd() time.Time {
-	if o == nil {
+func (e *ExportSignalsShiftAnalyticsRequest) GetPeriodEnd() time.Time {
+	if e == nil {
 		return time.Time{}
 	}
-	return o.PeriodEnd
+	return e.PeriodEnd
 }
 
-func (o *ExportSignalsShiftAnalyticsRequest) GetRequestBody() *ExportSignalsShiftAnalyticsRequestBody {
-	if o == nil {
+func (e *ExportSignalsShiftAnalyticsRequest) GetRequestBody() *ExportSignalsShiftAnalyticsRequestBody {
+	if e == nil {
 		return nil
 	}
-	return o.RequestBody
+	return e.RequestBody
 }

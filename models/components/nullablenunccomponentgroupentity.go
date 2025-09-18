@@ -9,30 +9,30 @@ type NullableNuncComponentGroupEntity struct {
 	Position         *int    `json:"position,omitempty"`
 }
 
-func (o *NullableNuncComponentGroupEntity) GetID() *string {
-	if o == nil {
+func (n *NullableNuncComponentGroupEntity) GetID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ID
+	return n.ID
 }
 
-func (o *NullableNuncComponentGroupEntity) GetComponentGroupID() *string {
-	if o == nil {
+func (n *NullableNuncComponentGroupEntity) GetComponentGroupID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ComponentGroupID
+	return n.ComponentGroupID
 }
 
-func (o *NullableNuncComponentGroupEntity) GetName() *string {
-	if o == nil {
+func (n *NullableNuncComponentGroupEntity) GetName() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Name
+	return n.Name
 }
 
-func (o *NullableNuncComponentGroupEntity) GetPosition() *int {
-	if o == nil {
+func (n *NullableNuncComponentGroupEntity) GetPosition() *int {
+	if n == nil {
 		return nil
 	}
-	return o.Position
+	return n.Position
 }

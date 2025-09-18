@@ -12,16 +12,16 @@ type TicketingProjectFieldMapCasesEntity struct {
 	ExternalValue *NullableTicketingProjectFieldMapExternalValueEntity `json:"external_value,omitempty"`
 }
 
-func (o *TicketingProjectFieldMapCasesEntity) GetLogic() *Logic {
-	if o == nil {
+func (t *TicketingProjectFieldMapCasesEntity) GetLogic() *Logic {
+	if t == nil {
 		return nil
 	}
-	return o.Logic
+	return t.Logic
 }
 
-func (o *TicketingProjectFieldMapCasesEntity) GetExternalValue() *NullableTicketingProjectFieldMapExternalValueEntity {
-	if o == nil {
+func (t *TicketingProjectFieldMapCasesEntity) GetExternalValue() *NullableTicketingProjectFieldMapExternalValueEntity {
+	if t == nil {
 		return nil
 	}
-	return o.ExternalValue
+	return t.ExternalValue
 }

@@ -27,37 +27,37 @@ func (n *NullableEventNoteEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *NullableEventNoteEntity) GetID() *string {
-	if o == nil {
+func (n *NullableEventNoteEntity) GetID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ID
+	return n.ID
 }
 
-func (o *NullableEventNoteEntity) GetBody() *string {
-	if o == nil {
+func (n *NullableEventNoteEntity) GetBody() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Body
+	return n.Body
 }
 
-func (o *NullableEventNoteEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (n *NullableEventNoteEntity) GetCreatedAt() *time.Time {
+	if n == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return n.CreatedAt
 }
 
-func (o *NullableEventNoteEntity) GetStatusPages() []IncidentsStatusPageEntity {
-	if o == nil {
+func (n *NullableEventNoteEntity) GetStatusPages() []IncidentsStatusPageEntity {
+	if n == nil {
 		return nil
 	}
-	return o.StatusPages
+	return n.StatusPages
 }
 
-func (o *NullableEventNoteEntity) GetConversations() []ConversationsAPIEntitiesReference {
-	if o == nil {
+func (n *NullableEventNoteEntity) GetConversations() []ConversationsAPIEntitiesReference {
+	if n == nil {
 		return nil
 	}
-	return o.Conversations
+	return n.Conversations
 }

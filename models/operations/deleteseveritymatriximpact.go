@@ -6,9 +6,9 @@ type DeleteSeverityMatrixImpactRequest struct {
 	ImpactID string `pathParam:"style=simple,explode=false,name=impact_id"`
 }
 
-func (o *DeleteSeverityMatrixImpactRequest) GetImpactID() string {
-	if o == nil {
+func (d *DeleteSeverityMatrixImpactRequest) GetImpactID() string {
+	if d == nil {
 		return ""
 	}
-	return o.ImpactID
+	return d.ImpactID
 }

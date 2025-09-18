@@ -8,16 +8,16 @@ type UpdateChangeIdentity struct {
 	Value string `json:"value"`
 }
 
-func (o *UpdateChangeIdentity) GetType() string {
-	if o == nil {
+func (u *UpdateChangeIdentity) GetType() string {
+	if u == nil {
 		return ""
 	}
-	return o.Type
+	return u.Type
 }
 
-func (o *UpdateChangeIdentity) GetValue() string {
-	if o == nil {
+func (u *UpdateChangeIdentity) GetValue() string {
+	if u == nil {
 		return ""
 	}
-	return o.Value
+	return u.Value
 }

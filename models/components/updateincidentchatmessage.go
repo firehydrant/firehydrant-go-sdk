@@ -7,9 +7,9 @@ type UpdateIncidentChatMessage struct {
 	Body string `json:"body"`
 }
 
-func (o *UpdateIncidentChatMessage) GetBody() string {
-	if o == nil {
+func (u *UpdateIncidentChatMessage) GetBody() string {
+	if u == nil {
 		return ""
 	}
-	return o.Body
+	return u.Body
 }

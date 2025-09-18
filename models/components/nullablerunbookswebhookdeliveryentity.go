@@ -7,16 +7,16 @@ type NullableRunbooksWebhookDeliveryEntity struct {
 	StatusCode *string `json:"status_code,omitempty"`
 }
 
-func (o *NullableRunbooksWebhookDeliveryEntity) GetHeaders() *string {
-	if o == nil {
+func (n *NullableRunbooksWebhookDeliveryEntity) GetHeaders() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Headers
+	return n.Headers
 }
 
-func (o *NullableRunbooksWebhookDeliveryEntity) GetStatusCode() *string {
-	if o == nil {
+func (n *NullableRunbooksWebhookDeliveryEntity) GetStatusCode() *string {
+	if n == nil {
 		return nil
 	}
-	return o.StatusCode
+	return n.StatusCode
 }

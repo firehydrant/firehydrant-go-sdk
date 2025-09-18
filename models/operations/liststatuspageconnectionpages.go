@@ -7,9 +7,9 @@ type ListStatuspageConnectionPagesRequest struct {
 	ConnectionID string `pathParam:"style=simple,explode=false,name=connection_id"`
 }
 
-func (o *ListStatuspageConnectionPagesRequest) GetConnectionID() string {
-	if o == nil {
+func (l *ListStatuspageConnectionPagesRequest) GetConnectionID() string {
+	if l == nil {
 		return ""
 	}
-	return o.ConnectionID
+	return l.ConnectionID
 }

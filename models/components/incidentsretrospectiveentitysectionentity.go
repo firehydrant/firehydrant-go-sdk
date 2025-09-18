@@ -7,16 +7,16 @@ type IncidentsRetrospectiveEntitySectionEntity struct {
 	Elements []string `json:"elements,omitempty"`
 }
 
-func (o *IncidentsRetrospectiveEntitySectionEntity) GetSlug() *string {
-	if o == nil {
+func (i *IncidentsRetrospectiveEntitySectionEntity) GetSlug() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Slug
+	return i.Slug
 }
 
-func (o *IncidentsRetrospectiveEntitySectionEntity) GetElements() []string {
-	if o == nil {
+func (i *IncidentsRetrospectiveEntitySectionEntity) GetElements() []string {
+	if i == nil {
 		return nil
 	}
-	return o.Elements
+	return i.Elements
 }

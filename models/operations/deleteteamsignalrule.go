@@ -7,16 +7,16 @@ type DeleteTeamSignalRuleRequest struct {
 	ID     string `pathParam:"style=simple,explode=false,name=id"`
 }
 
-func (o *DeleteTeamSignalRuleRequest) GetTeamID() string {
-	if o == nil {
+func (d *DeleteTeamSignalRuleRequest) GetTeamID() string {
+	if d == nil {
 		return ""
 	}
-	return o.TeamID
+	return d.TeamID
 }
 
-func (o *DeleteTeamSignalRuleRequest) GetID() string {
-	if o == nil {
+func (d *DeleteTeamSignalRuleRequest) GetID() string {
+	if d == nil {
 		return ""
 	}
-	return o.ID
+	return d.ID
 }

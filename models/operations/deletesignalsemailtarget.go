@@ -6,9 +6,9 @@ type DeleteSignalsEmailTargetRequest struct {
 	ID string `pathParam:"style=simple,explode=false,name=id"`
 }
 
-func (o *DeleteSignalsEmailTargetRequest) GetID() string {
-	if o == nil {
+func (d *DeleteSignalsEmailTargetRequest) GetID() string {
+	if d == nil {
 		return ""
 	}
-	return o.ID
+	return d.ID
 }

@@ -38,58 +38,58 @@ func (e *EnvironmentEntryEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *EnvironmentEntryEntity) GetID() *string {
-	if o == nil {
+func (e *EnvironmentEntryEntity) GetID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.ID
+	return e.ID
 }
 
-func (o *EnvironmentEntryEntity) GetName() *string {
-	if o == nil {
+func (e *EnvironmentEntryEntity) GetName() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Name
+	return e.Name
 }
 
-func (o *EnvironmentEntryEntity) GetSlug() *string {
-	if o == nil {
+func (e *EnvironmentEntryEntity) GetSlug() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Slug
+	return e.Slug
 }
 
-func (o *EnvironmentEntryEntity) GetDescription() *string {
-	if o == nil {
+func (e *EnvironmentEntryEntity) GetDescription() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Description
+	return e.Description
 }
 
-func (o *EnvironmentEntryEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (e *EnvironmentEntryEntity) GetUpdatedAt() *time.Time {
+	if e == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return e.UpdatedAt
 }
 
-func (o *EnvironmentEntryEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (e *EnvironmentEntryEntity) GetCreatedAt() *time.Time {
+	if e == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return e.CreatedAt
 }
 
-func (o *EnvironmentEntryEntity) GetActiveIncidents() []string {
-	if o == nil {
+func (e *EnvironmentEntryEntity) GetActiveIncidents() []string {
+	if e == nil {
 		return nil
 	}
-	return o.ActiveIncidents
+	return e.ActiveIncidents
 }
 
-func (o *EnvironmentEntryEntity) GetExternalResources() []ExternalResourceEntity {
-	if o == nil {
+func (e *EnvironmentEntryEntity) GetExternalResources() []ExternalResourceEntity {
+	if e == nil {
 		return nil
 	}
-	return o.ExternalResources
+	return e.ExternalResources
 }

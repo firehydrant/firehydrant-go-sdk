@@ -15,18 +15,18 @@ type CreateIncidentAttachmentFile struct {
 	Content any `multipartForm:"content"`
 }
 
-func (o *CreateIncidentAttachmentFile) GetFileName() string {
-	if o == nil {
+func (c *CreateIncidentAttachmentFile) GetFileName() string {
+	if c == nil {
 		return ""
 	}
-	return o.FileName
+	return c.FileName
 }
 
-func (o *CreateIncidentAttachmentFile) GetContent() any {
-	if o == nil {
+func (c *CreateIncidentAttachmentFile) GetContent() any {
+	if c == nil {
 		return nil
 	}
-	return o.Content
+	return c.Content
 }
 
 type VoteDirection string
@@ -73,32 +73,32 @@ func (c *CreateIncidentAttachmentRequestBody) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CreateIncidentAttachmentRequestBody) GetFile() CreateIncidentAttachmentFile {
-	if o == nil {
+func (c *CreateIncidentAttachmentRequestBody) GetFile() CreateIncidentAttachmentFile {
+	if c == nil {
 		return CreateIncidentAttachmentFile{}
 	}
-	return o.File
+	return c.File
 }
 
-func (o *CreateIncidentAttachmentRequestBody) GetDescription() *string {
-	if o == nil {
+func (c *CreateIncidentAttachmentRequestBody) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *CreateIncidentAttachmentRequestBody) GetOccurredAt() *time.Time {
-	if o == nil {
+func (c *CreateIncidentAttachmentRequestBody) GetOccurredAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.OccurredAt
+	return c.OccurredAt
 }
 
-func (o *CreateIncidentAttachmentRequestBody) GetVoteDirection() *VoteDirection {
-	if o == nil {
+func (c *CreateIncidentAttachmentRequestBody) GetVoteDirection() *VoteDirection {
+	if c == nil {
 		return nil
 	}
-	return o.VoteDirection
+	return c.VoteDirection
 }
 
 type CreateIncidentAttachmentRequest struct {
@@ -106,16 +106,16 @@ type CreateIncidentAttachmentRequest struct {
 	RequestBody CreateIncidentAttachmentRequestBody `request:"mediaType=multipart/form-data"`
 }
 
-func (o *CreateIncidentAttachmentRequest) GetIncidentID() string {
-	if o == nil {
+func (c *CreateIncidentAttachmentRequest) GetIncidentID() string {
+	if c == nil {
 		return ""
 	}
-	return o.IncidentID
+	return c.IncidentID
 }
 
-func (o *CreateIncidentAttachmentRequest) GetRequestBody() CreateIncidentAttachmentRequestBody {
-	if o == nil {
+func (c *CreateIncidentAttachmentRequest) GetRequestBody() CreateIncidentAttachmentRequestBody {
+	if c == nil {
 		return CreateIncidentAttachmentRequestBody{}
 	}
-	return o.RequestBody
+	return c.RequestBody
 }

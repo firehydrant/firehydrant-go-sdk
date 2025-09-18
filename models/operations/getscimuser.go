@@ -6,9 +6,9 @@ type GetScimUserRequest struct {
 	ID string `pathParam:"style=simple,explode=false,name=id"`
 }
 
-func (o *GetScimUserRequest) GetID() string {
-	if o == nil {
+func (g *GetScimUserRequest) GetID() string {
+	if g == nil {
 		return ""
 	}
-	return o.ID
+	return g.ID
 }

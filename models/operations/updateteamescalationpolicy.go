@@ -12,23 +12,23 @@ type UpdateTeamEscalationPolicyRequest struct {
 	UpdateTeamEscalationPolicy components.UpdateTeamEscalationPolicy `request:"mediaType=application/json"`
 }
 
-func (o *UpdateTeamEscalationPolicyRequest) GetTeamID() string {
-	if o == nil {
+func (u *UpdateTeamEscalationPolicyRequest) GetTeamID() string {
+	if u == nil {
 		return ""
 	}
-	return o.TeamID
+	return u.TeamID
 }
 
-func (o *UpdateTeamEscalationPolicyRequest) GetID() string {
-	if o == nil {
+func (u *UpdateTeamEscalationPolicyRequest) GetID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ID
+	return u.ID
 }
 
-func (o *UpdateTeamEscalationPolicyRequest) GetUpdateTeamEscalationPolicy() components.UpdateTeamEscalationPolicy {
-	if o == nil {
+func (u *UpdateTeamEscalationPolicyRequest) GetUpdateTeamEscalationPolicy() components.UpdateTeamEscalationPolicy {
+	if u == nil {
 		return components.UpdateTeamEscalationPolicy{}
 	}
-	return o.UpdateTeamEscalationPolicy
+	return u.UpdateTeamEscalationPolicy
 }

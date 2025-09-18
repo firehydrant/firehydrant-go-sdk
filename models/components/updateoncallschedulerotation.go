@@ -15,11 +15,11 @@ type UpdateOnCallScheduleRotationMember struct {
 	UserID *string `json:"user_id,omitempty"`
 }
 
-func (o *UpdateOnCallScheduleRotationMember) GetUserID() *string {
-	if o == nil {
+func (u *UpdateOnCallScheduleRotationMember) GetUserID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.UserID
+	return u.UserID
 }
 
 // UpdateOnCallScheduleRotationType - The type of strategy. Must be one of "daily", "weekly", or "custom".
@@ -106,32 +106,32 @@ type UpdateOnCallScheduleRotationStrategy struct {
 	ShiftDuration *string `json:"shift_duration,omitempty"`
 }
 
-func (o *UpdateOnCallScheduleRotationStrategy) GetType() UpdateOnCallScheduleRotationType {
-	if o == nil {
+func (u *UpdateOnCallScheduleRotationStrategy) GetType() UpdateOnCallScheduleRotationType {
+	if u == nil {
 		return UpdateOnCallScheduleRotationType("")
 	}
-	return o.Type
+	return u.Type
 }
 
-func (o *UpdateOnCallScheduleRotationStrategy) GetHandoffTime() *string {
-	if o == nil {
+func (u *UpdateOnCallScheduleRotationStrategy) GetHandoffTime() *string {
+	if u == nil {
 		return nil
 	}
-	return o.HandoffTime
+	return u.HandoffTime
 }
 
-func (o *UpdateOnCallScheduleRotationStrategy) GetHandoffDay() *UpdateOnCallScheduleRotationHandoffDay {
-	if o == nil {
+func (u *UpdateOnCallScheduleRotationStrategy) GetHandoffDay() *UpdateOnCallScheduleRotationHandoffDay {
+	if u == nil {
 		return nil
 	}
-	return o.HandoffDay
+	return u.HandoffDay
 }
 
-func (o *UpdateOnCallScheduleRotationStrategy) GetShiftDuration() *string {
-	if o == nil {
+func (u *UpdateOnCallScheduleRotationStrategy) GetShiftDuration() *string {
+	if u == nil {
 		return nil
 	}
-	return o.ShiftDuration
+	return u.ShiftDuration
 }
 
 // UpdateOnCallScheduleRotationStartDay - The day of the week on which the restriction should start, as its long-form name (e.g. "monday", "tuesday", etc).
@@ -229,32 +229,32 @@ type UpdateOnCallScheduleRotationRestriction struct {
 	EndTime string `json:"end_time"`
 }
 
-func (o *UpdateOnCallScheduleRotationRestriction) GetStartDay() UpdateOnCallScheduleRotationStartDay {
-	if o == nil {
+func (u *UpdateOnCallScheduleRotationRestriction) GetStartDay() UpdateOnCallScheduleRotationStartDay {
+	if u == nil {
 		return UpdateOnCallScheduleRotationStartDay("")
 	}
-	return o.StartDay
+	return u.StartDay
 }
 
-func (o *UpdateOnCallScheduleRotationRestriction) GetStartTime() string {
-	if o == nil {
+func (u *UpdateOnCallScheduleRotationRestriction) GetStartTime() string {
+	if u == nil {
 		return ""
 	}
-	return o.StartTime
+	return u.StartTime
 }
 
-func (o *UpdateOnCallScheduleRotationRestriction) GetEndDay() UpdateOnCallScheduleRotationEndDay {
-	if o == nil {
+func (u *UpdateOnCallScheduleRotationRestriction) GetEndDay() UpdateOnCallScheduleRotationEndDay {
+	if u == nil {
 		return UpdateOnCallScheduleRotationEndDay("")
 	}
-	return o.EndDay
+	return u.EndDay
 }
 
-func (o *UpdateOnCallScheduleRotationRestriction) GetEndTime() string {
-	if o == nil {
+func (u *UpdateOnCallScheduleRotationRestriction) GetEndTime() string {
+	if u == nil {
 		return ""
 	}
-	return o.EndTime
+	return u.EndTime
 }
 
 // UpdateOnCallScheduleRotation - Update an on-call schedule's rotation by ID
@@ -288,86 +288,86 @@ type UpdateOnCallScheduleRotation struct {
 	EffectiveAt *string `json:"effective_at,omitempty"`
 }
 
-func (o *UpdateOnCallScheduleRotation) GetName() *string {
-	if o == nil {
+func (u *UpdateOnCallScheduleRotation) GetName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Name
+	return u.Name
 }
 
-func (o *UpdateOnCallScheduleRotation) GetDescription() *string {
-	if o == nil {
+func (u *UpdateOnCallScheduleRotation) GetDescription() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Description
+	return u.Description
 }
 
-func (o *UpdateOnCallScheduleRotation) GetTimeZone() *string {
-	if o == nil {
+func (u *UpdateOnCallScheduleRotation) GetTimeZone() *string {
+	if u == nil {
 		return nil
 	}
-	return o.TimeZone
+	return u.TimeZone
 }
 
-func (o *UpdateOnCallScheduleRotation) GetSlackUserGroupID() *string {
-	if o == nil {
+func (u *UpdateOnCallScheduleRotation) GetSlackUserGroupID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.SlackUserGroupID
+	return u.SlackUserGroupID
 }
 
-func (o *UpdateOnCallScheduleRotation) GetEnableSlackChannelNotifications() *bool {
-	if o == nil {
+func (u *UpdateOnCallScheduleRotation) GetEnableSlackChannelNotifications() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.EnableSlackChannelNotifications
+	return u.EnableSlackChannelNotifications
 }
 
-func (o *UpdateOnCallScheduleRotation) GetCoverageGapNotificationInterval() *string {
-	if o == nil {
+func (u *UpdateOnCallScheduleRotation) GetCoverageGapNotificationInterval() *string {
+	if u == nil {
 		return nil
 	}
-	return o.CoverageGapNotificationInterval
+	return u.CoverageGapNotificationInterval
 }
 
-func (o *UpdateOnCallScheduleRotation) GetPreventShiftDeletion() *bool {
-	if o == nil {
+func (u *UpdateOnCallScheduleRotation) GetPreventShiftDeletion() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.PreventShiftDeletion
+	return u.PreventShiftDeletion
 }
 
-func (o *UpdateOnCallScheduleRotation) GetColor() *string {
-	if o == nil {
+func (u *UpdateOnCallScheduleRotation) GetColor() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Color
+	return u.Color
 }
 
-func (o *UpdateOnCallScheduleRotation) GetMembers() []UpdateOnCallScheduleRotationMember {
-	if o == nil {
+func (u *UpdateOnCallScheduleRotation) GetMembers() []UpdateOnCallScheduleRotationMember {
+	if u == nil {
 		return nil
 	}
-	return o.Members
+	return u.Members
 }
 
-func (o *UpdateOnCallScheduleRotation) GetStrategy() *UpdateOnCallScheduleRotationStrategy {
-	if o == nil {
+func (u *UpdateOnCallScheduleRotation) GetStrategy() *UpdateOnCallScheduleRotationStrategy {
+	if u == nil {
 		return nil
 	}
-	return o.Strategy
+	return u.Strategy
 }
 
-func (o *UpdateOnCallScheduleRotation) GetRestrictions() []UpdateOnCallScheduleRotationRestriction {
-	if o == nil {
+func (u *UpdateOnCallScheduleRotation) GetRestrictions() []UpdateOnCallScheduleRotationRestriction {
+	if u == nil {
 		return nil
 	}
-	return o.Restrictions
+	return u.Restrictions
 }
 
-func (o *UpdateOnCallScheduleRotation) GetEffectiveAt() *string {
-	if o == nil {
+func (u *UpdateOnCallScheduleRotation) GetEffectiveAt() *string {
+	if u == nil {
 		return nil
 	}
-	return o.EffectiveAt
+	return u.EffectiveAt
 }

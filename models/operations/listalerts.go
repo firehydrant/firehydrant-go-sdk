@@ -62,86 +62,86 @@ type ListAlertsRequest struct {
 	Statuses *string `queryParam:"style=form,explode=true,name=statuses"`
 }
 
-func (o *ListAlertsRequest) GetPage() *int {
-	if o == nil {
+func (l *ListAlertsRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListAlertsRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListAlertsRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }
 
-func (o *ListAlertsRequest) GetQuery() *string {
-	if o == nil {
+func (l *ListAlertsRequest) GetQuery() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Query
+	return l.Query
 }
 
-func (o *ListAlertsRequest) GetUsers() *string {
-	if o == nil {
+func (l *ListAlertsRequest) GetUsers() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Users
+	return l.Users
 }
 
-func (o *ListAlertsRequest) GetTeams() *string {
-	if o == nil {
+func (l *ListAlertsRequest) GetTeams() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Teams
+	return l.Teams
 }
 
-func (o *ListAlertsRequest) GetSignalRules() *string {
-	if o == nil {
+func (l *ListAlertsRequest) GetSignalRules() *string {
+	if l == nil {
 		return nil
 	}
-	return o.SignalRules
+	return l.SignalRules
 }
 
-func (o *ListAlertsRequest) GetEnvironments() *string {
-	if o == nil {
+func (l *ListAlertsRequest) GetEnvironments() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Environments
+	return l.Environments
 }
 
-func (o *ListAlertsRequest) GetFunctionalities() *string {
-	if o == nil {
+func (l *ListAlertsRequest) GetFunctionalities() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Functionalities
+	return l.Functionalities
 }
 
-func (o *ListAlertsRequest) GetServices() *string {
-	if o == nil {
+func (l *ListAlertsRequest) GetServices() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Services
+	return l.Services
 }
 
-func (o *ListAlertsRequest) GetTags() *string {
-	if o == nil {
+func (l *ListAlertsRequest) GetTags() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Tags
+	return l.Tags
 }
 
-func (o *ListAlertsRequest) GetTagMatchStrategy() *ListAlertsTagMatchStrategy {
-	if o == nil {
+func (l *ListAlertsRequest) GetTagMatchStrategy() *ListAlertsTagMatchStrategy {
+	if l == nil {
 		return nil
 	}
-	return o.TagMatchStrategy
+	return l.TagMatchStrategy
 }
 
-func (o *ListAlertsRequest) GetStatuses() *string {
-	if o == nil {
+func (l *ListAlertsRequest) GetStatuses() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Statuses
+	return l.Statuses
 }

@@ -9,23 +9,23 @@ type CreateSavedSearch struct {
 	FilterValues map[string]any `json:"filter_values"`
 }
 
-func (o *CreateSavedSearch) GetName() string {
-	if o == nil {
+func (c *CreateSavedSearch) GetName() string {
+	if c == nil {
 		return ""
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CreateSavedSearch) GetIsPrivate() *bool {
-	if o == nil {
+func (c *CreateSavedSearch) GetIsPrivate() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.IsPrivate
+	return c.IsPrivate
 }
 
-func (o *CreateSavedSearch) GetFilterValues() map[string]any {
-	if o == nil {
+func (c *CreateSavedSearch) GetFilterValues() map[string]any {
+	if c == nil {
 		return map[string]any{}
 	}
-	return o.FilterValues
+	return c.FilterValues
 }

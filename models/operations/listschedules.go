@@ -9,23 +9,23 @@ type ListSchedulesRequest struct {
 	PerPage *int    `queryParam:"style=form,explode=true,name=per_page"`
 }
 
-func (o *ListSchedulesRequest) GetQuery() *string {
-	if o == nil {
+func (l *ListSchedulesRequest) GetQuery() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Query
+	return l.Query
 }
 
-func (o *ListSchedulesRequest) GetPage() *int {
-	if o == nil {
+func (l *ListSchedulesRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListSchedulesRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListSchedulesRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }

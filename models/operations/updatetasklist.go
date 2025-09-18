@@ -11,16 +11,16 @@ type UpdateTaskListRequest struct {
 	UpdateTaskList components.UpdateTaskList `request:"mediaType=application/json"`
 }
 
-func (o *UpdateTaskListRequest) GetTaskListID() string {
-	if o == nil {
+func (u *UpdateTaskListRequest) GetTaskListID() string {
+	if u == nil {
 		return ""
 	}
-	return o.TaskListID
+	return u.TaskListID
 }
 
-func (o *UpdateTaskListRequest) GetUpdateTaskList() components.UpdateTaskList {
-	if o == nil {
+func (u *UpdateTaskListRequest) GetUpdateTaskList() components.UpdateTaskList {
+	if u == nil {
 		return components.UpdateTaskList{}
 	}
-	return o.UpdateTaskList
+	return u.UpdateTaskList
 }

@@ -33,79 +33,79 @@ func (r *RunbooksExecutionEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *RunbooksExecutionEntity) GetID() *string {
-	if o == nil {
+func (r *RunbooksExecutionEntity) GetID() *string {
+	if r == nil {
 		return nil
 	}
-	return o.ID
+	return r.ID
 }
 
-func (o *RunbooksExecutionEntity) GetStatus() *string {
-	if o == nil {
+func (r *RunbooksExecutionEntity) GetStatus() *string {
+	if r == nil {
 		return nil
 	}
-	return o.Status
+	return r.Status
 }
 
-func (o *RunbooksExecutionEntity) GetStatusReason() *string {
-	if o == nil {
+func (r *RunbooksExecutionEntity) GetStatusReason() *string {
+	if r == nil {
 		return nil
 	}
-	return o.StatusReason
+	return r.StatusReason
 }
 
-func (o *RunbooksExecutionEntity) GetStatusReasonMessage() *string {
-	if o == nil {
+func (r *RunbooksExecutionEntity) GetStatusReasonMessage() *string {
+	if r == nil {
 		return nil
 	}
-	return o.StatusReasonMessage
+	return r.StatusReasonMessage
 }
 
-func (o *RunbooksExecutionEntity) GetHasBeenRerun() *bool {
-	if o == nil {
+func (r *RunbooksExecutionEntity) GetHasBeenRerun() *bool {
+	if r == nil {
 		return nil
 	}
-	return o.HasBeenRerun
+	return r.HasBeenRerun
 }
 
-func (o *RunbooksExecutionEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (r *RunbooksExecutionEntity) GetCreatedAt() *time.Time {
+	if r == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return r.CreatedAt
 }
 
-func (o *RunbooksExecutionEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (r *RunbooksExecutionEntity) GetUpdatedAt() *time.Time {
+	if r == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return r.UpdatedAt
 }
 
-func (o *RunbooksExecutionEntity) GetCreatedBy() *string {
-	if o == nil {
+func (r *RunbooksExecutionEntity) GetCreatedBy() *string {
+	if r == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return r.CreatedBy
 }
 
-func (o *RunbooksExecutionEntity) GetRunbook() *NullableSlimRunbookEntity {
-	if o == nil {
+func (r *RunbooksExecutionEntity) GetRunbook() *NullableSlimRunbookEntity {
+	if r == nil {
 		return nil
 	}
-	return o.Runbook
+	return r.Runbook
 }
 
-func (o *RunbooksExecutionEntity) GetSteps() *NullableRunbooksExecutionStepEntity {
-	if o == nil {
+func (r *RunbooksExecutionEntity) GetSteps() *NullableRunbooksExecutionStepEntity {
+	if r == nil {
 		return nil
 	}
-	return o.Steps
+	return r.Steps
 }
 
-func (o *RunbooksExecutionEntity) GetExecutedFor() *NullableRunbooksExecutionEntityExecutedForEntity {
-	if o == nil {
+func (r *RunbooksExecutionEntity) GetExecutedFor() *NullableRunbooksExecutionEntityExecutedForEntity {
+	if r == nil {
 		return nil
 	}
-	return o.ExecutedFor
+	return r.ExecutedFor
 }

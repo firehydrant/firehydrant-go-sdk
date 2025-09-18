@@ -32,30 +32,30 @@ type ListIncidentEventsRequest struct {
 	PerPage *int    `queryParam:"style=form,explode=true,name=per_page"`
 }
 
-func (o *ListIncidentEventsRequest) GetIncidentID() string {
-	if o == nil {
+func (l *ListIncidentEventsRequest) GetIncidentID() string {
+	if l == nil {
 		return ""
 	}
-	return o.IncidentID
+	return l.IncidentID
 }
 
-func (o *ListIncidentEventsRequest) GetTypes() *string {
-	if o == nil {
+func (l *ListIncidentEventsRequest) GetTypes() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Types
+	return l.Types
 }
 
-func (o *ListIncidentEventsRequest) GetPage() *int {
-	if o == nil {
+func (l *ListIncidentEventsRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListIncidentEventsRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListIncidentEventsRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }

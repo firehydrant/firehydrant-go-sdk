@@ -61,53 +61,53 @@ type CreateIncidentRetrospectiveFieldRequestBody struct {
 	RequiredAtMilestoneID *string                              `json:"required_at_milestone_id,omitempty"`
 }
 
-func (o *CreateIncidentRetrospectiveFieldRequestBody) GetLabel() string {
-	if o == nil {
+func (c *CreateIncidentRetrospectiveFieldRequestBody) GetLabel() string {
+	if c == nil {
 		return ""
 	}
-	return o.Label
+	return c.Label
 }
 
-func (o *CreateIncidentRetrospectiveFieldRequestBody) GetType() CreateIncidentRetrospectiveFieldType {
-	if o == nil {
+func (c *CreateIncidentRetrospectiveFieldRequestBody) GetType() CreateIncidentRetrospectiveFieldType {
+	if c == nil {
 		return CreateIncidentRetrospectiveFieldType("")
 	}
-	return o.Type
+	return c.Type
 }
 
-func (o *CreateIncidentRetrospectiveFieldRequestBody) GetHelpText() *string {
-	if o == nil {
+func (c *CreateIncidentRetrospectiveFieldRequestBody) GetHelpText() *string {
+	if c == nil {
 		return nil
 	}
-	return o.HelpText
+	return c.HelpText
 }
 
-func (o *CreateIncidentRetrospectiveFieldRequestBody) GetPermissibleValues() []string {
-	if o == nil {
+func (c *CreateIncidentRetrospectiveFieldRequestBody) GetPermissibleValues() []string {
+	if c == nil {
 		return nil
 	}
-	return o.PermissibleValues
+	return c.PermissibleValues
 }
 
-func (o *CreateIncidentRetrospectiveFieldRequestBody) GetIsRequired() *bool {
-	if o == nil {
+func (c *CreateIncidentRetrospectiveFieldRequestBody) GetIsRequired() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.IsRequired
+	return c.IsRequired
 }
 
-func (o *CreateIncidentRetrospectiveFieldRequestBody) GetSchema() []string {
-	if o == nil {
+func (c *CreateIncidentRetrospectiveFieldRequestBody) GetSchema() []string {
+	if c == nil {
 		return nil
 	}
-	return o.Schema
+	return c.Schema
 }
 
-func (o *CreateIncidentRetrospectiveFieldRequestBody) GetRequiredAtMilestoneID() *string {
-	if o == nil {
+func (c *CreateIncidentRetrospectiveFieldRequestBody) GetRequiredAtMilestoneID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.RequiredAtMilestoneID
+	return c.RequiredAtMilestoneID
 }
 
 type CreateIncidentRetrospectiveFieldRequest struct {
@@ -116,23 +116,23 @@ type CreateIncidentRetrospectiveFieldRequest struct {
 	RequestBody     CreateIncidentRetrospectiveFieldRequestBody `request:"mediaType=application/json"`
 }
 
-func (o *CreateIncidentRetrospectiveFieldRequest) GetRetrospectiveID() string {
-	if o == nil {
+func (c *CreateIncidentRetrospectiveFieldRequest) GetRetrospectiveID() string {
+	if c == nil {
 		return ""
 	}
-	return o.RetrospectiveID
+	return c.RetrospectiveID
 }
 
-func (o *CreateIncidentRetrospectiveFieldRequest) GetIncidentID() string {
-	if o == nil {
+func (c *CreateIncidentRetrospectiveFieldRequest) GetIncidentID() string {
+	if c == nil {
 		return ""
 	}
-	return o.IncidentID
+	return c.IncidentID
 }
 
-func (o *CreateIncidentRetrospectiveFieldRequest) GetRequestBody() CreateIncidentRetrospectiveFieldRequestBody {
-	if o == nil {
+func (c *CreateIncidentRetrospectiveFieldRequest) GetRequestBody() CreateIncidentRetrospectiveFieldRequestBody {
+	if c == nil {
 		return CreateIncidentRetrospectiveFieldRequestBody{}
 	}
-	return o.RequestBody
+	return c.RequestBody
 }

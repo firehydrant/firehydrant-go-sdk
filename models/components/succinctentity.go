@@ -7,16 +7,16 @@ type SuccinctEntity struct {
 	Name *string `json:"name,omitempty"`
 }
 
-func (o *SuccinctEntity) GetID() *string {
-	if o == nil {
+func (s *SuccinctEntity) GetID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *SuccinctEntity) GetName() *string {
-	if o == nil {
+func (s *SuccinctEntity) GetName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Name
+	return s.Name
 }

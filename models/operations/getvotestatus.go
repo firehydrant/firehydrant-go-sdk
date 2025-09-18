@@ -7,16 +7,16 @@ type GetVoteStatusRequest struct {
 	EventID    string `pathParam:"style=simple,explode=false,name=event_id"`
 }
 
-func (o *GetVoteStatusRequest) GetIncidentID() string {
-	if o == nil {
+func (g *GetVoteStatusRequest) GetIncidentID() string {
+	if g == nil {
 		return ""
 	}
-	return o.IncidentID
+	return g.IncidentID
 }
 
-func (o *GetVoteStatusRequest) GetEventID() string {
-	if o == nil {
+func (g *GetVoteStatusRequest) GetEventID() string {
+	if g == nil {
 		return ""
 	}
-	return o.EventID
+	return g.EventID
 }

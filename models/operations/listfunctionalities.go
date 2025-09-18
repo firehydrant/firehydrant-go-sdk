@@ -19,58 +19,58 @@ type ListFunctionalitiesRequest struct {
 	PerPage *int  `queryParam:"style=form,explode=true,name=per_page"`
 }
 
-func (o *ListFunctionalitiesRequest) GetQuery() *string {
-	if o == nil {
+func (l *ListFunctionalitiesRequest) GetQuery() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Query
+	return l.Query
 }
 
-func (o *ListFunctionalitiesRequest) GetName() *string {
-	if o == nil {
+func (l *ListFunctionalitiesRequest) GetName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Name
+	return l.Name
 }
 
-func (o *ListFunctionalitiesRequest) GetImpacted() *string {
-	if o == nil {
+func (l *ListFunctionalitiesRequest) GetImpacted() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Impacted
+	return l.Impacted
 }
 
-func (o *ListFunctionalitiesRequest) GetLabels() *string {
-	if o == nil {
+func (l *ListFunctionalitiesRequest) GetLabels() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Labels
+	return l.Labels
 }
 
-func (o *ListFunctionalitiesRequest) GetOwner() *string {
-	if o == nil {
+func (l *ListFunctionalitiesRequest) GetOwner() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Owner
+	return l.Owner
 }
 
-func (o *ListFunctionalitiesRequest) GetLite() *bool {
-	if o == nil {
+func (l *ListFunctionalitiesRequest) GetLite() *bool {
+	if l == nil {
 		return nil
 	}
-	return o.Lite
+	return l.Lite
 }
 
-func (o *ListFunctionalitiesRequest) GetPage() *int {
-	if o == nil {
+func (l *ListFunctionalitiesRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListFunctionalitiesRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListFunctionalitiesRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }

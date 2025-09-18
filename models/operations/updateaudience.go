@@ -21,60 +21,60 @@ type UpdateAudienceRequestBody struct {
 	DetailsPosition []int `json:"details[position],omitempty"`
 }
 
-func (o *UpdateAudienceRequestBody) GetName() *string {
-	if o == nil {
+func (u *UpdateAudienceRequestBody) GetName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Name
+	return u.Name
 }
 
-func (o *UpdateAudienceRequestBody) GetDescription() *string {
-	if o == nil {
+func (u *UpdateAudienceRequestBody) GetDescription() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Description
+	return u.Description
 }
 
-func (o *UpdateAudienceRequestBody) GetDefault() *bool {
-	if o == nil {
+func (u *UpdateAudienceRequestBody) GetDefault() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.Default
+	return u.Default
 }
 
-func (o *UpdateAudienceRequestBody) GetActive() *bool {
-	if o == nil {
+func (u *UpdateAudienceRequestBody) GetActive() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.Active
+	return u.Active
 }
 
-func (o *UpdateAudienceRequestBody) GetDetailsQuestion() []string {
-	if o == nil {
+func (u *UpdateAudienceRequestBody) GetDetailsQuestion() []string {
+	if u == nil {
 		return nil
 	}
-	return o.DetailsQuestion
+	return u.DetailsQuestion
 }
 
-func (o *UpdateAudienceRequestBody) GetDetailsPrompt() []string {
-	if o == nil {
+func (u *UpdateAudienceRequestBody) GetDetailsPrompt() []string {
+	if u == nil {
 		return nil
 	}
-	return o.DetailsPrompt
+	return u.DetailsPrompt
 }
 
-func (o *UpdateAudienceRequestBody) GetDetailsSlug() []string {
-	if o == nil {
+func (u *UpdateAudienceRequestBody) GetDetailsSlug() []string {
+	if u == nil {
 		return nil
 	}
-	return o.DetailsSlug
+	return u.DetailsSlug
 }
 
-func (o *UpdateAudienceRequestBody) GetDetailsPosition() []int {
-	if o == nil {
+func (u *UpdateAudienceRequestBody) GetDetailsPosition() []int {
+	if u == nil {
 		return nil
 	}
-	return o.DetailsPosition
+	return u.DetailsPosition
 }
 
 type UpdateAudienceRequest struct {
@@ -83,16 +83,16 @@ type UpdateAudienceRequest struct {
 	RequestBody *UpdateAudienceRequestBody `request:"mediaType=application/json"`
 }
 
-func (o *UpdateAudienceRequest) GetAudienceID() string {
-	if o == nil {
+func (u *UpdateAudienceRequest) GetAudienceID() string {
+	if u == nil {
 		return ""
 	}
-	return o.AudienceID
+	return u.AudienceID
 }
 
-func (o *UpdateAudienceRequest) GetRequestBody() *UpdateAudienceRequestBody {
-	if o == nil {
+func (u *UpdateAudienceRequest) GetRequestBody() *UpdateAudienceRequestBody {
+	if u == nil {
 		return nil
 	}
-	return o.RequestBody
+	return u.RequestBody
 }

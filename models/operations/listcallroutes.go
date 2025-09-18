@@ -7,16 +7,16 @@ type ListCallRoutesRequest struct {
 	PerPage *int `queryParam:"style=form,explode=true,name=per_page"`
 }
 
-func (o *ListCallRoutesRequest) GetPage() *int {
-	if o == nil {
+func (l *ListCallRoutesRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListCallRoutesRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListCallRoutesRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }

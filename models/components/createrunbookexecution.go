@@ -10,16 +10,16 @@ type CreateRunbookExecution struct {
 	RunbookID string `json:"runbook_id"`
 }
 
-func (o *CreateRunbookExecution) GetExecuteFor() string {
-	if o == nil {
+func (c *CreateRunbookExecution) GetExecuteFor() string {
+	if c == nil {
 		return ""
 	}
-	return o.ExecuteFor
+	return c.ExecuteFor
 }
 
-func (o *CreateRunbookExecution) GetRunbookID() string {
-	if o == nil {
+func (c *CreateRunbookExecution) GetRunbookID() string {
+	if c == nil {
 		return ""
 	}
-	return o.RunbookID
+	return c.RunbookID
 }

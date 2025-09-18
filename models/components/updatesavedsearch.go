@@ -9,23 +9,23 @@ type UpdateSavedSearch struct {
 	FilterValues map[string]any `json:"filter_values,omitempty"`
 }
 
-func (o *UpdateSavedSearch) GetIsPrivate() *bool {
-	if o == nil {
+func (u *UpdateSavedSearch) GetIsPrivate() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.IsPrivate
+	return u.IsPrivate
 }
 
-func (o *UpdateSavedSearch) GetName() *string {
-	if o == nil {
+func (u *UpdateSavedSearch) GetName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Name
+	return u.Name
 }
 
-func (o *UpdateSavedSearch) GetFilterValues() map[string]any {
-	if o == nil {
+func (u *UpdateSavedSearch) GetFilterValues() map[string]any {
+	if u == nil {
 		return nil
 	}
-	return o.FilterValues
+	return u.FilterValues
 }

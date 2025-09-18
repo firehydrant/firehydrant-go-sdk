@@ -6,9 +6,9 @@ type NullableSignalsAPIGroupingEntityActionEntityFyiEntity struct {
 	SlackChannels []IntegrationsSlackSlackChannelEntity `json:"slack_channels,omitempty"`
 }
 
-func (o *NullableSignalsAPIGroupingEntityActionEntityFyiEntity) GetSlackChannels() []IntegrationsSlackSlackChannelEntity {
-	if o == nil {
+func (n *NullableSignalsAPIGroupingEntityActionEntityFyiEntity) GetSlackChannels() []IntegrationsSlackSlackChannelEntity {
+	if n == nil {
 		return nil
 	}
-	return o.SlackChannels
+	return n.SlackChannels
 }

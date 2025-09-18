@@ -9,16 +9,16 @@ type GetZendeskCustomerSupportIssueRequest struct {
 	Include *string `queryParam:"style=form,explode=true,name=include"`
 }
 
-func (o *GetZendeskCustomerSupportIssueRequest) GetTicketID() string {
-	if o == nil {
+func (g *GetZendeskCustomerSupportIssueRequest) GetTicketID() string {
+	if g == nil {
 		return ""
 	}
-	return o.TicketID
+	return g.TicketID
 }
 
-func (o *GetZendeskCustomerSupportIssueRequest) GetInclude() *string {
-	if o == nil {
+func (g *GetZendeskCustomerSupportIssueRequest) GetInclude() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Include
+	return g.Include
 }

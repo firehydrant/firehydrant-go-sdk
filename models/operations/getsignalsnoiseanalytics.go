@@ -176,86 +176,86 @@ func (g *GetSignalsNoiseAnalyticsRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *GetSignalsNoiseAnalyticsRequest) GetBucket() *GetSignalsNoiseAnalyticsBucket {
-	if o == nil {
+func (g *GetSignalsNoiseAnalyticsRequest) GetBucket() *GetSignalsNoiseAnalyticsBucket {
+	if g == nil {
 		return nil
 	}
-	return o.Bucket
+	return g.Bucket
 }
 
-func (o *GetSignalsNoiseAnalyticsRequest) GetSignalRules() *string {
-	if o == nil {
+func (g *GetSignalsNoiseAnalyticsRequest) GetSignalRules() *string {
+	if g == nil {
 		return nil
 	}
-	return o.SignalRules
+	return g.SignalRules
 }
 
-func (o *GetSignalsNoiseAnalyticsRequest) GetTeams() *string {
-	if o == nil {
+func (g *GetSignalsNoiseAnalyticsRequest) GetTeams() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Teams
+	return g.Teams
 }
 
-func (o *GetSignalsNoiseAnalyticsRequest) GetEnvironments() *string {
-	if o == nil {
+func (g *GetSignalsNoiseAnalyticsRequest) GetEnvironments() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Environments
+	return g.Environments
 }
 
-func (o *GetSignalsNoiseAnalyticsRequest) GetServices() *string {
-	if o == nil {
+func (g *GetSignalsNoiseAnalyticsRequest) GetServices() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Services
+	return g.Services
 }
 
-func (o *GetSignalsNoiseAnalyticsRequest) GetTags() *string {
-	if o == nil {
+func (g *GetSignalsNoiseAnalyticsRequest) GetTags() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Tags
+	return g.Tags
 }
 
-func (o *GetSignalsNoiseAnalyticsRequest) GetUsers() *string {
-	if o == nil {
+func (g *GetSignalsNoiseAnalyticsRequest) GetUsers() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Users
+	return g.Users
 }
 
-func (o *GetSignalsNoiseAnalyticsRequest) GetGroupBy() *GetSignalsNoiseAnalyticsGroupBy {
-	if o == nil {
+func (g *GetSignalsNoiseAnalyticsRequest) GetGroupBy() *GetSignalsNoiseAnalyticsGroupBy {
+	if g == nil {
 		return nil
 	}
-	return o.GroupBy
+	return g.GroupBy
 }
 
-func (o *GetSignalsNoiseAnalyticsRequest) GetSortBy() *GetSignalsNoiseAnalyticsSortBy {
-	if o == nil {
+func (g *GetSignalsNoiseAnalyticsRequest) GetSortBy() *GetSignalsNoiseAnalyticsSortBy {
+	if g == nil {
 		return nil
 	}
-	return o.SortBy
+	return g.SortBy
 }
 
-func (o *GetSignalsNoiseAnalyticsRequest) GetSortDirection() *GetSignalsNoiseAnalyticsSortDirection {
-	if o == nil {
+func (g *GetSignalsNoiseAnalyticsRequest) GetSortDirection() *GetSignalsNoiseAnalyticsSortDirection {
+	if g == nil {
 		return nil
 	}
-	return o.SortDirection
+	return g.SortDirection
 }
 
-func (o *GetSignalsNoiseAnalyticsRequest) GetStartDate() *time.Time {
-	if o == nil {
+func (g *GetSignalsNoiseAnalyticsRequest) GetStartDate() *time.Time {
+	if g == nil {
 		return nil
 	}
-	return o.StartDate
+	return g.StartDate
 }
 
-func (o *GetSignalsNoiseAnalyticsRequest) GetEndDate() *time.Time {
-	if o == nil {
+func (g *GetSignalsNoiseAnalyticsRequest) GetEndDate() *time.Time {
+	if g == nil {
 		return nil
 	}
-	return o.EndDate
+	return g.EndDate
 }

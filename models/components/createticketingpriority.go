@@ -9,16 +9,16 @@ type CreateTicketingPriority struct {
 	Position *int `json:"position,omitempty"`
 }
 
-func (o *CreateTicketingPriority) GetName() string {
-	if o == nil {
+func (c *CreateTicketingPriority) GetName() string {
+	if c == nil {
 		return ""
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CreateTicketingPriority) GetPosition() *int {
-	if o == nil {
+func (c *CreateTicketingPriority) GetPosition() *int {
+	if c == nil {
 		return nil
 	}
-	return o.Position
+	return c.Position
 }

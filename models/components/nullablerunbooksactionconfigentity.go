@@ -9,16 +9,16 @@ type NullableRunbooksActionConfigEntity struct {
 	DocumentationURL *string `json:"documentation_url,omitempty"`
 }
 
-func (o *NullableRunbooksActionConfigEntity) GetElements() []RunbooksElementEntity {
-	if o == nil {
+func (n *NullableRunbooksActionConfigEntity) GetElements() []RunbooksElementEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Elements
+	return n.Elements
 }
 
-func (o *NullableRunbooksActionConfigEntity) GetDocumentationURL() *string {
-	if o == nil {
+func (n *NullableRunbooksActionConfigEntity) GetDocumentationURL() *string {
+	if n == nil {
 		return nil
 	}
-	return o.DocumentationURL
+	return n.DocumentationURL
 }

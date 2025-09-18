@@ -64,23 +64,23 @@ type UpdateSavedSearchRequest struct {
 	UpdateSavedSearch components.UpdateSavedSearch  `request:"mediaType=application/json"`
 }
 
-func (o *UpdateSavedSearchRequest) GetResourceType() UpdateSavedSearchResourceType {
-	if o == nil {
+func (u *UpdateSavedSearchRequest) GetResourceType() UpdateSavedSearchResourceType {
+	if u == nil {
 		return UpdateSavedSearchResourceType("")
 	}
-	return o.ResourceType
+	return u.ResourceType
 }
 
-func (o *UpdateSavedSearchRequest) GetSavedSearchID() string {
-	if o == nil {
+func (u *UpdateSavedSearchRequest) GetSavedSearchID() string {
+	if u == nil {
 		return ""
 	}
-	return o.SavedSearchID
+	return u.SavedSearchID
 }
 
-func (o *UpdateSavedSearchRequest) GetUpdateSavedSearch() components.UpdateSavedSearch {
-	if o == nil {
+func (u *UpdateSavedSearchRequest) GetUpdateSavedSearch() components.UpdateSavedSearch {
+	if u == nil {
 		return components.UpdateSavedSearch{}
 	}
-	return o.UpdateSavedSearch
+	return u.UpdateSavedSearch
 }

@@ -11,16 +11,16 @@ type DeleteServiceLinkRequest struct {
 	RemoteID string `pathParam:"style=simple,explode=false,name=remote_id"`
 }
 
-func (o *DeleteServiceLinkRequest) GetServiceID() string {
-	if o == nil {
+func (d *DeleteServiceLinkRequest) GetServiceID() string {
+	if d == nil {
 		return ""
 	}
-	return o.ServiceID
+	return d.ServiceID
 }
 
-func (o *DeleteServiceLinkRequest) GetRemoteID() string {
-	if o == nil {
+func (d *DeleteServiceLinkRequest) GetRemoteID() string {
+	if d == nil {
 		return ""
 	}
-	return o.RemoteID
+	return d.RemoteID
 }

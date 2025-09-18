@@ -6,9 +6,9 @@ type GetIncidentRoleRequest struct {
 	IncidentRoleID string `pathParam:"style=simple,explode=false,name=incident_role_id"`
 }
 
-func (o *GetIncidentRoleRequest) GetIncidentRoleID() string {
-	if o == nil {
+func (g *GetIncidentRoleRequest) GetIncidentRoleID() string {
+	if g == nil {
 		return ""
 	}
-	return o.IncidentRoleID
+	return g.IncidentRoleID
 }

@@ -12,23 +12,23 @@ type UpdateNuncLinkRequest struct {
 	UpdateNuncLink   components.UpdateNuncLink `request:"mediaType=application/json"`
 }
 
-func (o *UpdateNuncLinkRequest) GetNuncConnectionID() string {
-	if o == nil {
+func (u *UpdateNuncLinkRequest) GetNuncConnectionID() string {
+	if u == nil {
 		return ""
 	}
-	return o.NuncConnectionID
+	return u.NuncConnectionID
 }
 
-func (o *UpdateNuncLinkRequest) GetLinkID() string {
-	if o == nil {
+func (u *UpdateNuncLinkRequest) GetLinkID() string {
+	if u == nil {
 		return ""
 	}
-	return o.LinkID
+	return u.LinkID
 }
 
-func (o *UpdateNuncLinkRequest) GetUpdateNuncLink() components.UpdateNuncLink {
-	if o == nil {
+func (u *UpdateNuncLinkRequest) GetUpdateNuncLink() components.UpdateNuncLink {
+	if u == nil {
 		return components.UpdateNuncLink{}
 	}
-	return o.UpdateNuncLink
+	return u.UpdateNuncLink
 }

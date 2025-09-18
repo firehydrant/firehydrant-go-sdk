@@ -48,114 +48,114 @@ func (f *FunctionalityEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *FunctionalityEntity) GetID() *string {
-	if o == nil {
+func (f *FunctionalityEntity) GetID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ID
+	return f.ID
 }
 
-func (o *FunctionalityEntity) GetName() *string {
-	if o == nil {
+func (f *FunctionalityEntity) GetName() *string {
+	if f == nil {
 		return nil
 	}
-	return o.Name
+	return f.Name
 }
 
-func (o *FunctionalityEntity) GetSlug() *string {
-	if o == nil {
+func (f *FunctionalityEntity) GetSlug() *string {
+	if f == nil {
 		return nil
 	}
-	return o.Slug
+	return f.Slug
 }
 
-func (o *FunctionalityEntity) GetDescription() *string {
-	if o == nil {
+func (f *FunctionalityEntity) GetDescription() *string {
+	if f == nil {
 		return nil
 	}
-	return o.Description
+	return f.Description
 }
 
-func (o *FunctionalityEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (f *FunctionalityEntity) GetCreatedAt() *time.Time {
+	if f == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return f.CreatedAt
 }
 
-func (o *FunctionalityEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (f *FunctionalityEntity) GetUpdatedAt() *time.Time {
+	if f == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return f.UpdatedAt
 }
 
-func (o *FunctionalityEntity) GetLabels() *FunctionalityEntityLabels {
-	if o == nil {
+func (f *FunctionalityEntity) GetLabels() *FunctionalityEntityLabels {
+	if f == nil {
 		return nil
 	}
-	return o.Labels
+	return f.Labels
 }
 
-func (o *FunctionalityEntity) GetActiveIncidents() []string {
-	if o == nil {
+func (f *FunctionalityEntity) GetActiveIncidents() []string {
+	if f == nil {
 		return nil
 	}
-	return o.ActiveIncidents
+	return f.ActiveIncidents
 }
 
-func (o *FunctionalityEntity) GetLinks() []LinksEntity {
-	if o == nil {
+func (f *FunctionalityEntity) GetLinks() []LinksEntity {
+	if f == nil {
 		return nil
 	}
-	return o.Links
+	return f.Links
 }
 
-func (o *FunctionalityEntity) GetOwner() *NullableTeamEntityLite {
-	if o == nil {
+func (f *FunctionalityEntity) GetOwner() *NullableTeamEntityLite {
+	if f == nil {
 		return nil
 	}
-	return o.Owner
+	return f.Owner
 }
 
-func (o *FunctionalityEntity) GetAlertOnAdd() *bool {
-	if o == nil {
+func (f *FunctionalityEntity) GetAlertOnAdd() *bool {
+	if f == nil {
 		return nil
 	}
-	return o.AlertOnAdd
+	return f.AlertOnAdd
 }
 
-func (o *FunctionalityEntity) GetAutoAddRespondingTeam() *bool {
-	if o == nil {
+func (f *FunctionalityEntity) GetAutoAddRespondingTeam() *bool {
+	if f == nil {
 		return nil
 	}
-	return o.AutoAddRespondingTeam
+	return f.AutoAddRespondingTeam
 }
 
-func (o *FunctionalityEntity) GetUpdatedBy() *NullableAuthorEntity {
-	if o == nil {
+func (f *FunctionalityEntity) GetUpdatedBy() *NullableAuthorEntity {
+	if f == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return f.UpdatedBy
 }
 
-func (o *FunctionalityEntity) GetServices() []ServiceEntityLite {
-	if o == nil {
+func (f *FunctionalityEntity) GetServices() []ServiceEntityLite {
+	if f == nil {
 		return nil
 	}
-	return o.Services
+	return f.Services
 }
 
-func (o *FunctionalityEntity) GetExternalResources() []ExternalResourceEntity {
-	if o == nil {
+func (f *FunctionalityEntity) GetExternalResources() []ExternalResourceEntity {
+	if f == nil {
 		return nil
 	}
-	return o.ExternalResources
+	return f.ExternalResources
 }
 
-func (o *FunctionalityEntity) GetTeams() []TeamEntityLite {
-	if o == nil {
+func (f *FunctionalityEntity) GetTeams() []TeamEntityLite {
+	if f == nil {
 		return nil
 	}
-	return o.Teams
+	return f.Teams
 }

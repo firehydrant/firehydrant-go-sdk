@@ -8,23 +8,23 @@ type NullableRunbooksExecutionEntityExecutedForEntity struct {
 	Name *string `json:"name,omitempty"`
 }
 
-func (o *NullableRunbooksExecutionEntityExecutedForEntity) GetID() *string {
-	if o == nil {
+func (n *NullableRunbooksExecutionEntityExecutedForEntity) GetID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ID
+	return n.ID
 }
 
-func (o *NullableRunbooksExecutionEntityExecutedForEntity) GetType() *string {
-	if o == nil {
+func (n *NullableRunbooksExecutionEntityExecutedForEntity) GetType() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Type
+	return n.Type
 }
 
-func (o *NullableRunbooksExecutionEntityExecutedForEntity) GetName() *string {
-	if o == nil {
+func (n *NullableRunbooksExecutionEntityExecutedForEntity) GetName() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Name
+	return n.Name
 }

@@ -11,16 +11,16 @@ type IngestCatalogDataRequest struct {
 	IngestCatalogData components.IngestCatalogData `request:"mediaType=application/json"`
 }
 
-func (o *IngestCatalogDataRequest) GetCatalogID() string {
-	if o == nil {
+func (i *IngestCatalogDataRequest) GetCatalogID() string {
+	if i == nil {
 		return ""
 	}
-	return o.CatalogID
+	return i.CatalogID
 }
 
-func (o *IngestCatalogDataRequest) GetIngestCatalogData() components.IngestCatalogData {
-	if o == nil {
+func (i *IngestCatalogDataRequest) GetIngestCatalogData() components.IngestCatalogData {
+	if i == nil {
 		return components.IngestCatalogData{}
 	}
-	return o.IngestCatalogData
+	return i.IngestCatalogData
 }

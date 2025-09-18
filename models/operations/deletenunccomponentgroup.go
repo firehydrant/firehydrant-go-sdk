@@ -7,16 +7,16 @@ type DeleteNuncComponentGroupRequest struct {
 	GroupID          string `pathParam:"style=simple,explode=false,name=group_id"`
 }
 
-func (o *DeleteNuncComponentGroupRequest) GetNuncConnectionID() string {
-	if o == nil {
+func (d *DeleteNuncComponentGroupRequest) GetNuncConnectionID() string {
+	if d == nil {
 		return ""
 	}
-	return o.NuncConnectionID
+	return d.NuncConnectionID
 }
 
-func (o *DeleteNuncComponentGroupRequest) GetGroupID() string {
-	if o == nil {
+func (d *DeleteNuncComponentGroupRequest) GetGroupID() string {
+	if d == nil {
 		return ""
 	}
-	return o.GroupID
+	return d.GroupID
 }

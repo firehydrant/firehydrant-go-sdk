@@ -46,114 +46,114 @@ func (n *NullableRunbooksActionsEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *NullableRunbooksActionsEntity) GetID() *string {
-	if o == nil {
+func (n *NullableRunbooksActionsEntity) GetID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ID
+	return n.ID
 }
 
-func (o *NullableRunbooksActionsEntity) GetName() *string {
-	if o == nil {
+func (n *NullableRunbooksActionsEntity) GetName() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Name
+	return n.Name
 }
 
-func (o *NullableRunbooksActionsEntity) GetSlug() *string {
-	if o == nil {
+func (n *NullableRunbooksActionsEntity) GetSlug() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Slug
+	return n.Slug
 }
 
-func (o *NullableRunbooksActionsEntity) GetDescription() *string {
-	if o == nil {
+func (n *NullableRunbooksActionsEntity) GetDescription() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Description
+	return n.Description
 }
 
-func (o *NullableRunbooksActionsEntity) GetConfig() *NullableRunbooksActionConfigEntity {
-	if o == nil {
+func (n *NullableRunbooksActionsEntity) GetConfig() *NullableRunbooksActionConfigEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Config
+	return n.Config
 }
 
-func (o *NullableRunbooksActionsEntity) GetCategory() *string {
-	if o == nil {
+func (n *NullableRunbooksActionsEntity) GetCategory() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Category
+	return n.Category
 }
 
-func (o *NullableRunbooksActionsEntity) GetPrerequisites() []NullableRunbooksActionsEntityPrerequisite {
-	if o == nil {
+func (n *NullableRunbooksActionsEntity) GetPrerequisites() []NullableRunbooksActionsEntityPrerequisite {
+	if n == nil {
 		return nil
 	}
-	return o.Prerequisites
+	return n.Prerequisites
 }
 
-func (o *NullableRunbooksActionsEntity) GetIntegration() *NullableIntegrationsIntegrationEntity {
-	if o == nil {
+func (n *NullableRunbooksActionsEntity) GetIntegration() *NullableIntegrationsIntegrationEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Integration
+	return n.Integration
 }
 
-func (o *NullableRunbooksActionsEntity) GetSupportedRunbookTypes() []string {
-	if o == nil {
+func (n *NullableRunbooksActionsEntity) GetSupportedRunbookTypes() []string {
+	if n == nil {
 		return nil
 	}
-	return o.SupportedRunbookTypes
+	return n.SupportedRunbookTypes
 }
 
-func (o *NullableRunbooksActionsEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (n *NullableRunbooksActionsEntity) GetCreatedAt() *time.Time {
+	if n == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return n.CreatedAt
 }
 
-func (o *NullableRunbooksActionsEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (n *NullableRunbooksActionsEntity) GetUpdatedAt() *time.Time {
+	if n == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return n.UpdatedAt
 }
 
-func (o *NullableRunbooksActionsEntity) GetAutomatable() *bool {
-	if o == nil {
+func (n *NullableRunbooksActionsEntity) GetAutomatable() *bool {
+	if n == nil {
 		return nil
 	}
-	return o.Automatable
+	return n.Automatable
 }
 
-func (o *NullableRunbooksActionsEntity) GetRerunnable() *bool {
-	if o == nil {
+func (n *NullableRunbooksActionsEntity) GetRerunnable() *bool {
+	if n == nil {
 		return nil
 	}
-	return o.Rerunnable
+	return n.Rerunnable
 }
 
-func (o *NullableRunbooksActionsEntity) GetRepeatable() *bool {
-	if o == nil {
+func (n *NullableRunbooksActionsEntity) GetRepeatable() *bool {
+	if n == nil {
 		return nil
 	}
-	return o.Repeatable
+	return n.Repeatable
 }
 
-func (o *NullableRunbooksActionsEntity) GetDefaultLogic() *NullableRunbooksActionsEntityDefaultLogic {
-	if o == nil {
+func (n *NullableRunbooksActionsEntity) GetDefaultLogic() *NullableRunbooksActionsEntityDefaultLogic {
+	if n == nil {
 		return nil
 	}
-	return o.DefaultLogic
+	return n.DefaultLogic
 }
 
-func (o *NullableRunbooksActionsEntity) GetDefaultRuleData() *NullableRunbooksActionsEntityDefaultRuleData {
-	if o == nil {
+func (n *NullableRunbooksActionsEntity) GetDefaultRuleData() *NullableRunbooksActionsEntityDefaultRuleData {
+	if n == nil {
 		return nil
 	}
-	return o.DefaultRuleData
+	return n.DefaultRuleData
 }

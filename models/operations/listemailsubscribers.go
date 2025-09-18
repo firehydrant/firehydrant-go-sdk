@@ -6,9 +6,9 @@ type ListEmailSubscribersRequest struct {
 	NuncConnectionID string `pathParam:"style=simple,explode=false,name=nunc_connection_id"`
 }
 
-func (o *ListEmailSubscribersRequest) GetNuncConnectionID() string {
-	if o == nil {
+func (l *ListEmailSubscribersRequest) GetNuncConnectionID() string {
+	if l == nil {
 		return ""
 	}
-	return o.NuncConnectionID
+	return l.NuncConnectionID
 }

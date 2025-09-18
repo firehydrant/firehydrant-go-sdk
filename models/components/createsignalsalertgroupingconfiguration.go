@@ -45,18 +45,18 @@ type CreateSignalsAlertGroupingConfigurationSubstring struct {
 	Value string `json:"value"`
 }
 
-func (o *CreateSignalsAlertGroupingConfigurationSubstring) GetFieldName() CreateSignalsAlertGroupingConfigurationFieldName {
-	if o == nil {
+func (c *CreateSignalsAlertGroupingConfigurationSubstring) GetFieldName() CreateSignalsAlertGroupingConfigurationFieldName {
+	if c == nil {
 		return CreateSignalsAlertGroupingConfigurationFieldName("")
 	}
-	return o.FieldName
+	return c.FieldName
 }
 
-func (o *CreateSignalsAlertGroupingConfigurationSubstring) GetValue() string {
-	if o == nil {
+func (c *CreateSignalsAlertGroupingConfigurationSubstring) GetValue() string {
+	if c == nil {
 		return ""
 	}
-	return o.Value
+	return c.Value
 }
 
 // CreateSignalsAlertGroupingConfigurationStrategy - The strategy to use for grouping alerts
@@ -65,11 +65,11 @@ type CreateSignalsAlertGroupingConfigurationStrategy struct {
 	Substring *CreateSignalsAlertGroupingConfigurationSubstring `json:"substring,omitempty"`
 }
 
-func (o *CreateSignalsAlertGroupingConfigurationStrategy) GetSubstring() *CreateSignalsAlertGroupingConfigurationSubstring {
-	if o == nil {
+func (c *CreateSignalsAlertGroupingConfigurationStrategy) GetSubstring() *CreateSignalsAlertGroupingConfigurationSubstring {
+	if c == nil {
 		return nil
 	}
-	return o.Substring
+	return c.Substring
 }
 
 // CreateSignalsAlertGroupingConfigurationFyi - Send FYI notification
@@ -78,11 +78,11 @@ type CreateSignalsAlertGroupingConfigurationFyi struct {
 	SlackChannelIds []string `json:"slack_channel_ids"`
 }
 
-func (o *CreateSignalsAlertGroupingConfigurationFyi) GetSlackChannelIds() []string {
-	if o == nil {
+func (c *CreateSignalsAlertGroupingConfigurationFyi) GetSlackChannelIds() []string {
+	if c == nil {
 		return []string{}
 	}
-	return o.SlackChannelIds
+	return c.SlackChannelIds
 }
 
 // CreateSignalsAlertGroupingConfigurationAction - The action to take when grouping alerts
@@ -93,18 +93,18 @@ type CreateSignalsAlertGroupingConfigurationAction struct {
 	Fyi *CreateSignalsAlertGroupingConfigurationFyi `json:"fyi,omitempty"`
 }
 
-func (o *CreateSignalsAlertGroupingConfigurationAction) GetLink() *bool {
-	if o == nil {
+func (c *CreateSignalsAlertGroupingConfigurationAction) GetLink() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Link
+	return c.Link
 }
 
-func (o *CreateSignalsAlertGroupingConfigurationAction) GetFyi() *CreateSignalsAlertGroupingConfigurationFyi {
-	if o == nil {
+func (c *CreateSignalsAlertGroupingConfigurationAction) GetFyi() *CreateSignalsAlertGroupingConfigurationFyi {
+	if c == nil {
 		return nil
 	}
-	return o.Fyi
+	return c.Fyi
 }
 
 // CreateSignalsAlertGroupingConfiguration - Create a Signals alert grouping rule for the organization.
@@ -117,23 +117,23 @@ type CreateSignalsAlertGroupingConfiguration struct {
 	ReferenceAlertTimePeriod string `json:"reference_alert_time_period"`
 }
 
-func (o *CreateSignalsAlertGroupingConfiguration) GetStrategy() CreateSignalsAlertGroupingConfigurationStrategy {
-	if o == nil {
+func (c *CreateSignalsAlertGroupingConfiguration) GetStrategy() CreateSignalsAlertGroupingConfigurationStrategy {
+	if c == nil {
 		return CreateSignalsAlertGroupingConfigurationStrategy{}
 	}
-	return o.Strategy
+	return c.Strategy
 }
 
-func (o *CreateSignalsAlertGroupingConfiguration) GetAction() *CreateSignalsAlertGroupingConfigurationAction {
-	if o == nil {
+func (c *CreateSignalsAlertGroupingConfiguration) GetAction() *CreateSignalsAlertGroupingConfigurationAction {
+	if c == nil {
 		return nil
 	}
-	return o.Action
+	return c.Action
 }
 
-func (o *CreateSignalsAlertGroupingConfiguration) GetReferenceAlertTimePeriod() string {
-	if o == nil {
+func (c *CreateSignalsAlertGroupingConfiguration) GetReferenceAlertTimePeriod() string {
+	if c == nil {
 		return ""
 	}
-	return o.ReferenceAlertTimePeriod
+	return c.ReferenceAlertTimePeriod
 }

@@ -27,30 +27,30 @@ func (l *ListRetrospectivesRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ListRetrospectivesRequest) GetPage() *int {
-	if o == nil {
+func (l *ListRetrospectivesRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListRetrospectivesRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListRetrospectivesRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }
 
-func (o *ListRetrospectivesRequest) GetIncidentID() *string {
-	if o == nil {
+func (l *ListRetrospectivesRequest) GetIncidentID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.IncidentID
+	return l.IncidentID
 }
 
-func (o *ListRetrospectivesRequest) GetUpdatedSince() *time.Time {
-	if o == nil {
+func (l *ListRetrospectivesRequest) GetUpdatedSince() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.UpdatedSince
+	return l.UpdatedSince
 }

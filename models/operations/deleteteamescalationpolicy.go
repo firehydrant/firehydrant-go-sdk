@@ -7,16 +7,16 @@ type DeleteTeamEscalationPolicyRequest struct {
 	ID     string `pathParam:"style=simple,explode=false,name=id"`
 }
 
-func (o *DeleteTeamEscalationPolicyRequest) GetTeamID() string {
-	if o == nil {
+func (d *DeleteTeamEscalationPolicyRequest) GetTeamID() string {
+	if d == nil {
 		return ""
 	}
-	return o.TeamID
+	return d.TeamID
 }
 
-func (o *DeleteTeamEscalationPolicyRequest) GetID() string {
-	if o == nil {
+func (d *DeleteTeamEscalationPolicyRequest) GetID() string {
+	if d == nil {
 		return ""
 	}
-	return o.ID
+	return d.ID
 }

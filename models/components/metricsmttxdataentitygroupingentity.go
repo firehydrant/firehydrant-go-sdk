@@ -8,23 +8,23 @@ type MetricsMttxDataEntityGroupingEntity struct {
 	NameAttribute *string `json:"name_attribute,omitempty"`
 }
 
-func (o *MetricsMttxDataEntityGroupingEntity) GetType() *string {
-	if o == nil {
+func (m *MetricsMttxDataEntityGroupingEntity) GetType() *string {
+	if m == nil {
 		return nil
 	}
-	return o.Type
+	return m.Type
 }
 
-func (o *MetricsMttxDataEntityGroupingEntity) GetIDAttribute() *string {
-	if o == nil {
+func (m *MetricsMttxDataEntityGroupingEntity) GetIDAttribute() *string {
+	if m == nil {
 		return nil
 	}
-	return o.IDAttribute
+	return m.IDAttribute
 }
 
-func (o *MetricsMttxDataEntityGroupingEntity) GetNameAttribute() *string {
-	if o == nil {
+func (m *MetricsMttxDataEntityGroupingEntity) GetNameAttribute() *string {
+	if m == nil {
 		return nil
 	}
-	return o.NameAttribute
+	return m.NameAttribute
 }

@@ -8,16 +8,16 @@ type SearchConfluenceSpacesRequest struct {
 	Keyword *string `queryParam:"style=form,explode=true,name=keyword"`
 }
 
-func (o *SearchConfluenceSpacesRequest) GetID() string {
-	if o == nil {
+func (s *SearchConfluenceSpacesRequest) GetID() string {
+	if s == nil {
 		return ""
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *SearchConfluenceSpacesRequest) GetKeyword() *string {
-	if o == nil {
+func (s *SearchConfluenceSpacesRequest) GetKeyword() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Keyword
+	return s.Keyword
 }

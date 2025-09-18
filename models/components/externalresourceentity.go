@@ -30,65 +30,65 @@ func (e *ExternalResourceEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ExternalResourceEntity) GetConnectionType() *string {
-	if o == nil {
+func (e *ExternalResourceEntity) GetConnectionType() *string {
+	if e == nil {
 		return nil
 	}
-	return o.ConnectionType
+	return e.ConnectionType
 }
 
-func (o *ExternalResourceEntity) GetConnectionName() *string {
-	if o == nil {
+func (e *ExternalResourceEntity) GetConnectionName() *string {
+	if e == nil {
 		return nil
 	}
-	return o.ConnectionName
+	return e.ConnectionName
 }
 
-func (o *ExternalResourceEntity) GetConnectionFullFaviconURL() *string {
-	if o == nil {
+func (e *ExternalResourceEntity) GetConnectionFullFaviconURL() *string {
+	if e == nil {
 		return nil
 	}
-	return o.ConnectionFullFaviconURL
+	return e.ConnectionFullFaviconURL
 }
 
-func (o *ExternalResourceEntity) GetConnectionID() *string {
-	if o == nil {
+func (e *ExternalResourceEntity) GetConnectionID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.ConnectionID
+	return e.ConnectionID
 }
 
-func (o *ExternalResourceEntity) GetRemoteID() *string {
-	if o == nil {
+func (e *ExternalResourceEntity) GetRemoteID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.RemoteID
+	return e.RemoteID
 }
 
-func (o *ExternalResourceEntity) GetRemoteURL() *string {
-	if o == nil {
+func (e *ExternalResourceEntity) GetRemoteURL() *string {
+	if e == nil {
 		return nil
 	}
-	return o.RemoteURL
+	return e.RemoteURL
 }
 
-func (o *ExternalResourceEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (e *ExternalResourceEntity) GetCreatedAt() *time.Time {
+	if e == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return e.CreatedAt
 }
 
-func (o *ExternalResourceEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (e *ExternalResourceEntity) GetUpdatedAt() *time.Time {
+	if e == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return e.UpdatedAt
 }
 
-func (o *ExternalResourceEntity) GetName() *string {
-	if o == nil {
+func (e *ExternalResourceEntity) GetName() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Name
+	return e.Name
 }

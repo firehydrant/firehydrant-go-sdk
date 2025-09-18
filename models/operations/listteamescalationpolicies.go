@@ -10,30 +10,30 @@ type ListTeamEscalationPoliciesRequest struct {
 	PerPage *int    `queryParam:"style=form,explode=true,name=per_page"`
 }
 
-func (o *ListTeamEscalationPoliciesRequest) GetTeamID() string {
-	if o == nil {
+func (l *ListTeamEscalationPoliciesRequest) GetTeamID() string {
+	if l == nil {
 		return ""
 	}
-	return o.TeamID
+	return l.TeamID
 }
 
-func (o *ListTeamEscalationPoliciesRequest) GetQuery() *string {
-	if o == nil {
+func (l *ListTeamEscalationPoliciesRequest) GetQuery() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Query
+	return l.Query
 }
 
-func (o *ListTeamEscalationPoliciesRequest) GetPage() *int {
-	if o == nil {
+func (l *ListTeamEscalationPoliciesRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListTeamEscalationPoliciesRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListTeamEscalationPoliciesRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }

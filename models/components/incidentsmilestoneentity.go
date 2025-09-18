@@ -29,44 +29,44 @@ func (i *IncidentsMilestoneEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *IncidentsMilestoneEntity) GetID() *string {
-	if o == nil {
+func (i *IncidentsMilestoneEntity) GetID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ID
+	return i.ID
 }
 
-func (o *IncidentsMilestoneEntity) GetType() *string {
-	if o == nil {
+func (i *IncidentsMilestoneEntity) GetType() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Type
+	return i.Type
 }
 
-func (o *IncidentsMilestoneEntity) GetDuration() *string {
-	if o == nil {
+func (i *IncidentsMilestoneEntity) GetDuration() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Duration
+	return i.Duration
 }
 
-func (o *IncidentsMilestoneEntity) GetOccurredAt() *time.Time {
-	if o == nil {
+func (i *IncidentsMilestoneEntity) GetOccurredAt() *time.Time {
+	if i == nil {
 		return nil
 	}
-	return o.OccurredAt
+	return i.OccurredAt
 }
 
-func (o *IncidentsMilestoneEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (i *IncidentsMilestoneEntity) GetCreatedAt() *time.Time {
+	if i == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return i.CreatedAt
 }
 
-func (o *IncidentsMilestoneEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (i *IncidentsMilestoneEntity) GetUpdatedAt() *time.Time {
+	if i == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return i.UpdatedAt
 }

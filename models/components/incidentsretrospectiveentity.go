@@ -13,51 +13,51 @@ type IncidentsRetrospectiveEntity struct {
 	Exports     []string                                    `json:"exports,omitempty"`
 }
 
-func (o *IncidentsRetrospectiveEntity) GetID() *string {
-	if o == nil {
+func (i *IncidentsRetrospectiveEntity) GetID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ID
+	return i.ID
 }
 
-func (o *IncidentsRetrospectiveEntity) GetName() *string {
-	if o == nil {
+func (i *IncidentsRetrospectiveEntity) GetName() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Name
+	return i.Name
 }
 
-func (o *IncidentsRetrospectiveEntity) GetDescription() *string {
-	if o == nil {
+func (i *IncidentsRetrospectiveEntity) GetDescription() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Description
+	return i.Description
 }
 
-func (o *IncidentsRetrospectiveEntity) GetSections() []IncidentsRetrospectiveEntitySectionEntity {
-	if o == nil {
+func (i *IncidentsRetrospectiveEntity) GetSections() []IncidentsRetrospectiveEntitySectionEntity {
+	if i == nil {
 		return nil
 	}
-	return o.Sections
+	return i.Sections
 }
 
-func (o *IncidentsRetrospectiveEntity) GetIsHidden() *bool {
-	if o == nil {
+func (i *IncidentsRetrospectiveEntity) GetIsHidden() *bool {
+	if i == nil {
 		return nil
 	}
-	return o.IsHidden
+	return i.IsHidden
 }
 
-func (o *IncidentsRetrospectiveEntity) GetFields() []IncidentsRetrospectiveFieldEntity {
-	if o == nil {
+func (i *IncidentsRetrospectiveEntity) GetFields() []IncidentsRetrospectiveFieldEntity {
+	if i == nil {
 		return nil
 	}
-	return o.Fields
+	return i.Fields
 }
 
-func (o *IncidentsRetrospectiveEntity) GetExports() []string {
-	if o == nil {
+func (i *IncidentsRetrospectiveEntity) GetExports() []string {
+	if i == nil {
 		return nil
 	}
-	return o.Exports
+	return i.Exports
 }

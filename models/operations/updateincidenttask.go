@@ -12,23 +12,23 @@ type UpdateIncidentTaskRequest struct {
 	UpdateIncidentTask components.UpdateIncidentTask `request:"mediaType=application/json"`
 }
 
-func (o *UpdateIncidentTaskRequest) GetTaskID() string {
-	if o == nil {
+func (u *UpdateIncidentTaskRequest) GetTaskID() string {
+	if u == nil {
 		return ""
 	}
-	return o.TaskID
+	return u.TaskID
 }
 
-func (o *UpdateIncidentTaskRequest) GetIncidentID() string {
-	if o == nil {
+func (u *UpdateIncidentTaskRequest) GetIncidentID() string {
+	if u == nil {
 		return ""
 	}
-	return o.IncidentID
+	return u.IncidentID
 }
 
-func (o *UpdateIncidentTaskRequest) GetUpdateIncidentTask() components.UpdateIncidentTask {
-	if o == nil {
+func (u *UpdateIncidentTaskRequest) GetUpdateIncidentTask() components.UpdateIncidentTask {
+	if u == nil {
 		return components.UpdateIncidentTask{}
 	}
-	return o.UpdateIncidentTask
+	return u.UpdateIncidentTask
 }

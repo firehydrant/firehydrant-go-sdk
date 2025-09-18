@@ -98,44 +98,44 @@ func (a *AlertsProcessingLogEntryEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AlertsProcessingLogEntryEntity) GetID() *string {
-	if o == nil {
+func (a *AlertsProcessingLogEntryEntity) GetID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AlertsProcessingLogEntryEntity) GetContext() *Context {
-	if o == nil {
+func (a *AlertsProcessingLogEntryEntity) GetContext() *Context {
+	if a == nil {
 		return nil
 	}
-	return o.Context
+	return a.Context
 }
 
-func (o *AlertsProcessingLogEntryEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (a *AlertsProcessingLogEntryEntity) GetCreatedAt() *time.Time {
+	if a == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return a.CreatedAt
 }
 
-func (o *AlertsProcessingLogEntryEntity) GetLevel() *Level {
-	if o == nil {
+func (a *AlertsProcessingLogEntryEntity) GetLevel() *Level {
+	if a == nil {
 		return nil
 	}
-	return o.Level
+	return a.Level
 }
 
-func (o *AlertsProcessingLogEntryEntity) GetMessage() *string {
-	if o == nil {
+func (a *AlertsProcessingLogEntryEntity) GetMessage() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Message
+	return a.Message
 }
 
-func (o *AlertsProcessingLogEntryEntity) GetMessageType() *MessageType {
-	if o == nil {
+func (a *AlertsProcessingLogEntryEntity) GetMessageType() *MessageType {
+	if a == nil {
 		return nil
 	}
-	return o.MessageType
+	return a.MessageType
 }

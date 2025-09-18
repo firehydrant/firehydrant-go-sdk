@@ -30,30 +30,30 @@ func (a *AlertsSirenEventEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AlertsSirenEventEntity) GetID() *string {
-	if o == nil {
+func (a *AlertsSirenEventEntity) GetID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AlertsSirenEventEntity) GetType() *string {
-	if o == nil {
+func (a *AlertsSirenEventEntity) GetType() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Type
+	return a.Type
 }
 
-func (o *AlertsSirenEventEntity) GetData() *AlertsSirenEventEntityData {
-	if o == nil {
+func (a *AlertsSirenEventEntity) GetData() *AlertsSirenEventEntityData {
+	if a == nil {
 		return nil
 	}
-	return o.Data
+	return a.Data
 }
 
-func (o *AlertsSirenEventEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (a *AlertsSirenEventEntity) GetCreatedAt() *time.Time {
+	if a == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return a.CreatedAt
 }

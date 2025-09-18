@@ -38,114 +38,114 @@ func (s *SignalsAPIOnCallScheduleEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *SignalsAPIOnCallScheduleEntity) GetID() *string {
-	if o == nil {
+func (s *SignalsAPIOnCallScheduleEntity) GetID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *SignalsAPIOnCallScheduleEntity) GetName() *string {
-	if o == nil {
+func (s *SignalsAPIOnCallScheduleEntity) GetName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Name
+	return s.Name
 }
 
-func (o *SignalsAPIOnCallScheduleEntity) GetDescription() *string {
-	if o == nil {
+func (s *SignalsAPIOnCallScheduleEntity) GetDescription() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Description
+	return s.Description
 }
 
-func (o *SignalsAPIOnCallScheduleEntity) GetRotations() []SignalsAPIOnCallRotationEntity {
-	if o == nil {
+func (s *SignalsAPIOnCallScheduleEntity) GetRotations() []SignalsAPIOnCallRotationEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Rotations
+	return s.Rotations
 }
 
-func (o *SignalsAPIOnCallScheduleEntity) GetTeam() *NullableSuccinctEntity {
-	if o == nil {
+func (s *SignalsAPIOnCallScheduleEntity) GetTeam() *NullableSuccinctEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Team
+	return s.Team
 }
 
-func (o *SignalsAPIOnCallScheduleEntity) GetCreatedBy() *NullableAuthorEntity {
-	if o == nil {
+func (s *SignalsAPIOnCallScheduleEntity) GetCreatedBy() *NullableAuthorEntity {
+	if s == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return s.CreatedBy
 }
 
-func (o *SignalsAPIOnCallScheduleEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (s *SignalsAPIOnCallScheduleEntity) GetCreatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return s.CreatedAt
 }
 
-func (o *SignalsAPIOnCallScheduleEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (s *SignalsAPIOnCallScheduleEntity) GetUpdatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return s.UpdatedAt
 }
 
-func (o *SignalsAPIOnCallScheduleEntity) GetSignalsIcalURL() *string {
-	if o == nil {
+func (s *SignalsAPIOnCallScheduleEntity) GetSignalsIcalURL() *string {
+	if s == nil {
 		return nil
 	}
-	return o.SignalsIcalURL
+	return s.SignalsIcalURL
 }
 
-func (o *SignalsAPIOnCallScheduleEntity) GetTimeZone() *string {
-	if o == nil {
+func (s *SignalsAPIOnCallScheduleEntity) GetTimeZone() *string {
+	if s == nil {
 		return nil
 	}
-	return o.TimeZone
+	return s.TimeZone
 }
 
-func (o *SignalsAPIOnCallScheduleEntity) GetColor() *string {
-	if o == nil {
+func (s *SignalsAPIOnCallScheduleEntity) GetColor() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Color
+	return s.Color
 }
 
-func (o *SignalsAPIOnCallScheduleEntity) GetSlackUserGroupID() *string {
-	if o == nil {
+func (s *SignalsAPIOnCallScheduleEntity) GetSlackUserGroupID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.SlackUserGroupID
+	return s.SlackUserGroupID
 }
 
-func (o *SignalsAPIOnCallScheduleEntity) GetMembers() []SuccinctEntity {
-	if o == nil {
+func (s *SignalsAPIOnCallScheduleEntity) GetMembers() []SuccinctEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Members
+	return s.Members
 }
 
-func (o *SignalsAPIOnCallScheduleEntity) GetShifts() []SignalsAPIOnCallShiftEntity {
-	if o == nil {
+func (s *SignalsAPIOnCallScheduleEntity) GetShifts() []SignalsAPIOnCallShiftEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Shifts
+	return s.Shifts
 }
 
-func (o *SignalsAPIOnCallScheduleEntity) GetStrategy() *NullableSignalsAPIOnCallStrategyEntity {
-	if o == nil {
+func (s *SignalsAPIOnCallScheduleEntity) GetStrategy() *NullableSignalsAPIOnCallStrategyEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Strategy
+	return s.Strategy
 }
 
-func (o *SignalsAPIOnCallScheduleEntity) GetRestrictions() []SignalsAPIOnCallRestrictionEntity {
-	if o == nil {
+func (s *SignalsAPIOnCallScheduleEntity) GetRestrictions() []SignalsAPIOnCallRestrictionEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Restrictions
+	return s.Restrictions
 }

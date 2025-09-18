@@ -36,7 +36,7 @@ func main() {
         }),
     )
 
-    err := s.AuditEvents.ListAuditEvents(ctx, nil, nil, firehydrantgosdk.Int(20))
+    err := s.AuditEvents.ListAuditEvents(ctx, nil, nil, firehydrantgosdk.Pointer[int](20))
     if err != nil {
         log.Fatal(err)
     }

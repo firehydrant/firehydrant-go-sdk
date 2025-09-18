@@ -48,30 +48,30 @@ type CreateSignalsPage struct {
 	Body     *string `json:"body,omitempty"`
 }
 
-func (o *CreateSignalsPage) GetSummary() string {
-	if o == nil {
+func (c *CreateSignalsPage) GetSummary() string {
+	if c == nil {
 		return ""
 	}
-	return o.Summary
+	return c.Summary
 }
 
-func (o *CreateSignalsPage) GetTargetType() CreateSignalsPageTargetType {
-	if o == nil {
+func (c *CreateSignalsPage) GetTargetType() CreateSignalsPageTargetType {
+	if c == nil {
 		return CreateSignalsPageTargetType("")
 	}
-	return o.TargetType
+	return c.TargetType
 }
 
-func (o *CreateSignalsPage) GetTargetID() string {
-	if o == nil {
+func (c *CreateSignalsPage) GetTargetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.TargetID
+	return c.TargetID
 }
 
-func (o *CreateSignalsPage) GetBody() *string {
-	if o == nil {
+func (c *CreateSignalsPage) GetBody() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Body
+	return c.Body
 }

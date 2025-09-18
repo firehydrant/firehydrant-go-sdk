@@ -11,16 +11,16 @@ type UpdateCustomFieldDefinitionRequest struct {
 	UpdateCustomFieldDefinition components.UpdateCustomFieldDefinition `request:"mediaType=application/json"`
 }
 
-func (o *UpdateCustomFieldDefinitionRequest) GetFieldID() string {
-	if o == nil {
+func (u *UpdateCustomFieldDefinitionRequest) GetFieldID() string {
+	if u == nil {
 		return ""
 	}
-	return o.FieldID
+	return u.FieldID
 }
 
-func (o *UpdateCustomFieldDefinitionRequest) GetUpdateCustomFieldDefinition() components.UpdateCustomFieldDefinition {
-	if o == nil {
+func (u *UpdateCustomFieldDefinitionRequest) GetUpdateCustomFieldDefinition() components.UpdateCustomFieldDefinition {
+	if u == nil {
 		return components.UpdateCustomFieldDefinition{}
 	}
-	return o.UpdateCustomFieldDefinition
+	return u.UpdateCustomFieldDefinition
 }

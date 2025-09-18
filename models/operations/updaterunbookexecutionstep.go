@@ -12,23 +12,23 @@ type UpdateRunbookExecutionStepRequest struct {
 	UpdateRunbookExecutionStep components.UpdateRunbookExecutionStep `request:"mediaType=application/json"`
 }
 
-func (o *UpdateRunbookExecutionStepRequest) GetExecutionID() string {
-	if o == nil {
+func (u *UpdateRunbookExecutionStepRequest) GetExecutionID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ExecutionID
+	return u.ExecutionID
 }
 
-func (o *UpdateRunbookExecutionStepRequest) GetStepID() string {
-	if o == nil {
+func (u *UpdateRunbookExecutionStepRequest) GetStepID() string {
+	if u == nil {
 		return ""
 	}
-	return o.StepID
+	return u.StepID
 }
 
-func (o *UpdateRunbookExecutionStepRequest) GetUpdateRunbookExecutionStep() components.UpdateRunbookExecutionStep {
-	if o == nil {
+func (u *UpdateRunbookExecutionStepRequest) GetUpdateRunbookExecutionStep() components.UpdateRunbookExecutionStep {
+	if u == nil {
 		return components.UpdateRunbookExecutionStep{}
 	}
-	return o.UpdateRunbookExecutionStep
+	return u.UpdateRunbookExecutionStep
 }

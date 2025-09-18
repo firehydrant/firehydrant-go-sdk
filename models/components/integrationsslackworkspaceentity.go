@@ -9,23 +9,23 @@ type IntegrationsSlackWorkspaceEntity struct {
 	Name   *string `json:"name,omitempty"`
 }
 
-func (o *IntegrationsSlackWorkspaceEntity) GetID() *string {
-	if o == nil {
+func (i *IntegrationsSlackWorkspaceEntity) GetID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ID
+	return i.ID
 }
 
-func (o *IntegrationsSlackWorkspaceEntity) GetTeamID() *string {
-	if o == nil {
+func (i *IntegrationsSlackWorkspaceEntity) GetTeamID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.TeamID
+	return i.TeamID
 }
 
-func (o *IntegrationsSlackWorkspaceEntity) GetName() *string {
-	if o == nil {
+func (i *IntegrationsSlackWorkspaceEntity) GetName() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Name
+	return i.Name
 }

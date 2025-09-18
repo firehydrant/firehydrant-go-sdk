@@ -8,23 +8,23 @@ type DeleteOnCallScheduleRotationRequest struct {
 	ScheduleID string `pathParam:"style=simple,explode=false,name=schedule_id"`
 }
 
-func (o *DeleteOnCallScheduleRotationRequest) GetRotationID() string {
-	if o == nil {
+func (d *DeleteOnCallScheduleRotationRequest) GetRotationID() string {
+	if d == nil {
 		return ""
 	}
-	return o.RotationID
+	return d.RotationID
 }
 
-func (o *DeleteOnCallScheduleRotationRequest) GetTeamID() string {
-	if o == nil {
+func (d *DeleteOnCallScheduleRotationRequest) GetTeamID() string {
+	if d == nil {
 		return ""
 	}
-	return o.TeamID
+	return d.TeamID
 }
 
-func (o *DeleteOnCallScheduleRotationRequest) GetScheduleID() string {
-	if o == nil {
+func (d *DeleteOnCallScheduleRotationRequest) GetScheduleID() string {
+	if d == nil {
 		return ""
 	}
-	return o.ScheduleID
+	return d.ScheduleID
 }

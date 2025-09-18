@@ -47,23 +47,23 @@ type CreateServiceLinks struct {
 	Integration Integration `json:"integration"`
 }
 
-func (o *CreateServiceLinks) GetExternalServiceIds() string {
-	if o == nil {
+func (c *CreateServiceLinks) GetExternalServiceIds() string {
+	if c == nil {
 		return ""
 	}
-	return o.ExternalServiceIds
+	return c.ExternalServiceIds
 }
 
-func (o *CreateServiceLinks) GetConnectionID() string {
-	if o == nil {
+func (c *CreateServiceLinks) GetConnectionID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ConnectionID
+	return c.ConnectionID
 }
 
-func (o *CreateServiceLinks) GetIntegration() Integration {
-	if o == nil {
+func (c *CreateServiceLinks) GetIntegration() Integration {
+	if c == nil {
 		return Integration("")
 	}
-	return o.Integration
+	return c.Integration
 }

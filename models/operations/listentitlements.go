@@ -41,16 +41,16 @@ type ListEntitlementsRequest struct {
 	Type *ListEntitlementsType `queryParam:"style=form,explode=true,name=type"`
 }
 
-func (o *ListEntitlementsRequest) GetName() *string {
-	if o == nil {
+func (l *ListEntitlementsRequest) GetName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Name
+	return l.Name
 }
 
-func (o *ListEntitlementsRequest) GetType() *ListEntitlementsType {
-	if o == nil {
+func (l *ListEntitlementsRequest) GetType() *ListEntitlementsType {
+	if l == nil {
 		return nil
 	}
-	return o.Type
+	return l.Type
 }

@@ -11,16 +11,16 @@ type UpdateAwsCloudtrailBatchRequest struct {
 	UpdateAwsCloudtrailBatch components.UpdateAwsCloudtrailBatch `request:"mediaType=application/json"`
 }
 
-func (o *UpdateAwsCloudtrailBatchRequest) GetID() string {
-	if o == nil {
+func (u *UpdateAwsCloudtrailBatchRequest) GetID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ID
+	return u.ID
 }
 
-func (o *UpdateAwsCloudtrailBatchRequest) GetUpdateAwsCloudtrailBatch() components.UpdateAwsCloudtrailBatch {
-	if o == nil {
+func (u *UpdateAwsCloudtrailBatchRequest) GetUpdateAwsCloudtrailBatch() components.UpdateAwsCloudtrailBatch {
+	if u == nil {
 		return components.UpdateAwsCloudtrailBatch{}
 	}
-	return o.UpdateAwsCloudtrailBatch
+	return u.UpdateAwsCloudtrailBatch
 }

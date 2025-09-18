@@ -7,16 +7,16 @@ type ListNotificationPolicySettingsRequest struct {
 	PerPage *int `queryParam:"style=form,explode=true,name=per_page"`
 }
 
-func (o *ListNotificationPolicySettingsRequest) GetPage() *int {
-	if o == nil {
+func (l *ListNotificationPolicySettingsRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListNotificationPolicySettingsRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListNotificationPolicySettingsRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }

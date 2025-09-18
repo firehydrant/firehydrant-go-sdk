@@ -13,30 +13,30 @@ type CopyOnCallScheduleRotationRequest struct {
 	CopyOnCallScheduleRotation components.CopyOnCallScheduleRotation `request:"mediaType=application/json"`
 }
 
-func (o *CopyOnCallScheduleRotationRequest) GetRotationID() string {
-	if o == nil {
+func (c *CopyOnCallScheduleRotationRequest) GetRotationID() string {
+	if c == nil {
 		return ""
 	}
-	return o.RotationID
+	return c.RotationID
 }
 
-func (o *CopyOnCallScheduleRotationRequest) GetTeamID() string {
-	if o == nil {
+func (c *CopyOnCallScheduleRotationRequest) GetTeamID() string {
+	if c == nil {
 		return ""
 	}
-	return o.TeamID
+	return c.TeamID
 }
 
-func (o *CopyOnCallScheduleRotationRequest) GetScheduleID() string {
-	if o == nil {
+func (c *CopyOnCallScheduleRotationRequest) GetScheduleID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ScheduleID
+	return c.ScheduleID
 }
 
-func (o *CopyOnCallScheduleRotationRequest) GetCopyOnCallScheduleRotation() components.CopyOnCallScheduleRotation {
-	if o == nil {
+func (c *CopyOnCallScheduleRotationRequest) GetCopyOnCallScheduleRotation() components.CopyOnCallScheduleRotation {
+	if c == nil {
 		return components.CopyOnCallScheduleRotation{}
 	}
-	return o.CopyOnCallScheduleRotation
+	return c.CopyOnCallScheduleRotation
 }

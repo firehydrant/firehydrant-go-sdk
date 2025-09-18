@@ -7,9 +7,9 @@ type UpdatePostMortemField struct {
 	Value string `json:"value"`
 }
 
-func (o *UpdatePostMortemField) GetValue() string {
-	if o == nil {
+func (u *UpdatePostMortemField) GetValue() string {
+	if u == nil {
 		return ""
 	}
-	return o.Value
+	return u.Value
 }

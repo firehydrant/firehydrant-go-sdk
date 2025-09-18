@@ -7,11 +7,11 @@ type SetMemberDefaultAudienceRequestBody struct {
 	AudienceID string `json:"audience_id"`
 }
 
-func (o *SetMemberDefaultAudienceRequestBody) GetAudienceID() string {
-	if o == nil {
+func (s *SetMemberDefaultAudienceRequestBody) GetAudienceID() string {
+	if s == nil {
 		return ""
 	}
-	return o.AudienceID
+	return s.AudienceID
 }
 
 type SetMemberDefaultAudienceRequest struct {
@@ -19,16 +19,16 @@ type SetMemberDefaultAudienceRequest struct {
 	RequestBody SetMemberDefaultAudienceRequestBody `request:"mediaType=application/json"`
 }
 
-func (o *SetMemberDefaultAudienceRequest) GetMemberID() int {
-	if o == nil {
+func (s *SetMemberDefaultAudienceRequest) GetMemberID() int {
+	if s == nil {
 		return 0
 	}
-	return o.MemberID
+	return s.MemberID
 }
 
-func (o *SetMemberDefaultAudienceRequest) GetRequestBody() SetMemberDefaultAudienceRequestBody {
-	if o == nil {
+func (s *SetMemberDefaultAudienceRequest) GetRequestBody() SetMemberDefaultAudienceRequestBody {
+	if s == nil {
 		return SetMemberDefaultAudienceRequestBody{}
 	}
-	return o.RequestBody
+	return s.RequestBody
 }

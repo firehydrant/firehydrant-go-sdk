@@ -7,16 +7,16 @@ type DeleteTicketingFieldMapRequest struct {
 	TicketingProjectID string `pathParam:"style=simple,explode=false,name=ticketing_project_id"`
 }
 
-func (o *DeleteTicketingFieldMapRequest) GetMapID() string {
-	if o == nil {
+func (d *DeleteTicketingFieldMapRequest) GetMapID() string {
+	if d == nil {
 		return ""
 	}
-	return o.MapID
+	return d.MapID
 }
 
-func (o *DeleteTicketingFieldMapRequest) GetTicketingProjectID() string {
-	if o == nil {
+func (d *DeleteTicketingFieldMapRequest) GetTicketingProjectID() string {
+	if d == nil {
 		return ""
 	}
-	return o.TicketingProjectID
+	return d.TicketingProjectID
 }

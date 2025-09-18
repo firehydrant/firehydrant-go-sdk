@@ -10,23 +10,23 @@ type CreateChange struct {
 	Labels map[string]string `json:"labels,omitempty"`
 }
 
-func (o *CreateChange) GetSummary() *string {
-	if o == nil {
+func (c *CreateChange) GetSummary() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Summary
+	return c.Summary
 }
 
-func (o *CreateChange) GetDescription() *string {
-	if o == nil {
+func (c *CreateChange) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *CreateChange) GetLabels() map[string]string {
-	if o == nil {
+func (c *CreateChange) GetLabels() map[string]string {
+	if c == nil {
 		return nil
 	}
-	return o.Labels
+	return c.Labels
 }

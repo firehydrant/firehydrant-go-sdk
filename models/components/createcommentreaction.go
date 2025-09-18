@@ -8,9 +8,9 @@ type CreateCommentReaction struct {
 	Reaction string `json:"reaction"`
 }
 
-func (o *CreateCommentReaction) GetReaction() string {
-	if o == nil {
+func (c *CreateCommentReaction) GetReaction() string {
+	if c == nil {
 		return ""
 	}
-	return o.Reaction
+	return c.Reaction
 }

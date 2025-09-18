@@ -8,16 +8,16 @@ type DeleteEmailSubscriberRequest struct {
 	SubscriberIds string `queryParam:"style=form,explode=true,name=subscriber_ids"`
 }
 
-func (o *DeleteEmailSubscriberRequest) GetNuncConnectionID() string {
-	if o == nil {
+func (d *DeleteEmailSubscriberRequest) GetNuncConnectionID() string {
+	if d == nil {
 		return ""
 	}
-	return o.NuncConnectionID
+	return d.NuncConnectionID
 }
 
-func (o *DeleteEmailSubscriberRequest) GetSubscriberIds() string {
-	if o == nil {
+func (d *DeleteEmailSubscriberRequest) GetSubscriberIds() string {
+	if d == nil {
 		return ""
 	}
-	return o.SubscriberIds
+	return d.SubscriberIds
 }

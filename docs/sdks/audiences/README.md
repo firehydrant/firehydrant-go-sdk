@@ -45,7 +45,7 @@ func main() {
         }),
     )
 
-    res, err := s.Audiences.ListAudiences(ctx, firehydrantgosdk.Bool(false))
+    res, err := s.Audiences.ListAudiences(ctx, firehydrantgosdk.Pointer(false))
     if err != nil {
         log.Fatal(err)
     }

@@ -8,23 +8,23 @@ type ListIncidentLinksRequest struct {
 	IncidentID string `pathParam:"style=simple,explode=false,name=incident_id"`
 }
 
-func (o *ListIncidentLinksRequest) GetPage() *int {
-	if o == nil {
+func (l *ListIncidentLinksRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListIncidentLinksRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListIncidentLinksRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }
 
-func (o *ListIncidentLinksRequest) GetIncidentID() string {
-	if o == nil {
+func (l *ListIncidentLinksRequest) GetIncidentID() string {
+	if l == nil {
 		return ""
 	}
-	return o.IncidentID
+	return l.IncidentID
 }

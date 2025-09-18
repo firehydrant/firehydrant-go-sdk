@@ -11,16 +11,16 @@ type UpdateFunctionalityRequest struct {
 	UpdateFunctionality components.UpdateFunctionality `request:"mediaType=application/json"`
 }
 
-func (o *UpdateFunctionalityRequest) GetFunctionalityID() string {
-	if o == nil {
+func (u *UpdateFunctionalityRequest) GetFunctionalityID() string {
+	if u == nil {
 		return ""
 	}
-	return o.FunctionalityID
+	return u.FunctionalityID
 }
 
-func (o *UpdateFunctionalityRequest) GetUpdateFunctionality() components.UpdateFunctionality {
-	if o == nil {
+func (u *UpdateFunctionalityRequest) GetUpdateFunctionality() components.UpdateFunctionality {
+	if u == nil {
 		return components.UpdateFunctionality{}
 	}
-	return o.UpdateFunctionality
+	return u.UpdateFunctionality
 }

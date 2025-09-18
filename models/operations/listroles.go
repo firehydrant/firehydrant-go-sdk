@@ -9,23 +9,23 @@ type ListRolesRequest struct {
 	PerPage *int    `queryParam:"style=form,explode=true,name=per_page"`
 }
 
-func (o *ListRolesRequest) GetQuery() *string {
-	if o == nil {
+func (l *ListRolesRequest) GetQuery() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Query
+	return l.Query
 }
 
-func (o *ListRolesRequest) GetPage() *int {
-	if o == nil {
+func (l *ListRolesRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListRolesRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListRolesRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }

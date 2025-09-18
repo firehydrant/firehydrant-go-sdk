@@ -28,44 +28,44 @@ func (a *AIEntitiesIncidentSummaryEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AIEntitiesIncidentSummaryEntity) GetID() *string {
-	if o == nil {
+func (a *AIEntitiesIncidentSummaryEntity) GetID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AIEntitiesIncidentSummaryEntity) GetContent() *string {
-	if o == nil {
+func (a *AIEntitiesIncidentSummaryEntity) GetContent() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Content
+	return a.Content
 }
 
-func (o *AIEntitiesIncidentSummaryEntity) GetSourceHash() *string {
-	if o == nil {
+func (a *AIEntitiesIncidentSummaryEntity) GetSourceHash() *string {
+	if a == nil {
 		return nil
 	}
-	return o.SourceHash
+	return a.SourceHash
 }
 
-func (o *AIEntitiesIncidentSummaryEntity) GetType() *string {
-	if o == nil {
+func (a *AIEntitiesIncidentSummaryEntity) GetType() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Type
+	return a.Type
 }
 
-func (o *AIEntitiesIncidentSummaryEntity) GetCreatedAt() *string {
-	if o == nil {
+func (a *AIEntitiesIncidentSummaryEntity) GetCreatedAt() *string {
+	if a == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return a.CreatedAt
 }
 
-func (o *AIEntitiesIncidentSummaryEntity) GetIncidentUpdatedAt() *time.Time {
-	if o == nil {
+func (a *AIEntitiesIncidentSummaryEntity) GetIncidentUpdatedAt() *time.Time {
+	if a == nil {
 		return nil
 	}
-	return o.IncidentUpdatedAt
+	return a.IncidentUpdatedAt
 }

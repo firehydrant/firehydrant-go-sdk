@@ -13,37 +13,37 @@ type ListAwsConnectionsRequest struct {
 	ExternalID *string `queryParam:"style=form,explode=true,name=external_id"`
 }
 
-func (o *ListAwsConnectionsRequest) GetPage() *int {
-	if o == nil {
+func (l *ListAwsConnectionsRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListAwsConnectionsRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListAwsConnectionsRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }
 
-func (o *ListAwsConnectionsRequest) GetAwsAccountID() *string {
-	if o == nil {
+func (l *ListAwsConnectionsRequest) GetAwsAccountID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.AwsAccountID
+	return l.AwsAccountID
 }
 
-func (o *ListAwsConnectionsRequest) GetTargetArn() *string {
-	if o == nil {
+func (l *ListAwsConnectionsRequest) GetTargetArn() *string {
+	if l == nil {
 		return nil
 	}
-	return o.TargetArn
+	return l.TargetArn
 }
 
-func (o *ListAwsConnectionsRequest) GetExternalID() *string {
-	if o == nil {
+func (l *ListAwsConnectionsRequest) GetExternalID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ExternalID
+	return l.ExternalID
 }

@@ -25,16 +25,16 @@ func (l *ListRetrospectiveMetricsRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ListRetrospectiveMetricsRequest) GetStartDate() *types.Date {
-	if o == nil {
+func (l *ListRetrospectiveMetricsRequest) GetStartDate() *types.Date {
+	if l == nil {
 		return nil
 	}
-	return o.StartDate
+	return l.StartDate
 }
 
-func (o *ListRetrospectiveMetricsRequest) GetEndDate() *types.Date {
-	if o == nil {
+func (l *ListRetrospectiveMetricsRequest) GetEndDate() *types.Date {
+	if l == nil {
 		return nil
 	}
-	return o.EndDate
+	return l.EndDate
 }

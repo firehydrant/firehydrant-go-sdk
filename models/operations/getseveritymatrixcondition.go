@@ -6,9 +6,9 @@ type GetSeverityMatrixConditionRequest struct {
 	ConditionID string `pathParam:"style=simple,explode=false,name=condition_id"`
 }
 
-func (o *GetSeverityMatrixConditionRequest) GetConditionID() string {
-	if o == nil {
+func (g *GetSeverityMatrixConditionRequest) GetConditionID() string {
+	if g == nil {
 		return ""
 	}
-	return o.ConditionID
+	return g.ConditionID
 }

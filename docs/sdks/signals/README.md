@@ -55,7 +55,7 @@ Operations related to Signals
 * [DeleteSignalsWebhookTarget](#deletesignalswebhooktarget) - Delete a webhook target
 * [UpdateSignalsWebhookTarget](#updatesignalswebhooktarget) - Update a webhook target
 * [ListNotificationPolicySettings](#listnotificationpolicysettings) - List notification policies
-* [CreateHandoffNotificationSetting](#createhandoffnotificationsetting) - Create a notification policy
+* [CreateNotificationPolicy](#createnotificationpolicy) - Create a notification policy
 * [GetNotificationPolicy](#getnotificationpolicy) - Get a notification policy
 * [DeleteNotificationPolicy](#deletenotificationpolicy) - Delete a notification policy
 * [UpdateNotificationPolicy](#updatenotificationpolicy) - Update a notification policy
@@ -2741,13 +2741,13 @@ func main() {
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## CreateHandoffNotificationSetting
+## CreateNotificationPolicy
 
 Create a Signals notification policy.
 
 ### Example Usage
 
-<!-- UsageSnippet language="go" operationID="create_handoff_notification_setting" method="post" path="/v1/signals/notification_policy_items" -->
+<!-- UsageSnippet language="go" operationID="create_notification_policy" method="post" path="/v1/signals/notification_policy_items" -->
 ```go
 package main
 
@@ -2768,10 +2768,10 @@ func main() {
         }),
     )
 
-    res, err := s.Signals.CreateHandoffNotificationSetting(ctx, operations.CreateHandoffNotificationSettingRequest{
-        NotificationGroupMethod: operations.CreateHandoffNotificationSettingNotificationGroupMethodEmail,
+    res, err := s.Signals.CreateNotificationPolicy(ctx, operations.CreateNotificationPolicyRequest{
+        NotificationGroupMethod: operations.CreateNotificationPolicyNotificationGroupMethodChat,
         MaxDelay: "<value>",
-        Priority: operations.CreateHandoffNotificationSettingPriorityHigh,
+        Priority: operations.CreateNotificationPolicyPriorityLow,
     })
     if err != nil {
         log.Fatal(err)
@@ -2784,11 +2784,11 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
-| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `ctx`                                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                                    | :heavy_check_mark:                                                                                                       | The context to use for the request.                                                                                      |
-| `request`                                                                                                                | [operations.CreateHandoffNotificationSettingRequest](../../models/operations/createhandoffnotificationsettingrequest.md) | :heavy_check_mark:                                                                                                       | The request object to use for the request.                                                                               |
-| `opts`                                                                                                                   | [][operations.Option](../../models/operations/option.md)                                                                 | :heavy_minus_sign:                                                                                                       | The options for this request.                                                                                            |
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                    | :heavy_check_mark:                                                                                       | The context to use for the request.                                                                      |
+| `request`                                                                                                | [operations.CreateNotificationPolicyRequest](../../models/operations/createnotificationpolicyrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `opts`                                                                                                   | [][operations.Option](../../models/operations/option.md)                                                 | :heavy_minus_sign:                                                                                       | The options for this request.                                                                            |
 
 ### Response
 

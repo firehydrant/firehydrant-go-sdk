@@ -6,9 +6,9 @@ type NullableConversationsAPIEntitiesChannel struct {
 	Name *string `json:"name,omitempty"`
 }
 
-func (o *NullableConversationsAPIEntitiesChannel) GetName() *string {
-	if o == nil {
+func (n *NullableConversationsAPIEntitiesChannel) GetName() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Name
+	return n.Name
 }

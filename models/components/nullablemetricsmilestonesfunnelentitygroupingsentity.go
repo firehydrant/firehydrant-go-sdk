@@ -7,9 +7,9 @@ type NullableMetricsMilestonesFunnelEntityGroupingsEntity struct {
 	BucketSize *string `json:"bucket_size,omitempty"`
 }
 
-func (o *NullableMetricsMilestonesFunnelEntityGroupingsEntity) GetBucketSize() *string {
-	if o == nil {
+func (n *NullableMetricsMilestonesFunnelEntityGroupingsEntity) GetBucketSize() *string {
+	if n == nil {
 		return nil
 	}
-	return o.BucketSize
+	return n.BucketSize
 }

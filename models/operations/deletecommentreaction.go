@@ -8,23 +8,23 @@ type DeleteCommentReactionRequest struct {
 	CommentID      string `pathParam:"style=simple,explode=false,name=comment_id"`
 }
 
-func (o *DeleteCommentReactionRequest) GetReactionID() string {
-	if o == nil {
+func (d *DeleteCommentReactionRequest) GetReactionID() string {
+	if d == nil {
 		return ""
 	}
-	return o.ReactionID
+	return d.ReactionID
 }
 
-func (o *DeleteCommentReactionRequest) GetConversationID() string {
-	if o == nil {
+func (d *DeleteCommentReactionRequest) GetConversationID() string {
+	if d == nil {
 		return ""
 	}
-	return o.ConversationID
+	return d.ConversationID
 }
 
-func (o *DeleteCommentReactionRequest) GetCommentID() string {
-	if o == nil {
+func (d *DeleteCommentReactionRequest) GetCommentID() string {
+	if d == nil {
 		return ""
 	}
-	return o.CommentID
+	return d.CommentID
 }

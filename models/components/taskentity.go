@@ -31,65 +31,65 @@ func (t *TaskEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *TaskEntity) GetID() *string {
-	if o == nil {
+func (t *TaskEntity) GetID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.ID
+	return t.ID
 }
 
-func (o *TaskEntity) GetTitle() *string {
-	if o == nil {
+func (t *TaskEntity) GetTitle() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Title
+	return t.Title
 }
 
-func (o *TaskEntity) GetDescription() *string {
-	if o == nil {
+func (t *TaskEntity) GetDescription() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Description
+	return t.Description
 }
 
-func (o *TaskEntity) GetState() *string {
-	if o == nil {
+func (t *TaskEntity) GetState() *string {
+	if t == nil {
 		return nil
 	}
-	return o.State
+	return t.State
 }
 
-func (o *TaskEntity) GetAssignee() *NullableAuthorEntity {
-	if o == nil {
+func (t *TaskEntity) GetAssignee() *NullableAuthorEntity {
+	if t == nil {
 		return nil
 	}
-	return o.Assignee
+	return t.Assignee
 }
 
-func (o *TaskEntity) GetCreatedBy() *NullableAuthorEntity {
-	if o == nil {
+func (t *TaskEntity) GetCreatedBy() *NullableAuthorEntity {
+	if t == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return t.CreatedBy
 }
 
-func (o *TaskEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (t *TaskEntity) GetCreatedAt() *time.Time {
+	if t == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return t.CreatedAt
 }
 
-func (o *TaskEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (t *TaskEntity) GetUpdatedAt() *time.Time {
+	if t == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return t.UpdatedAt
 }
 
-func (o *TaskEntity) GetDueAt() *time.Time {
-	if o == nil {
+func (t *TaskEntity) GetDueAt() *time.Time {
+	if t == nil {
 		return nil
 	}
-	return o.DueAt
+	return t.DueAt
 }

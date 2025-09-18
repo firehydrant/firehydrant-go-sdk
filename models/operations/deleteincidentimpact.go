@@ -45,23 +45,23 @@ type DeleteIncidentImpactRequest struct {
 	ID         string                   `pathParam:"style=simple,explode=false,name=id"`
 }
 
-func (o *DeleteIncidentImpactRequest) GetIncidentID() string {
-	if o == nil {
+func (d *DeleteIncidentImpactRequest) GetIncidentID() string {
+	if d == nil {
 		return ""
 	}
-	return o.IncidentID
+	return d.IncidentID
 }
 
-func (o *DeleteIncidentImpactRequest) GetType() DeleteIncidentImpactType {
-	if o == nil {
+func (d *DeleteIncidentImpactRequest) GetType() DeleteIncidentImpactType {
+	if d == nil {
 		return DeleteIncidentImpactType("")
 	}
-	return o.Type
+	return d.Type
 }
 
-func (o *DeleteIncidentImpactRequest) GetID() string {
-	if o == nil {
+func (d *DeleteIncidentImpactRequest) GetID() string {
+	if d == nil {
 		return ""
 	}
-	return o.ID
+	return d.ID
 }

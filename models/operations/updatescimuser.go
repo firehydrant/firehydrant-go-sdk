@@ -11,16 +11,16 @@ type UpdateScimUserRequest struct {
 	UpdateScimUser components.UpdateScimUser `request:"mediaType=application/scim+json"`
 }
 
-func (o *UpdateScimUserRequest) GetID() string {
-	if o == nil {
+func (u *UpdateScimUserRequest) GetID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ID
+	return u.ID
 }
 
-func (o *UpdateScimUserRequest) GetUpdateScimUser() components.UpdateScimUser {
-	if o == nil {
+func (u *UpdateScimUserRequest) GetUpdateScimUser() components.UpdateScimUser {
+	if u == nil {
 		return components.UpdateScimUser{}
 	}
-	return o.UpdateScimUser
+	return u.UpdateScimUser
 }

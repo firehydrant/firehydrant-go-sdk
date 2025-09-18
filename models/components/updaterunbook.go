@@ -7,44 +7,44 @@ type UpdateRunbookOwner struct {
 	ID *string `json:"id,omitempty"`
 }
 
-func (o *UpdateRunbookOwner) GetID() *string {
-	if o == nil {
+func (u *UpdateRunbookOwner) GetID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.ID
+	return u.ID
 }
 
 type UpdateRunbookSeverity struct {
 	ID *string `json:"id,omitempty"`
 }
 
-func (o *UpdateRunbookSeverity) GetID() *string {
-	if o == nil {
+func (u *UpdateRunbookSeverity) GetID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.ID
+	return u.ID
 }
 
 type UpdateRunbookService struct {
 	ID *string `json:"id,omitempty"`
 }
 
-func (o *UpdateRunbookService) GetID() *string {
-	if o == nil {
+func (u *UpdateRunbookService) GetID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.ID
+	return u.ID
 }
 
 type Environment struct {
 	ID *string `json:"id,omitempty"`
 }
 
-func (o *Environment) GetID() *string {
-	if o == nil {
+func (e *Environment) GetID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.ID
+	return e.ID
 }
 
 type UpdateRunbookAttachmentRule struct {
@@ -54,18 +54,18 @@ type UpdateRunbookAttachmentRule struct {
 	UserData *string `json:"user_data,omitempty"`
 }
 
-func (o *UpdateRunbookAttachmentRule) GetLogic() string {
-	if o == nil {
+func (u *UpdateRunbookAttachmentRule) GetLogic() string {
+	if u == nil {
 		return ""
 	}
-	return o.Logic
+	return u.Logic
 }
 
-func (o *UpdateRunbookAttachmentRule) GetUserData() *string {
-	if o == nil {
+func (u *UpdateRunbookAttachmentRule) GetUserData() *string {
+	if u == nil {
 		return nil
 	}
-	return o.UserData
+	return u.UserData
 }
 
 type UpdateRunbookRule struct {
@@ -75,18 +75,18 @@ type UpdateRunbookRule struct {
 	UserData *string `json:"user_data,omitempty"`
 }
 
-func (o *UpdateRunbookRule) GetLogic() string {
-	if o == nil {
+func (u *UpdateRunbookRule) GetLogic() string {
+	if u == nil {
 		return ""
 	}
-	return o.Logic
+	return u.Logic
 }
 
-func (o *UpdateRunbookRule) GetUserData() *string {
-	if o == nil {
+func (u *UpdateRunbookRule) GetUserData() *string {
+	if u == nil {
 		return nil
 	}
-	return o.UserData
+	return u.UserData
 }
 
 type UpdateRunbookStep struct {
@@ -99,32 +99,32 @@ type UpdateRunbookStep struct {
 	Rule     *UpdateRunbookRule `json:"rule,omitempty"`
 }
 
-func (o *UpdateRunbookStep) GetStepID() *string {
-	if o == nil {
+func (u *UpdateRunbookStep) GetStepID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.StepID
+	return u.StepID
 }
 
-func (o *UpdateRunbookStep) GetName() string {
-	if o == nil {
+func (u *UpdateRunbookStep) GetName() string {
+	if u == nil {
 		return ""
 	}
-	return o.Name
+	return u.Name
 }
 
-func (o *UpdateRunbookStep) GetActionID() string {
-	if o == nil {
+func (u *UpdateRunbookStep) GetActionID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ActionID
+	return u.ActionID
 }
 
-func (o *UpdateRunbookStep) GetRule() *UpdateRunbookRule {
-	if o == nil {
+func (u *UpdateRunbookStep) GetRule() *UpdateRunbookRule {
+	if u == nil {
 		return nil
 	}
-	return o.Rule
+	return u.Rule
 }
 
 // UpdateRunbook - Update a runbook and any attachment rules associated with it. This endpoint is used to configure nearly everything
@@ -146,79 +146,79 @@ type UpdateRunbook struct {
 	AutoAttachToRestrictedIncidents *bool `json:"auto_attach_to_restricted_incidents,omitempty"`
 }
 
-func (o *UpdateRunbook) GetName() *string {
-	if o == nil {
+func (u *UpdateRunbook) GetName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Name
+	return u.Name
 }
 
-func (o *UpdateRunbook) GetSummary() *string {
-	if o == nil {
+func (u *UpdateRunbook) GetSummary() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Summary
+	return u.Summary
 }
 
-func (o *UpdateRunbook) GetDescription() *string {
-	if o == nil {
+func (u *UpdateRunbook) GetDescription() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Description
+	return u.Description
 }
 
-func (o *UpdateRunbook) GetTutorial() *bool {
-	if o == nil {
+func (u *UpdateRunbook) GetTutorial() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.Tutorial
+	return u.Tutorial
 }
 
-func (o *UpdateRunbook) GetOwner() *UpdateRunbookOwner {
-	if o == nil {
+func (u *UpdateRunbook) GetOwner() *UpdateRunbookOwner {
+	if u == nil {
 		return nil
 	}
-	return o.Owner
+	return u.Owner
 }
 
-func (o *UpdateRunbook) GetSeverities() []UpdateRunbookSeverity {
-	if o == nil {
+func (u *UpdateRunbook) GetSeverities() []UpdateRunbookSeverity {
+	if u == nil {
 		return nil
 	}
-	return o.Severities
+	return u.Severities
 }
 
-func (o *UpdateRunbook) GetServices() []UpdateRunbookService {
-	if o == nil {
+func (u *UpdateRunbook) GetServices() []UpdateRunbookService {
+	if u == nil {
 		return nil
 	}
-	return o.Services
+	return u.Services
 }
 
-func (o *UpdateRunbook) GetEnvironments() []Environment {
-	if o == nil {
+func (u *UpdateRunbook) GetEnvironments() []Environment {
+	if u == nil {
 		return nil
 	}
-	return o.Environments
+	return u.Environments
 }
 
-func (o *UpdateRunbook) GetAttachmentRule() *UpdateRunbookAttachmentRule {
-	if o == nil {
+func (u *UpdateRunbook) GetAttachmentRule() *UpdateRunbookAttachmentRule {
+	if u == nil {
 		return nil
 	}
-	return o.AttachmentRule
+	return u.AttachmentRule
 }
 
-func (o *UpdateRunbook) GetSteps() []UpdateRunbookStep {
-	if o == nil {
+func (u *UpdateRunbook) GetSteps() []UpdateRunbookStep {
+	if u == nil {
 		return nil
 	}
-	return o.Steps
+	return u.Steps
 }
 
-func (o *UpdateRunbook) GetAutoAttachToRestrictedIncidents() *bool {
-	if o == nil {
+func (u *UpdateRunbook) GetAutoAttachToRestrictedIncidents() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.AutoAttachToRestrictedIncidents
+	return u.AutoAttachToRestrictedIncidents
 }

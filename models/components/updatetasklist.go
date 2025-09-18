@@ -9,18 +9,18 @@ type UpdateTaskListTaskListItem struct {
 	Description *string `json:"description,omitempty"`
 }
 
-func (o *UpdateTaskListTaskListItem) GetSummary() string {
-	if o == nil {
+func (u *UpdateTaskListTaskListItem) GetSummary() string {
+	if u == nil {
 		return ""
 	}
-	return o.Summary
+	return u.Summary
 }
 
-func (o *UpdateTaskListTaskListItem) GetDescription() *string {
-	if o == nil {
+func (u *UpdateTaskListTaskListItem) GetDescription() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Description
+	return u.Description
 }
 
 // UpdateTaskList - Updates a task list's attributes and task list items
@@ -30,23 +30,23 @@ type UpdateTaskList struct {
 	TaskListItems []UpdateTaskListTaskListItem `json:"task_list_items,omitempty"`
 }
 
-func (o *UpdateTaskList) GetName() *string {
-	if o == nil {
+func (u *UpdateTaskList) GetName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Name
+	return u.Name
 }
 
-func (o *UpdateTaskList) GetDescription() *string {
-	if o == nil {
+func (u *UpdateTaskList) GetDescription() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Description
+	return u.Description
 }
 
-func (o *UpdateTaskList) GetTaskListItems() []UpdateTaskListTaskListItem {
-	if o == nil {
+func (u *UpdateTaskList) GetTaskListItems() []UpdateTaskListTaskListItem {
+	if u == nil {
 		return nil
 	}
-	return o.TaskListItems
+	return u.TaskListItems
 }

@@ -8,16 +8,16 @@ type AttachmentsTypedAttachmentEntityPaginated struct {
 	Pagination *NullablePaginationEntity          `json:"pagination,omitempty"`
 }
 
-func (o *AttachmentsTypedAttachmentEntityPaginated) GetData() []AttachmentsTypedAttachmentEntity {
-	if o == nil {
+func (a *AttachmentsTypedAttachmentEntityPaginated) GetData() []AttachmentsTypedAttachmentEntity {
+	if a == nil {
 		return nil
 	}
-	return o.Data
+	return a.Data
 }
 
-func (o *AttachmentsTypedAttachmentEntityPaginated) GetPagination() *NullablePaginationEntity {
-	if o == nil {
+func (a *AttachmentsTypedAttachmentEntityPaginated) GetPagination() *NullablePaginationEntity {
+	if a == nil {
 		return nil
 	}
-	return o.Pagination
+	return a.Pagination
 }

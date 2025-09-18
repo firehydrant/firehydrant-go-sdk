@@ -48,121 +48,121 @@ func (n *NullableChangeEventEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *NullableChangeEventEntity) GetID() *string {
-	if o == nil {
+func (n *NullableChangeEventEntity) GetID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ID
+	return n.ID
 }
 
-func (o *NullableChangeEventEntity) GetSummary() *string {
-	if o == nil {
+func (n *NullableChangeEventEntity) GetSummary() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Summary
+	return n.Summary
 }
 
-func (o *NullableChangeEventEntity) GetDescription() *string {
-	if o == nil {
+func (n *NullableChangeEventEntity) GetDescription() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Description
+	return n.Description
 }
 
-func (o *NullableChangeEventEntity) GetExternalID() *string {
-	if o == nil {
+func (n *NullableChangeEventEntity) GetExternalID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ExternalID
+	return n.ExternalID
 }
 
-func (o *NullableChangeEventEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (n *NullableChangeEventEntity) GetCreatedAt() *time.Time {
+	if n == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return n.CreatedAt
 }
 
-func (o *NullableChangeEventEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (n *NullableChangeEventEntity) GetUpdatedAt() *time.Time {
+	if n == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return n.UpdatedAt
 }
 
-func (o *NullableChangeEventEntity) GetStartsAt() *time.Time {
-	if o == nil {
+func (n *NullableChangeEventEntity) GetStartsAt() *time.Time {
+	if n == nil {
 		return nil
 	}
-	return o.StartsAt
+	return n.StartsAt
 }
 
-func (o *NullableChangeEventEntity) GetEndsAt() *time.Time {
-	if o == nil {
+func (n *NullableChangeEventEntity) GetEndsAt() *time.Time {
+	if n == nil {
 		return nil
 	}
-	return o.EndsAt
+	return n.EndsAt
 }
 
-func (o *NullableChangeEventEntity) GetDurationMs() *int {
-	if o == nil {
+func (n *NullableChangeEventEntity) GetDurationMs() *int {
+	if n == nil {
 		return nil
 	}
-	return o.DurationMs
+	return n.DurationMs
 }
 
-func (o *NullableChangeEventEntity) GetDurationIso8601() *string {
-	if o == nil {
+func (n *NullableChangeEventEntity) GetDurationIso8601() *string {
+	if n == nil {
 		return nil
 	}
-	return o.DurationIso8601
+	return n.DurationIso8601
 }
 
-func (o *NullableChangeEventEntity) GetEnvironments() []EnvironmentEntryEntity {
-	if o == nil {
+func (n *NullableChangeEventEntity) GetEnvironments() []EnvironmentEntryEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Environments
+	return n.Environments
 }
 
-func (o *NullableChangeEventEntity) GetRelatedChanges() []ChangeEntity {
-	if o == nil {
+func (n *NullableChangeEventEntity) GetRelatedChanges() []ChangeEntity {
+	if n == nil {
 		return nil
 	}
-	return o.RelatedChanges
+	return n.RelatedChanges
 }
 
-func (o *NullableChangeEventEntity) GetIdentities() []ChangeIdentityEntity {
-	if o == nil {
+func (n *NullableChangeEventEntity) GetIdentities() []ChangeIdentityEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Identities
+	return n.Identities
 }
 
-func (o *NullableChangeEventEntity) GetAuthors() []AuthorEntity {
-	if o == nil {
+func (n *NullableChangeEventEntity) GetAuthors() []AuthorEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Authors
+	return n.Authors
 }
 
-func (o *NullableChangeEventEntity) GetAttachments() []NullableChangeEventEntityAttachment {
-	if o == nil {
+func (n *NullableChangeEventEntity) GetAttachments() []NullableChangeEventEntityAttachment {
+	if n == nil {
 		return nil
 	}
-	return o.Attachments
+	return n.Attachments
 }
 
-func (o *NullableChangeEventEntity) GetLabels() *NullableChangeEventEntityLabels {
-	if o == nil {
+func (n *NullableChangeEventEntity) GetLabels() *NullableChangeEventEntityLabels {
+	if n == nil {
 		return nil
 	}
-	return o.Labels
+	return n.Labels
 }
 
-func (o *NullableChangeEventEntity) GetServices() []ServiceEntityLite {
-	if o == nil {
+func (n *NullableChangeEventEntity) GetServices() []ServiceEntityLite {
+	if n == nil {
 		return nil
 	}
-	return o.Services
+	return n.Services
 }

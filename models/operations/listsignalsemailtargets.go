@@ -7,9 +7,9 @@ type ListSignalsEmailTargetsRequest struct {
 	Query *string `queryParam:"style=form,explode=true,name=query"`
 }
 
-func (o *ListSignalsEmailTargetsRequest) GetQuery() *string {
-	if o == nil {
+func (l *ListSignalsEmailTargetsRequest) GetQuery() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Query
+	return l.Query
 }

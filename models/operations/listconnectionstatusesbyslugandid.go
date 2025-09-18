@@ -7,16 +7,16 @@ type ListConnectionStatusesBySlugAndIDRequest struct {
 	ByConnectionID string `pathParam:"style=simple,explode=false,name=by_connection_id"`
 }
 
-func (o *ListConnectionStatusesBySlugAndIDRequest) GetSlug() string {
-	if o == nil {
+func (l *ListConnectionStatusesBySlugAndIDRequest) GetSlug() string {
+	if l == nil {
 		return ""
 	}
-	return o.Slug
+	return l.Slug
 }
 
-func (o *ListConnectionStatusesBySlugAndIDRequest) GetByConnectionID() string {
-	if o == nil {
+func (l *ListConnectionStatusesBySlugAndIDRequest) GetByConnectionID() string {
+	if l == nil {
 		return ""
 	}
-	return o.ByConnectionID
+	return l.ByConnectionID
 }

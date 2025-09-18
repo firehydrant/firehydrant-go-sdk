@@ -8,23 +8,23 @@ type GetOnCallScheduleRotationRequest struct {
 	ScheduleID string `pathParam:"style=simple,explode=false,name=schedule_id"`
 }
 
-func (o *GetOnCallScheduleRotationRequest) GetRotationID() string {
-	if o == nil {
+func (g *GetOnCallScheduleRotationRequest) GetRotationID() string {
+	if g == nil {
 		return ""
 	}
-	return o.RotationID
+	return g.RotationID
 }
 
-func (o *GetOnCallScheduleRotationRequest) GetTeamID() string {
-	if o == nil {
+func (g *GetOnCallScheduleRotationRequest) GetTeamID() string {
+	if g == nil {
 		return ""
 	}
-	return o.TeamID
+	return g.TeamID
 }
 
-func (o *GetOnCallScheduleRotationRequest) GetScheduleID() string {
-	if o == nil {
+func (g *GetOnCallScheduleRotationRequest) GetScheduleID() string {
+	if g == nil {
 		return ""
 	}
-	return o.ScheduleID
+	return g.ScheduleID
 }

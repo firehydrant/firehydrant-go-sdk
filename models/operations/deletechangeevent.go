@@ -6,9 +6,9 @@ type DeleteChangeEventRequest struct {
 	ChangeEventID string `pathParam:"style=simple,explode=false,name=change_event_id"`
 }
 
-func (o *DeleteChangeEventRequest) GetChangeEventID() string {
-	if o == nil {
+func (d *DeleteChangeEventRequest) GetChangeEventID() string {
+	if d == nil {
 		return ""
 	}
-	return o.ChangeEventID
+	return d.ChangeEventID
 }

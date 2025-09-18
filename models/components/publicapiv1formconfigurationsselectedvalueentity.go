@@ -12,9 +12,9 @@ type PublicAPIV1FormConfigurationsSelectedValueEntity struct {
 	Template *PublicAPIV1FormConfigurationsSelectedValueEntityTemplate `json:"template,omitempty"`
 }
 
-func (o *PublicAPIV1FormConfigurationsSelectedValueEntity) GetTemplate() *PublicAPIV1FormConfigurationsSelectedValueEntityTemplate {
-	if o == nil {
+func (p *PublicAPIV1FormConfigurationsSelectedValueEntity) GetTemplate() *PublicAPIV1FormConfigurationsSelectedValueEntityTemplate {
+	if p == nil {
 		return nil
 	}
-	return o.Template
+	return p.Template
 }

@@ -11,16 +11,16 @@ type UpdateWebhookRequest struct {
 	UpdateWebhook components.UpdateWebhook `request:"mediaType=application/json"`
 }
 
-func (o *UpdateWebhookRequest) GetWebhookID() string {
-	if o == nil {
+func (u *UpdateWebhookRequest) GetWebhookID() string {
+	if u == nil {
 		return ""
 	}
-	return o.WebhookID
+	return u.WebhookID
 }
 
-func (o *UpdateWebhookRequest) GetUpdateWebhook() components.UpdateWebhook {
-	if o == nil {
+func (u *UpdateWebhookRequest) GetUpdateWebhook() components.UpdateWebhook {
+	if u == nil {
 		return components.UpdateWebhook{}
 	}
-	return o.UpdateWebhook
+	return u.UpdateWebhook
 }

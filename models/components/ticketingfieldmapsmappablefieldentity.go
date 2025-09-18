@@ -16,37 +16,37 @@ type TicketingFieldMapsMappableFieldEntity struct {
 	Required *string `json:"required,omitempty"`
 }
 
-func (o *TicketingFieldMapsMappableFieldEntity) GetValue() *string {
-	if o == nil {
+func (t *TicketingFieldMapsMappableFieldEntity) GetValue() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Value
+	return t.Value
 }
 
-func (o *TicketingFieldMapsMappableFieldEntity) GetLabel() *string {
-	if o == nil {
+func (t *TicketingFieldMapsMappableFieldEntity) GetLabel() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Label
+	return t.Label
 }
 
-func (o *TicketingFieldMapsMappableFieldEntity) GetType() *string {
-	if o == nil {
+func (t *TicketingFieldMapsMappableFieldEntity) GetType() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Type
+	return t.Type
 }
 
-func (o *TicketingFieldMapsMappableFieldEntity) GetAllowedValues() []string {
-	if o == nil {
+func (t *TicketingFieldMapsMappableFieldEntity) GetAllowedValues() []string {
+	if t == nil {
 		return nil
 	}
-	return o.AllowedValues
+	return t.AllowedValues
 }
 
-func (o *TicketingFieldMapsMappableFieldEntity) GetRequired() *string {
-	if o == nil {
+func (t *TicketingFieldMapsMappableFieldEntity) GetRequired() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Required
+	return t.Required
 }

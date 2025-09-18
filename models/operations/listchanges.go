@@ -9,23 +9,23 @@ type ListChangesRequest struct {
 	Query *string `queryParam:"style=form,explode=true,name=query"`
 }
 
-func (o *ListChangesRequest) GetPage() *int {
-	if o == nil {
+func (l *ListChangesRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListChangesRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListChangesRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }
 
-func (o *ListChangesRequest) GetQuery() *string {
-	if o == nil {
+func (l *ListChangesRequest) GetQuery() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Query
+	return l.Query
 }

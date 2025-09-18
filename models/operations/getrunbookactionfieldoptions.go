@@ -14,44 +14,44 @@ type GetRunbookActionFieldOptionsRequest struct {
 	PerPage *int `queryParam:"style=form,explode=true,name=per_page"`
 }
 
-func (o *GetRunbookActionFieldOptionsRequest) GetIntegrationSlug() string {
-	if o == nil {
+func (g *GetRunbookActionFieldOptionsRequest) GetIntegrationSlug() string {
+	if g == nil {
 		return ""
 	}
-	return o.IntegrationSlug
+	return g.IntegrationSlug
 }
 
-func (o *GetRunbookActionFieldOptionsRequest) GetActionSlug() string {
-	if o == nil {
+func (g *GetRunbookActionFieldOptionsRequest) GetActionSlug() string {
+	if g == nil {
 		return ""
 	}
-	return o.ActionSlug
+	return g.ActionSlug
 }
 
-func (o *GetRunbookActionFieldOptionsRequest) GetField() string {
-	if o == nil {
+func (g *GetRunbookActionFieldOptionsRequest) GetField() string {
+	if g == nil {
 		return ""
 	}
-	return o.Field
+	return g.Field
 }
 
-func (o *GetRunbookActionFieldOptionsRequest) GetQuery() *string {
-	if o == nil {
+func (g *GetRunbookActionFieldOptionsRequest) GetQuery() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Query
+	return g.Query
 }
 
-func (o *GetRunbookActionFieldOptionsRequest) GetScope() *string {
-	if o == nil {
+func (g *GetRunbookActionFieldOptionsRequest) GetScope() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Scope
+	return g.Scope
 }
 
-func (o *GetRunbookActionFieldOptionsRequest) GetPerPage() *int {
-	if o == nil {
+func (g *GetRunbookActionFieldOptionsRequest) GetPerPage() *int {
+	if g == nil {
 		return nil
 	}
-	return o.PerPage
+	return g.PerPage
 }

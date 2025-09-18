@@ -8,16 +8,16 @@ type UpdateEnvironment struct {
 	Description *string `json:"description,omitempty"`
 }
 
-func (o *UpdateEnvironment) GetName() string {
-	if o == nil {
+func (u *UpdateEnvironment) GetName() string {
+	if u == nil {
 		return ""
 	}
-	return o.Name
+	return u.Name
 }
 
-func (o *UpdateEnvironment) GetDescription() *string {
-	if o == nil {
+func (u *UpdateEnvironment) GetDescription() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Description
+	return u.Description
 }

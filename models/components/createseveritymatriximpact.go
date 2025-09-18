@@ -9,23 +9,23 @@ type CreateSeverityMatrixImpact struct {
 	Position    *int   `json:"position,omitempty"`
 }
 
-func (o *CreateSeverityMatrixImpact) GetAffectsType() string {
-	if o == nil {
+func (c *CreateSeverityMatrixImpact) GetAffectsType() string {
+	if c == nil {
 		return ""
 	}
-	return o.AffectsType
+	return c.AffectsType
 }
 
-func (o *CreateSeverityMatrixImpact) GetAffectsID() string {
-	if o == nil {
+func (c *CreateSeverityMatrixImpact) GetAffectsID() string {
+	if c == nil {
 		return ""
 	}
-	return o.AffectsID
+	return c.AffectsID
 }
 
-func (o *CreateSeverityMatrixImpact) GetPosition() *int {
-	if o == nil {
+func (c *CreateSeverityMatrixImpact) GetPosition() *int {
+	if c == nil {
 		return nil
 	}
-	return o.Position
+	return c.Position
 }

@@ -11,44 +11,44 @@ type IncidentsLifecyclePhaseEntity struct {
 	Milestones  []IncidentsLifecycleMilestoneEntity `json:"milestones,omitempty"`
 }
 
-func (o *IncidentsLifecyclePhaseEntity) GetID() *string {
-	if o == nil {
+func (i *IncidentsLifecyclePhaseEntity) GetID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ID
+	return i.ID
 }
 
-func (o *IncidentsLifecyclePhaseEntity) GetName() *string {
-	if o == nil {
+func (i *IncidentsLifecyclePhaseEntity) GetName() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Name
+	return i.Name
 }
 
-func (o *IncidentsLifecyclePhaseEntity) GetDescription() *string {
-	if o == nil {
+func (i *IncidentsLifecyclePhaseEntity) GetDescription() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Description
+	return i.Description
 }
 
-func (o *IncidentsLifecyclePhaseEntity) GetType() *string {
-	if o == nil {
+func (i *IncidentsLifecyclePhaseEntity) GetType() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Type
+	return i.Type
 }
 
-func (o *IncidentsLifecyclePhaseEntity) GetPosition() *int {
-	if o == nil {
+func (i *IncidentsLifecyclePhaseEntity) GetPosition() *int {
+	if i == nil {
 		return nil
 	}
-	return o.Position
+	return i.Position
 }
 
-func (o *IncidentsLifecyclePhaseEntity) GetMilestones() []IncidentsLifecycleMilestoneEntity {
-	if o == nil {
+func (i *IncidentsLifecyclePhaseEntity) GetMilestones() []IncidentsLifecycleMilestoneEntity {
+	if i == nil {
 		return nil
 	}
-	return o.Milestones
+	return i.Milestones
 }

@@ -12,51 +12,51 @@ type NullableMetricsRetrospectiveEntitySummaryEntity struct {
 	CompletionPercentage *float32 `json:"completion_percentage,omitempty"`
 }
 
-func (o *NullableMetricsRetrospectiveEntitySummaryEntity) GetCompleted() *int {
-	if o == nil {
+func (n *NullableMetricsRetrospectiveEntitySummaryEntity) GetCompleted() *int {
+	if n == nil {
 		return nil
 	}
-	return o.Completed
+	return n.Completed
 }
 
-func (o *NullableMetricsRetrospectiveEntitySummaryEntity) GetTotal() *int {
-	if o == nil {
+func (n *NullableMetricsRetrospectiveEntitySummaryEntity) GetTotal() *int {
+	if n == nil {
 		return nil
 	}
-	return o.Total
+	return n.Total
 }
 
-func (o *NullableMetricsRetrospectiveEntitySummaryEntity) GetIncomplete() *int {
-	if o == nil {
+func (n *NullableMetricsRetrospectiveEntitySummaryEntity) GetIncomplete() *int {
+	if n == nil {
 		return nil
 	}
-	return o.Incomplete
+	return n.Incomplete
 }
 
-func (o *NullableMetricsRetrospectiveEntitySummaryEntity) GetMean() *float32 {
-	if o == nil {
+func (n *NullableMetricsRetrospectiveEntitySummaryEntity) GetMean() *float32 {
+	if n == nil {
 		return nil
 	}
-	return o.Mean
+	return n.Mean
 }
 
-func (o *NullableMetricsRetrospectiveEntitySummaryEntity) GetShortest() *float32 {
-	if o == nil {
+func (n *NullableMetricsRetrospectiveEntitySummaryEntity) GetShortest() *float32 {
+	if n == nil {
 		return nil
 	}
-	return o.Shortest
+	return n.Shortest
 }
 
-func (o *NullableMetricsRetrospectiveEntitySummaryEntity) GetLongest() *float32 {
-	if o == nil {
+func (n *NullableMetricsRetrospectiveEntitySummaryEntity) GetLongest() *float32 {
+	if n == nil {
 		return nil
 	}
-	return o.Longest
+	return n.Longest
 }
 
-func (o *NullableMetricsRetrospectiveEntitySummaryEntity) GetCompletionPercentage() *float32 {
-	if o == nil {
+func (n *NullableMetricsRetrospectiveEntitySummaryEntity) GetCompletionPercentage() *float32 {
+	if n == nil {
 		return nil
 	}
-	return o.CompletionPercentage
+	return n.CompletionPercentage
 }

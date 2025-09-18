@@ -6,9 +6,9 @@ type GetRunbookExecutionRequest struct {
 	ExecutionID string `pathParam:"style=simple,explode=false,name=execution_id"`
 }
 
-func (o *GetRunbookExecutionRequest) GetExecutionID() string {
-	if o == nil {
+func (g *GetRunbookExecutionRequest) GetExecutionID() string {
+	if g == nil {
 		return ""
 	}
-	return o.ExecutionID
+	return g.ExecutionID
 }

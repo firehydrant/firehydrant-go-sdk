@@ -113,135 +113,135 @@ func (n *NullableTicketingTicketEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *NullableTicketingTicketEntity) GetID() *string {
-	if o == nil {
+func (n *NullableTicketingTicketEntity) GetID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ID
+	return n.ID
 }
 
-func (o *NullableTicketingTicketEntity) GetSummary() *string {
-	if o == nil {
+func (n *NullableTicketingTicketEntity) GetSummary() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Summary
+	return n.Summary
 }
 
-func (o *NullableTicketingTicketEntity) GetDescription() *string {
-	if o == nil {
+func (n *NullableTicketingTicketEntity) GetDescription() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Description
+	return n.Description
 }
 
-func (o *NullableTicketingTicketEntity) GetState() *NullableTicketingTicketEntityState {
-	if o == nil {
+func (n *NullableTicketingTicketEntity) GetState() *NullableTicketingTicketEntityState {
+	if n == nil {
 		return nil
 	}
-	return o.State
+	return n.State
 }
 
-func (o *NullableTicketingTicketEntity) GetType() *NullableTicketingTicketEntityType {
-	if o == nil {
+func (n *NullableTicketingTicketEntity) GetType() *NullableTicketingTicketEntityType {
+	if n == nil {
 		return nil
 	}
-	return o.Type
+	return n.Type
 }
 
-func (o *NullableTicketingTicketEntity) GetAssignees() []AuthorEntity {
-	if o == nil {
+func (n *NullableTicketingTicketEntity) GetAssignees() []AuthorEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Assignees
+	return n.Assignees
 }
 
-func (o *NullableTicketingTicketEntity) GetPriority() *NullableTicketingPriorityEntity {
-	if o == nil {
+func (n *NullableTicketingTicketEntity) GetPriority() *NullableTicketingPriorityEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Priority
+	return n.Priority
 }
 
-func (o *NullableTicketingTicketEntity) GetCreatedBy() *NullableAuthorEntity {
-	if o == nil {
+func (n *NullableTicketingTicketEntity) GetCreatedBy() *NullableAuthorEntity {
+	if n == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return n.CreatedBy
 }
 
-func (o *NullableTicketingTicketEntity) GetAttachments() []NullableTicketingTicketEntityAttachment {
-	if o == nil {
+func (n *NullableTicketingTicketEntity) GetAttachments() []NullableTicketingTicketEntityAttachment {
+	if n == nil {
 		return nil
 	}
-	return o.Attachments
+	return n.Attachments
 }
 
-func (o *NullableTicketingTicketEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (n *NullableTicketingTicketEntity) GetCreatedAt() *time.Time {
+	if n == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return n.CreatedAt
 }
 
-func (o *NullableTicketingTicketEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (n *NullableTicketingTicketEntity) GetUpdatedAt() *time.Time {
+	if n == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return n.UpdatedAt
 }
 
-func (o *NullableTicketingTicketEntity) GetTagList() []string {
-	if o == nil {
+func (n *NullableTicketingTicketEntity) GetTagList() []string {
+	if n == nil {
 		return nil
 	}
-	return o.TagList
+	return n.TagList
 }
 
-func (o *NullableTicketingTicketEntity) GetIncidentID() *string {
-	if o == nil {
+func (n *NullableTicketingTicketEntity) GetIncidentID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.IncidentID
+	return n.IncidentID
 }
 
-func (o *NullableTicketingTicketEntity) GetIncidentName() *string {
-	if o == nil {
+func (n *NullableTicketingTicketEntity) GetIncidentName() *string {
+	if n == nil {
 		return nil
 	}
-	return o.IncidentName
+	return n.IncidentName
 }
 
-func (o *NullableTicketingTicketEntity) GetIncidentCurrentMilestone() *string {
-	if o == nil {
+func (n *NullableTicketingTicketEntity) GetIncidentCurrentMilestone() *string {
+	if n == nil {
 		return nil
 	}
-	return o.IncidentCurrentMilestone
+	return n.IncidentCurrentMilestone
 }
 
-func (o *NullableTicketingTicketEntity) GetTaskID() *string {
-	if o == nil {
+func (n *NullableTicketingTicketEntity) GetTaskID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.TaskID
+	return n.TaskID
 }
 
-func (o *NullableTicketingTicketEntity) GetDueAt() *time.Time {
-	if o == nil {
+func (n *NullableTicketingTicketEntity) GetDueAt() *time.Time {
+	if n == nil {
 		return nil
 	}
-	return o.DueAt
+	return n.DueAt
 }
 
-func (o *NullableTicketingTicketEntity) GetSyncErrorMessage() *string {
-	if o == nil {
+func (n *NullableTicketingTicketEntity) GetSyncErrorMessage() *string {
+	if n == nil {
 		return nil
 	}
-	return o.SyncErrorMessage
+	return n.SyncErrorMessage
 }
 
-func (o *NullableTicketingTicketEntity) GetLink() *NullableAttachmentsLinkEntity {
-	if o == nil {
+func (n *NullableTicketingTicketEntity) GetLink() *NullableAttachmentsLinkEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Link
+	return n.Link
 }

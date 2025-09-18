@@ -10,16 +10,16 @@ type IncidentsShareRetrospectivesResultEntity struct {
 	UserIds []string `json:"user_ids,omitempty"`
 }
 
-func (o *IncidentsShareRetrospectivesResultEntity) GetRetrospectiveIds() []string {
-	if o == nil {
+func (i *IncidentsShareRetrospectivesResultEntity) GetRetrospectiveIds() []string {
+	if i == nil {
 		return nil
 	}
-	return o.RetrospectiveIds
+	return i.RetrospectiveIds
 }
 
-func (o *IncidentsShareRetrospectivesResultEntity) GetUserIds() []string {
-	if o == nil {
+func (i *IncidentsShareRetrospectivesResultEntity) GetUserIds() []string {
+	if i == nil {
 		return nil
 	}
-	return o.UserIds
+	return i.UserIds
 }

@@ -8,16 +8,16 @@ type IntegrationsConfluenceCloudSpaceKeyEntity struct {
 	Name *string `json:"name,omitempty"`
 }
 
-func (o *IntegrationsConfluenceCloudSpaceKeyEntity) GetKey() *string {
-	if o == nil {
+func (i *IntegrationsConfluenceCloudSpaceKeyEntity) GetKey() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Key
+	return i.Key
 }
 
-func (o *IntegrationsConfluenceCloudSpaceKeyEntity) GetName() *string {
-	if o == nil {
+func (i *IntegrationsConfluenceCloudSpaceKeyEntity) GetName() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Name
+	return i.Name
 }

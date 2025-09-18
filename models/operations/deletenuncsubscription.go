@@ -6,9 +6,9 @@ type DeleteNuncSubscriptionRequest struct {
 	UnsubscribeToken string `pathParam:"style=simple,explode=false,name=unsubscribe_token"`
 }
 
-func (o *DeleteNuncSubscriptionRequest) GetUnsubscribeToken() string {
-	if o == nil {
+func (d *DeleteNuncSubscriptionRequest) GetUnsubscribeToken() string {
+	if d == nil {
 		return ""
 	}
-	return o.UnsubscribeToken
+	return d.UnsubscribeToken
 }

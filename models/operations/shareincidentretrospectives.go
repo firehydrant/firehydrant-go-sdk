@@ -11,25 +11,25 @@ type ShareIncidentRetrospectivesRequestBody struct {
 	RetrospectiveIds []string `json:"retrospective_ids"`
 }
 
-func (o *ShareIncidentRetrospectivesRequestBody) GetUserIds() []string {
-	if o == nil {
+func (s *ShareIncidentRetrospectivesRequestBody) GetUserIds() []string {
+	if s == nil {
 		return nil
 	}
-	return o.UserIds
+	return s.UserIds
 }
 
-func (o *ShareIncidentRetrospectivesRequestBody) GetTeamIds() []string {
-	if o == nil {
+func (s *ShareIncidentRetrospectivesRequestBody) GetTeamIds() []string {
+	if s == nil {
 		return nil
 	}
-	return o.TeamIds
+	return s.TeamIds
 }
 
-func (o *ShareIncidentRetrospectivesRequestBody) GetRetrospectiveIds() []string {
-	if o == nil {
+func (s *ShareIncidentRetrospectivesRequestBody) GetRetrospectiveIds() []string {
+	if s == nil {
 		return []string{}
 	}
-	return o.RetrospectiveIds
+	return s.RetrospectiveIds
 }
 
 type ShareIncidentRetrospectivesRequest struct {
@@ -37,16 +37,16 @@ type ShareIncidentRetrospectivesRequest struct {
 	RequestBody ShareIncidentRetrospectivesRequestBody `request:"mediaType=application/json"`
 }
 
-func (o *ShareIncidentRetrospectivesRequest) GetIncidentID() string {
-	if o == nil {
+func (s *ShareIncidentRetrospectivesRequest) GetIncidentID() string {
+	if s == nil {
 		return ""
 	}
-	return o.IncidentID
+	return s.IncidentID
 }
 
-func (o *ShareIncidentRetrospectivesRequest) GetRequestBody() ShareIncidentRetrospectivesRequestBody {
-	if o == nil {
+func (s *ShareIncidentRetrospectivesRequest) GetRequestBody() ShareIncidentRetrospectivesRequestBody {
+	if s == nil {
 		return ShareIncidentRetrospectivesRequestBody{}
 	}
-	return o.RequestBody
+	return s.RequestBody
 }

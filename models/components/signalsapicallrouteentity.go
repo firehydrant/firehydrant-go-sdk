@@ -72,65 +72,65 @@ type SignalsAPICallRouteEntity struct {
 	Target          *NullableSignalsAPITargetEntity        `json:"target,omitempty"`
 }
 
-func (o *SignalsAPICallRouteEntity) GetID() *string {
-	if o == nil {
+func (s *SignalsAPICallRouteEntity) GetID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *SignalsAPICallRouteEntity) GetName() *string {
-	if o == nil {
+func (s *SignalsAPICallRouteEntity) GetName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Name
+	return s.Name
 }
 
-func (o *SignalsAPICallRouteEntity) GetDescription() *string {
-	if o == nil {
+func (s *SignalsAPICallRouteEntity) GetDescription() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Description
+	return s.Description
 }
 
-func (o *SignalsAPICallRouteEntity) GetPhoneNumber() *string {
-	if o == nil {
+func (s *SignalsAPICallRouteEntity) GetPhoneNumber() *string {
+	if s == nil {
 		return nil
 	}
-	return o.PhoneNumber
+	return s.PhoneNumber
 }
 
-func (o *SignalsAPICallRouteEntity) GetGreetingMessage() *string {
-	if o == nil {
+func (s *SignalsAPICallRouteEntity) GetGreetingMessage() *string {
+	if s == nil {
 		return nil
 	}
-	return o.GreetingMessage
+	return s.GreetingMessage
 }
 
-func (o *SignalsAPICallRouteEntity) GetRoutingMode() *SignalsAPICallRouteEntityRoutingMode {
-	if o == nil {
+func (s *SignalsAPICallRouteEntity) GetRoutingMode() *SignalsAPICallRouteEntityRoutingMode {
+	if s == nil {
 		return nil
 	}
-	return o.RoutingMode
+	return s.RoutingMode
 }
 
-func (o *SignalsAPICallRouteEntity) GetConnectMode() *SignalsAPICallRouteEntityConnectMode {
-	if o == nil {
+func (s *SignalsAPICallRouteEntity) GetConnectMode() *SignalsAPICallRouteEntityConnectMode {
+	if s == nil {
 		return nil
 	}
-	return o.ConnectMode
+	return s.ConnectMode
 }
 
-func (o *SignalsAPICallRouteEntity) GetSteps() *NullableSignalsAPICallRouteStepEntity {
-	if o == nil {
+func (s *SignalsAPICallRouteEntity) GetSteps() *NullableSignalsAPICallRouteStepEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Steps
+	return s.Steps
 }
 
-func (o *SignalsAPICallRouteEntity) GetTarget() *NullableSignalsAPITargetEntity {
-	if o == nil {
+func (s *SignalsAPICallRouteEntity) GetTarget() *NullableSignalsAPITargetEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Target
+	return s.Target
 }

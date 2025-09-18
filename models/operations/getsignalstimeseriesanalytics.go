@@ -176,86 +176,86 @@ func (g *GetSignalsTimeseriesAnalyticsRequest) UnmarshalJSON(data []byte) error 
 	return nil
 }
 
-func (o *GetSignalsTimeseriesAnalyticsRequest) GetBucket() *GetSignalsTimeseriesAnalyticsBucket {
-	if o == nil {
+func (g *GetSignalsTimeseriesAnalyticsRequest) GetBucket() *GetSignalsTimeseriesAnalyticsBucket {
+	if g == nil {
 		return nil
 	}
-	return o.Bucket
+	return g.Bucket
 }
 
-func (o *GetSignalsTimeseriesAnalyticsRequest) GetSignalRules() *string {
-	if o == nil {
+func (g *GetSignalsTimeseriesAnalyticsRequest) GetSignalRules() *string {
+	if g == nil {
 		return nil
 	}
-	return o.SignalRules
+	return g.SignalRules
 }
 
-func (o *GetSignalsTimeseriesAnalyticsRequest) GetTeams() *string {
-	if o == nil {
+func (g *GetSignalsTimeseriesAnalyticsRequest) GetTeams() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Teams
+	return g.Teams
 }
 
-func (o *GetSignalsTimeseriesAnalyticsRequest) GetEnvironments() *string {
-	if o == nil {
+func (g *GetSignalsTimeseriesAnalyticsRequest) GetEnvironments() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Environments
+	return g.Environments
 }
 
-func (o *GetSignalsTimeseriesAnalyticsRequest) GetServices() *string {
-	if o == nil {
+func (g *GetSignalsTimeseriesAnalyticsRequest) GetServices() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Services
+	return g.Services
 }
 
-func (o *GetSignalsTimeseriesAnalyticsRequest) GetTags() *string {
-	if o == nil {
+func (g *GetSignalsTimeseriesAnalyticsRequest) GetTags() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Tags
+	return g.Tags
 }
 
-func (o *GetSignalsTimeseriesAnalyticsRequest) GetUsers() *string {
-	if o == nil {
+func (g *GetSignalsTimeseriesAnalyticsRequest) GetUsers() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Users
+	return g.Users
 }
 
-func (o *GetSignalsTimeseriesAnalyticsRequest) GetGroupBy() *GetSignalsTimeseriesAnalyticsGroupBy {
-	if o == nil {
+func (g *GetSignalsTimeseriesAnalyticsRequest) GetGroupBy() *GetSignalsTimeseriesAnalyticsGroupBy {
+	if g == nil {
 		return nil
 	}
-	return o.GroupBy
+	return g.GroupBy
 }
 
-func (o *GetSignalsTimeseriesAnalyticsRequest) GetSortBy() *GetSignalsTimeseriesAnalyticsSortBy {
-	if o == nil {
+func (g *GetSignalsTimeseriesAnalyticsRequest) GetSortBy() *GetSignalsTimeseriesAnalyticsSortBy {
+	if g == nil {
 		return nil
 	}
-	return o.SortBy
+	return g.SortBy
 }
 
-func (o *GetSignalsTimeseriesAnalyticsRequest) GetSortDirection() *GetSignalsTimeseriesAnalyticsSortDirection {
-	if o == nil {
+func (g *GetSignalsTimeseriesAnalyticsRequest) GetSortDirection() *GetSignalsTimeseriesAnalyticsSortDirection {
+	if g == nil {
 		return nil
 	}
-	return o.SortDirection
+	return g.SortDirection
 }
 
-func (o *GetSignalsTimeseriesAnalyticsRequest) GetStartDate() *time.Time {
-	if o == nil {
+func (g *GetSignalsTimeseriesAnalyticsRequest) GetStartDate() *time.Time {
+	if g == nil {
 		return nil
 	}
-	return o.StartDate
+	return g.StartDate
 }
 
-func (o *GetSignalsTimeseriesAnalyticsRequest) GetEndDate() *time.Time {
-	if o == nil {
+func (g *GetSignalsTimeseriesAnalyticsRequest) GetEndDate() *time.Time {
+	if g == nil {
 		return nil
 	}
-	return o.EndDate
+	return g.EndDate
 }

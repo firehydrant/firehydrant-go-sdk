@@ -12,51 +12,51 @@ type RunbooksElementEntity struct {
 	DynamicSelect *NullableRunbooksElementDynamicSelectEntity `json:"dynamic_select,omitempty"`
 }
 
-func (o *RunbooksElementEntity) GetID() *string {
-	if o == nil {
+func (r *RunbooksElementEntity) GetID() *string {
+	if r == nil {
 		return nil
 	}
-	return o.ID
+	return r.ID
 }
 
-func (o *RunbooksElementEntity) GetType() *string {
-	if o == nil {
+func (r *RunbooksElementEntity) GetType() *string {
+	if r == nil {
 		return nil
 	}
-	return o.Type
+	return r.Type
 }
 
-func (o *RunbooksElementEntity) GetMarkdown() *NullableRunbooksElementMarkdownEntity {
-	if o == nil {
+func (r *RunbooksElementEntity) GetMarkdown() *NullableRunbooksElementMarkdownEntity {
+	if r == nil {
 		return nil
 	}
-	return o.Markdown
+	return r.Markdown
 }
 
-func (o *RunbooksElementEntity) GetTextarea() *NullableRunbooksElementTextareaEntity {
-	if o == nil {
+func (r *RunbooksElementEntity) GetTextarea() *NullableRunbooksElementTextareaEntity {
+	if r == nil {
 		return nil
 	}
-	return o.Textarea
+	return r.Textarea
 }
 
-func (o *RunbooksElementEntity) GetInput() *NullableRunbooksElementInputEntity {
-	if o == nil {
+func (r *RunbooksElementEntity) GetInput() *NullableRunbooksElementInputEntity {
+	if r == nil {
 		return nil
 	}
-	return o.Input
+	return r.Input
 }
 
-func (o *RunbooksElementEntity) GetPlainText() *NullableRunbooksElementMarkdownEntity {
-	if o == nil {
+func (r *RunbooksElementEntity) GetPlainText() *NullableRunbooksElementMarkdownEntity {
+	if r == nil {
 		return nil
 	}
-	return o.PlainText
+	return r.PlainText
 }
 
-func (o *RunbooksElementEntity) GetDynamicSelect() *NullableRunbooksElementDynamicSelectEntity {
-	if o == nil {
+func (r *RunbooksElementEntity) GetDynamicSelect() *NullableRunbooksElementDynamicSelectEntity {
+	if r == nil {
 		return nil
 	}
-	return o.DynamicSelect
+	return r.DynamicSelect
 }

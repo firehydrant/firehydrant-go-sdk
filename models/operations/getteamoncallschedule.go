@@ -11,30 +11,30 @@ type GetTeamOnCallScheduleRequest struct {
 	ShiftTimeWindowEnd *string `queryParam:"style=form,explode=true,name=shift_time_window_end"`
 }
 
-func (o *GetTeamOnCallScheduleRequest) GetTeamID() string {
-	if o == nil {
+func (g *GetTeamOnCallScheduleRequest) GetTeamID() string {
+	if g == nil {
 		return ""
 	}
-	return o.TeamID
+	return g.TeamID
 }
 
-func (o *GetTeamOnCallScheduleRequest) GetScheduleID() string {
-	if o == nil {
+func (g *GetTeamOnCallScheduleRequest) GetScheduleID() string {
+	if g == nil {
 		return ""
 	}
-	return o.ScheduleID
+	return g.ScheduleID
 }
 
-func (o *GetTeamOnCallScheduleRequest) GetShiftTimeWindowStart() *string {
-	if o == nil {
+func (g *GetTeamOnCallScheduleRequest) GetShiftTimeWindowStart() *string {
+	if g == nil {
 		return nil
 	}
-	return o.ShiftTimeWindowStart
+	return g.ShiftTimeWindowStart
 }
 
-func (o *GetTeamOnCallScheduleRequest) GetShiftTimeWindowEnd() *string {
-	if o == nil {
+func (g *GetTeamOnCallScheduleRequest) GetShiftTimeWindowEnd() *string {
+	if g == nil {
 		return nil
 	}
-	return o.ShiftTimeWindowEnd
+	return g.ShiftTimeWindowEnd
 }

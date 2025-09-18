@@ -2523,7 +2523,6 @@ func main() {
     res, err := s.IncidentSettings.CreateCustomFieldDefinition(ctx, components.CreateCustomFieldDefinition{
         DisplayName: "Rasheed_Runolfsson",
         FieldType: "<value>",
-        Required: false,
     })
     if err != nil {
         log.Fatal(err)

@@ -12,44 +12,44 @@ type RetrospectivesTemplateEntity struct {
 	Fields      []RetrospectivesFieldEntity                         `json:"fields,omitempty"`
 }
 
-func (o *RetrospectivesTemplateEntity) GetID() *string {
-	if o == nil {
+func (r *RetrospectivesTemplateEntity) GetID() *string {
+	if r == nil {
 		return nil
 	}
-	return o.ID
+	return r.ID
 }
 
-func (o *RetrospectivesTemplateEntity) GetName() *string {
-	if o == nil {
+func (r *RetrospectivesTemplateEntity) GetName() *string {
+	if r == nil {
 		return nil
 	}
-	return o.Name
+	return r.Name
 }
 
-func (o *RetrospectivesTemplateEntity) GetDescription() *string {
-	if o == nil {
+func (r *RetrospectivesTemplateEntity) GetDescription() *string {
+	if r == nil {
 		return nil
 	}
-	return o.Description
+	return r.Description
 }
 
-func (o *RetrospectivesTemplateEntity) GetIsDefault() *bool {
-	if o == nil {
+func (r *RetrospectivesTemplateEntity) GetIsDefault() *bool {
+	if r == nil {
 		return nil
 	}
-	return o.IsDefault
+	return r.IsDefault
 }
 
-func (o *RetrospectivesTemplateEntity) GetSections() []RetrospectivesTemplateEntityIncidentSectionEntity {
-	if o == nil {
+func (r *RetrospectivesTemplateEntity) GetSections() []RetrospectivesTemplateEntityIncidentSectionEntity {
+	if r == nil {
 		return nil
 	}
-	return o.Sections
+	return r.Sections
 }
 
-func (o *RetrospectivesTemplateEntity) GetFields() []RetrospectivesFieldEntity {
-	if o == nil {
+func (r *RetrospectivesTemplateEntity) GetFields() []RetrospectivesFieldEntity {
+	if r == nil {
 		return nil
 	}
-	return o.Fields
+	return r.Fields
 }

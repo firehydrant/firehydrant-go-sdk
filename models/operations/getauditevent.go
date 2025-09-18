@@ -6,9 +6,9 @@ type GetAuditEventRequest struct {
 	ID string `pathParam:"style=simple,explode=false,name=id"`
 }
 
-func (o *GetAuditEventRequest) GetID() string {
-	if o == nil {
+func (g *GetAuditEventRequest) GetID() string {
+	if g == nil {
 		return ""
 	}
-	return o.ID
+	return g.ID
 }

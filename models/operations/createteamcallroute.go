@@ -11,16 +11,16 @@ type CreateTeamCallRouteRequest struct {
 	CreateTeamCallRoute components.CreateTeamCallRoute `request:"mediaType=application/json"`
 }
 
-func (o *CreateTeamCallRouteRequest) GetTeamID() string {
-	if o == nil {
+func (c *CreateTeamCallRouteRequest) GetTeamID() string {
+	if c == nil {
 		return ""
 	}
-	return o.TeamID
+	return c.TeamID
 }
 
-func (o *CreateTeamCallRouteRequest) GetCreateTeamCallRoute() components.CreateTeamCallRoute {
-	if o == nil {
+func (c *CreateTeamCallRouteRequest) GetCreateTeamCallRoute() components.CreateTeamCallRoute {
+	if c == nil {
 		return components.CreateTeamCallRoute{}
 	}
-	return o.CreateTeamCallRoute
+	return c.CreateTeamCallRoute
 }

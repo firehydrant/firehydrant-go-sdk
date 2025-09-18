@@ -41,18 +41,18 @@ type ExportIncidentRetrospectivesRequestBody struct {
 	ParentPageID *string `json:"parent_page_id,omitempty"`
 }
 
-func (o *ExportIncidentRetrospectivesRequestBody) GetIntegrationSlug() IntegrationSlug {
-	if o == nil {
+func (e *ExportIncidentRetrospectivesRequestBody) GetIntegrationSlug() IntegrationSlug {
+	if e == nil {
 		return IntegrationSlug("")
 	}
-	return o.IntegrationSlug
+	return e.IntegrationSlug
 }
 
-func (o *ExportIncidentRetrospectivesRequestBody) GetParentPageID() *string {
-	if o == nil {
+func (e *ExportIncidentRetrospectivesRequestBody) GetParentPageID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.ParentPageID
+	return e.ParentPageID
 }
 
 type ExportIncidentRetrospectivesRequest struct {
@@ -60,16 +60,16 @@ type ExportIncidentRetrospectivesRequest struct {
 	RequestBody ExportIncidentRetrospectivesRequestBody `request:"mediaType=application/json"`
 }
 
-func (o *ExportIncidentRetrospectivesRequest) GetIncidentID() string {
-	if o == nil {
+func (e *ExportIncidentRetrospectivesRequest) GetIncidentID() string {
+	if e == nil {
 		return ""
 	}
-	return o.IncidentID
+	return e.IncidentID
 }
 
-func (o *ExportIncidentRetrospectivesRequest) GetRequestBody() ExportIncidentRetrospectivesRequestBody {
-	if o == nil {
+func (e *ExportIncidentRetrospectivesRequest) GetRequestBody() ExportIncidentRetrospectivesRequestBody {
+	if e == nil {
 		return ExportIncidentRetrospectivesRequestBody{}
 	}
-	return o.RequestBody
+	return e.RequestBody
 }

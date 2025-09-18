@@ -7,16 +7,16 @@ type DeleteTeamOnCallScheduleRequest struct {
 	ScheduleID string `pathParam:"style=simple,explode=false,name=schedule_id"`
 }
 
-func (o *DeleteTeamOnCallScheduleRequest) GetTeamID() string {
-	if o == nil {
+func (d *DeleteTeamOnCallScheduleRequest) GetTeamID() string {
+	if d == nil {
 		return ""
 	}
-	return o.TeamID
+	return d.TeamID
 }
 
-func (o *DeleteTeamOnCallScheduleRequest) GetScheduleID() string {
-	if o == nil {
+func (d *DeleteTeamOnCallScheduleRequest) GetScheduleID() string {
+	if d == nil {
 		return ""
 	}
-	return o.ScheduleID
+	return d.ScheduleID
 }

@@ -12,23 +12,23 @@ type UpdateTeamSignalRuleRequest struct {
 	UpdateTeamSignalRule components.UpdateTeamSignalRule `request:"mediaType=application/json"`
 }
 
-func (o *UpdateTeamSignalRuleRequest) GetTeamID() string {
-	if o == nil {
+func (u *UpdateTeamSignalRuleRequest) GetTeamID() string {
+	if u == nil {
 		return ""
 	}
-	return o.TeamID
+	return u.TeamID
 }
 
-func (o *UpdateTeamSignalRuleRequest) GetID() string {
-	if o == nil {
+func (u *UpdateTeamSignalRuleRequest) GetID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ID
+	return u.ID
 }
 
-func (o *UpdateTeamSignalRuleRequest) GetUpdateTeamSignalRule() components.UpdateTeamSignalRule {
-	if o == nil {
+func (u *UpdateTeamSignalRuleRequest) GetUpdateTeamSignalRule() components.UpdateTeamSignalRule {
+	if u == nil {
 		return components.UpdateTeamSignalRule{}
 	}
-	return o.UpdateTeamSignalRule
+	return u.UpdateTeamSignalRule
 }

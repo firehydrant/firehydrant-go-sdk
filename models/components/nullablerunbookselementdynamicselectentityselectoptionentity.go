@@ -7,16 +7,16 @@ type NullableRunbooksElementDynamicSelectEntitySelectOptionEntity struct {
 	Value *string `json:"value,omitempty"`
 }
 
-func (o *NullableRunbooksElementDynamicSelectEntitySelectOptionEntity) GetLabel() *string {
-	if o == nil {
+func (n *NullableRunbooksElementDynamicSelectEntitySelectOptionEntity) GetLabel() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Label
+	return n.Label
 }
 
-func (o *NullableRunbooksElementDynamicSelectEntitySelectOptionEntity) GetValue() *string {
-	if o == nil {
+func (n *NullableRunbooksElementDynamicSelectEntitySelectOptionEntity) GetValue() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Value
+	return n.Value
 }

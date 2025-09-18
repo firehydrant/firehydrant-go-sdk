@@ -47,37 +47,37 @@ type IncidentTypeEntityTemplateImpactEntity struct {
 	Type          *IncidentTypeEntityTemplateImpactEntityType `json:"type,omitempty"`
 }
 
-func (o *IncidentTypeEntityTemplateImpactEntity) GetID() *string {
-	if o == nil {
+func (i *IncidentTypeEntityTemplateImpactEntity) GetID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ID
+	return i.ID
 }
 
-func (o *IncidentTypeEntityTemplateImpactEntity) GetName() *string {
-	if o == nil {
+func (i *IncidentTypeEntityTemplateImpactEntity) GetName() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Name
+	return i.Name
 }
 
-func (o *IncidentTypeEntityTemplateImpactEntity) GetConditionID() *string {
-	if o == nil {
+func (i *IncidentTypeEntityTemplateImpactEntity) GetConditionID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ConditionID
+	return i.ConditionID
 }
 
-func (o *IncidentTypeEntityTemplateImpactEntity) GetConditionName() *string {
-	if o == nil {
+func (i *IncidentTypeEntityTemplateImpactEntity) GetConditionName() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ConditionName
+	return i.ConditionName
 }
 
-func (o *IncidentTypeEntityTemplateImpactEntity) GetType() *IncidentTypeEntityTemplateImpactEntityType {
-	if o == nil {
+func (i *IncidentTypeEntityTemplateImpactEntity) GetType() *IncidentTypeEntityTemplateImpactEntityType {
+	if i == nil {
 		return nil
 	}
-	return o.Type
+	return i.Type
 }

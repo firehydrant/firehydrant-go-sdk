@@ -29,51 +29,51 @@ func (s *SignalsAPIWebhookTargetEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *SignalsAPIWebhookTargetEntity) GetID() *string {
-	if o == nil {
+func (s *SignalsAPIWebhookTargetEntity) GetID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *SignalsAPIWebhookTargetEntity) GetName() *string {
-	if o == nil {
+func (s *SignalsAPIWebhookTargetEntity) GetName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Name
+	return s.Name
 }
 
-func (o *SignalsAPIWebhookTargetEntity) GetDescription() *string {
-	if o == nil {
+func (s *SignalsAPIWebhookTargetEntity) GetDescription() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Description
+	return s.Description
 }
 
-func (o *SignalsAPIWebhookTargetEntity) GetURL() *string {
-	if o == nil {
+func (s *SignalsAPIWebhookTargetEntity) GetURL() *string {
+	if s == nil {
 		return nil
 	}
-	return o.URL
+	return s.URL
 }
 
-func (o *SignalsAPIWebhookTargetEntity) GetCreatedBy() *NullableAuthorEntity {
-	if o == nil {
+func (s *SignalsAPIWebhookTargetEntity) GetCreatedBy() *NullableAuthorEntity {
+	if s == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return s.CreatedBy
 }
 
-func (o *SignalsAPIWebhookTargetEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (s *SignalsAPIWebhookTargetEntity) GetCreatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return s.CreatedAt
 }
 
-func (o *SignalsAPIWebhookTargetEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (s *SignalsAPIWebhookTargetEntity) GetUpdatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return s.UpdatedAt
 }

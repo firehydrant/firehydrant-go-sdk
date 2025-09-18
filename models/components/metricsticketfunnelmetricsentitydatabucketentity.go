@@ -32,44 +32,44 @@ func (m *MetricsTicketFunnelMetricsEntityDataBucketEntity) UnmarshalJSON(data []
 	return nil
 }
 
-func (o *MetricsTicketFunnelMetricsEntityDataBucketEntity) GetTimeBucket() *time.Time {
-	if o == nil {
+func (m *MetricsTicketFunnelMetricsEntityDataBucketEntity) GetTimeBucket() *time.Time {
+	if m == nil {
 		return nil
 	}
-	return o.TimeBucket
+	return m.TimeBucket
 }
 
-func (o *MetricsTicketFunnelMetricsEntityDataBucketEntity) GetFilterParams() *NullableMetricsTicketFunnelMetricsEntityDataBucketFilterParamsEntity {
-	if o == nil {
+func (m *MetricsTicketFunnelMetricsEntityDataBucketEntity) GetFilterParams() *NullableMetricsTicketFunnelMetricsEntityDataBucketFilterParamsEntity {
+	if m == nil {
 		return nil
 	}
-	return o.FilterParams
+	return m.FilterParams
 }
 
-func (o *MetricsTicketFunnelMetricsEntityDataBucketEntity) GetTasksCreated() *int {
-	if o == nil {
+func (m *MetricsTicketFunnelMetricsEntityDataBucketEntity) GetTasksCreated() *int {
+	if m == nil {
 		return nil
 	}
-	return o.TasksCreated
+	return m.TasksCreated
 }
 
-func (o *MetricsTicketFunnelMetricsEntityDataBucketEntity) GetTasksDone() *int {
-	if o == nil {
+func (m *MetricsTicketFunnelMetricsEntityDataBucketEntity) GetTasksDone() *int {
+	if m == nil {
 		return nil
 	}
-	return o.TasksDone
+	return m.TasksDone
 }
 
-func (o *MetricsTicketFunnelMetricsEntityDataBucketEntity) GetFollowUpsCreated() *int {
-	if o == nil {
+func (m *MetricsTicketFunnelMetricsEntityDataBucketEntity) GetFollowUpsCreated() *int {
+	if m == nil {
 		return nil
 	}
-	return o.FollowUpsCreated
+	return m.FollowUpsCreated
 }
 
-func (o *MetricsTicketFunnelMetricsEntityDataBucketEntity) GetFollowUpsDone() *int {
-	if o == nil {
+func (m *MetricsTicketFunnelMetricsEntityDataBucketEntity) GetFollowUpsDone() *int {
+	if m == nil {
 		return nil
 	}
-	return o.FollowUpsDone
+	return m.FollowUpsDone
 }

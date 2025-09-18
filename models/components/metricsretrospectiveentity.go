@@ -8,16 +8,16 @@ type MetricsRetrospectiveEntity struct {
 	Summary *NullableMetricsRetrospectiveEntitySummaryEntity `json:"summary,omitempty"`
 }
 
-func (o *MetricsRetrospectiveEntity) GetData() []MetricsRetrospectiveEntityDataEntity {
-	if o == nil {
+func (m *MetricsRetrospectiveEntity) GetData() []MetricsRetrospectiveEntityDataEntity {
+	if m == nil {
 		return nil
 	}
-	return o.Data
+	return m.Data
 }
 
-func (o *MetricsRetrospectiveEntity) GetSummary() *NullableMetricsRetrospectiveEntitySummaryEntity {
-	if o == nil {
+func (m *MetricsRetrospectiveEntity) GetSummary() *NullableMetricsRetrospectiveEntitySummaryEntity {
+	if m == nil {
 		return nil
 	}
-	return o.Summary
+	return m.Summary
 }

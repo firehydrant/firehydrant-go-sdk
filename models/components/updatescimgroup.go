@@ -7,11 +7,11 @@ type UpdateScimGroupMember struct {
 	Value string `json:"value"`
 }
 
-func (o *UpdateScimGroupMember) GetValue() string {
-	if o == nil {
+func (u *UpdateScimGroupMember) GetValue() string {
+	if u == nil {
 		return ""
 	}
-	return o.Value
+	return u.Value
 }
 
 // UpdateScimGroup - SCIM endpoint to update a Team (Colloquial for Group in the SCIM protocol). Any members defined in the payload will be assigned to the team with no defined role, any missing members will be removed from the team.
@@ -21,16 +21,16 @@ type UpdateScimGroup struct {
 	Members     []UpdateScimGroupMember `json:"members"`
 }
 
-func (o *UpdateScimGroup) GetDisplayName() string {
-	if o == nil {
+func (u *UpdateScimGroup) GetDisplayName() string {
+	if u == nil {
 		return ""
 	}
-	return o.DisplayName
+	return u.DisplayName
 }
 
-func (o *UpdateScimGroup) GetMembers() []UpdateScimGroupMember {
-	if o == nil {
+func (u *UpdateScimGroup) GetMembers() []UpdateScimGroupMember {
+	if u == nil {
 		return []UpdateScimGroupMember{}
 	}
-	return o.Members
+	return u.Members
 }

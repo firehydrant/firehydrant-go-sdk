@@ -44,142 +44,142 @@ func (r *RunbookEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *RunbookEntity) GetID() *string {
-	if o == nil {
+func (r *RunbookEntity) GetID() *string {
+	if r == nil {
 		return nil
 	}
-	return o.ID
+	return r.ID
 }
 
-func (o *RunbookEntity) GetName() *string {
-	if o == nil {
+func (r *RunbookEntity) GetName() *string {
+	if r == nil {
 		return nil
 	}
-	return o.Name
+	return r.Name
 }
 
-func (o *RunbookEntity) GetSummary() *string {
-	if o == nil {
+func (r *RunbookEntity) GetSummary() *string {
+	if r == nil {
 		return nil
 	}
-	return o.Summary
+	return r.Summary
 }
 
-func (o *RunbookEntity) GetDescription() *string {
-	if o == nil {
+func (r *RunbookEntity) GetDescription() *string {
+	if r == nil {
 		return nil
 	}
-	return o.Description
+	return r.Description
 }
 
-func (o *RunbookEntity) GetType() *string {
-	if o == nil {
+func (r *RunbookEntity) GetType() *string {
+	if r == nil {
 		return nil
 	}
-	return o.Type
+	return r.Type
 }
 
-func (o *RunbookEntity) GetRunbookTemplateID() *string {
-	if o == nil {
+func (r *RunbookEntity) GetRunbookTemplateID() *string {
+	if r == nil {
 		return nil
 	}
-	return o.RunbookTemplateID
+	return r.RunbookTemplateID
 }
 
-func (o *RunbookEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (r *RunbookEntity) GetCreatedAt() *time.Time {
+	if r == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return r.CreatedAt
 }
 
-func (o *RunbookEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (r *RunbookEntity) GetUpdatedAt() *time.Time {
+	if r == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return r.UpdatedAt
 }
 
-func (o *RunbookEntity) GetCreatedBy() *NullableAuthorEntity {
-	if o == nil {
+func (r *RunbookEntity) GetCreatedBy() *NullableAuthorEntity {
+	if r == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return r.CreatedBy
 }
 
-func (o *RunbookEntity) GetUpdatedBy() *NullableAuthorEntity {
-	if o == nil {
+func (r *RunbookEntity) GetUpdatedBy() *NullableAuthorEntity {
+	if r == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return r.UpdatedBy
 }
 
-func (o *RunbookEntity) GetSteps() []RunbookStepEntity {
-	if o == nil {
+func (r *RunbookEntity) GetSteps() []RunbookStepEntity {
+	if r == nil {
 		return nil
 	}
-	return o.Steps
+	return r.Steps
 }
 
-func (o *RunbookEntity) GetAttachmentRule() *NullableRulesRuleEntity {
-	if o == nil {
+func (r *RunbookEntity) GetAttachmentRule() *NullableRulesRuleEntity {
+	if r == nil {
 		return nil
 	}
-	return o.AttachmentRule
+	return r.AttachmentRule
 }
 
-func (o *RunbookEntity) GetVotes() *NullableEmptyVotesEntity {
-	if o == nil {
+func (r *RunbookEntity) GetVotes() *NullableEmptyVotesEntity {
+	if r == nil {
 		return nil
 	}
-	return o.Votes
+	return r.Votes
 }
 
-func (o *RunbookEntity) GetIsEditable() *bool {
-	if o == nil {
+func (r *RunbookEntity) GetIsEditable() *bool {
+	if r == nil {
 		return nil
 	}
-	return o.IsEditable
+	return r.IsEditable
 }
 
-func (o *RunbookEntity) GetOwner() *NullableTeamEntityLite {
-	if o == nil {
+func (r *RunbookEntity) GetOwner() *NullableTeamEntityLite {
+	if r == nil {
 		return nil
 	}
-	return o.Owner
+	return r.Owner
 }
 
-func (o *RunbookEntity) GetCategories() []string {
-	if o == nil {
+func (r *RunbookEntity) GetCategories() []string {
+	if r == nil {
 		return nil
 	}
-	return o.Categories
+	return r.Categories
 }
 
-func (o *RunbookEntity) GetAutoAttachToRestrictedIncidents() *bool {
-	if o == nil {
+func (r *RunbookEntity) GetAutoAttachToRestrictedIncidents() *bool {
+	if r == nil {
 		return nil
 	}
-	return o.AutoAttachToRestrictedIncidents
+	return r.AutoAttachToRestrictedIncidents
 }
 
-func (o *RunbookEntity) GetTutorial() *bool {
-	if o == nil {
+func (r *RunbookEntity) GetTutorial() *bool {
+	if r == nil {
 		return nil
 	}
-	return o.Tutorial
+	return r.Tutorial
 }
 
-func (o *RunbookEntity) GetLastExecutedAt() *time.Time {
-	if o == nil {
+func (r *RunbookEntity) GetLastExecutedAt() *time.Time {
+	if r == nil {
 		return nil
 	}
-	return o.LastExecutedAt
+	return r.LastExecutedAt
 }
 
-func (o *RunbookEntity) GetLastExecutedForIncident() *NullablePublicAPIV1IncidentsSuccinctEntity {
-	if o == nil {
+func (r *RunbookEntity) GetLastExecutedForIncident() *NullablePublicAPIV1IncidentsSuccinctEntity {
+	if r == nil {
 		return nil
 	}
-	return o.LastExecutedForIncident
+	return r.LastExecutedForIncident
 }

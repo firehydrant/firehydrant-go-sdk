@@ -12,23 +12,23 @@ type UpdateCommentRequest struct {
 	UpdateComment  components.UpdateComment `request:"mediaType=application/json"`
 }
 
-func (o *UpdateCommentRequest) GetCommentID() string {
-	if o == nil {
+func (u *UpdateCommentRequest) GetCommentID() string {
+	if u == nil {
 		return ""
 	}
-	return o.CommentID
+	return u.CommentID
 }
 
-func (o *UpdateCommentRequest) GetConversationID() string {
-	if o == nil {
+func (u *UpdateCommentRequest) GetConversationID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ConversationID
+	return u.ConversationID
 }
 
-func (o *UpdateCommentRequest) GetUpdateComment() components.UpdateComment {
-	if o == nil {
+func (u *UpdateCommentRequest) GetUpdateComment() components.UpdateComment {
+	if u == nil {
 		return components.UpdateComment{}
 	}
-	return o.UpdateComment
+	return u.UpdateComment
 }

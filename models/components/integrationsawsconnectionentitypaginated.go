@@ -8,16 +8,16 @@ type IntegrationsAwsConnectionEntityPaginated struct {
 	Pagination *NullablePaginationEntity         `json:"pagination,omitempty"`
 }
 
-func (o *IntegrationsAwsConnectionEntityPaginated) GetData() []IntegrationsAwsConnectionEntity {
-	if o == nil {
+func (i *IntegrationsAwsConnectionEntityPaginated) GetData() []IntegrationsAwsConnectionEntity {
+	if i == nil {
 		return nil
 	}
-	return o.Data
+	return i.Data
 }
 
-func (o *IntegrationsAwsConnectionEntityPaginated) GetPagination() *NullablePaginationEntity {
-	if o == nil {
+func (i *IntegrationsAwsConnectionEntityPaginated) GetPagination() *NullablePaginationEntity {
+	if i == nil {
 		return nil
 	}
-	return o.Pagination
+	return i.Pagination
 }

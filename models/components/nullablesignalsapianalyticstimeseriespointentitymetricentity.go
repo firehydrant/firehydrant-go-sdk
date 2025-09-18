@@ -13,30 +13,30 @@ type NullableSignalsAPIAnalyticsTimeseriesPointEntityMetricEntity struct {
 	TotalIncidents *int `json:"total_incidents,omitempty"`
 }
 
-func (o *NullableSignalsAPIAnalyticsTimeseriesPointEntityMetricEntity) GetBucket() *string {
-	if o == nil {
+func (n *NullableSignalsAPIAnalyticsTimeseriesPointEntityMetricEntity) GetBucket() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Bucket
+	return n.Bucket
 }
 
-func (o *NullableSignalsAPIAnalyticsTimeseriesPointEntityMetricEntity) GetTotalOpenedAlerts() *int {
-	if o == nil {
+func (n *NullableSignalsAPIAnalyticsTimeseriesPointEntityMetricEntity) GetTotalOpenedAlerts() *int {
+	if n == nil {
 		return nil
 	}
-	return o.TotalOpenedAlerts
+	return n.TotalOpenedAlerts
 }
 
-func (o *NullableSignalsAPIAnalyticsTimeseriesPointEntityMetricEntity) GetTotalAckedAlerts() *int {
-	if o == nil {
+func (n *NullableSignalsAPIAnalyticsTimeseriesPointEntityMetricEntity) GetTotalAckedAlerts() *int {
+	if n == nil {
 		return nil
 	}
-	return o.TotalAckedAlerts
+	return n.TotalAckedAlerts
 }
 
-func (o *NullableSignalsAPIAnalyticsTimeseriesPointEntityMetricEntity) GetTotalIncidents() *int {
-	if o == nil {
+func (n *NullableSignalsAPIAnalyticsTimeseriesPointEntityMetricEntity) GetTotalIncidents() *int {
+	if n == nil {
 		return nil
 	}
-	return o.TotalIncidents
+	return n.TotalIncidents
 }

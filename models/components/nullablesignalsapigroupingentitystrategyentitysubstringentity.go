@@ -7,16 +7,16 @@ type NullableSignalsAPIGroupingEntityStrategyEntitySubstringEntity struct {
 	Value     *string `json:"value,omitempty"`
 }
 
-func (o *NullableSignalsAPIGroupingEntityStrategyEntitySubstringEntity) GetFieldName() *string {
-	if o == nil {
+func (n *NullableSignalsAPIGroupingEntityStrategyEntitySubstringEntity) GetFieldName() *string {
+	if n == nil {
 		return nil
 	}
-	return o.FieldName
+	return n.FieldName
 }
 
-func (o *NullableSignalsAPIGroupingEntityStrategyEntitySubstringEntity) GetValue() *string {
-	if o == nil {
+func (n *NullableSignalsAPIGroupingEntityStrategyEntitySubstringEntity) GetValue() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Value
+	return n.Value
 }

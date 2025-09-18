@@ -8,16 +8,16 @@ type ChecklistTemplateEntityPaginated struct {
 	Pagination *NullablePaginationEntity `json:"pagination,omitempty"`
 }
 
-func (o *ChecklistTemplateEntityPaginated) GetData() []ChecklistTemplateEntity {
-	if o == nil {
+func (c *ChecklistTemplateEntityPaginated) GetData() []ChecklistTemplateEntity {
+	if c == nil {
 		return nil
 	}
-	return o.Data
+	return c.Data
 }
 
-func (o *ChecklistTemplateEntityPaginated) GetPagination() *NullablePaginationEntity {
-	if o == nil {
+func (c *ChecklistTemplateEntityPaginated) GetPagination() *NullablePaginationEntity {
+	if c == nil {
 		return nil
 	}
-	return o.Pagination
+	return c.Pagination
 }

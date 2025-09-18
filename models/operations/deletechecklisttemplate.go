@@ -7,9 +7,9 @@ type DeleteChecklistTemplateRequest struct {
 	ID string `pathParam:"style=simple,explode=false,name=id"`
 }
 
-func (o *DeleteChecklistTemplateRequest) GetID() string {
-	if o == nil {
+func (d *DeleteChecklistTemplateRequest) GetID() string {
+	if d == nil {
 		return ""
 	}
-	return o.ID
+	return d.ID
 }

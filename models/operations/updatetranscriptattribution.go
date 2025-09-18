@@ -15,39 +15,39 @@ type UpdateTranscriptAttributionRequestBody struct {
 	ConferenceBridgeID *string `json:"conference_bridge_id,omitempty"`
 }
 
-func (o *UpdateTranscriptAttributionRequestBody) GetFromSpeaker() *string {
-	if o == nil {
+func (u *UpdateTranscriptAttributionRequestBody) GetFromSpeaker() *string {
+	if u == nil {
 		return nil
 	}
-	return o.FromSpeaker
+	return u.FromSpeaker
 }
 
-func (o *UpdateTranscriptAttributionRequestBody) GetFromUserID() *string {
-	if o == nil {
+func (u *UpdateTranscriptAttributionRequestBody) GetFromUserID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.FromUserID
+	return u.FromUserID
 }
 
-func (o *UpdateTranscriptAttributionRequestBody) GetToUserID() string {
-	if o == nil {
+func (u *UpdateTranscriptAttributionRequestBody) GetToUserID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ToUserID
+	return u.ToUserID
 }
 
-func (o *UpdateTranscriptAttributionRequestBody) GetTranscriptID() *string {
-	if o == nil {
+func (u *UpdateTranscriptAttributionRequestBody) GetTranscriptID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.TranscriptID
+	return u.TranscriptID
 }
 
-func (o *UpdateTranscriptAttributionRequestBody) GetConferenceBridgeID() *string {
-	if o == nil {
+func (u *UpdateTranscriptAttributionRequestBody) GetConferenceBridgeID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.ConferenceBridgeID
+	return u.ConferenceBridgeID
 }
 
 type UpdateTranscriptAttributionRequest struct {
@@ -55,16 +55,16 @@ type UpdateTranscriptAttributionRequest struct {
 	RequestBody UpdateTranscriptAttributionRequestBody `request:"mediaType=application/json"`
 }
 
-func (o *UpdateTranscriptAttributionRequest) GetIncidentID() string {
-	if o == nil {
+func (u *UpdateTranscriptAttributionRequest) GetIncidentID() string {
+	if u == nil {
 		return ""
 	}
-	return o.IncidentID
+	return u.IncidentID
 }
 
-func (o *UpdateTranscriptAttributionRequest) GetRequestBody() UpdateTranscriptAttributionRequestBody {
-	if o == nil {
+func (u *UpdateTranscriptAttributionRequest) GetRequestBody() UpdateTranscriptAttributionRequestBody {
+	if u == nil {
 		return UpdateTranscriptAttributionRequestBody{}
 	}
-	return o.RequestBody
+	return u.RequestBody
 }

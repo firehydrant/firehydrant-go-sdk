@@ -8,23 +8,23 @@ type PublicAPIV1SimilarIncidentEntity struct {
 	Distance *float32 `json:"distance,omitempty"`
 }
 
-func (o *PublicAPIV1SimilarIncidentEntity) GetID() *string {
-	if o == nil {
+func (p *PublicAPIV1SimilarIncidentEntity) GetID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.ID
+	return p.ID
 }
 
-func (o *PublicAPIV1SimilarIncidentEntity) GetName() *string {
-	if o == nil {
+func (p *PublicAPIV1SimilarIncidentEntity) GetName() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Name
+	return p.Name
 }
 
-func (o *PublicAPIV1SimilarIncidentEntity) GetDistance() *float32 {
-	if o == nil {
+func (p *PublicAPIV1SimilarIncidentEntity) GetDistance() *float32 {
+	if p == nil {
 		return nil
 	}
-	return o.Distance
+	return p.Distance
 }

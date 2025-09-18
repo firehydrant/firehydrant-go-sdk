@@ -10,16 +10,16 @@ type TicketingProjectInboundMappableFieldEntity struct {
 	Label *string `json:"label,omitempty"`
 }
 
-func (o *TicketingProjectInboundMappableFieldEntity) GetValue() *string {
-	if o == nil {
+func (t *TicketingProjectInboundMappableFieldEntity) GetValue() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Value
+	return t.Value
 }
 
-func (o *TicketingProjectInboundMappableFieldEntity) GetLabel() *string {
-	if o == nil {
+func (t *TicketingProjectInboundMappableFieldEntity) GetLabel() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Label
+	return t.Label
 }

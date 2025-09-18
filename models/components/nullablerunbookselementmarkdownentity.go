@@ -6,9 +6,9 @@ type NullableRunbooksElementMarkdownEntity struct {
 	Text *string `json:"text,omitempty"`
 }
 
-func (o *NullableRunbooksElementMarkdownEntity) GetText() *string {
-	if o == nil {
+func (n *NullableRunbooksElementMarkdownEntity) GetText() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Text
+	return n.Text
 }

@@ -11,44 +11,44 @@ type ConversationsAPIEntitiesReference struct {
 	Channel       *NullableConversationsAPIEntitiesChannel `json:"channel,omitempty"`
 }
 
-func (o *ConversationsAPIEntitiesReference) GetID() *string {
-	if o == nil {
+func (c *ConversationsAPIEntitiesReference) GetID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *ConversationsAPIEntitiesReference) GetResourceClass() *string {
-	if o == nil {
+func (c *ConversationsAPIEntitiesReference) GetResourceClass() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ResourceClass
+	return c.ResourceClass
 }
 
-func (o *ConversationsAPIEntitiesReference) GetResourceID() *string {
-	if o == nil {
+func (c *ConversationsAPIEntitiesReference) GetResourceID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ResourceID
+	return c.ResourceID
 }
 
-func (o *ConversationsAPIEntitiesReference) GetField() *string {
-	if o == nil {
+func (c *ConversationsAPIEntitiesReference) GetField() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Field
+	return c.Field
 }
 
-func (o *ConversationsAPIEntitiesReference) GetCommentsURL() *string {
-	if o == nil {
+func (c *ConversationsAPIEntitiesReference) GetCommentsURL() *string {
+	if c == nil {
 		return nil
 	}
-	return o.CommentsURL
+	return c.CommentsURL
 }
 
-func (o *ConversationsAPIEntitiesReference) GetChannel() *NullableConversationsAPIEntitiesChannel {
-	if o == nil {
+func (c *ConversationsAPIEntitiesReference) GetChannel() *NullableConversationsAPIEntitiesChannel {
+	if c == nil {
 		return nil
 	}
-	return o.Channel
+	return c.Channel
 }

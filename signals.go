@@ -9799,9 +9799,9 @@ func (s *Signals) ListNotificationPolicySettings(ctx context.Context, page *int,
 
 }
 
-// CreateHandoffNotificationSetting - Create a notification policy
+// CreateNotificationPolicy - Create a notification policy
 // Create a Signals notification policy.
-func (s *Signals) CreateHandoffNotificationSetting(ctx context.Context, request operations.CreateHandoffNotificationSettingRequest, opts ...operations.Option) (*components.SignalsAPINotificationPolicyItemEntity, error) {
+func (s *Signals) CreateNotificationPolicy(ctx context.Context, request operations.CreateNotificationPolicyRequest, opts ...operations.Option) (*components.SignalsAPINotificationPolicyItemEntity, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -9830,7 +9830,7 @@ func (s *Signals) CreateHandoffNotificationSetting(ctx context.Context, request 
 		SDKConfiguration: s.sdkConfiguration,
 		BaseURL:          baseURL,
 		Context:          ctx,
-		OperationID:      "create_handoff_notification_setting",
+		OperationID:      "create_notification_policy",
 		OAuth2Scopes:     []string{},
 		SecuritySource:   s.sdkConfiguration.Security,
 	}

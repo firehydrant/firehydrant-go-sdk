@@ -66,51 +66,51 @@ func (i *IntegrationsAwsCloudtrailBatchEntity) UnmarshalJSON(data []byte) error 
 	return nil
 }
 
-func (o *IntegrationsAwsCloudtrailBatchEntity) GetID() *string {
-	if o == nil {
+func (i *IntegrationsAwsCloudtrailBatchEntity) GetID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ID
+	return i.ID
 }
 
-func (o *IntegrationsAwsCloudtrailBatchEntity) GetEventsCreated() *int {
-	if o == nil {
+func (i *IntegrationsAwsCloudtrailBatchEntity) GetEventsCreated() *int {
+	if i == nil {
 		return nil
 	}
-	return o.EventsCreated
+	return i.EventsCreated
 }
 
-func (o *IntegrationsAwsCloudtrailBatchEntity) GetStatus() *IntegrationsAwsCloudtrailBatchEntityStatus {
-	if o == nil {
+func (i *IntegrationsAwsCloudtrailBatchEntity) GetStatus() *IntegrationsAwsCloudtrailBatchEntityStatus {
+	if i == nil {
 		return nil
 	}
-	return o.Status
+	return i.Status
 }
 
-func (o *IntegrationsAwsCloudtrailBatchEntity) GetStartsAt() *time.Time {
-	if o == nil {
+func (i *IntegrationsAwsCloudtrailBatchEntity) GetStartsAt() *time.Time {
+	if i == nil {
 		return nil
 	}
-	return o.StartsAt
+	return i.StartsAt
 }
 
-func (o *IntegrationsAwsCloudtrailBatchEntity) GetEndsAt() *time.Time {
-	if o == nil {
+func (i *IntegrationsAwsCloudtrailBatchEntity) GetEndsAt() *time.Time {
+	if i == nil {
 		return nil
 	}
-	return o.EndsAt
+	return i.EndsAt
 }
 
-func (o *IntegrationsAwsCloudtrailBatchEntity) GetConnection() *NullableIntegrationsAwsConnectionEntity {
-	if o == nil {
+func (i *IntegrationsAwsCloudtrailBatchEntity) GetConnection() *NullableIntegrationsAwsConnectionEntity {
+	if i == nil {
 		return nil
 	}
-	return o.Connection
+	return i.Connection
 }
 
-func (o *IntegrationsAwsCloudtrailBatchEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (i *IntegrationsAwsCloudtrailBatchEntity) GetCreatedAt() *time.Time {
+	if i == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return i.CreatedAt
 }

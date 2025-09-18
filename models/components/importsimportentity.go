@@ -61,16 +61,16 @@ func (i *ImportsImportEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ImportsImportEntity) GetState() *ImportsImportEntityState {
-	if o == nil {
+func (i *ImportsImportEntity) GetState() *ImportsImportEntityState {
+	if i == nil {
 		return nil
 	}
-	return o.State
+	return i.State
 }
 
-func (o *ImportsImportEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (i *ImportsImportEntity) GetUpdatedAt() *time.Time {
+	if i == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return i.UpdatedAt
 }

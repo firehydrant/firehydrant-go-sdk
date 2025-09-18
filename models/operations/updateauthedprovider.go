@@ -7,11 +7,11 @@ type UpdateAuthedProviderRequestBody struct {
 	IntegrationDefault *bool `json:"integration_default,omitempty"`
 }
 
-func (o *UpdateAuthedProviderRequestBody) GetIntegrationDefault() *bool {
-	if o == nil {
+func (u *UpdateAuthedProviderRequestBody) GetIntegrationDefault() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.IntegrationDefault
+	return u.IntegrationDefault
 }
 
 type UpdateAuthedProviderRequest struct {
@@ -24,30 +24,30 @@ type UpdateAuthedProviderRequest struct {
 	RequestBody      *UpdateAuthedProviderRequestBody `request:"mediaType=application/json"`
 }
 
-func (o *UpdateAuthedProviderRequest) GetIntegrationSlug() string {
-	if o == nil {
+func (u *UpdateAuthedProviderRequest) GetIntegrationSlug() string {
+	if u == nil {
 		return ""
 	}
-	return o.IntegrationSlug
+	return u.IntegrationSlug
 }
 
-func (o *UpdateAuthedProviderRequest) GetConnectionID() string {
-	if o == nil {
+func (u *UpdateAuthedProviderRequest) GetConnectionID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ConnectionID
+	return u.ConnectionID
 }
 
-func (o *UpdateAuthedProviderRequest) GetAuthedProviderID() string {
-	if o == nil {
+func (u *UpdateAuthedProviderRequest) GetAuthedProviderID() string {
+	if u == nil {
 		return ""
 	}
-	return o.AuthedProviderID
+	return u.AuthedProviderID
 }
 
-func (o *UpdateAuthedProviderRequest) GetRequestBody() *UpdateAuthedProviderRequestBody {
-	if o == nil {
+func (u *UpdateAuthedProviderRequest) GetRequestBody() *UpdateAuthedProviderRequestBody {
+	if u == nil {
 		return nil
 	}
-	return o.RequestBody
+	return u.RequestBody
 }

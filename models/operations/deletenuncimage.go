@@ -7,16 +7,16 @@ type DeleteNuncImageRequest struct {
 	Type             string `pathParam:"style=simple,explode=false,name=type"`
 }
 
-func (o *DeleteNuncImageRequest) GetNuncConnectionID() string {
-	if o == nil {
+func (d *DeleteNuncImageRequest) GetNuncConnectionID() string {
+	if d == nil {
 		return ""
 	}
-	return o.NuncConnectionID
+	return d.NuncConnectionID
 }
 
-func (o *DeleteNuncImageRequest) GetType() string {
-	if o == nil {
+func (d *DeleteNuncImageRequest) GetType() string {
+	if d == nil {
 		return ""
 	}
-	return o.Type
+	return d.Type
 }

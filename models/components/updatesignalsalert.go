@@ -8,9 +8,9 @@ type UpdateSignalsAlert struct {
 	Noise bool `json:"noise"`
 }
 
-func (o *UpdateSignalsAlert) GetNoise() bool {
-	if o == nil {
+func (u *UpdateSignalsAlert) GetNoise() bool {
+	if u == nil {
 		return false
 	}
-	return o.Noise
+	return u.Noise
 }

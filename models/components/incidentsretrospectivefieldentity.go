@@ -67,65 +67,65 @@ type IncidentsRetrospectiveFieldEntity struct {
 	RequiredAtMilestoneID *string                                `json:"required_at_milestone_id,omitempty"`
 }
 
-func (o *IncidentsRetrospectiveFieldEntity) GetID() *string {
-	if o == nil {
+func (i *IncidentsRetrospectiveFieldEntity) GetID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ID
+	return i.ID
 }
 
-func (o *IncidentsRetrospectiveFieldEntity) GetLabel() *string {
-	if o == nil {
+func (i *IncidentsRetrospectiveFieldEntity) GetLabel() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Label
+	return i.Label
 }
 
-func (o *IncidentsRetrospectiveFieldEntity) GetType() *IncidentsRetrospectiveFieldEntityType {
-	if o == nil {
+func (i *IncidentsRetrospectiveFieldEntity) GetType() *IncidentsRetrospectiveFieldEntityType {
+	if i == nil {
 		return nil
 	}
-	return o.Type
+	return i.Type
 }
 
-func (o *IncidentsRetrospectiveFieldEntity) GetHelpText() *string {
-	if o == nil {
+func (i *IncidentsRetrospectiveFieldEntity) GetHelpText() *string {
+	if i == nil {
 		return nil
 	}
-	return o.HelpText
+	return i.HelpText
 }
 
-func (o *IncidentsRetrospectiveFieldEntity) GetPermissibleValues() []string {
-	if o == nil {
+func (i *IncidentsRetrospectiveFieldEntity) GetPermissibleValues() []string {
+	if i == nil {
 		return nil
 	}
-	return o.PermissibleValues
+	return i.PermissibleValues
 }
 
-func (o *IncidentsRetrospectiveFieldEntity) GetIsRequired() *bool {
-	if o == nil {
+func (i *IncidentsRetrospectiveFieldEntity) GetIsRequired() *bool {
+	if i == nil {
 		return nil
 	}
-	return o.IsRequired
+	return i.IsRequired
 }
 
-func (o *IncidentsRetrospectiveFieldEntity) GetValue() *string {
-	if o == nil {
+func (i *IncidentsRetrospectiveFieldEntity) GetValue() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Value
+	return i.Value
 }
 
-func (o *IncidentsRetrospectiveFieldEntity) GetSchema() []Schema {
-	if o == nil {
+func (i *IncidentsRetrospectiveFieldEntity) GetSchema() []Schema {
+	if i == nil {
 		return nil
 	}
-	return o.Schema
+	return i.Schema
 }
 
-func (o *IncidentsRetrospectiveFieldEntity) GetRequiredAtMilestoneID() *string {
-	if o == nil {
+func (i *IncidentsRetrospectiveFieldEntity) GetRequiredAtMilestoneID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.RequiredAtMilestoneID
+	return i.RequiredAtMilestoneID
 }

@@ -9,30 +9,30 @@ type MembershipEntity struct {
 	DefaultIncidentRole   *NullableIncidentRoleEntity `json:"default_incident_role,omitempty"`
 }
 
-func (o *MembershipEntity) GetUser() *NullableUserEntity {
-	if o == nil {
+func (m *MembershipEntity) GetUser() *NullableUserEntity {
+	if m == nil {
 		return nil
 	}
-	return o.User
+	return m.User
 }
 
-func (o *MembershipEntity) GetSchedule() *NullableScheduleEntity {
-	if o == nil {
+func (m *MembershipEntity) GetSchedule() *NullableScheduleEntity {
+	if m == nil {
 		return nil
 	}
-	return o.Schedule
+	return m.Schedule
 }
 
-func (o *MembershipEntity) GetSignalsOnCallSchedule() *NullableSuccinctEntity {
-	if o == nil {
+func (m *MembershipEntity) GetSignalsOnCallSchedule() *NullableSuccinctEntity {
+	if m == nil {
 		return nil
 	}
-	return o.SignalsOnCallSchedule
+	return m.SignalsOnCallSchedule
 }
 
-func (o *MembershipEntity) GetDefaultIncidentRole() *NullableIncidentRoleEntity {
-	if o == nil {
+func (m *MembershipEntity) GetDefaultIncidentRole() *NullableIncidentRoleEntity {
+	if m == nil {
 		return nil
 	}
-	return o.DefaultIncidentRole
+	return m.DefaultIncidentRole
 }

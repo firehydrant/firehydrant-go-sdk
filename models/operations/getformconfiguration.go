@@ -6,9 +6,9 @@ type GetFormConfigurationRequest struct {
 	Slug string `pathParam:"style=simple,explode=false,name=slug"`
 }
 
-func (o *GetFormConfigurationRequest) GetSlug() string {
-	if o == nil {
+func (g *GetFormConfigurationRequest) GetSlug() string {
+	if g == nil {
 		return ""
 	}
-	return o.Slug
+	return g.Slug
 }

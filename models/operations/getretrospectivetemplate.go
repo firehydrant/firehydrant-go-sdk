@@ -6,9 +6,9 @@ type GetRetrospectiveTemplateRequest struct {
 	RetrospectiveTemplateID string `pathParam:"style=simple,explode=false,name=retrospective_template_id"`
 }
 
-func (o *GetRetrospectiveTemplateRequest) GetRetrospectiveTemplateID() string {
-	if o == nil {
+func (g *GetRetrospectiveTemplateRequest) GetRetrospectiveTemplateID() string {
+	if g == nil {
 		return ""
 	}
-	return o.RetrospectiveTemplateID
+	return g.RetrospectiveTemplateID
 }

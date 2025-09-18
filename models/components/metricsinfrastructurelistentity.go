@@ -8,9 +8,9 @@ type MetricsInfrastructureListEntity struct {
 	Data []MetricsInfrastructureMetricsEntity `json:"data,omitempty"`
 }
 
-func (o *MetricsInfrastructureListEntity) GetData() []MetricsInfrastructureMetricsEntity {
-	if o == nil {
+func (m *MetricsInfrastructureListEntity) GetData() []MetricsInfrastructureMetricsEntity {
+	if m == nil {
 		return nil
 	}
-	return o.Data
+	return m.Data
 }

@@ -7,16 +7,16 @@ type NullableSignalsAPIEscalationPolicyHandoffStepEntity struct {
 	Target *NullableSignalsAPITargetEntity `json:"target,omitempty"`
 }
 
-func (o *NullableSignalsAPIEscalationPolicyHandoffStepEntity) GetID() *string {
-	if o == nil {
+func (n *NullableSignalsAPIEscalationPolicyHandoffStepEntity) GetID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ID
+	return n.ID
 }
 
-func (o *NullableSignalsAPIEscalationPolicyHandoffStepEntity) GetTarget() *NullableSignalsAPITargetEntity {
-	if o == nil {
+func (n *NullableSignalsAPIEscalationPolicyHandoffStepEntity) GetTarget() *NullableSignalsAPITargetEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Target
+	return n.Target
 }

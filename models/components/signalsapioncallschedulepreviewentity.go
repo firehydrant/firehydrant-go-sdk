@@ -8,16 +8,16 @@ type SignalsAPIOnCallSchedulePreviewEntity struct {
 	Rotations []SignalsAPIOnCallSchedulePreviewEntityRotationPreviewEntity `json:"rotations,omitempty"`
 }
 
-func (o *SignalsAPIOnCallSchedulePreviewEntity) GetName() *string {
-	if o == nil {
+func (s *SignalsAPIOnCallSchedulePreviewEntity) GetName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Name
+	return s.Name
 }
 
-func (o *SignalsAPIOnCallSchedulePreviewEntity) GetRotations() []SignalsAPIOnCallSchedulePreviewEntityRotationPreviewEntity {
-	if o == nil {
+func (s *SignalsAPIOnCallSchedulePreviewEntity) GetRotations() []SignalsAPIOnCallSchedulePreviewEntityRotationPreviewEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Rotations
+	return s.Rotations
 }

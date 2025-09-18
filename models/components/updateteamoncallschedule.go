@@ -15,11 +15,11 @@ type UpdateTeamOnCallScheduleMember struct {
 	UserID *string `json:"user_id,omitempty"`
 }
 
-func (o *UpdateTeamOnCallScheduleMember) GetUserID() *string {
-	if o == nil {
+func (u *UpdateTeamOnCallScheduleMember) GetUserID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.UserID
+	return u.UserID
 }
 
 // UpdateTeamOnCallScheduleType - The type of strategy. Must be one of "daily", "weekly", or "custom".
@@ -106,32 +106,32 @@ type UpdateTeamOnCallScheduleStrategy struct {
 	ShiftDuration *string `json:"shift_duration,omitempty"`
 }
 
-func (o *UpdateTeamOnCallScheduleStrategy) GetType() UpdateTeamOnCallScheduleType {
-	if o == nil {
+func (u *UpdateTeamOnCallScheduleStrategy) GetType() UpdateTeamOnCallScheduleType {
+	if u == nil {
 		return UpdateTeamOnCallScheduleType("")
 	}
-	return o.Type
+	return u.Type
 }
 
-func (o *UpdateTeamOnCallScheduleStrategy) GetHandoffTime() *string {
-	if o == nil {
+func (u *UpdateTeamOnCallScheduleStrategy) GetHandoffTime() *string {
+	if u == nil {
 		return nil
 	}
-	return o.HandoffTime
+	return u.HandoffTime
 }
 
-func (o *UpdateTeamOnCallScheduleStrategy) GetHandoffDay() *UpdateTeamOnCallScheduleHandoffDay {
-	if o == nil {
+func (u *UpdateTeamOnCallScheduleStrategy) GetHandoffDay() *UpdateTeamOnCallScheduleHandoffDay {
+	if u == nil {
 		return nil
 	}
-	return o.HandoffDay
+	return u.HandoffDay
 }
 
-func (o *UpdateTeamOnCallScheduleStrategy) GetShiftDuration() *string {
-	if o == nil {
+func (u *UpdateTeamOnCallScheduleStrategy) GetShiftDuration() *string {
+	if u == nil {
 		return nil
 	}
-	return o.ShiftDuration
+	return u.ShiftDuration
 }
 
 // UpdateTeamOnCallScheduleStartDay - The day of the week on which the restriction should start, as its long-form name (e.g. "monday", "tuesday", etc).
@@ -229,32 +229,32 @@ type UpdateTeamOnCallScheduleRestriction struct {
 	EndTime string `json:"end_time"`
 }
 
-func (o *UpdateTeamOnCallScheduleRestriction) GetStartDay() UpdateTeamOnCallScheduleStartDay {
-	if o == nil {
+func (u *UpdateTeamOnCallScheduleRestriction) GetStartDay() UpdateTeamOnCallScheduleStartDay {
+	if u == nil {
 		return UpdateTeamOnCallScheduleStartDay("")
 	}
-	return o.StartDay
+	return u.StartDay
 }
 
-func (o *UpdateTeamOnCallScheduleRestriction) GetStartTime() string {
-	if o == nil {
+func (u *UpdateTeamOnCallScheduleRestriction) GetStartTime() string {
+	if u == nil {
 		return ""
 	}
-	return o.StartTime
+	return u.StartTime
 }
 
-func (o *UpdateTeamOnCallScheduleRestriction) GetEndDay() UpdateTeamOnCallScheduleEndDay {
-	if o == nil {
+func (u *UpdateTeamOnCallScheduleRestriction) GetEndDay() UpdateTeamOnCallScheduleEndDay {
+	if u == nil {
 		return UpdateTeamOnCallScheduleEndDay("")
 	}
-	return o.EndDay
+	return u.EndDay
 }
 
-func (o *UpdateTeamOnCallScheduleRestriction) GetEndTime() string {
-	if o == nil {
+func (u *UpdateTeamOnCallScheduleRestriction) GetEndTime() string {
+	if u == nil {
 		return ""
 	}
-	return o.EndTime
+	return u.EndTime
 }
 
 // UpdateTeamOnCallSchedule - Update a Signals on-call schedule by ID. For backwards compatibility, all parameters except for
@@ -290,86 +290,86 @@ type UpdateTeamOnCallSchedule struct {
 	MemberIds []string `json:"member_ids,omitempty"`
 }
 
-func (o *UpdateTeamOnCallSchedule) GetName() *string {
-	if o == nil {
+func (u *UpdateTeamOnCallSchedule) GetName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Name
+	return u.Name
 }
 
-func (o *UpdateTeamOnCallSchedule) GetDescription() *string {
-	if o == nil {
+func (u *UpdateTeamOnCallSchedule) GetDescription() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Description
+	return u.Description
 }
 
-func (o *UpdateTeamOnCallSchedule) GetRotationName() *string {
-	if o == nil {
+func (u *UpdateTeamOnCallSchedule) GetRotationName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.RotationName
+	return u.RotationName
 }
 
-func (o *UpdateTeamOnCallSchedule) GetRotationDescription() *string {
-	if o == nil {
+func (u *UpdateTeamOnCallSchedule) GetRotationDescription() *string {
+	if u == nil {
 		return nil
 	}
-	return o.RotationDescription
+	return u.RotationDescription
 }
 
-func (o *UpdateTeamOnCallSchedule) GetColor() *string {
-	if o == nil {
+func (u *UpdateTeamOnCallSchedule) GetColor() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Color
+	return u.Color
 }
 
-func (o *UpdateTeamOnCallSchedule) GetTimeZone() *string {
-	if o == nil {
+func (u *UpdateTeamOnCallSchedule) GetTimeZone() *string {
+	if u == nil {
 		return nil
 	}
-	return o.TimeZone
+	return u.TimeZone
 }
 
-func (o *UpdateTeamOnCallSchedule) GetSlackUserGroupID() *string {
-	if o == nil {
+func (u *UpdateTeamOnCallSchedule) GetSlackUserGroupID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.SlackUserGroupID
+	return u.SlackUserGroupID
 }
 
-func (o *UpdateTeamOnCallSchedule) GetMembers() []UpdateTeamOnCallScheduleMember {
-	if o == nil {
+func (u *UpdateTeamOnCallSchedule) GetMembers() []UpdateTeamOnCallScheduleMember {
+	if u == nil {
 		return nil
 	}
-	return o.Members
+	return u.Members
 }
 
-func (o *UpdateTeamOnCallSchedule) GetStrategy() *UpdateTeamOnCallScheduleStrategy {
-	if o == nil {
+func (u *UpdateTeamOnCallSchedule) GetStrategy() *UpdateTeamOnCallScheduleStrategy {
+	if u == nil {
 		return nil
 	}
-	return o.Strategy
+	return u.Strategy
 }
 
-func (o *UpdateTeamOnCallSchedule) GetRestrictions() []UpdateTeamOnCallScheduleRestriction {
-	if o == nil {
+func (u *UpdateTeamOnCallSchedule) GetRestrictions() []UpdateTeamOnCallScheduleRestriction {
+	if u == nil {
 		return nil
 	}
-	return o.Restrictions
+	return u.Restrictions
 }
 
-func (o *UpdateTeamOnCallSchedule) GetEffectiveAt() *string {
-	if o == nil {
+func (u *UpdateTeamOnCallSchedule) GetEffectiveAt() *string {
+	if u == nil {
 		return nil
 	}
-	return o.EffectiveAt
+	return u.EffectiveAt
 }
 
-func (o *UpdateTeamOnCallSchedule) GetMemberIds() []string {
-	if o == nil {
+func (u *UpdateTeamOnCallSchedule) GetMemberIds() []string {
+	if u == nil {
 		return nil
 	}
-	return o.MemberIds
+	return u.MemberIds
 }

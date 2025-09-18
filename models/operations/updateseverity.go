@@ -11,16 +11,16 @@ type UpdateSeverityRequest struct {
 	UpdateSeverity components.UpdateSeverity `request:"mediaType=application/json"`
 }
 
-func (o *UpdateSeverityRequest) GetSeveritySlug() string {
-	if o == nil {
+func (u *UpdateSeverityRequest) GetSeveritySlug() string {
+	if u == nil {
 		return ""
 	}
-	return o.SeveritySlug
+	return u.SeveritySlug
 }
 
-func (o *UpdateSeverityRequest) GetUpdateSeverity() components.UpdateSeverity {
-	if o == nil {
+func (u *UpdateSeverityRequest) GetUpdateSeverity() components.UpdateSeverity {
+	if u == nil {
 		return components.UpdateSeverity{}
 	}
-	return o.UpdateSeverity
+	return u.UpdateSeverity
 }

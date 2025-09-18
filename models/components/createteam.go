@@ -8,18 +8,18 @@ type CreateTeamMsTeamsChannel struct {
 	MsTeamID  string `json:"ms_team_id"`
 }
 
-func (o *CreateTeamMsTeamsChannel) GetChannelID() string {
-	if o == nil {
+func (c *CreateTeamMsTeamsChannel) GetChannelID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ChannelID
+	return c.ChannelID
 }
 
-func (o *CreateTeamMsTeamsChannel) GetMsTeamID() string {
-	if o == nil {
+func (c *CreateTeamMsTeamsChannel) GetMsTeamID() string {
+	if c == nil {
 		return ""
 	}
-	return o.MsTeamID
+	return c.MsTeamID
 }
 
 type CreateTeamMembership struct {
@@ -33,32 +33,32 @@ type CreateTeamMembership struct {
 	IncidentRoleID *string `json:"incident_role_id,omitempty"`
 }
 
-func (o *CreateTeamMembership) GetUserID() *string {
-	if o == nil {
+func (c *CreateTeamMembership) GetUserID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.UserID
+	return c.UserID
 }
 
-func (o *CreateTeamMembership) GetScheduleID() *string {
-	if o == nil {
+func (c *CreateTeamMembership) GetScheduleID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ScheduleID
+	return c.ScheduleID
 }
 
-func (o *CreateTeamMembership) GetSignalsOnCallScheduleID() *string {
-	if o == nil {
+func (c *CreateTeamMembership) GetSignalsOnCallScheduleID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.SignalsOnCallScheduleID
+	return c.SignalsOnCallScheduleID
 }
 
-func (o *CreateTeamMembership) GetIncidentRoleID() *string {
-	if o == nil {
+func (c *CreateTeamMembership) GetIncidentRoleID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.IncidentRoleID
+	return c.IncidentRoleID
 }
 
 // CreateTeam - Create a new team
@@ -76,51 +76,51 @@ type CreateTeam struct {
 	InviteEmails []string `json:"invite_emails,omitempty"`
 }
 
-func (o *CreateTeam) GetName() string {
-	if o == nil {
+func (c *CreateTeam) GetName() string {
+	if c == nil {
 		return ""
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CreateTeam) GetDescription() *string {
-	if o == nil {
+func (c *CreateTeam) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *CreateTeam) GetSlug() *string {
-	if o == nil {
+func (c *CreateTeam) GetSlug() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Slug
+	return c.Slug
 }
 
-func (o *CreateTeam) GetSlackChannelID() *string {
-	if o == nil {
+func (c *CreateTeam) GetSlackChannelID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.SlackChannelID
+	return c.SlackChannelID
 }
 
-func (o *CreateTeam) GetMsTeamsChannel() *CreateTeamMsTeamsChannel {
-	if o == nil {
+func (c *CreateTeam) GetMsTeamsChannel() *CreateTeamMsTeamsChannel {
+	if c == nil {
 		return nil
 	}
-	return o.MsTeamsChannel
+	return c.MsTeamsChannel
 }
 
-func (o *CreateTeam) GetMemberships() []CreateTeamMembership {
-	if o == nil {
+func (c *CreateTeam) GetMemberships() []CreateTeamMembership {
+	if c == nil {
 		return nil
 	}
-	return o.Memberships
+	return c.Memberships
 }
 
-func (o *CreateTeam) GetInviteEmails() []string {
-	if o == nil {
+func (c *CreateTeam) GetInviteEmails() []string {
+	if c == nil {
 		return nil
 	}
-	return o.InviteEmails
+	return c.InviteEmails
 }

@@ -8,16 +8,16 @@ type CreateIncidentAlertRequest struct {
 	RequestBody []string `request:"mediaType=application/json"`
 }
 
-func (o *CreateIncidentAlertRequest) GetIncidentID() string {
-	if o == nil {
+func (c *CreateIncidentAlertRequest) GetIncidentID() string {
+	if c == nil {
 		return ""
 	}
-	return o.IncidentID
+	return c.IncidentID
 }
 
-func (o *CreateIncidentAlertRequest) GetRequestBody() []string {
-	if o == nil {
+func (c *CreateIncidentAlertRequest) GetRequestBody() []string {
+	if c == nil {
 		return []string{}
 	}
-	return o.RequestBody
+	return c.RequestBody
 }

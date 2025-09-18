@@ -37,23 +37,23 @@ func (l *ListAuditEventsRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ListAuditEventsRequest) GetCursor() *string {
-	if o == nil {
+func (l *ListAuditEventsRequest) GetCursor() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Cursor
+	return l.Cursor
 }
 
-func (o *ListAuditEventsRequest) GetFilter() *string {
-	if o == nil {
+func (l *ListAuditEventsRequest) GetFilter() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Filter
+	return l.Filter
 }
 
-func (o *ListAuditEventsRequest) GetLimit() *int {
-	if o == nil {
+func (l *ListAuditEventsRequest) GetLimit() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Limit
+	return l.Limit
 }

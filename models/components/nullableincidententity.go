@@ -97,401 +97,401 @@ func (n *NullableIncidentEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *NullableIncidentEntity) GetID() *string {
-	if o == nil {
+func (n *NullableIncidentEntity) GetID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ID
+	return n.ID
 }
 
-func (o *NullableIncidentEntity) GetName() *string {
-	if o == nil {
+func (n *NullableIncidentEntity) GetName() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Name
+	return n.Name
 }
 
-func (o *NullableIncidentEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (n *NullableIncidentEntity) GetCreatedAt() *time.Time {
+	if n == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return n.CreatedAt
 }
 
-func (o *NullableIncidentEntity) GetStartedAt() *time.Time {
-	if o == nil {
+func (n *NullableIncidentEntity) GetStartedAt() *time.Time {
+	if n == nil {
 		return nil
 	}
-	return o.StartedAt
+	return n.StartedAt
 }
 
-func (o *NullableIncidentEntity) GetDiscardedAt() *time.Time {
-	if o == nil {
+func (n *NullableIncidentEntity) GetDiscardedAt() *time.Time {
+	if n == nil {
 		return nil
 	}
-	return o.DiscardedAt
+	return n.DiscardedAt
 }
 
-func (o *NullableIncidentEntity) GetSummary() *string {
-	if o == nil {
+func (n *NullableIncidentEntity) GetSummary() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Summary
+	return n.Summary
 }
 
-func (o *NullableIncidentEntity) GetCustomerImpactSummary() *string {
-	if o == nil {
+func (n *NullableIncidentEntity) GetCustomerImpactSummary() *string {
+	if n == nil {
 		return nil
 	}
-	return o.CustomerImpactSummary
+	return n.CustomerImpactSummary
 }
 
-func (o *NullableIncidentEntity) GetDescription() *string {
-	if o == nil {
+func (n *NullableIncidentEntity) GetDescription() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Description
+	return n.Description
 }
 
-func (o *NullableIncidentEntity) GetCurrentMilestone() *string {
-	if o == nil {
+func (n *NullableIncidentEntity) GetCurrentMilestone() *string {
+	if n == nil {
 		return nil
 	}
-	return o.CurrentMilestone
+	return n.CurrentMilestone
 }
 
-func (o *NullableIncidentEntity) GetNumber() *int {
-	if o == nil {
+func (n *NullableIncidentEntity) GetNumber() *int {
+	if n == nil {
 		return nil
 	}
-	return o.Number
+	return n.Number
 }
 
-func (o *NullableIncidentEntity) GetPriority() *string {
-	if o == nil {
+func (n *NullableIncidentEntity) GetPriority() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Priority
+	return n.Priority
 }
 
-func (o *NullableIncidentEntity) GetSeverity() *string {
-	if o == nil {
+func (n *NullableIncidentEntity) GetSeverity() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Severity
+	return n.Severity
 }
 
-func (o *NullableIncidentEntity) GetSeverityColor() *string {
-	if o == nil {
+func (n *NullableIncidentEntity) GetSeverityColor() *string {
+	if n == nil {
 		return nil
 	}
-	return o.SeverityColor
+	return n.SeverityColor
 }
 
-func (o *NullableIncidentEntity) GetSeverityImpact() *string {
-	if o == nil {
+func (n *NullableIncidentEntity) GetSeverityImpact() *string {
+	if n == nil {
 		return nil
 	}
-	return o.SeverityImpact
+	return n.SeverityImpact
 }
 
-func (o *NullableIncidentEntity) GetSeverityCondition() *string {
-	if o == nil {
+func (n *NullableIncidentEntity) GetSeverityCondition() *string {
+	if n == nil {
 		return nil
 	}
-	return o.SeverityCondition
+	return n.SeverityCondition
 }
 
-func (o *NullableIncidentEntity) GetTagList() []string {
-	if o == nil {
+func (n *NullableIncidentEntity) GetTagList() []string {
+	if n == nil {
 		return nil
 	}
-	return o.TagList
+	return n.TagList
 }
 
-func (o *NullableIncidentEntity) GetIncidentType() *NullableSuccinctEntity {
-	if o == nil {
+func (n *NullableIncidentEntity) GetIncidentType() *NullableSuccinctEntity {
+	if n == nil {
 		return nil
 	}
-	return o.IncidentType
+	return n.IncidentType
 }
 
-func (o *NullableIncidentEntity) GetSeverityImpactObject() *NullableSeverityMatrixImpactEntity {
-	if o == nil {
+func (n *NullableIncidentEntity) GetSeverityImpactObject() *NullableSeverityMatrixImpactEntity {
+	if n == nil {
 		return nil
 	}
-	return o.SeverityImpactObject
+	return n.SeverityImpactObject
 }
 
-func (o *NullableIncidentEntity) GetSeverityConditionObject() *NullableSeverityMatrixConditionEntity {
-	if o == nil {
+func (n *NullableIncidentEntity) GetSeverityConditionObject() *NullableSeverityMatrixConditionEntity {
+	if n == nil {
 		return nil
 	}
-	return o.SeverityConditionObject
+	return n.SeverityConditionObject
 }
 
-func (o *NullableIncidentEntity) GetPrivateID() *string {
-	if o == nil {
+func (n *NullableIncidentEntity) GetPrivateID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.PrivateID
+	return n.PrivateID
 }
 
-func (o *NullableIncidentEntity) GetOrganizationID() *string {
-	if o == nil {
+func (n *NullableIncidentEntity) GetOrganizationID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.OrganizationID
+	return n.OrganizationID
 }
 
-func (o *NullableIncidentEntity) GetMilestones() []IncidentsMilestoneEntity {
-	if o == nil {
+func (n *NullableIncidentEntity) GetMilestones() []IncidentsMilestoneEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Milestones
+	return n.Milestones
 }
 
-func (o *NullableIncidentEntity) GetLifecyclePhases() []IncidentsLifecyclePhaseEntity {
-	if o == nil {
+func (n *NullableIncidentEntity) GetLifecyclePhases() []IncidentsLifecyclePhaseEntity {
+	if n == nil {
 		return nil
 	}
-	return o.LifecyclePhases
+	return n.LifecyclePhases
 }
 
-func (o *NullableIncidentEntity) GetLifecycleMeasurements() []IncidentsLifecycleMeasurementEntity {
-	if o == nil {
+func (n *NullableIncidentEntity) GetLifecycleMeasurements() []IncidentsLifecycleMeasurementEntity {
+	if n == nil {
 		return nil
 	}
-	return o.LifecycleMeasurements
+	return n.LifecycleMeasurements
 }
 
-func (o *NullableIncidentEntity) GetActive() *bool {
-	if o == nil {
+func (n *NullableIncidentEntity) GetActive() *bool {
+	if n == nil {
 		return nil
 	}
-	return o.Active
+	return n.Active
 }
 
-func (o *NullableIncidentEntity) GetLabels() *NullableIncidentEntityLabels {
-	if o == nil {
+func (n *NullableIncidentEntity) GetLabels() *NullableIncidentEntityLabels {
+	if n == nil {
 		return nil
 	}
-	return o.Labels
+	return n.Labels
 }
 
-func (o *NullableIncidentEntity) GetRoleAssignments() []IncidentsRoleAssignmentEntity {
-	if o == nil {
+func (n *NullableIncidentEntity) GetRoleAssignments() []IncidentsRoleAssignmentEntity {
+	if n == nil {
 		return nil
 	}
-	return o.RoleAssignments
+	return n.RoleAssignments
 }
 
-func (o *NullableIncidentEntity) GetStatusPages() []IncidentsStatusPageEntity {
-	if o == nil {
+func (n *NullableIncidentEntity) GetStatusPages() []IncidentsStatusPageEntity {
+	if n == nil {
 		return nil
 	}
-	return o.StatusPages
+	return n.StatusPages
 }
 
-func (o *NullableIncidentEntity) GetIncidentURL() *string {
-	if o == nil {
+func (n *NullableIncidentEntity) GetIncidentURL() *string {
+	if n == nil {
 		return nil
 	}
-	return o.IncidentURL
+	return n.IncidentURL
 }
 
-func (o *NullableIncidentEntity) GetPrivateStatusPageURL() *string {
-	if o == nil {
+func (n *NullableIncidentEntity) GetPrivateStatusPageURL() *string {
+	if n == nil {
 		return nil
 	}
-	return o.PrivateStatusPageURL
+	return n.PrivateStatusPageURL
 }
 
-func (o *NullableIncidentEntity) GetOrganization() *NullableOrganizationEntity {
-	if o == nil {
+func (n *NullableIncidentEntity) GetOrganization() *NullableOrganizationEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Organization
+	return n.Organization
 }
 
-func (o *NullableIncidentEntity) GetCustomersImpacted() *int {
-	if o == nil {
+func (n *NullableIncidentEntity) GetCustomersImpacted() *int {
+	if n == nil {
 		return nil
 	}
-	return o.CustomersImpacted
+	return n.CustomersImpacted
 }
 
-func (o *NullableIncidentEntity) GetMonetaryImpact() *int {
-	if o == nil {
+func (n *NullableIncidentEntity) GetMonetaryImpact() *int {
+	if n == nil {
 		return nil
 	}
-	return o.MonetaryImpact
+	return n.MonetaryImpact
 }
 
-func (o *NullableIncidentEntity) GetMonetaryImpactCents() *int {
-	if o == nil {
+func (n *NullableIncidentEntity) GetMonetaryImpactCents() *int {
+	if n == nil {
 		return nil
 	}
-	return o.MonetaryImpactCents
+	return n.MonetaryImpactCents
 }
 
-func (o *NullableIncidentEntity) GetLastUpdate() *string {
-	if o == nil {
+func (n *NullableIncidentEntity) GetLastUpdate() *string {
+	if n == nil {
 		return nil
 	}
-	return o.LastUpdate
+	return n.LastUpdate
 }
 
-func (o *NullableIncidentEntity) GetLastNote() *NullableEventNoteEntity {
-	if o == nil {
+func (n *NullableIncidentEntity) GetLastNote() *NullableEventNoteEntity {
+	if n == nil {
 		return nil
 	}
-	return o.LastNote
+	return n.LastNote
 }
 
-func (o *NullableIncidentEntity) GetReportID() *string {
-	if o == nil {
+func (n *NullableIncidentEntity) GetReportID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ReportID
+	return n.ReportID
 }
 
-func (o *NullableIncidentEntity) GetAiIncidentSummary() *string {
-	if o == nil {
+func (n *NullableIncidentEntity) GetAiIncidentSummary() *string {
+	if n == nil {
 		return nil
 	}
-	return o.AiIncidentSummary
+	return n.AiIncidentSummary
 }
 
-func (o *NullableIncidentEntity) GetServices() []SuccinctEntity {
-	if o == nil {
+func (n *NullableIncidentEntity) GetServices() []SuccinctEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Services
+	return n.Services
 }
 
-func (o *NullableIncidentEntity) GetEnvironments() []SuccinctEntity {
-	if o == nil {
+func (n *NullableIncidentEntity) GetEnvironments() []SuccinctEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Environments
+	return n.Environments
 }
 
-func (o *NullableIncidentEntity) GetFunctionalities() []SuccinctEntity {
-	if o == nil {
+func (n *NullableIncidentEntity) GetFunctionalities() []SuccinctEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Functionalities
+	return n.Functionalities
 }
 
-func (o *NullableIncidentEntity) GetChannelName() *string {
-	if o == nil {
+func (n *NullableIncidentEntity) GetChannelName() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ChannelName
+	return n.ChannelName
 }
 
-func (o *NullableIncidentEntity) GetChannelReference() *string {
-	if o == nil {
+func (n *NullableIncidentEntity) GetChannelReference() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ChannelReference
+	return n.ChannelReference
 }
 
-func (o *NullableIncidentEntity) GetChannelID() *string {
-	if o == nil {
+func (n *NullableIncidentEntity) GetChannelID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ChannelID
+	return n.ChannelID
 }
 
-func (o *NullableIncidentEntity) GetChannelStatus() *string {
-	if o == nil {
+func (n *NullableIncidentEntity) GetChannelStatus() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ChannelStatus
+	return n.ChannelStatus
 }
 
-func (o *NullableIncidentEntity) GetIncidentTickets() []TicketingTicketEntity {
-	if o == nil {
+func (n *NullableIncidentEntity) GetIncidentTickets() []TicketingTicketEntity {
+	if n == nil {
 		return nil
 	}
-	return o.IncidentTickets
+	return n.IncidentTickets
 }
 
-func (o *NullableIncidentEntity) GetTicket() *NullableTicketingTicketEntity {
-	if o == nil {
+func (n *NullableIncidentEntity) GetTicket() *NullableTicketingTicketEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Ticket
+	return n.Ticket
 }
 
-func (o *NullableIncidentEntity) GetImpacts() []IncidentsImpactEntity {
-	if o == nil {
+func (n *NullableIncidentEntity) GetImpacts() []IncidentsImpactEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Impacts
+	return n.Impacts
 }
 
-func (o *NullableIncidentEntity) GetConferenceBridges() []IncidentsConferenceBridgeEntity {
-	if o == nil {
+func (n *NullableIncidentEntity) GetConferenceBridges() []IncidentsConferenceBridgeEntity {
+	if n == nil {
 		return nil
 	}
-	return o.ConferenceBridges
+	return n.ConferenceBridges
 }
 
-func (o *NullableIncidentEntity) GetIncidentChannels() []IncidentsChannelEntity {
-	if o == nil {
+func (n *NullableIncidentEntity) GetIncidentChannels() []IncidentsChannelEntity {
+	if n == nil {
 		return nil
 	}
-	return o.IncidentChannels
+	return n.IncidentChannels
 }
 
-func (o *NullableIncidentEntity) GetRetroExports() []NullableIncidentEntityRetroExport {
-	if o == nil {
+func (n *NullableIncidentEntity) GetRetroExports() []NullableIncidentEntityRetroExport {
+	if n == nil {
 		return nil
 	}
-	return o.RetroExports
+	return n.RetroExports
 }
 
-func (o *NullableIncidentEntity) GetCreatedBy() *NullableAuthorEntity {
-	if o == nil {
+func (n *NullableIncidentEntity) GetCreatedBy() *NullableAuthorEntity {
+	if n == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return n.CreatedBy
 }
 
-func (o *NullableIncidentEntity) GetContextObject() *NullableIncidentsContextObjectEntity {
-	if o == nil {
+func (n *NullableIncidentEntity) GetContextObject() *NullableIncidentsContextObjectEntity {
+	if n == nil {
 		return nil
 	}
-	return o.ContextObject
+	return n.ContextObject
 }
 
-func (o *NullableIncidentEntity) GetTeamAssignments() []IncidentsTeamAssignmentEntityLite {
-	if o == nil {
+func (n *NullableIncidentEntity) GetTeamAssignments() []IncidentsTeamAssignmentEntityLite {
+	if n == nil {
 		return nil
 	}
-	return o.TeamAssignments
+	return n.TeamAssignments
 }
 
-func (o *NullableIncidentEntity) GetConversations() []ConversationsAPIEntitiesReference {
-	if o == nil {
+func (n *NullableIncidentEntity) GetConversations() []ConversationsAPIEntitiesReference {
+	if n == nil {
 		return nil
 	}
-	return o.Conversations
+	return n.Conversations
 }
 
-func (o *NullableIncidentEntity) GetCustomFields() []CustomFieldsFieldValue {
-	if o == nil {
+func (n *NullableIncidentEntity) GetCustomFields() []CustomFieldsFieldValue {
+	if n == nil {
 		return nil
 	}
-	return o.CustomFields
+	return n.CustomFields
 }
 
-func (o *NullableIncidentEntity) GetFieldRequirements() []IncidentEntityFieldRequirementEntity {
-	if o == nil {
+func (n *NullableIncidentEntity) GetFieldRequirements() []IncidentEntityFieldRequirementEntity {
+	if n == nil {
 		return nil
 	}
-	return o.FieldRequirements
+	return n.FieldRequirements
 }

@@ -39,23 +39,23 @@ type PublishPostMortemReport struct {
 	TeamIds []string `json:"team_ids,omitempty"`
 }
 
-func (o *PublishPostMortemReport) GetPublish() *Publish {
-	if o == nil {
+func (p *PublishPostMortemReport) GetPublish() *Publish {
+	if p == nil {
 		return nil
 	}
-	return o.Publish
+	return p.Publish
 }
 
-func (o *PublishPostMortemReport) GetUserIds() []string {
-	if o == nil {
+func (p *PublishPostMortemReport) GetUserIds() []string {
+	if p == nil {
 		return nil
 	}
-	return o.UserIds
+	return p.UserIds
 }
 
-func (o *PublishPostMortemReport) GetTeamIds() []string {
-	if o == nil {
+func (p *PublishPostMortemReport) GetTeamIds() []string {
+	if p == nil {
 		return nil
 	}
-	return o.TeamIds
+	return p.TeamIds
 }

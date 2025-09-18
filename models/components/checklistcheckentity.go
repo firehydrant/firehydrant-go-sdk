@@ -9,30 +9,30 @@ type ChecklistCheckEntity struct {
 	Status      *bool   `json:"status,omitempty"`
 }
 
-func (o *ChecklistCheckEntity) GetID() *string {
-	if o == nil {
+func (c *ChecklistCheckEntity) GetID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *ChecklistCheckEntity) GetName() *string {
-	if o == nil {
+func (c *ChecklistCheckEntity) GetName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *ChecklistCheckEntity) GetDescription() *string {
-	if o == nil {
+func (c *ChecklistCheckEntity) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *ChecklistCheckEntity) GetStatus() *bool {
-	if o == nil {
+func (c *ChecklistCheckEntity) GetStatus() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Status
+	return c.Status
 }

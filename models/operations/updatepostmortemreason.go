@@ -12,23 +12,23 @@ type UpdatePostMortemReasonRequest struct {
 	UpdatePostMortemReason components.UpdatePostMortemReason `request:"mediaType=application/json"`
 }
 
-func (o *UpdatePostMortemReasonRequest) GetReportID() string {
-	if o == nil {
+func (u *UpdatePostMortemReasonRequest) GetReportID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ReportID
+	return u.ReportID
 }
 
-func (o *UpdatePostMortemReasonRequest) GetReasonID() string {
-	if o == nil {
+func (u *UpdatePostMortemReasonRequest) GetReasonID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ReasonID
+	return u.ReasonID
 }
 
-func (o *UpdatePostMortemReasonRequest) GetUpdatePostMortemReason() components.UpdatePostMortemReason {
-	if o == nil {
+func (u *UpdatePostMortemReasonRequest) GetUpdatePostMortemReason() components.UpdatePostMortemReason {
+	if u == nil {
 		return components.UpdatePostMortemReason{}
 	}
-	return o.UpdatePostMortemReason
+	return u.UpdatePostMortemReason
 }

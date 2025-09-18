@@ -6,9 +6,9 @@ type CreateNuncLinkRequest struct {
 	NuncConnectionID string `pathParam:"style=simple,explode=false,name=nunc_connection_id"`
 }
 
-func (o *CreateNuncLinkRequest) GetNuncConnectionID() string {
-	if o == nil {
+func (c *CreateNuncLinkRequest) GetNuncConnectionID() string {
+	if c == nil {
 		return ""
 	}
-	return o.NuncConnectionID
+	return c.NuncConnectionID
 }

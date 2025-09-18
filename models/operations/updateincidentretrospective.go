@@ -12,23 +12,23 @@ type UpdateIncidentRetrospectiveRequest struct {
 	UpdateIncidentRetrospective components.UpdateIncidentRetrospective `request:"mediaType=application/json"`
 }
 
-func (o *UpdateIncidentRetrospectiveRequest) GetRetrospectiveID() string {
-	if o == nil {
+func (u *UpdateIncidentRetrospectiveRequest) GetRetrospectiveID() string {
+	if u == nil {
 		return ""
 	}
-	return o.RetrospectiveID
+	return u.RetrospectiveID
 }
 
-func (o *UpdateIncidentRetrospectiveRequest) GetIncidentID() string {
-	if o == nil {
+func (u *UpdateIncidentRetrospectiveRequest) GetIncidentID() string {
+	if u == nil {
 		return ""
 	}
-	return o.IncidentID
+	return u.IncidentID
 }
 
-func (o *UpdateIncidentRetrospectiveRequest) GetUpdateIncidentRetrospective() components.UpdateIncidentRetrospective {
-	if o == nil {
+func (u *UpdateIncidentRetrospectiveRequest) GetUpdateIncidentRetrospective() components.UpdateIncidentRetrospective {
+	if u == nil {
 		return components.UpdateIncidentRetrospective{}
 	}
-	return o.UpdateIncidentRetrospective
+	return u.UpdateIncidentRetrospective
 }

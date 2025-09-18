@@ -11,25 +11,25 @@ type UpdatePostMortemQuestionsQuestion struct {
 	Tooltip *string `json:"tooltip,omitempty"`
 }
 
-func (o *UpdatePostMortemQuestionsQuestion) GetID() *string {
-	if o == nil {
+func (u *UpdatePostMortemQuestionsQuestion) GetID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.ID
+	return u.ID
 }
 
-func (o *UpdatePostMortemQuestionsQuestion) GetTitle() *string {
-	if o == nil {
+func (u *UpdatePostMortemQuestionsQuestion) GetTitle() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Title
+	return u.Title
 }
 
-func (o *UpdatePostMortemQuestionsQuestion) GetTooltip() *string {
-	if o == nil {
+func (u *UpdatePostMortemQuestionsQuestion) GetTooltip() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Tooltip
+	return u.Tooltip
 }
 
 // UpdatePostMortemQuestions - Update the questions configured to be provided and filled out on future retrospective reports.
@@ -38,16 +38,16 @@ type UpdatePostMortemQuestions struct {
 	Questions       []UpdatePostMortemQuestionsQuestion `json:"questions,omitempty"`
 }
 
-func (o *UpdatePostMortemQuestions) GetMakeSwaggerWork() *string {
-	if o == nil {
+func (u *UpdatePostMortemQuestions) GetMakeSwaggerWork() *string {
+	if u == nil {
 		return nil
 	}
-	return o.MakeSwaggerWork
+	return u.MakeSwaggerWork
 }
 
-func (o *UpdatePostMortemQuestions) GetQuestions() []UpdatePostMortemQuestionsQuestion {
-	if o == nil {
+func (u *UpdatePostMortemQuestions) GetQuestions() []UpdatePostMortemQuestionsQuestion {
+	if u == nil {
 		return nil
 	}
-	return o.Questions
+	return u.Questions
 }

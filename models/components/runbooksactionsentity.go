@@ -46,114 +46,114 @@ func (r *RunbooksActionsEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *RunbooksActionsEntity) GetID() *string {
-	if o == nil {
+func (r *RunbooksActionsEntity) GetID() *string {
+	if r == nil {
 		return nil
 	}
-	return o.ID
+	return r.ID
 }
 
-func (o *RunbooksActionsEntity) GetName() *string {
-	if o == nil {
+func (r *RunbooksActionsEntity) GetName() *string {
+	if r == nil {
 		return nil
 	}
-	return o.Name
+	return r.Name
 }
 
-func (o *RunbooksActionsEntity) GetSlug() *string {
-	if o == nil {
+func (r *RunbooksActionsEntity) GetSlug() *string {
+	if r == nil {
 		return nil
 	}
-	return o.Slug
+	return r.Slug
 }
 
-func (o *RunbooksActionsEntity) GetDescription() *string {
-	if o == nil {
+func (r *RunbooksActionsEntity) GetDescription() *string {
+	if r == nil {
 		return nil
 	}
-	return o.Description
+	return r.Description
 }
 
-func (o *RunbooksActionsEntity) GetConfig() *NullableRunbooksActionConfigEntity {
-	if o == nil {
+func (r *RunbooksActionsEntity) GetConfig() *NullableRunbooksActionConfigEntity {
+	if r == nil {
 		return nil
 	}
-	return o.Config
+	return r.Config
 }
 
-func (o *RunbooksActionsEntity) GetCategory() *string {
-	if o == nil {
+func (r *RunbooksActionsEntity) GetCategory() *string {
+	if r == nil {
 		return nil
 	}
-	return o.Category
+	return r.Category
 }
 
-func (o *RunbooksActionsEntity) GetPrerequisites() []RunbooksActionsEntityPrerequisite {
-	if o == nil {
+func (r *RunbooksActionsEntity) GetPrerequisites() []RunbooksActionsEntityPrerequisite {
+	if r == nil {
 		return nil
 	}
-	return o.Prerequisites
+	return r.Prerequisites
 }
 
-func (o *RunbooksActionsEntity) GetIntegration() *NullableIntegrationsIntegrationEntity {
-	if o == nil {
+func (r *RunbooksActionsEntity) GetIntegration() *NullableIntegrationsIntegrationEntity {
+	if r == nil {
 		return nil
 	}
-	return o.Integration
+	return r.Integration
 }
 
-func (o *RunbooksActionsEntity) GetSupportedRunbookTypes() []string {
-	if o == nil {
+func (r *RunbooksActionsEntity) GetSupportedRunbookTypes() []string {
+	if r == nil {
 		return nil
 	}
-	return o.SupportedRunbookTypes
+	return r.SupportedRunbookTypes
 }
 
-func (o *RunbooksActionsEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (r *RunbooksActionsEntity) GetCreatedAt() *time.Time {
+	if r == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return r.CreatedAt
 }
 
-func (o *RunbooksActionsEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (r *RunbooksActionsEntity) GetUpdatedAt() *time.Time {
+	if r == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return r.UpdatedAt
 }
 
-func (o *RunbooksActionsEntity) GetAutomatable() *bool {
-	if o == nil {
+func (r *RunbooksActionsEntity) GetAutomatable() *bool {
+	if r == nil {
 		return nil
 	}
-	return o.Automatable
+	return r.Automatable
 }
 
-func (o *RunbooksActionsEntity) GetRerunnable() *bool {
-	if o == nil {
+func (r *RunbooksActionsEntity) GetRerunnable() *bool {
+	if r == nil {
 		return nil
 	}
-	return o.Rerunnable
+	return r.Rerunnable
 }
 
-func (o *RunbooksActionsEntity) GetRepeatable() *bool {
-	if o == nil {
+func (r *RunbooksActionsEntity) GetRepeatable() *bool {
+	if r == nil {
 		return nil
 	}
-	return o.Repeatable
+	return r.Repeatable
 }
 
-func (o *RunbooksActionsEntity) GetDefaultLogic() *RunbooksActionsEntityDefaultLogic {
-	if o == nil {
+func (r *RunbooksActionsEntity) GetDefaultLogic() *RunbooksActionsEntityDefaultLogic {
+	if r == nil {
 		return nil
 	}
-	return o.DefaultLogic
+	return r.DefaultLogic
 }
 
-func (o *RunbooksActionsEntity) GetDefaultRuleData() *RunbooksActionsEntityDefaultRuleData {
-	if o == nil {
+func (r *RunbooksActionsEntity) GetDefaultRuleData() *RunbooksActionsEntityDefaultRuleData {
+	if r == nil {
 		return nil
 	}
-	return o.DefaultRuleData
+	return r.DefaultRuleData
 }

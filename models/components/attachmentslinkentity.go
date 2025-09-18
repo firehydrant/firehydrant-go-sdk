@@ -15,51 +15,51 @@ type AttachmentsLinkEntity struct {
 	Deletable *bool `json:"deletable,omitempty"`
 }
 
-func (o *AttachmentsLinkEntity) GetID() *string {
-	if o == nil {
+func (a *AttachmentsLinkEntity) GetID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AttachmentsLinkEntity) GetType() *string {
-	if o == nil {
+func (a *AttachmentsLinkEntity) GetType() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Type
+	return a.Type
 }
 
-func (o *AttachmentsLinkEntity) GetDisplayText() *string {
-	if o == nil {
+func (a *AttachmentsLinkEntity) GetDisplayText() *string {
+	if a == nil {
 		return nil
 	}
-	return o.DisplayText
+	return a.DisplayText
 }
 
-func (o *AttachmentsLinkEntity) GetHrefURL() *string {
-	if o == nil {
+func (a *AttachmentsLinkEntity) GetHrefURL() *string {
+	if a == nil {
 		return nil
 	}
-	return o.HrefURL
+	return a.HrefURL
 }
 
-func (o *AttachmentsLinkEntity) GetIconURL() *string {
-	if o == nil {
+func (a *AttachmentsLinkEntity) GetIconURL() *string {
+	if a == nil {
 		return nil
 	}
-	return o.IconURL
+	return a.IconURL
 }
 
-func (o *AttachmentsLinkEntity) GetEditable() *bool {
-	if o == nil {
+func (a *AttachmentsLinkEntity) GetEditable() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Editable
+	return a.Editable
 }
 
-func (o *AttachmentsLinkEntity) GetDeletable() *bool {
-	if o == nil {
+func (a *AttachmentsLinkEntity) GetDeletable() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Deletable
+	return a.Deletable
 }

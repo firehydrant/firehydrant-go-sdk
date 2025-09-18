@@ -27,30 +27,30 @@ func (l *ListPostMortemReportsRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ListPostMortemReportsRequest) GetPage() *int {
-	if o == nil {
+func (l *ListPostMortemReportsRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListPostMortemReportsRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListPostMortemReportsRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }
 
-func (o *ListPostMortemReportsRequest) GetIncidentID() *string {
-	if o == nil {
+func (l *ListPostMortemReportsRequest) GetIncidentID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.IncidentID
+	return l.IncidentID
 }
 
-func (o *ListPostMortemReportsRequest) GetUpdatedSince() *time.Time {
-	if o == nil {
+func (l *ListPostMortemReportsRequest) GetUpdatedSince() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.UpdatedSince
+	return l.UpdatedSince
 }

@@ -98,44 +98,44 @@ func (s *SignalsAPINotificationPolicyItemEntity) UnmarshalJSON(data []byte) erro
 	return nil
 }
 
-func (o *SignalsAPINotificationPolicyItemEntity) GetID() *string {
-	if o == nil {
+func (s *SignalsAPINotificationPolicyItemEntity) GetID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *SignalsAPINotificationPolicyItemEntity) GetNotificationGroupMethod() *NotificationGroupMethod {
-	if o == nil {
+func (s *SignalsAPINotificationPolicyItemEntity) GetNotificationGroupMethod() *NotificationGroupMethod {
+	if s == nil {
 		return nil
 	}
-	return o.NotificationGroupMethod
+	return s.NotificationGroupMethod
 }
 
-func (o *SignalsAPINotificationPolicyItemEntity) GetMaxDelay() *string {
-	if o == nil {
+func (s *SignalsAPINotificationPolicyItemEntity) GetMaxDelay() *string {
+	if s == nil {
 		return nil
 	}
-	return o.MaxDelay
+	return s.MaxDelay
 }
 
-func (o *SignalsAPINotificationPolicyItemEntity) GetPriority() *Priority {
-	if o == nil {
+func (s *SignalsAPINotificationPolicyItemEntity) GetPriority() *Priority {
+	if s == nil {
 		return nil
 	}
-	return o.Priority
+	return s.Priority
 }
 
-func (o *SignalsAPINotificationPolicyItemEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (s *SignalsAPINotificationPolicyItemEntity) GetCreatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return s.CreatedAt
 }
 
-func (o *SignalsAPINotificationPolicyItemEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (s *SignalsAPINotificationPolicyItemEntity) GetUpdatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return s.UpdatedAt
 }

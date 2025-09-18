@@ -7,11 +7,11 @@ type CreateIncidentRetrospectiveRequestBody struct {
 	RetrospectiveTemplateID string `json:"retrospective_template_id"`
 }
 
-func (o *CreateIncidentRetrospectiveRequestBody) GetRetrospectiveTemplateID() string {
-	if o == nil {
+func (c *CreateIncidentRetrospectiveRequestBody) GetRetrospectiveTemplateID() string {
+	if c == nil {
 		return ""
 	}
-	return o.RetrospectiveTemplateID
+	return c.RetrospectiveTemplateID
 }
 
 type CreateIncidentRetrospectiveRequest struct {
@@ -19,16 +19,16 @@ type CreateIncidentRetrospectiveRequest struct {
 	RequestBody CreateIncidentRetrospectiveRequestBody `request:"mediaType=application/json"`
 }
 
-func (o *CreateIncidentRetrospectiveRequest) GetIncidentID() string {
-	if o == nil {
+func (c *CreateIncidentRetrospectiveRequest) GetIncidentID() string {
+	if c == nil {
 		return ""
 	}
-	return o.IncidentID
+	return c.IncidentID
 }
 
-func (o *CreateIncidentRetrospectiveRequest) GetRequestBody() CreateIncidentRetrospectiveRequestBody {
-	if o == nil {
+func (c *CreateIncidentRetrospectiveRequest) GetRequestBody() CreateIncidentRetrospectiveRequestBody {
+	if c == nil {
 		return CreateIncidentRetrospectiveRequestBody{}
 	}
-	return o.RequestBody
+	return c.RequestBody
 }

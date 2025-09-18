@@ -30,58 +30,58 @@ func (s *SeverityEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *SeverityEntity) GetSlug() *string {
-	if o == nil {
+func (s *SeverityEntity) GetSlug() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Slug
+	return s.Slug
 }
 
-func (o *SeverityEntity) GetDescription() *string {
-	if o == nil {
+func (s *SeverityEntity) GetDescription() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Description
+	return s.Description
 }
 
-func (o *SeverityEntity) GetType() *string {
-	if o == nil {
+func (s *SeverityEntity) GetType() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Type
+	return s.Type
 }
 
-func (o *SeverityEntity) GetPosition() *int {
-	if o == nil {
+func (s *SeverityEntity) GetPosition() *int {
+	if s == nil {
 		return nil
 	}
-	return o.Position
+	return s.Position
 }
 
-func (o *SeverityEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (s *SeverityEntity) GetCreatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return s.CreatedAt
 }
 
-func (o *SeverityEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (s *SeverityEntity) GetUpdatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return s.UpdatedAt
 }
 
-func (o *SeverityEntity) GetSystemRecord() *bool {
-	if o == nil {
+func (s *SeverityEntity) GetSystemRecord() *bool {
+	if s == nil {
 		return nil
 	}
-	return o.SystemRecord
+	return s.SystemRecord
 }
 
-func (o *SeverityEntity) GetColor() *string {
-	if o == nil {
+func (s *SeverityEntity) GetColor() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Color
+	return s.Color
 }

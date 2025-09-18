@@ -7,9 +7,9 @@ type ListWebhookDeliveriesRequest struct {
 	WebhookID string `pathParam:"style=simple,explode=false,name=webhook_id"`
 }
 
-func (o *ListWebhookDeliveriesRequest) GetWebhookID() string {
-	if o == nil {
+func (l *ListWebhookDeliveriesRequest) GetWebhookID() string {
+	if l == nil {
 		return ""
 	}
-	return o.WebhookID
+	return l.WebhookID
 }

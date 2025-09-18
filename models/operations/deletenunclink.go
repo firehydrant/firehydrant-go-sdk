@@ -7,16 +7,16 @@ type DeleteNuncLinkRequest struct {
 	LinkID           string `pathParam:"style=simple,explode=false,name=link_id"`
 }
 
-func (o *DeleteNuncLinkRequest) GetNuncConnectionID() string {
-	if o == nil {
+func (d *DeleteNuncLinkRequest) GetNuncConnectionID() string {
+	if d == nil {
 		return ""
 	}
-	return o.NuncConnectionID
+	return d.NuncConnectionID
 }
 
-func (o *DeleteNuncLinkRequest) GetLinkID() string {
-	if o == nil {
+func (d *DeleteNuncLinkRequest) GetLinkID() string {
+	if d == nil {
 		return ""
 	}
-	return o.LinkID
+	return d.LinkID
 }

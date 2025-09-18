@@ -11,37 +11,37 @@ type NullableTicketingProjectFieldMapEntity struct {
 	Body               []TicketingProjectFieldMapBodyEntity `json:"body,omitempty"`
 }
 
-func (o *NullableTicketingProjectFieldMapEntity) GetID() *string {
-	if o == nil {
+func (n *NullableTicketingProjectFieldMapEntity) GetID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ID
+	return n.ID
 }
 
-func (o *NullableTicketingProjectFieldMapEntity) GetConnectionID() *string {
-	if o == nil {
+func (n *NullableTicketingProjectFieldMapEntity) GetConnectionID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ConnectionID
+	return n.ConnectionID
 }
 
-func (o *NullableTicketingProjectFieldMapEntity) GetConnectionType() *string {
-	if o == nil {
+func (n *NullableTicketingProjectFieldMapEntity) GetConnectionType() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ConnectionType
+	return n.ConnectionType
 }
 
-func (o *NullableTicketingProjectFieldMapEntity) GetTicketingProjectID() *string {
-	if o == nil {
+func (n *NullableTicketingProjectFieldMapEntity) GetTicketingProjectID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.TicketingProjectID
+	return n.TicketingProjectID
 }
 
-func (o *NullableTicketingProjectFieldMapEntity) GetBody() []TicketingProjectFieldMapBodyEntity {
-	if o == nil {
+func (n *NullableTicketingProjectFieldMapEntity) GetBody() []TicketingProjectFieldMapBodyEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Body
+	return n.Body
 }

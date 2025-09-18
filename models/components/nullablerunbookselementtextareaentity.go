@@ -8,23 +8,23 @@ type NullableRunbooksElementTextareaEntity struct {
 	DefaultValue *string `json:"default_value,omitempty"`
 }
 
-func (o *NullableRunbooksElementTextareaEntity) GetLabel() *string {
-	if o == nil {
+func (n *NullableRunbooksElementTextareaEntity) GetLabel() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Label
+	return n.Label
 }
 
-func (o *NullableRunbooksElementTextareaEntity) GetPlaceholder() *string {
-	if o == nil {
+func (n *NullableRunbooksElementTextareaEntity) GetPlaceholder() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Placeholder
+	return n.Placeholder
 }
 
-func (o *NullableRunbooksElementTextareaEntity) GetDefaultValue() *string {
-	if o == nil {
+func (n *NullableRunbooksElementTextareaEntity) GetDefaultValue() *string {
+	if n == nil {
 		return nil
 	}
-	return o.DefaultValue
+	return n.DefaultValue
 }

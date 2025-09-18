@@ -83,44 +83,44 @@ type ListTicketsRequest struct {
 	State *State `queryParam:"style=form,explode=true,name=state"`
 }
 
-func (o *ListTicketsRequest) GetPage() *int {
-	if o == nil {
+func (l *ListTicketsRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListTicketsRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListTicketsRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }
 
-func (o *ListTicketsRequest) GetTags() *string {
-	if o == nil {
+func (l *ListTicketsRequest) GetTags() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Tags
+	return l.Tags
 }
 
-func (o *ListTicketsRequest) GetTagMatchStrategy() *ListTicketsTagMatchStrategy {
-	if o == nil {
+func (l *ListTicketsRequest) GetTagMatchStrategy() *ListTicketsTagMatchStrategy {
+	if l == nil {
 		return nil
 	}
-	return o.TagMatchStrategy
+	return l.TagMatchStrategy
 }
 
-func (o *ListTicketsRequest) GetAssignedUser() *string {
-	if o == nil {
+func (l *ListTicketsRequest) GetAssignedUser() *string {
+	if l == nil {
 		return nil
 	}
-	return o.AssignedUser
+	return l.AssignedUser
 }
 
-func (o *ListTicketsRequest) GetState() *State {
-	if o == nil {
+func (l *ListTicketsRequest) GetState() *State {
+	if l == nil {
 		return nil
 	}
-	return o.State
+	return l.State
 }

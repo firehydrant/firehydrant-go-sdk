@@ -43,18 +43,18 @@ type CreateIncidentNoteStatusPage struct {
 	IntegrationSlug string `json:"integration_slug"`
 }
 
-func (o *CreateIncidentNoteStatusPage) GetID() string {
-	if o == nil {
+func (c *CreateIncidentNoteStatusPage) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *CreateIncidentNoteStatusPage) GetIntegrationSlug() string {
-	if o == nil {
+func (c *CreateIncidentNoteStatusPage) GetIntegrationSlug() string {
+	if c == nil {
 		return ""
 	}
-	return o.IntegrationSlug
+	return c.IntegrationSlug
 }
 
 // CreateIncidentNote - Create a new note on for an incident. The visibility field on a note determines where it gets posted.
@@ -77,30 +77,30 @@ func (c *CreateIncidentNote) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CreateIncidentNote) GetBody() string {
-	if o == nil {
+func (c *CreateIncidentNote) GetBody() string {
+	if c == nil {
 		return ""
 	}
-	return o.Body
+	return c.Body
 }
 
-func (o *CreateIncidentNote) GetOccurredAt() *time.Time {
-	if o == nil {
+func (c *CreateIncidentNote) GetOccurredAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.OccurredAt
+	return c.OccurredAt
 }
 
-func (o *CreateIncidentNote) GetVisibility() *CreateIncidentNoteVisibility {
-	if o == nil {
+func (c *CreateIncidentNote) GetVisibility() *CreateIncidentNoteVisibility {
+	if c == nil {
 		return nil
 	}
-	return o.Visibility
+	return c.Visibility
 }
 
-func (o *CreateIncidentNote) GetStatusPages() []CreateIncidentNoteStatusPage {
-	if o == nil {
+func (c *CreateIncidentNote) GetStatusPages() []CreateIncidentNoteStatusPage {
+	if c == nil {
 		return nil
 	}
-	return o.StatusPages
+	return c.StatusPages
 }

@@ -6,9 +6,9 @@ type DeleteScimGroupRequest struct {
 	ID string `pathParam:"style=simple,explode=false,name=id"`
 }
 
-func (o *DeleteScimGroupRequest) GetID() string {
-	if o == nil {
+func (d *DeleteScimGroupRequest) GetID() string {
+	if d == nil {
 		return ""
 	}
-	return o.ID
+	return d.ID
 }

@@ -10,30 +10,30 @@ type IntegrationsSlackUsergroupEntity struct {
 	IsDisabled *bool   `json:"is_disabled,omitempty"`
 }
 
-func (o *IntegrationsSlackUsergroupEntity) GetID() *string {
-	if o == nil {
+func (i *IntegrationsSlackUsergroupEntity) GetID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ID
+	return i.ID
 }
 
-func (o *IntegrationsSlackUsergroupEntity) GetName() *string {
-	if o == nil {
+func (i *IntegrationsSlackUsergroupEntity) GetName() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Name
+	return i.Name
 }
 
-func (o *IntegrationsSlackUsergroupEntity) GetHandle() *string {
-	if o == nil {
+func (i *IntegrationsSlackUsergroupEntity) GetHandle() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Handle
+	return i.Handle
 }
 
-func (o *IntegrationsSlackUsergroupEntity) GetIsDisabled() *bool {
-	if o == nil {
+func (i *IntegrationsSlackUsergroupEntity) GetIsDisabled() *bool {
+	if i == nil {
 		return nil
 	}
-	return o.IsDisabled
+	return i.IsDisabled
 }

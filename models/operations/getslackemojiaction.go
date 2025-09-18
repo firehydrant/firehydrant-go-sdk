@@ -8,16 +8,16 @@ type GetSlackEmojiActionRequest struct {
 	EmojiActionID string `pathParam:"style=simple,explode=false,name=emoji_action_id"`
 }
 
-func (o *GetSlackEmojiActionRequest) GetConnectionID() string {
-	if o == nil {
+func (g *GetSlackEmojiActionRequest) GetConnectionID() string {
+	if g == nil {
 		return ""
 	}
-	return o.ConnectionID
+	return g.ConnectionID
 }
 
-func (o *GetSlackEmojiActionRequest) GetEmojiActionID() string {
-	if o == nil {
+func (g *GetSlackEmojiActionRequest) GetEmojiActionID() string {
+	if g == nil {
 		return ""
 	}
-	return o.EmojiActionID
+	return g.EmojiActionID
 }

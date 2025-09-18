@@ -12,23 +12,23 @@ type UpdateTeamOnCallScheduleRequest struct {
 	UpdateTeamOnCallSchedule components.UpdateTeamOnCallSchedule `request:"mediaType=application/json"`
 }
 
-func (o *UpdateTeamOnCallScheduleRequest) GetTeamID() string {
-	if o == nil {
+func (u *UpdateTeamOnCallScheduleRequest) GetTeamID() string {
+	if u == nil {
 		return ""
 	}
-	return o.TeamID
+	return u.TeamID
 }
 
-func (o *UpdateTeamOnCallScheduleRequest) GetScheduleID() string {
-	if o == nil {
+func (u *UpdateTeamOnCallScheduleRequest) GetScheduleID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ScheduleID
+	return u.ScheduleID
 }
 
-func (o *UpdateTeamOnCallScheduleRequest) GetUpdateTeamOnCallSchedule() components.UpdateTeamOnCallSchedule {
-	if o == nil {
+func (u *UpdateTeamOnCallScheduleRequest) GetUpdateTeamOnCallSchedule() components.UpdateTeamOnCallSchedule {
+	if u == nil {
 		return components.UpdateTeamOnCallSchedule{}
 	}
-	return o.UpdateTeamOnCallSchedule
+	return u.UpdateTeamOnCallSchedule
 }

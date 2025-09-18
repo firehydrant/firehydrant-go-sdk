@@ -8,16 +8,16 @@ type IntegrationsStatuspagePageEntity struct {
 	Name *string `json:"name,omitempty"`
 }
 
-func (o *IntegrationsStatuspagePageEntity) GetID() *string {
-	if o == nil {
+func (i *IntegrationsStatuspagePageEntity) GetID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ID
+	return i.ID
 }
 
-func (o *IntegrationsStatuspagePageEntity) GetName() *string {
-	if o == nil {
+func (i *IntegrationsStatuspagePageEntity) GetName() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Name
+	return i.Name
 }

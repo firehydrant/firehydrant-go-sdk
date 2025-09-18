@@ -8,16 +8,16 @@ type DeleteRunbookExecutionRequest struct {
 	Reason string `queryParam:"style=form,explode=true,name=reason"`
 }
 
-func (o *DeleteRunbookExecutionRequest) GetExecutionID() string {
-	if o == nil {
+func (d *DeleteRunbookExecutionRequest) GetExecutionID() string {
+	if d == nil {
 		return ""
 	}
-	return o.ExecutionID
+	return d.ExecutionID
 }
 
-func (o *DeleteRunbookExecutionRequest) GetReason() string {
-	if o == nil {
+func (d *DeleteRunbookExecutionRequest) GetReason() string {
+	if d == nil {
 		return ""
 	}
-	return o.Reason
+	return d.Reason
 }

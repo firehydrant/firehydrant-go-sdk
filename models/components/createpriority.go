@@ -9,23 +9,23 @@ type CreatePriority struct {
 	Default     *bool   `json:"default,omitempty"`
 }
 
-func (o *CreatePriority) GetSlug() string {
-	if o == nil {
+func (c *CreatePriority) GetSlug() string {
+	if c == nil {
 		return ""
 	}
-	return o.Slug
+	return c.Slug
 }
 
-func (o *CreatePriority) GetDescription() *string {
-	if o == nil {
+func (c *CreatePriority) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *CreatePriority) GetDefault() *bool {
-	if o == nil {
+func (c *CreatePriority) GetDefault() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Default
+	return c.Default
 }

@@ -75,11 +75,11 @@ type ListTicketFunnelMetricsRequestBody struct {
 	GroupBy []ListTicketFunnelMetricsGroupBy `multipartForm:"name=group_by"`
 }
 
-func (o *ListTicketFunnelMetricsRequestBody) GetGroupBy() []ListTicketFunnelMetricsGroupBy {
-	if o == nil {
+func (l *ListTicketFunnelMetricsRequestBody) GetGroupBy() []ListTicketFunnelMetricsGroupBy {
+	if l == nil {
 		return nil
 	}
-	return o.GroupBy
+	return l.GroupBy
 }
 
 type ListTicketFunnelMetricsRequest struct {
@@ -159,226 +159,226 @@ func (l *ListTicketFunnelMetricsRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ListTicketFunnelMetricsRequest) GetConditions() *string {
-	if o == nil {
+func (l *ListTicketFunnelMetricsRequest) GetConditions() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Conditions
+	return l.Conditions
 }
 
-func (o *ListTicketFunnelMetricsRequest) GetEnvironments() *string {
-	if o == nil {
+func (l *ListTicketFunnelMetricsRequest) GetEnvironments() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Environments
+	return l.Environments
 }
 
-func (o *ListTicketFunnelMetricsRequest) GetServices() *string {
-	if o == nil {
+func (l *ListTicketFunnelMetricsRequest) GetServices() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Services
+	return l.Services
 }
 
-func (o *ListTicketFunnelMetricsRequest) GetFunctionalities() *string {
-	if o == nil {
+func (l *ListTicketFunnelMetricsRequest) GetFunctionalities() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Functionalities
+	return l.Functionalities
 }
 
-func (o *ListTicketFunnelMetricsRequest) GetExcludedInfrastructureIds() *string {
-	if o == nil {
+func (l *ListTicketFunnelMetricsRequest) GetExcludedInfrastructureIds() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ExcludedInfrastructureIds
+	return l.ExcludedInfrastructureIds
 }
 
-func (o *ListTicketFunnelMetricsRequest) GetTeams() *string {
-	if o == nil {
+func (l *ListTicketFunnelMetricsRequest) GetTeams() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Teams
+	return l.Teams
 }
 
-func (o *ListTicketFunnelMetricsRequest) GetAssignedTeams() *string {
-	if o == nil {
+func (l *ListTicketFunnelMetricsRequest) GetAssignedTeams() *string {
+	if l == nil {
 		return nil
 	}
-	return o.AssignedTeams
+	return l.AssignedTeams
 }
 
-func (o *ListTicketFunnelMetricsRequest) GetStatus() *string {
-	if o == nil {
+func (l *ListTicketFunnelMetricsRequest) GetStatus() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Status
+	return l.Status
 }
 
-func (o *ListTicketFunnelMetricsRequest) GetStartDate() *time.Time {
-	if o == nil {
+func (l *ListTicketFunnelMetricsRequest) GetStartDate() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.StartDate
+	return l.StartDate
 }
 
-func (o *ListTicketFunnelMetricsRequest) GetEndDate() *time.Time {
-	if o == nil {
+func (l *ListTicketFunnelMetricsRequest) GetEndDate() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.EndDate
+	return l.EndDate
 }
 
-func (o *ListTicketFunnelMetricsRequest) GetResolvedAtOrAfter() *time.Time {
-	if o == nil {
+func (l *ListTicketFunnelMetricsRequest) GetResolvedAtOrAfter() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.ResolvedAtOrAfter
+	return l.ResolvedAtOrAfter
 }
 
-func (o *ListTicketFunnelMetricsRequest) GetResolvedAtOrBefore() *time.Time {
-	if o == nil {
+func (l *ListTicketFunnelMetricsRequest) GetResolvedAtOrBefore() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.ResolvedAtOrBefore
+	return l.ResolvedAtOrBefore
 }
 
-func (o *ListTicketFunnelMetricsRequest) GetClosedAtOrAfter() *time.Time {
-	if o == nil {
+func (l *ListTicketFunnelMetricsRequest) GetClosedAtOrAfter() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.ClosedAtOrAfter
+	return l.ClosedAtOrAfter
 }
 
-func (o *ListTicketFunnelMetricsRequest) GetClosedAtOrBefore() *time.Time {
-	if o == nil {
+func (l *ListTicketFunnelMetricsRequest) GetClosedAtOrBefore() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.ClosedAtOrBefore
+	return l.ClosedAtOrBefore
 }
 
-func (o *ListTicketFunnelMetricsRequest) GetCreatedAtOrAfter() *time.Time {
-	if o == nil {
+func (l *ListTicketFunnelMetricsRequest) GetCreatedAtOrAfter() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.CreatedAtOrAfter
+	return l.CreatedAtOrAfter
 }
 
-func (o *ListTicketFunnelMetricsRequest) GetCreatedAtOrBefore() *time.Time {
-	if o == nil {
+func (l *ListTicketFunnelMetricsRequest) GetCreatedAtOrBefore() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.CreatedAtOrBefore
+	return l.CreatedAtOrBefore
 }
 
-func (o *ListTicketFunnelMetricsRequest) GetQuery() *string {
-	if o == nil {
+func (l *ListTicketFunnelMetricsRequest) GetQuery() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Query
+	return l.Query
 }
 
-func (o *ListTicketFunnelMetricsRequest) GetName() *string {
-	if o == nil {
+func (l *ListTicketFunnelMetricsRequest) GetName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Name
+	return l.Name
 }
 
-func (o *ListTicketFunnelMetricsRequest) GetSavedSearchID() *string {
-	if o == nil {
+func (l *ListTicketFunnelMetricsRequest) GetSavedSearchID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.SavedSearchID
+	return l.SavedSearchID
 }
 
-func (o *ListTicketFunnelMetricsRequest) GetPriorities() *string {
-	if o == nil {
+func (l *ListTicketFunnelMetricsRequest) GetPriorities() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Priorities
+	return l.Priorities
 }
 
-func (o *ListTicketFunnelMetricsRequest) GetPriorityNotSet() *bool {
-	if o == nil {
+func (l *ListTicketFunnelMetricsRequest) GetPriorityNotSet() *bool {
+	if l == nil {
 		return nil
 	}
-	return o.PriorityNotSet
+	return l.PriorityNotSet
 }
 
-func (o *ListTicketFunnelMetricsRequest) GetSeverities() *string {
-	if o == nil {
+func (l *ListTicketFunnelMetricsRequest) GetSeverities() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Severities
+	return l.Severities
 }
 
-func (o *ListTicketFunnelMetricsRequest) GetSeverityNotSet() *bool {
-	if o == nil {
+func (l *ListTicketFunnelMetricsRequest) GetSeverityNotSet() *bool {
+	if l == nil {
 		return nil
 	}
-	return o.SeverityNotSet
+	return l.SeverityNotSet
 }
 
-func (o *ListTicketFunnelMetricsRequest) GetCurrentMilestones() *string {
-	if o == nil {
+func (l *ListTicketFunnelMetricsRequest) GetCurrentMilestones() *string {
+	if l == nil {
 		return nil
 	}
-	return o.CurrentMilestones
+	return l.CurrentMilestones
 }
 
-func (o *ListTicketFunnelMetricsRequest) GetTags() *string {
-	if o == nil {
+func (l *ListTicketFunnelMetricsRequest) GetTags() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Tags
+	return l.Tags
 }
 
-func (o *ListTicketFunnelMetricsRequest) GetTagMatchStrategy() *ListTicketFunnelMetricsTagMatchStrategy {
-	if o == nil {
+func (l *ListTicketFunnelMetricsRequest) GetTagMatchStrategy() *ListTicketFunnelMetricsTagMatchStrategy {
+	if l == nil {
 		return nil
 	}
-	return o.TagMatchStrategy
+	return l.TagMatchStrategy
 }
 
-func (o *ListTicketFunnelMetricsRequest) GetArchived() *bool {
-	if o == nil {
+func (l *ListTicketFunnelMetricsRequest) GetArchived() *bool {
+	if l == nil {
 		return nil
 	}
-	return o.Archived
+	return l.Archived
 }
 
-func (o *ListTicketFunnelMetricsRequest) GetUpdatedAfter() *time.Time {
-	if o == nil {
+func (l *ListTicketFunnelMetricsRequest) GetUpdatedAfter() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.UpdatedAfter
+	return l.UpdatedAfter
 }
 
-func (o *ListTicketFunnelMetricsRequest) GetUpdatedBefore() *time.Time {
-	if o == nil {
+func (l *ListTicketFunnelMetricsRequest) GetUpdatedBefore() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.UpdatedBefore
+	return l.UpdatedBefore
 }
 
-func (o *ListTicketFunnelMetricsRequest) GetIncidentTypeID() *string {
-	if o == nil {
+func (l *ListTicketFunnelMetricsRequest) GetIncidentTypeID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.IncidentTypeID
+	return l.IncidentTypeID
 }
 
-func (o *ListTicketFunnelMetricsRequest) GetRetrospectiveTemplates() *string {
-	if o == nil {
+func (l *ListTicketFunnelMetricsRequest) GetRetrospectiveTemplates() *string {
+	if l == nil {
 		return nil
 	}
-	return o.RetrospectiveTemplates
+	return l.RetrospectiveTemplates
 }
 
-func (o *ListTicketFunnelMetricsRequest) GetRequestBody() *ListTicketFunnelMetricsRequestBody {
-	if o == nil {
+func (l *ListTicketFunnelMetricsRequest) GetRequestBody() *ListTicketFunnelMetricsRequestBody {
+	if l == nil {
 		return nil
 	}
-	return o.RequestBody
+	return l.RequestBody
 }

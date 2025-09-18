@@ -13,23 +13,23 @@ type ListScimUsersRequest struct {
 	Count *int `queryParam:"style=form,explode=true,name=count"`
 }
 
-func (o *ListScimUsersRequest) GetFilter() *string {
-	if o == nil {
+func (l *ListScimUsersRequest) GetFilter() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Filter
+	return l.Filter
 }
 
-func (o *ListScimUsersRequest) GetStartIndex() *int {
-	if o == nil {
+func (l *ListScimUsersRequest) GetStartIndex() *int {
+	if l == nil {
 		return nil
 	}
-	return o.StartIndex
+	return l.StartIndex
 }
 
-func (o *ListScimUsersRequest) GetCount() *int {
-	if o == nil {
+func (l *ListScimUsersRequest) GetCount() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Count
+	return l.Count
 }

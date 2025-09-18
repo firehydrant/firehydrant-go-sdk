@@ -24,23 +24,23 @@ func (s *SignalsAPIOnCallSchedulePreviewEntityShiftPreviewEntity) UnmarshalJSON(
 	return nil
 }
 
-func (o *SignalsAPIOnCallSchedulePreviewEntityShiftPreviewEntity) GetStartTime() *time.Time {
-	if o == nil {
+func (s *SignalsAPIOnCallSchedulePreviewEntityShiftPreviewEntity) GetStartTime() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.StartTime
+	return s.StartTime
 }
 
-func (o *SignalsAPIOnCallSchedulePreviewEntityShiftPreviewEntity) GetEndTime() *time.Time {
-	if o == nil {
+func (s *SignalsAPIOnCallSchedulePreviewEntityShiftPreviewEntity) GetEndTime() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.EndTime
+	return s.EndTime
 }
 
-func (o *SignalsAPIOnCallSchedulePreviewEntityShiftPreviewEntity) GetUser() *NullableSuccinctEntity {
-	if o == nil {
+func (s *SignalsAPIOnCallSchedulePreviewEntityShiftPreviewEntity) GetUser() *NullableSuccinctEntity {
+	if s == nil {
 		return nil
 	}
-	return o.User
+	return s.User
 }

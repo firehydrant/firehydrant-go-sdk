@@ -8,23 +8,23 @@ type ListChangeIdentitiesRequest struct {
 	ChangeID string `pathParam:"style=simple,explode=false,name=change_id"`
 }
 
-func (o *ListChangeIdentitiesRequest) GetPage() *int {
-	if o == nil {
+func (l *ListChangeIdentitiesRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListChangeIdentitiesRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListChangeIdentitiesRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }
 
-func (o *ListChangeIdentitiesRequest) GetChangeID() string {
-	if o == nil {
+func (l *ListChangeIdentitiesRequest) GetChangeID() string {
+	if l == nil {
 		return ""
 	}
-	return o.ChangeID
+	return l.ChangeID
 }

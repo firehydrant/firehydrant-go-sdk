@@ -11,16 +11,16 @@ type UpdateCallRouteRequest struct {
 	UpdateCallRoute components.UpdateCallRoute `request:"mediaType=application/json"`
 }
 
-func (o *UpdateCallRouteRequest) GetID() string {
-	if o == nil {
+func (u *UpdateCallRouteRequest) GetID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ID
+	return u.ID
 }
 
-func (o *UpdateCallRouteRequest) GetUpdateCallRoute() components.UpdateCallRoute {
-	if o == nil {
+func (u *UpdateCallRouteRequest) GetUpdateCallRoute() components.UpdateCallRoute {
+	if u == nil {
 		return components.UpdateCallRoute{}
 	}
-	return o.UpdateCallRoute
+	return u.UpdateCallRoute
 }

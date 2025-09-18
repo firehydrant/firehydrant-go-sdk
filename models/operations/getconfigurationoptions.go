@@ -6,9 +6,9 @@ type GetConfigurationOptionsRequest struct {
 	TicketingProjectID string `pathParam:"style=simple,explode=false,name=ticketing_project_id"`
 }
 
-func (o *GetConfigurationOptionsRequest) GetTicketingProjectID() string {
-	if o == nil {
+func (g *GetConfigurationOptionsRequest) GetTicketingProjectID() string {
+	if g == nil {
 		return ""
 	}
-	return o.TicketingProjectID
+	return g.TicketingProjectID
 }

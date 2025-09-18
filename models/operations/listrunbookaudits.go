@@ -55,30 +55,30 @@ func (l *ListRunbookAuditsRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ListRunbookAuditsRequest) GetPage() *int {
-	if o == nil {
+func (l *ListRunbookAuditsRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListRunbookAuditsRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListRunbookAuditsRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }
 
-func (o *ListRunbookAuditsRequest) GetAuditableType() *AuditableType {
-	if o == nil {
+func (l *ListRunbookAuditsRequest) GetAuditableType() *AuditableType {
+	if l == nil {
 		return nil
 	}
-	return o.AuditableType
+	return l.AuditableType
 }
 
-func (o *ListRunbookAuditsRequest) GetSort() *string {
-	if o == nil {
+func (l *ListRunbookAuditsRequest) GetSort() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Sort
+	return l.Sort
 }

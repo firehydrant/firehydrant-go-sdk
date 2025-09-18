@@ -14,65 +14,65 @@ type NullableCalendarsEventEntity struct {
 	ProviderIconURL *string `json:"provider_icon_url,omitempty"`
 }
 
-func (o *NullableCalendarsEventEntity) GetID() *string {
-	if o == nil {
+func (n *NullableCalendarsEventEntity) GetID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ID
+	return n.ID
 }
 
-func (o *NullableCalendarsEventEntity) GetSummary() *string {
-	if o == nil {
+func (n *NullableCalendarsEventEntity) GetSummary() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Summary
+	return n.Summary
 }
 
-func (o *NullableCalendarsEventEntity) GetDescription() *string {
-	if o == nil {
+func (n *NullableCalendarsEventEntity) GetDescription() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Description
+	return n.Description
 }
 
-func (o *NullableCalendarsEventEntity) GetStartsAt() *string {
-	if o == nil {
+func (n *NullableCalendarsEventEntity) GetStartsAt() *string {
+	if n == nil {
 		return nil
 	}
-	return o.StartsAt
+	return n.StartsAt
 }
 
-func (o *NullableCalendarsEventEntity) GetEndsAt() *string {
-	if o == nil {
+func (n *NullableCalendarsEventEntity) GetEndsAt() *string {
+	if n == nil {
 		return nil
 	}
-	return o.EndsAt
+	return n.EndsAt
 }
 
-func (o *NullableCalendarsEventEntity) GetCreatedAt() *string {
-	if o == nil {
+func (n *NullableCalendarsEventEntity) GetCreatedAt() *string {
+	if n == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return n.CreatedAt
 }
 
-func (o *NullableCalendarsEventEntity) GetUpdatedAt() *string {
-	if o == nil {
+func (n *NullableCalendarsEventEntity) GetUpdatedAt() *string {
+	if n == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return n.UpdatedAt
 }
 
-func (o *NullableCalendarsEventEntity) GetProviderURL() *string {
-	if o == nil {
+func (n *NullableCalendarsEventEntity) GetProviderURL() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ProviderURL
+	return n.ProviderURL
 }
 
-func (o *NullableCalendarsEventEntity) GetProviderIconURL() *string {
-	if o == nil {
+func (n *NullableCalendarsEventEntity) GetProviderIconURL() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ProviderIconURL
+	return n.ProviderIconURL
 }

@@ -9,30 +9,30 @@ type SignalsAPIOnCallRestrictionEntity struct {
 	EndTime   *string `json:"end_time,omitempty"`
 }
 
-func (o *SignalsAPIOnCallRestrictionEntity) GetStartDay() *string {
-	if o == nil {
+func (s *SignalsAPIOnCallRestrictionEntity) GetStartDay() *string {
+	if s == nil {
 		return nil
 	}
-	return o.StartDay
+	return s.StartDay
 }
 
-func (o *SignalsAPIOnCallRestrictionEntity) GetStartTime() *string {
-	if o == nil {
+func (s *SignalsAPIOnCallRestrictionEntity) GetStartTime() *string {
+	if s == nil {
 		return nil
 	}
-	return o.StartTime
+	return s.StartTime
 }
 
-func (o *SignalsAPIOnCallRestrictionEntity) GetEndDay() *string {
-	if o == nil {
+func (s *SignalsAPIOnCallRestrictionEntity) GetEndDay() *string {
+	if s == nil {
 		return nil
 	}
-	return o.EndDay
+	return s.EndDay
 }
 
-func (o *SignalsAPIOnCallRestrictionEntity) GetEndTime() *string {
-	if o == nil {
+func (s *SignalsAPIOnCallRestrictionEntity) GetEndTime() *string {
+	if s == nil {
 		return nil
 	}
-	return o.EndTime
+	return s.EndTime
 }

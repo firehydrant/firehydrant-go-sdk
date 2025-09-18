@@ -7,16 +7,16 @@ type DeleteChangeIdentityRequest struct {
 	ChangeID   string `pathParam:"style=simple,explode=false,name=change_id"`
 }
 
-func (o *DeleteChangeIdentityRequest) GetIdentityID() string {
-	if o == nil {
+func (d *DeleteChangeIdentityRequest) GetIdentityID() string {
+	if d == nil {
 		return ""
 	}
-	return o.IdentityID
+	return d.IdentityID
 }
 
-func (o *DeleteChangeIdentityRequest) GetChangeID() string {
-	if o == nil {
+func (d *DeleteChangeIdentityRequest) GetChangeID() string {
+	if d == nil {
 		return ""
 	}
-	return o.ChangeID
+	return d.ChangeID
 }

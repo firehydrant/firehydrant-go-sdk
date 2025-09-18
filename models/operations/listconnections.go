@@ -7,9 +7,9 @@ type ListConnectionsRequest struct {
 	IntegrationSlug *string `queryParam:"style=form,explode=true,name=integration_slug"`
 }
 
-func (o *ListConnectionsRequest) GetIntegrationSlug() *string {
-	if o == nil {
+func (l *ListConnectionsRequest) GetIntegrationSlug() *string {
+	if l == nil {
 		return nil
 	}
-	return o.IntegrationSlug
+	return l.IntegrationSlug
 }

@@ -17,58 +17,58 @@ type FieldMappingFieldMapEntity struct {
 	DataBagURL         *string `json:"data_bag_url,omitempty"`
 }
 
-func (o *FieldMappingFieldMapEntity) GetID() *string {
-	if o == nil {
+func (f *FieldMappingFieldMapEntity) GetID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ID
+	return f.ID
 }
 
-func (o *FieldMappingFieldMapEntity) GetConnectionID() *string {
-	if o == nil {
+func (f *FieldMappingFieldMapEntity) GetConnectionID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ConnectionID
+	return f.ConnectionID
 }
 
-func (o *FieldMappingFieldMapEntity) GetConnectionType() *string {
-	if o == nil {
+func (f *FieldMappingFieldMapEntity) GetConnectionType() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ConnectionType
+	return f.ConnectionType
 }
 
-func (o *FieldMappingFieldMapEntity) GetEntityID() *string {
-	if o == nil {
+func (f *FieldMappingFieldMapEntity) GetEntityID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.EntityID
+	return f.EntityID
 }
 
-func (o *FieldMappingFieldMapEntity) GetEntityType() *string {
-	if o == nil {
+func (f *FieldMappingFieldMapEntity) GetEntityType() *string {
+	if f == nil {
 		return nil
 	}
-	return o.EntityType
+	return f.EntityType
 }
 
-func (o *FieldMappingFieldMapEntity) GetBody() *Body {
-	if o == nil {
+func (f *FieldMappingFieldMapEntity) GetBody() *Body {
+	if f == nil {
 		return nil
 	}
-	return o.Body
+	return f.Body
 }
 
-func (o *FieldMappingFieldMapEntity) GetAvailableFieldsURL() *string {
-	if o == nil {
+func (f *FieldMappingFieldMapEntity) GetAvailableFieldsURL() *string {
+	if f == nil {
 		return nil
 	}
-	return o.AvailableFieldsURL
+	return f.AvailableFieldsURL
 }
 
-func (o *FieldMappingFieldMapEntity) GetDataBagURL() *string {
-	if o == nil {
+func (f *FieldMappingFieldMapEntity) GetDataBagURL() *string {
+	if f == nil {
 		return nil
 	}
-	return o.DataBagURL
+	return f.DataBagURL
 }

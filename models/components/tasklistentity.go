@@ -29,51 +29,51 @@ func (t *TaskListEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *TaskListEntity) GetID() *string {
-	if o == nil {
+func (t *TaskListEntity) GetID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.ID
+	return t.ID
 }
 
-func (o *TaskListEntity) GetName() *string {
-	if o == nil {
+func (t *TaskListEntity) GetName() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Name
+	return t.Name
 }
 
-func (o *TaskListEntity) GetDescription() *string {
-	if o == nil {
+func (t *TaskListEntity) GetDescription() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Description
+	return t.Description
 }
 
-func (o *TaskListEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (t *TaskListEntity) GetCreatedAt() *time.Time {
+	if t == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return t.CreatedAt
 }
 
-func (o *TaskListEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (t *TaskListEntity) GetUpdatedAt() *time.Time {
+	if t == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return t.UpdatedAt
 }
 
-func (o *TaskListEntity) GetCreatedBy() *NullableAuthorEntity {
-	if o == nil {
+func (t *TaskListEntity) GetCreatedBy() *NullableAuthorEntity {
+	if t == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return t.CreatedBy
 }
 
-func (o *TaskListEntity) GetTaskListItems() []TaskListItemEntity {
-	if o == nil {
+func (t *TaskListEntity) GetTaskListItems() []TaskListItemEntity {
+	if t == nil {
 		return nil
 	}
-	return o.TaskListItems
+	return t.TaskListItems
 }

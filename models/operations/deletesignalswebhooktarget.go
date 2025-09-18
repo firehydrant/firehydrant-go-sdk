@@ -6,9 +6,9 @@ type DeleteSignalsWebhookTargetRequest struct {
 	ID string `pathParam:"style=simple,explode=false,name=id"`
 }
 
-func (o *DeleteSignalsWebhookTargetRequest) GetID() string {
-	if o == nil {
+func (d *DeleteSignalsWebhookTargetRequest) GetID() string {
+	if d == nil {
 		return ""
 	}
-	return o.ID
+	return d.ID
 }

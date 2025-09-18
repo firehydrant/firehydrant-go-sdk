@@ -6,9 +6,9 @@ type DeleteLifecycleMilestoneRequest struct {
 	MilestoneID string `pathParam:"style=simple,explode=false,name=milestone_id"`
 }
 
-func (o *DeleteLifecycleMilestoneRequest) GetMilestoneID() string {
-	if o == nil {
+func (d *DeleteLifecycleMilestoneRequest) GetMilestoneID() string {
+	if d == nil {
 		return ""
 	}
-	return o.MilestoneID
+	return d.MilestoneID
 }

@@ -153,11 +153,11 @@ type ListMttxMetricsRequestBody struct {
 	GroupBy []ListMttxMetricsGroupBy `multipartForm:"name=group_by"`
 }
 
-func (o *ListMttxMetricsRequestBody) GetGroupBy() []ListMttxMetricsGroupBy {
-	if o == nil {
+func (l *ListMttxMetricsRequestBody) GetGroupBy() []ListMttxMetricsGroupBy {
+	if l == nil {
 		return nil
 	}
-	return o.GroupBy
+	return l.GroupBy
 }
 
 type ListMttxMetricsRequest struct {
@@ -249,282 +249,282 @@ func (l *ListMttxMetricsRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ListMttxMetricsRequest) GetPage() *int {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListMttxMetricsRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }
 
-func (o *ListMttxMetricsRequest) GetConditions() *string {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetConditions() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Conditions
+	return l.Conditions
 }
 
-func (o *ListMttxMetricsRequest) GetEnvironments() *string {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetEnvironments() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Environments
+	return l.Environments
 }
 
-func (o *ListMttxMetricsRequest) GetServices() *string {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetServices() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Services
+	return l.Services
 }
 
-func (o *ListMttxMetricsRequest) GetFunctionalities() *string {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetFunctionalities() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Functionalities
+	return l.Functionalities
 }
 
-func (o *ListMttxMetricsRequest) GetExcludedInfrastructureIds() *string {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetExcludedInfrastructureIds() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ExcludedInfrastructureIds
+	return l.ExcludedInfrastructureIds
 }
 
-func (o *ListMttxMetricsRequest) GetTeams() *string {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetTeams() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Teams
+	return l.Teams
 }
 
-func (o *ListMttxMetricsRequest) GetAssignedTeams() *string {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetAssignedTeams() *string {
+	if l == nil {
 		return nil
 	}
-	return o.AssignedTeams
+	return l.AssignedTeams
 }
 
-func (o *ListMttxMetricsRequest) GetStatus() *string {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetStatus() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Status
+	return l.Status
 }
 
-func (o *ListMttxMetricsRequest) GetStartDate() types.Date {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetStartDate() types.Date {
+	if l == nil {
 		return types.Date{}
 	}
-	return o.StartDate
+	return l.StartDate
 }
 
-func (o *ListMttxMetricsRequest) GetEndDate() types.Date {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetEndDate() types.Date {
+	if l == nil {
 		return types.Date{}
 	}
-	return o.EndDate
+	return l.EndDate
 }
 
-func (o *ListMttxMetricsRequest) GetResolvedAtOrAfter() *time.Time {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetResolvedAtOrAfter() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.ResolvedAtOrAfter
+	return l.ResolvedAtOrAfter
 }
 
-func (o *ListMttxMetricsRequest) GetResolvedAtOrBefore() *time.Time {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetResolvedAtOrBefore() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.ResolvedAtOrBefore
+	return l.ResolvedAtOrBefore
 }
 
-func (o *ListMttxMetricsRequest) GetClosedAtOrAfter() *time.Time {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetClosedAtOrAfter() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.ClosedAtOrAfter
+	return l.ClosedAtOrAfter
 }
 
-func (o *ListMttxMetricsRequest) GetClosedAtOrBefore() *time.Time {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetClosedAtOrBefore() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.ClosedAtOrBefore
+	return l.ClosedAtOrBefore
 }
 
-func (o *ListMttxMetricsRequest) GetCreatedAtOrAfter() *time.Time {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetCreatedAtOrAfter() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.CreatedAtOrAfter
+	return l.CreatedAtOrAfter
 }
 
-func (o *ListMttxMetricsRequest) GetCreatedAtOrBefore() *time.Time {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetCreatedAtOrBefore() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.CreatedAtOrBefore
+	return l.CreatedAtOrBefore
 }
 
-func (o *ListMttxMetricsRequest) GetQuery() *string {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetQuery() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Query
+	return l.Query
 }
 
-func (o *ListMttxMetricsRequest) GetName() *string {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Name
+	return l.Name
 }
 
-func (o *ListMttxMetricsRequest) GetSavedSearchID() *string {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetSavedSearchID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.SavedSearchID
+	return l.SavedSearchID
 }
 
-func (o *ListMttxMetricsRequest) GetPriorities() *string {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetPriorities() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Priorities
+	return l.Priorities
 }
 
-func (o *ListMttxMetricsRequest) GetPriorityNotSet() *bool {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetPriorityNotSet() *bool {
+	if l == nil {
 		return nil
 	}
-	return o.PriorityNotSet
+	return l.PriorityNotSet
 }
 
-func (o *ListMttxMetricsRequest) GetSeverities() *string {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetSeverities() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Severities
+	return l.Severities
 }
 
-func (o *ListMttxMetricsRequest) GetSeverityNotSet() *bool {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetSeverityNotSet() *bool {
+	if l == nil {
 		return nil
 	}
-	return o.SeverityNotSet
+	return l.SeverityNotSet
 }
 
-func (o *ListMttxMetricsRequest) GetCurrentMilestones() *string {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetCurrentMilestones() *string {
+	if l == nil {
 		return nil
 	}
-	return o.CurrentMilestones
+	return l.CurrentMilestones
 }
 
-func (o *ListMttxMetricsRequest) GetTags() *string {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetTags() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Tags
+	return l.Tags
 }
 
-func (o *ListMttxMetricsRequest) GetTagMatchStrategy() *ListMttxMetricsTagMatchStrategy {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetTagMatchStrategy() *ListMttxMetricsTagMatchStrategy {
+	if l == nil {
 		return nil
 	}
-	return o.TagMatchStrategy
+	return l.TagMatchStrategy
 }
 
-func (o *ListMttxMetricsRequest) GetArchived() *bool {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetArchived() *bool {
+	if l == nil {
 		return nil
 	}
-	return o.Archived
+	return l.Archived
 }
 
-func (o *ListMttxMetricsRequest) GetUpdatedAfter() *time.Time {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetUpdatedAfter() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.UpdatedAfter
+	return l.UpdatedAfter
 }
 
-func (o *ListMttxMetricsRequest) GetUpdatedBefore() *time.Time {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetUpdatedBefore() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.UpdatedBefore
+	return l.UpdatedBefore
 }
 
-func (o *ListMttxMetricsRequest) GetIncidentTypeID() *string {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetIncidentTypeID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.IncidentTypeID
+	return l.IncidentTypeID
 }
 
-func (o *ListMttxMetricsRequest) GetRetrospectiveTemplates() *string {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetRetrospectiveTemplates() *string {
+	if l == nil {
 		return nil
 	}
-	return o.RetrospectiveTemplates
+	return l.RetrospectiveTemplates
 }
 
-func (o *ListMttxMetricsRequest) GetCustomFieldID() *string {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetCustomFieldID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.CustomFieldID
+	return l.CustomFieldID
 }
 
-func (o *ListMttxMetricsRequest) GetSortBy() *ListMttxMetricsSortBy {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetSortBy() *ListMttxMetricsSortBy {
+	if l == nil {
 		return nil
 	}
-	return o.SortBy
+	return l.SortBy
 }
 
-func (o *ListMttxMetricsRequest) GetMeasurements() *string {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetMeasurements() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Measurements
+	return l.Measurements
 }
 
-func (o *ListMttxMetricsRequest) GetLabels() *string {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetLabels() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Labels
+	return l.Labels
 }
 
-func (o *ListMttxMetricsRequest) GetIncidentOpeners() *string {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetIncidentOpeners() *string {
+	if l == nil {
 		return nil
 	}
-	return o.IncidentOpeners
+	return l.IncidentOpeners
 }
 
-func (o *ListMttxMetricsRequest) GetTicketStatus() *string {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetTicketStatus() *string {
+	if l == nil {
 		return nil
 	}
-	return o.TicketStatus
+	return l.TicketStatus
 }
 
-func (o *ListMttxMetricsRequest) GetRequestBody() *ListMttxMetricsRequestBody {
-	if o == nil {
+func (l *ListMttxMetricsRequest) GetRequestBody() *ListMttxMetricsRequestBody {
+	if l == nil {
 		return nil
 	}
-	return o.RequestBody
+	return l.RequestBody
 }

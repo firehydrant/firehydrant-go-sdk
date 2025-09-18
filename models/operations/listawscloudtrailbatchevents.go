@@ -6,9 +6,9 @@ type ListAwsCloudtrailBatchEventsRequest struct {
 	ID string `pathParam:"style=simple,explode=false,name=id"`
 }
 
-func (o *ListAwsCloudtrailBatchEventsRequest) GetID() string {
-	if o == nil {
+func (l *ListAwsCloudtrailBatchEventsRequest) GetID() string {
+	if l == nil {
 		return ""
 	}
-	return o.ID
+	return l.ID
 }

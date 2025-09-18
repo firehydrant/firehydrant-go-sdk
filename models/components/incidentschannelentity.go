@@ -14,58 +14,58 @@ type IncidentsChannelEntity struct {
 	Status     *string `json:"status,omitempty"`
 }
 
-func (o *IncidentsChannelEntity) GetID() *string {
-	if o == nil {
+func (i *IncidentsChannelEntity) GetID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ID
+	return i.ID
 }
 
-func (o *IncidentsChannelEntity) GetName() *string {
-	if o == nil {
+func (i *IncidentsChannelEntity) GetName() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Name
+	return i.Name
 }
 
-func (o *IncidentsChannelEntity) GetSource() *string {
-	if o == nil {
+func (i *IncidentsChannelEntity) GetSource() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Source
+	return i.Source
 }
 
-func (o *IncidentsChannelEntity) GetSourceName() *string {
-	if o == nil {
+func (i *IncidentsChannelEntity) GetSourceName() *string {
+	if i == nil {
 		return nil
 	}
-	return o.SourceName
+	return i.SourceName
 }
 
-func (o *IncidentsChannelEntity) GetSourceID() *string {
-	if o == nil {
+func (i *IncidentsChannelEntity) GetSourceID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.SourceID
+	return i.SourceID
 }
 
-func (o *IncidentsChannelEntity) GetURL() *string {
-	if o == nil {
+func (i *IncidentsChannelEntity) GetURL() *string {
+	if i == nil {
 		return nil
 	}
-	return o.URL
+	return i.URL
 }
 
-func (o *IncidentsChannelEntity) GetIconURL() *string {
-	if o == nil {
+func (i *IncidentsChannelEntity) GetIconURL() *string {
+	if i == nil {
 		return nil
 	}
-	return o.IconURL
+	return i.IconURL
 }
 
-func (o *IncidentsChannelEntity) GetStatus() *string {
-	if o == nil {
+func (i *IncidentsChannelEntity) GetStatus() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Status
+	return i.Status
 }

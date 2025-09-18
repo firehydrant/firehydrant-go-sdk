@@ -7,9 +7,9 @@ type IncidentsExportRetrospectivesResultEntity struct {
 	ExternalResource *NullableExternalResourceEntity `json:"external_resource,omitempty"`
 }
 
-func (o *IncidentsExportRetrospectivesResultEntity) GetExternalResource() *NullableExternalResourceEntity {
-	if o == nil {
+func (i *IncidentsExportRetrospectivesResultEntity) GetExternalResource() *NullableExternalResourceEntity {
+	if i == nil {
 		return nil
 	}
-	return o.ExternalResource
+	return i.ExternalResource
 }

@@ -8,9 +8,9 @@ type FunctionalityWithAllServicesEntity struct {
 	Services []ServiceEntity `json:"services,omitempty"`
 }
 
-func (o *FunctionalityWithAllServicesEntity) GetServices() []ServiceEntity {
-	if o == nil {
+func (f *FunctionalityWithAllServicesEntity) GetServices() []ServiceEntity {
+	if f == nil {
 		return nil
 	}
-	return o.Services
+	return f.Services
 }

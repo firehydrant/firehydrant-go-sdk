@@ -7,16 +7,16 @@ type ListStatuspageConnectionsRequest struct {
 	PerPage *int `queryParam:"style=form,explode=true,name=per_page"`
 }
 
-func (o *ListStatuspageConnectionsRequest) GetPage() *int {
-	if o == nil {
+func (l *ListStatuspageConnectionsRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListStatuspageConnectionsRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListStatuspageConnectionsRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }

@@ -56,30 +56,30 @@ func (l *ListTranscriptEntriesRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ListTranscriptEntriesRequest) GetAfter() *string {
-	if o == nil {
+func (l *ListTranscriptEntriesRequest) GetAfter() *string {
+	if l == nil {
 		return nil
 	}
-	return o.After
+	return l.After
 }
 
-func (o *ListTranscriptEntriesRequest) GetBefore() *string {
-	if o == nil {
+func (l *ListTranscriptEntriesRequest) GetBefore() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Before
+	return l.Before
 }
 
-func (o *ListTranscriptEntriesRequest) GetSort() *ListTranscriptEntriesSort {
-	if o == nil {
+func (l *ListTranscriptEntriesRequest) GetSort() *ListTranscriptEntriesSort {
+	if l == nil {
 		return nil
 	}
-	return o.Sort
+	return l.Sort
 }
 
-func (o *ListTranscriptEntriesRequest) GetIncidentID() string {
-	if o == nil {
+func (l *ListTranscriptEntriesRequest) GetIncidentID() string {
+	if l == nil {
 		return ""
 	}
-	return o.IncidentID
+	return l.IncidentID
 }

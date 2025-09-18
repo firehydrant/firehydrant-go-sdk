@@ -8,9 +8,9 @@ type UpdateComment struct {
 	Body *string `json:"body,omitempty"`
 }
 
-func (o *UpdateComment) GetBody() *string {
-	if o == nil {
+func (u *UpdateComment) GetBody() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Body
+	return u.Body
 }

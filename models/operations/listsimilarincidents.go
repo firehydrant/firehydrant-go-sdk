@@ -23,23 +23,23 @@ func (l *ListSimilarIncidentsRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ListSimilarIncidentsRequest) GetThreshold() *float32 {
-	if o == nil {
+func (l *ListSimilarIncidentsRequest) GetThreshold() *float32 {
+	if l == nil {
 		return nil
 	}
-	return o.Threshold
+	return l.Threshold
 }
 
-func (o *ListSimilarIncidentsRequest) GetLimit() *int {
-	if o == nil {
+func (l *ListSimilarIncidentsRequest) GetLimit() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Limit
+	return l.Limit
 }
 
-func (o *ListSimilarIncidentsRequest) GetIncidentID() string {
-	if o == nil {
+func (l *ListSimilarIncidentsRequest) GetIncidentID() string {
+	if l == nil {
 		return ""
 	}
-	return o.IncidentID
+	return l.IncidentID
 }

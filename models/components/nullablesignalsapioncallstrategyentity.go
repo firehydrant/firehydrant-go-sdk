@@ -9,30 +9,30 @@ type NullableSignalsAPIOnCallStrategyEntity struct {
 	ShiftDuration *string `json:"shift_duration,omitempty"`
 }
 
-func (o *NullableSignalsAPIOnCallStrategyEntity) GetType() *string {
-	if o == nil {
+func (n *NullableSignalsAPIOnCallStrategyEntity) GetType() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Type
+	return n.Type
 }
 
-func (o *NullableSignalsAPIOnCallStrategyEntity) GetHandoffTime() *string {
-	if o == nil {
+func (n *NullableSignalsAPIOnCallStrategyEntity) GetHandoffTime() *string {
+	if n == nil {
 		return nil
 	}
-	return o.HandoffTime
+	return n.HandoffTime
 }
 
-func (o *NullableSignalsAPIOnCallStrategyEntity) GetHandoffDay() *string {
-	if o == nil {
+func (n *NullableSignalsAPIOnCallStrategyEntity) GetHandoffDay() *string {
+	if n == nil {
 		return nil
 	}
-	return o.HandoffDay
+	return n.HandoffDay
 }
 
-func (o *NullableSignalsAPIOnCallStrategyEntity) GetShiftDuration() *string {
-	if o == nil {
+func (n *NullableSignalsAPIOnCallStrategyEntity) GetShiftDuration() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ShiftDuration
+	return n.ShiftDuration
 }

@@ -6,9 +6,9 @@ type GetTicketRequest struct {
 	TicketID string `pathParam:"style=simple,explode=false,name=ticket_id"`
 }
 
-func (o *GetTicketRequest) GetTicketID() string {
-	if o == nil {
+func (g *GetTicketRequest) GetTicketID() string {
+	if g == nil {
 		return ""
 	}
-	return o.TicketID
+	return g.TicketID
 }

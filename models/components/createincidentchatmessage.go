@@ -54,23 +54,23 @@ func (c *CreateIncidentChatMessage) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CreateIncidentChatMessage) GetBody() string {
-	if o == nil {
+func (c *CreateIncidentChatMessage) GetBody() string {
+	if c == nil {
 		return ""
 	}
-	return o.Body
+	return c.Body
 }
 
-func (o *CreateIncidentChatMessage) GetOccurredAt() *time.Time {
-	if o == nil {
+func (c *CreateIncidentChatMessage) GetOccurredAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.OccurredAt
+	return c.OccurredAt
 }
 
-func (o *CreateIncidentChatMessage) GetVoteDirection() *VoteDirection {
-	if o == nil {
+func (c *CreateIncidentChatMessage) GetVoteDirection() *VoteDirection {
+	if c == nil {
 		return nil
 	}
-	return o.VoteDirection
+	return c.VoteDirection
 }

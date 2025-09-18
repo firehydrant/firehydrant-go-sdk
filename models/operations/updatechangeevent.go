@@ -11,16 +11,16 @@ type UpdateChangeEventRequest struct {
 	UpdateChangeEvent components.UpdateChangeEvent `request:"mediaType=application/json"`
 }
 
-func (o *UpdateChangeEventRequest) GetChangeEventID() string {
-	if o == nil {
+func (u *UpdateChangeEventRequest) GetChangeEventID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ChangeEventID
+	return u.ChangeEventID
 }
 
-func (o *UpdateChangeEventRequest) GetUpdateChangeEvent() components.UpdateChangeEvent {
-	if o == nil {
+func (u *UpdateChangeEventRequest) GetUpdateChangeEvent() components.UpdateChangeEvent {
+	if u == nil {
 		return components.UpdateChangeEvent{}
 	}
-	return o.UpdateChangeEvent
+	return u.UpdateChangeEvent
 }

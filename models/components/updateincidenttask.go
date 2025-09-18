@@ -16,37 +16,37 @@ type UpdateIncidentTask struct {
 	DueAt *string `json:"due_at,omitempty"`
 }
 
-func (o *UpdateIncidentTask) GetTitle() *string {
-	if o == nil {
+func (u *UpdateIncidentTask) GetTitle() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Title
+	return u.Title
 }
 
-func (o *UpdateIncidentTask) GetDescription() *string {
-	if o == nil {
+func (u *UpdateIncidentTask) GetDescription() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Description
+	return u.Description
 }
 
-func (o *UpdateIncidentTask) GetState() *string {
-	if o == nil {
+func (u *UpdateIncidentTask) GetState() *string {
+	if u == nil {
 		return nil
 	}
-	return o.State
+	return u.State
 }
 
-func (o *UpdateIncidentTask) GetAssigneeID() *string {
-	if o == nil {
+func (u *UpdateIncidentTask) GetAssigneeID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.AssigneeID
+	return u.AssigneeID
 }
 
-func (o *UpdateIncidentTask) GetDueAt() *string {
-	if o == nil {
+func (u *UpdateIncidentTask) GetDueAt() *string {
+	if u == nil {
 		return nil
 	}
-	return o.DueAt
+	return u.DueAt
 }

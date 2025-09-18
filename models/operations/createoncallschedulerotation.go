@@ -12,23 +12,23 @@ type CreateOnCallScheduleRotationRequest struct {
 	CreateOnCallScheduleRotation components.CreateOnCallScheduleRotation `request:"mediaType=application/json"`
 }
 
-func (o *CreateOnCallScheduleRotationRequest) GetTeamID() string {
-	if o == nil {
+func (c *CreateOnCallScheduleRotationRequest) GetTeamID() string {
+	if c == nil {
 		return ""
 	}
-	return o.TeamID
+	return c.TeamID
 }
 
-func (o *CreateOnCallScheduleRotationRequest) GetScheduleID() string {
-	if o == nil {
+func (c *CreateOnCallScheduleRotationRequest) GetScheduleID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ScheduleID
+	return c.ScheduleID
 }
 
-func (o *CreateOnCallScheduleRotationRequest) GetCreateOnCallScheduleRotation() components.CreateOnCallScheduleRotation {
-	if o == nil {
+func (c *CreateOnCallScheduleRotationRequest) GetCreateOnCallScheduleRotation() components.CreateOnCallScheduleRotation {
+	if c == nil {
 		return components.CreateOnCallScheduleRotation{}
 	}
-	return o.CreateOnCallScheduleRotation
+	return c.CreateOnCallScheduleRotation
 }

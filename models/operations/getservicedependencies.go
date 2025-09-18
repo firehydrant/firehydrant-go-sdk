@@ -8,16 +8,16 @@ type GetServiceDependenciesRequest struct {
 	Flatten *bool `queryParam:"style=form,explode=true,name=flatten"`
 }
 
-func (o *GetServiceDependenciesRequest) GetServiceID() string {
-	if o == nil {
+func (g *GetServiceDependenciesRequest) GetServiceID() string {
+	if g == nil {
 		return ""
 	}
-	return o.ServiceID
+	return g.ServiceID
 }
 
-func (o *GetServiceDependenciesRequest) GetFlatten() *bool {
-	if o == nil {
+func (g *GetServiceDependenciesRequest) GetFlatten() *bool {
+	if g == nil {
 		return nil
 	}
-	return o.Flatten
+	return g.Flatten
 }

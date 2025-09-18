@@ -14,65 +14,65 @@ type NullablePostMortemsQuestionEntity struct {
 	Conversations    []ConversationsAPIEntitiesReference `json:"conversations,omitempty"`
 }
 
-func (o *NullablePostMortemsQuestionEntity) GetID() *string {
-	if o == nil {
+func (n *NullablePostMortemsQuestionEntity) GetID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ID
+	return n.ID
 }
 
-func (o *NullablePostMortemsQuestionEntity) GetTitle() *string {
-	if o == nil {
+func (n *NullablePostMortemsQuestionEntity) GetTitle() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Title
+	return n.Title
 }
 
-func (o *NullablePostMortemsQuestionEntity) GetBody() *string {
-	if o == nil {
+func (n *NullablePostMortemsQuestionEntity) GetBody() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Body
+	return n.Body
 }
 
-func (o *NullablePostMortemsQuestionEntity) GetTooltip() *string {
-	if o == nil {
+func (n *NullablePostMortemsQuestionEntity) GetTooltip() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Tooltip
+	return n.Tooltip
 }
 
-func (o *NullablePostMortemsQuestionEntity) GetKind() *string {
-	if o == nil {
+func (n *NullablePostMortemsQuestionEntity) GetKind() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Kind
+	return n.Kind
 }
 
-func (o *NullablePostMortemsQuestionEntity) GetQuestionTypeID() *string {
-	if o == nil {
+func (n *NullablePostMortemsQuestionEntity) GetQuestionTypeID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.QuestionTypeID
+	return n.QuestionTypeID
 }
 
-func (o *NullablePostMortemsQuestionEntity) GetIsRequired() *bool {
-	if o == nil {
+func (n *NullablePostMortemsQuestionEntity) GetIsRequired() *bool {
+	if n == nil {
 		return nil
 	}
-	return o.IsRequired
+	return n.IsRequired
 }
 
-func (o *NullablePostMortemsQuestionEntity) GetAvailableOptions() []string {
-	if o == nil {
+func (n *NullablePostMortemsQuestionEntity) GetAvailableOptions() []string {
+	if n == nil {
 		return nil
 	}
-	return o.AvailableOptions
+	return n.AvailableOptions
 }
 
-func (o *NullablePostMortemsQuestionEntity) GetConversations() []ConversationsAPIEntitiesReference {
-	if o == nil {
+func (n *NullablePostMortemsQuestionEntity) GetConversations() []ConversationsAPIEntitiesReference {
+	if n == nil {
 		return nil
 	}
-	return o.Conversations
+	return n.Conversations
 }

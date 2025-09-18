@@ -6,9 +6,9 @@ type GetRunbookRequest struct {
 	RunbookID string `pathParam:"style=simple,explode=false,name=runbook_id"`
 }
 
-func (o *GetRunbookRequest) GetRunbookID() string {
-	if o == nil {
+func (g *GetRunbookRequest) GetRunbookID() string {
+	if g == nil {
 		return ""
 	}
-	return o.RunbookID
+	return g.RunbookID
 }

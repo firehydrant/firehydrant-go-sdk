@@ -11,37 +11,37 @@ type SeverityMatrixImpactEntity struct {
 	Position  *int    `json:"position,omitempty"`
 }
 
-func (o *SeverityMatrixImpactEntity) GetID() *string {
-	if o == nil {
+func (s *SeverityMatrixImpactEntity) GetID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *SeverityMatrixImpactEntity) GetName() *string {
-	if o == nil {
+func (s *SeverityMatrixImpactEntity) GetName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Name
+	return s.Name
 }
 
-func (o *SeverityMatrixImpactEntity) GetType() *string {
-	if o == nil {
+func (s *SeverityMatrixImpactEntity) GetType() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Type
+	return s.Type
 }
 
-func (o *SeverityMatrixImpactEntity) GetAffectsID() *string {
-	if o == nil {
+func (s *SeverityMatrixImpactEntity) GetAffectsID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.AffectsID
+	return s.AffectsID
 }
 
-func (o *SeverityMatrixImpactEntity) GetPosition() *int {
-	if o == nil {
+func (s *SeverityMatrixImpactEntity) GetPosition() *int {
+	if s == nil {
 		return nil
 	}
-	return o.Position
+	return s.Position
 }

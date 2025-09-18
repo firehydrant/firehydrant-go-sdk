@@ -31,72 +31,72 @@ func (t *TeamEntityLite) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *TeamEntityLite) GetID() *string {
-	if o == nil {
+func (t *TeamEntityLite) GetID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.ID
+	return t.ID
 }
 
-func (o *TeamEntityLite) GetName() *string {
-	if o == nil {
+func (t *TeamEntityLite) GetName() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Name
+	return t.Name
 }
 
-func (o *TeamEntityLite) GetDescription() *string {
-	if o == nil {
+func (t *TeamEntityLite) GetDescription() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Description
+	return t.Description
 }
 
-func (o *TeamEntityLite) GetSlug() *string {
-	if o == nil {
+func (t *TeamEntityLite) GetSlug() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Slug
+	return t.Slug
 }
 
-func (o *TeamEntityLite) GetCreatedAt() *time.Time {
-	if o == nil {
+func (t *TeamEntityLite) GetCreatedAt() *time.Time {
+	if t == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return t.CreatedAt
 }
 
-func (o *TeamEntityLite) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (t *TeamEntityLite) GetUpdatedAt() *time.Time {
+	if t == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return t.UpdatedAt
 }
 
-func (o *TeamEntityLite) GetSignalsIcalURL() *string {
-	if o == nil {
+func (t *TeamEntityLite) GetSignalsIcalURL() *string {
+	if t == nil {
 		return nil
 	}
-	return o.SignalsIcalURL
+	return t.SignalsIcalURL
 }
 
-func (o *TeamEntityLite) GetCreatedBy() *NullableAuthorEntity {
-	if o == nil {
+func (t *TeamEntityLite) GetCreatedBy() *NullableAuthorEntity {
+	if t == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return t.CreatedBy
 }
 
-func (o *TeamEntityLite) GetInSupportHours() *bool {
-	if o == nil {
+func (t *TeamEntityLite) GetInSupportHours() *bool {
+	if t == nil {
 		return nil
 	}
-	return o.InSupportHours
+	return t.InSupportHours
 }
 
-func (o *TeamEntityLite) GetRestrictSignalsResourceManagement() *bool {
-	if o == nil {
+func (t *TeamEntityLite) GetRestrictSignalsResourceManagement() *bool {
+	if t == nil {
 		return nil
 	}
-	return o.RestrictSignalsResourceManagement
+	return t.RestrictSignalsResourceManagement
 }

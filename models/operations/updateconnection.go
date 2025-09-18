@@ -7,16 +7,16 @@ type UpdateConnectionRequest struct {
 	ConnectionID string `pathParam:"style=simple,explode=false,name=connection_id"`
 }
 
-func (o *UpdateConnectionRequest) GetSlug() string {
-	if o == nil {
+func (u *UpdateConnectionRequest) GetSlug() string {
+	if u == nil {
 		return ""
 	}
-	return o.Slug
+	return u.Slug
 }
 
-func (o *UpdateConnectionRequest) GetConnectionID() string {
-	if o == nil {
+func (u *UpdateConnectionRequest) GetConnectionID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ConnectionID
+	return u.ConnectionID
 }

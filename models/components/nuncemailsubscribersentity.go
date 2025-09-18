@@ -28,23 +28,23 @@ func (n *NuncEmailSubscribersEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *NuncEmailSubscribersEntity) GetID() *string {
-	if o == nil {
+func (n *NuncEmailSubscribersEntity) GetID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ID
+	return n.ID
 }
 
-func (o *NuncEmailSubscribersEntity) GetEmail() *string {
-	if o == nil {
+func (n *NuncEmailSubscribersEntity) GetEmail() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Email
+	return n.Email
 }
 
-func (o *NuncEmailSubscribersEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (n *NuncEmailSubscribersEntity) GetCreatedAt() *time.Time {
+	if n == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return n.CreatedAt
 }

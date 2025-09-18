@@ -9,30 +9,30 @@ type NullableIncidentsContextObjectEntity struct {
 	ContextDescription *string `json:"context_description,omitempty"`
 }
 
-func (o *NullableIncidentsContextObjectEntity) GetObjectType() *string {
-	if o == nil {
+func (n *NullableIncidentsContextObjectEntity) GetObjectType() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ObjectType
+	return n.ObjectType
 }
 
-func (o *NullableIncidentsContextObjectEntity) GetObjectID() *string {
-	if o == nil {
+func (n *NullableIncidentsContextObjectEntity) GetObjectID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ObjectID
+	return n.ObjectID
 }
 
-func (o *NullableIncidentsContextObjectEntity) GetContextTag() *string {
-	if o == nil {
+func (n *NullableIncidentsContextObjectEntity) GetContextTag() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ContextTag
+	return n.ContextTag
 }
 
-func (o *NullableIncidentsContextObjectEntity) GetContextDescription() *string {
-	if o == nil {
+func (n *NullableIncidentsContextObjectEntity) GetContextDescription() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ContextDescription
+	return n.ContextDescription
 }

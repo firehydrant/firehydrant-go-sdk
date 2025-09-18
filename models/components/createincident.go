@@ -20,25 +20,25 @@ type CreateIncidentImpact1 struct {
 	ConditionID string `json:"condition_id"`
 }
 
-func (o *CreateIncidentImpact1) GetType() string {
-	if o == nil {
+func (c *CreateIncidentImpact1) GetType() string {
+	if c == nil {
 		return ""
 	}
-	return o.Type
+	return c.Type
 }
 
-func (o *CreateIncidentImpact1) GetID() string {
-	if o == nil {
+func (c *CreateIncidentImpact1) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *CreateIncidentImpact1) GetConditionID() string {
-	if o == nil {
+func (c *CreateIncidentImpact1) GetConditionID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ConditionID
+	return c.ConditionID
 }
 
 type CreateIncidentMilestone struct {
@@ -59,18 +59,18 @@ func (c *CreateIncidentMilestone) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CreateIncidentMilestone) GetType() string {
-	if o == nil {
+func (c *CreateIncidentMilestone) GetType() string {
+	if c == nil {
 		return ""
 	}
-	return o.Type
+	return c.Type
 }
 
-func (o *CreateIncidentMilestone) GetOccurredAt() time.Time {
-	if o == nil {
+func (c *CreateIncidentMilestone) GetOccurredAt() time.Time {
+	if c == nil {
 		return time.Time{}
 	}
-	return o.OccurredAt
+	return c.OccurredAt
 }
 
 type CustomField struct {
@@ -82,25 +82,25 @@ type CustomField struct {
 	ValueArray []string `json:"value_array,omitempty"`
 }
 
-func (o *CustomField) GetFieldID() string {
-	if o == nil {
+func (c *CustomField) GetFieldID() string {
+	if c == nil {
 		return ""
 	}
-	return o.FieldID
+	return c.FieldID
 }
 
-func (o *CustomField) GetValueString() *string {
-	if o == nil {
+func (c *CustomField) GetValueString() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ValueString
+	return c.ValueString
 }
 
-func (o *CustomField) GetValueArray() []string {
-	if o == nil {
+func (c *CustomField) GetValueArray() []string {
+	if c == nil {
 		return nil
 	}
-	return o.ValueArray
+	return c.ValueArray
 }
 
 // CreateIncident - Create a new incident
@@ -148,142 +148,142 @@ func (c *CreateIncident) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CreateIncident) GetName() string {
-	if o == nil {
+func (c *CreateIncident) GetName() string {
+	if c == nil {
 		return ""
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CreateIncident) GetSummary() *string {
-	if o == nil {
+func (c *CreateIncident) GetSummary() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Summary
+	return c.Summary
 }
 
-func (o *CreateIncident) GetCustomerImpactSummary() *string {
-	if o == nil {
+func (c *CreateIncident) GetCustomerImpactSummary() *string {
+	if c == nil {
 		return nil
 	}
-	return o.CustomerImpactSummary
+	return c.CustomerImpactSummary
 }
 
-func (o *CreateIncident) GetDescription() *string {
-	if o == nil {
+func (c *CreateIncident) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *CreateIncident) GetPriority() *string {
-	if o == nil {
+func (c *CreateIncident) GetPriority() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Priority
+	return c.Priority
 }
 
-func (o *CreateIncident) GetSeverity() *string {
-	if o == nil {
+func (c *CreateIncident) GetSeverity() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Severity
+	return c.Severity
 }
 
-func (o *CreateIncident) GetSeverityConditionID() *string {
-	if o == nil {
+func (c *CreateIncident) GetSeverityConditionID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.SeverityConditionID
+	return c.SeverityConditionID
 }
 
-func (o *CreateIncident) GetSeverityImpactID() *string {
-	if o == nil {
+func (c *CreateIncident) GetSeverityImpactID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.SeverityImpactID
+	return c.SeverityImpactID
 }
 
-func (o *CreateIncident) GetAlertIds() []string {
-	if o == nil {
+func (c *CreateIncident) GetAlertIds() []string {
+	if c == nil {
 		return nil
 	}
-	return o.AlertIds
+	return c.AlertIds
 }
 
-func (o *CreateIncident) GetLabels() *CreateIncidentLabels {
-	if o == nil {
+func (c *CreateIncident) GetLabels() *CreateIncidentLabels {
+	if c == nil {
 		return nil
 	}
-	return o.Labels
+	return c.Labels
 }
 
-func (o *CreateIncident) GetRunbookIds() []string {
-	if o == nil {
+func (c *CreateIncident) GetRunbookIds() []string {
+	if c == nil {
 		return nil
 	}
-	return o.RunbookIds
+	return c.RunbookIds
 }
 
-func (o *CreateIncident) GetTagList() []string {
-	if o == nil {
+func (c *CreateIncident) GetTagList() []string {
+	if c == nil {
 		return nil
 	}
-	return o.TagList
+	return c.TagList
 }
 
-func (o *CreateIncident) GetImpacts() []CreateIncidentImpact1 {
-	if o == nil {
+func (c *CreateIncident) GetImpacts() []CreateIncidentImpact1 {
+	if c == nil {
 		return nil
 	}
-	return o.Impacts
+	return c.Impacts
 }
 
-func (o *CreateIncident) GetMilestones() []CreateIncidentMilestone {
-	if o == nil {
+func (c *CreateIncident) GetMilestones() []CreateIncidentMilestone {
+	if c == nil {
 		return nil
 	}
-	return o.Milestones
+	return c.Milestones
 }
 
-func (o *CreateIncident) GetRestricted() *bool {
-	if o == nil {
+func (c *CreateIncident) GetRestricted() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Restricted
+	return c.Restricted
 }
 
-func (o *CreateIncident) GetTeamIds() []string {
-	if o == nil {
+func (c *CreateIncident) GetTeamIds() []string {
+	if c == nil {
 		return nil
 	}
-	return o.TeamIds
+	return c.TeamIds
 }
 
-func (o *CreateIncident) GetCustomFields() []CustomField {
-	if o == nil {
+func (c *CreateIncident) GetCustomFields() []CustomField {
+	if c == nil {
 		return nil
 	}
-	return o.CustomFields
+	return c.CustomFields
 }
 
-func (o *CreateIncident) GetExternalLinks() *string {
-	if o == nil {
+func (c *CreateIncident) GetExternalLinks() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ExternalLinks
+	return c.ExternalLinks
 }
 
-func (o *CreateIncident) GetIncidentTypeID() *string {
-	if o == nil {
+func (c *CreateIncident) GetIncidentTypeID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.IncidentTypeID
+	return c.IncidentTypeID
 }
 
-func (o *CreateIncident) GetSkipIncidentTypeValues() *bool {
-	if o == nil {
+func (c *CreateIncident) GetSkipIncidentTypeValues() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.SkipIncidentTypeValues
+	return c.SkipIncidentTypeValues
 }

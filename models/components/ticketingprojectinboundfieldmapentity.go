@@ -47,51 +47,51 @@ type TicketingProjectInboundFieldMapEntity struct {
 	TicketType         *TicketType `json:"ticket_type,omitempty"`
 }
 
-func (o *TicketingProjectInboundFieldMapEntity) GetID() *string {
-	if o == nil {
+func (t *TicketingProjectInboundFieldMapEntity) GetID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.ID
+	return t.ID
 }
 
-func (o *TicketingProjectInboundFieldMapEntity) GetConnectionID() *string {
-	if o == nil {
+func (t *TicketingProjectInboundFieldMapEntity) GetConnectionID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.ConnectionID
+	return t.ConnectionID
 }
 
-func (o *TicketingProjectInboundFieldMapEntity) GetConnectionType() *string {
-	if o == nil {
+func (t *TicketingProjectInboundFieldMapEntity) GetConnectionType() *string {
+	if t == nil {
 		return nil
 	}
-	return o.ConnectionType
+	return t.ConnectionType
 }
 
-func (o *TicketingProjectInboundFieldMapEntity) GetTicketingProjectID() *string {
-	if o == nil {
+func (t *TicketingProjectInboundFieldMapEntity) GetTicketingProjectID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.TicketingProjectID
+	return t.TicketingProjectID
 }
 
-func (o *TicketingProjectInboundFieldMapEntity) GetExternalFieldName() *string {
-	if o == nil {
+func (t *TicketingProjectInboundFieldMapEntity) GetExternalFieldName() *string {
+	if t == nil {
 		return nil
 	}
-	return o.ExternalFieldName
+	return t.ExternalFieldName
 }
 
-func (o *TicketingProjectInboundFieldMapEntity) GetInternalFieldName() *string {
-	if o == nil {
+func (t *TicketingProjectInboundFieldMapEntity) GetInternalFieldName() *string {
+	if t == nil {
 		return nil
 	}
-	return o.InternalFieldName
+	return t.InternalFieldName
 }
 
-func (o *TicketingProjectInboundFieldMapEntity) GetTicketType() *TicketType {
-	if o == nil {
+func (t *TicketingProjectInboundFieldMapEntity) GetTicketType() *TicketType {
+	if t == nil {
 		return nil
 	}
-	return o.TicketType
+	return t.TicketType
 }

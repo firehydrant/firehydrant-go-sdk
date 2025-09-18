@@ -7,16 +7,16 @@ type SignalsAPINotificationPolicyItemComplianceEntity struct {
 	IsCompliant              *bool   `json:"is_compliant,omitempty"`
 }
 
-func (o *SignalsAPINotificationPolicyItemComplianceEntity) GetNotificationPolicyItemID() *string {
-	if o == nil {
+func (s *SignalsAPINotificationPolicyItemComplianceEntity) GetNotificationPolicyItemID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.NotificationPolicyItemID
+	return s.NotificationPolicyItemID
 }
 
-func (o *SignalsAPINotificationPolicyItemComplianceEntity) GetIsCompliant() *bool {
-	if o == nil {
+func (s *SignalsAPINotificationPolicyItemComplianceEntity) GetIsCompliant() *bool {
+	if s == nil {
 		return nil
 	}
-	return o.IsCompliant
+	return s.IsCompliant
 }

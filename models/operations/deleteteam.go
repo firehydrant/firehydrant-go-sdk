@@ -6,9 +6,9 @@ type DeleteTeamRequest struct {
 	TeamID string `pathParam:"style=simple,explode=false,name=team_id"`
 }
 
-func (o *DeleteTeamRequest) GetTeamID() string {
-	if o == nil {
+func (d *DeleteTeamRequest) GetTeamID() string {
+	if d == nil {
 		return ""
 	}
-	return o.TeamID
+	return d.TeamID
 }

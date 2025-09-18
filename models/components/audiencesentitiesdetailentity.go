@@ -15,37 +15,37 @@ type AudiencesEntitiesDetailEntity struct {
 	Slug *string `json:"slug,omitempty"`
 }
 
-func (o *AudiencesEntitiesDetailEntity) GetID() *string {
-	if o == nil {
+func (a *AudiencesEntitiesDetailEntity) GetID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AudiencesEntitiesDetailEntity) GetQuestion() *string {
-	if o == nil {
+func (a *AudiencesEntitiesDetailEntity) GetQuestion() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Question
+	return a.Question
 }
 
-func (o *AudiencesEntitiesDetailEntity) GetPrompt() *string {
-	if o == nil {
+func (a *AudiencesEntitiesDetailEntity) GetPrompt() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Prompt
+	return a.Prompt
 }
 
-func (o *AudiencesEntitiesDetailEntity) GetPosition() *int {
-	if o == nil {
+func (a *AudiencesEntitiesDetailEntity) GetPosition() *int {
+	if a == nil {
 		return nil
 	}
-	return o.Position
+	return a.Position
 }
 
-func (o *AudiencesEntitiesDetailEntity) GetSlug() *string {
-	if o == nil {
+func (a *AudiencesEntitiesDetailEntity) GetSlug() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Slug
+	return a.Slug
 }

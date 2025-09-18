@@ -51,65 +51,65 @@ type IncidentAttachmentEntity struct {
 	Versions *Versions `json:"versions,omitempty"`
 }
 
-func (o *IncidentAttachmentEntity) GetFileName() *string {
-	if o == nil {
+func (i *IncidentAttachmentEntity) GetFileName() *string {
+	if i == nil {
 		return nil
 	}
-	return o.FileName
+	return i.FileName
 }
 
-func (o *IncidentAttachmentEntity) GetFileContentType() *string {
-	if o == nil {
+func (i *IncidentAttachmentEntity) GetFileContentType() *string {
+	if i == nil {
 		return nil
 	}
-	return o.FileContentType
+	return i.FileContentType
 }
 
-func (o *IncidentAttachmentEntity) GetSignedURL() *string {
-	if o == nil {
+func (i *IncidentAttachmentEntity) GetSignedURL() *string {
+	if i == nil {
 		return nil
 	}
-	return o.SignedURL
+	return i.SignedURL
 }
 
-func (o *IncidentAttachmentEntity) GetMediaType() *string {
-	if o == nil {
+func (i *IncidentAttachmentEntity) GetMediaType() *string {
+	if i == nil {
 		return nil
 	}
-	return o.MediaType
+	return i.MediaType
 }
 
-func (o *IncidentAttachmentEntity) GetDescription() *string {
-	if o == nil {
+func (i *IncidentAttachmentEntity) GetDescription() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Description
+	return i.Description
 }
 
-func (o *IncidentAttachmentEntity) GetExternalID() *string {
-	if o == nil {
+func (i *IncidentAttachmentEntity) GetExternalID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ExternalID
+	return i.ExternalID
 }
 
-func (o *IncidentAttachmentEntity) GetFileSize() *int {
-	if o == nil {
+func (i *IncidentAttachmentEntity) GetFileSize() *int {
+	if i == nil {
 		return nil
 	}
-	return o.FileSize
+	return i.FileSize
 }
 
-func (o *IncidentAttachmentEntity) GetStatus() *IncidentAttachmentEntityStatus {
-	if o == nil {
+func (i *IncidentAttachmentEntity) GetStatus() *IncidentAttachmentEntityStatus {
+	if i == nil {
 		return nil
 	}
-	return o.Status
+	return i.Status
 }
 
-func (o *IncidentAttachmentEntity) GetVersions() *Versions {
-	if o == nil {
+func (i *IncidentAttachmentEntity) GetVersions() *Versions {
+	if i == nil {
 		return nil
 	}
-	return o.Versions
+	return i.Versions
 }

@@ -651,7 +651,7 @@ func main() {
 * [DeleteSignalsWebhookTarget](docs/sdks/signals/README.md#deletesignalswebhooktarget) - Delete a webhook target
 * [UpdateSignalsWebhookTarget](docs/sdks/signals/README.md#updatesignalswebhooktarget) - Update a webhook target
 * [ListNotificationPolicySettings](docs/sdks/signals/README.md#listnotificationpolicysettings) - List notification policies
-* [CreateHandoffNotificationSetting](docs/sdks/signals/README.md#createhandoffnotificationsetting) - Create a notification policy
+* [CreateNotificationPolicy](docs/sdks/signals/README.md#createnotificationpolicy) - Create a notification policy
 * [GetNotificationPolicy](docs/sdks/signals/README.md#getnotificationpolicy) - Get a notification policy
 * [DeleteNotificationPolicy](docs/sdks/signals/README.md#deletenotificationpolicy) - Delete a notification policy
 * [UpdateNotificationPolicy](docs/sdks/signals/README.md#updatenotificationpolicy) - Update a notification policy

@@ -6,9 +6,9 @@ type GetServiceDependencyRequest struct {
 	ServiceDependencyID string `pathParam:"style=simple,explode=false,name=service_dependency_id"`
 }
 
-func (o *GetServiceDependencyRequest) GetServiceDependencyID() string {
-	if o == nil {
+func (g *GetServiceDependencyRequest) GetServiceDependencyID() string {
+	if g == nil {
 		return ""
 	}
-	return o.ServiceDependencyID
+	return g.ServiceDependencyID
 }

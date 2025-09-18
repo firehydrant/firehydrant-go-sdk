@@ -14,18 +14,18 @@ type ChangeIdentity struct {
 	Value string `json:"value"`
 }
 
-func (o *ChangeIdentity) GetType() string {
-	if o == nil {
+func (c *ChangeIdentity) GetType() string {
+	if c == nil {
 		return ""
 	}
-	return o.Type
+	return c.Type
 }
 
-func (o *ChangeIdentity) GetValue() string {
-	if o == nil {
+func (c *ChangeIdentity) GetValue() string {
+	if c == nil {
 		return ""
 	}
-	return o.Value
+	return c.Value
 }
 
 type CreateChangeEventType string
@@ -55,11 +55,11 @@ type CreateChangeEventAttachment struct {
 	Type CreateChangeEventType `json:"type"`
 }
 
-func (o *CreateChangeEventAttachment) GetType() CreateChangeEventType {
-	if o == nil {
+func (c *CreateChangeEventAttachment) GetType() CreateChangeEventType {
+	if c == nil {
 		return CreateChangeEventType("")
 	}
-	return o.Type
+	return c.Type
 }
 
 type Author struct {
@@ -68,25 +68,25 @@ type Author struct {
 	Name     string `json:"name"`
 }
 
-func (o *Author) GetSource() string {
-	if o == nil {
+func (a *Author) GetSource() string {
+	if a == nil {
 		return ""
 	}
-	return o.Source
+	return a.Source
 }
 
-func (o *Author) GetSourceID() string {
-	if o == nil {
+func (a *Author) GetSourceID() string {
+	if a == nil {
 		return ""
 	}
-	return o.SourceID
+	return a.SourceID
 }
 
-func (o *Author) GetName() string {
-	if o == nil {
+func (a *Author) GetName() string {
+	if a == nil {
 		return ""
 	}
-	return o.Name
+	return a.Name
 }
 
 // CreateChangeEvent - Create a change event
@@ -123,86 +123,86 @@ func (c *CreateChangeEvent) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CreateChangeEvent) GetSummary() string {
-	if o == nil {
+func (c *CreateChangeEvent) GetSummary() string {
+	if c == nil {
 		return ""
 	}
-	return o.Summary
+	return c.Summary
 }
 
-func (o *CreateChangeEvent) GetDescription() *string {
-	if o == nil {
+func (c *CreateChangeEvent) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *CreateChangeEvent) GetLabels() map[string]string {
-	if o == nil {
+func (c *CreateChangeEvent) GetLabels() map[string]string {
+	if c == nil {
 		return nil
 	}
-	return o.Labels
+	return c.Labels
 }
 
-func (o *CreateChangeEvent) GetStartsAt() *time.Time {
-	if o == nil {
+func (c *CreateChangeEvent) GetStartsAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.StartsAt
+	return c.StartsAt
 }
 
-func (o *CreateChangeEvent) GetEndsAt() *time.Time {
-	if o == nil {
+func (c *CreateChangeEvent) GetEndsAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.EndsAt
+	return c.EndsAt
 }
 
-func (o *CreateChangeEvent) GetEnvironments() []string {
-	if o == nil {
+func (c *CreateChangeEvent) GetEnvironments() []string {
+	if c == nil {
 		return nil
 	}
-	return o.Environments
+	return c.Environments
 }
 
-func (o *CreateChangeEvent) GetServices() []string {
-	if o == nil {
+func (c *CreateChangeEvent) GetServices() []string {
+	if c == nil {
 		return nil
 	}
-	return o.Services
+	return c.Services
 }
 
-func (o *CreateChangeEvent) GetChanges() []string {
-	if o == nil {
+func (c *CreateChangeEvent) GetChanges() []string {
+	if c == nil {
 		return nil
 	}
-	return o.Changes
+	return c.Changes
 }
 
-func (o *CreateChangeEvent) GetExternalID() *string {
-	if o == nil {
+func (c *CreateChangeEvent) GetExternalID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ExternalID
+	return c.ExternalID
 }
 
-func (o *CreateChangeEvent) GetChangeIdentities() []ChangeIdentity {
-	if o == nil {
+func (c *CreateChangeEvent) GetChangeIdentities() []ChangeIdentity {
+	if c == nil {
 		return nil
 	}
-	return o.ChangeIdentities
+	return c.ChangeIdentities
 }
 
-func (o *CreateChangeEvent) GetAttachments() []CreateChangeEventAttachment {
-	if o == nil {
+func (c *CreateChangeEvent) GetAttachments() []CreateChangeEventAttachment {
+	if c == nil {
 		return nil
 	}
-	return o.Attachments
+	return c.Attachments
 }
 
-func (o *CreateChangeEvent) GetAuthors() []Author {
-	if o == nil {
+func (c *CreateChangeEvent) GetAuthors() []Author {
+	if c == nil {
 		return nil
 	}
-	return o.Authors
+	return c.Authors
 }

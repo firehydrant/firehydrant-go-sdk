@@ -7,16 +7,16 @@ type ListRunbookExecutionsRequest struct {
 	PerPage *int `queryParam:"style=form,explode=true,name=per_page"`
 }
 
-func (o *ListRunbookExecutionsRequest) GetPage() *int {
-	if o == nil {
+func (l *ListRunbookExecutionsRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListRunbookExecutionsRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListRunbookExecutionsRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }

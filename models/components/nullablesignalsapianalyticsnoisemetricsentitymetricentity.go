@@ -13,30 +13,30 @@ type NullableSignalsAPIAnalyticsNoiseMetricsEntityMetricEntity struct {
 	Percentage *float32 `json:"percentage,omitempty"`
 }
 
-func (o *NullableSignalsAPIAnalyticsNoiseMetricsEntityMetricEntity) GetBucket() *string {
-	if o == nil {
+func (n *NullableSignalsAPIAnalyticsNoiseMetricsEntityMetricEntity) GetBucket() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Bucket
+	return n.Bucket
 }
 
-func (o *NullableSignalsAPIAnalyticsNoiseMetricsEntityMetricEntity) GetTotalAlerts() *int {
-	if o == nil {
+func (n *NullableSignalsAPIAnalyticsNoiseMetricsEntityMetricEntity) GetTotalAlerts() *int {
+	if n == nil {
 		return nil
 	}
-	return o.TotalAlerts
+	return n.TotalAlerts
 }
 
-func (o *NullableSignalsAPIAnalyticsNoiseMetricsEntityMetricEntity) GetNoisyAlerts() *int {
-	if o == nil {
+func (n *NullableSignalsAPIAnalyticsNoiseMetricsEntityMetricEntity) GetNoisyAlerts() *int {
+	if n == nil {
 		return nil
 	}
-	return o.NoisyAlerts
+	return n.NoisyAlerts
 }
 
-func (o *NullableSignalsAPIAnalyticsNoiseMetricsEntityMetricEntity) GetPercentage() *float32 {
-	if o == nil {
+func (n *NullableSignalsAPIAnalyticsNoiseMetricsEntityMetricEntity) GetPercentage() *float32 {
+	if n == nil {
 		return nil
 	}
-	return o.Percentage
+	return n.Percentage
 }

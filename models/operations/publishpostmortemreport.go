@@ -11,16 +11,16 @@ type PublishPostMortemReportRequest struct {
 	PublishPostMortemReport components.PublishPostMortemReport `request:"mediaType=application/json"`
 }
 
-func (o *PublishPostMortemReportRequest) GetReportID() string {
-	if o == nil {
+func (p *PublishPostMortemReportRequest) GetReportID() string {
+	if p == nil {
 		return ""
 	}
-	return o.ReportID
+	return p.ReportID
 }
 
-func (o *PublishPostMortemReportRequest) GetPublishPostMortemReport() components.PublishPostMortemReport {
-	if o == nil {
+func (p *PublishPostMortemReportRequest) GetPublishPostMortemReport() components.PublishPostMortemReport {
+	if p == nil {
 		return components.PublishPostMortemReport{}
 	}
-	return o.PublishPostMortemReport
+	return p.PublishPostMortemReport
 }

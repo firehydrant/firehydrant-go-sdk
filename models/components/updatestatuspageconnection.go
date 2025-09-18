@@ -14,18 +14,18 @@ type UpdateStatuspageConnectionSeverity struct {
 	RemoteStatus string `json:"remote_status"`
 }
 
-func (o *UpdateStatuspageConnectionSeverity) GetSeveritySlug() string {
-	if o == nil {
+func (u *UpdateStatuspageConnectionSeverity) GetSeveritySlug() string {
+	if u == nil {
 		return ""
 	}
-	return o.SeveritySlug
+	return u.SeveritySlug
 }
 
-func (o *UpdateStatuspageConnectionSeverity) GetRemoteStatus() string {
-	if o == nil {
+func (u *UpdateStatuspageConnectionSeverity) GetRemoteStatus() string {
+	if u == nil {
 		return ""
 	}
-	return o.RemoteStatus
+	return u.RemoteStatus
 }
 
 type Condition struct {
@@ -35,18 +35,18 @@ type Condition struct {
 	StatuspageioCondition string `json:"statuspageio_condition"`
 }
 
-func (o *Condition) GetConditionID() string {
-	if o == nil {
+func (c *Condition) GetConditionID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ConditionID
+	return c.ConditionID
 }
 
-func (o *Condition) GetStatuspageioCondition() string {
-	if o == nil {
+func (c *Condition) GetStatuspageioCondition() string {
+	if c == nil {
 		return ""
 	}
-	return o.StatuspageioCondition
+	return c.StatuspageioCondition
 }
 
 // UpdateStatuspageConnectionStatus - Statuspage.io status
@@ -89,18 +89,18 @@ type MilestoneMapping struct {
 	Status UpdateStatuspageConnectionStatus `json:"status"`
 }
 
-func (o *MilestoneMapping) GetMilestoneID() string {
-	if o == nil {
+func (m *MilestoneMapping) GetMilestoneID() string {
+	if m == nil {
 		return ""
 	}
-	return o.MilestoneID
+	return m.MilestoneID
 }
 
-func (o *MilestoneMapping) GetStatus() UpdateStatuspageConnectionStatus {
-	if o == nil {
+func (m *MilestoneMapping) GetStatus() UpdateStatuspageConnectionStatus {
+	if m == nil {
 		return UpdateStatuspageConnectionStatus("")
 	}
-	return o.Status
+	return m.Status
 }
 
 // UpdateStatuspageConnection - Update the given Statuspage integration connection.
@@ -111,30 +111,30 @@ type UpdateStatuspageConnection struct {
 	MilestoneMappings []MilestoneMapping                   `json:"milestone_mappings,omitempty"`
 }
 
-func (o *UpdateStatuspageConnection) GetPageID() *string {
-	if o == nil {
+func (u *UpdateStatuspageConnection) GetPageID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.PageID
+	return u.PageID
 }
 
-func (o *UpdateStatuspageConnection) GetSeverities() []UpdateStatuspageConnectionSeverity {
-	if o == nil {
+func (u *UpdateStatuspageConnection) GetSeverities() []UpdateStatuspageConnectionSeverity {
+	if u == nil {
 		return nil
 	}
-	return o.Severities
+	return u.Severities
 }
 
-func (o *UpdateStatuspageConnection) GetConditions() []Condition {
-	if o == nil {
+func (u *UpdateStatuspageConnection) GetConditions() []Condition {
+	if u == nil {
 		return nil
 	}
-	return o.Conditions
+	return u.Conditions
 }
 
-func (o *UpdateStatuspageConnection) GetMilestoneMappings() []MilestoneMapping {
-	if o == nil {
+func (u *UpdateStatuspageConnection) GetMilestoneMappings() []MilestoneMapping {
+	if u == nil {
 		return nil
 	}
-	return o.MilestoneMappings
+	return u.MilestoneMappings
 }

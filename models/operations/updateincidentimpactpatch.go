@@ -11,16 +11,16 @@ type UpdateIncidentImpactPatchRequest struct {
 	UpdateIncidentImpactPatch components.UpdateIncidentImpactPatch `request:"mediaType=application/json"`
 }
 
-func (o *UpdateIncidentImpactPatchRequest) GetIncidentID() string {
-	if o == nil {
+func (u *UpdateIncidentImpactPatchRequest) GetIncidentID() string {
+	if u == nil {
 		return ""
 	}
-	return o.IncidentID
+	return u.IncidentID
 }
 
-func (o *UpdateIncidentImpactPatchRequest) GetUpdateIncidentImpactPatch() components.UpdateIncidentImpactPatch {
-	if o == nil {
+func (u *UpdateIncidentImpactPatchRequest) GetUpdateIncidentImpactPatch() components.UpdateIncidentImpactPatch {
+	if u == nil {
 		return components.UpdateIncidentImpactPatch{}
 	}
-	return o.UpdateIncidentImpactPatch
+	return u.UpdateIncidentImpactPatch
 }

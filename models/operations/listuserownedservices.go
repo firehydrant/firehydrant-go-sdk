@@ -8,23 +8,23 @@ type ListUserOwnedServicesRequest struct {
 	PerPage *int   `queryParam:"style=form,explode=true,name=per_page"`
 }
 
-func (o *ListUserOwnedServicesRequest) GetID() string {
-	if o == nil {
+func (l *ListUserOwnedServicesRequest) GetID() string {
+	if l == nil {
 		return ""
 	}
-	return o.ID
+	return l.ID
 }
 
-func (o *ListUserOwnedServicesRequest) GetPage() *int {
-	if o == nil {
+func (l *ListUserOwnedServicesRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListUserOwnedServicesRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListUserOwnedServicesRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }

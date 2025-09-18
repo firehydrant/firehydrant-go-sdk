@@ -7,16 +7,16 @@ type DeleteTranscriptEntryRequest struct {
 	IncidentID   string `pathParam:"style=simple,explode=false,name=incident_id"`
 }
 
-func (o *DeleteTranscriptEntryRequest) GetTranscriptID() string {
-	if o == nil {
+func (d *DeleteTranscriptEntryRequest) GetTranscriptID() string {
+	if d == nil {
 		return ""
 	}
-	return o.TranscriptID
+	return d.TranscriptID
 }
 
-func (o *DeleteTranscriptEntryRequest) GetIncidentID() string {
-	if o == nil {
+func (d *DeleteTranscriptEntryRequest) GetIncidentID() string {
+	if d == nil {
 		return ""
 	}
-	return o.IncidentID
+	return d.IncidentID
 }

@@ -11,16 +11,16 @@ type CreateIncidentNoteRequest struct {
 	CreateIncidentNote components.CreateIncidentNote `request:"mediaType=application/json"`
 }
 
-func (o *CreateIncidentNoteRequest) GetIncidentID() string {
-	if o == nil {
+func (c *CreateIncidentNoteRequest) GetIncidentID() string {
+	if c == nil {
 		return ""
 	}
-	return o.IncidentID
+	return c.IncidentID
 }
 
-func (o *CreateIncidentNoteRequest) GetCreateIncidentNote() components.CreateIncidentNote {
-	if o == nil {
+func (c *CreateIncidentNoteRequest) GetCreateIncidentNote() components.CreateIncidentNote {
+	if c == nil {
 		return components.CreateIncidentNote{}
 	}
-	return o.CreateIncidentNote
+	return c.CreateIncidentNote
 }

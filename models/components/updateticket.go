@@ -13,44 +13,44 @@ type UpdateTicket struct {
 	TagList []string `json:"tag_list,omitempty"`
 }
 
-func (o *UpdateTicket) GetSummary() *string {
-	if o == nil {
+func (u *UpdateTicket) GetSummary() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Summary
+	return u.Summary
 }
 
-func (o *UpdateTicket) GetDescription() *string {
-	if o == nil {
+func (u *UpdateTicket) GetDescription() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Description
+	return u.Description
 }
 
-func (o *UpdateTicket) GetState() *string {
-	if o == nil {
+func (u *UpdateTicket) GetState() *string {
+	if u == nil {
 		return nil
 	}
-	return o.State
+	return u.State
 }
 
-func (o *UpdateTicket) GetType() *string {
-	if o == nil {
+func (u *UpdateTicket) GetType() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Type
+	return u.Type
 }
 
-func (o *UpdateTicket) GetPriorityID() *string {
-	if o == nil {
+func (u *UpdateTicket) GetPriorityID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.PriorityID
+	return u.PriorityID
 }
 
-func (o *UpdateTicket) GetTagList() []string {
-	if o == nil {
+func (u *UpdateTicket) GetTagList() []string {
+	if u == nil {
 		return nil
 	}
-	return o.TagList
+	return u.TagList
 }

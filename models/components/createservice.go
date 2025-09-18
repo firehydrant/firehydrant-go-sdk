@@ -53,18 +53,18 @@ type CreateServiceFunctionality struct {
 	ID *string `json:"id,omitempty"`
 }
 
-func (o *CreateServiceFunctionality) GetSummary() *string {
-	if o == nil {
+func (c *CreateServiceFunctionality) GetSummary() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Summary
+	return c.Summary
 }
 
-func (o *CreateServiceFunctionality) GetID() *string {
-	if o == nil {
+func (c *CreateServiceFunctionality) GetID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ID
+	return c.ID
 }
 
 type CreateServiceLink struct {
@@ -76,25 +76,25 @@ type CreateServiceLink struct {
 	IconURL *string `json:"icon_url,omitempty"`
 }
 
-func (o *CreateServiceLink) GetName() string {
-	if o == nil {
+func (c *CreateServiceLink) GetName() string {
+	if c == nil {
 		return ""
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CreateServiceLink) GetHrefURL() string {
-	if o == nil {
+func (c *CreateServiceLink) GetHrefURL() string {
+	if c == nil {
 		return ""
 	}
-	return o.HrefURL
+	return c.HrefURL
 }
 
-func (o *CreateServiceLink) GetIconURL() *string {
-	if o == nil {
+func (c *CreateServiceLink) GetIconURL() *string {
+	if c == nil {
 		return nil
 	}
-	return o.IconURL
+	return c.IconURL
 }
 
 // CreateServiceOwner - An object representing a Team that owns the service
@@ -102,22 +102,22 @@ type CreateServiceOwner struct {
 	ID string `json:"id"`
 }
 
-func (o *CreateServiceOwner) GetID() string {
-	if o == nil {
+func (c *CreateServiceOwner) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
 type CreateServiceTeam struct {
 	ID string `json:"id"`
 }
 
-func (o *CreateServiceTeam) GetID() string {
-	if o == nil {
+func (c *CreateServiceTeam) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
 type CreateServiceExternalResource struct {
@@ -126,18 +126,18 @@ type CreateServiceExternalResource struct {
 	ConnectionType *string `json:"connection_type,omitempty"`
 }
 
-func (o *CreateServiceExternalResource) GetRemoteID() string {
-	if o == nil {
+func (c *CreateServiceExternalResource) GetRemoteID() string {
+	if c == nil {
 		return ""
 	}
-	return o.RemoteID
+	return c.RemoteID
 }
 
-func (o *CreateServiceExternalResource) GetConnectionType() *string {
-	if o == nil {
+func (c *CreateServiceExternalResource) GetConnectionType() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConnectionType
+	return c.ConnectionType
 }
 
 // CreateService - Creates a service for the organization, you may also create or attach functionalities to the service on create.
@@ -162,79 +162,79 @@ type CreateService struct {
 	ExternalResources []CreateServiceExternalResource `json:"external_resources,omitempty"`
 }
 
-func (o *CreateService) GetName() string {
-	if o == nil {
+func (c *CreateService) GetName() string {
+	if c == nil {
 		return ""
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CreateService) GetDescription() *string {
-	if o == nil {
+func (c *CreateService) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *CreateService) GetLabels() map[string]string {
-	if o == nil {
+func (c *CreateService) GetLabels() map[string]string {
+	if c == nil {
 		return nil
 	}
-	return o.Labels
+	return c.Labels
 }
 
-func (o *CreateService) GetServiceTier() *CreateServiceServiceTier {
-	if o == nil {
+func (c *CreateService) GetServiceTier() *CreateServiceServiceTier {
+	if c == nil {
 		return nil
 	}
-	return o.ServiceTier
+	return c.ServiceTier
 }
 
-func (o *CreateService) GetFunctionalities() []CreateServiceFunctionality {
-	if o == nil {
+func (c *CreateService) GetFunctionalities() []CreateServiceFunctionality {
+	if c == nil {
 		return nil
 	}
-	return o.Functionalities
+	return c.Functionalities
 }
 
-func (o *CreateService) GetLinks() []CreateServiceLink {
-	if o == nil {
+func (c *CreateService) GetLinks() []CreateServiceLink {
+	if c == nil {
 		return nil
 	}
-	return o.Links
+	return c.Links
 }
 
-func (o *CreateService) GetOwner() *CreateServiceOwner {
-	if o == nil {
+func (c *CreateService) GetOwner() *CreateServiceOwner {
+	if c == nil {
 		return nil
 	}
-	return o.Owner
+	return c.Owner
 }
 
-func (o *CreateService) GetTeams() []CreateServiceTeam {
-	if o == nil {
+func (c *CreateService) GetTeams() []CreateServiceTeam {
+	if c == nil {
 		return nil
 	}
-	return o.Teams
+	return c.Teams
 }
 
-func (o *CreateService) GetAlertOnAdd() *bool {
-	if o == nil {
+func (c *CreateService) GetAlertOnAdd() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.AlertOnAdd
+	return c.AlertOnAdd
 }
 
-func (o *CreateService) GetAutoAddRespondingTeam() *bool {
-	if o == nil {
+func (c *CreateService) GetAutoAddRespondingTeam() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.AutoAddRespondingTeam
+	return c.AutoAddRespondingTeam
 }
 
-func (o *CreateService) GetExternalResources() []CreateServiceExternalResource {
-	if o == nil {
+func (c *CreateService) GetExternalResources() []CreateServiceExternalResource {
+	if c == nil {
 		return nil
 	}
-	return o.ExternalResources
+	return c.ExternalResources
 }

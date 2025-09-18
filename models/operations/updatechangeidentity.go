@@ -12,23 +12,23 @@ type UpdateChangeIdentityRequest struct {
 	UpdateChangeIdentity components.UpdateChangeIdentity `request:"mediaType=application/json"`
 }
 
-func (o *UpdateChangeIdentityRequest) GetIdentityID() string {
-	if o == nil {
+func (u *UpdateChangeIdentityRequest) GetIdentityID() string {
+	if u == nil {
 		return ""
 	}
-	return o.IdentityID
+	return u.IdentityID
 }
 
-func (o *UpdateChangeIdentityRequest) GetChangeID() string {
-	if o == nil {
+func (u *UpdateChangeIdentityRequest) GetChangeID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ChangeID
+	return u.ChangeID
 }
 
-func (o *UpdateChangeIdentityRequest) GetUpdateChangeIdentity() components.UpdateChangeIdentity {
-	if o == nil {
+func (u *UpdateChangeIdentityRequest) GetUpdateChangeIdentity() components.UpdateChangeIdentity {
+	if u == nil {
 		return components.UpdateChangeIdentity{}
 	}
-	return o.UpdateChangeIdentity
+	return u.UpdateChangeIdentity
 }

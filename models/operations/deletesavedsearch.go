@@ -62,16 +62,16 @@ type DeleteSavedSearchRequest struct {
 	SavedSearchID string                        `pathParam:"style=simple,explode=false,name=saved_search_id"`
 }
 
-func (o *DeleteSavedSearchRequest) GetResourceType() DeleteSavedSearchResourceType {
-	if o == nil {
+func (d *DeleteSavedSearchRequest) GetResourceType() DeleteSavedSearchResourceType {
+	if d == nil {
 		return DeleteSavedSearchResourceType("")
 	}
-	return o.ResourceType
+	return d.ResourceType
 }
 
-func (o *DeleteSavedSearchRequest) GetSavedSearchID() string {
-	if o == nil {
+func (d *DeleteSavedSearchRequest) GetSavedSearchID() string {
+	if d == nil {
 		return ""
 	}
-	return o.SavedSearchID
+	return d.SavedSearchID
 }

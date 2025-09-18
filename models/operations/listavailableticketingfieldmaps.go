@@ -6,9 +6,9 @@ type ListAvailableTicketingFieldMapsRequest struct {
 	TicketingProjectID string `pathParam:"style=simple,explode=false,name=ticketing_project_id"`
 }
 
-func (o *ListAvailableTicketingFieldMapsRequest) GetTicketingProjectID() string {
-	if o == nil {
+func (l *ListAvailableTicketingFieldMapsRequest) GetTicketingProjectID() string {
+	if l == nil {
 		return ""
 	}
-	return o.TicketingProjectID
+	return l.TicketingProjectID
 }

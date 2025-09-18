@@ -13,30 +13,30 @@ type MetricsMilestonesFunnelEntityColumnEntity struct {
 	ID *string `json:"id,omitempty"`
 }
 
-func (o *MetricsMilestonesFunnelEntityColumnEntity) GetName() *string {
-	if o == nil {
+func (m *MetricsMilestonesFunnelEntityColumnEntity) GetName() *string {
+	if m == nil {
 		return nil
 	}
-	return o.Name
+	return m.Name
 }
 
-func (o *MetricsMilestonesFunnelEntityColumnEntity) GetLabel() *string {
-	if o == nil {
+func (m *MetricsMilestonesFunnelEntityColumnEntity) GetLabel() *string {
+	if m == nil {
 		return nil
 	}
-	return o.Label
+	return m.Label
 }
 
-func (o *MetricsMilestonesFunnelEntityColumnEntity) GetTooltip() *string {
-	if o == nil {
+func (m *MetricsMilestonesFunnelEntityColumnEntity) GetTooltip() *string {
+	if m == nil {
 		return nil
 	}
-	return o.Tooltip
+	return m.Tooltip
 }
 
-func (o *MetricsMilestonesFunnelEntityColumnEntity) GetID() *string {
-	if o == nil {
+func (m *MetricsMilestonesFunnelEntityColumnEntity) GetID() *string {
+	if m == nil {
 		return nil
 	}
-	return o.ID
+	return m.ID
 }

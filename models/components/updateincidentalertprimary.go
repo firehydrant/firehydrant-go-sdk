@@ -7,9 +7,9 @@ type UpdateIncidentAlertPrimary struct {
 	Primary bool `json:"primary"`
 }
 
-func (o *UpdateIncidentAlertPrimary) GetPrimary() bool {
-	if o == nil {
+func (u *UpdateIncidentAlertPrimary) GetPrimary() bool {
+	if u == nil {
 		return false
 	}
-	return o.Primary
+	return u.Primary
 }

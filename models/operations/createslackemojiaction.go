@@ -9,18 +9,18 @@ type CreateSlackEmojiActionRequestBody struct {
 	IncidentTypeID *string `json:"incident_type_id,omitempty"`
 }
 
-func (o *CreateSlackEmojiActionRequestBody) GetEmojiName() string {
-	if o == nil {
+func (c *CreateSlackEmojiActionRequestBody) GetEmojiName() string {
+	if c == nil {
 		return ""
 	}
-	return o.EmojiName
+	return c.EmojiName
 }
 
-func (o *CreateSlackEmojiActionRequestBody) GetIncidentTypeID() *string {
-	if o == nil {
+func (c *CreateSlackEmojiActionRequestBody) GetIncidentTypeID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.IncidentTypeID
+	return c.IncidentTypeID
 }
 
 type CreateSlackEmojiActionRequest struct {
@@ -29,16 +29,16 @@ type CreateSlackEmojiActionRequest struct {
 	RequestBody  CreateSlackEmojiActionRequestBody `request:"mediaType=application/json"`
 }
 
-func (o *CreateSlackEmojiActionRequest) GetConnectionID() string {
-	if o == nil {
+func (c *CreateSlackEmojiActionRequest) GetConnectionID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ConnectionID
+	return c.ConnectionID
 }
 
-func (o *CreateSlackEmojiActionRequest) GetRequestBody() CreateSlackEmojiActionRequestBody {
-	if o == nil {
+func (c *CreateSlackEmojiActionRequest) GetRequestBody() CreateSlackEmojiActionRequestBody {
+	if c == nil {
 		return CreateSlackEmojiActionRequestBody{}
 	}
-	return o.RequestBody
+	return c.RequestBody
 }

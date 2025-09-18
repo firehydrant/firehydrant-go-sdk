@@ -75,11 +75,11 @@ type ListMilestoneFunnelMetricsRequestBody struct {
 	GroupBy []ListMilestoneFunnelMetricsGroupBy `multipartForm:"name=group_by"`
 }
 
-func (o *ListMilestoneFunnelMetricsRequestBody) GetGroupBy() []ListMilestoneFunnelMetricsGroupBy {
-	if o == nil {
+func (l *ListMilestoneFunnelMetricsRequestBody) GetGroupBy() []ListMilestoneFunnelMetricsGroupBy {
+	if l == nil {
 		return nil
 	}
-	return o.GroupBy
+	return l.GroupBy
 }
 
 type ListMilestoneFunnelMetricsRequest struct {
@@ -159,226 +159,226 @@ func (l *ListMilestoneFunnelMetricsRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ListMilestoneFunnelMetricsRequest) GetConditions() *string {
-	if o == nil {
+func (l *ListMilestoneFunnelMetricsRequest) GetConditions() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Conditions
+	return l.Conditions
 }
 
-func (o *ListMilestoneFunnelMetricsRequest) GetEnvironments() *string {
-	if o == nil {
+func (l *ListMilestoneFunnelMetricsRequest) GetEnvironments() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Environments
+	return l.Environments
 }
 
-func (o *ListMilestoneFunnelMetricsRequest) GetServices() *string {
-	if o == nil {
+func (l *ListMilestoneFunnelMetricsRequest) GetServices() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Services
+	return l.Services
 }
 
-func (o *ListMilestoneFunnelMetricsRequest) GetFunctionalities() *string {
-	if o == nil {
+func (l *ListMilestoneFunnelMetricsRequest) GetFunctionalities() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Functionalities
+	return l.Functionalities
 }
 
-func (o *ListMilestoneFunnelMetricsRequest) GetExcludedInfrastructureIds() *string {
-	if o == nil {
+func (l *ListMilestoneFunnelMetricsRequest) GetExcludedInfrastructureIds() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ExcludedInfrastructureIds
+	return l.ExcludedInfrastructureIds
 }
 
-func (o *ListMilestoneFunnelMetricsRequest) GetTeams() *string {
-	if o == nil {
+func (l *ListMilestoneFunnelMetricsRequest) GetTeams() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Teams
+	return l.Teams
 }
 
-func (o *ListMilestoneFunnelMetricsRequest) GetAssignedTeams() *string {
-	if o == nil {
+func (l *ListMilestoneFunnelMetricsRequest) GetAssignedTeams() *string {
+	if l == nil {
 		return nil
 	}
-	return o.AssignedTeams
+	return l.AssignedTeams
 }
 
-func (o *ListMilestoneFunnelMetricsRequest) GetStatus() *string {
-	if o == nil {
+func (l *ListMilestoneFunnelMetricsRequest) GetStatus() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Status
+	return l.Status
 }
 
-func (o *ListMilestoneFunnelMetricsRequest) GetStartDate() *time.Time {
-	if o == nil {
+func (l *ListMilestoneFunnelMetricsRequest) GetStartDate() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.StartDate
+	return l.StartDate
 }
 
-func (o *ListMilestoneFunnelMetricsRequest) GetEndDate() *time.Time {
-	if o == nil {
+func (l *ListMilestoneFunnelMetricsRequest) GetEndDate() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.EndDate
+	return l.EndDate
 }
 
-func (o *ListMilestoneFunnelMetricsRequest) GetResolvedAtOrAfter() *time.Time {
-	if o == nil {
+func (l *ListMilestoneFunnelMetricsRequest) GetResolvedAtOrAfter() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.ResolvedAtOrAfter
+	return l.ResolvedAtOrAfter
 }
 
-func (o *ListMilestoneFunnelMetricsRequest) GetResolvedAtOrBefore() *time.Time {
-	if o == nil {
+func (l *ListMilestoneFunnelMetricsRequest) GetResolvedAtOrBefore() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.ResolvedAtOrBefore
+	return l.ResolvedAtOrBefore
 }
 
-func (o *ListMilestoneFunnelMetricsRequest) GetClosedAtOrAfter() *time.Time {
-	if o == nil {
+func (l *ListMilestoneFunnelMetricsRequest) GetClosedAtOrAfter() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.ClosedAtOrAfter
+	return l.ClosedAtOrAfter
 }
 
-func (o *ListMilestoneFunnelMetricsRequest) GetClosedAtOrBefore() *time.Time {
-	if o == nil {
+func (l *ListMilestoneFunnelMetricsRequest) GetClosedAtOrBefore() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.ClosedAtOrBefore
+	return l.ClosedAtOrBefore
 }
 
-func (o *ListMilestoneFunnelMetricsRequest) GetCreatedAtOrAfter() *time.Time {
-	if o == nil {
+func (l *ListMilestoneFunnelMetricsRequest) GetCreatedAtOrAfter() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.CreatedAtOrAfter
+	return l.CreatedAtOrAfter
 }
 
-func (o *ListMilestoneFunnelMetricsRequest) GetCreatedAtOrBefore() *time.Time {
-	if o == nil {
+func (l *ListMilestoneFunnelMetricsRequest) GetCreatedAtOrBefore() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.CreatedAtOrBefore
+	return l.CreatedAtOrBefore
 }
 
-func (o *ListMilestoneFunnelMetricsRequest) GetQuery() *string {
-	if o == nil {
+func (l *ListMilestoneFunnelMetricsRequest) GetQuery() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Query
+	return l.Query
 }
 
-func (o *ListMilestoneFunnelMetricsRequest) GetName() *string {
-	if o == nil {
+func (l *ListMilestoneFunnelMetricsRequest) GetName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Name
+	return l.Name
 }
 
-func (o *ListMilestoneFunnelMetricsRequest) GetSavedSearchID() *string {
-	if o == nil {
+func (l *ListMilestoneFunnelMetricsRequest) GetSavedSearchID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.SavedSearchID
+	return l.SavedSearchID
 }
 
-func (o *ListMilestoneFunnelMetricsRequest) GetPriorities() *string {
-	if o == nil {
+func (l *ListMilestoneFunnelMetricsRequest) GetPriorities() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Priorities
+	return l.Priorities
 }
 
-func (o *ListMilestoneFunnelMetricsRequest) GetPriorityNotSet() *bool {
-	if o == nil {
+func (l *ListMilestoneFunnelMetricsRequest) GetPriorityNotSet() *bool {
+	if l == nil {
 		return nil
 	}
-	return o.PriorityNotSet
+	return l.PriorityNotSet
 }
 
-func (o *ListMilestoneFunnelMetricsRequest) GetSeverities() *string {
-	if o == nil {
+func (l *ListMilestoneFunnelMetricsRequest) GetSeverities() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Severities
+	return l.Severities
 }
 
-func (o *ListMilestoneFunnelMetricsRequest) GetSeverityNotSet() *bool {
-	if o == nil {
+func (l *ListMilestoneFunnelMetricsRequest) GetSeverityNotSet() *bool {
+	if l == nil {
 		return nil
 	}
-	return o.SeverityNotSet
+	return l.SeverityNotSet
 }
 
-func (o *ListMilestoneFunnelMetricsRequest) GetCurrentMilestones() *string {
-	if o == nil {
+func (l *ListMilestoneFunnelMetricsRequest) GetCurrentMilestones() *string {
+	if l == nil {
 		return nil
 	}
-	return o.CurrentMilestones
+	return l.CurrentMilestones
 }
 
-func (o *ListMilestoneFunnelMetricsRequest) GetTags() *string {
-	if o == nil {
+func (l *ListMilestoneFunnelMetricsRequest) GetTags() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Tags
+	return l.Tags
 }
 
-func (o *ListMilestoneFunnelMetricsRequest) GetTagMatchStrategy() *ListMilestoneFunnelMetricsTagMatchStrategy {
-	if o == nil {
+func (l *ListMilestoneFunnelMetricsRequest) GetTagMatchStrategy() *ListMilestoneFunnelMetricsTagMatchStrategy {
+	if l == nil {
 		return nil
 	}
-	return o.TagMatchStrategy
+	return l.TagMatchStrategy
 }
 
-func (o *ListMilestoneFunnelMetricsRequest) GetArchived() *bool {
-	if o == nil {
+func (l *ListMilestoneFunnelMetricsRequest) GetArchived() *bool {
+	if l == nil {
 		return nil
 	}
-	return o.Archived
+	return l.Archived
 }
 
-func (o *ListMilestoneFunnelMetricsRequest) GetUpdatedAfter() *time.Time {
-	if o == nil {
+func (l *ListMilestoneFunnelMetricsRequest) GetUpdatedAfter() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.UpdatedAfter
+	return l.UpdatedAfter
 }
 
-func (o *ListMilestoneFunnelMetricsRequest) GetUpdatedBefore() *time.Time {
-	if o == nil {
+func (l *ListMilestoneFunnelMetricsRequest) GetUpdatedBefore() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.UpdatedBefore
+	return l.UpdatedBefore
 }
 
-func (o *ListMilestoneFunnelMetricsRequest) GetIncidentTypeID() *string {
-	if o == nil {
+func (l *ListMilestoneFunnelMetricsRequest) GetIncidentTypeID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.IncidentTypeID
+	return l.IncidentTypeID
 }
 
-func (o *ListMilestoneFunnelMetricsRequest) GetRetrospectiveTemplates() *string {
-	if o == nil {
+func (l *ListMilestoneFunnelMetricsRequest) GetRetrospectiveTemplates() *string {
+	if l == nil {
 		return nil
 	}
-	return o.RetrospectiveTemplates
+	return l.RetrospectiveTemplates
 }
 
-func (o *ListMilestoneFunnelMetricsRequest) GetRequestBody() *ListMilestoneFunnelMetricsRequestBody {
-	if o == nil {
+func (l *ListMilestoneFunnelMetricsRequest) GetRequestBody() *ListMilestoneFunnelMetricsRequestBody {
+	if l == nil {
 		return nil
 	}
-	return o.RequestBody
+	return l.RequestBody
 }

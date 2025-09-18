@@ -6,9 +6,9 @@ type DeleteStatusUpdateTemplateRequest struct {
 	StatusUpdateTemplateID string `pathParam:"style=simple,explode=false,name=status_update_template_id"`
 }
 
-func (o *DeleteStatusUpdateTemplateRequest) GetStatusUpdateTemplateID() string {
-	if o == nil {
+func (d *DeleteStatusUpdateTemplateRequest) GetStatusUpdateTemplateID() string {
+	if d == nil {
 		return ""
 	}
-	return o.StatusUpdateTemplateID
+	return d.StatusUpdateTemplateID
 }

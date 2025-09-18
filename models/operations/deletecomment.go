@@ -7,16 +7,16 @@ type DeleteCommentRequest struct {
 	ConversationID string `pathParam:"style=simple,explode=false,name=conversation_id"`
 }
 
-func (o *DeleteCommentRequest) GetCommentID() string {
-	if o == nil {
+func (d *DeleteCommentRequest) GetCommentID() string {
+	if d == nil {
 		return ""
 	}
-	return o.CommentID
+	return d.CommentID
 }
 
-func (o *DeleteCommentRequest) GetConversationID() string {
-	if o == nil {
+func (d *DeleteCommentRequest) GetConversationID() string {
+	if d == nil {
 		return ""
 	}
-	return o.ConversationID
+	return d.ConversationID
 }

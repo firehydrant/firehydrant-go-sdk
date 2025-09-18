@@ -9,16 +9,16 @@ type UpdateSeverityMatrixCondition struct {
 	Position *int `json:"position,omitempty"`
 }
 
-func (o *UpdateSeverityMatrixCondition) GetName() *string {
-	if o == nil {
+func (u *UpdateSeverityMatrixCondition) GetName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Name
+	return u.Name
 }
 
-func (o *UpdateSeverityMatrixCondition) GetPosition() *int {
-	if o == nil {
+func (u *UpdateSeverityMatrixCondition) GetPosition() *int {
+	if u == nil {
 		return nil
 	}
-	return o.Position
+	return u.Position
 }

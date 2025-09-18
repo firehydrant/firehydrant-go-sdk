@@ -12,23 +12,23 @@ type ConvertIncidentTaskRequest struct {
 	ConvertIncidentTask components.ConvertIncidentTask `request:"mediaType=application/json"`
 }
 
-func (o *ConvertIncidentTaskRequest) GetTaskID() string {
-	if o == nil {
+func (c *ConvertIncidentTaskRequest) GetTaskID() string {
+	if c == nil {
 		return ""
 	}
-	return o.TaskID
+	return c.TaskID
 }
 
-func (o *ConvertIncidentTaskRequest) GetIncidentID() string {
-	if o == nil {
+func (c *ConvertIncidentTaskRequest) GetIncidentID() string {
+	if c == nil {
 		return ""
 	}
-	return o.IncidentID
+	return c.IncidentID
 }
 
-func (o *ConvertIncidentTaskRequest) GetConvertIncidentTask() components.ConvertIncidentTask {
-	if o == nil {
+func (c *ConvertIncidentTaskRequest) GetConvertIncidentTask() components.ConvertIncidentTask {
+	if c == nil {
 		return components.ConvertIncidentTask{}
 	}
-	return o.ConvertIncidentTask
+	return c.ConvertIncidentTask
 }

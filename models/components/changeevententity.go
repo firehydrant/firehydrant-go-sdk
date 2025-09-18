@@ -48,121 +48,121 @@ func (c *ChangeEventEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ChangeEventEntity) GetID() *string {
-	if o == nil {
+func (c *ChangeEventEntity) GetID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *ChangeEventEntity) GetSummary() *string {
-	if o == nil {
+func (c *ChangeEventEntity) GetSummary() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Summary
+	return c.Summary
 }
 
-func (o *ChangeEventEntity) GetDescription() *string {
-	if o == nil {
+func (c *ChangeEventEntity) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *ChangeEventEntity) GetExternalID() *string {
-	if o == nil {
+func (c *ChangeEventEntity) GetExternalID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ExternalID
+	return c.ExternalID
 }
 
-func (o *ChangeEventEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (c *ChangeEventEntity) GetCreatedAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return c.CreatedAt
 }
 
-func (o *ChangeEventEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (c *ChangeEventEntity) GetUpdatedAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return c.UpdatedAt
 }
 
-func (o *ChangeEventEntity) GetStartsAt() *time.Time {
-	if o == nil {
+func (c *ChangeEventEntity) GetStartsAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.StartsAt
+	return c.StartsAt
 }
 
-func (o *ChangeEventEntity) GetEndsAt() *time.Time {
-	if o == nil {
+func (c *ChangeEventEntity) GetEndsAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.EndsAt
+	return c.EndsAt
 }
 
-func (o *ChangeEventEntity) GetDurationMs() *int {
-	if o == nil {
+func (c *ChangeEventEntity) GetDurationMs() *int {
+	if c == nil {
 		return nil
 	}
-	return o.DurationMs
+	return c.DurationMs
 }
 
-func (o *ChangeEventEntity) GetDurationIso8601() *string {
-	if o == nil {
+func (c *ChangeEventEntity) GetDurationIso8601() *string {
+	if c == nil {
 		return nil
 	}
-	return o.DurationIso8601
+	return c.DurationIso8601
 }
 
-func (o *ChangeEventEntity) GetEnvironments() []EnvironmentEntryEntity {
-	if o == nil {
+func (c *ChangeEventEntity) GetEnvironments() []EnvironmentEntryEntity {
+	if c == nil {
 		return nil
 	}
-	return o.Environments
+	return c.Environments
 }
 
-func (o *ChangeEventEntity) GetRelatedChanges() []ChangeEntity {
-	if o == nil {
+func (c *ChangeEventEntity) GetRelatedChanges() []ChangeEntity {
+	if c == nil {
 		return nil
 	}
-	return o.RelatedChanges
+	return c.RelatedChanges
 }
 
-func (o *ChangeEventEntity) GetIdentities() []ChangeIdentityEntity {
-	if o == nil {
+func (c *ChangeEventEntity) GetIdentities() []ChangeIdentityEntity {
+	if c == nil {
 		return nil
 	}
-	return o.Identities
+	return c.Identities
 }
 
-func (o *ChangeEventEntity) GetAuthors() []AuthorEntity {
-	if o == nil {
+func (c *ChangeEventEntity) GetAuthors() []AuthorEntity {
+	if c == nil {
 		return nil
 	}
-	return o.Authors
+	return c.Authors
 }
 
-func (o *ChangeEventEntity) GetAttachments() []ChangeEventEntityAttachment {
-	if o == nil {
+func (c *ChangeEventEntity) GetAttachments() []ChangeEventEntityAttachment {
+	if c == nil {
 		return nil
 	}
-	return o.Attachments
+	return c.Attachments
 }
 
-func (o *ChangeEventEntity) GetLabels() *ChangeEventEntityLabels {
-	if o == nil {
+func (c *ChangeEventEntity) GetLabels() *ChangeEventEntityLabels {
+	if c == nil {
 		return nil
 	}
-	return o.Labels
+	return c.Labels
 }
 
-func (o *ChangeEventEntity) GetServices() []ServiceEntityLite {
-	if o == nil {
+func (c *ChangeEventEntity) GetServices() []ServiceEntityLite {
+	if c == nil {
 		return nil
 	}
-	return o.Services
+	return c.Services
 }

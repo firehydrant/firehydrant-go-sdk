@@ -11,16 +11,16 @@ type UpdateSignalsEmailTargetRequest struct {
 	UpdateSignalsEmailTarget components.UpdateSignalsEmailTarget `request:"mediaType=application/json"`
 }
 
-func (o *UpdateSignalsEmailTargetRequest) GetID() string {
-	if o == nil {
+func (u *UpdateSignalsEmailTargetRequest) GetID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ID
+	return u.ID
 }
 
-func (o *UpdateSignalsEmailTargetRequest) GetUpdateSignalsEmailTarget() components.UpdateSignalsEmailTarget {
-	if o == nil {
+func (u *UpdateSignalsEmailTargetRequest) GetUpdateSignalsEmailTarget() components.UpdateSignalsEmailTarget {
+	if u == nil {
 		return components.UpdateSignalsEmailTarget{}
 	}
-	return o.UpdateSignalsEmailTarget
+	return u.UpdateSignalsEmailTarget
 }

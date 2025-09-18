@@ -11,16 +11,16 @@ type UpdateScimGroupRequest struct {
 	UpdateScimGroup components.UpdateScimGroup `request:"mediaType=application/scim+json"`
 }
 
-func (o *UpdateScimGroupRequest) GetID() string {
-	if o == nil {
+func (u *UpdateScimGroupRequest) GetID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ID
+	return u.ID
 }
 
-func (o *UpdateScimGroupRequest) GetUpdateScimGroup() components.UpdateScimGroup {
-	if o == nil {
+func (u *UpdateScimGroupRequest) GetUpdateScimGroup() components.UpdateScimGroup {
+	if u == nil {
 		return components.UpdateScimGroup{}
 	}
-	return o.UpdateScimGroup
+	return u.UpdateScimGroup
 }

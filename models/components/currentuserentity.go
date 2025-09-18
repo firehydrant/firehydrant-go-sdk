@@ -15,65 +15,65 @@ type CurrentUserEntity struct {
 	AccountID        *int             `json:"account_id,omitempty"`
 }
 
-func (o *CurrentUserEntity) GetID() *string {
-	if o == nil {
+func (c *CurrentUserEntity) GetID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *CurrentUserEntity) GetName() *string {
-	if o == nil {
+func (c *CurrentUserEntity) GetName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CurrentUserEntity) GetSource() *string {
-	if o == nil {
+func (c *CurrentUserEntity) GetSource() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Source
+	return c.Source
 }
 
-func (o *CurrentUserEntity) GetEmail() *string {
-	if o == nil {
+func (c *CurrentUserEntity) GetEmail() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Email
+	return c.Email
 }
 
-func (o *CurrentUserEntity) GetRole() *string {
-	if o == nil {
+func (c *CurrentUserEntity) GetRole() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Role
+	return c.Role
 }
 
-func (o *CurrentUserEntity) GetTeams() []SuccinctEntity {
-	if o == nil {
+func (c *CurrentUserEntity) GetTeams() []SuccinctEntity {
+	if c == nil {
 		return nil
 	}
-	return o.Teams
+	return c.Teams
 }
 
-func (o *CurrentUserEntity) GetOrganizationID() *string {
-	if o == nil {
+func (c *CurrentUserEntity) GetOrganizationID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.OrganizationID
+	return c.OrganizationID
 }
 
-func (o *CurrentUserEntity) GetOrganizationName() *string {
-	if o == nil {
+func (c *CurrentUserEntity) GetOrganizationName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.OrganizationName
+	return c.OrganizationName
 }
 
-func (o *CurrentUserEntity) GetAccountID() *int {
-	if o == nil {
+func (c *CurrentUserEntity) GetAccountID() *int {
+	if c == nil {
 		return nil
 	}
-	return o.AccountID
+	return c.AccountID
 }

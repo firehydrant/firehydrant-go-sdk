@@ -10,30 +10,30 @@ type ListIncidentRetrospectivesRequest struct {
 	IncidentID string `pathParam:"style=simple,explode=false,name=incident_id"`
 }
 
-func (o *ListIncidentRetrospectivesRequest) GetPage() *int {
-	if o == nil {
+func (l *ListIncidentRetrospectivesRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListIncidentRetrospectivesRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListIncidentRetrospectivesRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }
 
-func (o *ListIncidentRetrospectivesRequest) GetIsHidden() *bool {
-	if o == nil {
+func (l *ListIncidentRetrospectivesRequest) GetIsHidden() *bool {
+	if l == nil {
 		return nil
 	}
-	return o.IsHidden
+	return l.IsHidden
 }
 
-func (o *ListIncidentRetrospectivesRequest) GetIncidentID() string {
-	if o == nil {
+func (l *ListIncidentRetrospectivesRequest) GetIncidentID() string {
+	if l == nil {
 		return ""
 	}
-	return o.IncidentID
+	return l.IncidentID
 }

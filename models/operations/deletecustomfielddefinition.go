@@ -6,9 +6,9 @@ type DeleteCustomFieldDefinitionRequest struct {
 	FieldID string `pathParam:"style=simple,explode=false,name=field_id"`
 }
 
-func (o *DeleteCustomFieldDefinitionRequest) GetFieldID() string {
-	if o == nil {
+func (d *DeleteCustomFieldDefinitionRequest) GetFieldID() string {
+	if d == nil {
 		return ""
 	}
-	return o.FieldID
+	return d.FieldID
 }

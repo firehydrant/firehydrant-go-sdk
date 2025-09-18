@@ -12,23 +12,23 @@ type UpdateIncidentChatMessageRequest struct {
 	UpdateIncidentChatMessage components.UpdateIncidentChatMessage `request:"mediaType=application/json"`
 }
 
-func (o *UpdateIncidentChatMessageRequest) GetMessageID() string {
-	if o == nil {
+func (u *UpdateIncidentChatMessageRequest) GetMessageID() string {
+	if u == nil {
 		return ""
 	}
-	return o.MessageID
+	return u.MessageID
 }
 
-func (o *UpdateIncidentChatMessageRequest) GetIncidentID() string {
-	if o == nil {
+func (u *UpdateIncidentChatMessageRequest) GetIncidentID() string {
+	if u == nil {
 		return ""
 	}
-	return o.IncidentID
+	return u.IncidentID
 }
 
-func (o *UpdateIncidentChatMessageRequest) GetUpdateIncidentChatMessage() components.UpdateIncidentChatMessage {
-	if o == nil {
+func (u *UpdateIncidentChatMessageRequest) GetUpdateIncidentChatMessage() components.UpdateIncidentChatMessage {
+	if u == nil {
 		return components.UpdateIncidentChatMessage{}
 	}
-	return o.UpdateIncidentChatMessage
+	return u.UpdateIncidentChatMessage
 }

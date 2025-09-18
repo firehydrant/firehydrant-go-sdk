@@ -11,16 +11,16 @@ type UpdateSignalsWebhookTargetRequest struct {
 	UpdateSignalsWebhookTarget components.UpdateSignalsWebhookTarget `request:"mediaType=application/json"`
 }
 
-func (o *UpdateSignalsWebhookTargetRequest) GetID() string {
-	if o == nil {
+func (u *UpdateSignalsWebhookTargetRequest) GetID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ID
+	return u.ID
 }
 
-func (o *UpdateSignalsWebhookTargetRequest) GetUpdateSignalsWebhookTarget() components.UpdateSignalsWebhookTarget {
-	if o == nil {
+func (u *UpdateSignalsWebhookTargetRequest) GetUpdateSignalsWebhookTarget() components.UpdateSignalsWebhookTarget {
+	if u == nil {
 		return components.UpdateSignalsWebhookTarget{}
 	}
-	return o.UpdateSignalsWebhookTarget
+	return u.UpdateSignalsWebhookTarget
 }

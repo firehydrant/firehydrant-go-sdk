@@ -7,16 +7,16 @@ type ListStatusUpdateTemplatesRequest struct {
 	PerPage *int `queryParam:"style=form,explode=true,name=per_page"`
 }
 
-func (o *ListStatusUpdateTemplatesRequest) GetPage() *int {
-	if o == nil {
+func (l *ListStatusUpdateTemplatesRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListStatusUpdateTemplatesRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListStatusUpdateTemplatesRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }

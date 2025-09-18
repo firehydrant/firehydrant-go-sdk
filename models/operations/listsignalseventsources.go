@@ -13,30 +13,30 @@ type ListSignalsEventSourcesRequest struct {
 	UserID *string `queryParam:"style=form,explode=true,name=user_id"`
 }
 
-func (o *ListSignalsEventSourcesRequest) GetTeamID() *string {
-	if o == nil {
+func (l *ListSignalsEventSourcesRequest) GetTeamID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.TeamID
+	return l.TeamID
 }
 
-func (o *ListSignalsEventSourcesRequest) GetEscalationPolicyID() *string {
-	if o == nil {
+func (l *ListSignalsEventSourcesRequest) GetEscalationPolicyID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.EscalationPolicyID
+	return l.EscalationPolicyID
 }
 
-func (o *ListSignalsEventSourcesRequest) GetOnCallScheduleID() *string {
-	if o == nil {
+func (l *ListSignalsEventSourcesRequest) GetOnCallScheduleID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.OnCallScheduleID
+	return l.OnCallScheduleID
 }
 
-func (o *ListSignalsEventSourcesRequest) GetUserID() *string {
-	if o == nil {
+func (l *ListSignalsEventSourcesRequest) GetUserID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.UserID
+	return l.UserID
 }

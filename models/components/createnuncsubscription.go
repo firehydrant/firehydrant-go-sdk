@@ -7,9 +7,9 @@ type CreateNuncSubscription struct {
 	Email string `json:"email"`
 }
 
-func (o *CreateNuncSubscription) GetEmail() string {
-	if o == nil {
+func (c *CreateNuncSubscription) GetEmail() string {
+	if c == nil {
 		return ""
 	}
-	return o.Email
+	return c.Email
 }

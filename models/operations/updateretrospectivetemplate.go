@@ -67,95 +67,95 @@ type UpdateRetrospectiveTemplateRequestBody struct {
 	FieldsSchema                []string                                `json:"fields[schema],omitempty"`
 }
 
-func (o *UpdateRetrospectiveTemplateRequestBody) GetName() *string {
-	if o == nil {
+func (u *UpdateRetrospectiveTemplateRequestBody) GetName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Name
+	return u.Name
 }
 
-func (o *UpdateRetrospectiveTemplateRequestBody) GetDescription() *string {
-	if o == nil {
+func (u *UpdateRetrospectiveTemplateRequestBody) GetDescription() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Description
+	return u.Description
 }
 
-func (o *UpdateRetrospectiveTemplateRequestBody) GetIsDefault() *bool {
-	if o == nil {
+func (u *UpdateRetrospectiveTemplateRequestBody) GetIsDefault() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.IsDefault
+	return u.IsDefault
 }
 
-func (o *UpdateRetrospectiveTemplateRequestBody) GetSectionsSlug() []string {
-	if o == nil {
+func (u *UpdateRetrospectiveTemplateRequestBody) GetSectionsSlug() []string {
+	if u == nil {
 		return []string{}
 	}
-	return o.SectionsSlug
+	return u.SectionsSlug
 }
 
-func (o *UpdateRetrospectiveTemplateRequestBody) GetSectionsElements() []string {
-	if o == nil {
+func (u *UpdateRetrospectiveTemplateRequestBody) GetSectionsElements() []string {
+	if u == nil {
 		return []string{}
 	}
-	return o.SectionsElements
+	return u.SectionsElements
 }
 
-func (o *UpdateRetrospectiveTemplateRequestBody) GetFieldsID() []string {
-	if o == nil {
+func (u *UpdateRetrospectiveTemplateRequestBody) GetFieldsID() []string {
+	if u == nil {
 		return nil
 	}
-	return o.FieldsID
+	return u.FieldsID
 }
 
-func (o *UpdateRetrospectiveTemplateRequestBody) GetFieldsLabel() []string {
-	if o == nil {
+func (u *UpdateRetrospectiveTemplateRequestBody) GetFieldsLabel() []string {
+	if u == nil {
 		return []string{}
 	}
-	return o.FieldsLabel
+	return u.FieldsLabel
 }
 
-func (o *UpdateRetrospectiveTemplateRequestBody) GetFieldsType() []UpdateRetrospectiveTemplateFieldsType {
-	if o == nil {
+func (u *UpdateRetrospectiveTemplateRequestBody) GetFieldsType() []UpdateRetrospectiveTemplateFieldsType {
+	if u == nil {
 		return []UpdateRetrospectiveTemplateFieldsType{}
 	}
-	return o.FieldsType
+	return u.FieldsType
 }
 
-func (o *UpdateRetrospectiveTemplateRequestBody) GetFieldsHelpText() []string {
-	if o == nil {
+func (u *UpdateRetrospectiveTemplateRequestBody) GetFieldsHelpText() []string {
+	if u == nil {
 		return nil
 	}
-	return o.FieldsHelpText
+	return u.FieldsHelpText
 }
 
-func (o *UpdateRetrospectiveTemplateRequestBody) GetFieldsPermissibleValues() []string {
-	if o == nil {
+func (u *UpdateRetrospectiveTemplateRequestBody) GetFieldsPermissibleValues() []string {
+	if u == nil {
 		return nil
 	}
-	return o.FieldsPermissibleValues
+	return u.FieldsPermissibleValues
 }
 
-func (o *UpdateRetrospectiveTemplateRequestBody) GetFieldsIsRequired() []bool {
-	if o == nil {
+func (u *UpdateRetrospectiveTemplateRequestBody) GetFieldsIsRequired() []bool {
+	if u == nil {
 		return nil
 	}
-	return o.FieldsIsRequired
+	return u.FieldsIsRequired
 }
 
-func (o *UpdateRetrospectiveTemplateRequestBody) GetFieldsRequiredAtMilestoneID() []string {
-	if o == nil {
+func (u *UpdateRetrospectiveTemplateRequestBody) GetFieldsRequiredAtMilestoneID() []string {
+	if u == nil {
 		return nil
 	}
-	return o.FieldsRequiredAtMilestoneID
+	return u.FieldsRequiredAtMilestoneID
 }
 
-func (o *UpdateRetrospectiveTemplateRequestBody) GetFieldsSchema() []string {
-	if o == nil {
+func (u *UpdateRetrospectiveTemplateRequestBody) GetFieldsSchema() []string {
+	if u == nil {
 		return nil
 	}
-	return o.FieldsSchema
+	return u.FieldsSchema
 }
 
 type UpdateRetrospectiveTemplateRequest struct {
@@ -163,16 +163,16 @@ type UpdateRetrospectiveTemplateRequest struct {
 	RequestBody             UpdateRetrospectiveTemplateRequestBody `request:"mediaType=application/json"`
 }
 
-func (o *UpdateRetrospectiveTemplateRequest) GetRetrospectiveTemplateID() string {
-	if o == nil {
+func (u *UpdateRetrospectiveTemplateRequest) GetRetrospectiveTemplateID() string {
+	if u == nil {
 		return ""
 	}
-	return o.RetrospectiveTemplateID
+	return u.RetrospectiveTemplateID
 }
 
-func (o *UpdateRetrospectiveTemplateRequest) GetRequestBody() UpdateRetrospectiveTemplateRequestBody {
-	if o == nil {
+func (u *UpdateRetrospectiveTemplateRequest) GetRequestBody() UpdateRetrospectiveTemplateRequestBody {
+	if u == nil {
 		return UpdateRetrospectiveTemplateRequestBody{}
 	}
-	return o.RequestBody
+	return u.RequestBody
 }

@@ -145,30 +145,30 @@ type NullableActorEntity struct {
 	Type  *NullableActorEntityType `json:"type,omitempty"`
 }
 
-func (o *NullableActorEntity) GetID() *string {
-	if o == nil {
+func (n *NullableActorEntity) GetID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ID
+	return n.ID
 }
 
-func (o *NullableActorEntity) GetName() *string {
-	if o == nil {
+func (n *NullableActorEntity) GetName() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Name
+	return n.Name
 }
 
-func (o *NullableActorEntity) GetEmail() *string {
-	if o == nil {
+func (n *NullableActorEntity) GetEmail() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Email
+	return n.Email
 }
 
-func (o *NullableActorEntity) GetType() *NullableActorEntityType {
-	if o == nil {
+func (n *NullableActorEntity) GetType() *NullableActorEntityType {
+	if n == nil {
 		return nil
 	}
-	return o.Type
+	return n.Type
 }

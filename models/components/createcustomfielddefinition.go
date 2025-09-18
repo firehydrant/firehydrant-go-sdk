@@ -9,49 +9,49 @@ type CreateCustomFieldDefinition struct {
 	FieldType         string   `json:"field_type"`
 	PermissibleValues []string `json:"permissible_values,omitempty"`
 	// Whether this field should be required for all incidents.
-	Required bool `json:"required"`
+	Required *bool `json:"required,omitempty"`
 	// An optional milestone ID to specify when the field should become required, if `required` is set to `true`. If not provided, required fields are always required.
 	RequiredAtMilestoneID *string `json:"required_at_milestone_id,omitempty"`
 }
 
-func (o *CreateCustomFieldDefinition) GetDisplayName() string {
-	if o == nil {
+func (c *CreateCustomFieldDefinition) GetDisplayName() string {
+	if c == nil {
 		return ""
 	}
-	return o.DisplayName
+	return c.DisplayName
 }
 
-func (o *CreateCustomFieldDefinition) GetDescription() *string {
-	if o == nil {
+func (c *CreateCustomFieldDefinition) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *CreateCustomFieldDefinition) GetFieldType() string {
-	if o == nil {
+func (c *CreateCustomFieldDefinition) GetFieldType() string {
+	if c == nil {
 		return ""
 	}
-	return o.FieldType
+	return c.FieldType
 }
 
-func (o *CreateCustomFieldDefinition) GetPermissibleValues() []string {
-	if o == nil {
+func (c *CreateCustomFieldDefinition) GetPermissibleValues() []string {
+	if c == nil {
 		return nil
 	}
-	return o.PermissibleValues
+	return c.PermissibleValues
 }
 
-func (o *CreateCustomFieldDefinition) GetRequired() bool {
-	if o == nil {
-		return false
-	}
-	return o.Required
-}
-
-func (o *CreateCustomFieldDefinition) GetRequiredAtMilestoneID() *string {
-	if o == nil {
+func (c *CreateCustomFieldDefinition) GetRequired() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.RequiredAtMilestoneID
+	return c.Required
+}
+
+func (c *CreateCustomFieldDefinition) GetRequiredAtMilestoneID() *string {
+	if c == nil {
+		return nil
+	}
+	return c.RequiredAtMilestoneID
 }

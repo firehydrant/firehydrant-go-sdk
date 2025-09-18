@@ -7,16 +7,16 @@ type GetTeamSignalRuleRequest struct {
 	ID     string `pathParam:"style=simple,explode=false,name=id"`
 }
 
-func (o *GetTeamSignalRuleRequest) GetTeamID() string {
-	if o == nil {
+func (g *GetTeamSignalRuleRequest) GetTeamID() string {
+	if g == nil {
 		return ""
 	}
-	return o.TeamID
+	return g.TeamID
 }
 
-func (o *GetTeamSignalRuleRequest) GetID() string {
-	if o == nil {
+func (g *GetTeamSignalRuleRequest) GetID() string {
+	if g == nil {
 		return ""
 	}
-	return o.ID
+	return g.ID
 }

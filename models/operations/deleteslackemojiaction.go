@@ -8,16 +8,16 @@ type DeleteSlackEmojiActionRequest struct {
 	EmojiActionID string `pathParam:"style=simple,explode=false,name=emoji_action_id"`
 }
 
-func (o *DeleteSlackEmojiActionRequest) GetConnectionID() string {
-	if o == nil {
+func (d *DeleteSlackEmojiActionRequest) GetConnectionID() string {
+	if d == nil {
 		return ""
 	}
-	return o.ConnectionID
+	return d.ConnectionID
 }
 
-func (o *DeleteSlackEmojiActionRequest) GetEmojiActionID() string {
-	if o == nil {
+func (d *DeleteSlackEmojiActionRequest) GetEmojiActionID() string {
+	if d == nil {
 		return ""
 	}
-	return o.EmojiActionID
+	return d.EmojiActionID
 }

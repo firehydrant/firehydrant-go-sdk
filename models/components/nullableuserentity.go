@@ -31,65 +31,65 @@ func (n *NullableUserEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *NullableUserEntity) GetID() *string {
-	if o == nil {
+func (n *NullableUserEntity) GetID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ID
+	return n.ID
 }
 
-func (o *NullableUserEntity) GetName() *string {
-	if o == nil {
+func (n *NullableUserEntity) GetName() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Name
+	return n.Name
 }
 
-func (o *NullableUserEntity) GetEmail() *string {
-	if o == nil {
+func (n *NullableUserEntity) GetEmail() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Email
+	return n.Email
 }
 
-func (o *NullableUserEntity) GetSlackUserID() *string {
-	if o == nil {
+func (n *NullableUserEntity) GetSlackUserID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.SlackUserID
+	return n.SlackUserID
 }
 
-func (o *NullableUserEntity) GetSlackLinked() *bool {
-	if o == nil {
+func (n *NullableUserEntity) GetSlackLinked() *bool {
+	if n == nil {
 		return nil
 	}
-	return o.SlackLinked
+	return n.SlackLinked
 }
 
-func (o *NullableUserEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (n *NullableUserEntity) GetCreatedAt() *time.Time {
+	if n == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return n.CreatedAt
 }
 
-func (o *NullableUserEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (n *NullableUserEntity) GetUpdatedAt() *time.Time {
+	if n == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return n.UpdatedAt
 }
 
-func (o *NullableUserEntity) GetSignalsEnabledNotificationTypes() []string {
-	if o == nil {
+func (n *NullableUserEntity) GetSignalsEnabledNotificationTypes() []string {
+	if n == nil {
 		return nil
 	}
-	return o.SignalsEnabledNotificationTypes
+	return n.SignalsEnabledNotificationTypes
 }
 
-func (o *NullableUserEntity) GetSignalsNotificationPolicyCompliance() []SignalsAPINotificationPolicyItemComplianceEntity {
-	if o == nil {
+func (n *NullableUserEntity) GetSignalsNotificationPolicyCompliance() []SignalsAPINotificationPolicyItemComplianceEntity {
+	if n == nil {
 		return nil
 	}
-	return o.SignalsNotificationPolicyCompliance
+	return n.SignalsNotificationPolicyCompliance
 }

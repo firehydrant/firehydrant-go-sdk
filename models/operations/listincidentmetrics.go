@@ -173,58 +173,58 @@ func (l *ListIncidentMetricsRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ListIncidentMetricsRequest) GetStartDate() *types.Date {
-	if o == nil {
+func (l *ListIncidentMetricsRequest) GetStartDate() *types.Date {
+	if l == nil {
 		return nil
 	}
-	return o.StartDate
+	return l.StartDate
 }
 
-func (o *ListIncidentMetricsRequest) GetEndDate() *types.Date {
-	if o == nil {
+func (l *ListIncidentMetricsRequest) GetEndDate() *types.Date {
+	if l == nil {
 		return nil
 	}
-	return o.EndDate
+	return l.EndDate
 }
 
-func (o *ListIncidentMetricsRequest) GetBucketSize() *BucketSize {
-	if o == nil {
+func (l *ListIncidentMetricsRequest) GetBucketSize() *BucketSize {
+	if l == nil {
 		return nil
 	}
-	return o.BucketSize
+	return l.BucketSize
 }
 
-func (o *ListIncidentMetricsRequest) GetBy() *By {
-	if o == nil {
+func (l *ListIncidentMetricsRequest) GetBy() *By {
+	if l == nil {
 		return nil
 	}
-	return o.By
+	return l.By
 }
 
-func (o *ListIncidentMetricsRequest) GetSortField() *ListIncidentMetricsSortField {
-	if o == nil {
+func (l *ListIncidentMetricsRequest) GetSortField() *ListIncidentMetricsSortField {
+	if l == nil {
 		return nil
 	}
-	return o.SortField
+	return l.SortField
 }
 
-func (o *ListIncidentMetricsRequest) GetSortDirection() *ListIncidentMetricsSortDirection {
-	if o == nil {
+func (l *ListIncidentMetricsRequest) GetSortDirection() *ListIncidentMetricsSortDirection {
+	if l == nil {
 		return nil
 	}
-	return o.SortDirection
+	return l.SortDirection
 }
 
-func (o *ListIncidentMetricsRequest) GetSortLimit() *int {
-	if o == nil {
+func (l *ListIncidentMetricsRequest) GetSortLimit() *int {
+	if l == nil {
 		return nil
 	}
-	return o.SortLimit
+	return l.SortLimit
 }
 
-func (o *ListIncidentMetricsRequest) GetConditions() *string {
-	if o == nil {
+func (l *ListIncidentMetricsRequest) GetConditions() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Conditions
+	return l.Conditions
 }

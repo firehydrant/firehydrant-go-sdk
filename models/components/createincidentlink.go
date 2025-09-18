@@ -9,23 +9,23 @@ type CreateIncidentLink struct {
 	Href        string  `json:"href"`
 }
 
-func (o *CreateIncidentLink) GetDisplayText() *string {
-	if o == nil {
+func (c *CreateIncidentLink) GetDisplayText() *string {
+	if c == nil {
 		return nil
 	}
-	return o.DisplayText
+	return c.DisplayText
 }
 
-func (o *CreateIncidentLink) GetIconURL() *string {
-	if o == nil {
+func (c *CreateIncidentLink) GetIconURL() *string {
+	if c == nil {
 		return nil
 	}
-	return o.IconURL
+	return c.IconURL
 }
 
-func (o *CreateIncidentLink) GetHref() string {
-	if o == nil {
+func (c *CreateIncidentLink) GetHref() string {
+	if c == nil {
 		return ""
 	}
-	return o.Href
+	return c.Href
 }

@@ -7,9 +7,9 @@ type PermissionEntityList struct {
 	Data []PublicAPIV1PermissionEntity `json:"data,omitempty"`
 }
 
-func (o *PermissionEntityList) GetData() []PublicAPIV1PermissionEntity {
-	if o == nil {
+func (p *PermissionEntityList) GetData() []PublicAPIV1PermissionEntity {
+	if p == nil {
 		return nil
 	}
-	return o.Data
+	return p.Data
 }

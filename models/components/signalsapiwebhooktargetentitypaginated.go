@@ -8,16 +8,16 @@ type SignalsAPIWebhookTargetEntityPaginated struct {
 	Pagination *NullablePaginationEntity       `json:"pagination,omitempty"`
 }
 
-func (o *SignalsAPIWebhookTargetEntityPaginated) GetData() []SignalsAPIWebhookTargetEntity {
-	if o == nil {
+func (s *SignalsAPIWebhookTargetEntityPaginated) GetData() []SignalsAPIWebhookTargetEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Data
+	return s.Data
 }
 
-func (o *SignalsAPIWebhookTargetEntityPaginated) GetPagination() *NullablePaginationEntity {
-	if o == nil {
+func (s *SignalsAPIWebhookTargetEntityPaginated) GetPagination() *NullablePaginationEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Pagination
+	return s.Pagination
 }

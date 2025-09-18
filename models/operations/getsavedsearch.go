@@ -62,16 +62,16 @@ type GetSavedSearchRequest struct {
 	SavedSearchID string                     `pathParam:"style=simple,explode=false,name=saved_search_id"`
 }
 
-func (o *GetSavedSearchRequest) GetResourceType() GetSavedSearchResourceType {
-	if o == nil {
+func (g *GetSavedSearchRequest) GetResourceType() GetSavedSearchResourceType {
+	if g == nil {
 		return GetSavedSearchResourceType("")
 	}
-	return o.ResourceType
+	return g.ResourceType
 }
 
-func (o *GetSavedSearchRequest) GetSavedSearchID() string {
-	if o == nil {
+func (g *GetSavedSearchRequest) GetSavedSearchID() string {
+	if g == nil {
 		return ""
 	}
-	return o.SavedSearchID
+	return g.SavedSearchID
 }

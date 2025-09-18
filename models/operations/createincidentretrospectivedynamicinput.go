@@ -8,23 +8,23 @@ type CreateIncidentRetrospectiveDynamicInputRequest struct {
 	IncidentID      string `pathParam:"style=simple,explode=false,name=incident_id"`
 }
 
-func (o *CreateIncidentRetrospectiveDynamicInputRequest) GetRetrospectiveID() string {
-	if o == nil {
+func (c *CreateIncidentRetrospectiveDynamicInputRequest) GetRetrospectiveID() string {
+	if c == nil {
 		return ""
 	}
-	return o.RetrospectiveID
+	return c.RetrospectiveID
 }
 
-func (o *CreateIncidentRetrospectiveDynamicInputRequest) GetFieldID() string {
-	if o == nil {
+func (c *CreateIncidentRetrospectiveDynamicInputRequest) GetFieldID() string {
+	if c == nil {
 		return ""
 	}
-	return o.FieldID
+	return c.FieldID
 }
 
-func (o *CreateIncidentRetrospectiveDynamicInputRequest) GetIncidentID() string {
-	if o == nil {
+func (c *CreateIncidentRetrospectiveDynamicInputRequest) GetIncidentID() string {
+	if c == nil {
 		return ""
 	}
-	return o.IncidentID
+	return c.IncidentID
 }

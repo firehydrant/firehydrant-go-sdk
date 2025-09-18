@@ -42,30 +42,30 @@ type ListInboundFieldMapsRequest struct {
 	TicketingProjectID string      `pathParam:"style=simple,explode=false,name=ticketing_project_id"`
 }
 
-func (o *ListInboundFieldMapsRequest) GetPage() *int {
-	if o == nil {
+func (l *ListInboundFieldMapsRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListInboundFieldMapsRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListInboundFieldMapsRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }
 
-func (o *ListInboundFieldMapsRequest) GetTicketType() *TicketType {
-	if o == nil {
+func (l *ListInboundFieldMapsRequest) GetTicketType() *TicketType {
+	if l == nil {
 		return nil
 	}
-	return o.TicketType
+	return l.TicketType
 }
 
-func (o *ListInboundFieldMapsRequest) GetTicketingProjectID() string {
-	if o == nil {
+func (l *ListInboundFieldMapsRequest) GetTicketingProjectID() string {
+	if l == nil {
 		return ""
 	}
-	return o.TicketingProjectID
+	return l.TicketingProjectID
 }

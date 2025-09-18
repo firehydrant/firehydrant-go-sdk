@@ -7,16 +7,16 @@ type GetIncidentUserRequest struct {
 	UserID     string `pathParam:"style=simple,explode=false,name=user_id"`
 }
 
-func (o *GetIncidentUserRequest) GetIncidentID() string {
-	if o == nil {
+func (g *GetIncidentUserRequest) GetIncidentID() string {
+	if g == nil {
 		return ""
 	}
-	return o.IncidentID
+	return g.IncidentID
 }
 
-func (o *GetIncidentUserRequest) GetUserID() string {
-	if o == nil {
+func (g *GetIncidentUserRequest) GetUserID() string {
+	if g == nil {
 		return ""
 	}
-	return o.UserID
+	return g.UserID
 }

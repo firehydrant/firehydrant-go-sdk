@@ -6,9 +6,9 @@ type DeleteCallRouteRequest struct {
 	ID string `pathParam:"style=simple,explode=false,name=id"`
 }
 
-func (o *DeleteCallRouteRequest) GetID() string {
-	if o == nil {
+func (d *DeleteCallRouteRequest) GetID() string {
+	if d == nil {
 		return ""
 	}
-	return o.ID
+	return d.ID
 }

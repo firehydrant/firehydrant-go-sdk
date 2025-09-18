@@ -11,16 +11,16 @@ type CreateCommentRequest struct {
 	CreateComment  components.CreateComment `request:"mediaType=application/json"`
 }
 
-func (o *CreateCommentRequest) GetConversationID() string {
-	if o == nil {
+func (c *CreateCommentRequest) GetConversationID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ConversationID
+	return c.ConversationID
 }
 
-func (o *CreateCommentRequest) GetCreateComment() components.CreateComment {
-	if o == nil {
+func (c *CreateCommentRequest) GetCreateComment() components.CreateComment {
+	if c == nil {
 		return components.CreateComment{}
 	}
-	return o.CreateComment
+	return c.CreateComment
 }

@@ -29,51 +29,51 @@ func (i *IncidentRoleEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *IncidentRoleEntity) GetID() *string {
-	if o == nil {
+func (i *IncidentRoleEntity) GetID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ID
+	return i.ID
 }
 
-func (o *IncidentRoleEntity) GetName() *string {
-	if o == nil {
+func (i *IncidentRoleEntity) GetName() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Name
+	return i.Name
 }
 
-func (o *IncidentRoleEntity) GetSummary() *string {
-	if o == nil {
+func (i *IncidentRoleEntity) GetSummary() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Summary
+	return i.Summary
 }
 
-func (o *IncidentRoleEntity) GetDescription() *string {
-	if o == nil {
+func (i *IncidentRoleEntity) GetDescription() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Description
+	return i.Description
 }
 
-func (o *IncidentRoleEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (i *IncidentRoleEntity) GetCreatedAt() *time.Time {
+	if i == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return i.CreatedAt
 }
 
-func (o *IncidentRoleEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (i *IncidentRoleEntity) GetUpdatedAt() *time.Time {
+	if i == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return i.UpdatedAt
 }
 
-func (o *IncidentRoleEntity) GetDiscardedAt() *time.Time {
-	if o == nil {
+func (i *IncidentRoleEntity) GetDiscardedAt() *time.Time {
+	if i == nil {
 		return nil
 	}
-	return o.DiscardedAt
+	return i.DiscardedAt
 }

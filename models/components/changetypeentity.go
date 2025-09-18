@@ -7,16 +7,16 @@ type ChangeTypeEntity struct {
 	Name *string `json:"name,omitempty"`
 }
 
-func (o *ChangeTypeEntity) GetID() *string {
-	if o == nil {
+func (c *ChangeTypeEntity) GetID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *ChangeTypeEntity) GetName() *string {
-	if o == nil {
+func (c *ChangeTypeEntity) GetName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Name
+	return c.Name
 }

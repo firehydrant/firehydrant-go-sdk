@@ -6,9 +6,9 @@ type DeleteSeverityMatrixConditionRequest struct {
 	ConditionID string `pathParam:"style=simple,explode=false,name=condition_id"`
 }
 
-func (o *DeleteSeverityMatrixConditionRequest) GetConditionID() string {
-	if o == nil {
+func (d *DeleteSeverityMatrixConditionRequest) GetConditionID() string {
+	if d == nil {
 		return ""
 	}
-	return o.ConditionID
+	return d.ConditionID
 }

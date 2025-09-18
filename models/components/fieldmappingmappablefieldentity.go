@@ -18,44 +18,44 @@ type FieldMappingMappableFieldEntity struct {
 	HelpText *string `json:"help_text,omitempty"`
 }
 
-func (o *FieldMappingMappableFieldEntity) GetValue() *string {
-	if o == nil {
+func (f *FieldMappingMappableFieldEntity) GetValue() *string {
+	if f == nil {
 		return nil
 	}
-	return o.Value
+	return f.Value
 }
 
-func (o *FieldMappingMappableFieldEntity) GetLabel() *string {
-	if o == nil {
+func (f *FieldMappingMappableFieldEntity) GetLabel() *string {
+	if f == nil {
 		return nil
 	}
-	return o.Label
+	return f.Label
 }
 
-func (o *FieldMappingMappableFieldEntity) GetType() *string {
-	if o == nil {
+func (f *FieldMappingMappableFieldEntity) GetType() *string {
+	if f == nil {
 		return nil
 	}
-	return o.Type
+	return f.Type
 }
 
-func (o *FieldMappingMappableFieldEntity) GetAllowedValues() []string {
-	if o == nil {
+func (f *FieldMappingMappableFieldEntity) GetAllowedValues() []string {
+	if f == nil {
 		return nil
 	}
-	return o.AllowedValues
+	return f.AllowedValues
 }
 
-func (o *FieldMappingMappableFieldEntity) GetRequired() *string {
-	if o == nil {
+func (f *FieldMappingMappableFieldEntity) GetRequired() *string {
+	if f == nil {
 		return nil
 	}
-	return o.Required
+	return f.Required
 }
 
-func (o *FieldMappingMappableFieldEntity) GetHelpText() *string {
-	if o == nil {
+func (f *FieldMappingMappableFieldEntity) GetHelpText() *string {
+	if f == nil {
 		return nil
 	}
-	return o.HelpText
+	return f.HelpText
 }

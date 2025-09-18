@@ -48,30 +48,30 @@ type ListIncidentChangeEventsRequest struct {
 	IncidentID string                        `pathParam:"style=simple,explode=false,name=incident_id"`
 }
 
-func (o *ListIncidentChangeEventsRequest) GetPage() *int {
-	if o == nil {
+func (l *ListIncidentChangeEventsRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListIncidentChangeEventsRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListIncidentChangeEventsRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }
 
-func (o *ListIncidentChangeEventsRequest) GetType() *ListIncidentChangeEventsType {
-	if o == nil {
+func (l *ListIncidentChangeEventsRequest) GetType() *ListIncidentChangeEventsType {
+	if l == nil {
 		return nil
 	}
-	return o.Type
+	return l.Type
 }
 
-func (o *ListIncidentChangeEventsRequest) GetIncidentID() string {
-	if o == nil {
+func (l *ListIncidentChangeEventsRequest) GetIncidentID() string {
+	if l == nil {
 		return ""
 	}
-	return o.IncidentID
+	return l.IncidentID
 }

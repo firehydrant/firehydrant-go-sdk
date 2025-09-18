@@ -9,23 +9,23 @@ type SignalsAPIHackerModeEntity struct {
 	URL     *string `json:"url,omitempty"`
 }
 
-func (o *SignalsAPIHackerModeEntity) GetEnabled() *bool {
-	if o == nil {
+func (s *SignalsAPIHackerModeEntity) GetEnabled() *bool {
+	if s == nil {
 		return nil
 	}
-	return o.Enabled
+	return s.Enabled
 }
 
-func (o *SignalsAPIHackerModeEntity) GetURLKey() *string {
-	if o == nil {
+func (s *SignalsAPIHackerModeEntity) GetURLKey() *string {
+	if s == nil {
 		return nil
 	}
-	return o.URLKey
+	return s.URLKey
 }
 
-func (o *SignalsAPIHackerModeEntity) GetURL() *string {
-	if o == nil {
+func (s *SignalsAPIHackerModeEntity) GetURL() *string {
+	if s == nil {
 		return nil
 	}
-	return o.URL
+	return s.URL
 }

@@ -10,30 +10,30 @@ type DeleteIncidentRetrospectiveDynamicInputRequest struct {
 	IncidentID          string `pathParam:"style=simple,explode=false,name=incident_id"`
 }
 
-func (o *DeleteIncidentRetrospectiveDynamicInputRequest) GetRetrospectiveID() string {
-	if o == nil {
+func (d *DeleteIncidentRetrospectiveDynamicInputRequest) GetRetrospectiveID() string {
+	if d == nil {
 		return ""
 	}
-	return o.RetrospectiveID
+	return d.RetrospectiveID
 }
 
-func (o *DeleteIncidentRetrospectiveDynamicInputRequest) GetFieldID() string {
-	if o == nil {
+func (d *DeleteIncidentRetrospectiveDynamicInputRequest) GetFieldID() string {
+	if d == nil {
 		return ""
 	}
-	return o.FieldID
+	return d.FieldID
 }
 
-func (o *DeleteIncidentRetrospectiveDynamicInputRequest) GetDynamicInputFieldID() string {
-	if o == nil {
+func (d *DeleteIncidentRetrospectiveDynamicInputRequest) GetDynamicInputFieldID() string {
+	if d == nil {
 		return ""
 	}
-	return o.DynamicInputFieldID
+	return d.DynamicInputFieldID
 }
 
-func (o *DeleteIncidentRetrospectiveDynamicInputRequest) GetIncidentID() string {
-	if o == nil {
+func (d *DeleteIncidentRetrospectiveDynamicInputRequest) GetIncidentID() string {
+	if d == nil {
 		return ""
 	}
-	return o.IncidentID
+	return d.IncidentID
 }

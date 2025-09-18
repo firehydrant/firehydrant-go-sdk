@@ -101,86 +101,86 @@ type CreateRetrospectiveTemplateRequest struct {
 	FieldsSchema                []string                                `json:"fields[schema],omitempty"`
 }
 
-func (o *CreateRetrospectiveTemplateRequest) GetName() string {
-	if o == nil {
+func (c *CreateRetrospectiveTemplateRequest) GetName() string {
+	if c == nil {
 		return ""
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CreateRetrospectiveTemplateRequest) GetDescription() string {
-	if o == nil {
+func (c *CreateRetrospectiveTemplateRequest) GetDescription() string {
+	if c == nil {
 		return ""
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *CreateRetrospectiveTemplateRequest) GetIsDefault() *bool {
-	if o == nil {
+func (c *CreateRetrospectiveTemplateRequest) GetIsDefault() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.IsDefault
+	return c.IsDefault
 }
 
-func (o *CreateRetrospectiveTemplateRequest) GetSectionsSlug() []SectionsSlug {
-	if o == nil {
+func (c *CreateRetrospectiveTemplateRequest) GetSectionsSlug() []SectionsSlug {
+	if c == nil {
 		return []SectionsSlug{}
 	}
-	return o.SectionsSlug
+	return c.SectionsSlug
 }
 
-func (o *CreateRetrospectiveTemplateRequest) GetSectionsElements() []string {
-	if o == nil {
+func (c *CreateRetrospectiveTemplateRequest) GetSectionsElements() []string {
+	if c == nil {
 		return []string{}
 	}
-	return o.SectionsElements
+	return c.SectionsElements
 }
 
-func (o *CreateRetrospectiveTemplateRequest) GetFieldsLabel() []string {
-	if o == nil {
+func (c *CreateRetrospectiveTemplateRequest) GetFieldsLabel() []string {
+	if c == nil {
 		return []string{}
 	}
-	return o.FieldsLabel
+	return c.FieldsLabel
 }
 
-func (o *CreateRetrospectiveTemplateRequest) GetFieldsType() []CreateRetrospectiveTemplateFieldsType {
-	if o == nil {
+func (c *CreateRetrospectiveTemplateRequest) GetFieldsType() []CreateRetrospectiveTemplateFieldsType {
+	if c == nil {
 		return []CreateRetrospectiveTemplateFieldsType{}
 	}
-	return o.FieldsType
+	return c.FieldsType
 }
 
-func (o *CreateRetrospectiveTemplateRequest) GetFieldsHelpText() []string {
-	if o == nil {
+func (c *CreateRetrospectiveTemplateRequest) GetFieldsHelpText() []string {
+	if c == nil {
 		return nil
 	}
-	return o.FieldsHelpText
+	return c.FieldsHelpText
 }
 
-func (o *CreateRetrospectiveTemplateRequest) GetFieldsPermissibleValues() []string {
-	if o == nil {
+func (c *CreateRetrospectiveTemplateRequest) GetFieldsPermissibleValues() []string {
+	if c == nil {
 		return nil
 	}
-	return o.FieldsPermissibleValues
+	return c.FieldsPermissibleValues
 }
 
-func (o *CreateRetrospectiveTemplateRequest) GetFieldsIsRequired() []bool {
-	if o == nil {
+func (c *CreateRetrospectiveTemplateRequest) GetFieldsIsRequired() []bool {
+	if c == nil {
 		return nil
 	}
-	return o.FieldsIsRequired
+	return c.FieldsIsRequired
 }
 
-func (o *CreateRetrospectiveTemplateRequest) GetFieldsRequiredAtMilestoneID() []string {
-	if o == nil {
+func (c *CreateRetrospectiveTemplateRequest) GetFieldsRequiredAtMilestoneID() []string {
+	if c == nil {
 		return nil
 	}
-	return o.FieldsRequiredAtMilestoneID
+	return c.FieldsRequiredAtMilestoneID
 }
 
-func (o *CreateRetrospectiveTemplateRequest) GetFieldsSchema() []string {
-	if o == nil {
+func (c *CreateRetrospectiveTemplateRequest) GetFieldsSchema() []string {
+	if c == nil {
 		return nil
 	}
-	return o.FieldsSchema
+	return c.FieldsSchema
 }

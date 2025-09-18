@@ -11,16 +11,16 @@ type UpdateTicketingPriorityRequest struct {
 	UpdateTicketingPriority components.UpdateTicketingPriority `request:"mediaType=application/json"`
 }
 
-func (o *UpdateTicketingPriorityRequest) GetID() string {
-	if o == nil {
+func (u *UpdateTicketingPriorityRequest) GetID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ID
+	return u.ID
 }
 
-func (o *UpdateTicketingPriorityRequest) GetUpdateTicketingPriority() components.UpdateTicketingPriority {
-	if o == nil {
+func (u *UpdateTicketingPriorityRequest) GetUpdateTicketingPriority() components.UpdateTicketingPriority {
+	if u == nil {
 		return components.UpdateTicketingPriority{}
 	}
-	return o.UpdateTicketingPriority
+	return u.UpdateTicketingPriority
 }

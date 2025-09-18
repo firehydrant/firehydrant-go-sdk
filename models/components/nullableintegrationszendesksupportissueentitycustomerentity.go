@@ -9,16 +9,16 @@ type NullableIntegrationsZendeskSupportIssueEntityCustomerEntity struct {
 	Name *string `json:"name,omitempty"`
 }
 
-func (o *NullableIntegrationsZendeskSupportIssueEntityCustomerEntity) GetID() *string {
-	if o == nil {
+func (n *NullableIntegrationsZendeskSupportIssueEntityCustomerEntity) GetID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ID
+	return n.ID
 }
 
-func (o *NullableIntegrationsZendeskSupportIssueEntityCustomerEntity) GetName() *string {
-	if o == nil {
+func (n *NullableIntegrationsZendeskSupportIssueEntityCustomerEntity) GetName() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Name
+	return n.Name
 }

@@ -213,30 +213,30 @@ type CreateRole struct {
 	Permissions []CreateRolePermission `json:"permissions,omitempty"`
 }
 
-func (o *CreateRole) GetName() string {
-	if o == nil {
+func (c *CreateRole) GetName() string {
+	if c == nil {
 		return ""
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CreateRole) GetSlug() *string {
-	if o == nil {
+func (c *CreateRole) GetSlug() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Slug
+	return c.Slug
 }
 
-func (o *CreateRole) GetDescription() *string {
-	if o == nil {
+func (c *CreateRole) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *CreateRole) GetPermissions() []CreateRolePermission {
-	if o == nil {
+func (c *CreateRole) GetPermissions() []CreateRolePermission {
+	if c == nil {
 		return nil
 	}
-	return o.Permissions
+	return c.Permissions
 }

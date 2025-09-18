@@ -8,23 +8,23 @@ type NullableMetricsMetricsEntitySortEntity struct {
 	Limit     *int    `json:"limit,omitempty"`
 }
 
-func (o *NullableMetricsMetricsEntitySortEntity) GetField() *string {
-	if o == nil {
+func (n *NullableMetricsMetricsEntitySortEntity) GetField() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Field
+	return n.Field
 }
 
-func (o *NullableMetricsMetricsEntitySortEntity) GetDirection() *string {
-	if o == nil {
+func (n *NullableMetricsMetricsEntitySortEntity) GetDirection() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Direction
+	return n.Direction
 }
 
-func (o *NullableMetricsMetricsEntitySortEntity) GetLimit() *int {
-	if o == nil {
+func (n *NullableMetricsMetricsEntitySortEntity) GetLimit() *int {
+	if n == nil {
 		return nil
 	}
-	return o.Limit
+	return n.Limit
 }

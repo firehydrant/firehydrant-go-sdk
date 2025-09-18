@@ -12,23 +12,23 @@ type UpdateVoteRequest struct {
 	UpdateVote components.UpdateVote `request:"mediaType=application/json"`
 }
 
-func (o *UpdateVoteRequest) GetIncidentID() string {
-	if o == nil {
+func (u *UpdateVoteRequest) GetIncidentID() string {
+	if u == nil {
 		return ""
 	}
-	return o.IncidentID
+	return u.IncidentID
 }
 
-func (o *UpdateVoteRequest) GetEventID() string {
-	if o == nil {
+func (u *UpdateVoteRequest) GetEventID() string {
+	if u == nil {
 		return ""
 	}
-	return o.EventID
+	return u.EventID
 }
 
-func (o *UpdateVoteRequest) GetUpdateVote() components.UpdateVote {
-	if o == nil {
+func (u *UpdateVoteRequest) GetUpdateVote() components.UpdateVote {
+	if u == nil {
 		return components.UpdateVote{}
 	}
-	return o.UpdateVote
+	return u.UpdateVote
 }

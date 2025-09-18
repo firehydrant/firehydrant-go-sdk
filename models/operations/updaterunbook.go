@@ -11,16 +11,16 @@ type UpdateRunbookRequest struct {
 	UpdateRunbook components.UpdateRunbook `request:"mediaType=application/json"`
 }
 
-func (o *UpdateRunbookRequest) GetRunbookID() string {
-	if o == nil {
+func (u *UpdateRunbookRequest) GetRunbookID() string {
+	if u == nil {
 		return ""
 	}
-	return o.RunbookID
+	return u.RunbookID
 }
 
-func (o *UpdateRunbookRequest) GetUpdateRunbook() components.UpdateRunbook {
-	if o == nil {
+func (u *UpdateRunbookRequest) GetUpdateRunbook() components.UpdateRunbook {
+	if u == nil {
 		return components.UpdateRunbook{}
 	}
-	return o.UpdateRunbook
+	return u.UpdateRunbook
 }

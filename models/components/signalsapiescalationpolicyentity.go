@@ -35,86 +35,86 @@ func (s *SignalsAPIEscalationPolicyEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *SignalsAPIEscalationPolicyEntity) GetID() *string {
-	if o == nil {
+func (s *SignalsAPIEscalationPolicyEntity) GetID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *SignalsAPIEscalationPolicyEntity) GetName() *string {
-	if o == nil {
+func (s *SignalsAPIEscalationPolicyEntity) GetName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Name
+	return s.Name
 }
 
-func (o *SignalsAPIEscalationPolicyEntity) GetDescription() *string {
-	if o == nil {
+func (s *SignalsAPIEscalationPolicyEntity) GetDescription() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Description
+	return s.Description
 }
 
-func (o *SignalsAPIEscalationPolicyEntity) GetDefault() *bool {
-	if o == nil {
+func (s *SignalsAPIEscalationPolicyEntity) GetDefault() *bool {
+	if s == nil {
 		return nil
 	}
-	return o.Default
+	return s.Default
 }
 
-func (o *SignalsAPIEscalationPolicyEntity) GetRepetitions() *int {
-	if o == nil {
+func (s *SignalsAPIEscalationPolicyEntity) GetRepetitions() *int {
+	if s == nil {
 		return nil
 	}
-	return o.Repetitions
+	return s.Repetitions
 }
 
-func (o *SignalsAPIEscalationPolicyEntity) GetSteps() []SignalsAPIEscalationPolicyStepEntity {
-	if o == nil {
+func (s *SignalsAPIEscalationPolicyEntity) GetSteps() []SignalsAPIEscalationPolicyStepEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Steps
+	return s.Steps
 }
 
-func (o *SignalsAPIEscalationPolicyEntity) GetHandoffStep() *NullableSignalsAPIEscalationPolicyHandoffStepEntity {
-	if o == nil {
+func (s *SignalsAPIEscalationPolicyEntity) GetHandoffStep() *NullableSignalsAPIEscalationPolicyHandoffStepEntity {
+	if s == nil {
 		return nil
 	}
-	return o.HandoffStep
+	return s.HandoffStep
 }
 
-func (o *SignalsAPIEscalationPolicyEntity) GetCreatedBy() *NullableAuthorEntity {
-	if o == nil {
+func (s *SignalsAPIEscalationPolicyEntity) GetCreatedBy() *NullableAuthorEntity {
+	if s == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return s.CreatedBy
 }
 
-func (o *SignalsAPIEscalationPolicyEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (s *SignalsAPIEscalationPolicyEntity) GetCreatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return s.CreatedAt
 }
 
-func (o *SignalsAPIEscalationPolicyEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (s *SignalsAPIEscalationPolicyEntity) GetUpdatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return s.UpdatedAt
 }
 
-func (o *SignalsAPIEscalationPolicyEntity) GetStepStrategy() *string {
-	if o == nil {
+func (s *SignalsAPIEscalationPolicyEntity) GetStepStrategy() *string {
+	if s == nil {
 		return nil
 	}
-	return o.StepStrategy
+	return s.StepStrategy
 }
 
-func (o *SignalsAPIEscalationPolicyEntity) GetNotificationPriorityPolicies() []SignalsAPINotificationPriorityPolicyEntity {
-	if o == nil {
+func (s *SignalsAPIEscalationPolicyEntity) GetNotificationPriorityPolicies() []SignalsAPINotificationPriorityPolicyEntity {
+	if s == nil {
 		return nil
 	}
-	return o.NotificationPriorityPolicies
+	return s.NotificationPriorityPolicies
 }

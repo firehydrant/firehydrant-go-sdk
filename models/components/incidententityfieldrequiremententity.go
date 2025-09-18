@@ -9,16 +9,16 @@ type IncidentEntityFieldRequirementEntity struct {
 	RequiredAtMilestoneID *string `json:"required_at_milestone_id,omitempty"`
 }
 
-func (o *IncidentEntityFieldRequirementEntity) GetFieldID() *string {
-	if o == nil {
+func (i *IncidentEntityFieldRequirementEntity) GetFieldID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.FieldID
+	return i.FieldID
 }
 
-func (o *IncidentEntityFieldRequirementEntity) GetRequiredAtMilestoneID() *string {
-	if o == nil {
+func (i *IncidentEntityFieldRequirementEntity) GetRequiredAtMilestoneID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.RequiredAtMilestoneID
+	return i.RequiredAtMilestoneID
 }

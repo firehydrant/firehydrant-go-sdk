@@ -57,30 +57,30 @@ func (l *ListCommentsRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ListCommentsRequest) GetBefore() *time.Time {
-	if o == nil {
+func (l *ListCommentsRequest) GetBefore() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.Before
+	return l.Before
 }
 
-func (o *ListCommentsRequest) GetAfter() *time.Time {
-	if o == nil {
+func (l *ListCommentsRequest) GetAfter() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.After
+	return l.After
 }
 
-func (o *ListCommentsRequest) GetSort() *ListCommentsSort {
-	if o == nil {
+func (l *ListCommentsRequest) GetSort() *ListCommentsSort {
+	if l == nil {
 		return nil
 	}
-	return o.Sort
+	return l.Sort
 }
 
-func (o *ListCommentsRequest) GetConversationID() string {
-	if o == nil {
+func (l *ListCommentsRequest) GetConversationID() string {
+	if l == nil {
 		return ""
 	}
-	return o.ConversationID
+	return l.ConversationID
 }

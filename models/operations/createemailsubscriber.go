@@ -7,11 +7,11 @@ type CreateEmailSubscriberRequestBody struct {
 	Emails string `json:"emails"`
 }
 
-func (o *CreateEmailSubscriberRequestBody) GetEmails() string {
-	if o == nil {
+func (c *CreateEmailSubscriberRequestBody) GetEmails() string {
+	if c == nil {
 		return ""
 	}
-	return o.Emails
+	return c.Emails
 }
 
 type CreateEmailSubscriberRequest struct {
@@ -19,16 +19,16 @@ type CreateEmailSubscriberRequest struct {
 	RequestBody      CreateEmailSubscriberRequestBody `request:"mediaType=application/json"`
 }
 
-func (o *CreateEmailSubscriberRequest) GetNuncConnectionID() string {
-	if o == nil {
+func (c *CreateEmailSubscriberRequest) GetNuncConnectionID() string {
+	if c == nil {
 		return ""
 	}
-	return o.NuncConnectionID
+	return c.NuncConnectionID
 }
 
-func (o *CreateEmailSubscriberRequest) GetRequestBody() CreateEmailSubscriberRequestBody {
-	if o == nil {
+func (c *CreateEmailSubscriberRequest) GetRequestBody() CreateEmailSubscriberRequestBody {
+	if c == nil {
 		return CreateEmailSubscriberRequestBody{}
 	}
-	return o.RequestBody
+	return c.RequestBody
 }

@@ -30,30 +30,30 @@ func (u *UpdateOnCallShift) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *UpdateOnCallShift) GetStartTime() *time.Time {
-	if o == nil {
+func (u *UpdateOnCallShift) GetStartTime() *time.Time {
+	if u == nil {
 		return nil
 	}
-	return o.StartTime
+	return u.StartTime
 }
 
-func (o *UpdateOnCallShift) GetEndTime() *time.Time {
-	if o == nil {
+func (u *UpdateOnCallShift) GetEndTime() *time.Time {
+	if u == nil {
 		return nil
 	}
-	return o.EndTime
+	return u.EndTime
 }
 
-func (o *UpdateOnCallShift) GetUserID() *string {
-	if o == nil {
+func (u *UpdateOnCallShift) GetUserID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.UserID
+	return u.UserID
 }
 
-func (o *UpdateOnCallShift) GetCoverageRequest() *string {
-	if o == nil {
+func (u *UpdateOnCallShift) GetCoverageRequest() *string {
+	if u == nil {
 		return nil
 	}
-	return o.CoverageRequest
+	return u.CoverageRequest
 }

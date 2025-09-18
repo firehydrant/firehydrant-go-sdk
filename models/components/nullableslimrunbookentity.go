@@ -35,86 +35,86 @@ func (n *NullableSlimRunbookEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *NullableSlimRunbookEntity) GetID() *string {
-	if o == nil {
+func (n *NullableSlimRunbookEntity) GetID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ID
+	return n.ID
 }
 
-func (o *NullableSlimRunbookEntity) GetName() *string {
-	if o == nil {
+func (n *NullableSlimRunbookEntity) GetName() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Name
+	return n.Name
 }
 
-func (o *NullableSlimRunbookEntity) GetSummary() *string {
-	if o == nil {
+func (n *NullableSlimRunbookEntity) GetSummary() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Summary
+	return n.Summary
 }
 
-func (o *NullableSlimRunbookEntity) GetDescription() *string {
-	if o == nil {
+func (n *NullableSlimRunbookEntity) GetDescription() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Description
+	return n.Description
 }
 
-func (o *NullableSlimRunbookEntity) GetType() *string {
-	if o == nil {
+func (n *NullableSlimRunbookEntity) GetType() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Type
+	return n.Type
 }
 
-func (o *NullableSlimRunbookEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (n *NullableSlimRunbookEntity) GetCreatedAt() *time.Time {
+	if n == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return n.CreatedAt
 }
 
-func (o *NullableSlimRunbookEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (n *NullableSlimRunbookEntity) GetUpdatedAt() *time.Time {
+	if n == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return n.UpdatedAt
 }
 
-func (o *NullableSlimRunbookEntity) GetAttachmentRule() *NullableRulesRuleEntity {
-	if o == nil {
+func (n *NullableSlimRunbookEntity) GetAttachmentRule() *NullableRulesRuleEntity {
+	if n == nil {
 		return nil
 	}
-	return o.AttachmentRule
+	return n.AttachmentRule
 }
 
-func (o *NullableSlimRunbookEntity) GetOwner() *NullableTeamEntityLite {
-	if o == nil {
+func (n *NullableSlimRunbookEntity) GetOwner() *NullableTeamEntityLite {
+	if n == nil {
 		return nil
 	}
-	return o.Owner
+	return n.Owner
 }
 
-func (o *NullableSlimRunbookEntity) GetCategories() []string {
-	if o == nil {
+func (n *NullableSlimRunbookEntity) GetCategories() []string {
+	if n == nil {
 		return nil
 	}
-	return o.Categories
+	return n.Categories
 }
 
-func (o *NullableSlimRunbookEntity) GetLastExecutedAt() *time.Time {
-	if o == nil {
+func (n *NullableSlimRunbookEntity) GetLastExecutedAt() *time.Time {
+	if n == nil {
 		return nil
 	}
-	return o.LastExecutedAt
+	return n.LastExecutedAt
 }
 
-func (o *NullableSlimRunbookEntity) GetLastExecutedForIncident() *NullablePublicAPIV1IncidentsSuccinctEntity {
-	if o == nil {
+func (n *NullableSlimRunbookEntity) GetLastExecutedForIncident() *NullablePublicAPIV1IncidentsSuccinctEntity {
+	if n == nil {
 		return nil
 	}
-	return o.LastExecutedForIncident
+	return n.LastExecutedForIncident
 }

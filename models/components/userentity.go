@@ -31,65 +31,65 @@ func (u *UserEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *UserEntity) GetID() *string {
-	if o == nil {
+func (u *UserEntity) GetID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.ID
+	return u.ID
 }
 
-func (o *UserEntity) GetName() *string {
-	if o == nil {
+func (u *UserEntity) GetName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Name
+	return u.Name
 }
 
-func (o *UserEntity) GetEmail() *string {
-	if o == nil {
+func (u *UserEntity) GetEmail() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Email
+	return u.Email
 }
 
-func (o *UserEntity) GetSlackUserID() *string {
-	if o == nil {
+func (u *UserEntity) GetSlackUserID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.SlackUserID
+	return u.SlackUserID
 }
 
-func (o *UserEntity) GetSlackLinked() *bool {
-	if o == nil {
+func (u *UserEntity) GetSlackLinked() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.SlackLinked
+	return u.SlackLinked
 }
 
-func (o *UserEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (u *UserEntity) GetCreatedAt() *time.Time {
+	if u == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return u.CreatedAt
 }
 
-func (o *UserEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (u *UserEntity) GetUpdatedAt() *time.Time {
+	if u == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return u.UpdatedAt
 }
 
-func (o *UserEntity) GetSignalsEnabledNotificationTypes() []string {
-	if o == nil {
+func (u *UserEntity) GetSignalsEnabledNotificationTypes() []string {
+	if u == nil {
 		return nil
 	}
-	return o.SignalsEnabledNotificationTypes
+	return u.SignalsEnabledNotificationTypes
 }
 
-func (o *UserEntity) GetSignalsNotificationPolicyCompliance() []SignalsAPINotificationPolicyItemComplianceEntity {
-	if o == nil {
+func (u *UserEntity) GetSignalsNotificationPolicyCompliance() []SignalsAPINotificationPolicyItemComplianceEntity {
+	if u == nil {
 		return nil
 	}
-	return o.SignalsNotificationPolicyCompliance
+	return u.SignalsNotificationPolicyCompliance
 }

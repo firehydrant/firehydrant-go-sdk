@@ -7,9 +7,9 @@ type GetAudienceRequest struct {
 	AudienceID string `pathParam:"style=simple,explode=false,name=audience_id"`
 }
 
-func (o *GetAudienceRequest) GetAudienceID() string {
-	if o == nil {
+func (g *GetAudienceRequest) GetAudienceID() string {
+	if g == nil {
 		return ""
 	}
-	return o.AudienceID
+	return g.AudienceID
 }

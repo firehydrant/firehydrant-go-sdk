@@ -11,16 +11,16 @@ type BulkUpdateIncidentMilestonesRequest struct {
 	BulkUpdateIncidentMilestones components.BulkUpdateIncidentMilestones `request:"mediaType=application/json"`
 }
 
-func (o *BulkUpdateIncidentMilestonesRequest) GetIncidentID() string {
-	if o == nil {
+func (b *BulkUpdateIncidentMilestonesRequest) GetIncidentID() string {
+	if b == nil {
 		return ""
 	}
-	return o.IncidentID
+	return b.IncidentID
 }
 
-func (o *BulkUpdateIncidentMilestonesRequest) GetBulkUpdateIncidentMilestones() components.BulkUpdateIncidentMilestones {
-	if o == nil {
+func (b *BulkUpdateIncidentMilestonesRequest) GetBulkUpdateIncidentMilestones() components.BulkUpdateIncidentMilestones {
+	if b == nil {
 		return components.BulkUpdateIncidentMilestones{}
 	}
-	return o.BulkUpdateIncidentMilestones
+	return b.BulkUpdateIncidentMilestones
 }

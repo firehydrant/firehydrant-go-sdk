@@ -6,9 +6,9 @@ type GetTaskListRequest struct {
 	TaskListID string `pathParam:"style=simple,explode=false,name=task_list_id"`
 }
 
-func (o *GetTaskListRequest) GetTaskListID() string {
-	if o == nil {
+func (g *GetTaskListRequest) GetTaskListID() string {
+	if g == nil {
 		return ""
 	}
-	return o.TaskListID
+	return g.TaskListID
 }

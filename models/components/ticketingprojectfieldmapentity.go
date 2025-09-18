@@ -11,37 +11,37 @@ type TicketingProjectFieldMapEntity struct {
 	Body               []TicketingProjectFieldMapBodyEntity `json:"body,omitempty"`
 }
 
-func (o *TicketingProjectFieldMapEntity) GetID() *string {
-	if o == nil {
+func (t *TicketingProjectFieldMapEntity) GetID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.ID
+	return t.ID
 }
 
-func (o *TicketingProjectFieldMapEntity) GetConnectionID() *string {
-	if o == nil {
+func (t *TicketingProjectFieldMapEntity) GetConnectionID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.ConnectionID
+	return t.ConnectionID
 }
 
-func (o *TicketingProjectFieldMapEntity) GetConnectionType() *string {
-	if o == nil {
+func (t *TicketingProjectFieldMapEntity) GetConnectionType() *string {
+	if t == nil {
 		return nil
 	}
-	return o.ConnectionType
+	return t.ConnectionType
 }
 
-func (o *TicketingProjectFieldMapEntity) GetTicketingProjectID() *string {
-	if o == nil {
+func (t *TicketingProjectFieldMapEntity) GetTicketingProjectID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.TicketingProjectID
+	return t.TicketingProjectID
 }
 
-func (o *TicketingProjectFieldMapEntity) GetBody() []TicketingProjectFieldMapBodyEntity {
-	if o == nil {
+func (t *TicketingProjectFieldMapEntity) GetBody() []TicketingProjectFieldMapBodyEntity {
+	if t == nil {
 		return nil
 	}
-	return o.Body
+	return t.Body
 }

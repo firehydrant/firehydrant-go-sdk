@@ -8,23 +8,23 @@ type UpdateRunbookExecutionStepScriptRequest struct {
 	State       string `pathParam:"style=simple,explode=false,name=state"`
 }
 
-func (o *UpdateRunbookExecutionStepScriptRequest) GetExecutionID() string {
-	if o == nil {
+func (u *UpdateRunbookExecutionStepScriptRequest) GetExecutionID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ExecutionID
+	return u.ExecutionID
 }
 
-func (o *UpdateRunbookExecutionStepScriptRequest) GetStepID() string {
-	if o == nil {
+func (u *UpdateRunbookExecutionStepScriptRequest) GetStepID() string {
+	if u == nil {
 		return ""
 	}
-	return o.StepID
+	return u.StepID
 }
 
-func (o *UpdateRunbookExecutionStepScriptRequest) GetState() string {
-	if o == nil {
+func (u *UpdateRunbookExecutionStepScriptRequest) GetState() string {
+	if u == nil {
 		return ""
 	}
-	return o.State
+	return u.State
 }

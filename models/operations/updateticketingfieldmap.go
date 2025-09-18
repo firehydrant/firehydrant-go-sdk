@@ -7,16 +7,16 @@ type UpdateTicketingFieldMapRequest struct {
 	TicketingProjectID string `pathParam:"style=simple,explode=false,name=ticketing_project_id"`
 }
 
-func (o *UpdateTicketingFieldMapRequest) GetMapID() string {
-	if o == nil {
+func (u *UpdateTicketingFieldMapRequest) GetMapID() string {
+	if u == nil {
 		return ""
 	}
-	return o.MapID
+	return u.MapID
 }
 
-func (o *UpdateTicketingFieldMapRequest) GetTicketingProjectID() string {
-	if o == nil {
+func (u *UpdateTicketingFieldMapRequest) GetTicketingProjectID() string {
+	if u == nil {
 		return ""
 	}
-	return o.TicketingProjectID
+	return u.TicketingProjectID
 }

@@ -15,37 +15,37 @@ type NullableIncidentTypeEntityTemplateValuesEntity struct {
 	Teams    []TeamEntity `json:"teams,omitempty"`
 }
 
-func (o *NullableIncidentTypeEntityTemplateValuesEntity) GetServices() []IncidentTypeEntityTemplateImpactEntity {
-	if o == nil {
+func (n *NullableIncidentTypeEntityTemplateValuesEntity) GetServices() []IncidentTypeEntityTemplateImpactEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Services
+	return n.Services
 }
 
-func (o *NullableIncidentTypeEntityTemplateValuesEntity) GetFunctionalities() []IncidentTypeEntityTemplateImpactEntity {
-	if o == nil {
+func (n *NullableIncidentTypeEntityTemplateValuesEntity) GetFunctionalities() []IncidentTypeEntityTemplateImpactEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Functionalities
+	return n.Functionalities
 }
 
-func (o *NullableIncidentTypeEntityTemplateValuesEntity) GetEnvironments() []IncidentTypeEntityTemplateImpactEntity {
-	if o == nil {
+func (n *NullableIncidentTypeEntityTemplateValuesEntity) GetEnvironments() []IncidentTypeEntityTemplateImpactEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Environments
+	return n.Environments
 }
 
-func (o *NullableIncidentTypeEntityTemplateValuesEntity) GetRunbooks() *Runbooks {
-	if o == nil {
+func (n *NullableIncidentTypeEntityTemplateValuesEntity) GetRunbooks() *Runbooks {
+	if n == nil {
 		return nil
 	}
-	return o.Runbooks
+	return n.Runbooks
 }
 
-func (o *NullableIncidentTypeEntityTemplateValuesEntity) GetTeams() []TeamEntity {
-	if o == nil {
+func (n *NullableIncidentTypeEntityTemplateValuesEntity) GetTeams() []TeamEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Teams
+	return n.Teams
 }

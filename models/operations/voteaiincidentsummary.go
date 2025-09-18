@@ -37,11 +37,11 @@ type VoteAiIncidentSummaryRequestBody struct {
 	Direction Direction `json:"direction"`
 }
 
-func (o *VoteAiIncidentSummaryRequestBody) GetDirection() Direction {
-	if o == nil {
+func (v *VoteAiIncidentSummaryRequestBody) GetDirection() Direction {
+	if v == nil {
 		return Direction("")
 	}
-	return o.Direction
+	return v.Direction
 }
 
 type VoteAiIncidentSummaryRequest struct {
@@ -50,23 +50,23 @@ type VoteAiIncidentSummaryRequest struct {
 	RequestBody        VoteAiIncidentSummaryRequestBody `request:"mediaType=application/json"`
 }
 
-func (o *VoteAiIncidentSummaryRequest) GetIncidentID() string {
-	if o == nil {
+func (v *VoteAiIncidentSummaryRequest) GetIncidentID() string {
+	if v == nil {
 		return ""
 	}
-	return o.IncidentID
+	return v.IncidentID
 }
 
-func (o *VoteAiIncidentSummaryRequest) GetGeneratedSummaryID() string {
-	if o == nil {
+func (v *VoteAiIncidentSummaryRequest) GetGeneratedSummaryID() string {
+	if v == nil {
 		return ""
 	}
-	return o.GeneratedSummaryID
+	return v.GeneratedSummaryID
 }
 
-func (o *VoteAiIncidentSummaryRequest) GetRequestBody() VoteAiIncidentSummaryRequestBody {
-	if o == nil {
+func (v *VoteAiIncidentSummaryRequest) GetRequestBody() VoteAiIncidentSummaryRequestBody {
+	if v == nil {
 		return VoteAiIncidentSummaryRequestBody{}
 	}
-	return o.RequestBody
+	return v.RequestBody
 }

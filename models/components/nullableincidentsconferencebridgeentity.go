@@ -18,51 +18,51 @@ type NullableIncidentsConferenceBridgeEntity struct {
 	PreviousHostAssignment *string  `json:"previous_host_assignment,omitempty"`
 }
 
-func (o *NullableIncidentsConferenceBridgeEntity) GetID() *string {
-	if o == nil {
+func (n *NullableIncidentsConferenceBridgeEntity) GetID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ID
+	return n.ID
 }
 
-func (o *NullableIncidentsConferenceBridgeEntity) GetAttachments() []NullableIncidentsConferenceBridgeEntityAttachment {
-	if o == nil {
+func (n *NullableIncidentsConferenceBridgeEntity) GetAttachments() []NullableIncidentsConferenceBridgeEntityAttachment {
+	if n == nil {
 		return nil
 	}
-	return o.Attachments
+	return n.Attachments
 }
 
-func (o *NullableIncidentsConferenceBridgeEntity) GetHasTranslatedTranscripts() *bool {
-	if o == nil {
+func (n *NullableIncidentsConferenceBridgeEntity) GetHasTranslatedTranscripts() *bool {
+	if n == nil {
 		return nil
 	}
-	return o.HasTranslatedTranscripts
+	return n.HasTranslatedTranscripts
 }
 
-func (o *NullableIncidentsConferenceBridgeEntity) GetLanguageCodes() []string {
-	if o == nil {
+func (n *NullableIncidentsConferenceBridgeEntity) GetLanguageCodes() []string {
+	if n == nil {
 		return nil
 	}
-	return o.LanguageCodes
+	return n.LanguageCodes
 }
 
-func (o *NullableIncidentsConferenceBridgeEntity) GetTranscriptionStatus() *string {
-	if o == nil {
+func (n *NullableIncidentsConferenceBridgeEntity) GetTranscriptionStatus() *string {
+	if n == nil {
 		return nil
 	}
-	return o.TranscriptionStatus
+	return n.TranscriptionStatus
 }
 
-func (o *NullableIncidentsConferenceBridgeEntity) GetTranscriptionSubCode() *string {
-	if o == nil {
+func (n *NullableIncidentsConferenceBridgeEntity) GetTranscriptionSubCode() *string {
+	if n == nil {
 		return nil
 	}
-	return o.TranscriptionSubCode
+	return n.TranscriptionSubCode
 }
 
-func (o *NullableIncidentsConferenceBridgeEntity) GetPreviousHostAssignment() *string {
-	if o == nil {
+func (n *NullableIncidentsConferenceBridgeEntity) GetPreviousHostAssignment() *string {
+	if n == nil {
 		return nil
 	}
-	return o.PreviousHostAssignment
+	return n.PreviousHostAssignment
 }

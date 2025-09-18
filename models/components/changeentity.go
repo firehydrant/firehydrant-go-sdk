@@ -37,44 +37,44 @@ func (c *ChangeEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ChangeEntity) GetID() *string {
-	if o == nil {
+func (c *ChangeEntity) GetID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *ChangeEntity) GetSummary() *string {
-	if o == nil {
+func (c *ChangeEntity) GetSummary() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Summary
+	return c.Summary
 }
 
-func (o *ChangeEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (c *ChangeEntity) GetCreatedAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return c.CreatedAt
 }
 
-func (o *ChangeEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (c *ChangeEntity) GetUpdatedAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return c.UpdatedAt
 }
 
-func (o *ChangeEntity) GetLabels() *ChangeEntityLabels {
-	if o == nil {
+func (c *ChangeEntity) GetLabels() *ChangeEntityLabels {
+	if c == nil {
 		return nil
 	}
-	return o.Labels
+	return c.Labels
 }
 
-func (o *ChangeEntity) GetDescription() *string {
-	if o == nil {
+func (c *ChangeEntity) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }

@@ -7,16 +7,16 @@ type DeleteIncidentChatMessageRequest struct {
 	IncidentID string `pathParam:"style=simple,explode=false,name=incident_id"`
 }
 
-func (o *DeleteIncidentChatMessageRequest) GetMessageID() string {
-	if o == nil {
+func (d *DeleteIncidentChatMessageRequest) GetMessageID() string {
+	if d == nil {
 		return ""
 	}
-	return o.MessageID
+	return d.MessageID
 }
 
-func (o *DeleteIncidentChatMessageRequest) GetIncidentID() string {
-	if o == nil {
+func (d *DeleteIncidentChatMessageRequest) GetIncidentID() string {
+	if d == nil {
 		return ""
 	}
-	return o.IncidentID
+	return d.IncidentID
 }

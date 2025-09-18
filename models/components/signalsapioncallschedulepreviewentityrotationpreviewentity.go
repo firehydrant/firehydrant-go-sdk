@@ -9,23 +9,23 @@ type SignalsAPIOnCallSchedulePreviewEntityRotationPreviewEntity struct {
 	Shifts []SignalsAPIOnCallSchedulePreviewEntityShiftPreviewEntity `json:"shifts,omitempty"`
 }
 
-func (o *SignalsAPIOnCallSchedulePreviewEntityRotationPreviewEntity) GetName() *string {
-	if o == nil {
+func (s *SignalsAPIOnCallSchedulePreviewEntityRotationPreviewEntity) GetName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Name
+	return s.Name
 }
 
-func (o *SignalsAPIOnCallSchedulePreviewEntityRotationPreviewEntity) GetColor() *string {
-	if o == nil {
+func (s *SignalsAPIOnCallSchedulePreviewEntityRotationPreviewEntity) GetColor() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Color
+	return s.Color
 }
 
-func (o *SignalsAPIOnCallSchedulePreviewEntityRotationPreviewEntity) GetShifts() []SignalsAPIOnCallSchedulePreviewEntityShiftPreviewEntity {
-	if o == nil {
+func (s *SignalsAPIOnCallSchedulePreviewEntityRotationPreviewEntity) GetShifts() []SignalsAPIOnCallSchedulePreviewEntityShiftPreviewEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Shifts
+	return s.Shifts
 }

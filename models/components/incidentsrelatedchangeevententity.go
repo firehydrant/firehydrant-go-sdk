@@ -65,58 +65,58 @@ func (i *IncidentsRelatedChangeEventEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *IncidentsRelatedChangeEventEntity) GetID() *string {
-	if o == nil {
+func (i *IncidentsRelatedChangeEventEntity) GetID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ID
+	return i.ID
 }
 
-func (o *IncidentsRelatedChangeEventEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (i *IncidentsRelatedChangeEventEntity) GetCreatedAt() *time.Time {
+	if i == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return i.CreatedAt
 }
 
-func (o *IncidentsRelatedChangeEventEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (i *IncidentsRelatedChangeEventEntity) GetUpdatedAt() *time.Time {
+	if i == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return i.UpdatedAt
 }
 
-func (o *IncidentsRelatedChangeEventEntity) GetWhy() *string {
-	if o == nil {
+func (i *IncidentsRelatedChangeEventEntity) GetWhy() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Why
+	return i.Why
 }
 
-func (o *IncidentsRelatedChangeEventEntity) GetType() *IncidentsRelatedChangeEventEntityType {
-	if o == nil {
+func (i *IncidentsRelatedChangeEventEntity) GetType() *IncidentsRelatedChangeEventEntityType {
+	if i == nil {
 		return nil
 	}
-	return o.Type
+	return i.Type
 }
 
-func (o *IncidentsRelatedChangeEventEntity) GetChangeEvent() *NullableChangeEventEntity {
-	if o == nil {
+func (i *IncidentsRelatedChangeEventEntity) GetChangeEvent() *NullableChangeEventEntity {
+	if i == nil {
 		return nil
 	}
-	return o.ChangeEvent
+	return i.ChangeEvent
 }
 
-func (o *IncidentsRelatedChangeEventEntity) GetIncidentID() *string {
-	if o == nil {
+func (i *IncidentsRelatedChangeEventEntity) GetIncidentID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.IncidentID
+	return i.IncidentID
 }
 
-func (o *IncidentsRelatedChangeEventEntity) GetCreatedBy() *NullableAuthorEntity {
-	if o == nil {
+func (i *IncidentsRelatedChangeEventEntity) GetCreatedBy() *NullableAuthorEntity {
+	if i == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return i.CreatedBy
 }

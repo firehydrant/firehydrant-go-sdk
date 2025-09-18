@@ -56,30 +56,30 @@ type UpdateSeverity struct {
 	Color       *UpdateSeverityColor `json:"color,omitempty"`
 }
 
-func (o *UpdateSeverity) GetSlug() *string {
-	if o == nil {
+func (u *UpdateSeverity) GetSlug() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Slug
+	return u.Slug
 }
 
-func (o *UpdateSeverity) GetDescription() *string {
-	if o == nil {
+func (u *UpdateSeverity) GetDescription() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Description
+	return u.Description
 }
 
-func (o *UpdateSeverity) GetPosition() *int {
-	if o == nil {
+func (u *UpdateSeverity) GetPosition() *int {
+	if u == nil {
 		return nil
 	}
-	return o.Position
+	return u.Position
 }
 
-func (o *UpdateSeverity) GetColor() *UpdateSeverityColor {
-	if o == nil {
+func (u *UpdateSeverity) GetColor() *UpdateSeverityColor {
+	if u == nil {
 		return nil
 	}
-	return o.Color
+	return u.Color
 }

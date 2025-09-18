@@ -9,30 +9,30 @@ type ScheduleEntity struct {
 	Discarded   *bool   `json:"discarded,omitempty"`
 }
 
-func (o *ScheduleEntity) GetID() *string {
-	if o == nil {
+func (s *ScheduleEntity) GetID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *ScheduleEntity) GetName() *string {
-	if o == nil {
+func (s *ScheduleEntity) GetName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Name
+	return s.Name
 }
 
-func (o *ScheduleEntity) GetIntegration() *string {
-	if o == nil {
+func (s *ScheduleEntity) GetIntegration() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Integration
+	return s.Integration
 }
 
-func (o *ScheduleEntity) GetDiscarded() *bool {
-	if o == nil {
+func (s *ScheduleEntity) GetDiscarded() *bool {
+	if s == nil {
 		return nil
 	}
-	return o.Discarded
+	return s.Discarded
 }

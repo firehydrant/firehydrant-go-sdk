@@ -7,16 +7,16 @@ type IntegrationsStatuspageSeverityEntity struct {
 	RemoteStatus *string `json:"remote_status,omitempty"`
 }
 
-func (o *IntegrationsStatuspageSeverityEntity) GetSeveritySlug() *string {
-	if o == nil {
+func (i *IntegrationsStatuspageSeverityEntity) GetSeveritySlug() *string {
+	if i == nil {
 		return nil
 	}
-	return o.SeveritySlug
+	return i.SeveritySlug
 }
 
-func (o *IntegrationsStatuspageSeverityEntity) GetRemoteStatus() *string {
-	if o == nil {
+func (i *IntegrationsStatuspageSeverityEntity) GetRemoteStatus() *string {
+	if i == nil {
 		return nil
 	}
-	return o.RemoteStatus
+	return i.RemoteStatus
 }

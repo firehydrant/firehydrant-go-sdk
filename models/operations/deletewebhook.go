@@ -6,9 +6,9 @@ type DeleteWebhookRequest struct {
 	WebhookID string `pathParam:"style=simple,explode=false,name=webhook_id"`
 }
 
-func (o *DeleteWebhookRequest) GetWebhookID() string {
-	if o == nil {
+func (d *DeleteWebhookRequest) GetWebhookID() string {
+	if d == nil {
 		return ""
 	}
-	return o.WebhookID
+	return d.WebhookID
 }

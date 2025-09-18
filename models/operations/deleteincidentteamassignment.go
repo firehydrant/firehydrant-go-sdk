@@ -7,11 +7,11 @@ type DeleteIncidentTeamAssignmentRequestBody struct {
 	RoleAssignmentIds []string `multipartForm:"name=role_assignment_ids"`
 }
 
-func (o *DeleteIncidentTeamAssignmentRequestBody) GetRoleAssignmentIds() []string {
-	if o == nil {
+func (d *DeleteIncidentTeamAssignmentRequestBody) GetRoleAssignmentIds() []string {
+	if d == nil {
 		return nil
 	}
-	return o.RoleAssignmentIds
+	return d.RoleAssignmentIds
 }
 
 type DeleteIncidentTeamAssignmentRequest struct {
@@ -20,23 +20,23 @@ type DeleteIncidentTeamAssignmentRequest struct {
 	RequestBody      *DeleteIncidentTeamAssignmentRequestBody `request:"mediaType=multipart/form-data"`
 }
 
-func (o *DeleteIncidentTeamAssignmentRequest) GetIncidentID() string {
-	if o == nil {
+func (d *DeleteIncidentTeamAssignmentRequest) GetIncidentID() string {
+	if d == nil {
 		return ""
 	}
-	return o.IncidentID
+	return d.IncidentID
 }
 
-func (o *DeleteIncidentTeamAssignmentRequest) GetTeamAssignmentID() string {
-	if o == nil {
+func (d *DeleteIncidentTeamAssignmentRequest) GetTeamAssignmentID() string {
+	if d == nil {
 		return ""
 	}
-	return o.TeamAssignmentID
+	return d.TeamAssignmentID
 }
 
-func (o *DeleteIncidentTeamAssignmentRequest) GetRequestBody() *DeleteIncidentTeamAssignmentRequestBody {
-	if o == nil {
+func (d *DeleteIncidentTeamAssignmentRequest) GetRequestBody() *DeleteIncidentTeamAssignmentRequestBody {
+	if d == nil {
 		return nil
 	}
-	return o.RequestBody
+	return d.RequestBody
 }

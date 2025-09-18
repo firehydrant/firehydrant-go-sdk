@@ -6,9 +6,9 @@ type DeleteTaskListRequest struct {
 	TaskListID string `pathParam:"style=simple,explode=false,name=task_list_id"`
 }
 
-func (o *DeleteTaskListRequest) GetTaskListID() string {
-	if o == nil {
+func (d *DeleteTaskListRequest) GetTaskListID() string {
+	if d == nil {
 		return ""
 	}
-	return o.TaskListID
+	return d.TaskListID
 }

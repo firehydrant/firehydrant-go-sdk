@@ -11,16 +11,16 @@ type UpdateRoleRequest struct {
 	UpdateRole components.UpdateRole `request:"mediaType=application/json"`
 }
 
-func (o *UpdateRoleRequest) GetID() string {
-	if o == nil {
+func (u *UpdateRoleRequest) GetID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ID
+	return u.ID
 }
 
-func (o *UpdateRoleRequest) GetUpdateRole() components.UpdateRole {
-	if o == nil {
+func (u *UpdateRoleRequest) GetUpdateRole() components.UpdateRole {
+	if u == nil {
 		return components.UpdateRole{}
 	}
-	return o.UpdateRole
+	return u.UpdateRole
 }

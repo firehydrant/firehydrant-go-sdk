@@ -8,16 +8,16 @@ type IntegrationsAuthedProviderEntityPaginated struct {
 	Pagination *NullablePaginationEntity                     `json:"pagination,omitempty"`
 }
 
-func (o *IntegrationsAuthedProviderEntityPaginated) GetData() []PublicAPIV1IntegrationsAuthedProviderEntity {
-	if o == nil {
+func (i *IntegrationsAuthedProviderEntityPaginated) GetData() []PublicAPIV1IntegrationsAuthedProviderEntity {
+	if i == nil {
 		return nil
 	}
-	return o.Data
+	return i.Data
 }
 
-func (o *IntegrationsAuthedProviderEntityPaginated) GetPagination() *NullablePaginationEntity {
-	if o == nil {
+func (i *IntegrationsAuthedProviderEntityPaginated) GetPagination() *NullablePaginationEntity {
+	if i == nil {
 		return nil
 	}
-	return o.Pagination
+	return i.Pagination
 }

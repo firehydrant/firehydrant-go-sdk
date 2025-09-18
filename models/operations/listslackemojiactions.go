@@ -9,23 +9,23 @@ type ListSlackEmojiActionsRequest struct {
 	PerPage      *int   `queryParam:"style=form,explode=true,name=per_page"`
 }
 
-func (o *ListSlackEmojiActionsRequest) GetConnectionID() string {
-	if o == nil {
+func (l *ListSlackEmojiActionsRequest) GetConnectionID() string {
+	if l == nil {
 		return ""
 	}
-	return o.ConnectionID
+	return l.ConnectionID
 }
 
-func (o *ListSlackEmojiActionsRequest) GetPage() *int {
-	if o == nil {
+func (l *ListSlackEmojiActionsRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListSlackEmojiActionsRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListSlackEmojiActionsRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }

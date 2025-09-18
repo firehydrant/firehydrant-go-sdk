@@ -12,23 +12,23 @@ type UpdateIncidentLinkRequest struct {
 	UpdateIncidentLink components.UpdateIncidentLink `request:"mediaType=application/json"`
 }
 
-func (o *UpdateIncidentLinkRequest) GetLinkID() string {
-	if o == nil {
+func (u *UpdateIncidentLinkRequest) GetLinkID() string {
+	if u == nil {
 		return ""
 	}
-	return o.LinkID
+	return u.LinkID
 }
 
-func (o *UpdateIncidentLinkRequest) GetIncidentID() string {
-	if o == nil {
+func (u *UpdateIncidentLinkRequest) GetIncidentID() string {
+	if u == nil {
 		return ""
 	}
-	return o.IncidentID
+	return u.IncidentID
 }
 
-func (o *UpdateIncidentLinkRequest) GetUpdateIncidentLink() components.UpdateIncidentLink {
-	if o == nil {
+func (u *UpdateIncidentLinkRequest) GetUpdateIncidentLink() components.UpdateIncidentLink {
+	if u == nil {
 		return components.UpdateIncidentLink{}
 	}
-	return o.UpdateIncidentLink
+	return u.UpdateIncidentLink
 }

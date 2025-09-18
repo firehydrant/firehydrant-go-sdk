@@ -6,9 +6,9 @@ type CreateConnectionRequest struct {
 	Slug string `pathParam:"style=simple,explode=false,name=slug"`
 }
 
-func (o *CreateConnectionRequest) GetSlug() string {
-	if o == nil {
+func (c *CreateConnectionRequest) GetSlug() string {
+	if c == nil {
 		return ""
 	}
-	return o.Slug
+	return c.Slug
 }

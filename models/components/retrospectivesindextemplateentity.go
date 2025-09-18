@@ -27,44 +27,44 @@ func (r *RetrospectivesIndexTemplateEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *RetrospectivesIndexTemplateEntity) GetID() *string {
-	if o == nil {
+func (r *RetrospectivesIndexTemplateEntity) GetID() *string {
+	if r == nil {
 		return nil
 	}
-	return o.ID
+	return r.ID
 }
 
-func (o *RetrospectivesIndexTemplateEntity) GetName() *string {
-	if o == nil {
+func (r *RetrospectivesIndexTemplateEntity) GetName() *string {
+	if r == nil {
 		return nil
 	}
-	return o.Name
+	return r.Name
 }
 
-func (o *RetrospectivesIndexTemplateEntity) GetDescription() *string {
-	if o == nil {
+func (r *RetrospectivesIndexTemplateEntity) GetDescription() *string {
+	if r == nil {
 		return nil
 	}
-	return o.Description
+	return r.Description
 }
 
-func (o *RetrospectivesIndexTemplateEntity) GetIsDefault() *bool {
-	if o == nil {
+func (r *RetrospectivesIndexTemplateEntity) GetIsDefault() *bool {
+	if r == nil {
 		return nil
 	}
-	return o.IsDefault
+	return r.IsDefault
 }
 
-func (o *RetrospectivesIndexTemplateEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (r *RetrospectivesIndexTemplateEntity) GetCreatedAt() *time.Time {
+	if r == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return r.CreatedAt
 }
 
-func (o *RetrospectivesIndexTemplateEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (r *RetrospectivesIndexTemplateEntity) GetUpdatedAt() *time.Time {
+	if r == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return r.UpdatedAt
 }

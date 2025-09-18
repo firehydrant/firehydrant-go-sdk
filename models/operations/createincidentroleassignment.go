@@ -11,16 +11,16 @@ type CreateIncidentRoleAssignmentRequest struct {
 	CreateIncidentRoleAssignment components.CreateIncidentRoleAssignment `request:"mediaType=application/json"`
 }
 
-func (o *CreateIncidentRoleAssignmentRequest) GetIncidentID() string {
-	if o == nil {
+func (c *CreateIncidentRoleAssignmentRequest) GetIncidentID() string {
+	if c == nil {
 		return ""
 	}
-	return o.IncidentID
+	return c.IncidentID
 }
 
-func (o *CreateIncidentRoleAssignmentRequest) GetCreateIncidentRoleAssignment() components.CreateIncidentRoleAssignment {
-	if o == nil {
+func (c *CreateIncidentRoleAssignmentRequest) GetCreateIncidentRoleAssignment() components.CreateIncidentRoleAssignment {
+	if c == nil {
 		return components.CreateIncidentRoleAssignment{}
 	}
-	return o.CreateIncidentRoleAssignment
+	return c.CreateIncidentRoleAssignment
 }

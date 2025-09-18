@@ -7,16 +7,16 @@ type ReportsBucketEntity struct {
 	Points []ReportsDataPointEntity `json:"points,omitempty"`
 }
 
-func (o *ReportsBucketEntity) GetBucket() *string {
-	if o == nil {
+func (r *ReportsBucketEntity) GetBucket() *string {
+	if r == nil {
 		return nil
 	}
-	return o.Bucket
+	return r.Bucket
 }
 
-func (o *ReportsBucketEntity) GetPoints() []ReportsDataPointEntity {
-	if o == nil {
+func (r *ReportsBucketEntity) GetPoints() []ReportsDataPointEntity {
+	if r == nil {
 		return nil
 	}
-	return o.Points
+	return r.Points
 }

@@ -9,16 +9,16 @@ type AudiencesEntitiesAudienceSummariesEntity struct {
 	Audiences *string `json:"audiences,omitempty"`
 }
 
-func (o *AudiencesEntitiesAudienceSummariesEntity) GetIncidentID() *string {
-	if o == nil {
+func (a *AudiencesEntitiesAudienceSummariesEntity) GetIncidentID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.IncidentID
+	return a.IncidentID
 }
 
-func (o *AudiencesEntitiesAudienceSummariesEntity) GetAudiences() *string {
-	if o == nil {
+func (a *AudiencesEntitiesAudienceSummariesEntity) GetAudiences() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Audiences
+	return a.Audiences
 }

@@ -39,86 +39,86 @@ func (s *ScheduledMaintenanceEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ScheduledMaintenanceEntity) GetID() *string {
-	if o == nil {
+func (s *ScheduledMaintenanceEntity) GetID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *ScheduledMaintenanceEntity) GetName() *string {
-	if o == nil {
+func (s *ScheduledMaintenanceEntity) GetName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Name
+	return s.Name
 }
 
-func (o *ScheduledMaintenanceEntity) GetSummary() *string {
-	if o == nil {
+func (s *ScheduledMaintenanceEntity) GetSummary() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Summary
+	return s.Summary
 }
 
-func (o *ScheduledMaintenanceEntity) GetDescription() *string {
-	if o == nil {
+func (s *ScheduledMaintenanceEntity) GetDescription() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Description
+	return s.Description
 }
 
-func (o *ScheduledMaintenanceEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (s *ScheduledMaintenanceEntity) GetCreatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return s.CreatedAt
 }
 
-func (o *ScheduledMaintenanceEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (s *ScheduledMaintenanceEntity) GetUpdatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return s.UpdatedAt
 }
 
-func (o *ScheduledMaintenanceEntity) GetStartsAt() *time.Time {
-	if o == nil {
+func (s *ScheduledMaintenanceEntity) GetStartsAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.StartsAt
+	return s.StartsAt
 }
 
-func (o *ScheduledMaintenanceEntity) GetEndsAt() *time.Time {
-	if o == nil {
+func (s *ScheduledMaintenanceEntity) GetEndsAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.EndsAt
+	return s.EndsAt
 }
 
-func (o *ScheduledMaintenanceEntity) GetIncident() *NullableIncidentEntity {
-	if o == nil {
+func (s *ScheduledMaintenanceEntity) GetIncident() *NullableIncidentEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Incident
+	return s.Incident
 }
 
-func (o *ScheduledMaintenanceEntity) GetStatusPages() []ScheduledMaintenancesStatusPageEntity {
-	if o == nil {
+func (s *ScheduledMaintenanceEntity) GetStatusPages() []ScheduledMaintenancesStatusPageEntity {
+	if s == nil {
 		return nil
 	}
-	return o.StatusPages
+	return s.StatusPages
 }
 
-func (o *ScheduledMaintenanceEntity) GetImpacts() []ScheduledMaintenancesImpactEntity {
-	if o == nil {
+func (s *ScheduledMaintenanceEntity) GetImpacts() []ScheduledMaintenancesImpactEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Impacts
+	return s.Impacts
 }
 
-func (o *ScheduledMaintenanceEntity) GetLabels() *ScheduledMaintenanceEntityLabels {
-	if o == nil {
+func (s *ScheduledMaintenanceEntity) GetLabels() *ScheduledMaintenanceEntityLabels {
+	if s == nil {
 		return nil
 	}
-	return o.Labels
+	return s.Labels
 }

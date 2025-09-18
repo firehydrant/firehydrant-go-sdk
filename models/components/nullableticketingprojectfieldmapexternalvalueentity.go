@@ -43,30 +43,30 @@ type NullableTicketingProjectFieldMapExternalValueEntity struct {
 	Presentation *string                                                  `json:"presentation,omitempty"`
 }
 
-func (o *NullableTicketingProjectFieldMapExternalValueEntity) GetType() *NullableTicketingProjectFieldMapExternalValueEntityType {
-	if o == nil {
+func (n *NullableTicketingProjectFieldMapExternalValueEntity) GetType() *NullableTicketingProjectFieldMapExternalValueEntityType {
+	if n == nil {
 		return nil
 	}
-	return o.Type
+	return n.Type
 }
 
-func (o *NullableTicketingProjectFieldMapExternalValueEntity) GetValue() *string {
-	if o == nil {
+func (n *NullableTicketingProjectFieldMapExternalValueEntity) GetValue() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Value
+	return n.Value
 }
 
-func (o *NullableTicketingProjectFieldMapExternalValueEntity) GetAttribute() *string {
-	if o == nil {
+func (n *NullableTicketingProjectFieldMapExternalValueEntity) GetAttribute() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Attribute
+	return n.Attribute
 }
 
-func (o *NullableTicketingProjectFieldMapExternalValueEntity) GetPresentation() *string {
-	if o == nil {
+func (n *NullableTicketingProjectFieldMapExternalValueEntity) GetPresentation() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Presentation
+	return n.Presentation
 }

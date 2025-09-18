@@ -40,65 +40,65 @@ func (a *AudiencesEntitiesAudienceEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AudiencesEntitiesAudienceEntity) GetID() *string {
-	if o == nil {
+func (a *AudiencesEntitiesAudienceEntity) GetID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AudiencesEntitiesAudienceEntity) GetName() *string {
-	if o == nil {
+func (a *AudiencesEntitiesAudienceEntity) GetName() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Name
+	return a.Name
 }
 
-func (o *AudiencesEntitiesAudienceEntity) GetSlug() *string {
-	if o == nil {
+func (a *AudiencesEntitiesAudienceEntity) GetSlug() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Slug
+	return a.Slug
 }
 
-func (o *AudiencesEntitiesAudienceEntity) GetDescription() *string {
-	if o == nil {
+func (a *AudiencesEntitiesAudienceEntity) GetDescription() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Description
+	return a.Description
 }
 
-func (o *AudiencesEntitiesAudienceEntity) GetDefault() *bool {
-	if o == nil {
+func (a *AudiencesEntitiesAudienceEntity) GetDefault() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Default
+	return a.Default
 }
 
-func (o *AudiencesEntitiesAudienceEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (a *AudiencesEntitiesAudienceEntity) GetCreatedAt() *time.Time {
+	if a == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return a.CreatedAt
 }
 
-func (o *AudiencesEntitiesAudienceEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (a *AudiencesEntitiesAudienceEntity) GetUpdatedAt() *time.Time {
+	if a == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return a.UpdatedAt
 }
 
-func (o *AudiencesEntitiesAudienceEntity) GetDiscardedAt() *time.Time {
-	if o == nil {
+func (a *AudiencesEntitiesAudienceEntity) GetDiscardedAt() *time.Time {
+	if a == nil {
 		return nil
 	}
-	return o.DiscardedAt
+	return a.DiscardedAt
 }
 
-func (o *AudiencesEntitiesAudienceEntity) GetDetails() []AudiencesEntitiesDetailEntity {
-	if o == nil {
+func (a *AudiencesEntitiesAudienceEntity) GetDetails() []AudiencesEntitiesDetailEntity {
+	if a == nil {
 		return nil
 	}
-	return o.Details
+	return a.Details
 }

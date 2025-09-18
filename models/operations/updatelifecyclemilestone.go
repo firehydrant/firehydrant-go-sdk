@@ -52,46 +52,46 @@ type UpdateLifecycleMilestoneRequestBody struct {
 	AutoAssignTimestampOnCreate *UpdateLifecycleMilestoneAutoAssignTimestampOnCreate `json:"auto_assign_timestamp_on_create,omitempty"`
 }
 
-func (o *UpdateLifecycleMilestoneRequestBody) GetName() *string {
-	if o == nil {
+func (u *UpdateLifecycleMilestoneRequestBody) GetName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Name
+	return u.Name
 }
 
-func (o *UpdateLifecycleMilestoneRequestBody) GetDescription() *string {
-	if o == nil {
+func (u *UpdateLifecycleMilestoneRequestBody) GetDescription() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Description
+	return u.Description
 }
 
-func (o *UpdateLifecycleMilestoneRequestBody) GetSlug() *string {
-	if o == nil {
+func (u *UpdateLifecycleMilestoneRequestBody) GetSlug() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Slug
+	return u.Slug
 }
 
-func (o *UpdateLifecycleMilestoneRequestBody) GetPosition() *int {
-	if o == nil {
+func (u *UpdateLifecycleMilestoneRequestBody) GetPosition() *int {
+	if u == nil {
 		return nil
 	}
-	return o.Position
+	return u.Position
 }
 
-func (o *UpdateLifecycleMilestoneRequestBody) GetRequiredAtMilestoneID() *string {
-	if o == nil {
+func (u *UpdateLifecycleMilestoneRequestBody) GetRequiredAtMilestoneID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.RequiredAtMilestoneID
+	return u.RequiredAtMilestoneID
 }
 
-func (o *UpdateLifecycleMilestoneRequestBody) GetAutoAssignTimestampOnCreate() *UpdateLifecycleMilestoneAutoAssignTimestampOnCreate {
-	if o == nil {
+func (u *UpdateLifecycleMilestoneRequestBody) GetAutoAssignTimestampOnCreate() *UpdateLifecycleMilestoneAutoAssignTimestampOnCreate {
+	if u == nil {
 		return nil
 	}
-	return o.AutoAssignTimestampOnCreate
+	return u.AutoAssignTimestampOnCreate
 }
 
 type UpdateLifecycleMilestoneRequest struct {
@@ -99,16 +99,16 @@ type UpdateLifecycleMilestoneRequest struct {
 	RequestBody *UpdateLifecycleMilestoneRequestBody `request:"mediaType=application/json"`
 }
 
-func (o *UpdateLifecycleMilestoneRequest) GetMilestoneID() string {
-	if o == nil {
+func (u *UpdateLifecycleMilestoneRequest) GetMilestoneID() string {
+	if u == nil {
 		return ""
 	}
-	return o.MilestoneID
+	return u.MilestoneID
 }
 
-func (o *UpdateLifecycleMilestoneRequest) GetRequestBody() *UpdateLifecycleMilestoneRequestBody {
-	if o == nil {
+func (u *UpdateLifecycleMilestoneRequest) GetRequestBody() *UpdateLifecycleMilestoneRequestBody {
+	if u == nil {
 		return nil
 	}
-	return o.RequestBody
+	return u.RequestBody
 }

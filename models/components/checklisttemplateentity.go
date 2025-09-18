@@ -31,58 +31,58 @@ func (c *ChecklistTemplateEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ChecklistTemplateEntity) GetID() *string {
-	if o == nil {
+func (c *ChecklistTemplateEntity) GetID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *ChecklistTemplateEntity) GetName() *string {
-	if o == nil {
+func (c *ChecklistTemplateEntity) GetName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *ChecklistTemplateEntity) GetDescription() *string {
-	if o == nil {
+func (c *ChecklistTemplateEntity) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *ChecklistTemplateEntity) GetCreatedAt() *string {
-	if o == nil {
+func (c *ChecklistTemplateEntity) GetCreatedAt() *string {
+	if c == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return c.CreatedAt
 }
 
-func (o *ChecklistTemplateEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (c *ChecklistTemplateEntity) GetUpdatedAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return c.UpdatedAt
 }
 
-func (o *ChecklistTemplateEntity) GetChecks() []ChecklistCheckEntity {
-	if o == nil {
+func (c *ChecklistTemplateEntity) GetChecks() []ChecklistCheckEntity {
+	if c == nil {
 		return nil
 	}
-	return o.Checks
+	return c.Checks
 }
 
-func (o *ChecklistTemplateEntity) GetOwner() *NullableTeamEntityLite {
-	if o == nil {
+func (c *ChecklistTemplateEntity) GetOwner() *NullableTeamEntityLite {
+	if c == nil {
 		return nil
 	}
-	return o.Owner
+	return c.Owner
 }
 
-func (o *ChecklistTemplateEntity) GetConnectedServices() []ServiceEntityChecklist {
-	if o == nil {
+func (c *ChecklistTemplateEntity) GetConnectedServices() []ServiceEntityChecklist {
+	if c == nil {
 		return nil
 	}
-	return o.ConnectedServices
+	return c.ConnectedServices
 }

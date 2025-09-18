@@ -38,107 +38,107 @@ func (s *SignalsAPIEmailTargetEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *SignalsAPIEmailTargetEntity) GetID() *string {
-	if o == nil {
+func (s *SignalsAPIEmailTargetEntity) GetID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *SignalsAPIEmailTargetEntity) GetSlug() *string {
-	if o == nil {
+func (s *SignalsAPIEmailTargetEntity) GetSlug() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Slug
+	return s.Slug
 }
 
-func (o *SignalsAPIEmailTargetEntity) GetName() *string {
-	if o == nil {
+func (s *SignalsAPIEmailTargetEntity) GetName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Name
+	return s.Name
 }
 
-func (o *SignalsAPIEmailTargetEntity) GetDescription() *string {
-	if o == nil {
+func (s *SignalsAPIEmailTargetEntity) GetDescription() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Description
+	return s.Description
 }
 
-func (o *SignalsAPIEmailTargetEntity) GetEmail() *string {
-	if o == nil {
+func (s *SignalsAPIEmailTargetEntity) GetEmail() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Email
+	return s.Email
 }
 
-func (o *SignalsAPIEmailTargetEntity) GetStatusCel() *string {
-	if o == nil {
+func (s *SignalsAPIEmailTargetEntity) GetStatusCel() *string {
+	if s == nil {
 		return nil
 	}
-	return o.StatusCel
+	return s.StatusCel
 }
 
-func (o *SignalsAPIEmailTargetEntity) GetLevelCel() *string {
-	if o == nil {
+func (s *SignalsAPIEmailTargetEntity) GetLevelCel() *string {
+	if s == nil {
 		return nil
 	}
-	return o.LevelCel
+	return s.LevelCel
 }
 
-func (o *SignalsAPIEmailTargetEntity) GetTarget() *NullableSignalsAPITargetEntity {
-	if o == nil {
+func (s *SignalsAPIEmailTargetEntity) GetTarget() *NullableSignalsAPITargetEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Target
+	return s.Target
 }
 
-func (o *SignalsAPIEmailTargetEntity) GetAllowedSenders() []string {
-	if o == nil {
+func (s *SignalsAPIEmailTargetEntity) GetAllowedSenders() []string {
+	if s == nil {
 		return nil
 	}
-	return o.AllowedSenders
+	return s.AllowedSenders
 }
 
-func (o *SignalsAPIEmailTargetEntity) GetRules() []string {
-	if o == nil {
+func (s *SignalsAPIEmailTargetEntity) GetRules() []string {
+	if s == nil {
 		return nil
 	}
-	return o.Rules
+	return s.Rules
 }
 
-func (o *SignalsAPIEmailTargetEntity) GetRuleMatchingStrategy() *string {
-	if o == nil {
+func (s *SignalsAPIEmailTargetEntity) GetRuleMatchingStrategy() *string {
+	if s == nil {
 		return nil
 	}
-	return o.RuleMatchingStrategy
+	return s.RuleMatchingStrategy
 }
 
-func (o *SignalsAPIEmailTargetEntity) GetCreatedBy() *NullableAuthorEntity {
-	if o == nil {
+func (s *SignalsAPIEmailTargetEntity) GetCreatedBy() *NullableAuthorEntity {
+	if s == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return s.CreatedBy
 }
 
-func (o *SignalsAPIEmailTargetEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (s *SignalsAPIEmailTargetEntity) GetCreatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return s.CreatedAt
 }
 
-func (o *SignalsAPIEmailTargetEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (s *SignalsAPIEmailTargetEntity) GetUpdatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return s.UpdatedAt
 }
 
-func (o *SignalsAPIEmailTargetEntity) GetTeamID() *string {
-	if o == nil {
+func (s *SignalsAPIEmailTargetEntity) GetTeamID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.TeamID
+	return s.TeamID
 }

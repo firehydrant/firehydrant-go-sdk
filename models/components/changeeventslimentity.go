@@ -40,100 +40,100 @@ func (c *ChangeEventSlimEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ChangeEventSlimEntity) GetID() *string {
-	if o == nil {
+func (c *ChangeEventSlimEntity) GetID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *ChangeEventSlimEntity) GetSummary() *string {
-	if o == nil {
+func (c *ChangeEventSlimEntity) GetSummary() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Summary
+	return c.Summary
 }
 
-func (o *ChangeEventSlimEntity) GetDescription() *string {
-	if o == nil {
+func (c *ChangeEventSlimEntity) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *ChangeEventSlimEntity) GetExternalID() *string {
-	if o == nil {
+func (c *ChangeEventSlimEntity) GetExternalID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ExternalID
+	return c.ExternalID
 }
 
-func (o *ChangeEventSlimEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (c *ChangeEventSlimEntity) GetCreatedAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return c.CreatedAt
 }
 
-func (o *ChangeEventSlimEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (c *ChangeEventSlimEntity) GetUpdatedAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return c.UpdatedAt
 }
 
-func (o *ChangeEventSlimEntity) GetStartsAt() *time.Time {
-	if o == nil {
+func (c *ChangeEventSlimEntity) GetStartsAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.StartsAt
+	return c.StartsAt
 }
 
-func (o *ChangeEventSlimEntity) GetEndsAt() *time.Time {
-	if o == nil {
+func (c *ChangeEventSlimEntity) GetEndsAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.EndsAt
+	return c.EndsAt
 }
 
-func (o *ChangeEventSlimEntity) GetDurationMs() *int {
-	if o == nil {
+func (c *ChangeEventSlimEntity) GetDurationMs() *int {
+	if c == nil {
 		return nil
 	}
-	return o.DurationMs
+	return c.DurationMs
 }
 
-func (o *ChangeEventSlimEntity) GetDurationIso8601() *string {
-	if o == nil {
+func (c *ChangeEventSlimEntity) GetDurationIso8601() *string {
+	if c == nil {
 		return nil
 	}
-	return o.DurationIso8601
+	return c.DurationIso8601
 }
 
-func (o *ChangeEventSlimEntity) GetEnvironments() []EnvironmentEntryEntity {
-	if o == nil {
+func (c *ChangeEventSlimEntity) GetEnvironments() []EnvironmentEntryEntity {
+	if c == nil {
 		return nil
 	}
-	return o.Environments
+	return c.Environments
 }
 
-func (o *ChangeEventSlimEntity) GetAuthors() []AuthorEntity {
-	if o == nil {
+func (c *ChangeEventSlimEntity) GetAuthors() []AuthorEntity {
+	if c == nil {
 		return nil
 	}
-	return o.Authors
+	return c.Authors
 }
 
-func (o *ChangeEventSlimEntity) GetLabels() *ChangeEventSlimEntityLabels {
-	if o == nil {
+func (c *ChangeEventSlimEntity) GetLabels() *ChangeEventSlimEntityLabels {
+	if c == nil {
 		return nil
 	}
-	return o.Labels
+	return c.Labels
 }
 
-func (o *ChangeEventSlimEntity) GetServices() []ServiceEntityLite {
-	if o == nil {
+func (c *ChangeEventSlimEntity) GetServices() []ServiceEntityLite {
+	if c == nil {
 		return nil
 	}
-	return o.Services
+	return c.Services
 }

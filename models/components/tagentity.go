@@ -7,9 +7,9 @@ type TagEntity struct {
 	Name *string `json:"name,omitempty"`
 }
 
-func (o *TagEntity) GetName() *string {
-	if o == nil {
+func (t *TagEntity) GetName() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Name
+	return t.Name
 }

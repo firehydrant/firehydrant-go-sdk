@@ -10,23 +10,23 @@ type CreateServiceDependency struct {
 	Notes *string `json:"notes,omitempty"`
 }
 
-func (o *CreateServiceDependency) GetServiceID() string {
-	if o == nil {
+func (c *CreateServiceDependency) GetServiceID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ServiceID
+	return c.ServiceID
 }
 
-func (o *CreateServiceDependency) GetConnectedServiceID() string {
-	if o == nil {
+func (c *CreateServiceDependency) GetConnectedServiceID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ConnectedServiceID
+	return c.ConnectedServiceID
 }
 
-func (o *CreateServiceDependency) GetNotes() *string {
-	if o == nil {
+func (c *CreateServiceDependency) GetNotes() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Notes
+	return c.Notes
 }
