@@ -13,58 +13,58 @@ type NullableRunbooksElementDynamicSelectEntity struct {
 	Options      []RunbooksElementDynamicSelectEntitySelectOptionEntity        `json:"options,omitempty"`
 }
 
-func (o *NullableRunbooksElementDynamicSelectEntity) GetLabel() *string {
-	if o == nil {
+func (n *NullableRunbooksElementDynamicSelectEntity) GetLabel() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Label
+	return n.Label
 }
 
-func (o *NullableRunbooksElementDynamicSelectEntity) GetPlaceholder() *string {
-	if o == nil {
+func (n *NullableRunbooksElementDynamicSelectEntity) GetPlaceholder() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Placeholder
+	return n.Placeholder
 }
 
-func (o *NullableRunbooksElementDynamicSelectEntity) GetAsyncURL() *string {
-	if o == nil {
+func (n *NullableRunbooksElementDynamicSelectEntity) GetAsyncURL() *string {
+	if n == nil {
 		return nil
 	}
-	return o.AsyncURL
+	return n.AsyncURL
 }
 
-func (o *NullableRunbooksElementDynamicSelectEntity) GetRequired() *bool {
-	if o == nil {
+func (n *NullableRunbooksElementDynamicSelectEntity) GetRequired() *bool {
+	if n == nil {
 		return nil
 	}
-	return o.Required
+	return n.Required
 }
 
-func (o *NullableRunbooksElementDynamicSelectEntity) GetClearable() *bool {
-	if o == nil {
+func (n *NullableRunbooksElementDynamicSelectEntity) GetClearable() *bool {
+	if n == nil {
 		return nil
 	}
-	return o.Clearable
+	return n.Clearable
 }
 
-func (o *NullableRunbooksElementDynamicSelectEntity) GetIsMulti() *bool {
-	if o == nil {
+func (n *NullableRunbooksElementDynamicSelectEntity) GetIsMulti() *bool {
+	if n == nil {
 		return nil
 	}
-	return o.IsMulti
+	return n.IsMulti
 }
 
-func (o *NullableRunbooksElementDynamicSelectEntity) GetDefaultValue() *NullableRunbooksElementDynamicSelectEntitySelectOptionEntity {
-	if o == nil {
+func (n *NullableRunbooksElementDynamicSelectEntity) GetDefaultValue() *NullableRunbooksElementDynamicSelectEntitySelectOptionEntity {
+	if n == nil {
 		return nil
 	}
-	return o.DefaultValue
+	return n.DefaultValue
 }
 
-func (o *NullableRunbooksElementDynamicSelectEntity) GetOptions() []RunbooksElementDynamicSelectEntitySelectOptionEntity {
-	if o == nil {
+func (n *NullableRunbooksElementDynamicSelectEntity) GetOptions() []RunbooksElementDynamicSelectEntitySelectOptionEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Options
+	return n.Options
 }

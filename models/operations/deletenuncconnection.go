@@ -6,9 +6,9 @@ type DeleteNuncConnectionRequest struct {
 	NuncConnectionID string `pathParam:"style=simple,explode=false,name=nunc_connection_id"`
 }
 
-func (o *DeleteNuncConnectionRequest) GetNuncConnectionID() string {
-	if o == nil {
+func (d *DeleteNuncConnectionRequest) GetNuncConnectionID() string {
+	if d == nil {
 		return ""
 	}
-	return o.NuncConnectionID
+	return d.NuncConnectionID
 }

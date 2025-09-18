@@ -9,23 +9,23 @@ type ListSignalsWebhookTargetsRequest struct {
 	PerPage *int    `queryParam:"style=form,explode=true,name=per_page"`
 }
 
-func (o *ListSignalsWebhookTargetsRequest) GetQuery() *string {
-	if o == nil {
+func (l *ListSignalsWebhookTargetsRequest) GetQuery() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Query
+	return l.Query
 }
 
-func (o *ListSignalsWebhookTargetsRequest) GetPage() *int {
-	if o == nil {
+func (l *ListSignalsWebhookTargetsRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListSignalsWebhookTargetsRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListSignalsWebhookTargetsRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }

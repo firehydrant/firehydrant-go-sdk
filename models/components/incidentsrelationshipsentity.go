@@ -11,23 +11,23 @@ type IncidentsRelationshipsEntity struct {
 	Siblings []PublicAPIV1IncidentsSuccinctEntity `json:"siblings,omitempty"`
 }
 
-func (o *IncidentsRelationshipsEntity) GetParent() *NullablePublicAPIV1IncidentsSuccinctEntity {
-	if o == nil {
+func (i *IncidentsRelationshipsEntity) GetParent() *NullablePublicAPIV1IncidentsSuccinctEntity {
+	if i == nil {
 		return nil
 	}
-	return o.Parent
+	return i.Parent
 }
 
-func (o *IncidentsRelationshipsEntity) GetChildren() []PublicAPIV1IncidentsSuccinctEntity {
-	if o == nil {
+func (i *IncidentsRelationshipsEntity) GetChildren() []PublicAPIV1IncidentsSuccinctEntity {
+	if i == nil {
 		return nil
 	}
-	return o.Children
+	return i.Children
 }
 
-func (o *IncidentsRelationshipsEntity) GetSiblings() []PublicAPIV1IncidentsSuccinctEntity {
-	if o == nil {
+func (i *IncidentsRelationshipsEntity) GetSiblings() []PublicAPIV1IncidentsSuccinctEntity {
+	if i == nil {
 		return nil
 	}
-	return o.Siblings
+	return i.Siblings
 }

@@ -9,18 +9,18 @@ type UpdatePostMortemReportQuestion struct {
 	Body *string `json:"body,omitempty"`
 }
 
-func (o *UpdatePostMortemReportQuestion) GetID() *string {
-	if o == nil {
+func (u *UpdatePostMortemReportQuestion) GetID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.ID
+	return u.ID
 }
 
-func (o *UpdatePostMortemReportQuestion) GetBody() *string {
-	if o == nil {
+func (u *UpdatePostMortemReportQuestion) GetBody() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Body
+	return u.Body
 }
 
 // UpdatePostMortemReport - Update a report
@@ -31,30 +31,30 @@ type UpdatePostMortemReport struct {
 	Questions         []UpdatePostMortemReportQuestion `json:"questions,omitempty"`
 }
 
-func (o *UpdatePostMortemReport) GetName() *string {
-	if o == nil {
+func (u *UpdatePostMortemReport) GetName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Name
+	return u.Name
 }
 
-func (o *UpdatePostMortemReport) GetSummary() *string {
-	if o == nil {
+func (u *UpdatePostMortemReport) GetSummary() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Summary
+	return u.Summary
 }
 
-func (o *UpdatePostMortemReport) GetAdditionalDetails() *string {
-	if o == nil {
+func (u *UpdatePostMortemReport) GetAdditionalDetails() *string {
+	if u == nil {
 		return nil
 	}
-	return o.AdditionalDetails
+	return u.AdditionalDetails
 }
 
-func (o *UpdatePostMortemReport) GetQuestions() []UpdatePostMortemReportQuestion {
-	if o == nil {
+func (u *UpdatePostMortemReport) GetQuestions() []UpdatePostMortemReportQuestion {
+	if u == nil {
 		return nil
 	}
-	return o.Questions
+	return u.Questions
 }

@@ -9,23 +9,23 @@ type AlertsSignalAlertEntity struct {
 	IsNoise *bool   `json:"is_noise,omitempty"`
 }
 
-func (o *AlertsSignalAlertEntity) GetID() *string {
-	if o == nil {
+func (a *AlertsSignalAlertEntity) GetID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AlertsSignalAlertEntity) GetSummary() *string {
-	if o == nil {
+func (a *AlertsSignalAlertEntity) GetSummary() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Summary
+	return a.Summary
 }
 
-func (o *AlertsSignalAlertEntity) GetIsNoise() *bool {
-	if o == nil {
+func (a *AlertsSignalAlertEntity) GetIsNoise() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.IsNoise
+	return a.IsNoise
 }

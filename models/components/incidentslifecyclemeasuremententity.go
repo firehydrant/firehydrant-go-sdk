@@ -29,58 +29,58 @@ func (i *IncidentsLifecycleMeasurementEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *IncidentsLifecycleMeasurementEntity) GetID() *string {
-	if o == nil {
+func (i *IncidentsLifecycleMeasurementEntity) GetID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ID
+	return i.ID
 }
 
-func (o *IncidentsLifecycleMeasurementEntity) GetName() *string {
-	if o == nil {
+func (i *IncidentsLifecycleMeasurementEntity) GetName() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Name
+	return i.Name
 }
 
-func (o *IncidentsLifecycleMeasurementEntity) GetDescription() *string {
-	if o == nil {
+func (i *IncidentsLifecycleMeasurementEntity) GetDescription() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Description
+	return i.Description
 }
 
-func (o *IncidentsLifecycleMeasurementEntity) GetSlug() *string {
-	if o == nil {
+func (i *IncidentsLifecycleMeasurementEntity) GetSlug() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Slug
+	return i.Slug
 }
 
-func (o *IncidentsLifecycleMeasurementEntity) GetStartsAtMilestone() *string {
-	if o == nil {
+func (i *IncidentsLifecycleMeasurementEntity) GetStartsAtMilestone() *string {
+	if i == nil {
 		return nil
 	}
-	return o.StartsAtMilestone
+	return i.StartsAtMilestone
 }
 
-func (o *IncidentsLifecycleMeasurementEntity) GetEndsAtMilestone() *string {
-	if o == nil {
+func (i *IncidentsLifecycleMeasurementEntity) GetEndsAtMilestone() *string {
+	if i == nil {
 		return nil
 	}
-	return o.EndsAtMilestone
+	return i.EndsAtMilestone
 }
 
-func (o *IncidentsLifecycleMeasurementEntity) GetValue() *string {
-	if o == nil {
+func (i *IncidentsLifecycleMeasurementEntity) GetValue() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Value
+	return i.Value
 }
 
-func (o *IncidentsLifecycleMeasurementEntity) GetCalculatedAt() *time.Time {
-	if o == nil {
+func (i *IncidentsLifecycleMeasurementEntity) GetCalculatedAt() *time.Time {
+	if i == nil {
 		return nil
 	}
-	return o.CalculatedAt
+	return i.CalculatedAt
 }

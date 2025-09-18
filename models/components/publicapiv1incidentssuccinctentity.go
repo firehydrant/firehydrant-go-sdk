@@ -8,23 +8,23 @@ type PublicAPIV1IncidentsSuccinctEntity struct {
 	Number *int    `json:"number,omitempty"`
 }
 
-func (o *PublicAPIV1IncidentsSuccinctEntity) GetID() *string {
-	if o == nil {
+func (p *PublicAPIV1IncidentsSuccinctEntity) GetID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.ID
+	return p.ID
 }
 
-func (o *PublicAPIV1IncidentsSuccinctEntity) GetName() *string {
-	if o == nil {
+func (p *PublicAPIV1IncidentsSuccinctEntity) GetName() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Name
+	return p.Name
 }
 
-func (o *PublicAPIV1IncidentsSuccinctEntity) GetNumber() *int {
-	if o == nil {
+func (p *PublicAPIV1IncidentsSuccinctEntity) GetNumber() *int {
+	if p == nil {
 		return nil
 	}
-	return o.Number
+	return p.Number
 }

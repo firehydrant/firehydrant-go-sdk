@@ -9,16 +9,16 @@ type CreateServiceChecklistResponse struct {
 	Status bool `json:"status"`
 }
 
-func (o *CreateServiceChecklistResponse) GetCheckID() string {
-	if o == nil {
+func (c *CreateServiceChecklistResponse) GetCheckID() string {
+	if c == nil {
 		return ""
 	}
-	return o.CheckID
+	return c.CheckID
 }
 
-func (o *CreateServiceChecklistResponse) GetStatus() bool {
-	if o == nil {
+func (c *CreateServiceChecklistResponse) GetStatus() bool {
+	if c == nil {
 		return false
 	}
-	return o.Status
+	return c.Status
 }

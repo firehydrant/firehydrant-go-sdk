@@ -54,18 +54,18 @@ type CreateTeamEscalationPolicyTarget struct {
 	ID string `json:"id"`
 }
 
-func (o *CreateTeamEscalationPolicyTarget) GetType() CreateTeamEscalationPolicyType {
-	if o == nil {
+func (c *CreateTeamEscalationPolicyTarget) GetType() CreateTeamEscalationPolicyType {
+	if c == nil {
 		return CreateTeamEscalationPolicyType("")
 	}
-	return o.Type
+	return c.Type
 }
 
-func (o *CreateTeamEscalationPolicyTarget) GetID() string {
-	if o == nil {
+func (c *CreateTeamEscalationPolicyTarget) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
 // CreateTeamEscalationPolicyDistributionType - The round robin configuration for the step. One of 'unspecified', 'round_robin_by_alert', or 'round_robin_by_escalation_policy'.
@@ -109,32 +109,32 @@ type CreateTeamEscalationPolicyStep struct {
 	Priorities []string `json:"priorities,omitempty"`
 }
 
-func (o *CreateTeamEscalationPolicyStep) GetTargets() []CreateTeamEscalationPolicyTarget {
-	if o == nil {
+func (c *CreateTeamEscalationPolicyStep) GetTargets() []CreateTeamEscalationPolicyTarget {
+	if c == nil {
 		return []CreateTeamEscalationPolicyTarget{}
 	}
-	return o.Targets
+	return c.Targets
 }
 
-func (o *CreateTeamEscalationPolicyStep) GetTimeout() string {
-	if o == nil {
+func (c *CreateTeamEscalationPolicyStep) GetTimeout() string {
+	if c == nil {
 		return ""
 	}
-	return o.Timeout
+	return c.Timeout
 }
 
-func (o *CreateTeamEscalationPolicyStep) GetDistributionType() *CreateTeamEscalationPolicyDistributionType {
-	if o == nil {
+func (c *CreateTeamEscalationPolicyStep) GetDistributionType() *CreateTeamEscalationPolicyDistributionType {
+	if c == nil {
 		return nil
 	}
-	return o.DistributionType
+	return c.DistributionType
 }
 
-func (o *CreateTeamEscalationPolicyStep) GetPriorities() []string {
-	if o == nil {
+func (c *CreateTeamEscalationPolicyStep) GetPriorities() []string {
+	if c == nil {
 		return nil
 	}
-	return o.Priorities
+	return c.Priorities
 }
 
 // CreateTeamEscalationPolicyTargetType - The type of target to which the policy will hand off.
@@ -172,18 +172,18 @@ type CreateTeamEscalationPolicyHandoffStep struct {
 	TargetID string `json:"target_id"`
 }
 
-func (o *CreateTeamEscalationPolicyHandoffStep) GetTargetType() CreateTeamEscalationPolicyTargetType {
-	if o == nil {
+func (c *CreateTeamEscalationPolicyHandoffStep) GetTargetType() CreateTeamEscalationPolicyTargetType {
+	if c == nil {
 		return CreateTeamEscalationPolicyTargetType("")
 	}
-	return o.TargetType
+	return c.TargetType
 }
 
-func (o *CreateTeamEscalationPolicyHandoffStep) GetTargetID() string {
-	if o == nil {
+func (c *CreateTeamEscalationPolicyHandoffStep) GetTargetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.TargetID
+	return c.TargetID
 }
 
 type CreateTeamEscalationPolicyHighTargetType string
@@ -218,18 +218,18 @@ type CreateTeamEscalationPolicyHighHandoffStep struct {
 	TargetID   string                                   `json:"target_id"`
 }
 
-func (o *CreateTeamEscalationPolicyHighHandoffStep) GetTargetType() CreateTeamEscalationPolicyHighTargetType {
-	if o == nil {
+func (c *CreateTeamEscalationPolicyHighHandoffStep) GetTargetType() CreateTeamEscalationPolicyHighTargetType {
+	if c == nil {
 		return CreateTeamEscalationPolicyHighTargetType("")
 	}
-	return o.TargetType
+	return c.TargetType
 }
 
-func (o *CreateTeamEscalationPolicyHighHandoffStep) GetTargetID() string {
-	if o == nil {
+func (c *CreateTeamEscalationPolicyHighHandoffStep) GetTargetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.TargetID
+	return c.TargetID
 }
 
 // CreateTeamEscalationPolicyHigh - Settings for HIGH priority alerts
@@ -240,18 +240,18 @@ type CreateTeamEscalationPolicyHigh struct {
 	HandoffStep *CreateTeamEscalationPolicyHighHandoffStep `json:"handoff_step,omitempty"`
 }
 
-func (o *CreateTeamEscalationPolicyHigh) GetRepetitions() *int {
-	if o == nil {
+func (c *CreateTeamEscalationPolicyHigh) GetRepetitions() *int {
+	if c == nil {
 		return nil
 	}
-	return o.Repetitions
+	return c.Repetitions
 }
 
-func (o *CreateTeamEscalationPolicyHigh) GetHandoffStep() *CreateTeamEscalationPolicyHighHandoffStep {
-	if o == nil {
+func (c *CreateTeamEscalationPolicyHigh) GetHandoffStep() *CreateTeamEscalationPolicyHighHandoffStep {
+	if c == nil {
 		return nil
 	}
-	return o.HandoffStep
+	return c.HandoffStep
 }
 
 type CreateTeamEscalationPolicyMediumTargetType string
@@ -286,18 +286,18 @@ type CreateTeamEscalationPolicyMediumHandoffStep struct {
 	TargetID   string                                     `json:"target_id"`
 }
 
-func (o *CreateTeamEscalationPolicyMediumHandoffStep) GetTargetType() CreateTeamEscalationPolicyMediumTargetType {
-	if o == nil {
+func (c *CreateTeamEscalationPolicyMediumHandoffStep) GetTargetType() CreateTeamEscalationPolicyMediumTargetType {
+	if c == nil {
 		return CreateTeamEscalationPolicyMediumTargetType("")
 	}
-	return o.TargetType
+	return c.TargetType
 }
 
-func (o *CreateTeamEscalationPolicyMediumHandoffStep) GetTargetID() string {
-	if o == nil {
+func (c *CreateTeamEscalationPolicyMediumHandoffStep) GetTargetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.TargetID
+	return c.TargetID
 }
 
 // CreateTeamEscalationPolicyMedium - Settings for MEDIUM priority alerts
@@ -308,18 +308,18 @@ type CreateTeamEscalationPolicyMedium struct {
 	HandoffStep *CreateTeamEscalationPolicyMediumHandoffStep `json:"handoff_step,omitempty"`
 }
 
-func (o *CreateTeamEscalationPolicyMedium) GetRepetitions() *int {
-	if o == nil {
+func (c *CreateTeamEscalationPolicyMedium) GetRepetitions() *int {
+	if c == nil {
 		return nil
 	}
-	return o.Repetitions
+	return c.Repetitions
 }
 
-func (o *CreateTeamEscalationPolicyMedium) GetHandoffStep() *CreateTeamEscalationPolicyMediumHandoffStep {
-	if o == nil {
+func (c *CreateTeamEscalationPolicyMedium) GetHandoffStep() *CreateTeamEscalationPolicyMediumHandoffStep {
+	if c == nil {
 		return nil
 	}
-	return o.HandoffStep
+	return c.HandoffStep
 }
 
 type CreateTeamEscalationPolicyLowTargetType string
@@ -354,18 +354,18 @@ type CreateTeamEscalationPolicyLowHandoffStep struct {
 	TargetID   string                                  `json:"target_id"`
 }
 
-func (o *CreateTeamEscalationPolicyLowHandoffStep) GetTargetType() CreateTeamEscalationPolicyLowTargetType {
-	if o == nil {
+func (c *CreateTeamEscalationPolicyLowHandoffStep) GetTargetType() CreateTeamEscalationPolicyLowTargetType {
+	if c == nil {
 		return CreateTeamEscalationPolicyLowTargetType("")
 	}
-	return o.TargetType
+	return c.TargetType
 }
 
-func (o *CreateTeamEscalationPolicyLowHandoffStep) GetTargetID() string {
-	if o == nil {
+func (c *CreateTeamEscalationPolicyLowHandoffStep) GetTargetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.TargetID
+	return c.TargetID
 }
 
 // CreateTeamEscalationPolicyLow - Settings for LOW priority alerts
@@ -376,18 +376,18 @@ type CreateTeamEscalationPolicyLow struct {
 	HandoffStep *CreateTeamEscalationPolicyLowHandoffStep `json:"handoff_step,omitempty"`
 }
 
-func (o *CreateTeamEscalationPolicyLow) GetRepetitions() *int {
-	if o == nil {
+func (c *CreateTeamEscalationPolicyLow) GetRepetitions() *int {
+	if c == nil {
 		return nil
 	}
-	return o.Repetitions
+	return c.Repetitions
 }
 
-func (o *CreateTeamEscalationPolicyLow) GetHandoffStep() *CreateTeamEscalationPolicyLowHandoffStep {
-	if o == nil {
+func (c *CreateTeamEscalationPolicyLow) GetHandoffStep() *CreateTeamEscalationPolicyLowHandoffStep {
+	if c == nil {
 		return nil
 	}
-	return o.HandoffStep
+	return c.HandoffStep
 }
 
 // CreateTeamEscalationPolicyPrioritizedSettings - Priority-specific settings for dynamic escalation policies
@@ -400,25 +400,25 @@ type CreateTeamEscalationPolicyPrioritizedSettings struct {
 	Low *CreateTeamEscalationPolicyLow `json:"low,omitempty"`
 }
 
-func (o *CreateTeamEscalationPolicyPrioritizedSettings) GetHigh() *CreateTeamEscalationPolicyHigh {
-	if o == nil {
+func (c *CreateTeamEscalationPolicyPrioritizedSettings) GetHigh() *CreateTeamEscalationPolicyHigh {
+	if c == nil {
 		return nil
 	}
-	return o.High
+	return c.High
 }
 
-func (o *CreateTeamEscalationPolicyPrioritizedSettings) GetMedium() *CreateTeamEscalationPolicyMedium {
-	if o == nil {
+func (c *CreateTeamEscalationPolicyPrioritizedSettings) GetMedium() *CreateTeamEscalationPolicyMedium {
+	if c == nil {
 		return nil
 	}
-	return o.Medium
+	return c.Medium
 }
 
-func (o *CreateTeamEscalationPolicyPrioritizedSettings) GetLow() *CreateTeamEscalationPolicyLow {
-	if o == nil {
+func (c *CreateTeamEscalationPolicyPrioritizedSettings) GetLow() *CreateTeamEscalationPolicyLow {
+	if c == nil {
 		return nil
 	}
-	return o.Low
+	return c.Low
 }
 
 // CreateTeamEscalationPolicy - Create a Signals escalation policy for a team.
@@ -452,58 +452,58 @@ func (c *CreateTeamEscalationPolicy) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CreateTeamEscalationPolicy) GetName() string {
-	if o == nil {
+func (c *CreateTeamEscalationPolicy) GetName() string {
+	if c == nil {
 		return ""
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CreateTeamEscalationPolicy) GetDescription() *string {
-	if o == nil {
+func (c *CreateTeamEscalationPolicy) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *CreateTeamEscalationPolicy) GetRepetitions() *int {
-	if o == nil {
+func (c *CreateTeamEscalationPolicy) GetRepetitions() *int {
+	if c == nil {
 		return nil
 	}
-	return o.Repetitions
+	return c.Repetitions
 }
 
-func (o *CreateTeamEscalationPolicy) GetDefault() *bool {
-	if o == nil {
+func (c *CreateTeamEscalationPolicy) GetDefault() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Default
+	return c.Default
 }
 
-func (o *CreateTeamEscalationPolicy) GetStepStrategy() *string {
-	if o == nil {
+func (c *CreateTeamEscalationPolicy) GetStepStrategy() *string {
+	if c == nil {
 		return nil
 	}
-	return o.StepStrategy
+	return c.StepStrategy
 }
 
-func (o *CreateTeamEscalationPolicy) GetSteps() []CreateTeamEscalationPolicyStep {
-	if o == nil {
+func (c *CreateTeamEscalationPolicy) GetSteps() []CreateTeamEscalationPolicyStep {
+	if c == nil {
 		return []CreateTeamEscalationPolicyStep{}
 	}
-	return o.Steps
+	return c.Steps
 }
 
-func (o *CreateTeamEscalationPolicy) GetHandoffStep() *CreateTeamEscalationPolicyHandoffStep {
-	if o == nil {
+func (c *CreateTeamEscalationPolicy) GetHandoffStep() *CreateTeamEscalationPolicyHandoffStep {
+	if c == nil {
 		return nil
 	}
-	return o.HandoffStep
+	return c.HandoffStep
 }
 
-func (o *CreateTeamEscalationPolicy) GetPrioritizedSettings() *CreateTeamEscalationPolicyPrioritizedSettings {
-	if o == nil {
+func (c *CreateTeamEscalationPolicy) GetPrioritizedSettings() *CreateTeamEscalationPolicyPrioritizedSettings {
+	if c == nil {
 		return nil
 	}
-	return o.PrioritizedSettings
+	return c.PrioritizedSettings
 }

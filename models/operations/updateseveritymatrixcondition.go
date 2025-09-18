@@ -11,16 +11,16 @@ type UpdateSeverityMatrixConditionRequest struct {
 	UpdateSeverityMatrixCondition components.UpdateSeverityMatrixCondition `request:"mediaType=application/json"`
 }
 
-func (o *UpdateSeverityMatrixConditionRequest) GetConditionID() string {
-	if o == nil {
+func (u *UpdateSeverityMatrixConditionRequest) GetConditionID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ConditionID
+	return u.ConditionID
 }
 
-func (o *UpdateSeverityMatrixConditionRequest) GetUpdateSeverityMatrixCondition() components.UpdateSeverityMatrixCondition {
-	if o == nil {
+func (u *UpdateSeverityMatrixConditionRequest) GetUpdateSeverityMatrixCondition() components.UpdateSeverityMatrixCondition {
+	if u == nil {
 		return components.UpdateSeverityMatrixCondition{}
 	}
-	return o.UpdateSeverityMatrixCondition
+	return u.UpdateSeverityMatrixCondition
 }

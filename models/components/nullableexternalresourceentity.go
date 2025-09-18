@@ -30,65 +30,65 @@ func (n *NullableExternalResourceEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *NullableExternalResourceEntity) GetConnectionType() *string {
-	if o == nil {
+func (n *NullableExternalResourceEntity) GetConnectionType() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ConnectionType
+	return n.ConnectionType
 }
 
-func (o *NullableExternalResourceEntity) GetConnectionName() *string {
-	if o == nil {
+func (n *NullableExternalResourceEntity) GetConnectionName() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ConnectionName
+	return n.ConnectionName
 }
 
-func (o *NullableExternalResourceEntity) GetConnectionFullFaviconURL() *string {
-	if o == nil {
+func (n *NullableExternalResourceEntity) GetConnectionFullFaviconURL() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ConnectionFullFaviconURL
+	return n.ConnectionFullFaviconURL
 }
 
-func (o *NullableExternalResourceEntity) GetConnectionID() *string {
-	if o == nil {
+func (n *NullableExternalResourceEntity) GetConnectionID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ConnectionID
+	return n.ConnectionID
 }
 
-func (o *NullableExternalResourceEntity) GetRemoteID() *string {
-	if o == nil {
+func (n *NullableExternalResourceEntity) GetRemoteID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.RemoteID
+	return n.RemoteID
 }
 
-func (o *NullableExternalResourceEntity) GetRemoteURL() *string {
-	if o == nil {
+func (n *NullableExternalResourceEntity) GetRemoteURL() *string {
+	if n == nil {
 		return nil
 	}
-	return o.RemoteURL
+	return n.RemoteURL
 }
 
-func (o *NullableExternalResourceEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (n *NullableExternalResourceEntity) GetCreatedAt() *time.Time {
+	if n == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return n.CreatedAt
 }
 
-func (o *NullableExternalResourceEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (n *NullableExternalResourceEntity) GetUpdatedAt() *time.Time {
+	if n == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return n.UpdatedAt
 }
 
-func (o *NullableExternalResourceEntity) GetName() *string {
-	if o == nil {
+func (n *NullableExternalResourceEntity) GetName() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Name
+	return n.Name
 }

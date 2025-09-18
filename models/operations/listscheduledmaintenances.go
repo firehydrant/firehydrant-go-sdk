@@ -9,23 +9,23 @@ type ListScheduledMaintenancesRequest struct {
 	PerPage *int    `queryParam:"style=form,explode=true,name=per_page"`
 }
 
-func (o *ListScheduledMaintenancesRequest) GetQuery() *string {
-	if o == nil {
+func (l *ListScheduledMaintenancesRequest) GetQuery() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Query
+	return l.Query
 }
 
-func (o *ListScheduledMaintenancesRequest) GetPage() *int {
-	if o == nil {
+func (l *ListScheduledMaintenancesRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListScheduledMaintenancesRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListScheduledMaintenancesRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }

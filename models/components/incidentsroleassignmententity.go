@@ -56,44 +56,44 @@ func (i *IncidentsRoleAssignmentEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *IncidentsRoleAssignmentEntity) GetID() *string {
-	if o == nil {
+func (i *IncidentsRoleAssignmentEntity) GetID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ID
+	return i.ID
 }
 
-func (o *IncidentsRoleAssignmentEntity) GetStatus() *IncidentsRoleAssignmentEntityStatus {
-	if o == nil {
+func (i *IncidentsRoleAssignmentEntity) GetStatus() *IncidentsRoleAssignmentEntityStatus {
+	if i == nil {
 		return nil
 	}
-	return o.Status
+	return i.Status
 }
 
-func (o *IncidentsRoleAssignmentEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (i *IncidentsRoleAssignmentEntity) GetCreatedAt() *time.Time {
+	if i == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return i.CreatedAt
 }
 
-func (o *IncidentsRoleAssignmentEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (i *IncidentsRoleAssignmentEntity) GetUpdatedAt() *time.Time {
+	if i == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return i.UpdatedAt
 }
 
-func (o *IncidentsRoleAssignmentEntity) GetIncidentRole() *NullableIncidentRoleEntity {
-	if o == nil {
+func (i *IncidentsRoleAssignmentEntity) GetIncidentRole() *NullableIncidentRoleEntity {
+	if i == nil {
 		return nil
 	}
-	return o.IncidentRole
+	return i.IncidentRole
 }
 
-func (o *IncidentsRoleAssignmentEntity) GetUser() *NullableUserEntity {
-	if o == nil {
+func (i *IncidentsRoleAssignmentEntity) GetUser() *NullableUserEntity {
+	if i == nil {
 		return nil
 	}
-	return o.User
+	return i.User
 }

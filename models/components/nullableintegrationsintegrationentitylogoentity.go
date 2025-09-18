@@ -6,9 +6,9 @@ type NullableIntegrationsIntegrationEntityLogoEntity struct {
 	LogoURL *string `json:"logo_url,omitempty"`
 }
 
-func (o *NullableIntegrationsIntegrationEntityLogoEntity) GetLogoURL() *string {
-	if o == nil {
+func (n *NullableIntegrationsIntegrationEntityLogoEntity) GetLogoURL() *string {
+	if n == nil {
 		return nil
 	}
-	return o.LogoURL
+	return n.LogoURL
 }

@@ -47,37 +47,37 @@ type IncidentsImpactEntity struct {
 	Conversations []ConversationsAPIEntitiesReference    `json:"conversations,omitempty"`
 }
 
-func (o *IncidentsImpactEntity) GetID() *string {
-	if o == nil {
+func (i *IncidentsImpactEntity) GetID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ID
+	return i.ID
 }
 
-func (o *IncidentsImpactEntity) GetType() *IncidentsImpactEntityType {
-	if o == nil {
+func (i *IncidentsImpactEntity) GetType() *IncidentsImpactEntityType {
+	if i == nil {
 		return nil
 	}
-	return o.Type
+	return i.Type
 }
 
-func (o *IncidentsImpactEntity) GetImpact() *NullableSuccinctEntity {
-	if o == nil {
+func (i *IncidentsImpactEntity) GetImpact() *NullableSuccinctEntity {
+	if i == nil {
 		return nil
 	}
-	return o.Impact
+	return i.Impact
 }
 
-func (o *IncidentsImpactEntity) GetCondition() *NullableSeverityMatrixConditionEntity {
-	if o == nil {
+func (i *IncidentsImpactEntity) GetCondition() *NullableSeverityMatrixConditionEntity {
+	if i == nil {
 		return nil
 	}
-	return o.Condition
+	return i.Condition
 }
 
-func (o *IncidentsImpactEntity) GetConversations() []ConversationsAPIEntitiesReference {
-	if o == nil {
+func (i *IncidentsImpactEntity) GetConversations() []ConversationsAPIEntitiesReference {
+	if i == nil {
 		return nil
 	}
-	return o.Conversations
+	return i.Conversations
 }

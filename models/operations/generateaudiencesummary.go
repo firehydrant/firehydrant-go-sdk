@@ -22,11 +22,11 @@ func (g *GenerateAudienceSummaryRequestBody) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *GenerateAudienceSummaryRequestBody) GetForceRegenerate() *bool {
-	if o == nil {
+func (g *GenerateAudienceSummaryRequestBody) GetForceRegenerate() *bool {
+	if g == nil {
 		return nil
 	}
-	return o.ForceRegenerate
+	return g.ForceRegenerate
 }
 
 type GenerateAudienceSummaryRequest struct {
@@ -37,23 +37,23 @@ type GenerateAudienceSummaryRequest struct {
 	RequestBody *GenerateAudienceSummaryRequestBody `request:"mediaType=application/json"`
 }
 
-func (o *GenerateAudienceSummaryRequest) GetAudienceID() string {
-	if o == nil {
+func (g *GenerateAudienceSummaryRequest) GetAudienceID() string {
+	if g == nil {
 		return ""
 	}
-	return o.AudienceID
+	return g.AudienceID
 }
 
-func (o *GenerateAudienceSummaryRequest) GetIncidentID() string {
-	if o == nil {
+func (g *GenerateAudienceSummaryRequest) GetIncidentID() string {
+	if g == nil {
 		return ""
 	}
-	return o.IncidentID
+	return g.IncidentID
 }
 
-func (o *GenerateAudienceSummaryRequest) GetRequestBody() *GenerateAudienceSummaryRequestBody {
-	if o == nil {
+func (g *GenerateAudienceSummaryRequest) GetRequestBody() *GenerateAudienceSummaryRequestBody {
+	if g == nil {
 		return nil
 	}
-	return o.RequestBody
+	return g.RequestBody
 }

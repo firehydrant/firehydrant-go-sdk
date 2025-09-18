@@ -14,65 +14,65 @@ type CustomFieldsFieldValue struct {
 	Value       *string  `json:"value,omitempty"`
 }
 
-func (o *CustomFieldsFieldValue) GetName() *string {
-	if o == nil {
+func (c *CustomFieldsFieldValue) GetName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CustomFieldsFieldValue) GetValueType() *string {
-	if o == nil {
+func (c *CustomFieldsFieldValue) GetValueType() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ValueType
+	return c.ValueType
 }
 
-func (o *CustomFieldsFieldValue) GetDisplayName() *string {
-	if o == nil {
+func (c *CustomFieldsFieldValue) GetDisplayName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.DisplayName
+	return c.DisplayName
 }
 
-func (o *CustomFieldsFieldValue) GetDescription() *string {
-	if o == nil {
+func (c *CustomFieldsFieldValue) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *CustomFieldsFieldValue) GetSlug() *string {
-	if o == nil {
+func (c *CustomFieldsFieldValue) GetSlug() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Slug
+	return c.Slug
 }
 
-func (o *CustomFieldsFieldValue) GetFieldID() *string {
-	if o == nil {
+func (c *CustomFieldsFieldValue) GetFieldID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.FieldID
+	return c.FieldID
 }
 
-func (o *CustomFieldsFieldValue) GetValueArray() []string {
-	if o == nil {
+func (c *CustomFieldsFieldValue) GetValueArray() []string {
+	if c == nil {
 		return nil
 	}
-	return o.ValueArray
+	return c.ValueArray
 }
 
-func (o *CustomFieldsFieldValue) GetValueString() *string {
-	if o == nil {
+func (c *CustomFieldsFieldValue) GetValueString() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ValueString
+	return c.ValueString
 }
 
-func (o *CustomFieldsFieldValue) GetValue() *string {
-	if o == nil {
+func (c *CustomFieldsFieldValue) GetValue() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Value
+	return c.Value
 }

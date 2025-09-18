@@ -7,9 +7,9 @@ type ListAudienceSummariesRequest struct {
 	IncidentID string `pathParam:"style=simple,explode=false,name=incident_id"`
 }
 
-func (o *ListAudienceSummariesRequest) GetIncidentID() string {
-	if o == nil {
+func (l *ListAudienceSummariesRequest) GetIncidentID() string {
+	if l == nil {
 		return ""
 	}
-	return o.IncidentID
+	return l.IncidentID
 }

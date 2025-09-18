@@ -31,37 +31,37 @@ func (i *ImportsImportErrorEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ImportsImportErrorEntity) GetID() *string {
-	if o == nil {
+func (i *ImportsImportErrorEntity) GetID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ID
+	return i.ID
 }
 
-func (o *ImportsImportErrorEntity) GetMessage() *string {
-	if o == nil {
+func (i *ImportsImportErrorEntity) GetMessage() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Message
+	return i.Message
 }
 
-func (o *ImportsImportErrorEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (i *ImportsImportErrorEntity) GetCreatedAt() *time.Time {
+	if i == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return i.CreatedAt
 }
 
-func (o *ImportsImportErrorEntity) GetData() *ImportsImportErrorEntityData {
-	if o == nil {
+func (i *ImportsImportErrorEntity) GetData() *ImportsImportErrorEntityData {
+	if i == nil {
 		return nil
 	}
-	return o.Data
+	return i.Data
 }
 
-func (o *ImportsImportErrorEntity) GetResource() *NullableImportsImportErrorEntityResourceEntity {
-	if o == nil {
+func (i *ImportsImportErrorEntity) GetResource() *NullableImportsImportErrorEntityResourceEntity {
+	if i == nil {
 		return nil
 	}
-	return o.Resource
+	return i.Resource
 }

@@ -11,16 +11,16 @@ type CreateChangeIdentityRequest struct {
 	CreateChangeIdentity components.CreateChangeIdentity `request:"mediaType=application/json"`
 }
 
-func (o *CreateChangeIdentityRequest) GetChangeID() string {
-	if o == nil {
+func (c *CreateChangeIdentityRequest) GetChangeID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ChangeID
+	return c.ChangeID
 }
 
-func (o *CreateChangeIdentityRequest) GetCreateChangeIdentity() components.CreateChangeIdentity {
-	if o == nil {
+func (c *CreateChangeIdentityRequest) GetCreateChangeIdentity() components.CreateChangeIdentity {
+	if c == nil {
 		return components.CreateChangeIdentity{}
 	}
-	return o.CreateChangeIdentity
+	return c.CreateChangeIdentity
 }

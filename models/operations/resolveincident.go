@@ -7,11 +7,11 @@ type ResolveIncidentRequestBody struct {
 	Milestone *string `json:"milestone,omitempty"`
 }
 
-func (o *ResolveIncidentRequestBody) GetMilestone() *string {
-	if o == nil {
+func (r *ResolveIncidentRequestBody) GetMilestone() *string {
+	if r == nil {
 		return nil
 	}
-	return o.Milestone
+	return r.Milestone
 }
 
 type ResolveIncidentRequest struct {
@@ -19,16 +19,16 @@ type ResolveIncidentRequest struct {
 	RequestBody *ResolveIncidentRequestBody `request:"mediaType=application/json"`
 }
 
-func (o *ResolveIncidentRequest) GetIncidentID() string {
-	if o == nil {
+func (r *ResolveIncidentRequest) GetIncidentID() string {
+	if r == nil {
 		return ""
 	}
-	return o.IncidentID
+	return r.IncidentID
 }
 
-func (o *ResolveIncidentRequest) GetRequestBody() *ResolveIncidentRequestBody {
-	if o == nil {
+func (r *ResolveIncidentRequest) GetRequestBody() *ResolveIncidentRequestBody {
+	if r == nil {
 		return nil
 	}
-	return o.RequestBody
+	return r.RequestBody
 }

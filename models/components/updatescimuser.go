@@ -10,18 +10,18 @@ type UpdateScimUserName struct {
 	FamilyName string `json:"familyName"`
 }
 
-func (o *UpdateScimUserName) GetGivenName() string {
-	if o == nil {
+func (u *UpdateScimUserName) GetGivenName() string {
+	if u == nil {
 		return ""
 	}
-	return o.GivenName
+	return u.GivenName
 }
 
-func (o *UpdateScimUserName) GetFamilyName() string {
-	if o == nil {
+func (u *UpdateScimUserName) GetFamilyName() string {
+	if u == nil {
 		return ""
 	}
-	return o.FamilyName
+	return u.FamilyName
 }
 
 type UpdateScimUserEmail struct {
@@ -31,18 +31,18 @@ type UpdateScimUserEmail struct {
 	Primary *bool `json:"primary,omitempty"`
 }
 
-func (o *UpdateScimUserEmail) GetValue() string {
-	if o == nil {
+func (u *UpdateScimUserEmail) GetValue() string {
+	if u == nil {
 		return ""
 	}
-	return o.Value
+	return u.Value
 }
 
-func (o *UpdateScimUserEmail) GetPrimary() *bool {
-	if o == nil {
+func (u *UpdateScimUserEmail) GetPrimary() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.Primary
+	return u.Primary
 }
 
 // UpdateScimUserRoles - Roles for the User. Options are owner, member, collaborator, or viewer. Roles may be specified as strings or SCIM role objects.
@@ -58,25 +58,25 @@ type UpdateScimUserPhoneNumber struct {
 	Primary *bool `json:"primary,omitempty"`
 }
 
-func (o *UpdateScimUserPhoneNumber) GetValue() string {
-	if o == nil {
+func (u *UpdateScimUserPhoneNumber) GetValue() string {
+	if u == nil {
 		return ""
 	}
-	return o.Value
+	return u.Value
 }
 
-func (o *UpdateScimUserPhoneNumber) GetType() *string {
-	if o == nil {
+func (u *UpdateScimUserPhoneNumber) GetType() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Type
+	return u.Type
 }
 
-func (o *UpdateScimUserPhoneNumber) GetPrimary() *bool {
-	if o == nil {
+func (u *UpdateScimUserPhoneNumber) GetPrimary() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.Primary
+	return u.Primary
 }
 
 // UpdateScimUser - PUT SCIM endpoint to update a User. This endpoint is used to replace a resource's attributes.
@@ -95,44 +95,44 @@ type UpdateScimUser struct {
 	PhoneNumbers []UpdateScimUserPhoneNumber `json:"phoneNumbers,omitempty"`
 }
 
-func (o *UpdateScimUser) GetUserName() *string {
-	if o == nil {
+func (u *UpdateScimUser) GetUserName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.UserName
+	return u.UserName
 }
 
-func (o *UpdateScimUser) GetName() *UpdateScimUserName {
-	if o == nil {
+func (u *UpdateScimUser) GetName() *UpdateScimUserName {
+	if u == nil {
 		return nil
 	}
-	return o.Name
+	return u.Name
 }
 
-func (o *UpdateScimUser) GetEmails() []UpdateScimUserEmail {
-	if o == nil {
+func (u *UpdateScimUser) GetEmails() []UpdateScimUserEmail {
+	if u == nil {
 		return nil
 	}
-	return o.Emails
+	return u.Emails
 }
 
-func (o *UpdateScimUser) GetRoles() *UpdateScimUserRoles {
-	if o == nil {
+func (u *UpdateScimUser) GetRoles() *UpdateScimUserRoles {
+	if u == nil {
 		return nil
 	}
-	return o.Roles
+	return u.Roles
 }
 
-func (o *UpdateScimUser) GetActive() *bool {
-	if o == nil {
+func (u *UpdateScimUser) GetActive() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.Active
+	return u.Active
 }
 
-func (o *UpdateScimUser) GetPhoneNumbers() []UpdateScimUserPhoneNumber {
-	if o == nil {
+func (u *UpdateScimUser) GetPhoneNumbers() []UpdateScimUserPhoneNumber {
+	if u == nil {
 		return nil
 	}
-	return o.PhoneNumbers
+	return u.PhoneNumbers
 }

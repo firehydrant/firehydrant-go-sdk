@@ -11,16 +11,16 @@ type CreateIncidentStatusPageRequest struct {
 	CreateIncidentStatusPage components.CreateIncidentStatusPage `request:"mediaType=application/json"`
 }
 
-func (o *CreateIncidentStatusPageRequest) GetIncidentID() string {
-	if o == nil {
+func (c *CreateIncidentStatusPageRequest) GetIncidentID() string {
+	if c == nil {
 		return ""
 	}
-	return o.IncidentID
+	return c.IncidentID
 }
 
-func (o *CreateIncidentStatusPageRequest) GetCreateIncidentStatusPage() components.CreateIncidentStatusPage {
-	if o == nil {
+func (c *CreateIncidentStatusPageRequest) GetCreateIncidentStatusPage() components.CreateIncidentStatusPage {
+	if c == nil {
 		return components.CreateIncidentStatusPage{}
 	}
-	return o.CreateIncidentStatusPage
+	return c.CreateIncidentStatusPage
 }

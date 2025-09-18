@@ -11,30 +11,30 @@ type ListRunbookActionsRequest struct {
 	Lite *bool `queryParam:"style=form,explode=true,name=lite"`
 }
 
-func (o *ListRunbookActionsRequest) GetPage() *int {
-	if o == nil {
+func (l *ListRunbookActionsRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListRunbookActionsRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListRunbookActionsRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }
 
-func (o *ListRunbookActionsRequest) GetType() *string {
-	if o == nil {
+func (l *ListRunbookActionsRequest) GetType() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Type
+	return l.Type
 }
 
-func (o *ListRunbookActionsRequest) GetLite() *bool {
-	if o == nil {
+func (l *ListRunbookActionsRequest) GetLite() *bool {
+	if l == nil {
 		return nil
 	}
-	return o.Lite
+	return l.Lite
 }

@@ -8,9 +8,9 @@ type UpdateIncidentRetrospective struct {
 	IsHidden *bool `json:"is_hidden,omitempty"`
 }
 
-func (o *UpdateIncidentRetrospective) GetIsHidden() *bool {
-	if o == nil {
+func (u *UpdateIncidentRetrospective) GetIsHidden() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.IsHidden
+	return u.IsHidden
 }

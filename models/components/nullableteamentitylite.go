@@ -31,72 +31,72 @@ func (n *NullableTeamEntityLite) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *NullableTeamEntityLite) GetID() *string {
-	if o == nil {
+func (n *NullableTeamEntityLite) GetID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ID
+	return n.ID
 }
 
-func (o *NullableTeamEntityLite) GetName() *string {
-	if o == nil {
+func (n *NullableTeamEntityLite) GetName() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Name
+	return n.Name
 }
 
-func (o *NullableTeamEntityLite) GetDescription() *string {
-	if o == nil {
+func (n *NullableTeamEntityLite) GetDescription() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Description
+	return n.Description
 }
 
-func (o *NullableTeamEntityLite) GetSlug() *string {
-	if o == nil {
+func (n *NullableTeamEntityLite) GetSlug() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Slug
+	return n.Slug
 }
 
-func (o *NullableTeamEntityLite) GetCreatedAt() *time.Time {
-	if o == nil {
+func (n *NullableTeamEntityLite) GetCreatedAt() *time.Time {
+	if n == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return n.CreatedAt
 }
 
-func (o *NullableTeamEntityLite) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (n *NullableTeamEntityLite) GetUpdatedAt() *time.Time {
+	if n == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return n.UpdatedAt
 }
 
-func (o *NullableTeamEntityLite) GetSignalsIcalURL() *string {
-	if o == nil {
+func (n *NullableTeamEntityLite) GetSignalsIcalURL() *string {
+	if n == nil {
 		return nil
 	}
-	return o.SignalsIcalURL
+	return n.SignalsIcalURL
 }
 
-func (o *NullableTeamEntityLite) GetCreatedBy() *NullableAuthorEntity {
-	if o == nil {
+func (n *NullableTeamEntityLite) GetCreatedBy() *NullableAuthorEntity {
+	if n == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return n.CreatedBy
 }
 
-func (o *NullableTeamEntityLite) GetInSupportHours() *bool {
-	if o == nil {
+func (n *NullableTeamEntityLite) GetInSupportHours() *bool {
+	if n == nil {
 		return nil
 	}
-	return o.InSupportHours
+	return n.InSupportHours
 }
 
-func (o *NullableTeamEntityLite) GetRestrictSignalsResourceManagement() *bool {
-	if o == nil {
+func (n *NullableTeamEntityLite) GetRestrictSignalsResourceManagement() *bool {
+	if n == nil {
 		return nil
 	}
-	return o.RestrictSignalsResourceManagement
+	return n.RestrictSignalsResourceManagement
 }

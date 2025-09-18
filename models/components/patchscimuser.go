@@ -31,16 +31,16 @@ type PatchScimUser struct {
 	Operations []Operation `json:"Operations"`
 }
 
-func (o *PatchScimUser) GetTrail() *string {
-	if o == nil {
+func (p *PatchScimUser) GetTrail() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Trail
+	return p.Trail
 }
 
-func (o *PatchScimUser) GetOperations() []Operation {
-	if o == nil {
+func (p *PatchScimUser) GetOperations() []Operation {
+	if p == nil {
 		return []Operation{}
 	}
-	return o.Operations
+	return p.Operations
 }

@@ -8,23 +8,23 @@ type IntegrationsSlackSlackChannelEntity struct {
 	SlackChannelID *string `json:"slack_channel_id,omitempty"`
 }
 
-func (o *IntegrationsSlackSlackChannelEntity) GetID() *string {
-	if o == nil {
+func (i *IntegrationsSlackSlackChannelEntity) GetID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ID
+	return i.ID
 }
 
-func (o *IntegrationsSlackSlackChannelEntity) GetName() *string {
-	if o == nil {
+func (i *IntegrationsSlackSlackChannelEntity) GetName() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Name
+	return i.Name
 }
 
-func (o *IntegrationsSlackSlackChannelEntity) GetSlackChannelID() *string {
-	if o == nil {
+func (i *IntegrationsSlackSlackChannelEntity) GetSlackChannelID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.SlackChannelID
+	return i.SlackChannelID
 }

@@ -29,51 +29,51 @@ func (w *WebhooksEntitiesWebhookEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *WebhooksEntitiesWebhookEntity) GetID() *string {
-	if o == nil {
+func (w *WebhooksEntitiesWebhookEntity) GetID() *string {
+	if w == nil {
 		return nil
 	}
-	return o.ID
+	return w.ID
 }
 
-func (o *WebhooksEntitiesWebhookEntity) GetURL() *string {
-	if o == nil {
+func (w *WebhooksEntitiesWebhookEntity) GetURL() *string {
+	if w == nil {
 		return nil
 	}
-	return o.URL
+	return w.URL
 }
 
-func (o *WebhooksEntitiesWebhookEntity) GetState() *string {
-	if o == nil {
+func (w *WebhooksEntitiesWebhookEntity) GetState() *string {
+	if w == nil {
 		return nil
 	}
-	return o.State
+	return w.State
 }
 
-func (o *WebhooksEntitiesWebhookEntity) GetCreatedBy() *NullableAuthorEntity {
-	if o == nil {
+func (w *WebhooksEntitiesWebhookEntity) GetCreatedBy() *NullableAuthorEntity {
+	if w == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return w.CreatedBy
 }
 
-func (o *WebhooksEntitiesWebhookEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (w *WebhooksEntitiesWebhookEntity) GetCreatedAt() *time.Time {
+	if w == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return w.CreatedAt
 }
 
-func (o *WebhooksEntitiesWebhookEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (w *WebhooksEntitiesWebhookEntity) GetUpdatedAt() *time.Time {
+	if w == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return w.UpdatedAt
 }
 
-func (o *WebhooksEntitiesWebhookEntity) GetSubscriptions() *string {
-	if o == nil {
+func (w *WebhooksEntitiesWebhookEntity) GetSubscriptions() *string {
+	if w == nil {
 		return nil
 	}
-	return o.Subscriptions
+	return w.Subscriptions
 }

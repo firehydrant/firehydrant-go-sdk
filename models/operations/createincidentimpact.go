@@ -46,23 +46,23 @@ type CreateIncidentImpactRequest struct {
 	CreateIncidentImpact components.CreateIncidentImpact `request:"mediaType=application/json"`
 }
 
-func (o *CreateIncidentImpactRequest) GetIncidentID() string {
-	if o == nil {
+func (c *CreateIncidentImpactRequest) GetIncidentID() string {
+	if c == nil {
 		return ""
 	}
-	return o.IncidentID
+	return c.IncidentID
 }
 
-func (o *CreateIncidentImpactRequest) GetType() CreateIncidentImpactType {
-	if o == nil {
+func (c *CreateIncidentImpactRequest) GetType() CreateIncidentImpactType {
+	if c == nil {
 		return CreateIncidentImpactType("")
 	}
-	return o.Type
+	return c.Type
 }
 
-func (o *CreateIncidentImpactRequest) GetCreateIncidentImpact() components.CreateIncidentImpact {
-	if o == nil {
+func (c *CreateIncidentImpactRequest) GetCreateIncidentImpact() components.CreateIncidentImpact {
+	if c == nil {
 		return components.CreateIncidentImpact{}
 	}
-	return o.CreateIncidentImpact
+	return c.CreateIncidentImpact
 }

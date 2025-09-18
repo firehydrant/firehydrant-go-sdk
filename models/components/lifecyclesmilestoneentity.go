@@ -31,72 +31,72 @@ func (l *LifecyclesMilestoneEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *LifecyclesMilestoneEntity) GetID() *string {
-	if o == nil {
+func (l *LifecyclesMilestoneEntity) GetID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ID
+	return l.ID
 }
 
-func (o *LifecyclesMilestoneEntity) GetName() *string {
-	if o == nil {
+func (l *LifecyclesMilestoneEntity) GetName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Name
+	return l.Name
 }
 
-func (o *LifecyclesMilestoneEntity) GetDescription() *string {
-	if o == nil {
+func (l *LifecyclesMilestoneEntity) GetDescription() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Description
+	return l.Description
 }
 
-func (o *LifecyclesMilestoneEntity) GetSlug() *string {
-	if o == nil {
+func (l *LifecyclesMilestoneEntity) GetSlug() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Slug
+	return l.Slug
 }
 
-func (o *LifecyclesMilestoneEntity) GetAutoAssignTimestampOnCreate() *string {
-	if o == nil {
+func (l *LifecyclesMilestoneEntity) GetAutoAssignTimestampOnCreate() *string {
+	if l == nil {
 		return nil
 	}
-	return o.AutoAssignTimestampOnCreate
+	return l.AutoAssignTimestampOnCreate
 }
 
-func (o *LifecyclesMilestoneEntity) GetPosition() *int {
-	if o == nil {
+func (l *LifecyclesMilestoneEntity) GetPosition() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Position
+	return l.Position
 }
 
-func (o *LifecyclesMilestoneEntity) GetCreatedBy() *NullableAuthorEntity {
-	if o == nil {
+func (l *LifecyclesMilestoneEntity) GetCreatedBy() *NullableAuthorEntity {
+	if l == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return l.CreatedBy
 }
 
-func (o *LifecyclesMilestoneEntity) GetUpdatedBy() *NullableAuthorEntity {
-	if o == nil {
+func (l *LifecyclesMilestoneEntity) GetUpdatedBy() *NullableAuthorEntity {
+	if l == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return l.UpdatedBy
 }
 
-func (o *LifecyclesMilestoneEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (l *LifecyclesMilestoneEntity) GetCreatedAt() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return l.CreatedAt
 }
 
-func (o *LifecyclesMilestoneEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (l *LifecyclesMilestoneEntity) GetUpdatedAt() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return l.UpdatedAt
 }

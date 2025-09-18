@@ -7,9 +7,9 @@ type GetIntegrationRequest struct {
 	IntegrationID string `pathParam:"style=simple,explode=false,name=integration_id"`
 }
 
-func (o *GetIntegrationRequest) GetIntegrationID() string {
-	if o == nil {
+func (g *GetIntegrationRequest) GetIntegrationID() string {
+	if g == nil {
 		return ""
 	}
-	return o.IntegrationID
+	return g.IntegrationID
 }

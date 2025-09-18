@@ -8,16 +8,16 @@ type IntegrationsAwsCloudtrailBatchEntityPaginated struct {
 	Pagination *NullablePaginationEntity              `json:"pagination,omitempty"`
 }
 
-func (o *IntegrationsAwsCloudtrailBatchEntityPaginated) GetData() []IntegrationsAwsCloudtrailBatchEntity {
-	if o == nil {
+func (i *IntegrationsAwsCloudtrailBatchEntityPaginated) GetData() []IntegrationsAwsCloudtrailBatchEntity {
+	if i == nil {
 		return nil
 	}
-	return o.Data
+	return i.Data
 }
 
-func (o *IntegrationsAwsCloudtrailBatchEntityPaginated) GetPagination() *NullablePaginationEntity {
-	if o == nil {
+func (i *IntegrationsAwsCloudtrailBatchEntityPaginated) GetPagination() *NullablePaginationEntity {
+	if i == nil {
 		return nil
 	}
-	return o.Pagination
+	return i.Pagination
 }

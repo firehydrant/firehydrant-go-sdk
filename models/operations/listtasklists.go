@@ -7,16 +7,16 @@ type ListTaskListsRequest struct {
 	PerPage *int `queryParam:"style=form,explode=true,name=per_page"`
 }
 
-func (o *ListTaskListsRequest) GetPage() *int {
-	if o == nil {
+func (l *ListTaskListsRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListTaskListsRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListTaskListsRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }

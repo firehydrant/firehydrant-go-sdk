@@ -18,65 +18,65 @@ type CreateTicket struct {
 	RemoteURL *string `json:"remote_url,omitempty"`
 }
 
-func (o *CreateTicket) GetSummary() string {
-	if o == nil {
+func (c *CreateTicket) GetSummary() string {
+	if c == nil {
 		return ""
 	}
-	return o.Summary
+	return c.Summary
 }
 
-func (o *CreateTicket) GetRelatedTo() *string {
-	if o == nil {
+func (c *CreateTicket) GetRelatedTo() *string {
+	if c == nil {
 		return nil
 	}
-	return o.RelatedTo
+	return c.RelatedTo
 }
 
-func (o *CreateTicket) GetProjectID() *string {
-	if o == nil {
+func (c *CreateTicket) GetProjectID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ProjectID
+	return c.ProjectID
 }
 
-func (o *CreateTicket) GetDescription() *string {
-	if o == nil {
+func (c *CreateTicket) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *CreateTicket) GetState() *string {
-	if o == nil {
+func (c *CreateTicket) GetState() *string {
+	if c == nil {
 		return nil
 	}
-	return o.State
+	return c.State
 }
 
-func (o *CreateTicket) GetType() *string {
-	if o == nil {
+func (c *CreateTicket) GetType() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Type
+	return c.Type
 }
 
-func (o *CreateTicket) GetPriorityID() *string {
-	if o == nil {
+func (c *CreateTicket) GetPriorityID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.PriorityID
+	return c.PriorityID
 }
 
-func (o *CreateTicket) GetTagList() []string {
-	if o == nil {
+func (c *CreateTicket) GetTagList() []string {
+	if c == nil {
 		return nil
 	}
-	return o.TagList
+	return c.TagList
 }
 
-func (o *CreateTicket) GetRemoteURL() *string {
-	if o == nil {
+func (c *CreateTicket) GetRemoteURL() *string {
+	if c == nil {
 		return nil
 	}
-	return o.RemoteURL
+	return c.RemoteURL
 }

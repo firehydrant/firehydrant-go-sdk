@@ -31,65 +31,65 @@ func (p *PublicAPIV1RoleEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *PublicAPIV1RoleEntity) GetID() *string {
-	if o == nil {
+func (p *PublicAPIV1RoleEntity) GetID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.ID
+	return p.ID
 }
 
-func (o *PublicAPIV1RoleEntity) GetName() *string {
-	if o == nil {
+func (p *PublicAPIV1RoleEntity) GetName() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Name
+	return p.Name
 }
 
-func (o *PublicAPIV1RoleEntity) GetSlug() *string {
-	if o == nil {
+func (p *PublicAPIV1RoleEntity) GetSlug() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Slug
+	return p.Slug
 }
 
-func (o *PublicAPIV1RoleEntity) GetDescription() *string {
-	if o == nil {
+func (p *PublicAPIV1RoleEntity) GetDescription() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Description
+	return p.Description
 }
 
-func (o *PublicAPIV1RoleEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (p *PublicAPIV1RoleEntity) GetCreatedAt() *time.Time {
+	if p == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return p.CreatedAt
 }
 
-func (o *PublicAPIV1RoleEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (p *PublicAPIV1RoleEntity) GetUpdatedAt() *time.Time {
+	if p == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return p.UpdatedAt
 }
 
-func (o *PublicAPIV1RoleEntity) GetBuiltIn() *bool {
-	if o == nil {
+func (p *PublicAPIV1RoleEntity) GetBuiltIn() *bool {
+	if p == nil {
 		return nil
 	}
-	return o.BuiltIn
+	return p.BuiltIn
 }
 
-func (o *PublicAPIV1RoleEntity) GetReadOnly() *bool {
-	if o == nil {
+func (p *PublicAPIV1RoleEntity) GetReadOnly() *bool {
+	if p == nil {
 		return nil
 	}
-	return o.ReadOnly
+	return p.ReadOnly
 }
 
-func (o *PublicAPIV1RoleEntity) GetPermissions() []PublicAPIV1PermissionEntity {
-	if o == nil {
+func (p *PublicAPIV1RoleEntity) GetPermissions() []PublicAPIV1PermissionEntity {
+	if p == nil {
 		return nil
 	}
-	return o.Permissions
+	return p.Permissions
 }

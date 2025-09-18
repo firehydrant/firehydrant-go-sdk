@@ -28,44 +28,44 @@ func (s *ServiceDependencyEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ServiceDependencyEntity) GetID() *string {
-	if o == nil {
+func (s *ServiceDependencyEntity) GetID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *ServiceDependencyEntity) GetNotes() *string {
-	if o == nil {
+func (s *ServiceDependencyEntity) GetNotes() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Notes
+	return s.Notes
 }
 
-func (o *ServiceDependencyEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (s *ServiceDependencyEntity) GetCreatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return s.CreatedAt
 }
 
-func (o *ServiceDependencyEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (s *ServiceDependencyEntity) GetUpdatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return s.UpdatedAt
 }
 
-func (o *ServiceDependencyEntity) GetService() *NullableServiceEntity {
-	if o == nil {
+func (s *ServiceDependencyEntity) GetService() *NullableServiceEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Service
+	return s.Service
 }
 
-func (o *ServiceDependencyEntity) GetConnectedService() *NullableServiceEntity {
-	if o == nil {
+func (s *ServiceDependencyEntity) GetConnectedService() *NullableServiceEntity {
+	if s == nil {
 		return nil
 	}
-	return o.ConnectedService
+	return s.ConnectedService
 }

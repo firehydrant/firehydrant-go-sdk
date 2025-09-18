@@ -23,116 +23,116 @@ type UpdateNuncConnectionRequestBody struct {
 	UIVersion                    *int     `json:"ui_version,omitempty"`
 }
 
-func (o *UpdateNuncConnectionRequestBody) GetCompanyName() *string {
-	if o == nil {
+func (u *UpdateNuncConnectionRequestBody) GetCompanyName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.CompanyName
+	return u.CompanyName
 }
 
-func (o *UpdateNuncConnectionRequestBody) GetCompanyWebsite() *string {
-	if o == nil {
+func (u *UpdateNuncConnectionRequestBody) GetCompanyWebsite() *string {
+	if u == nil {
 		return nil
 	}
-	return o.CompanyWebsite
+	return u.CompanyWebsite
 }
 
-func (o *UpdateNuncConnectionRequestBody) GetCompanyTosURL() *string {
-	if o == nil {
+func (u *UpdateNuncConnectionRequestBody) GetCompanyTosURL() *string {
+	if u == nil {
 		return nil
 	}
-	return o.CompanyTosURL
+	return u.CompanyTosURL
 }
 
-func (o *UpdateNuncConnectionRequestBody) GetGreetingTitle() *string {
-	if o == nil {
+func (u *UpdateNuncConnectionRequestBody) GetGreetingTitle() *string {
+	if u == nil {
 		return nil
 	}
-	return o.GreetingTitle
+	return u.GreetingTitle
 }
 
-func (o *UpdateNuncConnectionRequestBody) GetGreetingBody() *string {
-	if o == nil {
+func (u *UpdateNuncConnectionRequestBody) GetGreetingBody() *string {
+	if u == nil {
 		return nil
 	}
-	return o.GreetingBody
+	return u.GreetingBody
 }
 
-func (o *UpdateNuncConnectionRequestBody) GetOperationalMessage() *string {
-	if o == nil {
+func (u *UpdateNuncConnectionRequestBody) GetOperationalMessage() *string {
+	if u == nil {
 		return nil
 	}
-	return o.OperationalMessage
+	return u.OperationalMessage
 }
 
-func (o *UpdateNuncConnectionRequestBody) GetTitle() *string {
-	if o == nil {
+func (u *UpdateNuncConnectionRequestBody) GetTitle() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Title
+	return u.Title
 }
 
-func (o *UpdateNuncConnectionRequestBody) GetConditionsNuncCondition() []string {
-	if o == nil {
+func (u *UpdateNuncConnectionRequestBody) GetConditionsNuncCondition() []string {
+	if u == nil {
 		return []string{}
 	}
-	return o.ConditionsNuncCondition
+	return u.ConditionsNuncCondition
 }
 
-func (o *UpdateNuncConnectionRequestBody) GetConditionsConditionID() []string {
-	if o == nil {
+func (u *UpdateNuncConnectionRequestBody) GetConditionsConditionID() []string {
+	if u == nil {
 		return []string{}
 	}
-	return o.ConditionsConditionID
+	return u.ConditionsConditionID
 }
 
-func (o *UpdateNuncConnectionRequestBody) GetComponentsInfrastructureType() []string {
-	if o == nil {
+func (u *UpdateNuncConnectionRequestBody) GetComponentsInfrastructureType() []string {
+	if u == nil {
 		return []string{}
 	}
-	return o.ComponentsInfrastructureType
+	return u.ComponentsInfrastructureType
 }
 
-func (o *UpdateNuncConnectionRequestBody) GetComponentsInfrastructureID() []string {
-	if o == nil {
+func (u *UpdateNuncConnectionRequestBody) GetComponentsInfrastructureID() []string {
+	if u == nil {
 		return []string{}
 	}
-	return o.ComponentsInfrastructureID
+	return u.ComponentsInfrastructureID
 }
 
-func (o *UpdateNuncConnectionRequestBody) GetPrimaryColor() *string {
-	if o == nil {
+func (u *UpdateNuncConnectionRequestBody) GetPrimaryColor() *string {
+	if u == nil {
 		return nil
 	}
-	return o.PrimaryColor
+	return u.PrimaryColor
 }
 
-func (o *UpdateNuncConnectionRequestBody) GetSecondaryColor() *string {
-	if o == nil {
+func (u *UpdateNuncConnectionRequestBody) GetSecondaryColor() *string {
+	if u == nil {
 		return nil
 	}
-	return o.SecondaryColor
+	return u.SecondaryColor
 }
 
-func (o *UpdateNuncConnectionRequestBody) GetExposedFields() []string {
-	if o == nil {
+func (u *UpdateNuncConnectionRequestBody) GetExposedFields() []string {
+	if u == nil {
 		return nil
 	}
-	return o.ExposedFields
+	return u.ExposedFields
 }
 
-func (o *UpdateNuncConnectionRequestBody) GetEnableHistogram() *bool {
-	if o == nil {
+func (u *UpdateNuncConnectionRequestBody) GetEnableHistogram() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.EnableHistogram
+	return u.EnableHistogram
 }
 
-func (o *UpdateNuncConnectionRequestBody) GetUIVersion() *int {
-	if o == nil {
+func (u *UpdateNuncConnectionRequestBody) GetUIVersion() *int {
+	if u == nil {
 		return nil
 	}
-	return o.UIVersion
+	return u.UIVersion
 }
 
 type UpdateNuncConnectionRequest struct {
@@ -140,16 +140,16 @@ type UpdateNuncConnectionRequest struct {
 	RequestBody      UpdateNuncConnectionRequestBody `request:"mediaType=application/json"`
 }
 
-func (o *UpdateNuncConnectionRequest) GetNuncConnectionID() string {
-	if o == nil {
+func (u *UpdateNuncConnectionRequest) GetNuncConnectionID() string {
+	if u == nil {
 		return ""
 	}
-	return o.NuncConnectionID
+	return u.NuncConnectionID
 }
 
-func (o *UpdateNuncConnectionRequest) GetRequestBody() UpdateNuncConnectionRequestBody {
-	if o == nil {
+func (u *UpdateNuncConnectionRequest) GetRequestBody() UpdateNuncConnectionRequestBody {
+	if u == nil {
 		return UpdateNuncConnectionRequestBody{}
 	}
-	return o.RequestBody
+	return u.RequestBody
 }

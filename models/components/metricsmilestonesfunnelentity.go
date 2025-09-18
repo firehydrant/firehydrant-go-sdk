@@ -10,30 +10,30 @@ type MetricsMilestonesFunnelEntity struct {
 	Meta      *NullableMetricsMilestonesFunnelEntityMetaEntity      `json:"meta,omitempty"`
 }
 
-func (o *MetricsMilestonesFunnelEntity) GetData() []MetricsMilestonesFunnelEntityDataBucketEntity {
-	if o == nil {
+func (m *MetricsMilestonesFunnelEntity) GetData() []MetricsMilestonesFunnelEntityDataBucketEntity {
+	if m == nil {
 		return nil
 	}
-	return o.Data
+	return m.Data
 }
 
-func (o *MetricsMilestonesFunnelEntity) GetColumns() []MetricsMilestonesFunnelEntityColumnEntity {
-	if o == nil {
+func (m *MetricsMilestonesFunnelEntity) GetColumns() []MetricsMilestonesFunnelEntityColumnEntity {
+	if m == nil {
 		return nil
 	}
-	return o.Columns
+	return m.Columns
 }
 
-func (o *MetricsMilestonesFunnelEntity) GetGroupings() *NullableMetricsMilestonesFunnelEntityGroupingsEntity {
-	if o == nil {
+func (m *MetricsMilestonesFunnelEntity) GetGroupings() *NullableMetricsMilestonesFunnelEntityGroupingsEntity {
+	if m == nil {
 		return nil
 	}
-	return o.Groupings
+	return m.Groupings
 }
 
-func (o *MetricsMilestonesFunnelEntity) GetMeta() *NullableMetricsMilestonesFunnelEntityMetaEntity {
-	if o == nil {
+func (m *MetricsMilestonesFunnelEntity) GetMeta() *NullableMetricsMilestonesFunnelEntityMetaEntity {
+	if m == nil {
 		return nil
 	}
-	return o.Meta
+	return m.Meta
 }

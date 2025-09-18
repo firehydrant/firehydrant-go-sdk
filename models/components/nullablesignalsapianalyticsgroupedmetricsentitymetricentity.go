@@ -19,51 +19,51 @@ type NullableSignalsAPIAnalyticsGroupedMetricsEntityMetricEntity struct {
 	IncidentsPercentage *float32 `json:"incidents_percentage,omitempty"`
 }
 
-func (o *NullableSignalsAPIAnalyticsGroupedMetricsEntityMetricEntity) GetGroupedID() *int {
-	if o == nil {
+func (n *NullableSignalsAPIAnalyticsGroupedMetricsEntityMetricEntity) GetGroupedID() *int {
+	if n == nil {
 		return nil
 	}
-	return o.GroupedID
+	return n.GroupedID
 }
 
-func (o *NullableSignalsAPIAnalyticsGroupedMetricsEntityMetricEntity) GetGroupedName() *string {
-	if o == nil {
+func (n *NullableSignalsAPIAnalyticsGroupedMetricsEntityMetricEntity) GetGroupedName() *string {
+	if n == nil {
 		return nil
 	}
-	return o.GroupedName
+	return n.GroupedName
 }
 
-func (o *NullableSignalsAPIAnalyticsGroupedMetricsEntityMetricEntity) GetTotalOpenedAlerts() *int {
-	if o == nil {
+func (n *NullableSignalsAPIAnalyticsGroupedMetricsEntityMetricEntity) GetTotalOpenedAlerts() *int {
+	if n == nil {
 		return nil
 	}
-	return o.TotalOpenedAlerts
+	return n.TotalOpenedAlerts
 }
 
-func (o *NullableSignalsAPIAnalyticsGroupedMetricsEntityMetricEntity) GetTotalAckedAlerts() *int {
-	if o == nil {
+func (n *NullableSignalsAPIAnalyticsGroupedMetricsEntityMetricEntity) GetTotalAckedAlerts() *int {
+	if n == nil {
 		return nil
 	}
-	return o.TotalAckedAlerts
+	return n.TotalAckedAlerts
 }
 
-func (o *NullableSignalsAPIAnalyticsGroupedMetricsEntityMetricEntity) GetTotalIncidents() *int {
-	if o == nil {
+func (n *NullableSignalsAPIAnalyticsGroupedMetricsEntityMetricEntity) GetTotalIncidents() *int {
+	if n == nil {
 		return nil
 	}
-	return o.TotalIncidents
+	return n.TotalIncidents
 }
 
-func (o *NullableSignalsAPIAnalyticsGroupedMetricsEntityMetricEntity) GetAckedPercentage() *float32 {
-	if o == nil {
+func (n *NullableSignalsAPIAnalyticsGroupedMetricsEntityMetricEntity) GetAckedPercentage() *float32 {
+	if n == nil {
 		return nil
 	}
-	return o.AckedPercentage
+	return n.AckedPercentage
 }
 
-func (o *NullableSignalsAPIAnalyticsGroupedMetricsEntityMetricEntity) GetIncidentsPercentage() *float32 {
-	if o == nil {
+func (n *NullableSignalsAPIAnalyticsGroupedMetricsEntityMetricEntity) GetIncidentsPercentage() *float32 {
+	if n == nil {
 		return nil
 	}
-	return o.IncidentsPercentage
+	return n.IncidentsPercentage
 }

@@ -8,23 +8,23 @@ type NullableFHTypesGenericEntity struct {
 	Label *string `json:"label,omitempty"`
 }
 
-func (o *NullableFHTypesGenericEntity) GetType() *string {
-	if o == nil {
+func (n *NullableFHTypesGenericEntity) GetType() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Type
+	return n.Type
 }
 
-func (o *NullableFHTypesGenericEntity) GetValue() *string {
-	if o == nil {
+func (n *NullableFHTypesGenericEntity) GetValue() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Value
+	return n.Value
 }
 
-func (o *NullableFHTypesGenericEntity) GetLabel() *string {
-	if o == nil {
+func (n *NullableFHTypesGenericEntity) GetLabel() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Label
+	return n.Label
 }

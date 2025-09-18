@@ -8,23 +8,23 @@ type ListRetrospectiveTemplatesRequest struct {
 	ForIncident *string `queryParam:"style=form,explode=true,name=for_incident"`
 }
 
-func (o *ListRetrospectiveTemplatesRequest) GetPage() *int {
-	if o == nil {
+func (l *ListRetrospectiveTemplatesRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListRetrospectiveTemplatesRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListRetrospectiveTemplatesRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }
 
-func (o *ListRetrospectiveTemplatesRequest) GetForIncident() *string {
-	if o == nil {
+func (l *ListRetrospectiveTemplatesRequest) GetForIncident() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ForIncident
+	return l.ForIncident
 }

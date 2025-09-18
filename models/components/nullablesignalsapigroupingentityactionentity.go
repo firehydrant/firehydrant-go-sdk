@@ -7,16 +7,16 @@ type NullableSignalsAPIGroupingEntityActionEntity struct {
 	Fyi  *NullableSignalsAPIGroupingEntityActionEntityFyiEntity `json:"fyi,omitempty"`
 }
 
-func (o *NullableSignalsAPIGroupingEntityActionEntity) GetLink() *bool {
-	if o == nil {
+func (n *NullableSignalsAPIGroupingEntityActionEntity) GetLink() *bool {
+	if n == nil {
 		return nil
 	}
-	return o.Link
+	return n.Link
 }
 
-func (o *NullableSignalsAPIGroupingEntityActionEntity) GetFyi() *NullableSignalsAPIGroupingEntityActionEntityFyiEntity {
-	if o == nil {
+func (n *NullableSignalsAPIGroupingEntityActionEntity) GetFyi() *NullableSignalsAPIGroupingEntityActionEntityFyiEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Fyi
+	return n.Fyi
 }

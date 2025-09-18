@@ -11,16 +11,16 @@ type UpdateSignalsAlertGroupingConfigurationRequest struct {
 	UpdateSignalsAlertGroupingConfiguration components.UpdateSignalsAlertGroupingConfiguration `request:"mediaType=application/json"`
 }
 
-func (o *UpdateSignalsAlertGroupingConfigurationRequest) GetID() string {
-	if o == nil {
+func (u *UpdateSignalsAlertGroupingConfigurationRequest) GetID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ID
+	return u.ID
 }
 
-func (o *UpdateSignalsAlertGroupingConfigurationRequest) GetUpdateSignalsAlertGroupingConfiguration() components.UpdateSignalsAlertGroupingConfiguration {
-	if o == nil {
+func (u *UpdateSignalsAlertGroupingConfigurationRequest) GetUpdateSignalsAlertGroupingConfiguration() components.UpdateSignalsAlertGroupingConfiguration {
+	if u == nil {
 		return components.UpdateSignalsAlertGroupingConfiguration{}
 	}
-	return o.UpdateSignalsAlertGroupingConfiguration
+	return u.UpdateSignalsAlertGroupingConfiguration
 }

@@ -14,37 +14,37 @@ type NullableVotesEntity struct {
 	Dislikes *int  `json:"dislikes,omitempty"`
 }
 
-func (o *NullableVotesEntity) GetVoted() *bool {
-	if o == nil {
+func (n *NullableVotesEntity) GetVoted() *bool {
+	if n == nil {
 		return nil
 	}
-	return o.Voted
+	return n.Voted
 }
 
-func (o *NullableVotesEntity) GetLiked() *bool {
-	if o == nil {
+func (n *NullableVotesEntity) GetLiked() *bool {
+	if n == nil {
 		return nil
 	}
-	return o.Liked
+	return n.Liked
 }
 
-func (o *NullableVotesEntity) GetDisliked() *bool {
-	if o == nil {
+func (n *NullableVotesEntity) GetDisliked() *bool {
+	if n == nil {
 		return nil
 	}
-	return o.Disliked
+	return n.Disliked
 }
 
-func (o *NullableVotesEntity) GetLikes() *int {
-	if o == nil {
+func (n *NullableVotesEntity) GetLikes() *int {
+	if n == nil {
 		return nil
 	}
-	return o.Likes
+	return n.Likes
 }
 
-func (o *NullableVotesEntity) GetDislikes() *int {
-	if o == nil {
+func (n *NullableVotesEntity) GetDislikes() *int {
+	if n == nil {
 		return nil
 	}
-	return o.Dislikes
+	return n.Dislikes
 }

@@ -7,16 +7,16 @@ type ListSeveritiesRequest struct {
 	PerPage *int `queryParam:"style=form,explode=true,name=per_page"`
 }
 
-func (o *ListSeveritiesRequest) GetPage() *int {
-	if o == nil {
+func (l *ListSeveritiesRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListSeveritiesRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListSeveritiesRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }

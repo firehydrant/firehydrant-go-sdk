@@ -9,16 +9,16 @@ type NullableSignalsAPIAnalyticsMttxMetricsEntityMetricEntity struct {
 	Mttr *float32 `json:"mttr,omitempty"`
 }
 
-func (o *NullableSignalsAPIAnalyticsMttxMetricsEntityMetricEntity) GetMtta() *float32 {
-	if o == nil {
+func (n *NullableSignalsAPIAnalyticsMttxMetricsEntityMetricEntity) GetMtta() *float32 {
+	if n == nil {
 		return nil
 	}
-	return o.Mtta
+	return n.Mtta
 }
 
-func (o *NullableSignalsAPIAnalyticsMttxMetricsEntityMetricEntity) GetMttr() *float32 {
-	if o == nil {
+func (n *NullableSignalsAPIAnalyticsMttxMetricsEntityMetricEntity) GetMttr() *float32 {
+	if n == nil {
 		return nil
 	}
-	return o.Mttr
+	return n.Mttr
 }

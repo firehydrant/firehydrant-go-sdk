@@ -34,58 +34,58 @@ func (a *AttachmentsTypedAttachmentEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AttachmentsTypedAttachmentEntity) GetID() *string {
-	if o == nil {
+func (a *AttachmentsTypedAttachmentEntity) GetID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AttachmentsTypedAttachmentEntity) GetType() *string {
-	if o == nil {
+func (a *AttachmentsTypedAttachmentEntity) GetType() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Type
+	return a.Type
 }
 
-func (o *AttachmentsTypedAttachmentEntity) GetAttachedToID() *string {
-	if o == nil {
+func (a *AttachmentsTypedAttachmentEntity) GetAttachedToID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AttachedToID
+	return a.AttachedToID
 }
 
-func (o *AttachmentsTypedAttachmentEntity) GetAttachedToType() *string {
-	if o == nil {
+func (a *AttachmentsTypedAttachmentEntity) GetAttachedToType() *string {
+	if a == nil {
 		return nil
 	}
-	return o.AttachedToType
+	return a.AttachedToType
 }
 
-func (o *AttachmentsTypedAttachmentEntity) GetSecondaryAttachedToID() *string {
-	if o == nil {
+func (a *AttachmentsTypedAttachmentEntity) GetSecondaryAttachedToID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.SecondaryAttachedToID
+	return a.SecondaryAttachedToID
 }
 
-func (o *AttachmentsTypedAttachmentEntity) GetSecondaryAttachedToType() *string {
-	if o == nil {
+func (a *AttachmentsTypedAttachmentEntity) GetSecondaryAttachedToType() *string {
+	if a == nil {
 		return nil
 	}
-	return o.SecondaryAttachedToType
+	return a.SecondaryAttachedToType
 }
 
-func (o *AttachmentsTypedAttachmentEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (a *AttachmentsTypedAttachmentEntity) GetCreatedAt() *time.Time {
+	if a == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return a.CreatedAt
 }
 
-func (o *AttachmentsTypedAttachmentEntity) GetAttributes() *Attributes {
-	if o == nil {
+func (a *AttachmentsTypedAttachmentEntity) GetAttributes() *Attributes {
+	if a == nil {
 		return nil
 	}
-	return o.Attributes
+	return a.Attributes
 }

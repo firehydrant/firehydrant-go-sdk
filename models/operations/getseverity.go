@@ -6,9 +6,9 @@ type GetSeverityRequest struct {
 	SeveritySlug string `pathParam:"style=simple,explode=false,name=severity_slug"`
 }
 
-func (o *GetSeverityRequest) GetSeveritySlug() string {
-	if o == nil {
+func (g *GetSeverityRequest) GetSeveritySlug() string {
+	if g == nil {
 		return ""
 	}
-	return o.SeveritySlug
+	return g.SeveritySlug
 }

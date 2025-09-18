@@ -56,72 +56,72 @@ type IntegrationsAwsConnectionEntity struct {
 	Regions           []string                                         `json:"regions,omitempty"`
 }
 
-func (o *IntegrationsAwsConnectionEntity) GetID() *string {
-	if o == nil {
+func (i *IntegrationsAwsConnectionEntity) GetID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ID
+	return i.ID
 }
 
-func (o *IntegrationsAwsConnectionEntity) GetAwsAccountID() *string {
-	if o == nil {
+func (i *IntegrationsAwsConnectionEntity) GetAwsAccountID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.AwsAccountID
+	return i.AwsAccountID
 }
 
-func (o *IntegrationsAwsConnectionEntity) GetTargetArn() *string {
-	if o == nil {
+func (i *IntegrationsAwsConnectionEntity) GetTargetArn() *string {
+	if i == nil {
 		return nil
 	}
-	return o.TargetArn
+	return i.TargetArn
 }
 
-func (o *IntegrationsAwsConnectionEntity) GetExternalID() *string {
-	if o == nil {
+func (i *IntegrationsAwsConnectionEntity) GetExternalID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ExternalID
+	return i.ExternalID
 }
 
-func (o *IntegrationsAwsConnectionEntity) GetConnectionStatus() *IntegrationsAwsConnectionEntityConnectionStatus {
-	if o == nil {
+func (i *IntegrationsAwsConnectionEntity) GetConnectionStatus() *IntegrationsAwsConnectionEntityConnectionStatus {
+	if i == nil {
 		return nil
 	}
-	return o.ConnectionStatus
+	return i.ConnectionStatus
 }
 
-func (o *IntegrationsAwsConnectionEntity) GetStatusText() *string {
-	if o == nil {
+func (i *IntegrationsAwsConnectionEntity) GetStatusText() *string {
+	if i == nil {
 		return nil
 	}
-	return o.StatusText
+	return i.StatusText
 }
 
-func (o *IntegrationsAwsConnectionEntity) GetStatusDescription() *string {
-	if o == nil {
+func (i *IntegrationsAwsConnectionEntity) GetStatusDescription() *string {
+	if i == nil {
 		return nil
 	}
-	return o.StatusDescription
+	return i.StatusDescription
 }
 
-func (o *IntegrationsAwsConnectionEntity) GetEnvironmentID() *string {
-	if o == nil {
+func (i *IntegrationsAwsConnectionEntity) GetEnvironmentID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.EnvironmentID
+	return i.EnvironmentID
 }
 
-func (o *IntegrationsAwsConnectionEntity) GetEnvironmentName() *string {
-	if o == nil {
+func (i *IntegrationsAwsConnectionEntity) GetEnvironmentName() *string {
+	if i == nil {
 		return nil
 	}
-	return o.EnvironmentName
+	return i.EnvironmentName
 }
 
-func (o *IntegrationsAwsConnectionEntity) GetRegions() []string {
-	if o == nil {
+func (i *IntegrationsAwsConnectionEntity) GetRegions() []string {
+	if i == nil {
 		return nil
 	}
-	return o.Regions
+	return i.Regions
 }

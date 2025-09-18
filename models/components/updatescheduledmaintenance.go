@@ -14,18 +14,18 @@ type UpdateScheduledMaintenanceStatusPage struct {
 	ConnectionID string `json:"connection_id"`
 }
 
-func (o *UpdateScheduledMaintenanceStatusPage) GetIntegrationSlug() *string {
-	if o == nil {
+func (u *UpdateScheduledMaintenanceStatusPage) GetIntegrationSlug() *string {
+	if u == nil {
 		return nil
 	}
-	return o.IntegrationSlug
+	return u.IntegrationSlug
 }
 
-func (o *UpdateScheduledMaintenanceStatusPage) GetConnectionID() string {
-	if o == nil {
+func (u *UpdateScheduledMaintenanceStatusPage) GetConnectionID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ConnectionID
+	return u.ConnectionID
 }
 
 type UpdateScheduledMaintenanceImpact struct {
@@ -37,25 +37,25 @@ type UpdateScheduledMaintenanceImpact struct {
 	ConditionID string `json:"condition_id"`
 }
 
-func (o *UpdateScheduledMaintenanceImpact) GetType() string {
-	if o == nil {
+func (u *UpdateScheduledMaintenanceImpact) GetType() string {
+	if u == nil {
 		return ""
 	}
-	return o.Type
+	return u.Type
 }
 
-func (o *UpdateScheduledMaintenanceImpact) GetID() string {
-	if o == nil {
+func (u *UpdateScheduledMaintenanceImpact) GetID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ID
+	return u.ID
 }
 
-func (o *UpdateScheduledMaintenanceImpact) GetConditionID() string {
-	if o == nil {
+func (u *UpdateScheduledMaintenanceImpact) GetConditionID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ConditionID
+	return u.ConditionID
 }
 
 // UpdateScheduledMaintenance - Change the conditions of a scheduled maintenance event, including updating any status page announcements of changes.
@@ -86,58 +86,58 @@ func (u *UpdateScheduledMaintenance) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *UpdateScheduledMaintenance) GetName() *string {
-	if o == nil {
+func (u *UpdateScheduledMaintenance) GetName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Name
+	return u.Name
 }
 
-func (o *UpdateScheduledMaintenance) GetSummary() *string {
-	if o == nil {
+func (u *UpdateScheduledMaintenance) GetSummary() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Summary
+	return u.Summary
 }
 
-func (o *UpdateScheduledMaintenance) GetStartsAt() *time.Time {
-	if o == nil {
+func (u *UpdateScheduledMaintenance) GetStartsAt() *time.Time {
+	if u == nil {
 		return nil
 	}
-	return o.StartsAt
+	return u.StartsAt
 }
 
-func (o *UpdateScheduledMaintenance) GetEndsAt() *time.Time {
-	if o == nil {
+func (u *UpdateScheduledMaintenance) GetEndsAt() *time.Time {
+	if u == nil {
 		return nil
 	}
-	return o.EndsAt
+	return u.EndsAt
 }
 
-func (o *UpdateScheduledMaintenance) GetDescription() *string {
-	if o == nil {
+func (u *UpdateScheduledMaintenance) GetDescription() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Description
+	return u.Description
 }
 
-func (o *UpdateScheduledMaintenance) GetLabels() map[string]string {
-	if o == nil {
+func (u *UpdateScheduledMaintenance) GetLabels() map[string]string {
+	if u == nil {
 		return nil
 	}
-	return o.Labels
+	return u.Labels
 }
 
-func (o *UpdateScheduledMaintenance) GetStatusPages() []UpdateScheduledMaintenanceStatusPage {
-	if o == nil {
+func (u *UpdateScheduledMaintenance) GetStatusPages() []UpdateScheduledMaintenanceStatusPage {
+	if u == nil {
 		return nil
 	}
-	return o.StatusPages
+	return u.StatusPages
 }
 
-func (o *UpdateScheduledMaintenance) GetImpacts() []UpdateScheduledMaintenanceImpact {
-	if o == nil {
+func (u *UpdateScheduledMaintenance) GetImpacts() []UpdateScheduledMaintenanceImpact {
+	if u == nil {
 		return nil
 	}
-	return o.Impacts
+	return u.Impacts
 }

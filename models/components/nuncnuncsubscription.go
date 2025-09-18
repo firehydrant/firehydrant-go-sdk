@@ -7,9 +7,9 @@ type NuncNuncSubscription struct {
 	Response *string `json:"response,omitempty"`
 }
 
-func (o *NuncNuncSubscription) GetResponse() *string {
-	if o == nil {
+func (n *NuncNuncSubscription) GetResponse() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Response
+	return n.Response
 }

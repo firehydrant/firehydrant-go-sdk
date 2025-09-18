@@ -10,23 +10,23 @@ type SeverityMatrixConditionEntity struct {
 	Position *int `json:"position,omitempty"`
 }
 
-func (o *SeverityMatrixConditionEntity) GetID() *string {
-	if o == nil {
+func (s *SeverityMatrixConditionEntity) GetID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *SeverityMatrixConditionEntity) GetName() *string {
-	if o == nil {
+func (s *SeverityMatrixConditionEntity) GetName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Name
+	return s.Name
 }
 
-func (o *SeverityMatrixConditionEntity) GetPosition() *int {
-	if o == nil {
+func (s *SeverityMatrixConditionEntity) GetPosition() *int {
+	if s == nil {
 		return nil
 	}
-	return o.Position
+	return s.Position
 }

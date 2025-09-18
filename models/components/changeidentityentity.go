@@ -28,44 +28,44 @@ func (c *ChangeIdentityEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ChangeIdentityEntity) GetID() *string {
-	if o == nil {
+func (c *ChangeIdentityEntity) GetID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *ChangeIdentityEntity) GetType() *string {
-	if o == nil {
+func (c *ChangeIdentityEntity) GetType() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Type
+	return c.Type
 }
 
-func (o *ChangeIdentityEntity) GetValue() *string {
-	if o == nil {
+func (c *ChangeIdentityEntity) GetValue() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Value
+	return c.Value
 }
 
-func (o *ChangeIdentityEntity) GetChangeID() *string {
-	if o == nil {
+func (c *ChangeIdentityEntity) GetChangeID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ChangeID
+	return c.ChangeID
 }
 
-func (o *ChangeIdentityEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (c *ChangeIdentityEntity) GetCreatedAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return c.CreatedAt
 }
 
-func (o *ChangeIdentityEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (c *ChangeIdentityEntity) GetUpdatedAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return c.UpdatedAt
 }

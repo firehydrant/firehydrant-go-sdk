@@ -8,16 +8,16 @@ type PostMortemsPostMortemReportEntityPaginated struct {
 	Pagination *NullablePaginationEntity           `json:"pagination,omitempty"`
 }
 
-func (o *PostMortemsPostMortemReportEntityPaginated) GetData() []PostMortemsPostMortemReportEntity {
-	if o == nil {
+func (p *PostMortemsPostMortemReportEntityPaginated) GetData() []PostMortemsPostMortemReportEntity {
+	if p == nil {
 		return nil
 	}
-	return o.Data
+	return p.Data
 }
 
-func (o *PostMortemsPostMortemReportEntityPaginated) GetPagination() *NullablePaginationEntity {
-	if o == nil {
+func (p *PostMortemsPostMortemReportEntityPaginated) GetPagination() *NullablePaginationEntity {
+	if p == nil {
 		return nil
 	}
-	return o.Pagination
+	return p.Pagination
 }

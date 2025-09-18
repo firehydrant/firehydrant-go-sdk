@@ -6,9 +6,9 @@ type UpdateFieldMapRequest struct {
 	FieldMapID string `pathParam:"style=simple,explode=false,name=field_map_id"`
 }
 
-func (o *UpdateFieldMapRequest) GetFieldMapID() string {
-	if o == nil {
+func (u *UpdateFieldMapRequest) GetFieldMapID() string {
+	if u == nil {
 		return ""
 	}
-	return o.FieldMapID
+	return u.FieldMapID
 }

@@ -6,9 +6,9 @@ type CloseIncidentRequest struct {
 	IncidentID string `pathParam:"style=simple,explode=false,name=incident_id"`
 }
 
-func (o *CloseIncidentRequest) GetIncidentID() string {
-	if o == nil {
+func (c *CloseIncidentRequest) GetIncidentID() string {
+	if c == nil {
 		return ""
 	}
-	return o.IncidentID
+	return c.IncidentID
 }

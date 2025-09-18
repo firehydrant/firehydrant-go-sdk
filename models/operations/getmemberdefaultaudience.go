@@ -6,9 +6,9 @@ type GetMemberDefaultAudienceRequest struct {
 	MemberID int `pathParam:"style=simple,explode=false,name=member_id"`
 }
 
-func (o *GetMemberDefaultAudienceRequest) GetMemberID() int {
-	if o == nil {
+func (g *GetMemberDefaultAudienceRequest) GetMemberID() int {
+	if g == nil {
 		return 0
 	}
-	return o.MemberID
+	return g.MemberID
 }

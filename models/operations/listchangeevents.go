@@ -37,65 +37,65 @@ func (l *ListChangeEventsRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ListChangeEventsRequest) GetPage() *int {
-	if o == nil {
+func (l *ListChangeEventsRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListChangeEventsRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListChangeEventsRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }
 
-func (o *ListChangeEventsRequest) GetSavedSearchID() *string {
-	if o == nil {
+func (l *ListChangeEventsRequest) GetSavedSearchID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.SavedSearchID
+	return l.SavedSearchID
 }
 
-func (o *ListChangeEventsRequest) GetQuery() *string {
-	if o == nil {
+func (l *ListChangeEventsRequest) GetQuery() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Query
+	return l.Query
 }
 
-func (o *ListChangeEventsRequest) GetLabels() *string {
-	if o == nil {
+func (l *ListChangeEventsRequest) GetLabels() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Labels
+	return l.Labels
 }
 
-func (o *ListChangeEventsRequest) GetEnvironments() *string {
-	if o == nil {
+func (l *ListChangeEventsRequest) GetEnvironments() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Environments
+	return l.Environments
 }
 
-func (o *ListChangeEventsRequest) GetServices() *string {
-	if o == nil {
+func (l *ListChangeEventsRequest) GetServices() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Services
+	return l.Services
 }
 
-func (o *ListChangeEventsRequest) GetStartsAt() *string {
-	if o == nil {
+func (l *ListChangeEventsRequest) GetStartsAt() *string {
+	if l == nil {
 		return nil
 	}
-	return o.StartsAt
+	return l.StartsAt
 }
 
-func (o *ListChangeEventsRequest) GetEndsAt() *time.Time {
-	if o == nil {
+func (l *ListChangeEventsRequest) GetEndsAt() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.EndsAt
+	return l.EndsAt
 }

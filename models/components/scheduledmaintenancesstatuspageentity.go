@@ -9,30 +9,30 @@ type ScheduledMaintenancesStatusPageEntity struct {
 	IntegrationName *string `json:"integration_name,omitempty"`
 }
 
-func (o *ScheduledMaintenancesStatusPageEntity) GetID() *string {
-	if o == nil {
+func (s *ScheduledMaintenancesStatusPageEntity) GetID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *ScheduledMaintenancesStatusPageEntity) GetIntegrationID() *string {
-	if o == nil {
+func (s *ScheduledMaintenancesStatusPageEntity) GetIntegrationID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.IntegrationID
+	return s.IntegrationID
 }
 
-func (o *ScheduledMaintenancesStatusPageEntity) GetIntegrationSlug() *string {
-	if o == nil {
+func (s *ScheduledMaintenancesStatusPageEntity) GetIntegrationSlug() *string {
+	if s == nil {
 		return nil
 	}
-	return o.IntegrationSlug
+	return s.IntegrationSlug
 }
 
-func (o *ScheduledMaintenancesStatusPageEntity) GetIntegrationName() *string {
-	if o == nil {
+func (s *ScheduledMaintenancesStatusPageEntity) GetIntegrationName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.IntegrationName
+	return s.IntegrationName
 }

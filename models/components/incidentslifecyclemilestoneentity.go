@@ -30,65 +30,65 @@ func (i *IncidentsLifecycleMilestoneEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *IncidentsLifecycleMilestoneEntity) GetID() *string {
-	if o == nil {
+func (i *IncidentsLifecycleMilestoneEntity) GetID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ID
+	return i.ID
 }
 
-func (o *IncidentsLifecycleMilestoneEntity) GetName() *string {
-	if o == nil {
+func (i *IncidentsLifecycleMilestoneEntity) GetName() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Name
+	return i.Name
 }
 
-func (o *IncidentsLifecycleMilestoneEntity) GetDescription() *string {
-	if o == nil {
+func (i *IncidentsLifecycleMilestoneEntity) GetDescription() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Description
+	return i.Description
 }
 
-func (o *IncidentsLifecycleMilestoneEntity) GetSlug() *string {
-	if o == nil {
+func (i *IncidentsLifecycleMilestoneEntity) GetSlug() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Slug
+	return i.Slug
 }
 
-func (o *IncidentsLifecycleMilestoneEntity) GetPosition() *int {
-	if o == nil {
+func (i *IncidentsLifecycleMilestoneEntity) GetPosition() *int {
+	if i == nil {
 		return nil
 	}
-	return o.Position
+	return i.Position
 }
 
-func (o *IncidentsLifecycleMilestoneEntity) GetOccurredAt() *time.Time {
-	if o == nil {
+func (i *IncidentsLifecycleMilestoneEntity) GetOccurredAt() *time.Time {
+	if i == nil {
 		return nil
 	}
-	return o.OccurredAt
+	return i.OccurredAt
 }
 
-func (o *IncidentsLifecycleMilestoneEntity) GetDuration() *string {
-	if o == nil {
+func (i *IncidentsLifecycleMilestoneEntity) GetDuration() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Duration
+	return i.Duration
 }
 
-func (o *IncidentsLifecycleMilestoneEntity) GetUpdatedBy() *NullableAuthorEntity {
-	if o == nil {
+func (i *IncidentsLifecycleMilestoneEntity) GetUpdatedBy() *NullableAuthorEntity {
+	if i == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return i.UpdatedBy
 }
 
-func (o *IncidentsLifecycleMilestoneEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (i *IncidentsLifecycleMilestoneEntity) GetUpdatedAt() *time.Time {
+	if i == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return i.UpdatedAt
 }

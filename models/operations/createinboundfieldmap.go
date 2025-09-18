@@ -6,9 +6,9 @@ type CreateInboundFieldMapRequest struct {
 	TicketingProjectID string `pathParam:"style=simple,explode=false,name=ticketing_project_id"`
 }
 
-func (o *CreateInboundFieldMapRequest) GetTicketingProjectID() string {
-	if o == nil {
+func (c *CreateInboundFieldMapRequest) GetTicketingProjectID() string {
+	if c == nil {
 		return ""
 	}
-	return o.TicketingProjectID
+	return c.TicketingProjectID
 }

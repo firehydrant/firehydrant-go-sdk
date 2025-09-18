@@ -7,11 +7,11 @@ type CreateScimGroupMember struct {
 	Value string `json:"value"`
 }
 
-func (o *CreateScimGroupMember) GetValue() string {
-	if o == nil {
+func (c *CreateScimGroupMember) GetValue() string {
+	if c == nil {
 		return ""
 	}
-	return o.Value
+	return c.Value
 }
 
 // CreateScimGroup - SCIM endpoint to create a new Team (Colloquial for Group in the SCIM protocol). Any members defined in the payload will be assigned to the team with no defined role.
@@ -21,16 +21,16 @@ type CreateScimGroup struct {
 	Members     []CreateScimGroupMember `json:"members"`
 }
 
-func (o *CreateScimGroup) GetDisplayName() string {
-	if o == nil {
+func (c *CreateScimGroup) GetDisplayName() string {
+	if c == nil {
 		return ""
 	}
-	return o.DisplayName
+	return c.DisplayName
 }
 
-func (o *CreateScimGroup) GetMembers() []CreateScimGroupMember {
-	if o == nil {
+func (c *CreateScimGroup) GetMembers() []CreateScimGroupMember {
+	if c == nil {
 		return []CreateScimGroupMember{}
 	}
-	return o.Members
+	return c.Members
 }

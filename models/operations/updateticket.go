@@ -11,16 +11,16 @@ type UpdateTicketRequest struct {
 	UpdateTicket components.UpdateTicket `request:"mediaType=application/json"`
 }
 
-func (o *UpdateTicketRequest) GetTicketID() string {
-	if o == nil {
+func (u *UpdateTicketRequest) GetTicketID() string {
+	if u == nil {
 		return ""
 	}
-	return o.TicketID
+	return u.TicketID
 }
 
-func (o *UpdateTicketRequest) GetUpdateTicket() components.UpdateTicket {
-	if o == nil {
+func (u *UpdateTicketRequest) GetUpdateTicket() components.UpdateTicket {
+	if u == nil {
 		return components.UpdateTicket{}
 	}
-	return o.UpdateTicket
+	return u.UpdateTicket
 }

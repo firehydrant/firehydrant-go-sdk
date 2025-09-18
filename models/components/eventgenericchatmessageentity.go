@@ -25,23 +25,23 @@ func (e *EventGenericChatMessageEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *EventGenericChatMessageEntity) GetID() *string {
-	if o == nil {
+func (e *EventGenericChatMessageEntity) GetID() *string {
+	if e == nil {
 		return nil
 	}
-	return o.ID
+	return e.ID
 }
 
-func (o *EventGenericChatMessageEntity) GetBody() *string {
-	if o == nil {
+func (e *EventGenericChatMessageEntity) GetBody() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Body
+	return e.Body
 }
 
-func (o *EventGenericChatMessageEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (e *EventGenericChatMessageEntity) GetCreatedAt() *time.Time {
+	if e == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return e.CreatedAt
 }

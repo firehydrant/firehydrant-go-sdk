@@ -45,23 +45,23 @@ type IntegrationsStatuspageConditionEntity struct {
 	StatuspageioCondition *StatuspageioCondition `json:"statuspageio_condition,omitempty"`
 }
 
-func (o *IntegrationsStatuspageConditionEntity) GetConditionID() *string {
-	if o == nil {
+func (i *IntegrationsStatuspageConditionEntity) GetConditionID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ConditionID
+	return i.ConditionID
 }
 
-func (o *IntegrationsStatuspageConditionEntity) GetConditionName() *string {
-	if o == nil {
+func (i *IntegrationsStatuspageConditionEntity) GetConditionName() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ConditionName
+	return i.ConditionName
 }
 
-func (o *IntegrationsStatuspageConditionEntity) GetStatuspageioCondition() *StatuspageioCondition {
-	if o == nil {
+func (i *IntegrationsStatuspageConditionEntity) GetStatuspageioCondition() *StatuspageioCondition {
+	if i == nil {
 		return nil
 	}
-	return o.StatuspageioCondition
+	return i.StatuspageioCondition
 }

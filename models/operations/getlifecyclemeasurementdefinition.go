@@ -6,9 +6,9 @@ type GetLifecycleMeasurementDefinitionRequest struct {
 	MeasurementDefinitionID string `pathParam:"style=simple,explode=false,name=measurement_definition_id"`
 }
 
-func (o *GetLifecycleMeasurementDefinitionRequest) GetMeasurementDefinitionID() string {
-	if o == nil {
+func (g *GetLifecycleMeasurementDefinitionRequest) GetMeasurementDefinitionID() string {
+	if g == nil {
 		return ""
 	}
-	return o.MeasurementDefinitionID
+	return g.MeasurementDefinitionID
 }

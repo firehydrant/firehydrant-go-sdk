@@ -8,16 +8,16 @@ type GetTeamRequest struct {
 	Lite *bool `queryParam:"style=form,explode=true,name=lite"`
 }
 
-func (o *GetTeamRequest) GetTeamID() string {
-	if o == nil {
+func (g *GetTeamRequest) GetTeamID() string {
+	if g == nil {
 		return ""
 	}
-	return o.TeamID
+	return g.TeamID
 }
 
-func (o *GetTeamRequest) GetLite() *bool {
-	if o == nil {
+func (g *GetTeamRequest) GetLite() *bool {
+	if g == nil {
 		return nil
 	}
-	return o.Lite
+	return g.Lite
 }

@@ -9,18 +9,18 @@ type UpdateIncidentTypeImpact struct {
 	ConditionID string `json:"condition_id"`
 }
 
-func (o *UpdateIncidentTypeImpact) GetID() string {
-	if o == nil {
+func (u *UpdateIncidentTypeImpact) GetID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ID
+	return u.ID
 }
 
-func (o *UpdateIncidentTypeImpact) GetConditionID() string {
-	if o == nil {
+func (u *UpdateIncidentTypeImpact) GetConditionID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ConditionID
+	return u.ConditionID
 }
 
 type UpdateIncidentTypeTemplate struct {
@@ -41,74 +41,74 @@ type UpdateIncidentTypeTemplate struct {
 	Impacts []UpdateIncidentTypeImpact `json:"impacts,omitempty"`
 }
 
-func (o *UpdateIncidentTypeTemplate) GetDescription() *string {
-	if o == nil {
+func (u *UpdateIncidentTypeTemplate) GetDescription() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Description
+	return u.Description
 }
 
-func (o *UpdateIncidentTypeTemplate) GetCustomerImpactSummary() *string {
-	if o == nil {
+func (u *UpdateIncidentTypeTemplate) GetCustomerImpactSummary() *string {
+	if u == nil {
 		return nil
 	}
-	return o.CustomerImpactSummary
+	return u.CustomerImpactSummary
 }
 
-func (o *UpdateIncidentTypeTemplate) GetLabels() map[string]string {
-	if o == nil {
+func (u *UpdateIncidentTypeTemplate) GetLabels() map[string]string {
+	if u == nil {
 		return nil
 	}
-	return o.Labels
+	return u.Labels
 }
 
-func (o *UpdateIncidentTypeTemplate) GetSeverity() *string {
-	if o == nil {
+func (u *UpdateIncidentTypeTemplate) GetSeverity() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Severity
+	return u.Severity
 }
 
-func (o *UpdateIncidentTypeTemplate) GetPriority() *string {
-	if o == nil {
+func (u *UpdateIncidentTypeTemplate) GetPriority() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Priority
+	return u.Priority
 }
 
-func (o *UpdateIncidentTypeTemplate) GetTagList() []string {
-	if o == nil {
+func (u *UpdateIncidentTypeTemplate) GetTagList() []string {
+	if u == nil {
 		return nil
 	}
-	return o.TagList
+	return u.TagList
 }
 
-func (o *UpdateIncidentTypeTemplate) GetRunbookIds() []string {
-	if o == nil {
+func (u *UpdateIncidentTypeTemplate) GetRunbookIds() []string {
+	if u == nil {
 		return nil
 	}
-	return o.RunbookIds
+	return u.RunbookIds
 }
 
-func (o *UpdateIncidentTypeTemplate) GetPrivateIncident() *bool {
-	if o == nil {
+func (u *UpdateIncidentTypeTemplate) GetPrivateIncident() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.PrivateIncident
+	return u.PrivateIncident
 }
 
-func (o *UpdateIncidentTypeTemplate) GetTeamIds() []string {
-	if o == nil {
+func (u *UpdateIncidentTypeTemplate) GetTeamIds() []string {
+	if u == nil {
 		return nil
 	}
-	return o.TeamIds
+	return u.TeamIds
 }
 
-func (o *UpdateIncidentTypeTemplate) GetImpacts() []UpdateIncidentTypeImpact {
-	if o == nil {
+func (u *UpdateIncidentTypeTemplate) GetImpacts() []UpdateIncidentTypeImpact {
+	if u == nil {
 		return nil
 	}
-	return o.Impacts
+	return u.Impacts
 }
 
 // UpdateIncidentType - Update a single incident type from its ID
@@ -119,23 +119,23 @@ type UpdateIncidentType struct {
 	Template    UpdateIncidentTypeTemplate `json:"template"`
 }
 
-func (o *UpdateIncidentType) GetName() string {
-	if o == nil {
+func (u *UpdateIncidentType) GetName() string {
+	if u == nil {
 		return ""
 	}
-	return o.Name
+	return u.Name
 }
 
-func (o *UpdateIncidentType) GetDescription() *string {
-	if o == nil {
+func (u *UpdateIncidentType) GetDescription() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Description
+	return u.Description
 }
 
-func (o *UpdateIncidentType) GetTemplate() UpdateIncidentTypeTemplate {
-	if o == nil {
+func (u *UpdateIncidentType) GetTemplate() UpdateIncidentTypeTemplate {
+	if u == nil {
 		return UpdateIncidentTypeTemplate{}
 	}
-	return o.Template
+	return u.Template
 }

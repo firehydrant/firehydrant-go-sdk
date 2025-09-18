@@ -26,30 +26,30 @@ func (u *UpdateAwsCloudtrailBatch) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *UpdateAwsCloudtrailBatch) GetEventsCreated() *int {
-	if o == nil {
+func (u *UpdateAwsCloudtrailBatch) GetEventsCreated() *int {
+	if u == nil {
 		return nil
 	}
-	return o.EventsCreated
+	return u.EventsCreated
 }
 
-func (o *UpdateAwsCloudtrailBatch) GetStatus() *string {
-	if o == nil {
+func (u *UpdateAwsCloudtrailBatch) GetStatus() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Status
+	return u.Status
 }
 
-func (o *UpdateAwsCloudtrailBatch) GetError() *string {
-	if o == nil {
+func (u *UpdateAwsCloudtrailBatch) GetError() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Error
+	return u.Error
 }
 
-func (o *UpdateAwsCloudtrailBatch) GetEndsAt() *time.Time {
-	if o == nil {
+func (u *UpdateAwsCloudtrailBatch) GetEndsAt() *time.Time {
+	if u == nil {
 		return nil
 	}
-	return o.EndsAt
+	return u.EndsAt
 }

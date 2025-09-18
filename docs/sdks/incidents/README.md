@@ -1479,7 +1479,7 @@ func main() {
         }),
     )
 
-    res, err := s.Incidents.ListSimilarIncidents(ctx, "<id>", firehydrantgosdk.Float32(0.2), firehydrantgosdk.Int(5))
+    res, err := s.Incidents.ListSimilarIncidents(ctx, "<id>", firehydrantgosdk.Pointer[float32](0.2), firehydrantgosdk.Pointer[int](5))
     if err != nil {
         log.Fatal(err)
     }

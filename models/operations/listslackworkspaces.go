@@ -7,9 +7,9 @@ type ListSlackWorkspacesRequest struct {
 	ConnectionID string `pathParam:"style=simple,explode=false,name=connection_id"`
 }
 
-func (o *ListSlackWorkspacesRequest) GetConnectionID() string {
-	if o == nil {
+func (l *ListSlackWorkspacesRequest) GetConnectionID() string {
+	if l == nil {
 		return ""
 	}
-	return o.ConnectionID
+	return l.ConnectionID
 }

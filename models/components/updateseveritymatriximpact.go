@@ -8,16 +8,16 @@ type UpdateSeverityMatrixImpact struct {
 	Position *int    `json:"position,omitempty"`
 }
 
-func (o *UpdateSeverityMatrixImpact) GetName() *string {
-	if o == nil {
+func (u *UpdateSeverityMatrixImpact) GetName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Name
+	return u.Name
 }
 
-func (o *UpdateSeverityMatrixImpact) GetPosition() *int {
-	if o == nil {
+func (u *UpdateSeverityMatrixImpact) GetPosition() *int {
+	if u == nil {
 		return nil
 	}
-	return o.Position
+	return u.Position
 }

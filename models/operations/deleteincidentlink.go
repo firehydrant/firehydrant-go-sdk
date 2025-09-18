@@ -7,16 +7,16 @@ type DeleteIncidentLinkRequest struct {
 	IncidentID string `pathParam:"style=simple,explode=false,name=incident_id"`
 }
 
-func (o *DeleteIncidentLinkRequest) GetLinkID() string {
-	if o == nil {
+func (d *DeleteIncidentLinkRequest) GetLinkID() string {
+	if d == nil {
 		return ""
 	}
-	return o.LinkID
+	return d.LinkID
 }
 
-func (o *DeleteIncidentLinkRequest) GetIncidentID() string {
-	if o == nil {
+func (d *DeleteIncidentLinkRequest) GetIncidentID() string {
+	if d == nil {
 		return ""
 	}
-	return o.IncidentID
+	return d.IncidentID
 }

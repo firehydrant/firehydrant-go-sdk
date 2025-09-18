@@ -9,18 +9,18 @@ type CreateIncidentTypeImpact struct {
 	ConditionID string `json:"condition_id"`
 }
 
-func (o *CreateIncidentTypeImpact) GetID() string {
-	if o == nil {
+func (c *CreateIncidentTypeImpact) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *CreateIncidentTypeImpact) GetConditionID() string {
-	if o == nil {
+func (c *CreateIncidentTypeImpact) GetConditionID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ConditionID
+	return c.ConditionID
 }
 
 type CreateIncidentTypeTemplate struct {
@@ -41,74 +41,74 @@ type CreateIncidentTypeTemplate struct {
 	Impacts []CreateIncidentTypeImpact `json:"impacts,omitempty"`
 }
 
-func (o *CreateIncidentTypeTemplate) GetDescription() *string {
-	if o == nil {
+func (c *CreateIncidentTypeTemplate) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *CreateIncidentTypeTemplate) GetCustomerImpactSummary() *string {
-	if o == nil {
+func (c *CreateIncidentTypeTemplate) GetCustomerImpactSummary() *string {
+	if c == nil {
 		return nil
 	}
-	return o.CustomerImpactSummary
+	return c.CustomerImpactSummary
 }
 
-func (o *CreateIncidentTypeTemplate) GetLabels() map[string]string {
-	if o == nil {
+func (c *CreateIncidentTypeTemplate) GetLabels() map[string]string {
+	if c == nil {
 		return nil
 	}
-	return o.Labels
+	return c.Labels
 }
 
-func (o *CreateIncidentTypeTemplate) GetSeverity() *string {
-	if o == nil {
+func (c *CreateIncidentTypeTemplate) GetSeverity() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Severity
+	return c.Severity
 }
 
-func (o *CreateIncidentTypeTemplate) GetPriority() *string {
-	if o == nil {
+func (c *CreateIncidentTypeTemplate) GetPriority() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Priority
+	return c.Priority
 }
 
-func (o *CreateIncidentTypeTemplate) GetTagList() []string {
-	if o == nil {
+func (c *CreateIncidentTypeTemplate) GetTagList() []string {
+	if c == nil {
 		return nil
 	}
-	return o.TagList
+	return c.TagList
 }
 
-func (o *CreateIncidentTypeTemplate) GetRunbookIds() []string {
-	if o == nil {
+func (c *CreateIncidentTypeTemplate) GetRunbookIds() []string {
+	if c == nil {
 		return nil
 	}
-	return o.RunbookIds
+	return c.RunbookIds
 }
 
-func (o *CreateIncidentTypeTemplate) GetPrivateIncident() *bool {
-	if o == nil {
+func (c *CreateIncidentTypeTemplate) GetPrivateIncident() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.PrivateIncident
+	return c.PrivateIncident
 }
 
-func (o *CreateIncidentTypeTemplate) GetTeamIds() []string {
-	if o == nil {
+func (c *CreateIncidentTypeTemplate) GetTeamIds() []string {
+	if c == nil {
 		return nil
 	}
-	return o.TeamIds
+	return c.TeamIds
 }
 
-func (o *CreateIncidentTypeTemplate) GetImpacts() []CreateIncidentTypeImpact {
-	if o == nil {
+func (c *CreateIncidentTypeTemplate) GetImpacts() []CreateIncidentTypeImpact {
+	if c == nil {
 		return nil
 	}
-	return o.Impacts
+	return c.Impacts
 }
 
 // CreateIncidentType - Create a new incident type
@@ -119,23 +119,23 @@ type CreateIncidentType struct {
 	Template    CreateIncidentTypeTemplate `json:"template"`
 }
 
-func (o *CreateIncidentType) GetName() string {
-	if o == nil {
+func (c *CreateIncidentType) GetName() string {
+	if c == nil {
 		return ""
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CreateIncidentType) GetDescription() *string {
-	if o == nil {
+func (c *CreateIncidentType) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *CreateIncidentType) GetTemplate() CreateIncidentTypeTemplate {
-	if o == nil {
+func (c *CreateIncidentType) GetTemplate() CreateIncidentTypeTemplate {
+	if c == nil {
 		return CreateIncidentTypeTemplate{}
 	}
-	return o.Template
+	return c.Template
 }

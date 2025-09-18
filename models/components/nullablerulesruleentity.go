@@ -8,16 +8,16 @@ type NullableRulesRuleEntity struct {
 	UserData *NullableFHTypesGenericEntity `json:"user_data,omitempty"`
 }
 
-func (o *NullableRulesRuleEntity) GetLogic() *string {
-	if o == nil {
+func (n *NullableRulesRuleEntity) GetLogic() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Logic
+	return n.Logic
 }
 
-func (o *NullableRulesRuleEntity) GetUserData() *NullableFHTypesGenericEntity {
-	if o == nil {
+func (n *NullableRulesRuleEntity) GetUserData() *NullableFHTypesGenericEntity {
+	if n == nil {
 		return nil
 	}
-	return o.UserData
+	return n.UserData
 }

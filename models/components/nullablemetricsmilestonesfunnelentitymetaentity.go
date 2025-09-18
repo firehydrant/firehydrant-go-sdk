@@ -7,16 +7,16 @@ type NullableMetricsMilestonesFunnelEntityMetaEntity struct {
 	AddedMilestones   []string `json:"added_milestones,omitempty"`
 }
 
-func (o *NullableMetricsMilestonesFunnelEntityMetaEntity) GetDeletedMilestones() []string {
-	if o == nil {
+func (n *NullableMetricsMilestonesFunnelEntityMetaEntity) GetDeletedMilestones() []string {
+	if n == nil {
 		return nil
 	}
-	return o.DeletedMilestones
+	return n.DeletedMilestones
 }
 
-func (o *NullableMetricsMilestonesFunnelEntityMetaEntity) GetAddedMilestones() []string {
-	if o == nil {
+func (n *NullableMetricsMilestonesFunnelEntityMetaEntity) GetAddedMilestones() []string {
+	if n == nil {
 		return nil
 	}
-	return o.AddedMilestones
+	return n.AddedMilestones
 }

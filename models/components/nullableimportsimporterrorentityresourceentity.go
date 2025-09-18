@@ -8,23 +8,23 @@ type NullableImportsImportErrorEntityResourceEntity struct {
 	Name         *string `json:"name,omitempty"`
 }
 
-func (o *NullableImportsImportErrorEntityResourceEntity) GetResourceID() *string {
-	if o == nil {
+func (n *NullableImportsImportErrorEntityResourceEntity) GetResourceID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ResourceID
+	return n.ResourceID
 }
 
-func (o *NullableImportsImportErrorEntityResourceEntity) GetResourceType() *string {
-	if o == nil {
+func (n *NullableImportsImportErrorEntityResourceEntity) GetResourceType() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ResourceType
+	return n.ResourceType
 }
 
-func (o *NullableImportsImportErrorEntityResourceEntity) GetName() *string {
-	if o == nil {
+func (n *NullableImportsImportErrorEntityResourceEntity) GetName() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Name
+	return n.Name
 }

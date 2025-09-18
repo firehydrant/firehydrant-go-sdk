@@ -6,9 +6,9 @@ type DeleteTicketingPriorityRequest struct {
 	ID string `pathParam:"style=simple,explode=false,name=id"`
 }
 
-func (o *DeleteTicketingPriorityRequest) GetID() string {
-	if o == nil {
+func (d *DeleteTicketingPriorityRequest) GetID() string {
+	if d == nil {
 		return ""
 	}
-	return o.ID
+	return d.ID
 }

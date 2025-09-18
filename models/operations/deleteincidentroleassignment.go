@@ -7,16 +7,16 @@ type DeleteIncidentRoleAssignmentRequest struct {
 	RoleAssignmentID string `pathParam:"style=simple,explode=false,name=role_assignment_id"`
 }
 
-func (o *DeleteIncidentRoleAssignmentRequest) GetIncidentID() string {
-	if o == nil {
+func (d *DeleteIncidentRoleAssignmentRequest) GetIncidentID() string {
+	if d == nil {
 		return ""
 	}
-	return o.IncidentID
+	return d.IncidentID
 }
 
-func (o *DeleteIncidentRoleAssignmentRequest) GetRoleAssignmentID() string {
-	if o == nil {
+func (d *DeleteIncidentRoleAssignmentRequest) GetRoleAssignmentID() string {
+	if d == nil {
 		return ""
 	}
-	return o.RoleAssignmentID
+	return d.RoleAssignmentID
 }

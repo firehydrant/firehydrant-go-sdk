@@ -22,9 +22,9 @@ func (l *ListAudiencesRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ListAudiencesRequest) GetIncludeArchived() *bool {
-	if o == nil {
+func (l *ListAudiencesRequest) GetIncludeArchived() *bool {
+	if l == nil {
 		return nil
 	}
-	return o.IncludeArchived
+	return l.IncludeArchived
 }

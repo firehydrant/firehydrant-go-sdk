@@ -14,8 +14,10 @@ type IncidentTypeEntity struct {
 	Description    *string                                         `json:"description,omitempty"`
 	Template       *NullableIncidentTypeEntityTemplateEntity       `json:"template,omitempty"`
 	TemplateValues *NullableIncidentTypeEntityTemplateValuesEntity `json:"template_values,omitempty"`
-	CreatedAt      *time.Time                                      `json:"created_at,omitempty"`
-	UpdatedAt      *time.Time                                      `json:"updated_at,omitempty"`
+	// A list of fields that are required on incidents of this type.
+	RequiredFields []IncidentsRequiredFieldEntity `json:"required_fields,omitempty"`
+	CreatedAt      *time.Time                     `json:"created_at,omitempty"`
+	UpdatedAt      *time.Time                     `json:"updated_at,omitempty"`
 }
 
 func (i IncidentTypeEntity) MarshalJSON() ([]byte, error) {
@@ -29,51 +31,58 @@ func (i *IncidentTypeEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *IncidentTypeEntity) GetID() *string {
-	if o == nil {
+func (i *IncidentTypeEntity) GetID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ID
+	return i.ID
 }
 
-func (o *IncidentTypeEntity) GetName() *string {
-	if o == nil {
+func (i *IncidentTypeEntity) GetName() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Name
+	return i.Name
 }
 
-func (o *IncidentTypeEntity) GetDescription() *string {
-	if o == nil {
+func (i *IncidentTypeEntity) GetDescription() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Description
+	return i.Description
 }
 
-func (o *IncidentTypeEntity) GetTemplate() *NullableIncidentTypeEntityTemplateEntity {
-	if o == nil {
+func (i *IncidentTypeEntity) GetTemplate() *NullableIncidentTypeEntityTemplateEntity {
+	if i == nil {
 		return nil
 	}
-	return o.Template
+	return i.Template
 }
 
-func (o *IncidentTypeEntity) GetTemplateValues() *NullableIncidentTypeEntityTemplateValuesEntity {
-	if o == nil {
+func (i *IncidentTypeEntity) GetTemplateValues() *NullableIncidentTypeEntityTemplateValuesEntity {
+	if i == nil {
 		return nil
 	}
-	return o.TemplateValues
+	return i.TemplateValues
 }
 
-func (o *IncidentTypeEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (i *IncidentTypeEntity) GetRequiredFields() []IncidentsRequiredFieldEntity {
+	if i == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return i.RequiredFields
 }
 
-func (o *IncidentTypeEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (i *IncidentTypeEntity) GetCreatedAt() *time.Time {
+	if i == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return i.CreatedAt
+}
+
+func (i *IncidentTypeEntity) GetUpdatedAt() *time.Time {
+	if i == nil {
+		return nil
+	}
+	return i.UpdatedAt
 }

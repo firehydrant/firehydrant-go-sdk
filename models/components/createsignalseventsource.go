@@ -18,18 +18,18 @@ type CreateSignalsEventSourceExamplePayload struct {
 	Data *CreateSignalsEventSourceData `json:"data,omitempty"`
 }
 
-func (o *CreateSignalsEventSourceExamplePayload) GetHeaders() *Headers {
-	if o == nil {
+func (c *CreateSignalsEventSourceExamplePayload) GetHeaders() *Headers {
+	if c == nil {
 		return nil
 	}
-	return o.Headers
+	return c.Headers
 }
 
-func (o *CreateSignalsEventSourceExamplePayload) GetData() *CreateSignalsEventSourceData {
-	if o == nil {
+func (c *CreateSignalsEventSourceExamplePayload) GetData() *CreateSignalsEventSourceData {
+	if c == nil {
 		return nil
 	}
-	return o.Data
+	return c.Data
 }
 
 // CreateSignalsEventSource - Create a Signals event source for the authenticated user.
@@ -46,37 +46,37 @@ type CreateSignalsEventSource struct {
 	Javascript string `json:"javascript"`
 }
 
-func (o *CreateSignalsEventSource) GetName() string {
-	if o == nil {
+func (c *CreateSignalsEventSource) GetName() string {
+	if c == nil {
 		return ""
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CreateSignalsEventSource) GetDescription() *string {
-	if o == nil {
+func (c *CreateSignalsEventSource) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *CreateSignalsEventSource) GetSlug() string {
-	if o == nil {
+func (c *CreateSignalsEventSource) GetSlug() string {
+	if c == nil {
 		return ""
 	}
-	return o.Slug
+	return c.Slug
 }
 
-func (o *CreateSignalsEventSource) GetExamplePayload() CreateSignalsEventSourceExamplePayload {
-	if o == nil {
+func (c *CreateSignalsEventSource) GetExamplePayload() CreateSignalsEventSourceExamplePayload {
+	if c == nil {
 		return CreateSignalsEventSourceExamplePayload{}
 	}
-	return o.ExamplePayload
+	return c.ExamplePayload
 }
 
-func (o *CreateSignalsEventSource) GetJavascript() string {
-	if o == nil {
+func (c *CreateSignalsEventSource) GetJavascript() string {
+	if c == nil {
 		return ""
 	}
-	return o.Javascript
+	return c.Javascript
 }

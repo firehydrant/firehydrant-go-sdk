@@ -31,100 +31,100 @@ type ListServicesRequest struct {
 	Include []string `queryParam:"style=form,explode=false,name=include"`
 }
 
-func (o *ListServicesRequest) GetPage() *int {
-	if o == nil {
+func (l *ListServicesRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListServicesRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListServicesRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }
 
-func (o *ListServicesRequest) GetLabels() *string {
-	if o == nil {
+func (l *ListServicesRequest) GetLabels() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Labels
+	return l.Labels
 }
 
-func (o *ListServicesRequest) GetQuery() *string {
-	if o == nil {
+func (l *ListServicesRequest) GetQuery() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Query
+	return l.Query
 }
 
-func (o *ListServicesRequest) GetName() *string {
-	if o == nil {
+func (l *ListServicesRequest) GetName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Name
+	return l.Name
 }
 
-func (o *ListServicesRequest) GetTiers() *string {
-	if o == nil {
+func (l *ListServicesRequest) GetTiers() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Tiers
+	return l.Tiers
 }
 
-func (o *ListServicesRequest) GetImpacted() *string {
-	if o == nil {
+func (l *ListServicesRequest) GetImpacted() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Impacted
+	return l.Impacted
 }
 
-func (o *ListServicesRequest) GetOwner() *string {
-	if o == nil {
+func (l *ListServicesRequest) GetOwner() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Owner
+	return l.Owner
 }
 
-func (o *ListServicesRequest) GetRespondingTeams() *string {
-	if o == nil {
+func (l *ListServicesRequest) GetRespondingTeams() *string {
+	if l == nil {
 		return nil
 	}
-	return o.RespondingTeams
+	return l.RespondingTeams
 }
 
-func (o *ListServicesRequest) GetFunctionalities() *string {
-	if o == nil {
+func (l *ListServicesRequest) GetFunctionalities() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Functionalities
+	return l.Functionalities
 }
 
-func (o *ListServicesRequest) GetAvailableDownstreamDependenciesForID() *string {
-	if o == nil {
+func (l *ListServicesRequest) GetAvailableDownstreamDependenciesForID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.AvailableDownstreamDependenciesForID
+	return l.AvailableDownstreamDependenciesForID
 }
 
-func (o *ListServicesRequest) GetAvailableUpstreamDependenciesForID() *string {
-	if o == nil {
+func (l *ListServicesRequest) GetAvailableUpstreamDependenciesForID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.AvailableUpstreamDependenciesForID
+	return l.AvailableUpstreamDependenciesForID
 }
 
-func (o *ListServicesRequest) GetLite() *bool {
-	if o == nil {
+func (l *ListServicesRequest) GetLite() *bool {
+	if l == nil {
 		return nil
 	}
-	return o.Lite
+	return l.Lite
 }
 
-func (o *ListServicesRequest) GetInclude() []string {
-	if o == nil {
+func (l *ListServicesRequest) GetInclude() []string {
+	if l == nil {
 		return nil
 	}
-	return o.Include
+	return l.Include
 }

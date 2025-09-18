@@ -11,16 +11,16 @@ type UpdateIncidentRequest struct {
 	UpdateIncident components.UpdateIncident `request:"mediaType=application/json"`
 }
 
-func (o *UpdateIncidentRequest) GetIncidentID() string {
-	if o == nil {
+func (u *UpdateIncidentRequest) GetIncidentID() string {
+	if u == nil {
 		return ""
 	}
-	return o.IncidentID
+	return u.IncidentID
 }
 
-func (o *UpdateIncidentRequest) GetUpdateIncident() components.UpdateIncident {
-	if o == nil {
+func (u *UpdateIncidentRequest) GetUpdateIncident() components.UpdateIncident {
+	if u == nil {
 		return components.UpdateIncident{}
 	}
-	return o.UpdateIncident
+	return u.UpdateIncident
 }

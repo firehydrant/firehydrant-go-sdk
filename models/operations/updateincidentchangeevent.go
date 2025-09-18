@@ -12,23 +12,23 @@ type UpdateIncidentChangeEventRequest struct {
 	UpdateIncidentChangeEvent components.UpdateIncidentChangeEvent `request:"mediaType=application/json"`
 }
 
-func (o *UpdateIncidentChangeEventRequest) GetRelatedChangeEventID() string {
-	if o == nil {
+func (u *UpdateIncidentChangeEventRequest) GetRelatedChangeEventID() string {
+	if u == nil {
 		return ""
 	}
-	return o.RelatedChangeEventID
+	return u.RelatedChangeEventID
 }
 
-func (o *UpdateIncidentChangeEventRequest) GetIncidentID() string {
-	if o == nil {
+func (u *UpdateIncidentChangeEventRequest) GetIncidentID() string {
+	if u == nil {
 		return ""
 	}
-	return o.IncidentID
+	return u.IncidentID
 }
 
-func (o *UpdateIncidentChangeEventRequest) GetUpdateIncidentChangeEvent() components.UpdateIncidentChangeEvent {
-	if o == nil {
+func (u *UpdateIncidentChangeEventRequest) GetUpdateIncidentChangeEvent() components.UpdateIncidentChangeEvent {
+	if u == nil {
 		return components.UpdateIncidentChangeEvent{}
 	}
-	return o.UpdateIncidentChangeEvent
+	return u.UpdateIncidentChangeEvent
 }

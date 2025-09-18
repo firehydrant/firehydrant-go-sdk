@@ -39,16 +39,16 @@ type UpdateWebhook struct {
 	State *UpdateWebhookState `json:"state,omitempty"`
 }
 
-func (o *UpdateWebhook) GetURL() *string {
-	if o == nil {
+func (u *UpdateWebhook) GetURL() *string {
+	if u == nil {
 		return nil
 	}
-	return o.URL
+	return u.URL
 }
 
-func (o *UpdateWebhook) GetState() *UpdateWebhookState {
-	if o == nil {
+func (u *UpdateWebhook) GetState() *UpdateWebhookState {
+	if u == nil {
 		return nil
 	}
-	return o.State
+	return u.State
 }

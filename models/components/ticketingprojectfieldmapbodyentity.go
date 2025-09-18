@@ -45,44 +45,44 @@ type TicketingProjectFieldMapBodyEntity struct {
 	Else          *NullableTicketingProjectFieldMapCasesElseEntity     `json:"else,omitempty"`
 }
 
-func (o *TicketingProjectFieldMapBodyEntity) GetStrategy() *StrategyEnum {
-	if o == nil {
+func (t *TicketingProjectFieldMapBodyEntity) GetStrategy() *StrategyEnum {
+	if t == nil {
 		return nil
 	}
-	return o.Strategy
+	return t.Strategy
 }
 
-func (o *TicketingProjectFieldMapBodyEntity) GetExternalField() *string {
-	if o == nil {
+func (t *TicketingProjectFieldMapBodyEntity) GetExternalField() *string {
+	if t == nil {
 		return nil
 	}
-	return o.ExternalField
+	return t.ExternalField
 }
 
-func (o *TicketingProjectFieldMapBodyEntity) GetExternalValue() *NullableTicketingProjectFieldMapExternalValueEntity {
-	if o == nil {
+func (t *TicketingProjectFieldMapBodyEntity) GetExternalValue() *NullableTicketingProjectFieldMapExternalValueEntity {
+	if t == nil {
 		return nil
 	}
-	return o.ExternalValue
+	return t.ExternalValue
 }
 
-func (o *TicketingProjectFieldMapBodyEntity) GetUserData() *UserData {
-	if o == nil {
+func (t *TicketingProjectFieldMapBodyEntity) GetUserData() *UserData {
+	if t == nil {
 		return nil
 	}
-	return o.UserData
+	return t.UserData
 }
 
-func (o *TicketingProjectFieldMapBodyEntity) GetCases() []TicketingProjectFieldMapCasesEntity {
-	if o == nil {
+func (t *TicketingProjectFieldMapBodyEntity) GetCases() []TicketingProjectFieldMapCasesEntity {
+	if t == nil {
 		return nil
 	}
-	return o.Cases
+	return t.Cases
 }
 
-func (o *TicketingProjectFieldMapBodyEntity) GetElse() *NullableTicketingProjectFieldMapCasesElseEntity {
-	if o == nil {
+func (t *TicketingProjectFieldMapBodyEntity) GetElse() *NullableTicketingProjectFieldMapCasesElseEntity {
+	if t == nil {
 		return nil
 	}
-	return o.Else
+	return t.Else
 }

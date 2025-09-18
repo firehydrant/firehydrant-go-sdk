@@ -50,58 +50,58 @@ type EntitlementEntity struct {
 	Tier         *Tier    `json:"tier,omitempty"`
 }
 
-func (o *EntitlementEntity) GetCurrentCount() *int {
-	if o == nil {
+func (e *EntitlementEntity) GetCurrentCount() *int {
+	if e == nil {
 		return nil
 	}
-	return o.CurrentCount
+	return e.CurrentCount
 }
 
-func (o *EntitlementEntity) GetErrors() []string {
-	if o == nil {
+func (e *EntitlementEntity) GetErrors() []string {
+	if e == nil {
 		return nil
 	}
-	return o.Errors
+	return e.Errors
 }
 
-func (o *EntitlementEntity) GetExists() *bool {
-	if o == nil {
+func (e *EntitlementEntity) GetExists() *bool {
+	if e == nil {
 		return nil
 	}
-	return o.Exists
+	return e.Exists
 }
 
-func (o *EntitlementEntity) GetAvailable() *bool {
-	if o == nil {
+func (e *EntitlementEntity) GetAvailable() *bool {
+	if e == nil {
 		return nil
 	}
-	return o.Available
+	return e.Available
 }
 
-func (o *EntitlementEntity) GetMaximum() *int {
-	if o == nil {
+func (e *EntitlementEntity) GetMaximum() *int {
+	if e == nil {
 		return nil
 	}
-	return o.Maximum
+	return e.Maximum
 }
 
-func (o *EntitlementEntity) GetName() *string {
-	if o == nil {
+func (e *EntitlementEntity) GetName() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Name
+	return e.Name
 }
 
-func (o *EntitlementEntity) GetSlug() *string {
-	if o == nil {
+func (e *EntitlementEntity) GetSlug() *string {
+	if e == nil {
 		return nil
 	}
-	return o.Slug
+	return e.Slug
 }
 
-func (o *EntitlementEntity) GetTier() *Tier {
-	if o == nil {
+func (e *EntitlementEntity) GetTier() *Tier {
+	if e == nil {
 		return nil
 	}
-	return o.Tier
+	return e.Tier
 }

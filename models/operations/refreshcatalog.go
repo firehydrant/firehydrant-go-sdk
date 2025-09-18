@@ -6,9 +6,9 @@ type RefreshCatalogRequest struct {
 	CatalogID string `pathParam:"style=simple,explode=false,name=catalog_id"`
 }
 
-func (o *RefreshCatalogRequest) GetCatalogID() string {
-	if o == nil {
+func (r *RefreshCatalogRequest) GetCatalogID() string {
+	if r == nil {
 		return ""
 	}
-	return o.CatalogID
+	return r.CatalogID
 }

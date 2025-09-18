@@ -25,23 +25,23 @@ func (m *MetricsMilestonesFunnelEntityDataBucketEntity) UnmarshalJSON(data []byt
 	return nil
 }
 
-func (o *MetricsMilestonesFunnelEntityDataBucketEntity) GetTimeBucket() *time.Time {
-	if o == nil {
+func (m *MetricsMilestonesFunnelEntityDataBucketEntity) GetTimeBucket() *time.Time {
+	if m == nil {
 		return nil
 	}
-	return o.TimeBucket
+	return m.TimeBucket
 }
 
-func (o *MetricsMilestonesFunnelEntityDataBucketEntity) GetFilterParams() *NullableMetricsMilestonesFunnelEntityDataBucketFilterParamsEntity {
-	if o == nil {
+func (m *MetricsMilestonesFunnelEntityDataBucketEntity) GetFilterParams() *NullableMetricsMilestonesFunnelEntityDataBucketFilterParamsEntity {
+	if m == nil {
 		return nil
 	}
-	return o.FilterParams
+	return m.FilterParams
 }
 
-func (o *MetricsMilestonesFunnelEntityDataBucketEntity) GetMilestoneCounts() []MetricsMilestonesFunnelEntityDataBucketMilestoneCountEntity {
-	if o == nil {
+func (m *MetricsMilestonesFunnelEntityDataBucketEntity) GetMilestoneCounts() []MetricsMilestonesFunnelEntityDataBucketMilestoneCountEntity {
+	if m == nil {
 		return nil
 	}
-	return o.MilestoneCounts
+	return m.MilestoneCounts
 }

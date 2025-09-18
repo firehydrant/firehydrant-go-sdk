@@ -12,23 +12,23 @@ type CreateServiceChecklistResponseRequest struct {
 	CreateServiceChecklistResponse components.CreateServiceChecklistResponse `request:"mediaType=application/json"`
 }
 
-func (o *CreateServiceChecklistResponseRequest) GetServiceID() string {
-	if o == nil {
+func (c *CreateServiceChecklistResponseRequest) GetServiceID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ServiceID
+	return c.ServiceID
 }
 
-func (o *CreateServiceChecklistResponseRequest) GetChecklistID() string {
-	if o == nil {
+func (c *CreateServiceChecklistResponseRequest) GetChecklistID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ChecklistID
+	return c.ChecklistID
 }
 
-func (o *CreateServiceChecklistResponseRequest) GetCreateServiceChecklistResponse() components.CreateServiceChecklistResponse {
-	if o == nil {
+func (c *CreateServiceChecklistResponseRequest) GetCreateServiceChecklistResponse() components.CreateServiceChecklistResponse {
+	if c == nil {
 		return components.CreateServiceChecklistResponse{}
 	}
-	return o.CreateServiceChecklistResponse
+	return c.CreateServiceChecklistResponse
 }

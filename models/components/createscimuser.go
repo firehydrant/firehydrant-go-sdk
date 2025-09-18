@@ -10,18 +10,18 @@ type CreateScimUserName struct {
 	GivenName string `json:"givenName"`
 }
 
-func (o *CreateScimUserName) GetFamilyName() string {
-	if o == nil {
+func (c *CreateScimUserName) GetFamilyName() string {
+	if c == nil {
 		return ""
 	}
-	return o.FamilyName
+	return c.FamilyName
 }
 
-func (o *CreateScimUserName) GetGivenName() string {
-	if o == nil {
+func (c *CreateScimUserName) GetGivenName() string {
+	if c == nil {
 		return ""
 	}
-	return o.GivenName
+	return c.GivenName
 }
 
 type CreateScimUserEmail struct {
@@ -31,18 +31,18 @@ type CreateScimUserEmail struct {
 	Primary bool `json:"primary"`
 }
 
-func (o *CreateScimUserEmail) GetValue() string {
-	if o == nil {
+func (c *CreateScimUserEmail) GetValue() string {
+	if c == nil {
 		return ""
 	}
-	return o.Value
+	return c.Value
 }
 
-func (o *CreateScimUserEmail) GetPrimary() bool {
-	if o == nil {
+func (c *CreateScimUserEmail) GetPrimary() bool {
+	if c == nil {
 		return false
 	}
-	return o.Primary
+	return c.Primary
 }
 
 // CreateScimUserRoles - Roles for the User. Options are owner, member, collaborator, or viewer. Roles may be specified as strings or SCIM role objects.
@@ -58,25 +58,25 @@ type CreateScimUserPhoneNumber struct {
 	Primary *bool `json:"primary,omitempty"`
 }
 
-func (o *CreateScimUserPhoneNumber) GetValue() string {
-	if o == nil {
+func (c *CreateScimUserPhoneNumber) GetValue() string {
+	if c == nil {
 		return ""
 	}
-	return o.Value
+	return c.Value
 }
 
-func (o *CreateScimUserPhoneNumber) GetType() *string {
-	if o == nil {
+func (c *CreateScimUserPhoneNumber) GetType() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Type
+	return c.Type
 }
 
-func (o *CreateScimUserPhoneNumber) GetPrimary() *bool {
-	if o == nil {
+func (c *CreateScimUserPhoneNumber) GetPrimary() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Primary
+	return c.Primary
 }
 
 // CreateScimUser - SCIM endpoint to create and provision a new User. This endpoint will provision the User, which allows them to accept their account throught their IDP or via the Forgot Password flow.
@@ -95,44 +95,44 @@ type CreateScimUser struct {
 	PhoneNumbers []CreateScimUserPhoneNumber `json:"phoneNumbers,omitempty"`
 }
 
-func (o *CreateScimUser) GetUserName() string {
-	if o == nil {
+func (c *CreateScimUser) GetUserName() string {
+	if c == nil {
 		return ""
 	}
-	return o.UserName
+	return c.UserName
 }
 
-func (o *CreateScimUser) GetName() CreateScimUserName {
-	if o == nil {
+func (c *CreateScimUser) GetName() CreateScimUserName {
+	if c == nil {
 		return CreateScimUserName{}
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CreateScimUser) GetEmails() []CreateScimUserEmail {
-	if o == nil {
+func (c *CreateScimUser) GetEmails() []CreateScimUserEmail {
+	if c == nil {
 		return []CreateScimUserEmail{}
 	}
-	return o.Emails
+	return c.Emails
 }
 
-func (o *CreateScimUser) GetRoles() *CreateScimUserRoles {
-	if o == nil {
+func (c *CreateScimUser) GetRoles() *CreateScimUserRoles {
+	if c == nil {
 		return nil
 	}
-	return o.Roles
+	return c.Roles
 }
 
-func (o *CreateScimUser) GetPassword() *string {
-	if o == nil {
+func (c *CreateScimUser) GetPassword() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Password
+	return c.Password
 }
 
-func (o *CreateScimUser) GetPhoneNumbers() []CreateScimUserPhoneNumber {
-	if o == nil {
+func (c *CreateScimUser) GetPhoneNumbers() []CreateScimUserPhoneNumber {
+	if c == nil {
 		return nil
 	}
-	return o.PhoneNumbers
+	return c.PhoneNumbers
 }

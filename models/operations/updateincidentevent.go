@@ -7,16 +7,16 @@ type UpdateIncidentEventRequest struct {
 	EventID    string `pathParam:"style=simple,explode=false,name=event_id"`
 }
 
-func (o *UpdateIncidentEventRequest) GetIncidentID() string {
-	if o == nil {
+func (u *UpdateIncidentEventRequest) GetIncidentID() string {
+	if u == nil {
 		return ""
 	}
-	return o.IncidentID
+	return u.IncidentID
 }
 
-func (o *UpdateIncidentEventRequest) GetEventID() string {
-	if o == nil {
+func (u *UpdateIncidentEventRequest) GetEventID() string {
+	if u == nil {
 		return ""
 	}
-	return o.EventID
+	return u.EventID
 }

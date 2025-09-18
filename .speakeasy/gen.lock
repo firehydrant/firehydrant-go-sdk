@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 39357612-0c85-4a96-a549-e2d920c4a065
 management:
-  docChecksum: b8b618f16eb1b3d67211013052bd6fdb
+  docChecksum: b64c9fecb8c502275eece775e517c520
   docVersion: 0.0.1
-  speakeasyVersion: 1.615.2
-  generationVersion: 2.698.4
-  releaseVersion: 1.3.7
-  configChecksum: d5c162a9ebaba0313aa53d81670ed2fe
+  speakeasyVersion: 1.618.1
+  generationVersion: 2.702.0
+  releaseVersion: 1.4.0
+  configChecksum: 4b91e318c6986a55914f3dfe27f1de3c
   repoURL: https://github.com/firehydrant/firehydrant-go-sdk.git
   installationURL: https://github.com/firehydrant/firehydrant-go-sdk
 features:
   go:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.12
-    core: 3.9.6
+    core: 3.10.0
     defaultEnabledRetries: 0.2.0
     envVarSecurityUsage: 0.3.2
     flattening: 2.81.1
@@ -22,7 +22,7 @@ features:
     globalSecurityCallbacks: 0.1.0
     globalServerURLs: 2.82.3
     intellisenseMarkdownSupport: 0.1.0
-    nullables: 0.1.1
+    nullables: 0.2.0
     responseFormat: 0.1.2
     retries: 2.84.2
     sdkHooks: 0.2.0
@@ -161,6 +161,7 @@ generatedFiles:
   - /models/components/incidentsrelatedchangeevententity.go
   - /models/components/incidentsrelatedchangeevententitypaginated.go
   - /models/components/incidentsrelationshipsentity.go
+  - /models/components/incidentsrequiredfieldentity.go
   - /models/components/incidentsretrospectiveentity.go
   - /models/components/incidentsretrospectiveentitypaginated.go
   - /models/components/incidentsretrospectiveentitysectionentity.go
@@ -504,7 +505,6 @@ generatedFiles:
   - /models/operations/createcommentreaction.go
   - /models/operations/createconnection.go
   - /models/operations/createemailsubscriber.go
-  - /models/operations/createhandoffnotificationsetting.go
   - /models/operations/createinboundfieldmap.go
   - /models/operations/createincidentalert.go
   - /models/operations/createincidentattachment.go
@@ -523,6 +523,7 @@ generatedFiles:
   - /models/operations/createincidentteamassignment.go
   - /models/operations/createlifecyclemeasurementdefinition.go
   - /models/operations/createlifecyclemilestone.go
+  - /models/operations/createnotificationpolicy.go
   - /models/operations/createnunccomponentgroup.go
   - /models/operations/createnuncconnection.go
   - /models/operations/createnunclink.go
@@ -1168,6 +1169,7 @@ generatedFiles:
   - docs/models/components/incidentsrelatedchangeevententitypaginated.md
   - docs/models/components/incidentsrelatedchangeevententitytype.md
   - docs/models/components/incidentsrelationshipsentity.md
+  - docs/models/components/incidentsrequiredfieldentity.md
   - docs/models/components/incidentsretrospectiveentity.md
   - docs/models/components/incidentsretrospectiveentitypaginated.md
   - docs/models/components/incidentsretrospectiveentitysectionentity.md
@@ -1703,9 +1705,6 @@ generatedFiles:
   - docs/models/operations/createconnectionrequest.md
   - docs/models/operations/createemailsubscriberrequest.md
   - docs/models/operations/createemailsubscriberrequestbody.md
-  - docs/models/operations/createhandoffnotificationsettingnotificationgroupmethod.md
-  - docs/models/operations/createhandoffnotificationsettingpriority.md
-  - docs/models/operations/createhandoffnotificationsettingrequest.md
   - docs/models/operations/createinboundfieldmaprequest.md
   - docs/models/operations/createincidentalertrequest.md
   - docs/models/operations/createincidentattachmentfile.md
@@ -1731,6 +1730,9 @@ generatedFiles:
   - docs/models/operations/createlifecyclemeasurementdefinitionrequest.md
   - docs/models/operations/createlifecyclemilestoneautoassigntimestamponcreate.md
   - docs/models/operations/createlifecyclemilestonerequest.md
+  - docs/models/operations/createnotificationpolicynotificationgroupmethod.md
+  - docs/models/operations/createnotificationpolicypriority.md
+  - docs/models/operations/createnotificationpolicyrequest.md
   - docs/models/operations/createnunccomponentgrouprequest.md
   - docs/models/operations/createnunccomponentgrouprequestbody.md
   - docs/models/operations/createnuncconnectionrequest.md
@@ -2230,6 +2232,8 @@ generatedFiles:
   - metricsreporting.go
   - models/operations/options.go
   - models/sdkerrors/sdkerror.go
+  - optionalnullable/optionalnullable.go
+  - optionalnullable/optionalnullable_test.go
   - pages.go
   - permissions.go
   - retrospectives.go
@@ -4526,7 +4530,7 @@ examples:
   create_custom_field_definition:
     speakeasy-default-create-custom-field-definition:
       requestBody:
-        application/json: {"display_name": "Rasheed_Runolfsson", "field_type": "<value>", "required": false}
+        application/json: {"display_name": "Rasheed_Runolfsson", "field_type": "<value>"}
       responses:
         "201":
           application/json: {}
@@ -5716,6 +5720,13 @@ examples:
         application/json: {"name": "<value>"}
       responses:
         "200":
+          application/json: {}
+  create_notification_policy:
+    speakeasy-default-create-notification-policy:
+      requestBody:
+        application/json: {"notification_group_method": "chat", "max_delay": "<value>", "priority": "LOW"}
+      responses:
+        "201":
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}

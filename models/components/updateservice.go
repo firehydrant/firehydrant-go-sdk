@@ -13,18 +13,18 @@ type Checklist struct {
 	Remove *bool `json:"remove,omitempty"`
 }
 
-func (o *Checklist) GetID() string {
-	if o == nil {
+func (c *Checklist) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *Checklist) GetRemove() *bool {
-	if o == nil {
+func (c *Checklist) GetRemove() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Remove
+	return c.Remove
 }
 
 type UpdateServiceExternalResource struct {
@@ -35,25 +35,25 @@ type UpdateServiceExternalResource struct {
 	Remove *bool `json:"remove,omitempty"`
 }
 
-func (o *UpdateServiceExternalResource) GetRemoteID() string {
-	if o == nil {
+func (u *UpdateServiceExternalResource) GetRemoteID() string {
+	if u == nil {
 		return ""
 	}
-	return o.RemoteID
+	return u.RemoteID
 }
 
-func (o *UpdateServiceExternalResource) GetConnectionType() *string {
-	if o == nil {
+func (u *UpdateServiceExternalResource) GetConnectionType() *string {
+	if u == nil {
 		return nil
 	}
-	return o.ConnectionType
+	return u.ConnectionType
 }
 
-func (o *UpdateServiceExternalResource) GetRemove() *bool {
-	if o == nil {
+func (u *UpdateServiceExternalResource) GetRemove() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.Remove
+	return u.Remove
 }
 
 type UpdateServiceFunctionality struct {
@@ -65,25 +65,25 @@ type UpdateServiceFunctionality struct {
 	Summary *string `json:"summary,omitempty"`
 }
 
-func (o *UpdateServiceFunctionality) GetID() *string {
-	if o == nil {
+func (u *UpdateServiceFunctionality) GetID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.ID
+	return u.ID
 }
 
-func (o *UpdateServiceFunctionality) GetRemove() *bool {
-	if o == nil {
+func (u *UpdateServiceFunctionality) GetRemove() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.Remove
+	return u.Remove
 }
 
-func (o *UpdateServiceFunctionality) GetSummary() *string {
-	if o == nil {
+func (u *UpdateServiceFunctionality) GetSummary() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Summary
+	return u.Summary
 }
 
 type UpdateServiceLink struct {
@@ -99,39 +99,39 @@ type UpdateServiceLink struct {
 	ID *string `json:"id,omitempty"`
 }
 
-func (o *UpdateServiceLink) GetHrefURL() string {
-	if o == nil {
+func (u *UpdateServiceLink) GetHrefURL() string {
+	if u == nil {
 		return ""
 	}
-	return o.HrefURL
+	return u.HrefURL
 }
 
-func (o *UpdateServiceLink) GetName() string {
-	if o == nil {
+func (u *UpdateServiceLink) GetName() string {
+	if u == nil {
 		return ""
 	}
-	return o.Name
+	return u.Name
 }
 
-func (o *UpdateServiceLink) GetIconURL() *string {
-	if o == nil {
+func (u *UpdateServiceLink) GetIconURL() *string {
+	if u == nil {
 		return nil
 	}
-	return o.IconURL
+	return u.IconURL
 }
 
-func (o *UpdateServiceLink) GetRemove() *bool {
-	if o == nil {
+func (u *UpdateServiceLink) GetRemove() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.Remove
+	return u.Remove
 }
 
-func (o *UpdateServiceLink) GetID() *string {
-	if o == nil {
+func (u *UpdateServiceLink) GetID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.ID
+	return u.ID
 }
 
 // UpdateServiceOwner - An object representing a Team that owns the service
@@ -139,11 +139,11 @@ type UpdateServiceOwner struct {
 	ID string `json:"id"`
 }
 
-func (o *UpdateServiceOwner) GetID() string {
-	if o == nil {
+func (u *UpdateServiceOwner) GetID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ID
+	return u.ID
 }
 
 // UpdateServiceServiceTier - Integer representing service tier
@@ -191,18 +191,18 @@ type UpdateServiceTeam struct {
 	Remove *bool `json:"remove,omitempty"`
 }
 
-func (o *UpdateServiceTeam) GetID() string {
-	if o == nil {
+func (u *UpdateServiceTeam) GetID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ID
+	return u.ID
 }
 
-func (o *UpdateServiceTeam) GetRemove() *bool {
-	if o == nil {
+func (u *UpdateServiceTeam) GetRemove() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.Remove
+	return u.Remove
 }
 
 // UpdateService - Update a services attributes, you may also add or remove functionalities from the service as well.
@@ -240,121 +240,121 @@ type UpdateService struct {
 	Teams []UpdateServiceTeam `json:"teams,omitempty"`
 }
 
-func (o *UpdateService) GetAlertOnAdd() *bool {
-	if o == nil {
+func (u *UpdateService) GetAlertOnAdd() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.AlertOnAdd
+	return u.AlertOnAdd
 }
 
-func (o *UpdateService) GetAutoAddRespondingTeam() *bool {
-	if o == nil {
+func (u *UpdateService) GetAutoAddRespondingTeam() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.AutoAddRespondingTeam
+	return u.AutoAddRespondingTeam
 }
 
-func (o *UpdateService) GetChecklists() []Checklist {
-	if o == nil {
+func (u *UpdateService) GetChecklists() []Checklist {
+	if u == nil {
 		return nil
 	}
-	return o.Checklists
+	return u.Checklists
 }
 
-func (o *UpdateService) GetDescription() *string {
-	if o == nil {
+func (u *UpdateService) GetDescription() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Description
+	return u.Description
 }
 
-func (o *UpdateService) GetExternalResources() []UpdateServiceExternalResource {
-	if o == nil {
+func (u *UpdateService) GetExternalResources() []UpdateServiceExternalResource {
+	if u == nil {
 		return nil
 	}
-	return o.ExternalResources
+	return u.ExternalResources
 }
 
-func (o *UpdateService) GetFunctionalities() []UpdateServiceFunctionality {
-	if o == nil {
+func (u *UpdateService) GetFunctionalities() []UpdateServiceFunctionality {
+	if u == nil {
 		return nil
 	}
-	return o.Functionalities
+	return u.Functionalities
 }
 
-func (o *UpdateService) GetLabels() map[string]string {
-	if o == nil {
+func (u *UpdateService) GetLabels() map[string]string {
+	if u == nil {
 		return nil
 	}
-	return o.Labels
+	return u.Labels
 }
 
-func (o *UpdateService) GetLinks() []UpdateServiceLink {
-	if o == nil {
+func (u *UpdateService) GetLinks() []UpdateServiceLink {
+	if u == nil {
 		return nil
 	}
-	return o.Links
+	return u.Links
 }
 
-func (o *UpdateService) GetName() *string {
-	if o == nil {
+func (u *UpdateService) GetName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Name
+	return u.Name
 }
 
-func (o *UpdateService) GetOwner() *UpdateServiceOwner {
-	if o == nil {
+func (u *UpdateService) GetOwner() *UpdateServiceOwner {
+	if u == nil {
 		return nil
 	}
-	return o.Owner
+	return u.Owner
 }
 
-func (o *UpdateService) GetRemoveOwner() *bool {
-	if o == nil {
+func (u *UpdateService) GetRemoveOwner() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.RemoveOwner
+	return u.RemoveOwner
 }
 
-func (o *UpdateService) GetRemoveRemainingChecklists() *bool {
-	if o == nil {
+func (u *UpdateService) GetRemoveRemainingChecklists() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.RemoveRemainingChecklists
+	return u.RemoveRemainingChecklists
 }
 
-func (o *UpdateService) GetRemoveRemainingExternalResources() *bool {
-	if o == nil {
+func (u *UpdateService) GetRemoveRemainingExternalResources() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.RemoveRemainingExternalResources
+	return u.RemoveRemainingExternalResources
 }
 
-func (o *UpdateService) GetRemoveRemainingFunctionalities() *bool {
-	if o == nil {
+func (u *UpdateService) GetRemoveRemainingFunctionalities() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.RemoveRemainingFunctionalities
+	return u.RemoveRemainingFunctionalities
 }
 
-func (o *UpdateService) GetRemoveRemainingTeams() *bool {
-	if o == nil {
+func (u *UpdateService) GetRemoveRemainingTeams() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.RemoveRemainingTeams
+	return u.RemoveRemainingTeams
 }
 
-func (o *UpdateService) GetServiceTier() *UpdateServiceServiceTier {
-	if o == nil {
+func (u *UpdateService) GetServiceTier() *UpdateServiceServiceTier {
+	if u == nil {
 		return nil
 	}
-	return o.ServiceTier
+	return u.ServiceTier
 }
 
-func (o *UpdateService) GetTeams() []UpdateServiceTeam {
-	if o == nil {
+func (u *UpdateService) GetTeams() []UpdateServiceTeam {
+	if u == nil {
 		return nil
 	}
-	return o.Teams
+	return u.Teams
 }

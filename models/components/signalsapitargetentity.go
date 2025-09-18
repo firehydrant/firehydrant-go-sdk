@@ -10,37 +10,37 @@ type SignalsAPITargetEntity struct {
 	IsPageable *bool   `json:"is_pageable,omitempty"`
 }
 
-func (o *SignalsAPITargetEntity) GetID() *string {
-	if o == nil {
+func (s *SignalsAPITargetEntity) GetID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *SignalsAPITargetEntity) GetName() *string {
-	if o == nil {
+func (s *SignalsAPITargetEntity) GetName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Name
+	return s.Name
 }
 
-func (o *SignalsAPITargetEntity) GetType() *string {
-	if o == nil {
+func (s *SignalsAPITargetEntity) GetType() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Type
+	return s.Type
 }
 
-func (o *SignalsAPITargetEntity) GetTeamID() *string {
-	if o == nil {
+func (s *SignalsAPITargetEntity) GetTeamID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.TeamID
+	return s.TeamID
 }
 
-func (o *SignalsAPITargetEntity) GetIsPageable() *bool {
-	if o == nil {
+func (s *SignalsAPITargetEntity) GetIsPageable() *bool {
+	if s == nil {
 		return nil
 	}
-	return o.IsPageable
+	return s.IsPageable
 }

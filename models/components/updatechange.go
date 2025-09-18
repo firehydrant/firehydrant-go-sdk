@@ -9,23 +9,23 @@ type UpdateChange struct {
 	Labels      map[string]string `json:"labels,omitempty"`
 }
 
-func (o *UpdateChange) GetSummary() *string {
-	if o == nil {
+func (u *UpdateChange) GetSummary() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Summary
+	return u.Summary
 }
 
-func (o *UpdateChange) GetDescription() *string {
-	if o == nil {
+func (u *UpdateChange) GetDescription() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Description
+	return u.Description
 }
 
-func (o *UpdateChange) GetLabels() map[string]string {
-	if o == nil {
+func (u *UpdateChange) GetLabels() map[string]string {
+	if u == nil {
 		return nil
 	}
-	return o.Labels
+	return u.Labels
 }

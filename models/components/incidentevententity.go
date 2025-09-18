@@ -68,72 +68,72 @@ func (i *IncidentEventEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *IncidentEventEntity) GetID() *string {
-	if o == nil {
+func (i *IncidentEventEntity) GetID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ID
+	return i.ID
 }
 
-func (o *IncidentEventEntity) GetIncidentID() *string {
-	if o == nil {
+func (i *IncidentEventEntity) GetIncidentID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.IncidentID
+	return i.IncidentID
 }
 
-func (o *IncidentEventEntity) GetType() *string {
-	if o == nil {
+func (i *IncidentEventEntity) GetType() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Type
+	return i.Type
 }
 
-func (o *IncidentEventEntity) GetContext() *string {
-	if o == nil {
+func (i *IncidentEventEntity) GetContext() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Context
+	return i.Context
 }
 
-func (o *IncidentEventEntity) GetData() *IncidentEventEntityData {
-	if o == nil {
+func (i *IncidentEventEntity) GetData() *IncidentEventEntityData {
+	if i == nil {
 		return nil
 	}
-	return o.Data
+	return i.Data
 }
 
-func (o *IncidentEventEntity) GetOccurredAt() *time.Time {
-	if o == nil {
+func (i *IncidentEventEntity) GetOccurredAt() *time.Time {
+	if i == nil {
 		return nil
 	}
-	return o.OccurredAt
+	return i.OccurredAt
 }
 
-func (o *IncidentEventEntity) GetVisibility() *IncidentEventEntityVisibility {
-	if o == nil {
+func (i *IncidentEventEntity) GetVisibility() *IncidentEventEntityVisibility {
+	if i == nil {
 		return nil
 	}
-	return o.Visibility
+	return i.Visibility
 }
 
-func (o *IncidentEventEntity) GetAuthor() *NullableAuthorEntity {
-	if o == nil {
+func (i *IncidentEventEntity) GetAuthor() *NullableAuthorEntity {
+	if i == nil {
 		return nil
 	}
-	return o.Author
+	return i.Author
 }
 
-func (o *IncidentEventEntity) GetVotes() *NullableVotesEntity {
-	if o == nil {
+func (i *IncidentEventEntity) GetVotes() *NullableVotesEntity {
+	if i == nil {
 		return nil
 	}
-	return o.Votes
+	return i.Votes
 }
 
-func (o *IncidentEventEntity) GetConversations() []ConversationsAPIEntitiesReference {
-	if o == nil {
+func (i *IncidentEventEntity) GetConversations() []ConversationsAPIEntitiesReference {
+	if i == nil {
 		return nil
 	}
-	return o.Conversations
+	return i.Conversations
 }

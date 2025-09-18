@@ -9,30 +9,30 @@ type ScheduledMaintenancesImpactEntity struct {
 	Condition *NullableSeverityMatrixConditionEntity `json:"condition,omitempty"`
 }
 
-func (o *ScheduledMaintenancesImpactEntity) GetID() *string {
-	if o == nil {
+func (s *ScheduledMaintenancesImpactEntity) GetID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *ScheduledMaintenancesImpactEntity) GetType() *string {
-	if o == nil {
+func (s *ScheduledMaintenancesImpactEntity) GetType() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Type
+	return s.Type
 }
 
-func (o *ScheduledMaintenancesImpactEntity) GetImpact() *NullableSuccinctEntity {
-	if o == nil {
+func (s *ScheduledMaintenancesImpactEntity) GetImpact() *NullableSuccinctEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Impact
+	return s.Impact
 }
 
-func (o *ScheduledMaintenancesImpactEntity) GetCondition() *NullableSeverityMatrixConditionEntity {
-	if o == nil {
+func (s *ScheduledMaintenancesImpactEntity) GetCondition() *NullableSeverityMatrixConditionEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Condition
+	return s.Condition
 }

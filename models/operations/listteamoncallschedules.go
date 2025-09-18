@@ -14,44 +14,44 @@ type ListTeamOnCallSchedulesRequest struct {
 	PerPage *int    `queryParam:"style=form,explode=true,name=per_page"`
 }
 
-func (o *ListTeamOnCallSchedulesRequest) GetTeamID() string {
-	if o == nil {
+func (l *ListTeamOnCallSchedulesRequest) GetTeamID() string {
+	if l == nil {
 		return ""
 	}
-	return o.TeamID
+	return l.TeamID
 }
 
-func (o *ListTeamOnCallSchedulesRequest) GetShiftTimeWindowStart() *string {
-	if o == nil {
+func (l *ListTeamOnCallSchedulesRequest) GetShiftTimeWindowStart() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ShiftTimeWindowStart
+	return l.ShiftTimeWindowStart
 }
 
-func (o *ListTeamOnCallSchedulesRequest) GetShiftTimeWindowEnd() *string {
-	if o == nil {
+func (l *ListTeamOnCallSchedulesRequest) GetShiftTimeWindowEnd() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ShiftTimeWindowEnd
+	return l.ShiftTimeWindowEnd
 }
 
-func (o *ListTeamOnCallSchedulesRequest) GetQuery() *string {
-	if o == nil {
+func (l *ListTeamOnCallSchedulesRequest) GetQuery() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Query
+	return l.Query
 }
 
-func (o *ListTeamOnCallSchedulesRequest) GetPage() *int {
-	if o == nil {
+func (l *ListTeamOnCallSchedulesRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListTeamOnCallSchedulesRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListTeamOnCallSchedulesRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }

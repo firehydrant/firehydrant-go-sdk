@@ -6,9 +6,9 @@ type GetChecklistTemplateRequest struct {
 	ID string `pathParam:"style=simple,explode=false,name=id"`
 }
 
-func (o *GetChecklistTemplateRequest) GetID() string {
-	if o == nil {
+func (g *GetChecklistTemplateRequest) GetID() string {
+	if g == nil {
 		return ""
 	}
-	return o.ID
+	return g.ID
 }

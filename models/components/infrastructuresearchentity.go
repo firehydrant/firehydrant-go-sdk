@@ -8,16 +8,16 @@ type InfrastructureSearchEntity struct {
 	Infrastructure *string `json:"infrastructure,omitempty"`
 }
 
-func (o *InfrastructureSearchEntity) GetType() *string {
-	if o == nil {
+func (i *InfrastructureSearchEntity) GetType() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Type
+	return i.Type
 }
 
-func (o *InfrastructureSearchEntity) GetInfrastructure() *string {
-	if o == nil {
+func (i *InfrastructureSearchEntity) GetInfrastructure() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Infrastructure
+	return i.Infrastructure
 }

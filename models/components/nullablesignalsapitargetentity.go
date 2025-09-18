@@ -10,37 +10,37 @@ type NullableSignalsAPITargetEntity struct {
 	IsPageable *bool   `json:"is_pageable,omitempty"`
 }
 
-func (o *NullableSignalsAPITargetEntity) GetID() *string {
-	if o == nil {
+func (n *NullableSignalsAPITargetEntity) GetID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ID
+	return n.ID
 }
 
-func (o *NullableSignalsAPITargetEntity) GetName() *string {
-	if o == nil {
+func (n *NullableSignalsAPITargetEntity) GetName() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Name
+	return n.Name
 }
 
-func (o *NullableSignalsAPITargetEntity) GetType() *string {
-	if o == nil {
+func (n *NullableSignalsAPITargetEntity) GetType() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Type
+	return n.Type
 }
 
-func (o *NullableSignalsAPITargetEntity) GetTeamID() *string {
-	if o == nil {
+func (n *NullableSignalsAPITargetEntity) GetTeamID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.TeamID
+	return n.TeamID
 }
 
-func (o *NullableSignalsAPITargetEntity) GetIsPageable() *bool {
-	if o == nil {
+func (n *NullableSignalsAPITargetEntity) GetIsPageable() *bool {
+	if n == nil {
 		return nil
 	}
-	return o.IsPageable
+	return n.IsPageable
 }

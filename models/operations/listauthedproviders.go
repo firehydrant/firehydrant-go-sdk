@@ -11,23 +11,23 @@ type ListAuthedProvidersRequest struct {
 	Query *string `queryParam:"style=form,explode=true,name=query"`
 }
 
-func (o *ListAuthedProvidersRequest) GetIntegrationSlug() string {
-	if o == nil {
+func (l *ListAuthedProvidersRequest) GetIntegrationSlug() string {
+	if l == nil {
 		return ""
 	}
-	return o.IntegrationSlug
+	return l.IntegrationSlug
 }
 
-func (o *ListAuthedProvidersRequest) GetConnectionID() string {
-	if o == nil {
+func (l *ListAuthedProvidersRequest) GetConnectionID() string {
+	if l == nil {
 		return ""
 	}
-	return o.ConnectionID
+	return l.ConnectionID
 }
 
-func (o *ListAuthedProvidersRequest) GetQuery() *string {
-	if o == nil {
+func (l *ListAuthedProvidersRequest) GetQuery() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Query
+	return l.Query
 }

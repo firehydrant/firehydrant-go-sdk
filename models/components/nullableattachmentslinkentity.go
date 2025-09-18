@@ -15,51 +15,51 @@ type NullableAttachmentsLinkEntity struct {
 	Deletable *bool `json:"deletable,omitempty"`
 }
 
-func (o *NullableAttachmentsLinkEntity) GetID() *string {
-	if o == nil {
+func (n *NullableAttachmentsLinkEntity) GetID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ID
+	return n.ID
 }
 
-func (o *NullableAttachmentsLinkEntity) GetType() *string {
-	if o == nil {
+func (n *NullableAttachmentsLinkEntity) GetType() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Type
+	return n.Type
 }
 
-func (o *NullableAttachmentsLinkEntity) GetDisplayText() *string {
-	if o == nil {
+func (n *NullableAttachmentsLinkEntity) GetDisplayText() *string {
+	if n == nil {
 		return nil
 	}
-	return o.DisplayText
+	return n.DisplayText
 }
 
-func (o *NullableAttachmentsLinkEntity) GetHrefURL() *string {
-	if o == nil {
+func (n *NullableAttachmentsLinkEntity) GetHrefURL() *string {
+	if n == nil {
 		return nil
 	}
-	return o.HrefURL
+	return n.HrefURL
 }
 
-func (o *NullableAttachmentsLinkEntity) GetIconURL() *string {
-	if o == nil {
+func (n *NullableAttachmentsLinkEntity) GetIconURL() *string {
+	if n == nil {
 		return nil
 	}
-	return o.IconURL
+	return n.IconURL
 }
 
-func (o *NullableAttachmentsLinkEntity) GetEditable() *bool {
-	if o == nil {
+func (n *NullableAttachmentsLinkEntity) GetEditable() *bool {
+	if n == nil {
 		return nil
 	}
-	return o.Editable
+	return n.Editable
 }
 
-func (o *NullableAttachmentsLinkEntity) GetDeletable() *bool {
-	if o == nil {
+func (n *NullableAttachmentsLinkEntity) GetDeletable() *bool {
+	if n == nil {
 		return nil
 	}
-	return o.Deletable
+	return n.Deletable
 }

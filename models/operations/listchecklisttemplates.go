@@ -9,23 +9,23 @@ type ListChecklistTemplatesRequest struct {
 	Query *string `queryParam:"style=form,explode=true,name=query"`
 }
 
-func (o *ListChecklistTemplatesRequest) GetPage() *int {
-	if o == nil {
+func (l *ListChecklistTemplatesRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListChecklistTemplatesRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListChecklistTemplatesRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }
 
-func (o *ListChecklistTemplatesRequest) GetQuery() *string {
-	if o == nil {
+func (l *ListChecklistTemplatesRequest) GetQuery() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Query
+	return l.Query
 }

@@ -6,9 +6,9 @@ type GetScheduledMaintenanceRequest struct {
 	ScheduledMaintenanceID string `pathParam:"style=simple,explode=false,name=scheduled_maintenance_id"`
 }
 
-func (o *GetScheduledMaintenanceRequest) GetScheduledMaintenanceID() string {
-	if o == nil {
+func (g *GetScheduledMaintenanceRequest) GetScheduledMaintenanceID() string {
+	if g == nil {
 		return ""
 	}
-	return o.ScheduledMaintenanceID
+	return g.ScheduledMaintenanceID
 }

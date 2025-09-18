@@ -10,16 +10,16 @@ type CreateIncidentRoleAssignment struct {
 	IncidentRoleID string `json:"incident_role_id"`
 }
 
-func (o *CreateIncidentRoleAssignment) GetUserID() string {
-	if o == nil {
+func (c *CreateIncidentRoleAssignment) GetUserID() string {
+	if c == nil {
 		return ""
 	}
-	return o.UserID
+	return c.UserID
 }
 
-func (o *CreateIncidentRoleAssignment) GetIncidentRoleID() string {
-	if o == nil {
+func (c *CreateIncidentRoleAssignment) GetIncidentRoleID() string {
+	if c == nil {
 		return ""
 	}
-	return o.IncidentRoleID
+	return c.IncidentRoleID
 }

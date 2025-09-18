@@ -36,58 +36,58 @@ func (s *SavedSearchEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *SavedSearchEntity) GetID() *string {
-	if o == nil {
+func (s *SavedSearchEntity) GetID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *SavedSearchEntity) GetName() *string {
-	if o == nil {
+func (s *SavedSearchEntity) GetName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Name
+	return s.Name
 }
 
-func (o *SavedSearchEntity) GetResourceType() *string {
-	if o == nil {
+func (s *SavedSearchEntity) GetResourceType() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ResourceType
+	return s.ResourceType
 }
 
-func (o *SavedSearchEntity) GetUserID() *string {
-	if o == nil {
+func (s *SavedSearchEntity) GetUserID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.UserID
+	return s.UserID
 }
 
-func (o *SavedSearchEntity) GetIsPrivate() *bool {
-	if o == nil {
+func (s *SavedSearchEntity) GetIsPrivate() *bool {
+	if s == nil {
 		return nil
 	}
-	return o.IsPrivate
+	return s.IsPrivate
 }
 
-func (o *SavedSearchEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (s *SavedSearchEntity) GetCreatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return s.CreatedAt
 }
 
-func (o *SavedSearchEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (s *SavedSearchEntity) GetUpdatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return s.UpdatedAt
 }
 
-func (o *SavedSearchEntity) GetFilterValues() *FilterValues {
-	if o == nil {
+func (s *SavedSearchEntity) GetFilterValues() *FilterValues {
+	if s == nil {
 		return nil
 	}
-	return o.FilterValues
+	return s.FilterValues
 }

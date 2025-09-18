@@ -26,37 +26,37 @@ func (i *IncidentsTeamAssignmentEntityLite) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *IncidentsTeamAssignmentEntityLite) GetID() *string {
-	if o == nil {
+func (i *IncidentsTeamAssignmentEntityLite) GetID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ID
+	return i.ID
 }
 
-func (o *IncidentsTeamAssignmentEntityLite) GetStatus() *string {
-	if o == nil {
+func (i *IncidentsTeamAssignmentEntityLite) GetStatus() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Status
+	return i.Status
 }
 
-func (o *IncidentsTeamAssignmentEntityLite) GetCreatedAt() *time.Time {
-	if o == nil {
+func (i *IncidentsTeamAssignmentEntityLite) GetCreatedAt() *time.Time {
+	if i == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return i.CreatedAt
 }
 
-func (o *IncidentsTeamAssignmentEntityLite) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (i *IncidentsTeamAssignmentEntityLite) GetUpdatedAt() *time.Time {
+	if i == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return i.UpdatedAt
 }
 
-func (o *IncidentsTeamAssignmentEntityLite) GetTeam() *NullableTeamEntityLite {
-	if o == nil {
+func (i *IncidentsTeamAssignmentEntityLite) GetTeam() *NullableTeamEntityLite {
+	if i == nil {
 		return nil
 	}
-	return o.Team
+	return i.Team
 }

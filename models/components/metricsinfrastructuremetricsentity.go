@@ -22,58 +22,58 @@ type MetricsInfrastructureMetricsEntity struct {
 	TotalTime *int `json:"total_time,omitempty"`
 }
 
-func (o *MetricsInfrastructureMetricsEntity) GetID() *string {
-	if o == nil {
+func (m *MetricsInfrastructureMetricsEntity) GetID() *string {
+	if m == nil {
 		return nil
 	}
-	return o.ID
+	return m.ID
 }
 
-func (o *MetricsInfrastructureMetricsEntity) GetName() *string {
-	if o == nil {
+func (m *MetricsInfrastructureMetricsEntity) GetName() *string {
+	if m == nil {
 		return nil
 	}
-	return o.Name
+	return m.Name
 }
 
-func (o *MetricsInfrastructureMetricsEntity) GetMttd() *int {
-	if o == nil {
+func (m *MetricsInfrastructureMetricsEntity) GetMttd() *int {
+	if m == nil {
 		return nil
 	}
-	return o.Mttd
+	return m.Mttd
 }
 
-func (o *MetricsInfrastructureMetricsEntity) GetMtta() *int {
-	if o == nil {
+func (m *MetricsInfrastructureMetricsEntity) GetMtta() *int {
+	if m == nil {
 		return nil
 	}
-	return o.Mtta
+	return m.Mtta
 }
 
-func (o *MetricsInfrastructureMetricsEntity) GetMttm() *int {
-	if o == nil {
+func (m *MetricsInfrastructureMetricsEntity) GetMttm() *int {
+	if m == nil {
 		return nil
 	}
-	return o.Mttm
+	return m.Mttm
 }
 
-func (o *MetricsInfrastructureMetricsEntity) GetMttr() *int {
-	if o == nil {
+func (m *MetricsInfrastructureMetricsEntity) GetMttr() *int {
+	if m == nil {
 		return nil
 	}
-	return o.Mttr
+	return m.Mttr
 }
 
-func (o *MetricsInfrastructureMetricsEntity) GetCount() *int {
-	if o == nil {
+func (m *MetricsInfrastructureMetricsEntity) GetCount() *int {
+	if m == nil {
 		return nil
 	}
-	return o.Count
+	return m.Count
 }
 
-func (o *MetricsInfrastructureMetricsEntity) GetTotalTime() *int {
-	if o == nil {
+func (m *MetricsInfrastructureMetricsEntity) GetTotalTime() *int {
+	if m == nil {
 		return nil
 	}
-	return o.TotalTime
+	return m.TotalTime
 }

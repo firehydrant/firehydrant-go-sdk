@@ -8,9 +8,9 @@ type CreateIncidentTeamAssignment struct {
 	TeamID string `json:"team_id"`
 }
 
-func (o *CreateIncidentTeamAssignment) GetTeamID() string {
-	if o == nil {
+func (c *CreateIncidentTeamAssignment) GetTeamID() string {
+	if c == nil {
 		return ""
 	}
-	return o.TeamID
+	return c.TeamID
 }

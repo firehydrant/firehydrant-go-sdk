@@ -18,51 +18,51 @@ type IncidentsConferenceBridgeEntity struct {
 	PreviousHostAssignment *string  `json:"previous_host_assignment,omitempty"`
 }
 
-func (o *IncidentsConferenceBridgeEntity) GetID() *string {
-	if o == nil {
+func (i *IncidentsConferenceBridgeEntity) GetID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ID
+	return i.ID
 }
 
-func (o *IncidentsConferenceBridgeEntity) GetAttachments() []IncidentsConferenceBridgeEntityAttachment {
-	if o == nil {
+func (i *IncidentsConferenceBridgeEntity) GetAttachments() []IncidentsConferenceBridgeEntityAttachment {
+	if i == nil {
 		return nil
 	}
-	return o.Attachments
+	return i.Attachments
 }
 
-func (o *IncidentsConferenceBridgeEntity) GetHasTranslatedTranscripts() *bool {
-	if o == nil {
+func (i *IncidentsConferenceBridgeEntity) GetHasTranslatedTranscripts() *bool {
+	if i == nil {
 		return nil
 	}
-	return o.HasTranslatedTranscripts
+	return i.HasTranslatedTranscripts
 }
 
-func (o *IncidentsConferenceBridgeEntity) GetLanguageCodes() []string {
-	if o == nil {
+func (i *IncidentsConferenceBridgeEntity) GetLanguageCodes() []string {
+	if i == nil {
 		return nil
 	}
-	return o.LanguageCodes
+	return i.LanguageCodes
 }
 
-func (o *IncidentsConferenceBridgeEntity) GetTranscriptionStatus() *string {
-	if o == nil {
+func (i *IncidentsConferenceBridgeEntity) GetTranscriptionStatus() *string {
+	if i == nil {
 		return nil
 	}
-	return o.TranscriptionStatus
+	return i.TranscriptionStatus
 }
 
-func (o *IncidentsConferenceBridgeEntity) GetTranscriptionSubCode() *string {
-	if o == nil {
+func (i *IncidentsConferenceBridgeEntity) GetTranscriptionSubCode() *string {
+	if i == nil {
 		return nil
 	}
-	return o.TranscriptionSubCode
+	return i.TranscriptionSubCode
 }
 
-func (o *IncidentsConferenceBridgeEntity) GetPreviousHostAssignment() *string {
-	if o == nil {
+func (i *IncidentsConferenceBridgeEntity) GetPreviousHostAssignment() *string {
+	if i == nil {
 		return nil
 	}
-	return o.PreviousHostAssignment
+	return i.PreviousHostAssignment
 }

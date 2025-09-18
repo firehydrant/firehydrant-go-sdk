@@ -7,9 +7,9 @@ type SignalsAPIAnalyticsGroupedMetricsEntity struct {
 	Data *NullableSignalsAPIAnalyticsGroupedMetricsEntityMetricEntity `json:"data,omitempty"`
 }
 
-func (o *SignalsAPIAnalyticsGroupedMetricsEntity) GetData() *NullableSignalsAPIAnalyticsGroupedMetricsEntityMetricEntity {
-	if o == nil {
+func (s *SignalsAPIAnalyticsGroupedMetricsEntity) GetData() *NullableSignalsAPIAnalyticsGroupedMetricsEntityMetricEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Data
+	return s.Data
 }

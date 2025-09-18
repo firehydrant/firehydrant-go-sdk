@@ -10,16 +10,16 @@ type CopyOnCallScheduleRotation struct {
 	Name *string `json:"name,omitempty"`
 }
 
-func (o *CopyOnCallScheduleRotation) GetTargetScheduleID() string {
-	if o == nil {
+func (c *CopyOnCallScheduleRotation) GetTargetScheduleID() string {
+	if c == nil {
 		return ""
 	}
-	return o.TargetScheduleID
+	return c.TargetScheduleID
 }
 
-func (o *CopyOnCallScheduleRotation) GetName() *string {
-	if o == nil {
+func (c *CopyOnCallScheduleRotation) GetName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Name
+	return c.Name
 }

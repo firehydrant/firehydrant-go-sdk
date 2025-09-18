@@ -6,9 +6,9 @@ type DeleteFunctionalityRequest struct {
 	FunctionalityID string `pathParam:"style=simple,explode=false,name=functionality_id"`
 }
 
-func (o *DeleteFunctionalityRequest) GetFunctionalityID() string {
-	if o == nil {
+func (d *DeleteFunctionalityRequest) GetFunctionalityID() string {
+	if d == nil {
 		return ""
 	}
-	return o.FunctionalityID
+	return d.FunctionalityID
 }

@@ -30,51 +30,51 @@ func (p *PublicAPIV1IntegrationsAuthedProviderEntity) UnmarshalJSON(data []byte)
 	return nil
 }
 
-func (o *PublicAPIV1IntegrationsAuthedProviderEntity) GetID() *string {
-	if o == nil {
+func (p *PublicAPIV1IntegrationsAuthedProviderEntity) GetID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.ID
+	return p.ID
 }
 
-func (o *PublicAPIV1IntegrationsAuthedProviderEntity) GetUser() *NullableSuccinctEntity {
-	if o == nil {
+func (p *PublicAPIV1IntegrationsAuthedProviderEntity) GetUser() *NullableSuccinctEntity {
+	if p == nil {
 		return nil
 	}
-	return o.User
+	return p.User
 }
 
-func (o *PublicAPIV1IntegrationsAuthedProviderEntity) GetIntegrationDefault() *bool {
-	if o == nil {
+func (p *PublicAPIV1IntegrationsAuthedProviderEntity) GetIntegrationDefault() *bool {
+	if p == nil {
 		return nil
 	}
-	return o.IntegrationDefault
+	return p.IntegrationDefault
 }
 
-func (o *PublicAPIV1IntegrationsAuthedProviderEntity) GetAuthorizedEmail() *string {
-	if o == nil {
+func (p *PublicAPIV1IntegrationsAuthedProviderEntity) GetAuthorizedEmail() *string {
+	if p == nil {
 		return nil
 	}
-	return o.AuthorizedEmail
+	return p.AuthorizedEmail
 }
 
-func (o *PublicAPIV1IntegrationsAuthedProviderEntity) GetIsExpired() *bool {
-	if o == nil {
+func (p *PublicAPIV1IntegrationsAuthedProviderEntity) GetIsExpired() *bool {
+	if p == nil {
 		return nil
 	}
-	return o.IsExpired
+	return p.IsExpired
 }
 
-func (o *PublicAPIV1IntegrationsAuthedProviderEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (p *PublicAPIV1IntegrationsAuthedProviderEntity) GetCreatedAt() *time.Time {
+	if p == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return p.CreatedAt
 }
 
-func (o *PublicAPIV1IntegrationsAuthedProviderEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (p *PublicAPIV1IntegrationsAuthedProviderEntity) GetUpdatedAt() *time.Time {
+	if p == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return p.UpdatedAt
 }

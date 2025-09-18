@@ -6,9 +6,9 @@ type DeleteRunbookRequest struct {
 	RunbookID string `pathParam:"style=simple,explode=false,name=runbook_id"`
 }
 
-func (o *DeleteRunbookRequest) GetRunbookID() string {
-	if o == nil {
+func (d *DeleteRunbookRequest) GetRunbookID() string {
+	if d == nil {
 		return ""
 	}
-	return o.RunbookID
+	return d.RunbookID
 }

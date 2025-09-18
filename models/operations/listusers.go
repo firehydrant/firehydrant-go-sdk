@@ -11,30 +11,30 @@ type ListUsersRequest struct {
 	Name *string `queryParam:"style=form,explode=true,name=name"`
 }
 
-func (o *ListUsersRequest) GetPage() *int {
-	if o == nil {
+func (l *ListUsersRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListUsersRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListUsersRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }
 
-func (o *ListUsersRequest) GetQuery() *string {
-	if o == nil {
+func (l *ListUsersRequest) GetQuery() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Query
+	return l.Query
 }
 
-func (o *ListUsersRequest) GetName() *string {
-	if o == nil {
+func (l *ListUsersRequest) GetName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Name
+	return l.Name
 }

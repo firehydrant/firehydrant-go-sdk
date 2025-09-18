@@ -9,30 +9,30 @@ type AuthorEntity struct {
 	Email  *string `json:"email,omitempty"`
 }
 
-func (o *AuthorEntity) GetID() *string {
-	if o == nil {
+func (a *AuthorEntity) GetID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AuthorEntity) GetName() *string {
-	if o == nil {
+func (a *AuthorEntity) GetName() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Name
+	return a.Name
 }
 
-func (o *AuthorEntity) GetSource() *string {
-	if o == nil {
+func (a *AuthorEntity) GetSource() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Source
+	return a.Source
 }
 
-func (o *AuthorEntity) GetEmail() *string {
-	if o == nil {
+func (a *AuthorEntity) GetEmail() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Email
+	return a.Email
 }

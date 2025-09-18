@@ -8,16 +8,16 @@ type IntegrationsStatuspageConnectionEntityPaginated struct {
 	Pagination *NullablePaginationEntity                `json:"pagination,omitempty"`
 }
 
-func (o *IntegrationsStatuspageConnectionEntityPaginated) GetData() []IntegrationsStatuspageConnectionEntity {
-	if o == nil {
+func (i *IntegrationsStatuspageConnectionEntityPaginated) GetData() []IntegrationsStatuspageConnectionEntity {
+	if i == nil {
 		return nil
 	}
-	return o.Data
+	return i.Data
 }
 
-func (o *IntegrationsStatuspageConnectionEntityPaginated) GetPagination() *NullablePaginationEntity {
-	if o == nil {
+func (i *IntegrationsStatuspageConnectionEntityPaginated) GetPagination() *NullablePaginationEntity {
+	if i == nil {
 		return nil
 	}
-	return o.Pagination
+	return i.Pagination
 }

@@ -62,58 +62,58 @@ type RetrospectivesFieldEntity struct {
 	Schema                []string                       `json:"schema,omitempty"`
 }
 
-func (o *RetrospectivesFieldEntity) GetID() *string {
-	if o == nil {
+func (r *RetrospectivesFieldEntity) GetID() *string {
+	if r == nil {
 		return nil
 	}
-	return o.ID
+	return r.ID
 }
 
-func (o *RetrospectivesFieldEntity) GetLabel() *string {
-	if o == nil {
+func (r *RetrospectivesFieldEntity) GetLabel() *string {
+	if r == nil {
 		return nil
 	}
-	return o.Label
+	return r.Label
 }
 
-func (o *RetrospectivesFieldEntity) GetType() *RetrospectivesFieldEntityType {
-	if o == nil {
+func (r *RetrospectivesFieldEntity) GetType() *RetrospectivesFieldEntityType {
+	if r == nil {
 		return nil
 	}
-	return o.Type
+	return r.Type
 }
 
-func (o *RetrospectivesFieldEntity) GetHelpText() *string {
-	if o == nil {
+func (r *RetrospectivesFieldEntity) GetHelpText() *string {
+	if r == nil {
 		return nil
 	}
-	return o.HelpText
+	return r.HelpText
 }
 
-func (o *RetrospectivesFieldEntity) GetPermissibleValues() []string {
-	if o == nil {
+func (r *RetrospectivesFieldEntity) GetPermissibleValues() []string {
+	if r == nil {
 		return nil
 	}
-	return o.PermissibleValues
+	return r.PermissibleValues
 }
 
-func (o *RetrospectivesFieldEntity) GetIsRequired() *bool {
-	if o == nil {
+func (r *RetrospectivesFieldEntity) GetIsRequired() *bool {
+	if r == nil {
 		return nil
 	}
-	return o.IsRequired
+	return r.IsRequired
 }
 
-func (o *RetrospectivesFieldEntity) GetRequiredAtMilestoneID() *string {
-	if o == nil {
+func (r *RetrospectivesFieldEntity) GetRequiredAtMilestoneID() *string {
+	if r == nil {
 		return nil
 	}
-	return o.RequiredAtMilestoneID
+	return r.RequiredAtMilestoneID
 }
 
-func (o *RetrospectivesFieldEntity) GetSchema() []string {
-	if o == nil {
+func (r *RetrospectivesFieldEntity) GetSchema() []string {
+	if r == nil {
 		return nil
 	}
-	return o.Schema
+	return r.Schema
 }

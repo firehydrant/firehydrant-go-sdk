@@ -7,9 +7,9 @@ type SignalsAPITransposerListEntity struct {
 	Data *NullableSignalsAPITransposerEntity `json:"data,omitempty"`
 }
 
-func (o *SignalsAPITransposerListEntity) GetData() *NullableSignalsAPITransposerEntity {
-	if o == nil {
+func (s *SignalsAPITransposerListEntity) GetData() *NullableSignalsAPITransposerEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Data
+	return s.Data
 }

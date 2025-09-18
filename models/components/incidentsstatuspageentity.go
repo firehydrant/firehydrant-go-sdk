@@ -12,44 +12,44 @@ type IncidentsStatusPageEntity struct {
 	Integration *NullableIntegrationEntity `json:"integration,omitempty"`
 }
 
-func (o *IncidentsStatusPageEntity) GetID() *string {
-	if o == nil {
+func (i *IncidentsStatusPageEntity) GetID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ID
+	return i.ID
 }
 
-func (o *IncidentsStatusPageEntity) GetURL() *string {
-	if o == nil {
+func (i *IncidentsStatusPageEntity) GetURL() *string {
+	if i == nil {
 		return nil
 	}
-	return o.URL
+	return i.URL
 }
 
-func (o *IncidentsStatusPageEntity) GetExternalID() *string {
-	if o == nil {
+func (i *IncidentsStatusPageEntity) GetExternalID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ExternalID
+	return i.ExternalID
 }
 
-func (o *IncidentsStatusPageEntity) GetName() *string {
-	if o == nil {
+func (i *IncidentsStatusPageEntity) GetName() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Name
+	return i.Name
 }
 
-func (o *IncidentsStatusPageEntity) GetDisplayName() *string {
-	if o == nil {
+func (i *IncidentsStatusPageEntity) GetDisplayName() *string {
+	if i == nil {
 		return nil
 	}
-	return o.DisplayName
+	return i.DisplayName
 }
 
-func (o *IncidentsStatusPageEntity) GetIntegration() *NullableIntegrationEntity {
-	if o == nil {
+func (i *IncidentsStatusPageEntity) GetIntegration() *NullableIntegrationEntity {
+	if i == nil {
 		return nil
 	}
-	return o.Integration
+	return i.Integration
 }

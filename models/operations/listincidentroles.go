@@ -7,16 +7,16 @@ type ListIncidentRolesRequest struct {
 	PerPage *int `queryParam:"style=form,explode=true,name=per_page"`
 }
 
-func (o *ListIncidentRolesRequest) GetPage() *int {
-	if o == nil {
+func (l *ListIncidentRolesRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListIncidentRolesRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListIncidentRolesRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }

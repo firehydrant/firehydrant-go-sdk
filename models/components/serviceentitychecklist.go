@@ -40,100 +40,100 @@ func (s *ServiceEntityChecklist) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ServiceEntityChecklist) GetID() *string {
-	if o == nil {
+func (s *ServiceEntityChecklist) GetID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *ServiceEntityChecklist) GetName() *string {
-	if o == nil {
+func (s *ServiceEntityChecklist) GetName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Name
+	return s.Name
 }
 
-func (o *ServiceEntityChecklist) GetDescription() *string {
-	if o == nil {
+func (s *ServiceEntityChecklist) GetDescription() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Description
+	return s.Description
 }
 
-func (o *ServiceEntityChecklist) GetSlug() *string {
-	if o == nil {
+func (s *ServiceEntityChecklist) GetSlug() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Slug
+	return s.Slug
 }
 
-func (o *ServiceEntityChecklist) GetServiceTier() *int {
-	if o == nil {
+func (s *ServiceEntityChecklist) GetServiceTier() *int {
+	if s == nil {
 		return nil
 	}
-	return o.ServiceTier
+	return s.ServiceTier
 }
 
-func (o *ServiceEntityChecklist) GetCreatedAt() *time.Time {
-	if o == nil {
+func (s *ServiceEntityChecklist) GetCreatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return s.CreatedAt
 }
 
-func (o *ServiceEntityChecklist) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (s *ServiceEntityChecklist) GetUpdatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return s.UpdatedAt
 }
 
-func (o *ServiceEntityChecklist) GetAllowedParams() []string {
-	if o == nil {
+func (s *ServiceEntityChecklist) GetAllowedParams() []string {
+	if s == nil {
 		return nil
 	}
-	return o.AllowedParams
+	return s.AllowedParams
 }
 
-func (o *ServiceEntityChecklist) GetLabels() *ServiceEntityChecklistLabels {
-	if o == nil {
+func (s *ServiceEntityChecklist) GetLabels() *ServiceEntityChecklistLabels {
+	if s == nil {
 		return nil
 	}
-	return o.Labels
+	return s.Labels
 }
 
-func (o *ServiceEntityChecklist) GetAlertOnAdd() *bool {
-	if o == nil {
+func (s *ServiceEntityChecklist) GetAlertOnAdd() *bool {
+	if s == nil {
 		return nil
 	}
-	return o.AlertOnAdd
+	return s.AlertOnAdd
 }
 
-func (o *ServiceEntityChecklist) GetAutoAddRespondingTeam() *bool {
-	if o == nil {
+func (s *ServiceEntityChecklist) GetAutoAddRespondingTeam() *bool {
+	if s == nil {
 		return nil
 	}
-	return o.AutoAddRespondingTeam
+	return s.AutoAddRespondingTeam
 }
 
-func (o *ServiceEntityChecklist) GetCompletedChecks() *int {
-	if o == nil {
+func (s *ServiceEntityChecklist) GetCompletedChecks() *int {
+	if s == nil {
 		return nil
 	}
-	return o.CompletedChecks
+	return s.CompletedChecks
 }
 
-func (o *ServiceEntityChecklist) GetOwner() *NullableTeamEntityLite {
-	if o == nil {
+func (s *ServiceEntityChecklist) GetOwner() *NullableTeamEntityLite {
+	if s == nil {
 		return nil
 	}
-	return o.Owner
+	return s.Owner
 }
 
-func (o *ServiceEntityChecklist) GetServiceChecklistUpdatedAt() *time.Time {
-	if o == nil {
+func (s *ServiceEntityChecklist) GetServiceChecklistUpdatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.ServiceChecklistUpdatedAt
+	return s.ServiceChecklistUpdatedAt
 }

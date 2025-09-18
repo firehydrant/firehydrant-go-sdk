@@ -7,9 +7,9 @@ type ListOrganizationOnCallSchedulesRequest struct {
 	TeamID *string `queryParam:"style=form,explode=true,name=team_id"`
 }
 
-func (o *ListOrganizationOnCallSchedulesRequest) GetTeamID() *string {
-	if o == nil {
+func (l *ListOrganizationOnCallSchedulesRequest) GetTeamID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.TeamID
+	return l.TeamID
 }

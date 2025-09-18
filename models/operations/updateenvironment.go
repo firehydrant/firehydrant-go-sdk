@@ -12,16 +12,16 @@ type UpdateEnvironmentRequest struct {
 	UpdateEnvironment components.UpdateEnvironment `request:"mediaType=application/json"`
 }
 
-func (o *UpdateEnvironmentRequest) GetEnvironmentID() string {
-	if o == nil {
+func (u *UpdateEnvironmentRequest) GetEnvironmentID() string {
+	if u == nil {
 		return ""
 	}
-	return o.EnvironmentID
+	return u.EnvironmentID
 }
 
-func (o *UpdateEnvironmentRequest) GetUpdateEnvironment() components.UpdateEnvironment {
-	if o == nil {
+func (u *UpdateEnvironmentRequest) GetUpdateEnvironment() components.UpdateEnvironment {
+	if u == nil {
 		return components.UpdateEnvironment{}
 	}
-	return o.UpdateEnvironment
+	return u.UpdateEnvironment
 }

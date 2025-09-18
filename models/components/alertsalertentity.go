@@ -57,212 +57,212 @@ func (a *AlertsAlertEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *AlertsAlertEntity) GetID() *string {
-	if o == nil {
+func (a *AlertsAlertEntity) GetID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.ID
+	return a.ID
 }
 
-func (o *AlertsAlertEntity) GetSummary() *string {
-	if o == nil {
+func (a *AlertsAlertEntity) GetSummary() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Summary
+	return a.Summary
 }
 
-func (o *AlertsAlertEntity) GetDescription() *string {
-	if o == nil {
+func (a *AlertsAlertEntity) GetDescription() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Description
+	return a.Description
 }
 
-func (o *AlertsAlertEntity) GetPriority() *string {
-	if o == nil {
+func (a *AlertsAlertEntity) GetPriority() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Priority
+	return a.Priority
 }
 
-func (o *AlertsAlertEntity) GetIntegrationName() *string {
-	if o == nil {
+func (a *AlertsAlertEntity) GetIntegrationName() *string {
+	if a == nil {
 		return nil
 	}
-	return o.IntegrationName
+	return a.IntegrationName
 }
 
-func (o *AlertsAlertEntity) GetStartsAt() *time.Time {
-	if o == nil {
+func (a *AlertsAlertEntity) GetStartsAt() *time.Time {
+	if a == nil {
 		return nil
 	}
-	return o.StartsAt
+	return a.StartsAt
 }
 
-func (o *AlertsAlertEntity) GetEndsAt() *time.Time {
-	if o == nil {
+func (a *AlertsAlertEntity) GetEndsAt() *time.Time {
+	if a == nil {
 		return nil
 	}
-	return o.EndsAt
+	return a.EndsAt
 }
 
-func (o *AlertsAlertEntity) GetDurationMs() *int {
-	if o == nil {
+func (a *AlertsAlertEntity) GetDurationMs() *int {
+	if a == nil {
 		return nil
 	}
-	return o.DurationMs
+	return a.DurationMs
 }
 
-func (o *AlertsAlertEntity) GetDurationIso8601() *string {
-	if o == nil {
+func (a *AlertsAlertEntity) GetDurationIso8601() *string {
+	if a == nil {
 		return nil
 	}
-	return o.DurationIso8601
+	return a.DurationIso8601
 }
 
-func (o *AlertsAlertEntity) GetStatus() *string {
-	if o == nil {
+func (a *AlertsAlertEntity) GetStatus() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Status
+	return a.Status
 }
 
-func (o *AlertsAlertEntity) GetRemoteID() *string {
-	if o == nil {
+func (a *AlertsAlertEntity) GetRemoteID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.RemoteID
+	return a.RemoteID
 }
 
-func (o *AlertsAlertEntity) GetRemoteURL() *string {
-	if o == nil {
+func (a *AlertsAlertEntity) GetRemoteURL() *string {
+	if a == nil {
 		return nil
 	}
-	return o.RemoteURL
+	return a.RemoteURL
 }
 
-func (o *AlertsAlertEntity) GetLabels() *AlertsAlertEntityLabels {
-	if o == nil {
+func (a *AlertsAlertEntity) GetLabels() *AlertsAlertEntityLabels {
+	if a == nil {
 		return nil
 	}
-	return o.Labels
+	return a.Labels
 }
 
-func (o *AlertsAlertEntity) GetEnvironments() []SuccinctEntity {
-	if o == nil {
+func (a *AlertsAlertEntity) GetEnvironments() []SuccinctEntity {
+	if a == nil {
 		return nil
 	}
-	return o.Environments
+	return a.Environments
 }
 
-func (o *AlertsAlertEntity) GetServices() []SuccinctEntity {
-	if o == nil {
+func (a *AlertsAlertEntity) GetServices() []SuccinctEntity {
+	if a == nil {
 		return nil
 	}
-	return o.Services
+	return a.Services
 }
 
-func (o *AlertsAlertEntity) GetTags() []string {
-	if o == nil {
+func (a *AlertsAlertEntity) GetTags() []string {
+	if a == nil {
 		return nil
 	}
-	return o.Tags
+	return a.Tags
 }
 
-func (o *AlertsAlertEntity) GetSourceIcon() *string {
-	if o == nil {
+func (a *AlertsAlertEntity) GetSourceIcon() *string {
+	if a == nil {
 		return nil
 	}
-	return o.SourceIcon
+	return a.SourceIcon
 }
 
-func (o *AlertsAlertEntity) GetSignalID() *string {
-	if o == nil {
+func (a *AlertsAlertEntity) GetSignalID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.SignalID
+	return a.SignalID
 }
 
-func (o *AlertsAlertEntity) GetSignalRule() *NullableSignalsAPIRuleEntity {
-	if o == nil {
+func (a *AlertsAlertEntity) GetSignalRule() *NullableSignalsAPIRuleEntity {
+	if a == nil {
 		return nil
 	}
-	return o.SignalRule
+	return a.SignalRule
 }
 
-func (o *AlertsAlertEntity) GetSignalTarget() *NullableSignalsAPITargetEntity {
-	if o == nil {
+func (a *AlertsAlertEntity) GetSignalTarget() *NullableSignalsAPITargetEntity {
+	if a == nil {
 		return nil
 	}
-	return o.SignalTarget
+	return a.SignalTarget
 }
 
-func (o *AlertsAlertEntity) GetTeamName() *string {
-	if o == nil {
+func (a *AlertsAlertEntity) GetTeamName() *string {
+	if a == nil {
 		return nil
 	}
-	return o.TeamName
+	return a.TeamName
 }
 
-func (o *AlertsAlertEntity) GetTeamID() *string {
-	if o == nil {
+func (a *AlertsAlertEntity) GetTeamID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.TeamID
+	return a.TeamID
 }
 
-func (o *AlertsAlertEntity) GetPosition() *int {
-	if o == nil {
+func (a *AlertsAlertEntity) GetPosition() *int {
+	if a == nil {
 		return nil
 	}
-	return o.Position
+	return a.Position
 }
 
-func (o *AlertsAlertEntity) GetIncidents() []PublicAPIV1IncidentsSuccinctEntity {
-	if o == nil {
+func (a *AlertsAlertEntity) GetIncidents() []PublicAPIV1IncidentsSuccinctEntity {
+	if a == nil {
 		return nil
 	}
-	return o.Incidents
+	return a.Incidents
 }
 
-func (o *AlertsAlertEntity) GetEvents() []AlertsSirenEventEntity {
-	if o == nil {
+func (a *AlertsAlertEntity) GetEvents() []AlertsSirenEventEntity {
+	if a == nil {
 		return nil
 	}
-	return o.Events
+	return a.Events
 }
 
-func (o *AlertsAlertEntity) GetIsExpired() *bool {
-	if o == nil {
+func (a *AlertsAlertEntity) GetIsExpired() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.IsExpired
+	return a.IsExpired
 }
 
-func (o *AlertsAlertEntity) GetIsNoise() *bool {
-	if o == nil {
+func (a *AlertsAlertEntity) GetIsNoise() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.IsNoise
+	return a.IsNoise
 }
 
-func (o *AlertsAlertEntity) GetParentAlerts() []AlertsSirenAlertEntity {
-	if o == nil {
+func (a *AlertsAlertEntity) GetParentAlerts() []AlertsSirenAlertEntity {
+	if a == nil {
 		return nil
 	}
-	return o.ParentAlerts
+	return a.ParentAlerts
 }
 
-func (o *AlertsAlertEntity) GetChildAlerts() []AlertsSirenAlertEntity {
-	if o == nil {
+func (a *AlertsAlertEntity) GetChildAlerts() []AlertsSirenAlertEntity {
+	if a == nil {
 		return nil
 	}
-	return o.ChildAlerts
+	return a.ChildAlerts
 }
 
-func (o *AlertsAlertEntity) GetConversations() []ConversationsAPIEntitiesReference {
-	if o == nil {
+func (a *AlertsAlertEntity) GetConversations() []ConversationsAPIEntitiesReference {
+	if a == nil {
 		return nil
 	}
-	return o.Conversations
+	return a.Conversations
 }

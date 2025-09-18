@@ -8,23 +8,23 @@ type ListPostMortemReasonsRequest struct {
 	PerPage  *int   `queryParam:"style=form,explode=true,name=per_page"`
 }
 
-func (o *ListPostMortemReasonsRequest) GetReportID() string {
-	if o == nil {
+func (l *ListPostMortemReasonsRequest) GetReportID() string {
+	if l == nil {
 		return ""
 	}
-	return o.ReportID
+	return l.ReportID
 }
 
-func (o *ListPostMortemReasonsRequest) GetPage() *int {
-	if o == nil {
+func (l *ListPostMortemReasonsRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListPostMortemReasonsRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListPostMortemReasonsRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }

@@ -13,30 +13,30 @@ type GetSignalsIngestURLRequest struct {
 	UserID *string `queryParam:"style=form,explode=true,name=user_id"`
 }
 
-func (o *GetSignalsIngestURLRequest) GetTeamID() *string {
-	if o == nil {
+func (g *GetSignalsIngestURLRequest) GetTeamID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.TeamID
+	return g.TeamID
 }
 
-func (o *GetSignalsIngestURLRequest) GetEscalationPolicyID() *string {
-	if o == nil {
+func (g *GetSignalsIngestURLRequest) GetEscalationPolicyID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.EscalationPolicyID
+	return g.EscalationPolicyID
 }
 
-func (o *GetSignalsIngestURLRequest) GetOnCallScheduleID() *string {
-	if o == nil {
+func (g *GetSignalsIngestURLRequest) GetOnCallScheduleID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.OnCallScheduleID
+	return g.OnCallScheduleID
 }
 
-func (o *GetSignalsIngestURLRequest) GetUserID() *string {
-	if o == nil {
+func (g *GetSignalsIngestURLRequest) GetUserID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.UserID
+	return g.UserID
 }

@@ -99,32 +99,32 @@ type UpdateCallRouteStep struct {
 	OnCallRotationID *string `json:"on_call_rotation_id,omitempty"`
 }
 
-func (o *UpdateCallRouteStep) GetTargetType() UpdateCallRouteTargetType {
-	if o == nil {
+func (u *UpdateCallRouteStep) GetTargetType() UpdateCallRouteTargetType {
+	if u == nil {
 		return UpdateCallRouteTargetType("")
 	}
-	return o.TargetType
+	return u.TargetType
 }
 
-func (o *UpdateCallRouteStep) GetTargetID() string {
-	if o == nil {
+func (u *UpdateCallRouteStep) GetTargetID() string {
+	if u == nil {
 		return ""
 	}
-	return o.TargetID
+	return u.TargetID
 }
 
-func (o *UpdateCallRouteStep) GetTimeout() string {
-	if o == nil {
+func (u *UpdateCallRouteStep) GetTimeout() string {
+	if u == nil {
 		return ""
 	}
-	return o.Timeout
+	return u.Timeout
 }
 
-func (o *UpdateCallRouteStep) GetOnCallRotationID() *string {
-	if o == nil {
+func (u *UpdateCallRouteStep) GetOnCallRotationID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.OnCallRotationID
+	return u.OnCallRotationID
 }
 
 // UpdateCallRouteType - Type of target
@@ -174,18 +174,18 @@ type UpdateCallRouteTarget struct {
 	ID string `json:"id"`
 }
 
-func (o *UpdateCallRouteTarget) GetType() UpdateCallRouteType {
-	if o == nil {
+func (u *UpdateCallRouteTarget) GetType() UpdateCallRouteType {
+	if u == nil {
 		return UpdateCallRouteType("")
 	}
-	return o.Type
+	return u.Type
 }
 
-func (o *UpdateCallRouteTarget) GetID() string {
-	if o == nil {
+func (u *UpdateCallRouteTarget) GetID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ID
+	return u.ID
 }
 
 // UpdateCallRoute - Update a call route by ID
@@ -206,51 +206,51 @@ type UpdateCallRoute struct {
 	Target *UpdateCallRouteTarget `json:"target,omitempty"`
 }
 
-func (o *UpdateCallRoute) GetName() *string {
-	if o == nil {
+func (u *UpdateCallRoute) GetName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Name
+	return u.Name
 }
 
-func (o *UpdateCallRoute) GetRoutingMode() *UpdateCallRouteRoutingMode {
-	if o == nil {
+func (u *UpdateCallRoute) GetRoutingMode() *UpdateCallRouteRoutingMode {
+	if u == nil {
 		return nil
 	}
-	return o.RoutingMode
+	return u.RoutingMode
 }
 
-func (o *UpdateCallRoute) GetConnectMode() *UpdateCallRouteConnectMode {
-	if o == nil {
+func (u *UpdateCallRoute) GetConnectMode() *UpdateCallRouteConnectMode {
+	if u == nil {
 		return nil
 	}
-	return o.ConnectMode
+	return u.ConnectMode
 }
 
-func (o *UpdateCallRoute) GetDescription() *string {
-	if o == nil {
+func (u *UpdateCallRoute) GetDescription() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Description
+	return u.Description
 }
 
-func (o *UpdateCallRoute) GetGreetingMessage() *string {
-	if o == nil {
+func (u *UpdateCallRoute) GetGreetingMessage() *string {
+	if u == nil {
 		return nil
 	}
-	return o.GreetingMessage
+	return u.GreetingMessage
 }
 
-func (o *UpdateCallRoute) GetSteps() []UpdateCallRouteStep {
-	if o == nil {
+func (u *UpdateCallRoute) GetSteps() []UpdateCallRouteStep {
+	if u == nil {
 		return nil
 	}
-	return o.Steps
+	return u.Steps
 }
 
-func (o *UpdateCallRoute) GetTarget() *UpdateCallRouteTarget {
-	if o == nil {
+func (u *UpdateCallRoute) GetTarget() *UpdateCallRouteTarget {
+	if u == nil {
 		return nil
 	}
-	return o.Target
+	return u.Target
 }

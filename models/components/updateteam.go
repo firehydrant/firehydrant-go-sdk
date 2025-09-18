@@ -8,18 +8,18 @@ type UpdateTeamMsTeamsChannel struct {
 	MsTeamID  string `json:"ms_team_id"`
 }
 
-func (o *UpdateTeamMsTeamsChannel) GetChannelID() string {
-	if o == nil {
+func (u *UpdateTeamMsTeamsChannel) GetChannelID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ChannelID
+	return u.ChannelID
 }
 
-func (o *UpdateTeamMsTeamsChannel) GetMsTeamID() string {
-	if o == nil {
+func (u *UpdateTeamMsTeamsChannel) GetMsTeamID() string {
+	if u == nil {
 		return ""
 	}
-	return o.MsTeamID
+	return u.MsTeamID
 }
 
 type UpdateTeamMembership struct {
@@ -33,32 +33,32 @@ type UpdateTeamMembership struct {
 	IncidentRoleID *string `json:"incident_role_id,omitempty"`
 }
 
-func (o *UpdateTeamMembership) GetUserID() *string {
-	if o == nil {
+func (u *UpdateTeamMembership) GetUserID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.UserID
+	return u.UserID
 }
 
-func (o *UpdateTeamMembership) GetScheduleID() *string {
-	if o == nil {
+func (u *UpdateTeamMembership) GetScheduleID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.ScheduleID
+	return u.ScheduleID
 }
 
-func (o *UpdateTeamMembership) GetSignalsOnCallScheduleID() *string {
-	if o == nil {
+func (u *UpdateTeamMembership) GetSignalsOnCallScheduleID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.SignalsOnCallScheduleID
+	return u.SignalsOnCallScheduleID
 }
 
-func (o *UpdateTeamMembership) GetIncidentRoleID() *string {
-	if o == nil {
+func (u *UpdateTeamMembership) GetIncidentRoleID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.IncidentRoleID
+	return u.IncidentRoleID
 }
 
 // UpdateTeam - Update a single team from its ID
@@ -76,51 +76,51 @@ type UpdateTeam struct {
 	InviteEmails []string `json:"invite_emails,omitempty"`
 }
 
-func (o *UpdateTeam) GetName() *string {
-	if o == nil {
+func (u *UpdateTeam) GetName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Name
+	return u.Name
 }
 
-func (o *UpdateTeam) GetDescription() *string {
-	if o == nil {
+func (u *UpdateTeam) GetDescription() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Description
+	return u.Description
 }
 
-func (o *UpdateTeam) GetSlug() *string {
-	if o == nil {
+func (u *UpdateTeam) GetSlug() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Slug
+	return u.Slug
 }
 
-func (o *UpdateTeam) GetSlackChannelID() *string {
-	if o == nil {
+func (u *UpdateTeam) GetSlackChannelID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.SlackChannelID
+	return u.SlackChannelID
 }
 
-func (o *UpdateTeam) GetMsTeamsChannel() *UpdateTeamMsTeamsChannel {
-	if o == nil {
+func (u *UpdateTeam) GetMsTeamsChannel() *UpdateTeamMsTeamsChannel {
+	if u == nil {
 		return nil
 	}
-	return o.MsTeamsChannel
+	return u.MsTeamsChannel
 }
 
-func (o *UpdateTeam) GetMemberships() []UpdateTeamMembership {
-	if o == nil {
+func (u *UpdateTeam) GetMemberships() []UpdateTeamMembership {
+	if u == nil {
 		return nil
 	}
-	return o.Memberships
+	return u.Memberships
 }
 
-func (o *UpdateTeam) GetInviteEmails() []string {
-	if o == nil {
+func (u *UpdateTeam) GetInviteEmails() []string {
+	if u == nil {
 		return nil
 	}
-	return o.InviteEmails
+	return u.InviteEmails
 }

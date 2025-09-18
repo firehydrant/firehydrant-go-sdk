@@ -11,16 +11,16 @@ type CreateTeamSignalRuleRequest struct {
 	CreateTeamSignalRule components.CreateTeamSignalRule `request:"mediaType=application/json"`
 }
 
-func (o *CreateTeamSignalRuleRequest) GetTeamID() string {
-	if o == nil {
+func (c *CreateTeamSignalRuleRequest) GetTeamID() string {
+	if c == nil {
 		return ""
 	}
-	return o.TeamID
+	return c.TeamID
 }
 
-func (o *CreateTeamSignalRuleRequest) GetCreateTeamSignalRule() components.CreateTeamSignalRule {
-	if o == nil {
+func (c *CreateTeamSignalRuleRequest) GetCreateTeamSignalRule() components.CreateTeamSignalRule {
+	if c == nil {
 		return components.CreateTeamSignalRule{}
 	}
-	return o.CreateTeamSignalRule
+	return c.CreateTeamSignalRule
 }

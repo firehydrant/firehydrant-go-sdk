@@ -12,44 +12,44 @@ type IntegrationsStatuspageConnectionEntity struct {
 	MilestoneMappings []IntegrationsStatuspageMilestoneMappingEntity `json:"milestone_mappings,omitempty"`
 }
 
-func (o *IntegrationsStatuspageConnectionEntity) GetID() *string {
-	if o == nil {
+func (i *IntegrationsStatuspageConnectionEntity) GetID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ID
+	return i.ID
 }
 
-func (o *IntegrationsStatuspageConnectionEntity) GetPageName() *string {
-	if o == nil {
+func (i *IntegrationsStatuspageConnectionEntity) GetPageName() *string {
+	if i == nil {
 		return nil
 	}
-	return o.PageName
+	return i.PageName
 }
 
-func (o *IntegrationsStatuspageConnectionEntity) GetPageID() *string {
-	if o == nil {
+func (i *IntegrationsStatuspageConnectionEntity) GetPageID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.PageID
+	return i.PageID
 }
 
-func (o *IntegrationsStatuspageConnectionEntity) GetConditions() []IntegrationsStatuspageConditionEntity {
-	if o == nil {
+func (i *IntegrationsStatuspageConnectionEntity) GetConditions() []IntegrationsStatuspageConditionEntity {
+	if i == nil {
 		return nil
 	}
-	return o.Conditions
+	return i.Conditions
 }
 
-func (o *IntegrationsStatuspageConnectionEntity) GetSeverities() []IntegrationsStatuspageSeverityEntity {
-	if o == nil {
+func (i *IntegrationsStatuspageConnectionEntity) GetSeverities() []IntegrationsStatuspageSeverityEntity {
+	if i == nil {
 		return nil
 	}
-	return o.Severities
+	return i.Severities
 }
 
-func (o *IntegrationsStatuspageConnectionEntity) GetMilestoneMappings() []IntegrationsStatuspageMilestoneMappingEntity {
-	if o == nil {
+func (i *IntegrationsStatuspageConnectionEntity) GetMilestoneMappings() []IntegrationsStatuspageMilestoneMappingEntity {
+	if i == nil {
 		return nil
 	}
-	return o.MilestoneMappings
+	return i.MilestoneMappings
 }

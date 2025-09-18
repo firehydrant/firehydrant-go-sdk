@@ -47,93 +47,93 @@ func (g *GetMeanTimeReportRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *GetMeanTimeReportRequest) GetEnvironments() *string {
-	if o == nil {
+func (g *GetMeanTimeReportRequest) GetEnvironments() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Environments
+	return g.Environments
 }
 
-func (o *GetMeanTimeReportRequest) GetTeams() *string {
-	if o == nil {
+func (g *GetMeanTimeReportRequest) GetTeams() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Teams
+	return g.Teams
 }
 
-func (o *GetMeanTimeReportRequest) GetServices() *string {
-	if o == nil {
+func (g *GetMeanTimeReportRequest) GetServices() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Services
+	return g.Services
 }
 
-func (o *GetMeanTimeReportRequest) GetStatus() *string {
-	if o == nil {
+func (g *GetMeanTimeReportRequest) GetStatus() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetMeanTimeReportRequest) GetStartDate() *types.Date {
-	if o == nil {
+func (g *GetMeanTimeReportRequest) GetStartDate() *types.Date {
+	if g == nil {
 		return nil
 	}
-	return o.StartDate
+	return g.StartDate
 }
 
-func (o *GetMeanTimeReportRequest) GetEndDate() *types.Date {
-	if o == nil {
+func (g *GetMeanTimeReportRequest) GetEndDate() *types.Date {
+	if g == nil {
 		return nil
 	}
-	return o.EndDate
+	return g.EndDate
 }
 
-func (o *GetMeanTimeReportRequest) GetQuery() *string {
-	if o == nil {
+func (g *GetMeanTimeReportRequest) GetQuery() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Query
+	return g.Query
 }
 
-func (o *GetMeanTimeReportRequest) GetSavedSearchID() *string {
-	if o == nil {
+func (g *GetMeanTimeReportRequest) GetSavedSearchID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.SavedSearchID
+	return g.SavedSearchID
 }
 
-func (o *GetMeanTimeReportRequest) GetPriorities() *string {
-	if o == nil {
+func (g *GetMeanTimeReportRequest) GetPriorities() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Priorities
+	return g.Priorities
 }
 
-func (o *GetMeanTimeReportRequest) GetPriorityNotSet() *bool {
-	if o == nil {
+func (g *GetMeanTimeReportRequest) GetPriorityNotSet() *bool {
+	if g == nil {
 		return nil
 	}
-	return o.PriorityNotSet
+	return g.PriorityNotSet
 }
 
-func (o *GetMeanTimeReportRequest) GetSeverities() *string {
-	if o == nil {
+func (g *GetMeanTimeReportRequest) GetSeverities() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Severities
+	return g.Severities
 }
 
-func (o *GetMeanTimeReportRequest) GetSeverityNotSet() *bool {
-	if o == nil {
+func (g *GetMeanTimeReportRequest) GetSeverityNotSet() *bool {
+	if g == nil {
 		return nil
 	}
-	return o.SeverityNotSet
+	return g.SeverityNotSet
 }
 
-func (o *GetMeanTimeReportRequest) GetCurrentMilestones() *string {
-	if o == nil {
+func (g *GetMeanTimeReportRequest) GetCurrentMilestones() *string {
+	if g == nil {
 		return nil
 	}
-	return o.CurrentMilestones
+	return g.CurrentMilestones
 }

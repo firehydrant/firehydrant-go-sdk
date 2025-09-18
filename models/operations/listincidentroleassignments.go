@@ -40,16 +40,16 @@ type ListIncidentRoleAssignmentsRequest struct {
 	Status *Status `queryParam:"style=form,explode=true,name=status"`
 }
 
-func (o *ListIncidentRoleAssignmentsRequest) GetIncidentID() string {
-	if o == nil {
+func (l *ListIncidentRoleAssignmentsRequest) GetIncidentID() string {
+	if l == nil {
 		return ""
 	}
-	return o.IncidentID
+	return l.IncidentID
 }
 
-func (o *ListIncidentRoleAssignmentsRequest) GetStatus() *Status {
-	if o == nil {
+func (l *ListIncidentRoleAssignmentsRequest) GetStatus() *Status {
+	if l == nil {
 		return nil
 	}
-	return o.Status
+	return l.Status
 }

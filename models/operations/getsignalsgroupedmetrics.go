@@ -144,79 +144,79 @@ func (g *GetSignalsGroupedMetricsRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *GetSignalsGroupedMetricsRequest) GetSignalRules() *string {
-	if o == nil {
+func (g *GetSignalsGroupedMetricsRequest) GetSignalRules() *string {
+	if g == nil {
 		return nil
 	}
-	return o.SignalRules
+	return g.SignalRules
 }
 
-func (o *GetSignalsGroupedMetricsRequest) GetTeams() *string {
-	if o == nil {
+func (g *GetSignalsGroupedMetricsRequest) GetTeams() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Teams
+	return g.Teams
 }
 
-func (o *GetSignalsGroupedMetricsRequest) GetEnvironments() *string {
-	if o == nil {
+func (g *GetSignalsGroupedMetricsRequest) GetEnvironments() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Environments
+	return g.Environments
 }
 
-func (o *GetSignalsGroupedMetricsRequest) GetServices() *string {
-	if o == nil {
+func (g *GetSignalsGroupedMetricsRequest) GetServices() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Services
+	return g.Services
 }
 
-func (o *GetSignalsGroupedMetricsRequest) GetTags() *string {
-	if o == nil {
+func (g *GetSignalsGroupedMetricsRequest) GetTags() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Tags
+	return g.Tags
 }
 
-func (o *GetSignalsGroupedMetricsRequest) GetUsers() *string {
-	if o == nil {
+func (g *GetSignalsGroupedMetricsRequest) GetUsers() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Users
+	return g.Users
 }
 
-func (o *GetSignalsGroupedMetricsRequest) GetGroupBy() *GetSignalsGroupedMetricsGroupBy {
-	if o == nil {
+func (g *GetSignalsGroupedMetricsRequest) GetGroupBy() *GetSignalsGroupedMetricsGroupBy {
+	if g == nil {
 		return nil
 	}
-	return o.GroupBy
+	return g.GroupBy
 }
 
-func (o *GetSignalsGroupedMetricsRequest) GetSortBy() *GetSignalsGroupedMetricsSortBy {
-	if o == nil {
+func (g *GetSignalsGroupedMetricsRequest) GetSortBy() *GetSignalsGroupedMetricsSortBy {
+	if g == nil {
 		return nil
 	}
-	return o.SortBy
+	return g.SortBy
 }
 
-func (o *GetSignalsGroupedMetricsRequest) GetSortDirection() *GetSignalsGroupedMetricsSortDirection {
-	if o == nil {
+func (g *GetSignalsGroupedMetricsRequest) GetSortDirection() *GetSignalsGroupedMetricsSortDirection {
+	if g == nil {
 		return nil
 	}
-	return o.SortDirection
+	return g.SortDirection
 }
 
-func (o *GetSignalsGroupedMetricsRequest) GetStartDate() *time.Time {
-	if o == nil {
+func (g *GetSignalsGroupedMetricsRequest) GetStartDate() *time.Time {
+	if g == nil {
 		return nil
 	}
-	return o.StartDate
+	return g.StartDate
 }
 
-func (o *GetSignalsGroupedMetricsRequest) GetEndDate() *time.Time {
-	if o == nil {
+func (g *GetSignalsGroupedMetricsRequest) GetEndDate() *time.Time {
+	if g == nil {
 		return nil
 	}
-	return o.EndDate
+	return g.EndDate
 }

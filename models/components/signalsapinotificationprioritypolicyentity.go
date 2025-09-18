@@ -12,30 +12,30 @@ type SignalsAPINotificationPriorityPolicyEntity struct {
 	Steps []SignalsAPIEscalationPolicyStepEntity `json:"steps,omitempty"`
 }
 
-func (o *SignalsAPINotificationPriorityPolicyEntity) GetNotificationPriority() *string {
-	if o == nil {
+func (s *SignalsAPINotificationPriorityPolicyEntity) GetNotificationPriority() *string {
+	if s == nil {
 		return nil
 	}
-	return o.NotificationPriority
+	return s.NotificationPriority
 }
 
-func (o *SignalsAPINotificationPriorityPolicyEntity) GetRepetitions() *int {
-	if o == nil {
+func (s *SignalsAPINotificationPriorityPolicyEntity) GetRepetitions() *int {
+	if s == nil {
 		return nil
 	}
-	return o.Repetitions
+	return s.Repetitions
 }
 
-func (o *SignalsAPINotificationPriorityPolicyEntity) GetHandoffStep() *NullableSignalsAPIEscalationPolicyHandoffStepEntity {
-	if o == nil {
+func (s *SignalsAPINotificationPriorityPolicyEntity) GetHandoffStep() *NullableSignalsAPIEscalationPolicyHandoffStepEntity {
+	if s == nil {
 		return nil
 	}
-	return o.HandoffStep
+	return s.HandoffStep
 }
 
-func (o *SignalsAPINotificationPriorityPolicyEntity) GetSteps() []SignalsAPIEscalationPolicyStepEntity {
-	if o == nil {
+func (s *SignalsAPINotificationPriorityPolicyEntity) GetSteps() []SignalsAPIEscalationPolicyStepEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Steps
+	return s.Steps
 }

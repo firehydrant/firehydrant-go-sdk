@@ -9,18 +9,18 @@ type CreateTaskListTaskListItem struct {
 	Description *string `json:"description,omitempty"`
 }
 
-func (o *CreateTaskListTaskListItem) GetSummary() string {
-	if o == nil {
+func (c *CreateTaskListTaskListItem) GetSummary() string {
+	if c == nil {
 		return ""
 	}
-	return o.Summary
+	return c.Summary
 }
 
-func (o *CreateTaskListTaskListItem) GetDescription() *string {
-	if o == nil {
+func (c *CreateTaskListTaskListItem) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
 // CreateTaskList - Creates a new task list
@@ -30,23 +30,23 @@ type CreateTaskList struct {
 	TaskListItems []CreateTaskListTaskListItem `json:"task_list_items"`
 }
 
-func (o *CreateTaskList) GetName() string {
-	if o == nil {
+func (c *CreateTaskList) GetName() string {
+	if c == nil {
 		return ""
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CreateTaskList) GetDescription() *string {
-	if o == nil {
+func (c *CreateTaskList) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *CreateTaskList) GetTaskListItems() []CreateTaskListTaskListItem {
-	if o == nil {
+func (c *CreateTaskList) GetTaskListItems() []CreateTaskListTaskListItem {
+	if c == nil {
 		return []CreateTaskListTaskListItem{}
 	}
-	return o.TaskListItems
+	return c.TaskListItems
 }

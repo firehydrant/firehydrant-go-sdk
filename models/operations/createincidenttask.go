@@ -11,16 +11,16 @@ type CreateIncidentTaskRequest struct {
 	CreateIncidentTask components.CreateIncidentTask `request:"mediaType=application/json"`
 }
 
-func (o *CreateIncidentTaskRequest) GetIncidentID() string {
-	if o == nil {
+func (c *CreateIncidentTaskRequest) GetIncidentID() string {
+	if c == nil {
 		return ""
 	}
-	return o.IncidentID
+	return c.IncidentID
 }
 
-func (o *CreateIncidentTaskRequest) GetCreateIncidentTask() components.CreateIncidentTask {
-	if o == nil {
+func (c *CreateIncidentTaskRequest) GetCreateIncidentTask() components.CreateIncidentTask {
+	if c == nil {
 		return components.CreateIncidentTask{}
 	}
-	return o.CreateIncidentTask
+	return c.CreateIncidentTask
 }

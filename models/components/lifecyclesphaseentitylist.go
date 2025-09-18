@@ -7,9 +7,9 @@ type LifecyclesPhaseEntityList struct {
 	Data []LifecyclesPhaseEntity `json:"data,omitempty"`
 }
 
-func (o *LifecyclesPhaseEntityList) GetData() []LifecyclesPhaseEntity {
-	if o == nil {
+func (l *LifecyclesPhaseEntityList) GetData() []LifecyclesPhaseEntity {
+	if l == nil {
 		return nil
 	}
-	return o.Data
+	return l.Data
 }

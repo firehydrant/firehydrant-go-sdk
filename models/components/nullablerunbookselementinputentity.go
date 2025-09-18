@@ -9,30 +9,30 @@ type NullableRunbooksElementInputEntity struct {
 	Required     *bool   `json:"required,omitempty"`
 }
 
-func (o *NullableRunbooksElementInputEntity) GetLabel() *string {
-	if o == nil {
+func (n *NullableRunbooksElementInputEntity) GetLabel() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Label
+	return n.Label
 }
 
-func (o *NullableRunbooksElementInputEntity) GetPlaceholder() *string {
-	if o == nil {
+func (n *NullableRunbooksElementInputEntity) GetPlaceholder() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Placeholder
+	return n.Placeholder
 }
 
-func (o *NullableRunbooksElementInputEntity) GetDefaultValue() *string {
-	if o == nil {
+func (n *NullableRunbooksElementInputEntity) GetDefaultValue() *string {
+	if n == nil {
 		return nil
 	}
-	return o.DefaultValue
+	return n.DefaultValue
 }
 
-func (o *NullableRunbooksElementInputEntity) GetRequired() *bool {
-	if o == nil {
+func (n *NullableRunbooksElementInputEntity) GetRequired() *bool {
+	if n == nil {
 		return nil
 	}
-	return o.Required
+	return n.Required
 }

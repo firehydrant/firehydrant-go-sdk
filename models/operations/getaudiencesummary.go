@@ -9,16 +9,16 @@ type GetAudienceSummaryRequest struct {
 	IncidentID string `pathParam:"style=simple,explode=false,name=incident_id"`
 }
 
-func (o *GetAudienceSummaryRequest) GetAudienceID() string {
-	if o == nil {
+func (g *GetAudienceSummaryRequest) GetAudienceID() string {
+	if g == nil {
 		return ""
 	}
-	return o.AudienceID
+	return g.AudienceID
 }
 
-func (o *GetAudienceSummaryRequest) GetIncidentID() string {
-	if o == nil {
+func (g *GetAudienceSummaryRequest) GetIncidentID() string {
+	if g == nil {
 		return ""
 	}
-	return o.IncidentID
+	return g.IncidentID
 }

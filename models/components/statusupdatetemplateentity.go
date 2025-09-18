@@ -28,44 +28,44 @@ func (s *StatusUpdateTemplateEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *StatusUpdateTemplateEntity) GetID() *string {
-	if o == nil {
+func (s *StatusUpdateTemplateEntity) GetID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *StatusUpdateTemplateEntity) GetName() *string {
-	if o == nil {
+func (s *StatusUpdateTemplateEntity) GetName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Name
+	return s.Name
 }
 
-func (o *StatusUpdateTemplateEntity) GetBody() *string {
-	if o == nil {
+func (s *StatusUpdateTemplateEntity) GetBody() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Body
+	return s.Body
 }
 
-func (o *StatusUpdateTemplateEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (s *StatusUpdateTemplateEntity) GetCreatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return s.CreatedAt
 }
 
-func (o *StatusUpdateTemplateEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (s *StatusUpdateTemplateEntity) GetUpdatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return s.UpdatedAt
 }
 
-func (o *StatusUpdateTemplateEntity) GetDiscardedAt() *time.Time {
-	if o == nil {
+func (s *StatusUpdateTemplateEntity) GetDiscardedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.DiscardedAt
+	return s.DiscardedAt
 }

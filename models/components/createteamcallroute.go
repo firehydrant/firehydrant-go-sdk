@@ -99,32 +99,32 @@ type CreateTeamCallRouteStep struct {
 	OnCallRotationID *string `json:"on_call_rotation_id,omitempty"`
 }
 
-func (o *CreateTeamCallRouteStep) GetTargetType() CreateTeamCallRouteTargetType {
-	if o == nil {
+func (c *CreateTeamCallRouteStep) GetTargetType() CreateTeamCallRouteTargetType {
+	if c == nil {
 		return CreateTeamCallRouteTargetType("")
 	}
-	return o.TargetType
+	return c.TargetType
 }
 
-func (o *CreateTeamCallRouteStep) GetTargetID() string {
-	if o == nil {
+func (c *CreateTeamCallRouteStep) GetTargetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.TargetID
+	return c.TargetID
 }
 
-func (o *CreateTeamCallRouteStep) GetTimeout() string {
-	if o == nil {
+func (c *CreateTeamCallRouteStep) GetTimeout() string {
+	if c == nil {
 		return ""
 	}
-	return o.Timeout
+	return c.Timeout
 }
 
-func (o *CreateTeamCallRouteStep) GetOnCallRotationID() *string {
-	if o == nil {
+func (c *CreateTeamCallRouteStep) GetOnCallRotationID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.OnCallRotationID
+	return c.OnCallRotationID
 }
 
 // CreateTeamCallRouteTarget - Target for the call route (required unless connect_mode is direct_dial)
@@ -135,18 +135,18 @@ type CreateTeamCallRouteTarget struct {
 	ID string `json:"id"`
 }
 
-func (o *CreateTeamCallRouteTarget) GetType() string {
-	if o == nil {
+func (c *CreateTeamCallRouteTarget) GetType() string {
+	if c == nil {
 		return ""
 	}
-	return o.Type
+	return c.Type
 }
 
-func (o *CreateTeamCallRouteTarget) GetID() string {
-	if o == nil {
+func (c *CreateTeamCallRouteTarget) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
 // CreateTeamCallRoute - Create a call route for a team
@@ -169,58 +169,58 @@ type CreateTeamCallRoute struct {
 	Target *CreateTeamCallRouteTarget `json:"target,omitempty"`
 }
 
-func (o *CreateTeamCallRoute) GetName() string {
-	if o == nil {
+func (c *CreateTeamCallRoute) GetName() string {
+	if c == nil {
 		return ""
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CreateTeamCallRoute) GetPhoneNumber() string {
-	if o == nil {
+func (c *CreateTeamCallRoute) GetPhoneNumber() string {
+	if c == nil {
 		return ""
 	}
-	return o.PhoneNumber
+	return c.PhoneNumber
 }
 
-func (o *CreateTeamCallRoute) GetRoutingMode() CreateTeamCallRouteRoutingMode {
-	if o == nil {
+func (c *CreateTeamCallRoute) GetRoutingMode() CreateTeamCallRouteRoutingMode {
+	if c == nil {
 		return CreateTeamCallRouteRoutingMode("")
 	}
-	return o.RoutingMode
+	return c.RoutingMode
 }
 
-func (o *CreateTeamCallRoute) GetConnectMode() *CreateTeamCallRouteConnectMode {
-	if o == nil {
+func (c *CreateTeamCallRoute) GetConnectMode() *CreateTeamCallRouteConnectMode {
+	if c == nil {
 		return nil
 	}
-	return o.ConnectMode
+	return c.ConnectMode
 }
 
-func (o *CreateTeamCallRoute) GetDescription() *string {
-	if o == nil {
+func (c *CreateTeamCallRoute) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *CreateTeamCallRoute) GetGreetingMessage() *string {
-	if o == nil {
+func (c *CreateTeamCallRoute) GetGreetingMessage() *string {
+	if c == nil {
 		return nil
 	}
-	return o.GreetingMessage
+	return c.GreetingMessage
 }
 
-func (o *CreateTeamCallRoute) GetSteps() []CreateTeamCallRouteStep {
-	if o == nil {
+func (c *CreateTeamCallRoute) GetSteps() []CreateTeamCallRouteStep {
+	if c == nil {
 		return nil
 	}
-	return o.Steps
+	return c.Steps
 }
 
-func (o *CreateTeamCallRoute) GetTarget() *CreateTeamCallRouteTarget {
-	if o == nil {
+func (c *CreateTeamCallRoute) GetTarget() *CreateTeamCallRouteTarget {
+	if c == nil {
 		return nil
 	}
-	return o.Target
+	return c.Target
 }

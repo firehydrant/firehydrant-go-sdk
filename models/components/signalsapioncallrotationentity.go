@@ -39,121 +39,121 @@ func (s *SignalsAPIOnCallRotationEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *SignalsAPIOnCallRotationEntity) GetID() *string {
-	if o == nil {
+func (s *SignalsAPIOnCallRotationEntity) GetID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *SignalsAPIOnCallRotationEntity) GetName() *string {
-	if o == nil {
+func (s *SignalsAPIOnCallRotationEntity) GetName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Name
+	return s.Name
 }
 
-func (o *SignalsAPIOnCallRotationEntity) GetDescription() *string {
-	if o == nil {
+func (s *SignalsAPIOnCallRotationEntity) GetDescription() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Description
+	return s.Description
 }
 
-func (o *SignalsAPIOnCallRotationEntity) GetTimeZone() *string {
-	if o == nil {
+func (s *SignalsAPIOnCallRotationEntity) GetTimeZone() *string {
+	if s == nil {
 		return nil
 	}
-	return o.TimeZone
+	return s.TimeZone
 }
 
-func (o *SignalsAPIOnCallRotationEntity) GetColor() *string {
-	if o == nil {
+func (s *SignalsAPIOnCallRotationEntity) GetColor() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Color
+	return s.Color
 }
 
-func (o *SignalsAPIOnCallRotationEntity) GetSlackUserGroupID() *string {
-	if o == nil {
+func (s *SignalsAPIOnCallRotationEntity) GetSlackUserGroupID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.SlackUserGroupID
+	return s.SlackUserGroupID
 }
 
-func (o *SignalsAPIOnCallRotationEntity) GetEnableSlackChannelNotifications() *bool {
-	if o == nil {
+func (s *SignalsAPIOnCallRotationEntity) GetEnableSlackChannelNotifications() *bool {
+	if s == nil {
 		return nil
 	}
-	return o.EnableSlackChannelNotifications
+	return s.EnableSlackChannelNotifications
 }
 
-func (o *SignalsAPIOnCallRotationEntity) GetPreventShiftDeletion() *bool {
-	if o == nil {
+func (s *SignalsAPIOnCallRotationEntity) GetPreventShiftDeletion() *bool {
+	if s == nil {
 		return nil
 	}
-	return o.PreventShiftDeletion
+	return s.PreventShiftDeletion
 }
 
-func (o *SignalsAPIOnCallRotationEntity) GetCoverageGapNotificationInterval() *string {
-	if o == nil {
+func (s *SignalsAPIOnCallRotationEntity) GetCoverageGapNotificationInterval() *string {
+	if s == nil {
 		return nil
 	}
-	return o.CoverageGapNotificationInterval
+	return s.CoverageGapNotificationInterval
 }
 
-func (o *SignalsAPIOnCallRotationEntity) GetMembers() []SuccinctEntity {
-	if o == nil {
+func (s *SignalsAPIOnCallRotationEntity) GetMembers() []SuccinctEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Members
+	return s.Members
 }
 
-func (o *SignalsAPIOnCallRotationEntity) GetShifts() []SignalsAPIOnCallShiftEntity {
-	if o == nil {
+func (s *SignalsAPIOnCallRotationEntity) GetShifts() []SignalsAPIOnCallShiftEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Shifts
+	return s.Shifts
 }
 
-func (o *SignalsAPIOnCallRotationEntity) GetTeam() *NullableSuccinctEntity {
-	if o == nil {
+func (s *SignalsAPIOnCallRotationEntity) GetTeam() *NullableSuccinctEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Team
+	return s.Team
 }
 
-func (o *SignalsAPIOnCallRotationEntity) GetStrategy() *NullableSignalsAPIOnCallStrategyEntity {
-	if o == nil {
+func (s *SignalsAPIOnCallRotationEntity) GetStrategy() *NullableSignalsAPIOnCallStrategyEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Strategy
+	return s.Strategy
 }
 
-func (o *SignalsAPIOnCallRotationEntity) GetRestrictions() []SignalsAPIOnCallRestrictionEntity {
-	if o == nil {
+func (s *SignalsAPIOnCallRotationEntity) GetRestrictions() []SignalsAPIOnCallRestrictionEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Restrictions
+	return s.Restrictions
 }
 
-func (o *SignalsAPIOnCallRotationEntity) GetCreatedBy() *NullableAuthorEntity {
-	if o == nil {
+func (s *SignalsAPIOnCallRotationEntity) GetCreatedBy() *NullableAuthorEntity {
+	if s == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return s.CreatedBy
 }
 
-func (o *SignalsAPIOnCallRotationEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (s *SignalsAPIOnCallRotationEntity) GetCreatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return s.CreatedAt
 }
 
-func (o *SignalsAPIOnCallRotationEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (s *SignalsAPIOnCallRotationEntity) GetUpdatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return s.UpdatedAt
 }

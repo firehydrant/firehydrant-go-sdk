@@ -41,93 +41,93 @@ func (f *FunctionalityEntityLite) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *FunctionalityEntityLite) GetID() *string {
-	if o == nil {
+func (f *FunctionalityEntityLite) GetID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ID
+	return f.ID
 }
 
-func (o *FunctionalityEntityLite) GetName() *string {
-	if o == nil {
+func (f *FunctionalityEntityLite) GetName() *string {
+	if f == nil {
 		return nil
 	}
-	return o.Name
+	return f.Name
 }
 
-func (o *FunctionalityEntityLite) GetSlug() *string {
-	if o == nil {
+func (f *FunctionalityEntityLite) GetSlug() *string {
+	if f == nil {
 		return nil
 	}
-	return o.Slug
+	return f.Slug
 }
 
-func (o *FunctionalityEntityLite) GetDescription() *string {
-	if o == nil {
+func (f *FunctionalityEntityLite) GetDescription() *string {
+	if f == nil {
 		return nil
 	}
-	return o.Description
+	return f.Description
 }
 
-func (o *FunctionalityEntityLite) GetCreatedAt() *time.Time {
-	if o == nil {
+func (f *FunctionalityEntityLite) GetCreatedAt() *time.Time {
+	if f == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return f.CreatedAt
 }
 
-func (o *FunctionalityEntityLite) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (f *FunctionalityEntityLite) GetUpdatedAt() *time.Time {
+	if f == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return f.UpdatedAt
 }
 
-func (o *FunctionalityEntityLite) GetLabels() *FunctionalityEntityLiteLabels {
-	if o == nil {
+func (f *FunctionalityEntityLite) GetLabels() *FunctionalityEntityLiteLabels {
+	if f == nil {
 		return nil
 	}
-	return o.Labels
+	return f.Labels
 }
 
-func (o *FunctionalityEntityLite) GetActiveIncidents() []string {
-	if o == nil {
+func (f *FunctionalityEntityLite) GetActiveIncidents() []string {
+	if f == nil {
 		return nil
 	}
-	return o.ActiveIncidents
+	return f.ActiveIncidents
 }
 
-func (o *FunctionalityEntityLite) GetLinks() []LinksEntity {
-	if o == nil {
+func (f *FunctionalityEntityLite) GetLinks() []LinksEntity {
+	if f == nil {
 		return nil
 	}
-	return o.Links
+	return f.Links
 }
 
-func (o *FunctionalityEntityLite) GetOwner() *NullableTeamEntityLite {
-	if o == nil {
+func (f *FunctionalityEntityLite) GetOwner() *NullableTeamEntityLite {
+	if f == nil {
 		return nil
 	}
-	return o.Owner
+	return f.Owner
 }
 
-func (o *FunctionalityEntityLite) GetAlertOnAdd() *bool {
-	if o == nil {
+func (f *FunctionalityEntityLite) GetAlertOnAdd() *bool {
+	if f == nil {
 		return nil
 	}
-	return o.AlertOnAdd
+	return f.AlertOnAdd
 }
 
-func (o *FunctionalityEntityLite) GetAutoAddRespondingTeam() *bool {
-	if o == nil {
+func (f *FunctionalityEntityLite) GetAutoAddRespondingTeam() *bool {
+	if f == nil {
 		return nil
 	}
-	return o.AutoAddRespondingTeam
+	return f.AutoAddRespondingTeam
 }
 
-func (o *FunctionalityEntityLite) GetUpdatedBy() *NullableAuthorEntity {
-	if o == nil {
+func (f *FunctionalityEntityLite) GetUpdatedBy() *NullableAuthorEntity {
+	if f == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return f.UpdatedBy
 }

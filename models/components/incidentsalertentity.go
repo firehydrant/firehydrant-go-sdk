@@ -10,23 +10,23 @@ type IncidentsAlertEntity struct {
 	Primary *bool `json:"primary,omitempty"`
 }
 
-func (o *IncidentsAlertEntity) GetID() *string {
-	if o == nil {
+func (i *IncidentsAlertEntity) GetID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ID
+	return i.ID
 }
 
-func (o *IncidentsAlertEntity) GetAlert() *NullableAlertsAlertEntity {
-	if o == nil {
+func (i *IncidentsAlertEntity) GetAlert() *NullableAlertsAlertEntity {
+	if i == nil {
 		return nil
 	}
-	return o.Alert
+	return i.Alert
 }
 
-func (o *IncidentsAlertEntity) GetPrimary() *bool {
-	if o == nil {
+func (i *IncidentsAlertEntity) GetPrimary() *bool {
+	if i == nil {
 		return nil
 	}
-	return o.Primary
+	return i.Primary
 }

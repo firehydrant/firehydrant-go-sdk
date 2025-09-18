@@ -30,65 +30,65 @@ func (s *SignalsAPIOrganizationOnCallRotationEntity) UnmarshalJSON(data []byte) 
 	return nil
 }
 
-func (o *SignalsAPIOrganizationOnCallRotationEntity) GetID() *string {
-	if o == nil {
+func (s *SignalsAPIOrganizationOnCallRotationEntity) GetID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *SignalsAPIOrganizationOnCallRotationEntity) GetName() *string {
-	if o == nil {
+func (s *SignalsAPIOrganizationOnCallRotationEntity) GetName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Name
+	return s.Name
 }
 
-func (o *SignalsAPIOrganizationOnCallRotationEntity) GetDescription() *string {
-	if o == nil {
+func (s *SignalsAPIOrganizationOnCallRotationEntity) GetDescription() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Description
+	return s.Description
 }
 
-func (o *SignalsAPIOrganizationOnCallRotationEntity) GetTimeZone() *string {
-	if o == nil {
+func (s *SignalsAPIOrganizationOnCallRotationEntity) GetTimeZone() *string {
+	if s == nil {
 		return nil
 	}
-	return o.TimeZone
+	return s.TimeZone
 }
 
-func (o *SignalsAPIOrganizationOnCallRotationEntity) GetCurrentShift() *NullableSignalsAPIOnCallShiftEntity {
-	if o == nil {
+func (s *SignalsAPIOrganizationOnCallRotationEntity) GetCurrentShift() *NullableSignalsAPIOnCallShiftEntity {
+	if s == nil {
 		return nil
 	}
-	return o.CurrentShift
+	return s.CurrentShift
 }
 
-func (o *SignalsAPIOrganizationOnCallRotationEntity) GetNextShift() *NullableSignalsAPIOnCallShiftEntity {
-	if o == nil {
+func (s *SignalsAPIOrganizationOnCallRotationEntity) GetNextShift() *NullableSignalsAPIOnCallShiftEntity {
+	if s == nil {
 		return nil
 	}
-	return o.NextShift
+	return s.NextShift
 }
 
-func (o *SignalsAPIOrganizationOnCallRotationEntity) GetCreatedBy() *NullableAuthorEntity {
-	if o == nil {
+func (s *SignalsAPIOrganizationOnCallRotationEntity) GetCreatedBy() *NullableAuthorEntity {
+	if s == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return s.CreatedBy
 }
 
-func (o *SignalsAPIOrganizationOnCallRotationEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (s *SignalsAPIOrganizationOnCallRotationEntity) GetCreatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return s.CreatedAt
 }
 
-func (o *SignalsAPIOrganizationOnCallRotationEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (s *SignalsAPIOrganizationOnCallRotationEntity) GetUpdatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return s.UpdatedAt
 }

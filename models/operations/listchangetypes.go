@@ -7,16 +7,16 @@ type ListChangeTypesRequest struct {
 	PerPage *int `queryParam:"style=form,explode=true,name=per_page"`
 }
 
-func (o *ListChangeTypesRequest) GetPage() *int {
-	if o == nil {
+func (l *ListChangeTypesRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListChangeTypesRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListChangeTypesRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }

@@ -9,23 +9,23 @@ type ListAwsCloudtrailBatchesRequest struct {
 	ConnectionID *string `queryParam:"style=form,explode=true,name=connection_id"`
 }
 
-func (o *ListAwsCloudtrailBatchesRequest) GetPage() *int {
-	if o == nil {
+func (l *ListAwsCloudtrailBatchesRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListAwsCloudtrailBatchesRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListAwsCloudtrailBatchesRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }
 
-func (o *ListAwsCloudtrailBatchesRequest) GetConnectionID() *string {
-	if o == nil {
+func (l *ListAwsCloudtrailBatchesRequest) GetConnectionID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ConnectionID
+	return l.ConnectionID
 }

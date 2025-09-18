@@ -10,37 +10,37 @@ type CreateLifecycleMeasurementDefinitionRequest struct {
 	EndsAtMilestoneID   string  `json:"ends_at_milestone_id"`
 }
 
-func (o *CreateLifecycleMeasurementDefinitionRequest) GetName() string {
-	if o == nil {
+func (c *CreateLifecycleMeasurementDefinitionRequest) GetName() string {
+	if c == nil {
 		return ""
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CreateLifecycleMeasurementDefinitionRequest) GetSlug() *string {
-	if o == nil {
+func (c *CreateLifecycleMeasurementDefinitionRequest) GetSlug() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Slug
+	return c.Slug
 }
 
-func (o *CreateLifecycleMeasurementDefinitionRequest) GetDescription() *string {
-	if o == nil {
+func (c *CreateLifecycleMeasurementDefinitionRequest) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *CreateLifecycleMeasurementDefinitionRequest) GetStartsAtMilestoneID() string {
-	if o == nil {
+func (c *CreateLifecycleMeasurementDefinitionRequest) GetStartsAtMilestoneID() string {
+	if c == nil {
 		return ""
 	}
-	return o.StartsAtMilestoneID
+	return c.StartsAtMilestoneID
 }
 
-func (o *CreateLifecycleMeasurementDefinitionRequest) GetEndsAtMilestoneID() string {
-	if o == nil {
+func (c *CreateLifecycleMeasurementDefinitionRequest) GetEndsAtMilestoneID() string {
+	if c == nil {
 		return ""
 	}
-	return o.EndsAtMilestoneID
+	return c.EndsAtMilestoneID
 }

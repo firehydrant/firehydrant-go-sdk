@@ -32,79 +32,79 @@ func (s *SignalsAPIOrganizationOnCallScheduleEntity) UnmarshalJSON(data []byte) 
 	return nil
 }
 
-func (o *SignalsAPIOrganizationOnCallScheduleEntity) GetID() *string {
-	if o == nil {
+func (s *SignalsAPIOrganizationOnCallScheduleEntity) GetID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *SignalsAPIOrganizationOnCallScheduleEntity) GetName() *string {
-	if o == nil {
+func (s *SignalsAPIOrganizationOnCallScheduleEntity) GetName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Name
+	return s.Name
 }
 
-func (o *SignalsAPIOrganizationOnCallScheduleEntity) GetDescription() *string {
-	if o == nil {
+func (s *SignalsAPIOrganizationOnCallScheduleEntity) GetDescription() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Description
+	return s.Description
 }
 
-func (o *SignalsAPIOrganizationOnCallScheduleEntity) GetRotations() []SignalsAPIOrganizationOnCallRotationEntity {
-	if o == nil {
+func (s *SignalsAPIOrganizationOnCallScheduleEntity) GetRotations() []SignalsAPIOrganizationOnCallRotationEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Rotations
+	return s.Rotations
 }
 
-func (o *SignalsAPIOrganizationOnCallScheduleEntity) GetTeam() *NullableSuccinctEntity {
-	if o == nil {
+func (s *SignalsAPIOrganizationOnCallScheduleEntity) GetTeam() *NullableSuccinctEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Team
+	return s.Team
 }
 
-func (o *SignalsAPIOrganizationOnCallScheduleEntity) GetCreatedBy() *NullableAuthorEntity {
-	if o == nil {
+func (s *SignalsAPIOrganizationOnCallScheduleEntity) GetCreatedBy() *NullableAuthorEntity {
+	if s == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return s.CreatedBy
 }
 
-func (o *SignalsAPIOrganizationOnCallScheduleEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (s *SignalsAPIOrganizationOnCallScheduleEntity) GetCreatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return s.CreatedAt
 }
 
-func (o *SignalsAPIOrganizationOnCallScheduleEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (s *SignalsAPIOrganizationOnCallScheduleEntity) GetUpdatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return s.UpdatedAt
 }
 
-func (o *SignalsAPIOrganizationOnCallScheduleEntity) GetTimeZone() *string {
-	if o == nil {
+func (s *SignalsAPIOrganizationOnCallScheduleEntity) GetTimeZone() *string {
+	if s == nil {
 		return nil
 	}
-	return o.TimeZone
+	return s.TimeZone
 }
 
-func (o *SignalsAPIOrganizationOnCallScheduleEntity) GetCurrentShift() *NullableSignalsAPIOnCallShiftEntity {
-	if o == nil {
+func (s *SignalsAPIOrganizationOnCallScheduleEntity) GetCurrentShift() *NullableSignalsAPIOnCallShiftEntity {
+	if s == nil {
 		return nil
 	}
-	return o.CurrentShift
+	return s.CurrentShift
 }
 
-func (o *SignalsAPIOrganizationOnCallScheduleEntity) GetNextShift() *NullableSignalsAPIOnCallShiftEntity {
-	if o == nil {
+func (s *SignalsAPIOrganizationOnCallScheduleEntity) GetNextShift() *NullableSignalsAPIOnCallShiftEntity {
+	if s == nil {
 		return nil
 	}
-	return o.NextShift
+	return s.NextShift
 }

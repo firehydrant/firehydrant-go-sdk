@@ -211,23 +211,23 @@ type UpdateRole struct {
 	Permissions []UpdateRolePermission `json:"permissions,omitempty"`
 }
 
-func (o *UpdateRole) GetName() string {
-	if o == nil {
+func (u *UpdateRole) GetName() string {
+	if u == nil {
 		return ""
 	}
-	return o.Name
+	return u.Name
 }
 
-func (o *UpdateRole) GetDescription() *string {
-	if o == nil {
+func (u *UpdateRole) GetDescription() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Description
+	return u.Description
 }
 
-func (o *UpdateRole) GetPermissions() []UpdateRolePermission {
-	if o == nil {
+func (u *UpdateRole) GetPermissions() []UpdateRolePermission {
+	if u == nil {
 		return nil
 	}
-	return o.Permissions
+	return u.Permissions
 }

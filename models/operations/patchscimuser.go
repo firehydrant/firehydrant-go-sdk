@@ -11,16 +11,16 @@ type PatchScimUserRequest struct {
 	PatchScimUser components.PatchScimUser `request:"mediaType=application/scim+json"`
 }
 
-func (o *PatchScimUserRequest) GetID() string {
-	if o == nil {
+func (p *PatchScimUserRequest) GetID() string {
+	if p == nil {
 		return ""
 	}
-	return o.ID
+	return p.ID
 }
 
-func (o *PatchScimUserRequest) GetPatchScimUser() components.PatchScimUser {
-	if o == nil {
+func (p *PatchScimUserRequest) GetPatchScimUser() components.PatchScimUser {
+	if p == nil {
 		return components.PatchScimUser{}
 	}
-	return o.PatchScimUser
+	return p.PatchScimUser
 }

@@ -14,58 +14,58 @@ type AIEntitiesPreferencesEntity struct {
 	Updates          *bool `json:"updates,omitempty"`
 }
 
-func (o *AIEntitiesPreferencesEntity) GetAi() *bool {
-	if o == nil {
+func (a *AIEntitiesPreferencesEntity) GetAi() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Ai
+	return a.Ai
 }
 
-func (o *AIEntitiesPreferencesEntity) GetDescription() *bool {
-	if o == nil {
+func (a *AIEntitiesPreferencesEntity) GetDescription() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Description
+	return a.Description
 }
 
-func (o *AIEntitiesPreferencesEntity) GetFollowups() *bool {
-	if o == nil {
+func (a *AIEntitiesPreferencesEntity) GetFollowups() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Followups
+	return a.Followups
 }
 
-func (o *AIEntitiesPreferencesEntity) GetImpact() *bool {
-	if o == nil {
+func (a *AIEntitiesPreferencesEntity) GetImpact() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Impact
+	return a.Impact
 }
 
-func (o *AIEntitiesPreferencesEntity) GetRetros() *bool {
-	if o == nil {
+func (a *AIEntitiesPreferencesEntity) GetRetros() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Retros
+	return a.Retros
 }
 
-func (o *AIEntitiesPreferencesEntity) GetSimilarIncidents() *bool {
-	if o == nil {
+func (a *AIEntitiesPreferencesEntity) GetSimilarIncidents() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.SimilarIncidents
+	return a.SimilarIncidents
 }
 
-func (o *AIEntitiesPreferencesEntity) GetSummaries() *bool {
-	if o == nil {
+func (a *AIEntitiesPreferencesEntity) GetSummaries() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Summaries
+	return a.Summaries
 }
 
-func (o *AIEntitiesPreferencesEntity) GetUpdates() *bool {
-	if o == nil {
+func (a *AIEntitiesPreferencesEntity) GetUpdates() *bool {
+	if a == nil {
 		return nil
 	}
-	return o.Updates
+	return a.Updates
 }

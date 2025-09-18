@@ -8,16 +8,16 @@ type MetricsTicketFunnelMetricsEntity struct {
 	Groupings *NullableMetricsTicketFunnelMetricsEntityGroupingsEntity `json:"groupings,omitempty"`
 }
 
-func (o *MetricsTicketFunnelMetricsEntity) GetData() []MetricsTicketFunnelMetricsEntityDataBucketEntity {
-	if o == nil {
+func (m *MetricsTicketFunnelMetricsEntity) GetData() []MetricsTicketFunnelMetricsEntityDataBucketEntity {
+	if m == nil {
 		return nil
 	}
-	return o.Data
+	return m.Data
 }
 
-func (o *MetricsTicketFunnelMetricsEntity) GetGroupings() *NullableMetricsTicketFunnelMetricsEntityGroupingsEntity {
-	if o == nil {
+func (m *MetricsTicketFunnelMetricsEntity) GetGroupings() *NullableMetricsTicketFunnelMetricsEntityGroupingsEntity {
+	if m == nil {
 		return nil
 	}
-	return o.Groupings
+	return m.Groupings
 }

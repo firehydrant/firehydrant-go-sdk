@@ -8,16 +8,16 @@ type RetrospectivesIndexTemplateEntityPaginated struct {
 	Pagination *NullablePaginationEntity           `json:"pagination,omitempty"`
 }
 
-func (o *RetrospectivesIndexTemplateEntityPaginated) GetData() []RetrospectivesIndexTemplateEntity {
-	if o == nil {
+func (r *RetrospectivesIndexTemplateEntityPaginated) GetData() []RetrospectivesIndexTemplateEntity {
+	if r == nil {
 		return nil
 	}
-	return o.Data
+	return r.Data
 }
 
-func (o *RetrospectivesIndexTemplateEntityPaginated) GetPagination() *NullablePaginationEntity {
-	if o == nil {
+func (r *RetrospectivesIndexTemplateEntityPaginated) GetPagination() *NullablePaginationEntity {
+	if r == nil {
 		return nil
 	}
-	return o.Pagination
+	return r.Pagination
 }

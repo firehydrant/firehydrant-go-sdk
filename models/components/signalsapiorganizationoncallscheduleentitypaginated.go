@@ -8,16 +8,16 @@ type SignalsAPIOrganizationOnCallScheduleEntityPaginated struct {
 	Pagination *NullablePaginationEntity                    `json:"pagination,omitempty"`
 }
 
-func (o *SignalsAPIOrganizationOnCallScheduleEntityPaginated) GetData() []SignalsAPIOrganizationOnCallScheduleEntity {
-	if o == nil {
+func (s *SignalsAPIOrganizationOnCallScheduleEntityPaginated) GetData() []SignalsAPIOrganizationOnCallScheduleEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Data
+	return s.Data
 }
 
-func (o *SignalsAPIOrganizationOnCallScheduleEntityPaginated) GetPagination() *NullablePaginationEntity {
-	if o == nil {
+func (s *SignalsAPIOrganizationOnCallScheduleEntityPaginated) GetPagination() *NullablePaginationEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Pagination
+	return s.Pagination
 }

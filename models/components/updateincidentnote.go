@@ -7,9 +7,9 @@ type UpdateIncidentNote struct {
 	Body string `json:"body"`
 }
 
-func (o *UpdateIncidentNote) GetBody() string {
-	if o == nil {
+func (u *UpdateIncidentNote) GetBody() string {
+	if u == nil {
 		return ""
 	}
-	return o.Body
+	return u.Body
 }

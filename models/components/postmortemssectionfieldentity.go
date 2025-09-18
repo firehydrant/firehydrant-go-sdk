@@ -9,23 +9,23 @@ type PostMortemsSectionFieldEntity struct {
 	Value *string `json:"value,omitempty"`
 }
 
-func (o *PostMortemsSectionFieldEntity) GetID() *string {
-	if o == nil {
+func (p *PostMortemsSectionFieldEntity) GetID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.ID
+	return p.ID
 }
 
-func (o *PostMortemsSectionFieldEntity) GetName() *string {
-	if o == nil {
+func (p *PostMortemsSectionFieldEntity) GetName() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Name
+	return p.Name
 }
 
-func (o *PostMortemsSectionFieldEntity) GetValue() *string {
-	if o == nil {
+func (p *PostMortemsSectionFieldEntity) GetValue() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Value
+	return p.Value
 }

@@ -11,23 +11,23 @@ type ListScimGroupsRequest struct {
 	Filter *string `queryParam:"style=form,explode=true,name=filter"`
 }
 
-func (o *ListScimGroupsRequest) GetStartIndex() *int {
-	if o == nil {
+func (l *ListScimGroupsRequest) GetStartIndex() *int {
+	if l == nil {
 		return nil
 	}
-	return o.StartIndex
+	return l.StartIndex
 }
 
-func (o *ListScimGroupsRequest) GetCount() *int {
-	if o == nil {
+func (l *ListScimGroupsRequest) GetCount() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Count
+	return l.Count
 }
 
-func (o *ListScimGroupsRequest) GetFilter() *string {
-	if o == nil {
+func (l *ListScimGroupsRequest) GetFilter() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Filter
+	return l.Filter
 }

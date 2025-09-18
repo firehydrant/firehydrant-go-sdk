@@ -43,9 +43,9 @@ type UpdateVote struct {
 	Direction Direction `json:"direction"`
 }
 
-func (o *UpdateVote) GetDirection() Direction {
-	if o == nil {
+func (u *UpdateVote) GetDirection() Direction {
+	if u == nil {
 		return Direction("")
 	}
-	return o.Direction
+	return u.Direction
 }

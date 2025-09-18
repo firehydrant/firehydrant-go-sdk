@@ -8,16 +8,16 @@ type IntegrationsZendeskSearchTicketsPaginatedEntity struct {
 	Pagination *NullablePaginationEntity               `json:"pagination,omitempty"`
 }
 
-func (o *IntegrationsZendeskSearchTicketsPaginatedEntity) GetData() []IntegrationsZendeskSupportIssueEntity {
-	if o == nil {
+func (i *IntegrationsZendeskSearchTicketsPaginatedEntity) GetData() []IntegrationsZendeskSupportIssueEntity {
+	if i == nil {
 		return nil
 	}
-	return o.Data
+	return i.Data
 }
 
-func (o *IntegrationsZendeskSearchTicketsPaginatedEntity) GetPagination() *NullablePaginationEntity {
-	if o == nil {
+func (i *IntegrationsZendeskSearchTicketsPaginatedEntity) GetPagination() *NullablePaginationEntity {
+	if i == nil {
 		return nil
 	}
-	return o.Pagination
+	return i.Pagination
 }

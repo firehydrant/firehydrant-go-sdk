@@ -10,16 +10,16 @@ type UpdateIncidentRetrospectiveField struct {
 	Value int64 `json:"value"`
 }
 
-func (o *UpdateIncidentRetrospectiveField) GetDynamicInputFieldID() *string {
-	if o == nil {
+func (u *UpdateIncidentRetrospectiveField) GetDynamicInputFieldID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.DynamicInputFieldID
+	return u.DynamicInputFieldID
 }
 
-func (o *UpdateIncidentRetrospectiveField) GetValue() int64 {
-	if o == nil {
+func (u *UpdateIncidentRetrospectiveField) GetValue() int64 {
+	if u == nil {
 		return 0
 	}
-	return o.Value
+	return u.Value
 }

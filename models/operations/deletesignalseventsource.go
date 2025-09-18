@@ -6,9 +6,9 @@ type DeleteSignalsEventSourceRequest struct {
 	TransposerSlug string `pathParam:"style=simple,explode=false,name=transposer_slug"`
 }
 
-func (o *DeleteSignalsEventSourceRequest) GetTransposerSlug() string {
-	if o == nil {
+func (d *DeleteSignalsEventSourceRequest) GetTransposerSlug() string {
+	if d == nil {
 		return ""
 	}
-	return o.TransposerSlug
+	return d.TransposerSlug
 }

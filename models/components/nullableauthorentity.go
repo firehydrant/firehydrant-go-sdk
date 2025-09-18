@@ -9,30 +9,30 @@ type NullableAuthorEntity struct {
 	Email  *string `json:"email,omitempty"`
 }
 
-func (o *NullableAuthorEntity) GetID() *string {
-	if o == nil {
+func (n *NullableAuthorEntity) GetID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ID
+	return n.ID
 }
 
-func (o *NullableAuthorEntity) GetName() *string {
-	if o == nil {
+func (n *NullableAuthorEntity) GetName() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Name
+	return n.Name
 }
 
-func (o *NullableAuthorEntity) GetSource() *string {
-	if o == nil {
+func (n *NullableAuthorEntity) GetSource() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Source
+	return n.Source
 }
 
-func (o *NullableAuthorEntity) GetEmail() *string {
-	if o == nil {
+func (n *NullableAuthorEntity) GetEmail() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Email
+	return n.Email
 }

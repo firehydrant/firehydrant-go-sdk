@@ -24,121 +24,121 @@ type CreateNuncConnectionRequest struct {
 	UIVersion                    *int     `json:"ui_version,omitempty"`
 }
 
-func (o *CreateNuncConnectionRequest) GetDomain() string {
-	if o == nil {
+func (c *CreateNuncConnectionRequest) GetDomain() string {
+	if c == nil {
 		return ""
 	}
-	return o.Domain
+	return c.Domain
 }
 
-func (o *CreateNuncConnectionRequest) GetCompanyName() *string {
-	if o == nil {
+func (c *CreateNuncConnectionRequest) GetCompanyName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.CompanyName
+	return c.CompanyName
 }
 
-func (o *CreateNuncConnectionRequest) GetCompanyWebsite() *string {
-	if o == nil {
+func (c *CreateNuncConnectionRequest) GetCompanyWebsite() *string {
+	if c == nil {
 		return nil
 	}
-	return o.CompanyWebsite
+	return c.CompanyWebsite
 }
 
-func (o *CreateNuncConnectionRequest) GetCompanyTosURL() *string {
-	if o == nil {
+func (c *CreateNuncConnectionRequest) GetCompanyTosURL() *string {
+	if c == nil {
 		return nil
 	}
-	return o.CompanyTosURL
+	return c.CompanyTosURL
 }
 
-func (o *CreateNuncConnectionRequest) GetGreetingTitle() *string {
-	if o == nil {
+func (c *CreateNuncConnectionRequest) GetGreetingTitle() *string {
+	if c == nil {
 		return nil
 	}
-	return o.GreetingTitle
+	return c.GreetingTitle
 }
 
-func (o *CreateNuncConnectionRequest) GetGreetingBody() *string {
-	if o == nil {
+func (c *CreateNuncConnectionRequest) GetGreetingBody() *string {
+	if c == nil {
 		return nil
 	}
-	return o.GreetingBody
+	return c.GreetingBody
 }
 
-func (o *CreateNuncConnectionRequest) GetOperationalMessage() *string {
-	if o == nil {
+func (c *CreateNuncConnectionRequest) GetOperationalMessage() *string {
+	if c == nil {
 		return nil
 	}
-	return o.OperationalMessage
+	return c.OperationalMessage
 }
 
-func (o *CreateNuncConnectionRequest) GetTitle() *string {
-	if o == nil {
+func (c *CreateNuncConnectionRequest) GetTitle() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Title
+	return c.Title
 }
 
-func (o *CreateNuncConnectionRequest) GetConditionsNuncCondition() []string {
-	if o == nil {
+func (c *CreateNuncConnectionRequest) GetConditionsNuncCondition() []string {
+	if c == nil {
 		return []string{}
 	}
-	return o.ConditionsNuncCondition
+	return c.ConditionsNuncCondition
 }
 
-func (o *CreateNuncConnectionRequest) GetConditionsConditionID() []string {
-	if o == nil {
+func (c *CreateNuncConnectionRequest) GetConditionsConditionID() []string {
+	if c == nil {
 		return []string{}
 	}
-	return o.ConditionsConditionID
+	return c.ConditionsConditionID
 }
 
-func (o *CreateNuncConnectionRequest) GetComponentsInfrastructureType() []string {
-	if o == nil {
+func (c *CreateNuncConnectionRequest) GetComponentsInfrastructureType() []string {
+	if c == nil {
 		return []string{}
 	}
-	return o.ComponentsInfrastructureType
+	return c.ComponentsInfrastructureType
 }
 
-func (o *CreateNuncConnectionRequest) GetComponentsInfrastructureID() []string {
-	if o == nil {
+func (c *CreateNuncConnectionRequest) GetComponentsInfrastructureID() []string {
+	if c == nil {
 		return []string{}
 	}
-	return o.ComponentsInfrastructureID
+	return c.ComponentsInfrastructureID
 }
 
-func (o *CreateNuncConnectionRequest) GetPrimaryColor() *string {
-	if o == nil {
+func (c *CreateNuncConnectionRequest) GetPrimaryColor() *string {
+	if c == nil {
 		return nil
 	}
-	return o.PrimaryColor
+	return c.PrimaryColor
 }
 
-func (o *CreateNuncConnectionRequest) GetSecondaryColor() *string {
-	if o == nil {
+func (c *CreateNuncConnectionRequest) GetSecondaryColor() *string {
+	if c == nil {
 		return nil
 	}
-	return o.SecondaryColor
+	return c.SecondaryColor
 }
 
-func (o *CreateNuncConnectionRequest) GetExposedFields() []string {
-	if o == nil {
+func (c *CreateNuncConnectionRequest) GetExposedFields() []string {
+	if c == nil {
 		return nil
 	}
-	return o.ExposedFields
+	return c.ExposedFields
 }
 
-func (o *CreateNuncConnectionRequest) GetEnableHistogram() *bool {
-	if o == nil {
+func (c *CreateNuncConnectionRequest) GetEnableHistogram() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.EnableHistogram
+	return c.EnableHistogram
 }
 
-func (o *CreateNuncConnectionRequest) GetUIVersion() *int {
-	if o == nil {
+func (c *CreateNuncConnectionRequest) GetUIVersion() *int {
+	if c == nil {
 		return nil
 	}
-	return o.UIVersion
+	return c.UIVersion
 }

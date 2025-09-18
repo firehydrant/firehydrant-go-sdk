@@ -9,30 +9,30 @@ type NullableSignalsAPICallRouteStepEntity struct {
 	OnCallRotation *NullableSuccinctEntity         `json:"on_call_rotation,omitempty"`
 }
 
-func (o *NullableSignalsAPICallRouteStepEntity) GetTarget() *NullableSignalsAPITargetEntity {
-	if o == nil {
+func (n *NullableSignalsAPICallRouteStepEntity) GetTarget() *NullableSignalsAPITargetEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Target
+	return n.Target
 }
 
-func (o *NullableSignalsAPICallRouteStepEntity) GetPosition() *int {
-	if o == nil {
+func (n *NullableSignalsAPICallRouteStepEntity) GetPosition() *int {
+	if n == nil {
 		return nil
 	}
-	return o.Position
+	return n.Position
 }
 
-func (o *NullableSignalsAPICallRouteStepEntity) GetTimeout() *string {
-	if o == nil {
+func (n *NullableSignalsAPICallRouteStepEntity) GetTimeout() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Timeout
+	return n.Timeout
 }
 
-func (o *NullableSignalsAPICallRouteStepEntity) GetOnCallRotation() *NullableSuccinctEntity {
-	if o == nil {
+func (n *NullableSignalsAPICallRouteStepEntity) GetOnCallRotation() *NullableSuccinctEntity {
+	if n == nil {
 		return nil
 	}
-	return o.OnCallRotation
+	return n.OnCallRotation
 }

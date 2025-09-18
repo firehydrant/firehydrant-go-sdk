@@ -6,9 +6,9 @@ type ListTeamCallRoutesRequest struct {
 	TeamID string `pathParam:"style=simple,explode=false,name=team_id"`
 }
 
-func (o *ListTeamCallRoutesRequest) GetTeamID() string {
-	if o == nil {
+func (l *ListTeamCallRoutesRequest) GetTeamID() string {
+	if l == nil {
 		return ""
 	}
-	return o.TeamID
+	return l.TeamID
 }

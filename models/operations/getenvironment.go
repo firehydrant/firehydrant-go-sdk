@@ -7,9 +7,9 @@ type GetEnvironmentRequest struct {
 	EnvironmentID string `pathParam:"style=simple,explode=false,name=environment_id"`
 }
 
-func (o *GetEnvironmentRequest) GetEnvironmentID() string {
-	if o == nil {
+func (g *GetEnvironmentRequest) GetEnvironmentID() string {
+	if g == nil {
 		return ""
 	}
-	return o.EnvironmentID
+	return g.EnvironmentID
 }

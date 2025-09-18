@@ -7,16 +7,16 @@ type IntegrationsStatuspageMilestoneMappingEntity struct {
 	Status      *string `json:"status,omitempty"`
 }
 
-func (o *IntegrationsStatuspageMilestoneMappingEntity) GetMilestoneID() *string {
-	if o == nil {
+func (i *IntegrationsStatuspageMilestoneMappingEntity) GetMilestoneID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.MilestoneID
+	return i.MilestoneID
 }
 
-func (o *IntegrationsStatuspageMilestoneMappingEntity) GetStatus() *string {
-	if o == nil {
+func (i *IntegrationsStatuspageMilestoneMappingEntity) GetStatus() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Status
+	return i.Status
 }

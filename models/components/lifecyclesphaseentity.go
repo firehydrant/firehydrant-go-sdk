@@ -12,44 +12,44 @@ type LifecyclesPhaseEntity struct {
 	Milestones  []LifecyclesMilestoneEntity `json:"milestones,omitempty"`
 }
 
-func (o *LifecyclesPhaseEntity) GetID() *string {
-	if o == nil {
+func (l *LifecyclesPhaseEntity) GetID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ID
+	return l.ID
 }
 
-func (o *LifecyclesPhaseEntity) GetName() *string {
-	if o == nil {
+func (l *LifecyclesPhaseEntity) GetName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Name
+	return l.Name
 }
 
-func (o *LifecyclesPhaseEntity) GetDescription() *string {
-	if o == nil {
+func (l *LifecyclesPhaseEntity) GetDescription() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Description
+	return l.Description
 }
 
-func (o *LifecyclesPhaseEntity) GetType() *string {
-	if o == nil {
+func (l *LifecyclesPhaseEntity) GetType() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Type
+	return l.Type
 }
 
-func (o *LifecyclesPhaseEntity) GetPosition() *int {
-	if o == nil {
+func (l *LifecyclesPhaseEntity) GetPosition() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Position
+	return l.Position
 }
 
-func (o *LifecyclesPhaseEntity) GetMilestones() []LifecyclesMilestoneEntity {
-	if o == nil {
+func (l *LifecyclesPhaseEntity) GetMilestones() []LifecyclesMilestoneEntity {
+	if l == nil {
 		return nil
 	}
-	return o.Milestones
+	return l.Milestones
 }

@@ -9,30 +9,30 @@ type LinksEntity struct {
 	Name    *string `json:"name,omitempty"`
 }
 
-func (o *LinksEntity) GetID() *string {
-	if o == nil {
+func (l *LinksEntity) GetID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ID
+	return l.ID
 }
 
-func (o *LinksEntity) GetHrefURL() *string {
-	if o == nil {
+func (l *LinksEntity) GetHrefURL() *string {
+	if l == nil {
 		return nil
 	}
-	return o.HrefURL
+	return l.HrefURL
 }
 
-func (o *LinksEntity) GetIconURL() *string {
-	if o == nil {
+func (l *LinksEntity) GetIconURL() *string {
+	if l == nil {
 		return nil
 	}
-	return o.IconURL
+	return l.IconURL
 }
 
-func (o *LinksEntity) GetName() *string {
-	if o == nil {
+func (l *LinksEntity) GetName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Name
+	return l.Name
 }

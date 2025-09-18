@@ -11,16 +11,16 @@ type UpdateTeamRequest struct {
 	UpdateTeam components.UpdateTeam `request:"mediaType=application/json"`
 }
 
-func (o *UpdateTeamRequest) GetTeamID() string {
-	if o == nil {
+func (u *UpdateTeamRequest) GetTeamID() string {
+	if u == nil {
 		return ""
 	}
-	return o.TeamID
+	return u.TeamID
 }
 
-func (o *UpdateTeamRequest) GetUpdateTeam() components.UpdateTeam {
-	if o == nil {
+func (u *UpdateTeamRequest) GetUpdateTeam() components.UpdateTeam {
+	if u == nil {
 		return components.UpdateTeam{}
 	}
-	return o.UpdateTeam
+	return u.UpdateTeam
 }

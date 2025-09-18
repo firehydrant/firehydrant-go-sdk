@@ -8,16 +8,16 @@ type SignalsAPIRuleEntityPaginated struct {
 	Pagination *NullablePaginationEntity `json:"pagination,omitempty"`
 }
 
-func (o *SignalsAPIRuleEntityPaginated) GetData() []SignalsAPIRuleEntity {
-	if o == nil {
+func (s *SignalsAPIRuleEntityPaginated) GetData() []SignalsAPIRuleEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Data
+	return s.Data
 }
 
-func (o *SignalsAPIRuleEntityPaginated) GetPagination() *NullablePaginationEntity {
-	if o == nil {
+func (s *SignalsAPIRuleEntityPaginated) GetPagination() *NullablePaginationEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Pagination
+	return s.Pagination
 }

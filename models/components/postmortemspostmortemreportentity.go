@@ -36,100 +36,100 @@ func (p *PostMortemsPostMortemReportEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *PostMortemsPostMortemReportEntity) GetID() *string {
-	if o == nil {
+func (p *PostMortemsPostMortemReportEntity) GetID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.ID
+	return p.ID
 }
 
-func (o *PostMortemsPostMortemReportEntity) GetName() *string {
-	if o == nil {
+func (p *PostMortemsPostMortemReportEntity) GetName() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Name
+	return p.Name
 }
 
-func (o *PostMortemsPostMortemReportEntity) GetSummary() *string {
-	if o == nil {
+func (p *PostMortemsPostMortemReportEntity) GetSummary() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Summary
+	return p.Summary
 }
 
-func (o *PostMortemsPostMortemReportEntity) GetIncidentID() *string {
-	if o == nil {
+func (p *PostMortemsPostMortemReportEntity) GetIncidentID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.IncidentID
+	return p.IncidentID
 }
 
-func (o *PostMortemsPostMortemReportEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (p *PostMortemsPostMortemReportEntity) GetCreatedAt() *time.Time {
+	if p == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return p.CreatedAt
 }
 
-func (o *PostMortemsPostMortemReportEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (p *PostMortemsPostMortemReportEntity) GetUpdatedAt() *time.Time {
+	if p == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return p.UpdatedAt
 }
 
-func (o *PostMortemsPostMortemReportEntity) GetTagList() []string {
-	if o == nil {
+func (p *PostMortemsPostMortemReportEntity) GetTagList() []string {
+	if p == nil {
 		return nil
 	}
-	return o.TagList
+	return p.TagList
 }
 
-func (o *PostMortemsPostMortemReportEntity) GetAdditionalDetails() []string {
-	if o == nil {
+func (p *PostMortemsPostMortemReportEntity) GetAdditionalDetails() []string {
+	if p == nil {
 		return nil
 	}
-	return o.AdditionalDetails
+	return p.AdditionalDetails
 }
 
-func (o *PostMortemsPostMortemReportEntity) GetIncident() *NullableIncidentEntity {
-	if o == nil {
+func (p *PostMortemsPostMortemReportEntity) GetIncident() *NullableIncidentEntity {
+	if p == nil {
 		return nil
 	}
-	return o.Incident
+	return p.Incident
 }
 
-func (o *PostMortemsPostMortemReportEntity) GetQuestions() *NullablePostMortemsQuestionEntity {
-	if o == nil {
+func (p *PostMortemsPostMortemReportEntity) GetQuestions() *NullablePostMortemsQuestionEntity {
+	if p == nil {
 		return nil
 	}
-	return o.Questions
+	return p.Questions
 }
 
-func (o *PostMortemsPostMortemReportEntity) GetCalendarEvents() *NullableCalendarsEventEntity {
-	if o == nil {
+func (p *PostMortemsPostMortemReportEntity) GetCalendarEvents() *NullableCalendarsEventEntity {
+	if p == nil {
 		return nil
 	}
-	return o.CalendarEvents
+	return p.CalendarEvents
 }
 
-func (o *PostMortemsPostMortemReportEntity) GetRetrospectiveShim() *bool {
-	if o == nil {
+func (p *PostMortemsPostMortemReportEntity) GetRetrospectiveShim() *bool {
+	if p == nil {
 		return nil
 	}
-	return o.RetrospectiveShim
+	return p.RetrospectiveShim
 }
 
-func (o *PostMortemsPostMortemReportEntity) GetRetrospectiveID() *string {
-	if o == nil {
+func (p *PostMortemsPostMortemReportEntity) GetRetrospectiveID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.RetrospectiveID
+	return p.RetrospectiveID
 }
 
-func (o *PostMortemsPostMortemReportEntity) GetRetrospectiveNote() *string {
-	if o == nil {
+func (p *PostMortemsPostMortemReportEntity) GetRetrospectiveNote() *string {
+	if p == nil {
 		return nil
 	}
-	return o.RetrospectiveNote
+	return p.RetrospectiveNote
 }

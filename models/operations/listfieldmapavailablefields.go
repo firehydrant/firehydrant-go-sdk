@@ -6,9 +6,9 @@ type ListFieldMapAvailableFieldsRequest struct {
 	FieldMapID string `pathParam:"style=simple,explode=false,name=field_map_id"`
 }
 
-func (o *ListFieldMapAvailableFieldsRequest) GetFieldMapID() string {
-	if o == nil {
+func (l *ListFieldMapAvailableFieldsRequest) GetFieldMapID() string {
+	if l == nil {
 		return ""
 	}
-	return o.FieldMapID
+	return l.FieldMapID
 }

@@ -10,23 +10,23 @@ type GetConferenceBridgeTranslationRequest struct {
 	IncidentID   string `pathParam:"style=simple,explode=false,name=incident_id"`
 }
 
-func (o *GetConferenceBridgeTranslationRequest) GetID() string {
-	if o == nil {
+func (g *GetConferenceBridgeTranslationRequest) GetID() string {
+	if g == nil {
 		return ""
 	}
-	return o.ID
+	return g.ID
 }
 
-func (o *GetConferenceBridgeTranslationRequest) GetLanguageCode() string {
-	if o == nil {
+func (g *GetConferenceBridgeTranslationRequest) GetLanguageCode() string {
+	if g == nil {
 		return ""
 	}
-	return o.LanguageCode
+	return g.LanguageCode
 }
 
-func (o *GetConferenceBridgeTranslationRequest) GetIncidentID() string {
-	if o == nil {
+func (g *GetConferenceBridgeTranslationRequest) GetIncidentID() string {
+	if g == nil {
 		return ""
 	}
-	return o.IncidentID
+	return g.IncidentID
 }

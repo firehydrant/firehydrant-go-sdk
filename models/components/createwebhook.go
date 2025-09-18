@@ -7,9 +7,9 @@ type CreateWebhook struct {
 	URL string `json:"url"`
 }
 
-func (o *CreateWebhook) GetURL() string {
-	if o == nil {
+func (c *CreateWebhook) GetURL() string {
+	if c == nil {
 		return ""
 	}
-	return o.URL
+	return c.URL
 }

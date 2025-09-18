@@ -21,58 +21,58 @@ type UpdateAiPreferencesRequest struct {
 	SimilarIncidents *bool `json:"similar_incidents,omitempty"`
 }
 
-func (o *UpdateAiPreferencesRequest) GetAi() *bool {
-	if o == nil {
+func (u *UpdateAiPreferencesRequest) GetAi() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.Ai
+	return u.Ai
 }
 
-func (o *UpdateAiPreferencesRequest) GetSummaries() *bool {
-	if o == nil {
+func (u *UpdateAiPreferencesRequest) GetSummaries() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.Summaries
+	return u.Summaries
 }
 
-func (o *UpdateAiPreferencesRequest) GetDescription() *bool {
-	if o == nil {
+func (u *UpdateAiPreferencesRequest) GetDescription() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.Description
+	return u.Description
 }
 
-func (o *UpdateAiPreferencesRequest) GetImpact() *bool {
-	if o == nil {
+func (u *UpdateAiPreferencesRequest) GetImpact() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.Impact
+	return u.Impact
 }
 
-func (o *UpdateAiPreferencesRequest) GetUpdates() *bool {
-	if o == nil {
+func (u *UpdateAiPreferencesRequest) GetUpdates() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.Updates
+	return u.Updates
 }
 
-func (o *UpdateAiPreferencesRequest) GetRetros() *bool {
-	if o == nil {
+func (u *UpdateAiPreferencesRequest) GetRetros() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.Retros
+	return u.Retros
 }
 
-func (o *UpdateAiPreferencesRequest) GetFollowups() *bool {
-	if o == nil {
+func (u *UpdateAiPreferencesRequest) GetFollowups() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.Followups
+	return u.Followups
 }
 
-func (o *UpdateAiPreferencesRequest) GetSimilarIncidents() *bool {
-	if o == nil {
+func (u *UpdateAiPreferencesRequest) GetSimilarIncidents() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.SimilarIncidents
+	return u.SimilarIncidents
 }

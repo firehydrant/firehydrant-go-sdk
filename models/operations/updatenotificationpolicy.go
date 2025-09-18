@@ -85,25 +85,25 @@ type UpdateNotificationPolicyRequestBody struct {
 	Priority *UpdateNotificationPolicyPriority `json:"priority,omitempty"`
 }
 
-func (o *UpdateNotificationPolicyRequestBody) GetNotificationGroupMethod() *UpdateNotificationPolicyNotificationGroupMethod {
-	if o == nil {
+func (u *UpdateNotificationPolicyRequestBody) GetNotificationGroupMethod() *UpdateNotificationPolicyNotificationGroupMethod {
+	if u == nil {
 		return nil
 	}
-	return o.NotificationGroupMethod
+	return u.NotificationGroupMethod
 }
 
-func (o *UpdateNotificationPolicyRequestBody) GetMaxDelay() *string {
-	if o == nil {
+func (u *UpdateNotificationPolicyRequestBody) GetMaxDelay() *string {
+	if u == nil {
 		return nil
 	}
-	return o.MaxDelay
+	return u.MaxDelay
 }
 
-func (o *UpdateNotificationPolicyRequestBody) GetPriority() *UpdateNotificationPolicyPriority {
-	if o == nil {
+func (u *UpdateNotificationPolicyRequestBody) GetPriority() *UpdateNotificationPolicyPriority {
+	if u == nil {
 		return nil
 	}
-	return o.Priority
+	return u.Priority
 }
 
 type UpdateNotificationPolicyRequest struct {
@@ -111,16 +111,16 @@ type UpdateNotificationPolicyRequest struct {
 	RequestBody *UpdateNotificationPolicyRequestBody `request:"mediaType=application/json"`
 }
 
-func (o *UpdateNotificationPolicyRequest) GetID() string {
-	if o == nil {
+func (u *UpdateNotificationPolicyRequest) GetID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ID
+	return u.ID
 }
 
-func (o *UpdateNotificationPolicyRequest) GetRequestBody() *UpdateNotificationPolicyRequestBody {
-	if o == nil {
+func (u *UpdateNotificationPolicyRequest) GetRequestBody() *UpdateNotificationPolicyRequestBody {
+	if u == nil {
 		return nil
 	}
-	return o.RequestBody
+	return u.RequestBody
 }

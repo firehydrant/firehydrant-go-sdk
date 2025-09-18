@@ -45,16 +45,16 @@ type IngestCatalogData struct {
 	Data string `json:"data"`
 }
 
-func (o *IngestCatalogData) GetEncoding() Encoding {
-	if o == nil {
+func (i *IngestCatalogData) GetEncoding() Encoding {
+	if i == nil {
 		return Encoding("")
 	}
-	return o.Encoding
+	return i.Encoding
 }
 
-func (o *IngestCatalogData) GetData() string {
-	if o == nil {
+func (i *IngestCatalogData) GetData() string {
+	if i == nil {
 		return ""
 	}
-	return o.Data
+	return i.Data
 }

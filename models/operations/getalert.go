@@ -6,9 +6,9 @@ type GetAlertRequest struct {
 	AlertID string `pathParam:"style=simple,explode=false,name=alert_id"`
 }
 
-func (o *GetAlertRequest) GetAlertID() string {
-	if o == nil {
+func (g *GetAlertRequest) GetAlertID() string {
+	if g == nil {
 		return ""
 	}
-	return o.AlertID
+	return g.AlertID
 }

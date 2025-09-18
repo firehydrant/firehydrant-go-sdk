@@ -11,16 +11,16 @@ type UpdateAwsConnectionRequest struct {
 	UpdateAwsConnection components.UpdateAwsConnection `request:"mediaType=application/json"`
 }
 
-func (o *UpdateAwsConnectionRequest) GetID() string {
-	if o == nil {
+func (u *UpdateAwsConnectionRequest) GetID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ID
+	return u.ID
 }
 
-func (o *UpdateAwsConnectionRequest) GetUpdateAwsConnection() components.UpdateAwsConnection {
-	if o == nil {
+func (u *UpdateAwsConnectionRequest) GetUpdateAwsConnection() components.UpdateAwsConnection {
+	if u == nil {
 		return components.UpdateAwsConnection{}
 	}
-	return o.UpdateAwsConnection
+	return u.UpdateAwsConnection
 }

@@ -7,16 +7,16 @@ type TaskListItemEntity struct {
 	Description *string `json:"description,omitempty"`
 }
 
-func (o *TaskListItemEntity) GetSummary() *string {
-	if o == nil {
+func (t *TaskListItemEntity) GetSummary() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Summary
+	return t.Summary
 }
 
-func (o *TaskListItemEntity) GetDescription() *string {
-	if o == nil {
+func (t *TaskListItemEntity) GetDescription() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Description
+	return t.Description
 }

@@ -9,18 +9,18 @@ type UpdateSlackEmojiActionRequestBody struct {
 	IncidentTypeID *string `json:"incident_type_id,omitempty"`
 }
 
-func (o *UpdateSlackEmojiActionRequestBody) GetEmojiName() *string {
-	if o == nil {
+func (u *UpdateSlackEmojiActionRequestBody) GetEmojiName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.EmojiName
+	return u.EmojiName
 }
 
-func (o *UpdateSlackEmojiActionRequestBody) GetIncidentTypeID() *string {
-	if o == nil {
+func (u *UpdateSlackEmojiActionRequestBody) GetIncidentTypeID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.IncidentTypeID
+	return u.IncidentTypeID
 }
 
 type UpdateSlackEmojiActionRequest struct {
@@ -30,23 +30,23 @@ type UpdateSlackEmojiActionRequest struct {
 	RequestBody   *UpdateSlackEmojiActionRequestBody `request:"mediaType=application/json"`
 }
 
-func (o *UpdateSlackEmojiActionRequest) GetConnectionID() string {
-	if o == nil {
+func (u *UpdateSlackEmojiActionRequest) GetConnectionID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ConnectionID
+	return u.ConnectionID
 }
 
-func (o *UpdateSlackEmojiActionRequest) GetEmojiActionID() string {
-	if o == nil {
+func (u *UpdateSlackEmojiActionRequest) GetEmojiActionID() string {
+	if u == nil {
 		return ""
 	}
-	return o.EmojiActionID
+	return u.EmojiActionID
 }
 
-func (o *UpdateSlackEmojiActionRequest) GetRequestBody() *UpdateSlackEmojiActionRequestBody {
-	if o == nil {
+func (u *UpdateSlackEmojiActionRequest) GetRequestBody() *UpdateSlackEmojiActionRequestBody {
+	if u == nil {
 		return nil
 	}
-	return o.RequestBody
+	return u.RequestBody
 }

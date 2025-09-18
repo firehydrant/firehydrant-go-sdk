@@ -26,30 +26,30 @@ func (r *ReportEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ReportEntity) GetData() []ReportsBucketEntity {
-	if o == nil {
+func (r *ReportEntity) GetData() []ReportsBucketEntity {
+	if r == nil {
 		return nil
 	}
-	return o.Data
+	return r.Data
 }
 
-func (o *ReportEntity) GetStartDate() *types.Date {
-	if o == nil {
+func (r *ReportEntity) GetStartDate() *types.Date {
+	if r == nil {
 		return nil
 	}
-	return o.StartDate
+	return r.StartDate
 }
 
-func (o *ReportEntity) GetEndDate() *types.Date {
-	if o == nil {
+func (r *ReportEntity) GetEndDate() *types.Date {
+	if r == nil {
 		return nil
 	}
-	return o.EndDate
+	return r.EndDate
 }
 
-func (o *ReportEntity) GetBucketPeriod() *string {
-	if o == nil {
+func (r *ReportEntity) GetBucketPeriod() *string {
+	if r == nil {
 		return nil
 	}
-	return o.BucketPeriod
+	return r.BucketPeriod
 }

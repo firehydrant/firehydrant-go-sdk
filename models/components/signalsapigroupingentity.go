@@ -10,30 +10,30 @@ type SignalsAPIGroupingEntity struct {
 	ReferenceAlertTimePeriod *string                                         `json:"reference_alert_time_period,omitempty"`
 }
 
-func (o *SignalsAPIGroupingEntity) GetID() *string {
-	if o == nil {
+func (s *SignalsAPIGroupingEntity) GetID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *SignalsAPIGroupingEntity) GetStrategy() *NullableSignalsAPIGroupingEntityStrategyEntity {
-	if o == nil {
+func (s *SignalsAPIGroupingEntity) GetStrategy() *NullableSignalsAPIGroupingEntityStrategyEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Strategy
+	return s.Strategy
 }
 
-func (o *SignalsAPIGroupingEntity) GetAction() *NullableSignalsAPIGroupingEntityActionEntity {
-	if o == nil {
+func (s *SignalsAPIGroupingEntity) GetAction() *NullableSignalsAPIGroupingEntityActionEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Action
+	return s.Action
 }
 
-func (o *SignalsAPIGroupingEntity) GetReferenceAlertTimePeriod() *string {
-	if o == nil {
+func (s *SignalsAPIGroupingEntity) GetReferenceAlertTimePeriod() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ReferenceAlertTimePeriod
+	return s.ReferenceAlertTimePeriod
 }

@@ -52,25 +52,25 @@ func (b *BulkUpdateIncidentMilestonesMilestone) UnmarshalJSON(data []byte) error
 	return nil
 }
 
-func (o *BulkUpdateIncidentMilestonesMilestone) GetType() string {
-	if o == nil {
+func (b *BulkUpdateIncidentMilestonesMilestone) GetType() string {
+	if b == nil {
 		return ""
 	}
-	return o.Type
+	return b.Type
 }
 
-func (o *BulkUpdateIncidentMilestonesMilestone) GetOccurredAt() time.Time {
-	if o == nil {
+func (b *BulkUpdateIncidentMilestonesMilestone) GetOccurredAt() time.Time {
+	if b == nil {
 		return time.Time{}
 	}
-	return o.OccurredAt
+	return b.OccurredAt
 }
 
-func (o *BulkUpdateIncidentMilestonesMilestone) GetRemove() *bool {
-	if o == nil {
+func (b *BulkUpdateIncidentMilestonesMilestone) GetRemove() *bool {
+	if b == nil {
 		return nil
 	}
-	return o.Remove
+	return b.Remove
 }
 
 // BulkUpdateIncidentMilestones - Update milestone times in bulk for a given incident. All milestone
@@ -84,16 +84,16 @@ type BulkUpdateIncidentMilestones struct {
 	Milestones []BulkUpdateIncidentMilestonesMilestone `json:"milestones"`
 }
 
-func (o *BulkUpdateIncidentMilestones) GetBulk() *Bulk {
-	if o == nil {
+func (b *BulkUpdateIncidentMilestones) GetBulk() *Bulk {
+	if b == nil {
 		return nil
 	}
-	return o.Bulk
+	return b.Bulk
 }
 
-func (o *BulkUpdateIncidentMilestones) GetMilestones() []BulkUpdateIncidentMilestonesMilestone {
-	if o == nil {
+func (b *BulkUpdateIncidentMilestones) GetMilestones() []BulkUpdateIncidentMilestonesMilestone {
+	if b == nil {
 		return []BulkUpdateIncidentMilestonesMilestone{}
 	}
-	return o.Milestones
+	return b.Milestones
 }

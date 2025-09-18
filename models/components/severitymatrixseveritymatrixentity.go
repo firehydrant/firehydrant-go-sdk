@@ -9,23 +9,23 @@ type SeverityMatrixSeverityMatrixEntity struct {
 	Conditions []SeverityMatrixConditionEntity `json:"conditions,omitempty"`
 }
 
-func (o *SeverityMatrixSeverityMatrixEntity) GetMatrix() []SeverityMatrixItemEntity {
-	if o == nil {
+func (s *SeverityMatrixSeverityMatrixEntity) GetMatrix() []SeverityMatrixItemEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Matrix
+	return s.Matrix
 }
 
-func (o *SeverityMatrixSeverityMatrixEntity) GetImpacts() []SeverityMatrixImpactEntity {
-	if o == nil {
+func (s *SeverityMatrixSeverityMatrixEntity) GetImpacts() []SeverityMatrixImpactEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Impacts
+	return s.Impacts
 }
 
-func (o *SeverityMatrixSeverityMatrixEntity) GetConditions() []SeverityMatrixConditionEntity {
-	if o == nil {
+func (s *SeverityMatrixSeverityMatrixEntity) GetConditions() []SeverityMatrixConditionEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Conditions
+	return s.Conditions
 }

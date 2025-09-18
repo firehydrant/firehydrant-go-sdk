@@ -11,16 +11,16 @@ type UpdateStatusUpdateTemplateRequest struct {
 	UpdateStatusUpdateTemplate components.UpdateStatusUpdateTemplate `request:"mediaType=application/json"`
 }
 
-func (o *UpdateStatusUpdateTemplateRequest) GetStatusUpdateTemplateID() string {
-	if o == nil {
+func (u *UpdateStatusUpdateTemplateRequest) GetStatusUpdateTemplateID() string {
+	if u == nil {
 		return ""
 	}
-	return o.StatusUpdateTemplateID
+	return u.StatusUpdateTemplateID
 }
 
-func (o *UpdateStatusUpdateTemplateRequest) GetUpdateStatusUpdateTemplate() components.UpdateStatusUpdateTemplate {
-	if o == nil {
+func (u *UpdateStatusUpdateTemplateRequest) GetUpdateStatusUpdateTemplate() components.UpdateStatusUpdateTemplate {
+	if u == nil {
 		return components.UpdateStatusUpdateTemplate{}
 	}
-	return o.UpdateStatusUpdateTemplate
+	return u.UpdateStatusUpdateTemplate
 }

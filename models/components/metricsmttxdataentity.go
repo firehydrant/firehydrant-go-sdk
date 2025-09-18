@@ -8,16 +8,16 @@ type MetricsMttxDataEntity struct {
 	Data      []MetricsMttxGroupEntity              `json:"data,omitempty"`
 }
 
-func (o *MetricsMttxDataEntity) GetGroupings() []MetricsMttxDataEntityGroupingEntity {
-	if o == nil {
+func (m *MetricsMttxDataEntity) GetGroupings() []MetricsMttxDataEntityGroupingEntity {
+	if m == nil {
 		return nil
 	}
-	return o.Groupings
+	return m.Groupings
 }
 
-func (o *MetricsMttxDataEntity) GetData() []MetricsMttxGroupEntity {
-	if o == nil {
+func (m *MetricsMttxDataEntity) GetData() []MetricsMttxGroupEntity {
+	if m == nil {
 		return nil
 	}
-	return o.Data
+	return m.Data
 }

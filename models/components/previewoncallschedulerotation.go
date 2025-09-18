@@ -15,11 +15,11 @@ type PreviewOnCallScheduleRotationMember struct {
 	UserID *string `json:"user_id,omitempty"`
 }
 
-func (o *PreviewOnCallScheduleRotationMember) GetUserID() *string {
-	if o == nil {
+func (p *PreviewOnCallScheduleRotationMember) GetUserID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.UserID
+	return p.UserID
 }
 
 // PreviewOnCallScheduleRotationType - The type of strategy. Must be one of "daily", "weekly", or "custom".
@@ -106,32 +106,32 @@ type PreviewOnCallScheduleRotationStrategy struct {
 	ShiftDuration *string `json:"shift_duration,omitempty"`
 }
 
-func (o *PreviewOnCallScheduleRotationStrategy) GetType() PreviewOnCallScheduleRotationType {
-	if o == nil {
+func (p *PreviewOnCallScheduleRotationStrategy) GetType() PreviewOnCallScheduleRotationType {
+	if p == nil {
 		return PreviewOnCallScheduleRotationType("")
 	}
-	return o.Type
+	return p.Type
 }
 
-func (o *PreviewOnCallScheduleRotationStrategy) GetHandoffTime() *string {
-	if o == nil {
+func (p *PreviewOnCallScheduleRotationStrategy) GetHandoffTime() *string {
+	if p == nil {
 		return nil
 	}
-	return o.HandoffTime
+	return p.HandoffTime
 }
 
-func (o *PreviewOnCallScheduleRotationStrategy) GetHandoffDay() *PreviewOnCallScheduleRotationHandoffDay {
-	if o == nil {
+func (p *PreviewOnCallScheduleRotationStrategy) GetHandoffDay() *PreviewOnCallScheduleRotationHandoffDay {
+	if p == nil {
 		return nil
 	}
-	return o.HandoffDay
+	return p.HandoffDay
 }
 
-func (o *PreviewOnCallScheduleRotationStrategy) GetShiftDuration() *string {
-	if o == nil {
+func (p *PreviewOnCallScheduleRotationStrategy) GetShiftDuration() *string {
+	if p == nil {
 		return nil
 	}
-	return o.ShiftDuration
+	return p.ShiftDuration
 }
 
 // PreviewOnCallScheduleRotationStartDay - The day of the week on which the restriction should start, as its long-form name (e.g. "monday", "tuesday", etc).
@@ -229,32 +229,32 @@ type PreviewOnCallScheduleRotationRestriction struct {
 	EndTime string `json:"end_time"`
 }
 
-func (o *PreviewOnCallScheduleRotationRestriction) GetStartDay() PreviewOnCallScheduleRotationStartDay {
-	if o == nil {
+func (p *PreviewOnCallScheduleRotationRestriction) GetStartDay() PreviewOnCallScheduleRotationStartDay {
+	if p == nil {
 		return PreviewOnCallScheduleRotationStartDay("")
 	}
-	return o.StartDay
+	return p.StartDay
 }
 
-func (o *PreviewOnCallScheduleRotationRestriction) GetStartTime() string {
-	if o == nil {
+func (p *PreviewOnCallScheduleRotationRestriction) GetStartTime() string {
+	if p == nil {
 		return ""
 	}
-	return o.StartTime
+	return p.StartTime
 }
 
-func (o *PreviewOnCallScheduleRotationRestriction) GetEndDay() PreviewOnCallScheduleRotationEndDay {
-	if o == nil {
+func (p *PreviewOnCallScheduleRotationRestriction) GetEndDay() PreviewOnCallScheduleRotationEndDay {
+	if p == nil {
 		return PreviewOnCallScheduleRotationEndDay("")
 	}
-	return o.EndDay
+	return p.EndDay
 }
 
-func (o *PreviewOnCallScheduleRotationRestriction) GetEndTime() string {
-	if o == nil {
+func (p *PreviewOnCallScheduleRotationRestriction) GetEndTime() string {
+	if p == nil {
 		return ""
 	}
-	return o.EndTime
+	return p.EndTime
 }
 
 // PreviewOnCallScheduleRotation - Preview a new on-call rotation orchanges to an existing on-call rotation
@@ -296,114 +296,114 @@ type PreviewOnCallScheduleRotation struct {
 	To *string `json:"to,omitempty"`
 }
 
-func (o *PreviewOnCallScheduleRotation) GetRotationID() *string {
-	if o == nil {
+func (p *PreviewOnCallScheduleRotation) GetRotationID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.RotationID
+	return p.RotationID
 }
 
-func (o *PreviewOnCallScheduleRotation) GetName() *string {
-	if o == nil {
+func (p *PreviewOnCallScheduleRotation) GetName() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Name
+	return p.Name
 }
 
-func (o *PreviewOnCallScheduleRotation) GetDescription() *string {
-	if o == nil {
+func (p *PreviewOnCallScheduleRotation) GetDescription() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Description
+	return p.Description
 }
 
-func (o *PreviewOnCallScheduleRotation) GetTimeZone() *string {
-	if o == nil {
+func (p *PreviewOnCallScheduleRotation) GetTimeZone() *string {
+	if p == nil {
 		return nil
 	}
-	return o.TimeZone
+	return p.TimeZone
 }
 
-func (o *PreviewOnCallScheduleRotation) GetSlackUserGroupID() *string {
-	if o == nil {
+func (p *PreviewOnCallScheduleRotation) GetSlackUserGroupID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.SlackUserGroupID
+	return p.SlackUserGroupID
 }
 
-func (o *PreviewOnCallScheduleRotation) GetEnableSlackChannelNotifications() *bool {
-	if o == nil {
+func (p *PreviewOnCallScheduleRotation) GetEnableSlackChannelNotifications() *bool {
+	if p == nil {
 		return nil
 	}
-	return o.EnableSlackChannelNotifications
+	return p.EnableSlackChannelNotifications
 }
 
-func (o *PreviewOnCallScheduleRotation) GetPreventShiftDeletion() *bool {
-	if o == nil {
+func (p *PreviewOnCallScheduleRotation) GetPreventShiftDeletion() *bool {
+	if p == nil {
 		return nil
 	}
-	return o.PreventShiftDeletion
+	return p.PreventShiftDeletion
 }
 
-func (o *PreviewOnCallScheduleRotation) GetCoverageGapNotificationInterval() *string {
-	if o == nil {
+func (p *PreviewOnCallScheduleRotation) GetCoverageGapNotificationInterval() *string {
+	if p == nil {
 		return nil
 	}
-	return o.CoverageGapNotificationInterval
+	return p.CoverageGapNotificationInterval
 }
 
-func (o *PreviewOnCallScheduleRotation) GetColor() *string {
-	if o == nil {
+func (p *PreviewOnCallScheduleRotation) GetColor() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Color
+	return p.Color
 }
 
-func (o *PreviewOnCallScheduleRotation) GetMembers() []PreviewOnCallScheduleRotationMember {
-	if o == nil {
+func (p *PreviewOnCallScheduleRotation) GetMembers() []PreviewOnCallScheduleRotationMember {
+	if p == nil {
 		return nil
 	}
-	return o.Members
+	return p.Members
 }
 
-func (o *PreviewOnCallScheduleRotation) GetStrategy() *PreviewOnCallScheduleRotationStrategy {
-	if o == nil {
+func (p *PreviewOnCallScheduleRotation) GetStrategy() *PreviewOnCallScheduleRotationStrategy {
+	if p == nil {
 		return nil
 	}
-	return o.Strategy
+	return p.Strategy
 }
 
-func (o *PreviewOnCallScheduleRotation) GetRestrictions() []PreviewOnCallScheduleRotationRestriction {
-	if o == nil {
+func (p *PreviewOnCallScheduleRotation) GetRestrictions() []PreviewOnCallScheduleRotationRestriction {
+	if p == nil {
 		return nil
 	}
-	return o.Restrictions
+	return p.Restrictions
 }
 
-func (o *PreviewOnCallScheduleRotation) GetStartTime() *string {
-	if o == nil {
+func (p *PreviewOnCallScheduleRotation) GetStartTime() *string {
+	if p == nil {
 		return nil
 	}
-	return o.StartTime
+	return p.StartTime
 }
 
-func (o *PreviewOnCallScheduleRotation) GetEffectiveAt() *string {
-	if o == nil {
+func (p *PreviewOnCallScheduleRotation) GetEffectiveAt() *string {
+	if p == nil {
 		return nil
 	}
-	return o.EffectiveAt
+	return p.EffectiveAt
 }
 
-func (o *PreviewOnCallScheduleRotation) GetFrom() *string {
-	if o == nil {
+func (p *PreviewOnCallScheduleRotation) GetFrom() *string {
+	if p == nil {
 		return nil
 	}
-	return o.From
+	return p.From
 }
 
-func (o *PreviewOnCallScheduleRotation) GetTo() *string {
-	if o == nil {
+func (p *PreviewOnCallScheduleRotation) GetTo() *string {
+	if p == nil {
 		return nil
 	}
-	return o.To
+	return p.To
 }

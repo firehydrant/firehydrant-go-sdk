@@ -92,86 +92,86 @@ func (s *SignalsAPIRuleEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *SignalsAPIRuleEntity) GetID() *string {
-	if o == nil {
+func (s *SignalsAPIRuleEntity) GetID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *SignalsAPIRuleEntity) GetName() *string {
-	if o == nil {
+func (s *SignalsAPIRuleEntity) GetName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Name
+	return s.Name
 }
 
-func (o *SignalsAPIRuleEntity) GetExpression() *string {
-	if o == nil {
+func (s *SignalsAPIRuleEntity) GetExpression() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Expression
+	return s.Expression
 }
 
-func (o *SignalsAPIRuleEntity) GetTeamID() *string {
-	if o == nil {
+func (s *SignalsAPIRuleEntity) GetTeamID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.TeamID
+	return s.TeamID
 }
 
-func (o *SignalsAPIRuleEntity) GetTarget() *NullableSignalsAPITargetEntity {
-	if o == nil {
+func (s *SignalsAPIRuleEntity) GetTarget() *NullableSignalsAPITargetEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Target
+	return s.Target
 }
 
-func (o *SignalsAPIRuleEntity) GetCreatedBy() *NullableAuthorEntity {
-	if o == nil {
+func (s *SignalsAPIRuleEntity) GetCreatedBy() *NullableAuthorEntity {
+	if s == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return s.CreatedBy
 }
 
-func (o *SignalsAPIRuleEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (s *SignalsAPIRuleEntity) GetCreatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return s.CreatedAt
 }
 
-func (o *SignalsAPIRuleEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (s *SignalsAPIRuleEntity) GetUpdatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return s.UpdatedAt
 }
 
-func (o *SignalsAPIRuleEntity) GetIncidentType() *NullableSuccinctEntity {
-	if o == nil {
+func (s *SignalsAPIRuleEntity) GetIncidentType() *NullableSuccinctEntity {
+	if s == nil {
 		return nil
 	}
-	return o.IncidentType
+	return s.IncidentType
 }
 
-func (o *SignalsAPIRuleEntity) GetNotificationPriorityOverride() *SignalsAPIRuleEntityNotificationPriorityOverride {
-	if o == nil {
+func (s *SignalsAPIRuleEntity) GetNotificationPriorityOverride() *SignalsAPIRuleEntityNotificationPriorityOverride {
+	if s == nil {
 		return nil
 	}
-	return o.NotificationPriorityOverride
+	return s.NotificationPriorityOverride
 }
 
-func (o *SignalsAPIRuleEntity) GetCreateIncidentConditionWhen() *SignalsAPIRuleEntityCreateIncidentConditionWhen {
-	if o == nil {
+func (s *SignalsAPIRuleEntity) GetCreateIncidentConditionWhen() *SignalsAPIRuleEntityCreateIncidentConditionWhen {
+	if s == nil {
 		return nil
 	}
-	return o.CreateIncidentConditionWhen
+	return s.CreateIncidentConditionWhen
 }
 
-func (o *SignalsAPIRuleEntity) GetDeduplicationExpiry() *string {
-	if o == nil {
+func (s *SignalsAPIRuleEntity) GetDeduplicationExpiry() *string {
+	if s == nil {
 		return nil
 	}
-	return o.DeduplicationExpiry
+	return s.DeduplicationExpiry
 }

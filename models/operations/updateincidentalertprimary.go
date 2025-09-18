@@ -12,23 +12,23 @@ type UpdateIncidentAlertPrimaryRequest struct {
 	UpdateIncidentAlertPrimary components.UpdateIncidentAlertPrimary `request:"mediaType=application/json"`
 }
 
-func (o *UpdateIncidentAlertPrimaryRequest) GetIncidentAlertID() string {
-	if o == nil {
+func (u *UpdateIncidentAlertPrimaryRequest) GetIncidentAlertID() string {
+	if u == nil {
 		return ""
 	}
-	return o.IncidentAlertID
+	return u.IncidentAlertID
 }
 
-func (o *UpdateIncidentAlertPrimaryRequest) GetIncidentID() string {
-	if o == nil {
+func (u *UpdateIncidentAlertPrimaryRequest) GetIncidentID() string {
+	if u == nil {
 		return ""
 	}
-	return o.IncidentID
+	return u.IncidentID
 }
 
-func (o *UpdateIncidentAlertPrimaryRequest) GetUpdateIncidentAlertPrimary() components.UpdateIncidentAlertPrimary {
-	if o == nil {
+func (u *UpdateIncidentAlertPrimaryRequest) GetUpdateIncidentAlertPrimary() components.UpdateIncidentAlertPrimary {
+	if u == nil {
 		return components.UpdateIncidentAlertPrimary{}
 	}
-	return o.UpdateIncidentAlertPrimary
+	return u.UpdateIncidentAlertPrimary
 }

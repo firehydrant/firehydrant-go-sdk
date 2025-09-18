@@ -34,191 +34,191 @@ type NuncConnectionEntity struct {
 	Links []LinksEntity `json:"links,omitempty"`
 }
 
-func (o *NuncConnectionEntity) GetID() *string {
-	if o == nil {
+func (n *NuncConnectionEntity) GetID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ID
+	return n.ID
 }
 
-func (o *NuncConnectionEntity) GetDomain() *string {
-	if o == nil {
+func (n *NuncConnectionEntity) GetDomain() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Domain
+	return n.Domain
 }
 
-func (o *NuncConnectionEntity) GetCompanyName() *string {
-	if o == nil {
+func (n *NuncConnectionEntity) GetCompanyName() *string {
+	if n == nil {
 		return nil
 	}
-	return o.CompanyName
+	return n.CompanyName
 }
 
-func (o *NuncConnectionEntity) GetCompanyWebsite() *string {
-	if o == nil {
+func (n *NuncConnectionEntity) GetCompanyWebsite() *string {
+	if n == nil {
 		return nil
 	}
-	return o.CompanyWebsite
+	return n.CompanyWebsite
 }
 
-func (o *NuncConnectionEntity) GetCname() *string {
-	if o == nil {
+func (n *NuncConnectionEntity) GetCname() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Cname
+	return n.Cname
 }
 
-func (o *NuncConnectionEntity) GetGreetingTitle() *string {
-	if o == nil {
+func (n *NuncConnectionEntity) GetGreetingTitle() *string {
+	if n == nil {
 		return nil
 	}
-	return o.GreetingTitle
+	return n.GreetingTitle
 }
 
-func (o *NuncConnectionEntity) GetGreetingBody() *string {
-	if o == nil {
+func (n *NuncConnectionEntity) GetGreetingBody() *string {
+	if n == nil {
 		return nil
 	}
-	return o.GreetingBody
+	return n.GreetingBody
 }
 
-func (o *NuncConnectionEntity) GetOperationalMessage() *string {
-	if o == nil {
+func (n *NuncConnectionEntity) GetOperationalMessage() *string {
+	if n == nil {
 		return nil
 	}
-	return o.OperationalMessage
+	return n.OperationalMessage
 }
 
-func (o *NuncConnectionEntity) GetCompanyTosURL() *string {
-	if o == nil {
+func (n *NuncConnectionEntity) GetCompanyTosURL() *string {
+	if n == nil {
 		return nil
 	}
-	return o.CompanyTosURL
+	return n.CompanyTosURL
 }
 
-func (o *NuncConnectionEntity) GetPrimaryColor() *string {
-	if o == nil {
+func (n *NuncConnectionEntity) GetPrimaryColor() *string {
+	if n == nil {
 		return nil
 	}
-	return o.PrimaryColor
+	return n.PrimaryColor
 }
 
-func (o *NuncConnectionEntity) GetSecondaryColor() *string {
-	if o == nil {
+func (n *NuncConnectionEntity) GetSecondaryColor() *string {
+	if n == nil {
 		return nil
 	}
-	return o.SecondaryColor
+	return n.SecondaryColor
 }
 
-func (o *NuncConnectionEntity) GetButtonBackgroundColor() *string {
-	if o == nil {
+func (n *NuncConnectionEntity) GetButtonBackgroundColor() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ButtonBackgroundColor
+	return n.ButtonBackgroundColor
 }
 
-func (o *NuncConnectionEntity) GetButtonTextColor() *string {
-	if o == nil {
+func (n *NuncConnectionEntity) GetButtonTextColor() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ButtonTextColor
+	return n.ButtonTextColor
 }
 
-func (o *NuncConnectionEntity) GetLinkColor() *string {
-	if o == nil {
+func (n *NuncConnectionEntity) GetLinkColor() *string {
+	if n == nil {
 		return nil
 	}
-	return o.LinkColor
+	return n.LinkColor
 }
 
-func (o *NuncConnectionEntity) GetTitle() *string {
-	if o == nil {
+func (n *NuncConnectionEntity) GetTitle() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Title
+	return n.Title
 }
 
-func (o *NuncConnectionEntity) GetExposedFields() []string {
-	if o == nil {
+func (n *NuncConnectionEntity) GetExposedFields() []string {
+	if n == nil {
 		return nil
 	}
-	return o.ExposedFields
+	return n.ExposedFields
 }
 
-func (o *NuncConnectionEntity) GetConditions() *NullableNuncConditionEntity {
-	if o == nil {
+func (n *NuncConnectionEntity) GetConditions() *NullableNuncConditionEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Conditions
+	return n.Conditions
 }
 
-func (o *NuncConnectionEntity) GetComponents() *NullableNuncComponentEntity {
-	if o == nil {
+func (n *NuncConnectionEntity) GetComponents() *NullableNuncComponentEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Components
+	return n.Components
 }
 
-func (o *NuncConnectionEntity) GetComponentGroups() *NullableNuncComponentGroupEntity {
-	if o == nil {
+func (n *NuncConnectionEntity) GetComponentGroups() *NullableNuncComponentGroupEntity {
+	if n == nil {
 		return nil
 	}
-	return o.ComponentGroups
+	return n.ComponentGroups
 }
 
-func (o *NuncConnectionEntity) GetLogo() *NullableMediaImageEntity {
-	if o == nil {
+func (n *NuncConnectionEntity) GetLogo() *NullableMediaImageEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Logo
+	return n.Logo
 }
 
-func (o *NuncConnectionEntity) GetCoverImage() *NullableMediaImageEntity {
-	if o == nil {
+func (n *NuncConnectionEntity) GetCoverImage() *NullableMediaImageEntity {
+	if n == nil {
 		return nil
 	}
-	return o.CoverImage
+	return n.CoverImage
 }
 
-func (o *NuncConnectionEntity) GetFavicon() *NullableMediaImageEntity {
-	if o == nil {
+func (n *NuncConnectionEntity) GetFavicon() *NullableMediaImageEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Favicon
+	return n.Favicon
 }
 
-func (o *NuncConnectionEntity) GetOpenGraphImage() *NullableMediaImageEntity {
-	if o == nil {
+func (n *NuncConnectionEntity) GetOpenGraphImage() *NullableMediaImageEntity {
+	if n == nil {
 		return nil
 	}
-	return o.OpenGraphImage
+	return n.OpenGraphImage
 }
 
-func (o *NuncConnectionEntity) GetDarkLogo() *NullableMediaImageEntity {
-	if o == nil {
+func (n *NuncConnectionEntity) GetDarkLogo() *NullableMediaImageEntity {
+	if n == nil {
 		return nil
 	}
-	return o.DarkLogo
+	return n.DarkLogo
 }
 
-func (o *NuncConnectionEntity) GetEnableHistogram() *bool {
-	if o == nil {
+func (n *NuncConnectionEntity) GetEnableHistogram() *bool {
+	if n == nil {
 		return nil
 	}
-	return o.EnableHistogram
+	return n.EnableHistogram
 }
 
-func (o *NuncConnectionEntity) GetUIVersion() *int {
-	if o == nil {
+func (n *NuncConnectionEntity) GetUIVersion() *int {
+	if n == nil {
 		return nil
 	}
-	return o.UIVersion
+	return n.UIVersion
 }
 
-func (o *NuncConnectionEntity) GetLinks() []LinksEntity {
-	if o == nil {
+func (n *NuncConnectionEntity) GetLinks() []LinksEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Links
+	return n.Links
 }

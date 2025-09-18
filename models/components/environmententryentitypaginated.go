@@ -8,16 +8,16 @@ type EnvironmentEntryEntityPaginated struct {
 	Pagination *NullablePaginationEntity `json:"pagination,omitempty"`
 }
 
-func (o *EnvironmentEntryEntityPaginated) GetData() []EnvironmentEntryEntity {
-	if o == nil {
+func (e *EnvironmentEntryEntityPaginated) GetData() []EnvironmentEntryEntity {
+	if e == nil {
 		return nil
 	}
-	return o.Data
+	return e.Data
 }
 
-func (o *EnvironmentEntryEntityPaginated) GetPagination() *NullablePaginationEntity {
-	if o == nil {
+func (e *EnvironmentEntryEntityPaginated) GetPagination() *NullablePaginationEntity {
+	if e == nil {
 		return nil
 	}
-	return o.Pagination
+	return e.Pagination
 }

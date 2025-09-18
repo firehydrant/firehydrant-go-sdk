@@ -34,86 +34,86 @@ func (n *NullableIntegrationsIntegrationEntity) UnmarshalJSON(data []byte) error
 	return nil
 }
 
-func (o *NullableIntegrationsIntegrationEntity) GetID() *string {
-	if o == nil {
+func (n *NullableIntegrationsIntegrationEntity) GetID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ID
+	return n.ID
 }
 
-func (o *NullableIntegrationsIntegrationEntity) GetSlug() *string {
-	if o == nil {
+func (n *NullableIntegrationsIntegrationEntity) GetSlug() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Slug
+	return n.Slug
 }
 
-func (o *NullableIntegrationsIntegrationEntity) GetName() *string {
-	if o == nil {
+func (n *NullableIntegrationsIntegrationEntity) GetName() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Name
+	return n.Name
 }
 
-func (o *NullableIntegrationsIntegrationEntity) GetDescription() *string {
-	if o == nil {
+func (n *NullableIntegrationsIntegrationEntity) GetDescription() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Description
+	return n.Description
 }
 
-func (o *NullableIntegrationsIntegrationEntity) GetSetupURL() *string {
-	if o == nil {
+func (n *NullableIntegrationsIntegrationEntity) GetSetupURL() *string {
+	if n == nil {
 		return nil
 	}
-	return o.SetupURL
+	return n.SetupURL
 }
 
-func (o *NullableIntegrationsIntegrationEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (n *NullableIntegrationsIntegrationEntity) GetCreatedAt() *time.Time {
+	if n == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return n.CreatedAt
 }
 
-func (o *NullableIntegrationsIntegrationEntity) GetConnections() []IntegrationsConnectionEntity {
-	if o == nil {
+func (n *NullableIntegrationsIntegrationEntity) GetConnections() []IntegrationsConnectionEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Connections
+	return n.Connections
 }
 
-func (o *NullableIntegrationsIntegrationEntity) GetEnabled() *bool {
-	if o == nil {
+func (n *NullableIntegrationsIntegrationEntity) GetEnabled() *bool {
+	if n == nil {
 		return nil
 	}
-	return o.Enabled
+	return n.Enabled
 }
 
-func (o *NullableIntegrationsIntegrationEntity) GetInstalled() *bool {
-	if o == nil {
+func (n *NullableIntegrationsIntegrationEntity) GetInstalled() *bool {
+	if n == nil {
 		return nil
 	}
-	return o.Installed
+	return n.Installed
 }
 
-func (o *NullableIntegrationsIntegrationEntity) GetDeprecated() *bool {
-	if o == nil {
+func (n *NullableIntegrationsIntegrationEntity) GetDeprecated() *bool {
+	if n == nil {
 		return nil
 	}
-	return o.Deprecated
+	return n.Deprecated
 }
 
-func (o *NullableIntegrationsIntegrationEntity) GetLogo() *NullableIntegrationsIntegrationEntityLogoEntity {
-	if o == nil {
+func (n *NullableIntegrationsIntegrationEntity) GetLogo() *NullableIntegrationsIntegrationEntityLogoEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Logo
+	return n.Logo
 }
 
-func (o *NullableIntegrationsIntegrationEntity) GetNatIP() *string {
-	if o == nil {
+func (n *NullableIntegrationsIntegrationEntity) GetNatIP() *string {
+	if n == nil {
 		return nil
 	}
-	return o.NatIP
+	return n.NatIP
 }

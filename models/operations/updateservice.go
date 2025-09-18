@@ -11,16 +11,16 @@ type UpdateServiceRequest struct {
 	UpdateService components.UpdateService `request:"mediaType=application/json"`
 }
 
-func (o *UpdateServiceRequest) GetServiceID() string {
-	if o == nil {
+func (u *UpdateServiceRequest) GetServiceID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ServiceID
+	return u.ServiceID
 }
 
-func (o *UpdateServiceRequest) GetUpdateService() components.UpdateService {
-	if o == nil {
+func (u *UpdateServiceRequest) GetUpdateService() components.UpdateService {
+	if u == nil {
 		return components.UpdateService{}
 	}
-	return o.UpdateService
+	return u.UpdateService
 }

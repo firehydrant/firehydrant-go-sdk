@@ -30,30 +30,30 @@ func (c *CreateOnCallShift) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CreateOnCallShift) GetStartTime() time.Time {
-	if o == nil {
+func (c *CreateOnCallShift) GetStartTime() time.Time {
+	if c == nil {
 		return time.Time{}
 	}
-	return o.StartTime
+	return c.StartTime
 }
 
-func (o *CreateOnCallShift) GetEndTime() time.Time {
-	if o == nil {
+func (c *CreateOnCallShift) GetEndTime() time.Time {
+	if c == nil {
 		return time.Time{}
 	}
-	return o.EndTime
+	return c.EndTime
 }
 
-func (o *CreateOnCallShift) GetUserID() *string {
-	if o == nil {
+func (c *CreateOnCallShift) GetUserID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.UserID
+	return c.UserID
 }
 
-func (o *CreateOnCallShift) GetRotationID() *string {
-	if o == nil {
+func (c *CreateOnCallShift) GetRotationID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.RotationID
+	return c.RotationID
 }

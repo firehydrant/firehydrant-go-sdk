@@ -10,37 +10,37 @@ type NullableNuncComponentEntity struct {
 	ComponentGroupID   *string `json:"component_group_id,omitempty"`
 }
 
-func (o *NullableNuncComponentEntity) GetInfrastructureType() *string {
-	if o == nil {
+func (n *NullableNuncComponentEntity) GetInfrastructureType() *string {
+	if n == nil {
 		return nil
 	}
-	return o.InfrastructureType
+	return n.InfrastructureType
 }
 
-func (o *NullableNuncComponentEntity) GetInfrastructureID() *string {
-	if o == nil {
+func (n *NullableNuncComponentEntity) GetInfrastructureID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.InfrastructureID
+	return n.InfrastructureID
 }
 
-func (o *NullableNuncComponentEntity) GetLabel() *string {
-	if o == nil {
+func (n *NullableNuncComponentEntity) GetLabel() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Label
+	return n.Label
 }
 
-func (o *NullableNuncComponentEntity) GetPosition() *int {
-	if o == nil {
+func (n *NullableNuncComponentEntity) GetPosition() *int {
+	if n == nil {
 		return nil
 	}
-	return o.Position
+	return n.Position
 }
 
-func (o *NullableNuncComponentEntity) GetComponentGroupID() *string {
-	if o == nil {
+func (n *NullableNuncComponentEntity) GetComponentGroupID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ComponentGroupID
+	return n.ComponentGroupID
 }

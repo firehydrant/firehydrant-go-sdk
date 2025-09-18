@@ -7,16 +7,16 @@ type MetricsRetrospectiveEntityDataEntity struct {
 	Y *float32 `json:"y,omitempty"`
 }
 
-func (o *MetricsRetrospectiveEntityDataEntity) GetX() *string {
-	if o == nil {
+func (m *MetricsRetrospectiveEntityDataEntity) GetX() *string {
+	if m == nil {
 		return nil
 	}
-	return o.X
+	return m.X
 }
 
-func (o *MetricsRetrospectiveEntityDataEntity) GetY() *float32 {
-	if o == nil {
+func (m *MetricsRetrospectiveEntityDataEntity) GetY() *float32 {
+	if m == nil {
 		return nil
 	}
-	return o.Y
+	return m.Y
 }

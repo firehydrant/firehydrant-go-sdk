@@ -7,9 +7,9 @@ type SignalsAPIIngestKeyEntity struct {
 	URL *string `json:"url,omitempty"`
 }
 
-func (o *SignalsAPIIngestKeyEntity) GetURL() *string {
-	if o == nil {
+func (s *SignalsAPIIngestKeyEntity) GetURL() *string {
+	if s == nil {
 		return nil
 	}
-	return o.URL
+	return s.URL
 }

@@ -13,58 +13,58 @@ type NullableIntegrationsMicrosoftTeamsV2ChannelEntity struct {
 	Incident    *NullableIncidentEntity `json:"incident,omitempty"`
 }
 
-func (o *NullableIntegrationsMicrosoftTeamsV2ChannelEntity) GetID() *string {
-	if o == nil {
+func (n *NullableIntegrationsMicrosoftTeamsV2ChannelEntity) GetID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ID
+	return n.ID
 }
 
-func (o *NullableIntegrationsMicrosoftTeamsV2ChannelEntity) GetChannelID() *string {
-	if o == nil {
+func (n *NullableIntegrationsMicrosoftTeamsV2ChannelEntity) GetChannelID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ChannelID
+	return n.ChannelID
 }
 
-func (o *NullableIntegrationsMicrosoftTeamsV2ChannelEntity) GetChannelName() *string {
-	if o == nil {
+func (n *NullableIntegrationsMicrosoftTeamsV2ChannelEntity) GetChannelName() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ChannelName
+	return n.ChannelName
 }
 
-func (o *NullableIntegrationsMicrosoftTeamsV2ChannelEntity) GetMsTeamID() *string {
-	if o == nil {
+func (n *NullableIntegrationsMicrosoftTeamsV2ChannelEntity) GetMsTeamID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.MsTeamID
+	return n.MsTeamID
 }
 
-func (o *NullableIntegrationsMicrosoftTeamsV2ChannelEntity) GetTeamName() *string {
-	if o == nil {
+func (n *NullableIntegrationsMicrosoftTeamsV2ChannelEntity) GetTeamName() *string {
+	if n == nil {
 		return nil
 	}
-	return o.TeamName
+	return n.TeamName
 }
 
-func (o *NullableIntegrationsMicrosoftTeamsV2ChannelEntity) GetChannelURL() *string {
-	if o == nil {
+func (n *NullableIntegrationsMicrosoftTeamsV2ChannelEntity) GetChannelURL() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ChannelURL
+	return n.ChannelURL
 }
 
-func (o *NullableIntegrationsMicrosoftTeamsV2ChannelEntity) GetStatus() *string {
-	if o == nil {
+func (n *NullableIntegrationsMicrosoftTeamsV2ChannelEntity) GetStatus() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Status
+	return n.Status
 }
 
-func (o *NullableIntegrationsMicrosoftTeamsV2ChannelEntity) GetIncident() *NullableIncidentEntity {
-	if o == nil {
+func (n *NullableIntegrationsMicrosoftTeamsV2ChannelEntity) GetIncident() *NullableIncidentEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Incident
+	return n.Incident
 }

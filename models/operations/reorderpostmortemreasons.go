@@ -11,16 +11,16 @@ type ReorderPostMortemReasonsRequest struct {
 	ReorderPostMortemReasons components.ReorderPostMortemReasons `request:"mediaType=application/json"`
 }
 
-func (o *ReorderPostMortemReasonsRequest) GetReportID() string {
-	if o == nil {
+func (r *ReorderPostMortemReasonsRequest) GetReportID() string {
+	if r == nil {
 		return ""
 	}
-	return o.ReportID
+	return r.ReportID
 }
 
-func (o *ReorderPostMortemReasonsRequest) GetReorderPostMortemReasons() components.ReorderPostMortemReasons {
-	if o == nil {
+func (r *ReorderPostMortemReasonsRequest) GetReorderPostMortemReasons() components.ReorderPostMortemReasons {
+	if r == nil {
 		return components.ReorderPostMortemReasons{}
 	}
-	return o.ReorderPostMortemReasons
+	return r.ReorderPostMortemReasons
 }

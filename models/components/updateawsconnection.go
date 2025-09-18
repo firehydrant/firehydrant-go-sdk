@@ -9,23 +9,23 @@ type UpdateAwsConnection struct {
 	ConnectionStatus *string `json:"connection_status,omitempty"`
 }
 
-func (o *UpdateAwsConnection) GetAwsAccountID() *string {
-	if o == nil {
+func (u *UpdateAwsConnection) GetAwsAccountID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.AwsAccountID
+	return u.AwsAccountID
 }
 
-func (o *UpdateAwsConnection) GetTargetArn() *string {
-	if o == nil {
+func (u *UpdateAwsConnection) GetTargetArn() *string {
+	if u == nil {
 		return nil
 	}
-	return o.TargetArn
+	return u.TargetArn
 }
 
-func (o *UpdateAwsConnection) GetConnectionStatus() *string {
-	if o == nil {
+func (u *UpdateAwsConnection) GetConnectionStatus() *string {
+	if u == nil {
 		return nil
 	}
-	return o.ConnectionStatus
+	return u.ConnectionStatus
 }

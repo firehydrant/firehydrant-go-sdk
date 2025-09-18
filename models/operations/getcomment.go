@@ -7,16 +7,16 @@ type GetCommentRequest struct {
 	ConversationID string `pathParam:"style=simple,explode=false,name=conversation_id"`
 }
 
-func (o *GetCommentRequest) GetCommentID() string {
-	if o == nil {
+func (g *GetCommentRequest) GetCommentID() string {
+	if g == nil {
 		return ""
 	}
-	return o.CommentID
+	return g.CommentID
 }
 
-func (o *GetCommentRequest) GetConversationID() string {
-	if o == nil {
+func (g *GetCommentRequest) GetConversationID() string {
+	if g == nil {
 		return ""
 	}
-	return o.ConversationID
+	return g.ConversationID
 }

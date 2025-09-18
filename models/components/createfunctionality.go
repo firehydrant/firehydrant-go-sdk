@@ -7,11 +7,11 @@ type CreateFunctionalityService struct {
 	ID string `json:"id"`
 }
 
-func (o *CreateFunctionalityService) GetID() string {
-	if o == nil {
+func (c *CreateFunctionalityService) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
 type CreateFunctionalityExternalResource struct {
@@ -20,18 +20,18 @@ type CreateFunctionalityExternalResource struct {
 	ConnectionType *string `json:"connection_type,omitempty"`
 }
 
-func (o *CreateFunctionalityExternalResource) GetRemoteID() string {
-	if o == nil {
+func (c *CreateFunctionalityExternalResource) GetRemoteID() string {
+	if c == nil {
 		return ""
 	}
-	return o.RemoteID
+	return c.RemoteID
 }
 
-func (o *CreateFunctionalityExternalResource) GetConnectionType() *string {
-	if o == nil {
+func (c *CreateFunctionalityExternalResource) GetConnectionType() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConnectionType
+	return c.ConnectionType
 }
 
 type CreateFunctionalityLink struct {
@@ -43,25 +43,25 @@ type CreateFunctionalityLink struct {
 	IconURL *string `json:"icon_url,omitempty"`
 }
 
-func (o *CreateFunctionalityLink) GetName() string {
-	if o == nil {
+func (c *CreateFunctionalityLink) GetName() string {
+	if c == nil {
 		return ""
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CreateFunctionalityLink) GetHrefURL() string {
-	if o == nil {
+func (c *CreateFunctionalityLink) GetHrefURL() string {
+	if c == nil {
 		return ""
 	}
-	return o.HrefURL
+	return c.HrefURL
 }
 
-func (o *CreateFunctionalityLink) GetIconURL() *string {
-	if o == nil {
+func (c *CreateFunctionalityLink) GetIconURL() *string {
+	if c == nil {
 		return nil
 	}
-	return o.IconURL
+	return c.IconURL
 }
 
 // CreateFunctionalityOwner - An object representing a Team that owns the service
@@ -69,22 +69,22 @@ type CreateFunctionalityOwner struct {
 	ID string `json:"id"`
 }
 
-func (o *CreateFunctionalityOwner) GetID() string {
-	if o == nil {
+func (c *CreateFunctionalityOwner) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
 type CreateFunctionalityTeam struct {
 	ID string `json:"id"`
 }
 
-func (o *CreateFunctionalityTeam) GetID() string {
-	if o == nil {
+func (c *CreateFunctionalityTeam) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
 // CreateFunctionality - Creates a functionality for the organization
@@ -106,72 +106,72 @@ type CreateFunctionality struct {
 	Teams []CreateFunctionalityTeam `json:"teams,omitempty"`
 }
 
-func (o *CreateFunctionality) GetName() string {
-	if o == nil {
+func (c *CreateFunctionality) GetName() string {
+	if c == nil {
 		return ""
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CreateFunctionality) GetDescription() *string {
-	if o == nil {
+func (c *CreateFunctionality) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *CreateFunctionality) GetServices() []CreateFunctionalityService {
-	if o == nil {
+func (c *CreateFunctionality) GetServices() []CreateFunctionalityService {
+	if c == nil {
 		return nil
 	}
-	return o.Services
+	return c.Services
 }
 
-func (o *CreateFunctionality) GetLabels() map[string]string {
-	if o == nil {
+func (c *CreateFunctionality) GetLabels() map[string]string {
+	if c == nil {
 		return nil
 	}
-	return o.Labels
+	return c.Labels
 }
 
-func (o *CreateFunctionality) GetAlertOnAdd() *bool {
-	if o == nil {
+func (c *CreateFunctionality) GetAlertOnAdd() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.AlertOnAdd
+	return c.AlertOnAdd
 }
 
-func (o *CreateFunctionality) GetAutoAddRespondingTeam() *bool {
-	if o == nil {
+func (c *CreateFunctionality) GetAutoAddRespondingTeam() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.AutoAddRespondingTeam
+	return c.AutoAddRespondingTeam
 }
 
-func (o *CreateFunctionality) GetExternalResources() []CreateFunctionalityExternalResource {
-	if o == nil {
+func (c *CreateFunctionality) GetExternalResources() []CreateFunctionalityExternalResource {
+	if c == nil {
 		return nil
 	}
-	return o.ExternalResources
+	return c.ExternalResources
 }
 
-func (o *CreateFunctionality) GetLinks() []CreateFunctionalityLink {
-	if o == nil {
+func (c *CreateFunctionality) GetLinks() []CreateFunctionalityLink {
+	if c == nil {
 		return nil
 	}
-	return o.Links
+	return c.Links
 }
 
-func (o *CreateFunctionality) GetOwner() *CreateFunctionalityOwner {
-	if o == nil {
+func (c *CreateFunctionality) GetOwner() *CreateFunctionalityOwner {
+	if c == nil {
 		return nil
 	}
-	return o.Owner
+	return c.Owner
 }
 
-func (o *CreateFunctionality) GetTeams() []CreateFunctionalityTeam {
-	if o == nil {
+func (c *CreateFunctionality) GetTeams() []CreateFunctionalityTeam {
+	if c == nil {
 		return nil
 	}
-	return o.Teams
+	return c.Teams
 }

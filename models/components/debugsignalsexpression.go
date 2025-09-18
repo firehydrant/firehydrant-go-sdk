@@ -10,18 +10,18 @@ type Image struct {
 	Alt *string `json:"alt,omitempty"`
 }
 
-func (o *Image) GetSrc() *string {
-	if o == nil {
+func (i *Image) GetSrc() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Src
+	return i.Src
 }
 
-func (o *Image) GetAlt() *string {
-	if o == nil {
+func (i *Image) GetAlt() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Alt
+	return i.Alt
 }
 
 type DebugSignalsExpressionLink struct {
@@ -29,18 +29,18 @@ type DebugSignalsExpressionLink struct {
 	Text *string `json:"text,omitempty"`
 }
 
-func (o *DebugSignalsExpressionLink) GetHref() *string {
-	if o == nil {
+func (d *DebugSignalsExpressionLink) GetHref() *string {
+	if d == nil {
 		return nil
 	}
-	return o.Href
+	return d.Href
 }
 
-func (o *DebugSignalsExpressionLink) GetText() *string {
-	if o == nil {
+func (d *DebugSignalsExpressionLink) GetText() *string {
+	if d == nil {
 		return nil
 	}
-	return o.Text
+	return d.Text
 }
 
 type Signal struct {
@@ -55,67 +55,67 @@ type Signal struct {
 	Links          []DebugSignalsExpressionLink `json:"links,omitempty"`
 }
 
-func (o *Signal) GetID() *string {
-	if o == nil {
+func (s *Signal) GetID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *Signal) GetOrganizationID() *string {
-	if o == nil {
+func (s *Signal) GetOrganizationID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.OrganizationID
+	return s.OrganizationID
 }
 
-func (o *Signal) GetSummary() *string {
-	if o == nil {
+func (s *Signal) GetSummary() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Summary
+	return s.Summary
 }
 
-func (o *Signal) GetBody() *string {
-	if o == nil {
+func (s *Signal) GetBody() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Body
+	return s.Body
 }
 
-func (o *Signal) GetLevel() *string {
-	if o == nil {
+func (s *Signal) GetLevel() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Level
+	return s.Level
 }
 
-func (o *Signal) GetAnnotations() *Annotations {
-	if o == nil {
+func (s *Signal) GetAnnotations() *Annotations {
+	if s == nil {
 		return nil
 	}
-	return o.Annotations
+	return s.Annotations
 }
 
-func (o *Signal) GetTags() []string {
-	if o == nil {
+func (s *Signal) GetTags() []string {
+	if s == nil {
 		return nil
 	}
-	return o.Tags
+	return s.Tags
 }
 
-func (o *Signal) GetImages() []Image {
-	if o == nil {
+func (s *Signal) GetImages() []Image {
+	if s == nil {
 		return nil
 	}
-	return o.Images
+	return s.Images
 }
 
-func (o *Signal) GetLinks() []DebugSignalsExpressionLink {
-	if o == nil {
+func (s *Signal) GetLinks() []DebugSignalsExpressionLink {
+	if s == nil {
 		return nil
 	}
-	return o.Links
+	return s.Links
 }
 
 // DebugSignalsExpression - Debug Signals expressions
@@ -126,16 +126,16 @@ type DebugSignalsExpression struct {
 	Signals []Signal `json:"signals"`
 }
 
-func (o *DebugSignalsExpression) GetExpression() string {
-	if o == nil {
+func (d *DebugSignalsExpression) GetExpression() string {
+	if d == nil {
 		return ""
 	}
-	return o.Expression
+	return d.Expression
 }
 
-func (o *DebugSignalsExpression) GetSignals() []Signal {
-	if o == nil {
+func (d *DebugSignalsExpression) GetSignals() []Signal {
+	if d == nil {
 		return []Signal{}
 	}
-	return o.Signals
+	return d.Signals
 }

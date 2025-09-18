@@ -126,58 +126,58 @@ type UpdateTeamSignalRule struct {
 	DeduplicationExpiry *string `json:"deduplication_expiry,omitempty"`
 }
 
-func (o *UpdateTeamSignalRule) GetName() *string {
-	if o == nil {
+func (u *UpdateTeamSignalRule) GetName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Name
+	return u.Name
 }
 
-func (o *UpdateTeamSignalRule) GetExpression() *string {
-	if o == nil {
+func (u *UpdateTeamSignalRule) GetExpression() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Expression
+	return u.Expression
 }
 
-func (o *UpdateTeamSignalRule) GetTargetType() *UpdateTeamSignalRuleTargetType {
-	if o == nil {
+func (u *UpdateTeamSignalRule) GetTargetType() *UpdateTeamSignalRuleTargetType {
+	if u == nil {
 		return nil
 	}
-	return o.TargetType
+	return u.TargetType
 }
 
-func (o *UpdateTeamSignalRule) GetTargetID() *string {
-	if o == nil {
+func (u *UpdateTeamSignalRule) GetTargetID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.TargetID
+	return u.TargetID
 }
 
-func (o *UpdateTeamSignalRule) GetIncidentTypeID() *string {
-	if o == nil {
+func (u *UpdateTeamSignalRule) GetIncidentTypeID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.IncidentTypeID
+	return u.IncidentTypeID
 }
 
-func (o *UpdateTeamSignalRule) GetNotificationPriorityOverride() *UpdateTeamSignalRuleNotificationPriorityOverride {
-	if o == nil {
+func (u *UpdateTeamSignalRule) GetNotificationPriorityOverride() *UpdateTeamSignalRuleNotificationPriorityOverride {
+	if u == nil {
 		return nil
 	}
-	return o.NotificationPriorityOverride
+	return u.NotificationPriorityOverride
 }
 
-func (o *UpdateTeamSignalRule) GetCreateIncidentConditionWhen() *UpdateTeamSignalRuleCreateIncidentConditionWhen {
-	if o == nil {
+func (u *UpdateTeamSignalRule) GetCreateIncidentConditionWhen() *UpdateTeamSignalRuleCreateIncidentConditionWhen {
+	if u == nil {
 		return nil
 	}
-	return o.CreateIncidentConditionWhen
+	return u.CreateIncidentConditionWhen
 }
 
-func (o *UpdateTeamSignalRule) GetDeduplicationExpiry() *string {
-	if o == nil {
+func (u *UpdateTeamSignalRule) GetDeduplicationExpiry() *string {
+	if u == nil {
 		return nil
 	}
-	return o.DeduplicationExpiry
+	return u.DeduplicationExpiry
 }

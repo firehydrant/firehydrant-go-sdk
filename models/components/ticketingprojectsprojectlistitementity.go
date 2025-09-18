@@ -28,44 +28,44 @@ func (t *TicketingProjectsProjectListItemEntity) UnmarshalJSON(data []byte) erro
 	return nil
 }
 
-func (o *TicketingProjectsProjectListItemEntity) GetID() *string {
-	if o == nil {
+func (t *TicketingProjectsProjectListItemEntity) GetID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.ID
+	return t.ID
 }
 
-func (o *TicketingProjectsProjectListItemEntity) GetName() *string {
-	if o == nil {
+func (t *TicketingProjectsProjectListItemEntity) GetName() *string {
+	if t == nil {
 		return nil
 	}
-	return o.Name
+	return t.Name
 }
 
-func (o *TicketingProjectsProjectListItemEntity) GetConfig() *NullableTicketingProjectConfigEntity {
-	if o == nil {
+func (t *TicketingProjectsProjectListItemEntity) GetConfig() *NullableTicketingProjectConfigEntity {
+	if t == nil {
 		return nil
 	}
-	return o.Config
+	return t.Config
 }
 
-func (o *TicketingProjectsProjectListItemEntity) GetFieldMap() *NullableTicketingProjectFieldMapEntity {
-	if o == nil {
+func (t *TicketingProjectsProjectListItemEntity) GetFieldMap() *NullableTicketingProjectFieldMapEntity {
+	if t == nil {
 		return nil
 	}
-	return o.FieldMap
+	return t.FieldMap
 }
 
-func (o *TicketingProjectsProjectListItemEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (t *TicketingProjectsProjectListItemEntity) GetUpdatedAt() *time.Time {
+	if t == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return t.UpdatedAt
 }
 
-func (o *TicketingProjectsProjectListItemEntity) GetConnectionSlug() *string {
-	if o == nil {
+func (t *TicketingProjectsProjectListItemEntity) GetConnectionSlug() *string {
+	if t == nil {
 		return nil
 	}
-	return o.ConnectionSlug
+	return t.ConnectionSlug
 }

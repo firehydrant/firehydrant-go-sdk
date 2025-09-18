@@ -17,30 +17,30 @@ type UpdateSignalsWebhookTarget struct {
 	SigningKey *string `json:"signing_key,omitempty"`
 }
 
-func (o *UpdateSignalsWebhookTarget) GetName() *string {
-	if o == nil {
+func (u *UpdateSignalsWebhookTarget) GetName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Name
+	return u.Name
 }
 
-func (o *UpdateSignalsWebhookTarget) GetDescription() *string {
-	if o == nil {
+func (u *UpdateSignalsWebhookTarget) GetDescription() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Description
+	return u.Description
 }
 
-func (o *UpdateSignalsWebhookTarget) GetURL() *string {
-	if o == nil {
+func (u *UpdateSignalsWebhookTarget) GetURL() *string {
+	if u == nil {
 		return nil
 	}
-	return o.URL
+	return u.URL
 }
 
-func (o *UpdateSignalsWebhookTarget) GetSigningKey() *string {
-	if o == nil {
+func (u *UpdateSignalsWebhookTarget) GetSigningKey() *string {
+	if u == nil {
 		return nil
 	}
-	return o.SigningKey
+	return u.SigningKey
 }

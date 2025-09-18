@@ -11,16 +11,16 @@ type CreateIncidentLinkRequest struct {
 	CreateIncidentLink components.CreateIncidentLink `request:"mediaType=application/json"`
 }
 
-func (o *CreateIncidentLinkRequest) GetIncidentID() string {
-	if o == nil {
+func (c *CreateIncidentLinkRequest) GetIncidentID() string {
+	if c == nil {
 		return ""
 	}
-	return o.IncidentID
+	return c.IncidentID
 }
 
-func (o *CreateIncidentLinkRequest) GetCreateIncidentLink() components.CreateIncidentLink {
-	if o == nil {
+func (c *CreateIncidentLinkRequest) GetCreateIncidentLink() components.CreateIncidentLink {
+	if c == nil {
 		return components.CreateIncidentLink{}
 	}
-	return o.CreateIncidentLink
+	return c.CreateIncidentLink
 }

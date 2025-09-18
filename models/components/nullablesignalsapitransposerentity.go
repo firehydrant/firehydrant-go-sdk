@@ -21,86 +21,86 @@ type NullableSignalsAPITransposerEntity struct {
 	UpdatedBy      *NullableAuthorEntity                             `json:"updated_by,omitempty"`
 }
 
-func (o *NullableSignalsAPITransposerEntity) GetName() *string {
-	if o == nil {
+func (n *NullableSignalsAPITransposerEntity) GetName() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Name
+	return n.Name
 }
 
-func (o *NullableSignalsAPITransposerEntity) GetSlug() *string {
-	if o == nil {
+func (n *NullableSignalsAPITransposerEntity) GetSlug() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Slug
+	return n.Slug
 }
 
-func (o *NullableSignalsAPITransposerEntity) GetExamplePayload() *NullableSignalsAPITransposerEntityExamplePayload {
-	if o == nil {
+func (n *NullableSignalsAPITransposerEntity) GetExamplePayload() *NullableSignalsAPITransposerEntityExamplePayload {
+	if n == nil {
 		return nil
 	}
-	return o.ExamplePayload
+	return n.ExamplePayload
 }
 
-func (o *NullableSignalsAPITransposerEntity) GetExpression() *string {
-	if o == nil {
+func (n *NullableSignalsAPITransposerEntity) GetExpression() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Expression
+	return n.Expression
 }
 
-func (o *NullableSignalsAPITransposerEntity) GetExpected() *string {
-	if o == nil {
+func (n *NullableSignalsAPITransposerEntity) GetExpected() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Expected
+	return n.Expected
 }
 
-func (o *NullableSignalsAPITransposerEntity) GetWebsite() *string {
-	if o == nil {
+func (n *NullableSignalsAPITransposerEntity) GetWebsite() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Website
+	return n.Website
 }
 
-func (o *NullableSignalsAPITransposerEntity) GetDescription() *string {
-	if o == nil {
+func (n *NullableSignalsAPITransposerEntity) GetDescription() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Description
+	return n.Description
 }
 
-func (o *NullableSignalsAPITransposerEntity) GetTags() []string {
-	if o == nil {
+func (n *NullableSignalsAPITransposerEntity) GetTags() []string {
+	if n == nil {
 		return nil
 	}
-	return o.Tags
+	return n.Tags
 }
 
-func (o *NullableSignalsAPITransposerEntity) GetIngestURL() *string {
-	if o == nil {
+func (n *NullableSignalsAPITransposerEntity) GetIngestURL() *string {
+	if n == nil {
 		return nil
 	}
-	return o.IngestURL
+	return n.IngestURL
 }
 
-func (o *NullableSignalsAPITransposerEntity) GetEditable() *bool {
-	if o == nil {
+func (n *NullableSignalsAPITransposerEntity) GetEditable() *bool {
+	if n == nil {
 		return nil
 	}
-	return o.Editable
+	return n.Editable
 }
 
-func (o *NullableSignalsAPITransposerEntity) GetCreatedBy() *NullableAuthorEntity {
-	if o == nil {
+func (n *NullableSignalsAPITransposerEntity) GetCreatedBy() *NullableAuthorEntity {
+	if n == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return n.CreatedBy
 }
 
-func (o *NullableSignalsAPITransposerEntity) GetUpdatedBy() *NullableAuthorEntity {
-	if o == nil {
+func (n *NullableSignalsAPITransposerEntity) GetUpdatedBy() *NullableAuthorEntity {
+	if n == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return n.UpdatedBy
 }

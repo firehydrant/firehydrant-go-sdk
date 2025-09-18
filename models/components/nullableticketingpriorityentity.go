@@ -27,37 +27,37 @@ func (n *NullableTicketingPriorityEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *NullableTicketingPriorityEntity) GetID() *string {
-	if o == nil {
+func (n *NullableTicketingPriorityEntity) GetID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ID
+	return n.ID
 }
 
-func (o *NullableTicketingPriorityEntity) GetName() *string {
-	if o == nil {
+func (n *NullableTicketingPriorityEntity) GetName() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Name
+	return n.Name
 }
 
-func (o *NullableTicketingPriorityEntity) GetPosition() *int {
-	if o == nil {
+func (n *NullableTicketingPriorityEntity) GetPosition() *int {
+	if n == nil {
 		return nil
 	}
-	return o.Position
+	return n.Position
 }
 
-func (o *NullableTicketingPriorityEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (n *NullableTicketingPriorityEntity) GetCreatedAt() *time.Time {
+	if n == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return n.CreatedAt
 }
 
-func (o *NullableTicketingPriorityEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (n *NullableTicketingPriorityEntity) GetUpdatedAt() *time.Time {
+	if n == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return n.UpdatedAt
 }

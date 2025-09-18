@@ -9,30 +9,30 @@ type ListIncidentAttachmentsRequest struct {
 	PerPage        *int    `queryParam:"style=form,explode=true,name=per_page"`
 }
 
-func (o *ListIncidentAttachmentsRequest) GetIncidentID() string {
-	if o == nil {
+func (l *ListIncidentAttachmentsRequest) GetIncidentID() string {
+	if l == nil {
 		return ""
 	}
-	return o.IncidentID
+	return l.IncidentID
 }
 
-func (o *ListIncidentAttachmentsRequest) GetAttachableType() *string {
-	if o == nil {
+func (l *ListIncidentAttachmentsRequest) GetAttachableType() *string {
+	if l == nil {
 		return nil
 	}
-	return o.AttachableType
+	return l.AttachableType
 }
 
-func (o *ListIncidentAttachmentsRequest) GetPage() *int {
-	if o == nil {
+func (l *ListIncidentAttachmentsRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListIncidentAttachmentsRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListIncidentAttachmentsRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }

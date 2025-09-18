@@ -8,16 +8,16 @@ type TeamEntityPaginated struct {
 	Pagination *NullablePaginationEntity `json:"pagination,omitempty"`
 }
 
-func (o *TeamEntityPaginated) GetData() []TeamEntity {
-	if o == nil {
+func (t *TeamEntityPaginated) GetData() []TeamEntity {
+	if t == nil {
 		return nil
 	}
-	return o.Data
+	return t.Data
 }
 
-func (o *TeamEntityPaginated) GetPagination() *NullablePaginationEntity {
-	if o == nil {
+func (t *TeamEntityPaginated) GetPagination() *NullablePaginationEntity {
+	if t == nil {
 		return nil
 	}
-	return o.Pagination
+	return t.Pagination
 }

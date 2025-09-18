@@ -63,18 +63,18 @@ type UpdateSignalsEmailTargetTarget struct {
 	ID string `json:"id"`
 }
 
-func (o *UpdateSignalsEmailTargetTarget) GetType() UpdateSignalsEmailTargetType {
-	if o == nil {
+func (u *UpdateSignalsEmailTargetTarget) GetType() UpdateSignalsEmailTargetType {
+	if u == nil {
 		return UpdateSignalsEmailTargetType("")
 	}
-	return o.Type
+	return u.Type
 }
 
-func (o *UpdateSignalsEmailTargetTarget) GetID() string {
-	if o == nil {
+func (u *UpdateSignalsEmailTargetTarget) GetID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ID
+	return u.ID
 }
 
 // UpdateSignalsEmailTargetRuleMatchingStrategy - Whether or not all rules must match, or if only one rule must match.
@@ -130,65 +130,65 @@ type UpdateSignalsEmailTarget struct {
 	RuleMatchingStrategy *UpdateSignalsEmailTargetRuleMatchingStrategy `json:"rule_matching_strategy,omitempty"`
 }
 
-func (o *UpdateSignalsEmailTarget) GetName() *string {
-	if o == nil {
+func (u *UpdateSignalsEmailTarget) GetName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Name
+	return u.Name
 }
 
-func (o *UpdateSignalsEmailTarget) GetSlug() *string {
-	if o == nil {
+func (u *UpdateSignalsEmailTarget) GetSlug() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Slug
+	return u.Slug
 }
 
-func (o *UpdateSignalsEmailTarget) GetDescription() *string {
-	if o == nil {
+func (u *UpdateSignalsEmailTarget) GetDescription() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Description
+	return u.Description
 }
 
-func (o *UpdateSignalsEmailTarget) GetTarget() *UpdateSignalsEmailTargetTarget {
-	if o == nil {
+func (u *UpdateSignalsEmailTarget) GetTarget() *UpdateSignalsEmailTargetTarget {
+	if u == nil {
 		return nil
 	}
-	return o.Target
+	return u.Target
 }
 
-func (o *UpdateSignalsEmailTarget) GetAllowedSenders() []string {
-	if o == nil {
+func (u *UpdateSignalsEmailTarget) GetAllowedSenders() []string {
+	if u == nil {
 		return nil
 	}
-	return o.AllowedSenders
+	return u.AllowedSenders
 }
 
-func (o *UpdateSignalsEmailTarget) GetStatusCel() *string {
-	if o == nil {
+func (u *UpdateSignalsEmailTarget) GetStatusCel() *string {
+	if u == nil {
 		return nil
 	}
-	return o.StatusCel
+	return u.StatusCel
 }
 
-func (o *UpdateSignalsEmailTarget) GetLevelCel() *string {
-	if o == nil {
+func (u *UpdateSignalsEmailTarget) GetLevelCel() *string {
+	if u == nil {
 		return nil
 	}
-	return o.LevelCel
+	return u.LevelCel
 }
 
-func (o *UpdateSignalsEmailTarget) GetRules() []string {
-	if o == nil {
+func (u *UpdateSignalsEmailTarget) GetRules() []string {
+	if u == nil {
 		return nil
 	}
-	return o.Rules
+	return u.Rules
 }
 
-func (o *UpdateSignalsEmailTarget) GetRuleMatchingStrategy() *UpdateSignalsEmailTargetRuleMatchingStrategy {
-	if o == nil {
+func (u *UpdateSignalsEmailTarget) GetRuleMatchingStrategy() *UpdateSignalsEmailTargetRuleMatchingStrategy {
+	if u == nil {
 		return nil
 	}
-	return o.RuleMatchingStrategy
+	return u.RuleMatchingStrategy
 }

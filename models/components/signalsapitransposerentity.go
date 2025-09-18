@@ -21,86 +21,86 @@ type SignalsAPITransposerEntity struct {
 	UpdatedBy      *NullableAuthorEntity                     `json:"updated_by,omitempty"`
 }
 
-func (o *SignalsAPITransposerEntity) GetName() *string {
-	if o == nil {
+func (s *SignalsAPITransposerEntity) GetName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Name
+	return s.Name
 }
 
-func (o *SignalsAPITransposerEntity) GetSlug() *string {
-	if o == nil {
+func (s *SignalsAPITransposerEntity) GetSlug() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Slug
+	return s.Slug
 }
 
-func (o *SignalsAPITransposerEntity) GetExamplePayload() *SignalsAPITransposerEntityExamplePayload {
-	if o == nil {
+func (s *SignalsAPITransposerEntity) GetExamplePayload() *SignalsAPITransposerEntityExamplePayload {
+	if s == nil {
 		return nil
 	}
-	return o.ExamplePayload
+	return s.ExamplePayload
 }
 
-func (o *SignalsAPITransposerEntity) GetExpression() *string {
-	if o == nil {
+func (s *SignalsAPITransposerEntity) GetExpression() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Expression
+	return s.Expression
 }
 
-func (o *SignalsAPITransposerEntity) GetExpected() *string {
-	if o == nil {
+func (s *SignalsAPITransposerEntity) GetExpected() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Expected
+	return s.Expected
 }
 
-func (o *SignalsAPITransposerEntity) GetWebsite() *string {
-	if o == nil {
+func (s *SignalsAPITransposerEntity) GetWebsite() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Website
+	return s.Website
 }
 
-func (o *SignalsAPITransposerEntity) GetDescription() *string {
-	if o == nil {
+func (s *SignalsAPITransposerEntity) GetDescription() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Description
+	return s.Description
 }
 
-func (o *SignalsAPITransposerEntity) GetTags() []string {
-	if o == nil {
+func (s *SignalsAPITransposerEntity) GetTags() []string {
+	if s == nil {
 		return nil
 	}
-	return o.Tags
+	return s.Tags
 }
 
-func (o *SignalsAPITransposerEntity) GetIngestURL() *string {
-	if o == nil {
+func (s *SignalsAPITransposerEntity) GetIngestURL() *string {
+	if s == nil {
 		return nil
 	}
-	return o.IngestURL
+	return s.IngestURL
 }
 
-func (o *SignalsAPITransposerEntity) GetEditable() *bool {
-	if o == nil {
+func (s *SignalsAPITransposerEntity) GetEditable() *bool {
+	if s == nil {
 		return nil
 	}
-	return o.Editable
+	return s.Editable
 }
 
-func (o *SignalsAPITransposerEntity) GetCreatedBy() *NullableAuthorEntity {
-	if o == nil {
+func (s *SignalsAPITransposerEntity) GetCreatedBy() *NullableAuthorEntity {
+	if s == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return s.CreatedBy
 }
 
-func (o *SignalsAPITransposerEntity) GetUpdatedBy() *NullableAuthorEntity {
-	if o == nil {
+func (s *SignalsAPITransposerEntity) GetUpdatedBy() *NullableAuthorEntity {
+	if s == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return s.UpdatedBy
 }

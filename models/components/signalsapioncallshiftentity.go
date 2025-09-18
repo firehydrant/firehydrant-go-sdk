@@ -32,72 +32,72 @@ func (s *SignalsAPIOnCallShiftEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *SignalsAPIOnCallShiftEntity) GetID() *string {
-	if o == nil {
+func (s *SignalsAPIOnCallShiftEntity) GetID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *SignalsAPIOnCallShiftEntity) GetUser() *NullableSuccinctEntity {
-	if o == nil {
+func (s *SignalsAPIOnCallShiftEntity) GetUser() *NullableSuccinctEntity {
+	if s == nil {
 		return nil
 	}
-	return o.User
+	return s.User
 }
 
-func (o *SignalsAPIOnCallShiftEntity) GetCoverageRequest() *string {
-	if o == nil {
+func (s *SignalsAPIOnCallShiftEntity) GetCoverageRequest() *string {
+	if s == nil {
 		return nil
 	}
-	return o.CoverageRequest
+	return s.CoverageRequest
 }
 
-func (o *SignalsAPIOnCallShiftEntity) GetColor() *string {
-	if o == nil {
+func (s *SignalsAPIOnCallShiftEntity) GetColor() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Color
+	return s.Color
 }
 
-func (o *SignalsAPIOnCallShiftEntity) GetTimeZone() *string {
-	if o == nil {
+func (s *SignalsAPIOnCallShiftEntity) GetTimeZone() *string {
+	if s == nil {
 		return nil
 	}
-	return o.TimeZone
+	return s.TimeZone
 }
 
-func (o *SignalsAPIOnCallShiftEntity) GetOnCallSchedule() *NullableSuccinctEntity {
-	if o == nil {
+func (s *SignalsAPIOnCallShiftEntity) GetOnCallSchedule() *NullableSuccinctEntity {
+	if s == nil {
 		return nil
 	}
-	return o.OnCallSchedule
+	return s.OnCallSchedule
 }
 
-func (o *SignalsAPIOnCallShiftEntity) GetOnCallRotation() *NullableSuccinctEntity {
-	if o == nil {
+func (s *SignalsAPIOnCallShiftEntity) GetOnCallRotation() *NullableSuccinctEntity {
+	if s == nil {
 		return nil
 	}
-	return o.OnCallRotation
+	return s.OnCallRotation
 }
 
-func (o *SignalsAPIOnCallShiftEntity) GetTeam() *NullableSuccinctEntity {
-	if o == nil {
+func (s *SignalsAPIOnCallShiftEntity) GetTeam() *NullableSuccinctEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Team
+	return s.Team
 }
 
-func (o *SignalsAPIOnCallShiftEntity) GetStartTime() *time.Time {
-	if o == nil {
+func (s *SignalsAPIOnCallShiftEntity) GetStartTime() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.StartTime
+	return s.StartTime
 }
 
-func (o *SignalsAPIOnCallShiftEntity) GetEndTime() *time.Time {
-	if o == nil {
+func (s *SignalsAPIOnCallShiftEntity) GetEndTime() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.EndTime
+	return s.EndTime
 }

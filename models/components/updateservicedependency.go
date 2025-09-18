@@ -8,9 +8,9 @@ type UpdateServiceDependency struct {
 	Notes *string `json:"notes,omitempty"`
 }
 
-func (o *UpdateServiceDependency) GetNotes() *string {
-	if o == nil {
+func (u *UpdateServiceDependency) GetNotes() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Notes
+	return u.Notes
 }

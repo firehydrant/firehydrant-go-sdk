@@ -10,23 +10,23 @@ type ListCustomFieldSelectOptionsRequest struct {
 	AllVersions *bool `queryParam:"style=form,explode=true,name=all_versions"`
 }
 
-func (o *ListCustomFieldSelectOptionsRequest) GetFieldID() string {
-	if o == nil {
+func (l *ListCustomFieldSelectOptionsRequest) GetFieldID() string {
+	if l == nil {
 		return ""
 	}
-	return o.FieldID
+	return l.FieldID
 }
 
-func (o *ListCustomFieldSelectOptionsRequest) GetQuery() *string {
-	if o == nil {
+func (l *ListCustomFieldSelectOptionsRequest) GetQuery() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Query
+	return l.Query
 }
 
-func (o *ListCustomFieldSelectOptionsRequest) GetAllVersions() *bool {
-	if o == nil {
+func (l *ListCustomFieldSelectOptionsRequest) GetAllVersions() *bool {
+	if l == nil {
 		return nil
 	}
-	return o.AllVersions
+	return l.AllVersions
 }

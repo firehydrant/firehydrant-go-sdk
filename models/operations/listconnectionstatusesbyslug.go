@@ -6,9 +6,9 @@ type ListConnectionStatusesBySlugRequest struct {
 	Slug string `pathParam:"style=simple,explode=false,name=slug"`
 }
 
-func (o *ListConnectionStatusesBySlugRequest) GetSlug() string {
-	if o == nil {
+func (l *ListConnectionStatusesBySlugRequest) GetSlug() string {
+	if l == nil {
 		return ""
 	}
-	return o.Slug
+	return l.Slug
 }

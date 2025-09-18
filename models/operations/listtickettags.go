@@ -6,9 +6,9 @@ type ListTicketTagsRequest struct {
 	Prefix *string `queryParam:"style=form,explode=true,name=prefix"`
 }
 
-func (o *ListTicketTagsRequest) GetPrefix() *string {
-	if o == nil {
+func (l *ListTicketTagsRequest) GetPrefix() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Prefix
+	return l.Prefix
 }

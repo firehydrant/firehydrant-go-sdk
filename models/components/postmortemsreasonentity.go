@@ -11,37 +11,37 @@ type PostMortemsReasonEntity struct {
 	Conversations []ConversationsAPIEntitiesReference `json:"conversations,omitempty"`
 }
 
-func (o *PostMortemsReasonEntity) GetID() *string {
-	if o == nil {
+func (p *PostMortemsReasonEntity) GetID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.ID
+	return p.ID
 }
 
-func (o *PostMortemsReasonEntity) GetSummary() *string {
-	if o == nil {
+func (p *PostMortemsReasonEntity) GetSummary() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Summary
+	return p.Summary
 }
 
-func (o *PostMortemsReasonEntity) GetPosition() *int {
-	if o == nil {
+func (p *PostMortemsReasonEntity) GetPosition() *int {
+	if p == nil {
 		return nil
 	}
-	return o.Position
+	return p.Position
 }
 
-func (o *PostMortemsReasonEntity) GetCreatedBy() *NullableAuthorEntity {
-	if o == nil {
+func (p *PostMortemsReasonEntity) GetCreatedBy() *NullableAuthorEntity {
+	if p == nil {
 		return nil
 	}
-	return o.CreatedBy
+	return p.CreatedBy
 }
 
-func (o *PostMortemsReasonEntity) GetConversations() []ConversationsAPIEntitiesReference {
-	if o == nil {
+func (p *PostMortemsReasonEntity) GetConversations() []ConversationsAPIEntitiesReference {
+	if p == nil {
 		return nil
 	}
-	return o.Conversations
+	return p.Conversations
 }

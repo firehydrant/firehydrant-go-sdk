@@ -46,16 +46,16 @@ type UpdateIncidentChangeEvent struct {
 	Why *string `json:"why,omitempty"`
 }
 
-func (o *UpdateIncidentChangeEvent) GetType() *UpdateIncidentChangeEventType {
-	if o == nil {
+func (u *UpdateIncidentChangeEvent) GetType() *UpdateIncidentChangeEventType {
+	if u == nil {
 		return nil
 	}
-	return o.Type
+	return u.Type
 }
 
-func (o *UpdateIncidentChangeEvent) GetWhy() *string {
-	if o == nil {
+func (u *UpdateIncidentChangeEvent) GetWhy() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Why
+	return u.Why
 }

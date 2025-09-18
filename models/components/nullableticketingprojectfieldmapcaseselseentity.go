@@ -6,9 +6,9 @@ type NullableTicketingProjectFieldMapCasesElseEntity struct {
 	ExternalValue *NullableTicketingProjectFieldMapExternalValueEntity `json:"external_value,omitempty"`
 }
 
-func (o *NullableTicketingProjectFieldMapCasesElseEntity) GetExternalValue() *NullableTicketingProjectFieldMapExternalValueEntity {
-	if o == nil {
+func (n *NullableTicketingProjectFieldMapCasesElseEntity) GetExternalValue() *NullableTicketingProjectFieldMapExternalValueEntity {
+	if n == nil {
 		return nil
 	}
-	return o.ExternalValue
+	return n.ExternalValue
 }

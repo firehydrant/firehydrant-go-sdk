@@ -12,44 +12,44 @@ type PostMortemsQuestionTypeEntity struct {
 	AvailableOptions []string `json:"available_options,omitempty"`
 }
 
-func (o *PostMortemsQuestionTypeEntity) GetID() *string {
-	if o == nil {
+func (p *PostMortemsQuestionTypeEntity) GetID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.ID
+	return p.ID
 }
 
-func (o *PostMortemsQuestionTypeEntity) GetTitle() *string {
-	if o == nil {
+func (p *PostMortemsQuestionTypeEntity) GetTitle() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Title
+	return p.Title
 }
 
-func (o *PostMortemsQuestionTypeEntity) GetTooltip() *string {
-	if o == nil {
+func (p *PostMortemsQuestionTypeEntity) GetTooltip() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Tooltip
+	return p.Tooltip
 }
 
-func (o *PostMortemsQuestionTypeEntity) GetKind() *string {
-	if o == nil {
+func (p *PostMortemsQuestionTypeEntity) GetKind() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Kind
+	return p.Kind
 }
 
-func (o *PostMortemsQuestionTypeEntity) GetIsRequired() *bool {
-	if o == nil {
+func (p *PostMortemsQuestionTypeEntity) GetIsRequired() *bool {
+	if p == nil {
 		return nil
 	}
-	return o.IsRequired
+	return p.IsRequired
 }
 
-func (o *PostMortemsQuestionTypeEntity) GetAvailableOptions() []string {
-	if o == nil {
+func (p *PostMortemsQuestionTypeEntity) GetAvailableOptions() []string {
+	if p == nil {
 		return nil
 	}
-	return o.AvailableOptions
+	return p.AvailableOptions
 }

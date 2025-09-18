@@ -12,16 +12,16 @@ type NullableMediaImageEntity struct {
 	VersionsUrls *VersionsUrls `json:"versions_urls,omitempty"`
 }
 
-func (o *NullableMediaImageEntity) GetOriginalURL() *string {
-	if o == nil {
+func (n *NullableMediaImageEntity) GetOriginalURL() *string {
+	if n == nil {
 		return nil
 	}
-	return o.OriginalURL
+	return n.OriginalURL
 }
 
-func (o *NullableMediaImageEntity) GetVersionsUrls() *VersionsUrls {
-	if o == nil {
+func (n *NullableMediaImageEntity) GetVersionsUrls() *VersionsUrls {
+	if n == nil {
 		return nil
 	}
-	return o.VersionsUrls
+	return n.VersionsUrls
 }

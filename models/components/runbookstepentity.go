@@ -32,100 +32,100 @@ type RunbookStepEntity struct {
 	Rule            *NullableRulesRuleEntity       `json:"rule,omitempty"`
 }
 
-func (o *RunbookStepEntity) GetName() *string {
-	if o == nil {
+func (r *RunbookStepEntity) GetName() *string {
+	if r == nil {
 		return nil
 	}
-	return o.Name
+	return r.Name
 }
 
-func (o *RunbookStepEntity) GetActionID() *string {
-	if o == nil {
+func (r *RunbookStepEntity) GetActionID() *string {
+	if r == nil {
 		return nil
 	}
-	return o.ActionID
+	return r.ActionID
 }
 
-func (o *RunbookStepEntity) GetStepID() *string {
-	if o == nil {
+func (r *RunbookStepEntity) GetStepID() *string {
+	if r == nil {
 		return nil
 	}
-	return o.StepID
+	return r.StepID
 }
 
-func (o *RunbookStepEntity) GetConfig() *RunbookStepEntityConfig {
-	if o == nil {
+func (r *RunbookStepEntity) GetConfig() *RunbookStepEntityConfig {
+	if r == nil {
 		return nil
 	}
-	return o.Config
+	return r.Config
 }
 
-func (o *RunbookStepEntity) GetActionElements() []ActionElement {
-	if o == nil {
+func (r *RunbookStepEntity) GetActionElements() []ActionElement {
+	if r == nil {
 		return nil
 	}
-	return o.ActionElements
+	return r.ActionElements
 }
 
-func (o *RunbookStepEntity) GetStepElements() []RunbookStepEntityStepElement {
-	if o == nil {
+func (r *RunbookStepEntity) GetStepElements() []RunbookStepEntityStepElement {
+	if r == nil {
 		return nil
 	}
-	return o.StepElements
+	return r.StepElements
 }
 
-func (o *RunbookStepEntity) GetAutomatic() *bool {
-	if o == nil {
+func (r *RunbookStepEntity) GetAutomatic() *bool {
+	if r == nil {
 		return nil
 	}
-	return o.Automatic
+	return r.Automatic
 }
 
-func (o *RunbookStepEntity) GetDelayDuration() *string {
-	if o == nil {
+func (r *RunbookStepEntity) GetDelayDuration() *string {
+	if r == nil {
 		return nil
 	}
-	return o.DelayDuration
+	return r.DelayDuration
 }
 
-func (o *RunbookStepEntity) GetAction() *NullableRunbooksActionsEntity {
-	if o == nil {
+func (r *RunbookStepEntity) GetAction() *NullableRunbooksActionsEntity {
+	if r == nil {
 		return nil
 	}
-	return o.Action
+	return r.Action
 }
 
-func (o *RunbookStepEntity) GetReruns() *bool {
-	if o == nil {
+func (r *RunbookStepEntity) GetReruns() *bool {
+	if r == nil {
 		return nil
 	}
-	return o.Reruns
+	return r.Reruns
 }
 
-func (o *RunbookStepEntity) GetRepeats() *bool {
-	if o == nil {
+func (r *RunbookStepEntity) GetRepeats() *bool {
+	if r == nil {
 		return nil
 	}
-	return o.Repeats
+	return r.Repeats
 }
 
-func (o *RunbookStepEntity) GetRepeatsDuration() *string {
-	if o == nil {
+func (r *RunbookStepEntity) GetRepeatsDuration() *string {
+	if r == nil {
 		return nil
 	}
-	return o.RepeatsDuration
+	return r.RepeatsDuration
 }
 
-func (o *RunbookStepEntity) GetVotes() *NullableEmptyVotesEntity {
-	if o == nil {
+func (r *RunbookStepEntity) GetVotes() *NullableEmptyVotesEntity {
+	if r == nil {
 		return nil
 	}
-	return o.Votes
+	return r.Votes
 }
 
-func (o *RunbookStepEntity) GetRule() *NullableRulesRuleEntity {
-	if o == nil {
+func (r *RunbookStepEntity) GetRule() *NullableRulesRuleEntity {
+	if r == nil {
 		return nil
 	}
-	return o.Rule
+	return r.Rule
 }

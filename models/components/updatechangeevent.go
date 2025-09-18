@@ -36,11 +36,11 @@ type UpdateChangeEventAttachment struct {
 	Type UpdateChangeEventType `json:"type"`
 }
 
-func (o *UpdateChangeEventAttachment) GetType() UpdateChangeEventType {
-	if o == nil {
+func (u *UpdateChangeEventAttachment) GetType() UpdateChangeEventType {
+	if u == nil {
 		return UpdateChangeEventType("")
 	}
-	return o.Type
+	return u.Type
 }
 
 // UpdateChangeEvent - Update a change event
@@ -69,58 +69,58 @@ func (u *UpdateChangeEvent) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *UpdateChangeEvent) GetSummary() *string {
-	if o == nil {
+func (u *UpdateChangeEvent) GetSummary() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Summary
+	return u.Summary
 }
 
-func (o *UpdateChangeEvent) GetDescription() *string {
-	if o == nil {
+func (u *UpdateChangeEvent) GetDescription() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Description
+	return u.Description
 }
 
-func (o *UpdateChangeEvent) GetLabels() map[string]string {
-	if o == nil {
+func (u *UpdateChangeEvent) GetLabels() map[string]string {
+	if u == nil {
 		return nil
 	}
-	return o.Labels
+	return u.Labels
 }
 
-func (o *UpdateChangeEvent) GetStartsAt() *time.Time {
-	if o == nil {
+func (u *UpdateChangeEvent) GetStartsAt() *time.Time {
+	if u == nil {
 		return nil
 	}
-	return o.StartsAt
+	return u.StartsAt
 }
 
-func (o *UpdateChangeEvent) GetEndsAt() *time.Time {
-	if o == nil {
+func (u *UpdateChangeEvent) GetEndsAt() *time.Time {
+	if u == nil {
 		return nil
 	}
-	return o.EndsAt
+	return u.EndsAt
 }
 
-func (o *UpdateChangeEvent) GetEnvironments() []string {
-	if o == nil {
+func (u *UpdateChangeEvent) GetEnvironments() []string {
+	if u == nil {
 		return nil
 	}
-	return o.Environments
+	return u.Environments
 }
 
-func (o *UpdateChangeEvent) GetServices() []string {
-	if o == nil {
+func (u *UpdateChangeEvent) GetServices() []string {
+	if u == nil {
 		return nil
 	}
-	return o.Services
+	return u.Services
 }
 
-func (o *UpdateChangeEvent) GetAttachments() []UpdateChangeEventAttachment {
-	if o == nil {
+func (u *UpdateChangeEvent) GetAttachments() []UpdateChangeEventAttachment {
+	if u == nil {
 		return nil
 	}
-	return o.Attachments
+	return u.Attachments
 }

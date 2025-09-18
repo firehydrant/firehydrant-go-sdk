@@ -8,23 +8,23 @@ type NullableNuncConditionEntity struct {
 	ConditionID   *string `json:"condition_id,omitempty"`
 }
 
-func (o *NullableNuncConditionEntity) GetNuncCondition() *string {
-	if o == nil {
+func (n *NullableNuncConditionEntity) GetNuncCondition() *string {
+	if n == nil {
 		return nil
 	}
-	return o.NuncCondition
+	return n.NuncCondition
 }
 
-func (o *NullableNuncConditionEntity) GetConditionName() *string {
-	if o == nil {
+func (n *NullableNuncConditionEntity) GetConditionName() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ConditionName
+	return n.ConditionName
 }
 
-func (o *NullableNuncConditionEntity) GetConditionID() *string {
-	if o == nil {
+func (n *NullableNuncConditionEntity) GetConditionID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ConditionID
+	return n.ConditionID
 }

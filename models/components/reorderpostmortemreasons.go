@@ -8,16 +8,16 @@ type ReorderPostMortemReasons struct {
 	NewPosition int `json:"new_position"`
 }
 
-func (o *ReorderPostMortemReasons) GetOldPosition() int {
-	if o == nil {
+func (r *ReorderPostMortemReasons) GetOldPosition() int {
+	if r == nil {
 		return 0
 	}
-	return o.OldPosition
+	return r.OldPosition
 }
 
-func (o *ReorderPostMortemReasons) GetNewPosition() int {
-	if o == nil {
+func (r *ReorderPostMortemReasons) GetNewPosition() int {
+	if r == nil {
 		return 0
 	}
-	return o.NewPosition
+	return r.NewPosition
 }

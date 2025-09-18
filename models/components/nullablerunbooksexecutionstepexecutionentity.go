@@ -74,51 +74,51 @@ func (n *NullableRunbooksExecutionStepExecutionEntity) UnmarshalJSON(data []byte
 	return nil
 }
 
-func (o *NullableRunbooksExecutionStepExecutionEntity) GetState() *NullableRunbooksExecutionStepExecutionEntityState {
-	if o == nil {
+func (n *NullableRunbooksExecutionStepExecutionEntity) GetState() *NullableRunbooksExecutionStepExecutionEntityState {
+	if n == nil {
 		return nil
 	}
-	return o.State
+	return n.State
 }
 
-func (o *NullableRunbooksExecutionStepExecutionEntity) GetData() *NullableRunbooksExecutionStepExecutionEntityData {
-	if o == nil {
+func (n *NullableRunbooksExecutionStepExecutionEntity) GetData() *NullableRunbooksExecutionStepExecutionEntityData {
+	if n == nil {
 		return nil
 	}
-	return o.Data
+	return n.Data
 }
 
-func (o *NullableRunbooksExecutionStepExecutionEntity) GetPerformedBy() *NullableActorEntity {
-	if o == nil {
+func (n *NullableRunbooksExecutionStepExecutionEntity) GetPerformedBy() *NullableActorEntity {
+	if n == nil {
 		return nil
 	}
-	return o.PerformedBy
+	return n.PerformedBy
 }
 
-func (o *NullableRunbooksExecutionStepExecutionEntity) GetPerformedAt() *time.Time {
-	if o == nil {
+func (n *NullableRunbooksExecutionStepExecutionEntity) GetPerformedAt() *time.Time {
+	if n == nil {
 		return nil
 	}
-	return o.PerformedAt
+	return n.PerformedAt
 }
 
-func (o *NullableRunbooksExecutionStepExecutionEntity) GetScheduledFor() *time.Time {
-	if o == nil {
+func (n *NullableRunbooksExecutionStepExecutionEntity) GetScheduledFor() *time.Time {
+	if n == nil {
 		return nil
 	}
-	return o.ScheduledFor
+	return n.ScheduledFor
 }
 
-func (o *NullableRunbooksExecutionStepExecutionEntity) GetError() *string {
-	if o == nil {
+func (n *NullableRunbooksExecutionStepExecutionEntity) GetError() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Error
+	return n.Error
 }
 
-func (o *NullableRunbooksExecutionStepExecutionEntity) GetWebhookDelivery() *NullableRunbooksWebhookDeliveryEntity {
-	if o == nil {
+func (n *NullableRunbooksExecutionStepExecutionEntity) GetWebhookDelivery() *NullableRunbooksWebhookDeliveryEntity {
+	if n == nil {
 		return nil
 	}
-	return o.WebhookDelivery
+	return n.WebhookDelivery
 }

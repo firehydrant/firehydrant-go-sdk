@@ -56,72 +56,72 @@ type NullableIntegrationsAwsConnectionEntity struct {
 	Regions           []string                                                 `json:"regions,omitempty"`
 }
 
-func (o *NullableIntegrationsAwsConnectionEntity) GetID() *string {
-	if o == nil {
+func (n *NullableIntegrationsAwsConnectionEntity) GetID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ID
+	return n.ID
 }
 
-func (o *NullableIntegrationsAwsConnectionEntity) GetAwsAccountID() *string {
-	if o == nil {
+func (n *NullableIntegrationsAwsConnectionEntity) GetAwsAccountID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.AwsAccountID
+	return n.AwsAccountID
 }
 
-func (o *NullableIntegrationsAwsConnectionEntity) GetTargetArn() *string {
-	if o == nil {
+func (n *NullableIntegrationsAwsConnectionEntity) GetTargetArn() *string {
+	if n == nil {
 		return nil
 	}
-	return o.TargetArn
+	return n.TargetArn
 }
 
-func (o *NullableIntegrationsAwsConnectionEntity) GetExternalID() *string {
-	if o == nil {
+func (n *NullableIntegrationsAwsConnectionEntity) GetExternalID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ExternalID
+	return n.ExternalID
 }
 
-func (o *NullableIntegrationsAwsConnectionEntity) GetConnectionStatus() *NullableIntegrationsAwsConnectionEntityConnectionStatus {
-	if o == nil {
+func (n *NullableIntegrationsAwsConnectionEntity) GetConnectionStatus() *NullableIntegrationsAwsConnectionEntityConnectionStatus {
+	if n == nil {
 		return nil
 	}
-	return o.ConnectionStatus
+	return n.ConnectionStatus
 }
 
-func (o *NullableIntegrationsAwsConnectionEntity) GetStatusText() *string {
-	if o == nil {
+func (n *NullableIntegrationsAwsConnectionEntity) GetStatusText() *string {
+	if n == nil {
 		return nil
 	}
-	return o.StatusText
+	return n.StatusText
 }
 
-func (o *NullableIntegrationsAwsConnectionEntity) GetStatusDescription() *string {
-	if o == nil {
+func (n *NullableIntegrationsAwsConnectionEntity) GetStatusDescription() *string {
+	if n == nil {
 		return nil
 	}
-	return o.StatusDescription
+	return n.StatusDescription
 }
 
-func (o *NullableIntegrationsAwsConnectionEntity) GetEnvironmentID() *string {
-	if o == nil {
+func (n *NullableIntegrationsAwsConnectionEntity) GetEnvironmentID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.EnvironmentID
+	return n.EnvironmentID
 }
 
-func (o *NullableIntegrationsAwsConnectionEntity) GetEnvironmentName() *string {
-	if o == nil {
+func (n *NullableIntegrationsAwsConnectionEntity) GetEnvironmentName() *string {
+	if n == nil {
 		return nil
 	}
-	return o.EnvironmentName
+	return n.EnvironmentName
 }
 
-func (o *NullableIntegrationsAwsConnectionEntity) GetRegions() []string {
-	if o == nil {
+func (n *NullableIntegrationsAwsConnectionEntity) GetRegions() []string {
+	if n == nil {
 		return nil
 	}
-	return o.Regions
+	return n.Regions
 }

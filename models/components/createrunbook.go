@@ -45,11 +45,11 @@ type CreateRunbookOwner struct {
 	ID string `json:"id"`
 }
 
-func (o *CreateRunbookOwner) GetID() string {
-	if o == nil {
+func (c *CreateRunbookOwner) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
 type CreateRunbookAttachmentRule struct {
@@ -59,18 +59,18 @@ type CreateRunbookAttachmentRule struct {
 	UserData *string `json:"user_data,omitempty"`
 }
 
-func (o *CreateRunbookAttachmentRule) GetLogic() string {
-	if o == nil {
+func (c *CreateRunbookAttachmentRule) GetLogic() string {
+	if c == nil {
 		return ""
 	}
-	return o.Logic
+	return c.Logic
 }
 
-func (o *CreateRunbookAttachmentRule) GetUserData() *string {
-	if o == nil {
+func (c *CreateRunbookAttachmentRule) GetUserData() *string {
+	if c == nil {
 		return nil
 	}
-	return o.UserData
+	return c.UserData
 }
 
 type CreateRunbookRule struct {
@@ -80,18 +80,18 @@ type CreateRunbookRule struct {
 	UserData *string `json:"user_data,omitempty"`
 }
 
-func (o *CreateRunbookRule) GetLogic() string {
-	if o == nil {
+func (c *CreateRunbookRule) GetLogic() string {
+	if c == nil {
 		return ""
 	}
-	return o.Logic
+	return c.Logic
 }
 
-func (o *CreateRunbookRule) GetUserData() *string {
-	if o == nil {
+func (c *CreateRunbookRule) GetUserData() *string {
+	if c == nil {
 		return nil
 	}
-	return o.UserData
+	return c.UserData
 }
 
 type CreateRunbookStep struct {
@@ -102,25 +102,25 @@ type CreateRunbookStep struct {
 	Rule     *CreateRunbookRule `json:"rule,omitempty"`
 }
 
-func (o *CreateRunbookStep) GetName() string {
-	if o == nil {
+func (c *CreateRunbookStep) GetName() string {
+	if c == nil {
 		return ""
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CreateRunbookStep) GetActionID() string {
-	if o == nil {
+func (c *CreateRunbookStep) GetActionID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ActionID
+	return c.ActionID
 }
 
-func (o *CreateRunbookStep) GetRule() *CreateRunbookRule {
-	if o == nil {
+func (c *CreateRunbookStep) GetRule() *CreateRunbookRule {
+	if c == nil {
 		return nil
 	}
-	return o.Rule
+	return c.Rule
 }
 
 // CreateRunbook - Create a new runbook for use with incidents.
@@ -142,65 +142,65 @@ type CreateRunbook struct {
 	Steps          []CreateRunbookStep          `json:"steps,omitempty"`
 }
 
-func (o *CreateRunbook) GetName() string {
-	if o == nil {
+func (c *CreateRunbook) GetName() string {
+	if c == nil {
 		return ""
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CreateRunbook) GetType() CreateRunbookType {
-	if o == nil {
+func (c *CreateRunbook) GetType() CreateRunbookType {
+	if c == nil {
 		return CreateRunbookType("")
 	}
-	return o.Type
+	return c.Type
 }
 
-func (o *CreateRunbook) GetSummary() *string {
-	if o == nil {
+func (c *CreateRunbook) GetSummary() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Summary
+	return c.Summary
 }
 
-func (o *CreateRunbook) GetDescription() *string {
-	if o == nil {
+func (c *CreateRunbook) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *CreateRunbook) GetAutoAttachToRestrictedIncidents() *bool {
-	if o == nil {
+func (c *CreateRunbook) GetAutoAttachToRestrictedIncidents() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.AutoAttachToRestrictedIncidents
+	return c.AutoAttachToRestrictedIncidents
 }
 
-func (o *CreateRunbook) GetTutorial() *bool {
-	if o == nil {
+func (c *CreateRunbook) GetTutorial() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Tutorial
+	return c.Tutorial
 }
 
-func (o *CreateRunbook) GetOwner() *CreateRunbookOwner {
-	if o == nil {
+func (c *CreateRunbook) GetOwner() *CreateRunbookOwner {
+	if c == nil {
 		return nil
 	}
-	return o.Owner
+	return c.Owner
 }
 
-func (o *CreateRunbook) GetAttachmentRule() *CreateRunbookAttachmentRule {
-	if o == nil {
+func (c *CreateRunbook) GetAttachmentRule() *CreateRunbookAttachmentRule {
+	if c == nil {
 		return nil
 	}
-	return o.AttachmentRule
+	return c.AttachmentRule
 }
 
-func (o *CreateRunbook) GetSteps() []CreateRunbookStep {
-	if o == nil {
+func (c *CreateRunbook) GetSteps() []CreateRunbookStep {
+	if c == nil {
 		return nil
 	}
-	return o.Steps
+	return c.Steps
 }

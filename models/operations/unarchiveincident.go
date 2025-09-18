@@ -6,9 +6,9 @@ type UnarchiveIncidentRequest struct {
 	IncidentID string `pathParam:"style=simple,explode=false,name=incident_id"`
 }
 
-func (o *UnarchiveIncidentRequest) GetIncidentID() string {
-	if o == nil {
+func (u *UnarchiveIncidentRequest) GetIncidentID() string {
+	if u == nil {
 		return ""
 	}
-	return o.IncidentID
+	return u.IncidentID
 }

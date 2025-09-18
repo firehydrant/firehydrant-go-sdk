@@ -44,16 +44,16 @@ type ListIncidentImpactsRequest struct {
 	Type       ListIncidentImpactsType `pathParam:"style=simple,explode=false,name=type"`
 }
 
-func (o *ListIncidentImpactsRequest) GetIncidentID() string {
-	if o == nil {
+func (l *ListIncidentImpactsRequest) GetIncidentID() string {
+	if l == nil {
 		return ""
 	}
-	return o.IncidentID
+	return l.IncidentID
 }
 
-func (o *ListIncidentImpactsRequest) GetType() ListIncidentImpactsType {
-	if o == nil {
+func (l *ListIncidentImpactsRequest) GetType() ListIncidentImpactsType {
+	if l == nil {
 		return ListIncidentImpactsType("")
 	}
-	return o.Type
+	return l.Type
 }

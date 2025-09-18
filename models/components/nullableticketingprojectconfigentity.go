@@ -17,44 +17,44 @@ type NullableTicketingProjectConfigEntity struct {
 	Details *NullableTicketingProjectConfigEntityDetails `json:"details,omitempty"`
 }
 
-func (o *NullableTicketingProjectConfigEntity) GetID() *string {
-	if o == nil {
+func (n *NullableTicketingProjectConfigEntity) GetID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ID
+	return n.ID
 }
 
-func (o *NullableTicketingProjectConfigEntity) GetConnectionID() *string {
-	if o == nil {
+func (n *NullableTicketingProjectConfigEntity) GetConnectionID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ConnectionID
+	return n.ConnectionID
 }
 
-func (o *NullableTicketingProjectConfigEntity) GetConnectionType() *string {
-	if o == nil {
+func (n *NullableTicketingProjectConfigEntity) GetConnectionType() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ConnectionType
+	return n.ConnectionType
 }
 
-func (o *NullableTicketingProjectConfigEntity) GetTicketingProjectID() *string {
-	if o == nil {
+func (n *NullableTicketingProjectConfigEntity) GetTicketingProjectID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.TicketingProjectID
+	return n.TicketingProjectID
 }
 
-func (o *NullableTicketingProjectConfigEntity) GetTicketingProjectName() *string {
-	if o == nil {
+func (n *NullableTicketingProjectConfigEntity) GetTicketingProjectName() *string {
+	if n == nil {
 		return nil
 	}
-	return o.TicketingProjectName
+	return n.TicketingProjectName
 }
 
-func (o *NullableTicketingProjectConfigEntity) GetDetails() *NullableTicketingProjectConfigEntityDetails {
-	if o == nil {
+func (n *NullableTicketingProjectConfigEntity) GetDetails() *NullableTicketingProjectConfigEntityDetails {
+	if n == nil {
 		return nil
 	}
-	return o.Details
+	return n.Details
 }

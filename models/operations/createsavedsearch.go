@@ -63,16 +63,16 @@ type CreateSavedSearchRequest struct {
 	CreateSavedSearch components.CreateSavedSearch  `request:"mediaType=application/json"`
 }
 
-func (o *CreateSavedSearchRequest) GetResourceType() CreateSavedSearchResourceType {
-	if o == nil {
+func (c *CreateSavedSearchRequest) GetResourceType() CreateSavedSearchResourceType {
+	if c == nil {
 		return CreateSavedSearchResourceType("")
 	}
-	return o.ResourceType
+	return c.ResourceType
 }
 
-func (o *CreateSavedSearchRequest) GetCreateSavedSearch() components.CreateSavedSearch {
-	if o == nil {
+func (c *CreateSavedSearchRequest) GetCreateSavedSearch() components.CreateSavedSearch {
+	if c == nil {
 		return components.CreateSavedSearch{}
 	}
-	return o.CreateSavedSearch
+	return c.CreateSavedSearch
 }

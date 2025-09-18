@@ -9,16 +9,16 @@ type MetricsMilestonesFunnelEntityDataBucketMilestoneCountEntity struct {
 	Count *int `json:"count,omitempty"`
 }
 
-func (o *MetricsMilestonesFunnelEntityDataBucketMilestoneCountEntity) GetMilestoneID() *string {
-	if o == nil {
+func (m *MetricsMilestonesFunnelEntityDataBucketMilestoneCountEntity) GetMilestoneID() *string {
+	if m == nil {
 		return nil
 	}
-	return o.MilestoneID
+	return m.MilestoneID
 }
 
-func (o *MetricsMilestonesFunnelEntityDataBucketMilestoneCountEntity) GetCount() *int {
-	if o == nil {
+func (m *MetricsMilestonesFunnelEntityDataBucketMilestoneCountEntity) GetCount() *int {
+	if m == nil {
 		return nil
 	}
-	return o.Count
+	return m.Count
 }

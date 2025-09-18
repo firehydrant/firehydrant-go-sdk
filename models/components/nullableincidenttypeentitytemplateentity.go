@@ -23,93 +23,93 @@ type NullableIncidentTypeEntityTemplateEntity struct {
 	Impacts         []IncidentTypeEntityTemplateImpactEntity        `json:"impacts,omitempty"`
 }
 
-func (o *NullableIncidentTypeEntityTemplateEntity) GetIncidentName() *string {
-	if o == nil {
+func (n *NullableIncidentTypeEntityTemplateEntity) GetIncidentName() *string {
+	if n == nil {
 		return nil
 	}
-	return o.IncidentName
+	return n.IncidentName
 }
 
-func (o *NullableIncidentTypeEntityTemplateEntity) GetSummary() *string {
-	if o == nil {
+func (n *NullableIncidentTypeEntityTemplateEntity) GetSummary() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Summary
+	return n.Summary
 }
 
-func (o *NullableIncidentTypeEntityTemplateEntity) GetDescription() *string {
-	if o == nil {
+func (n *NullableIncidentTypeEntityTemplateEntity) GetDescription() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Description
+	return n.Description
 }
 
-func (o *NullableIncidentTypeEntityTemplateEntity) GetCustomerImpactSummary() *string {
-	if o == nil {
+func (n *NullableIncidentTypeEntityTemplateEntity) GetCustomerImpactSummary() *string {
+	if n == nil {
 		return nil
 	}
-	return o.CustomerImpactSummary
+	return n.CustomerImpactSummary
 }
 
-func (o *NullableIncidentTypeEntityTemplateEntity) GetLabels() *NullableIncidentTypeEntityTemplateEntityLabels {
-	if o == nil {
+func (n *NullableIncidentTypeEntityTemplateEntity) GetLabels() *NullableIncidentTypeEntityTemplateEntityLabels {
+	if n == nil {
 		return nil
 	}
-	return o.Labels
+	return n.Labels
 }
 
-func (o *NullableIncidentTypeEntityTemplateEntity) GetSeverity() *string {
-	if o == nil {
+func (n *NullableIncidentTypeEntityTemplateEntity) GetSeverity() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Severity
+	return n.Severity
 }
 
-func (o *NullableIncidentTypeEntityTemplateEntity) GetPriority() *string {
-	if o == nil {
+func (n *NullableIncidentTypeEntityTemplateEntity) GetPriority() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Priority
+	return n.Priority
 }
 
-func (o *NullableIncidentTypeEntityTemplateEntity) GetTagList() []string {
-	if o == nil {
+func (n *NullableIncidentTypeEntityTemplateEntity) GetTagList() []string {
+	if n == nil {
 		return nil
 	}
-	return o.TagList
+	return n.TagList
 }
 
-func (o *NullableIncidentTypeEntityTemplateEntity) GetRunbookIds() []string {
-	if o == nil {
+func (n *NullableIncidentTypeEntityTemplateEntity) GetRunbookIds() []string {
+	if n == nil {
 		return nil
 	}
-	return o.RunbookIds
+	return n.RunbookIds
 }
 
-func (o *NullableIncidentTypeEntityTemplateEntity) GetTeamIds() []string {
-	if o == nil {
+func (n *NullableIncidentTypeEntityTemplateEntity) GetTeamIds() []string {
+	if n == nil {
 		return nil
 	}
-	return o.TeamIds
+	return n.TeamIds
 }
 
-func (o *NullableIncidentTypeEntityTemplateEntity) GetPrivateIncident() *bool {
-	if o == nil {
+func (n *NullableIncidentTypeEntityTemplateEntity) GetPrivateIncident() *bool {
+	if n == nil {
 		return nil
 	}
-	return o.PrivateIncident
+	return n.PrivateIncident
 }
 
-func (o *NullableIncidentTypeEntityTemplateEntity) GetCustomFields() *string {
-	if o == nil {
+func (n *NullableIncidentTypeEntityTemplateEntity) GetCustomFields() *string {
+	if n == nil {
 		return nil
 	}
-	return o.CustomFields
+	return n.CustomFields
 }
 
-func (o *NullableIncidentTypeEntityTemplateEntity) GetImpacts() []IncidentTypeEntityTemplateImpactEntity {
-	if o == nil {
+func (n *NullableIncidentTypeEntityTemplateEntity) GetImpacts() []IncidentTypeEntityTemplateImpactEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Impacts
+	return n.Impacts
 }

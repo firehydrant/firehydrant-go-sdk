@@ -8,16 +8,16 @@ type SimilarIncidentEntityPaginated struct {
 	Pagination *NullablePaginationEntity          `json:"pagination,omitempty"`
 }
 
-func (o *SimilarIncidentEntityPaginated) GetData() []PublicAPIV1SimilarIncidentEntity {
-	if o == nil {
+func (s *SimilarIncidentEntityPaginated) GetData() []PublicAPIV1SimilarIncidentEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Data
+	return s.Data
 }
 
-func (o *SimilarIncidentEntityPaginated) GetPagination() *NullablePaginationEntity {
-	if o == nil {
+func (s *SimilarIncidentEntityPaginated) GetPagination() *NullablePaginationEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Pagination
+	return s.Pagination
 }

@@ -13,37 +13,37 @@ type ListInfrastructuresRequest struct {
 	PerPage *int    `queryParam:"style=form,explode=true,name=per_page"`
 }
 
-func (o *ListInfrastructuresRequest) GetQuery() *string {
-	if o == nil {
+func (l *ListInfrastructuresRequest) GetQuery() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Query
+	return l.Query
 }
 
-func (o *ListInfrastructuresRequest) GetOmitFor() *string {
-	if o == nil {
+func (l *ListInfrastructuresRequest) GetOmitFor() *string {
+	if l == nil {
 		return nil
 	}
-	return o.OmitFor
+	return l.OmitFor
 }
 
-func (o *ListInfrastructuresRequest) GetType() *string {
-	if o == nil {
+func (l *ListInfrastructuresRequest) GetType() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Type
+	return l.Type
 }
 
-func (o *ListInfrastructuresRequest) GetPage() *int {
-	if o == nil {
+func (l *ListInfrastructuresRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListInfrastructuresRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListInfrastructuresRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }

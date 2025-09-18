@@ -6,9 +6,9 @@ type DeletePriorityRequest struct {
 	PrioritySlug string `pathParam:"style=simple,explode=false,name=priority_slug"`
 }
 
-func (o *DeletePriorityRequest) GetPrioritySlug() string {
-	if o == nil {
+func (d *DeletePriorityRequest) GetPrioritySlug() string {
+	if d == nil {
 		return ""
 	}
-	return o.PrioritySlug
+	return d.PrioritySlug
 }

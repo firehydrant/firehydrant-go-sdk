@@ -9,23 +9,23 @@ type CreateIncidentRole struct {
 	Description *string `json:"description,omitempty"`
 }
 
-func (o *CreateIncidentRole) GetName() string {
-	if o == nil {
+func (c *CreateIncidentRole) GetName() string {
+	if c == nil {
 		return ""
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CreateIncidentRole) GetSummary() string {
-	if o == nil {
+func (c *CreateIncidentRole) GetSummary() string {
+	if c == nil {
 		return ""
 	}
-	return o.Summary
+	return c.Summary
 }
 
-func (o *CreateIncidentRole) GetDescription() *string {
-	if o == nil {
+func (c *CreateIncidentRole) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }

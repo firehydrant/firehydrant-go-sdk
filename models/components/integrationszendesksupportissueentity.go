@@ -26,72 +26,72 @@ type IntegrationsZendeskSupportIssueEntity struct {
 	Type *string `json:"type,omitempty"`
 }
 
-func (o *IntegrationsZendeskSupportIssueEntity) GetRemoteID() *string {
-	if o == nil {
+func (i *IntegrationsZendeskSupportIssueEntity) GetRemoteID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.RemoteID
+	return i.RemoteID
 }
 
-func (o *IntegrationsZendeskSupportIssueEntity) GetTitle() *string {
-	if o == nil {
+func (i *IntegrationsZendeskSupportIssueEntity) GetTitle() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Title
+	return i.Title
 }
 
-func (o *IntegrationsZendeskSupportIssueEntity) GetDescription() *string {
-	if o == nil {
+func (i *IntegrationsZendeskSupportIssueEntity) GetDescription() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Description
+	return i.Description
 }
 
-func (o *IntegrationsZendeskSupportIssueEntity) GetRemoteURL() *string {
-	if o == nil {
+func (i *IntegrationsZendeskSupportIssueEntity) GetRemoteURL() *string {
+	if i == nil {
 		return nil
 	}
-	return o.RemoteURL
+	return i.RemoteURL
 }
 
-func (o *IntegrationsZendeskSupportIssueEntity) GetData() *IntegrationsZendeskSupportIssueEntityData {
-	if o == nil {
+func (i *IntegrationsZendeskSupportIssueEntity) GetData() *IntegrationsZendeskSupportIssueEntityData {
+	if i == nil {
 		return nil
 	}
-	return o.Data
+	return i.Data
 }
 
-func (o *IntegrationsZendeskSupportIssueEntity) GetAttachments() *string {
-	if o == nil {
+func (i *IntegrationsZendeskSupportIssueEntity) GetAttachments() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Attachments
+	return i.Attachments
 }
 
-func (o *IntegrationsZendeskSupportIssueEntity) GetCustomers() *NullableIntegrationsZendeskSupportIssueEntityCustomerEntity {
-	if o == nil {
+func (i *IntegrationsZendeskSupportIssueEntity) GetCustomers() *NullableIntegrationsZendeskSupportIssueEntityCustomerEntity {
+	if i == nil {
 		return nil
 	}
-	return o.Customers
+	return i.Customers
 }
 
-func (o *IntegrationsZendeskSupportIssueEntity) GetPriority() *string {
-	if o == nil {
+func (i *IntegrationsZendeskSupportIssueEntity) GetPriority() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Priority
+	return i.Priority
 }
 
-func (o *IntegrationsZendeskSupportIssueEntity) GetAttachedIncidents() []IncidentEntity {
-	if o == nil {
+func (i *IntegrationsZendeskSupportIssueEntity) GetAttachedIncidents() []IncidentEntity {
+	if i == nil {
 		return nil
 	}
-	return o.AttachedIncidents
+	return i.AttachedIncidents
 }
 
-func (o *IntegrationsZendeskSupportIssueEntity) GetType() *string {
-	if o == nil {
+func (i *IntegrationsZendeskSupportIssueEntity) GetType() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Type
+	return i.Type
 }

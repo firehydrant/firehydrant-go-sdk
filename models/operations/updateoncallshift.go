@@ -13,30 +13,30 @@ type UpdateOnCallShiftRequest struct {
 	UpdateOnCallShift components.UpdateOnCallShift `request:"mediaType=application/json"`
 }
 
-func (o *UpdateOnCallShiftRequest) GetID() string {
-	if o == nil {
+func (u *UpdateOnCallShiftRequest) GetID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ID
+	return u.ID
 }
 
-func (o *UpdateOnCallShiftRequest) GetTeamID() string {
-	if o == nil {
+func (u *UpdateOnCallShiftRequest) GetTeamID() string {
+	if u == nil {
 		return ""
 	}
-	return o.TeamID
+	return u.TeamID
 }
 
-func (o *UpdateOnCallShiftRequest) GetScheduleID() string {
-	if o == nil {
+func (u *UpdateOnCallShiftRequest) GetScheduleID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ScheduleID
+	return u.ScheduleID
 }
 
-func (o *UpdateOnCallShiftRequest) GetUpdateOnCallShift() components.UpdateOnCallShift {
-	if o == nil {
+func (u *UpdateOnCallShiftRequest) GetUpdateOnCallShift() components.UpdateOnCallShift {
+	if u == nil {
 		return components.UpdateOnCallShift{}
 	}
-	return o.UpdateOnCallShift
+	return u.UpdateOnCallShift
 }

@@ -24,79 +24,79 @@ type UpdateIncident struct {
 	IncidentTypeID *string `json:"incident_type_id,omitempty"`
 }
 
-func (o *UpdateIncident) GetName() *string {
-	if o == nil {
+func (u *UpdateIncident) GetName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Name
+	return u.Name
 }
 
-func (o *UpdateIncident) GetSummary() *string {
-	if o == nil {
+func (u *UpdateIncident) GetSummary() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Summary
+	return u.Summary
 }
 
-func (o *UpdateIncident) GetCustomerImpactSummary() *string {
-	if o == nil {
+func (u *UpdateIncident) GetCustomerImpactSummary() *string {
+	if u == nil {
 		return nil
 	}
-	return o.CustomerImpactSummary
+	return u.CustomerImpactSummary
 }
 
-func (o *UpdateIncident) GetDescription() *string {
-	if o == nil {
+func (u *UpdateIncident) GetDescription() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Description
+	return u.Description
 }
 
-func (o *UpdateIncident) GetLabels() *UpdateIncidentLabels {
-	if o == nil {
+func (u *UpdateIncident) GetLabels() *UpdateIncidentLabels {
+	if u == nil {
 		return nil
 	}
-	return o.Labels
+	return u.Labels
 }
 
-func (o *UpdateIncident) GetPriority() *string {
-	if o == nil {
+func (u *UpdateIncident) GetPriority() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Priority
+	return u.Priority
 }
 
-func (o *UpdateIncident) GetSeverity() *string {
-	if o == nil {
+func (u *UpdateIncident) GetSeverity() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Severity
+	return u.Severity
 }
 
-func (o *UpdateIncident) GetSeverityConditionID() *string {
-	if o == nil {
+func (u *UpdateIncident) GetSeverityConditionID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.SeverityConditionID
+	return u.SeverityConditionID
 }
 
-func (o *UpdateIncident) GetSeverityImpactID() *string {
-	if o == nil {
+func (u *UpdateIncident) GetSeverityImpactID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.SeverityImpactID
+	return u.SeverityImpactID
 }
 
-func (o *UpdateIncident) GetTagList() []string {
-	if o == nil {
+func (u *UpdateIncident) GetTagList() []string {
+	if u == nil {
 		return nil
 	}
-	return o.TagList
+	return u.TagList
 }
 
-func (o *UpdateIncident) GetIncidentTypeID() *string {
-	if o == nil {
+func (u *UpdateIncident) GetIncidentTypeID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.IncidentTypeID
+	return u.IncidentTypeID
 }

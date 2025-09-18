@@ -27,44 +27,44 @@ func (s *ServiceParentDependencyEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ServiceParentDependencyEntity) GetID() *string {
-	if o == nil {
+func (s *ServiceParentDependencyEntity) GetID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *ServiceParentDependencyEntity) GetNotes() *string {
-	if o == nil {
+func (s *ServiceParentDependencyEntity) GetNotes() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Notes
+	return s.Notes
 }
 
-func (o *ServiceParentDependencyEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (s *ServiceParentDependencyEntity) GetCreatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return s.CreatedAt
 }
 
-func (o *ServiceParentDependencyEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (s *ServiceParentDependencyEntity) GetUpdatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return s.UpdatedAt
 }
 
-func (o *ServiceParentDependencyEntity) GetService() *NullableServiceEntity {
-	if o == nil {
+func (s *ServiceParentDependencyEntity) GetService() *NullableServiceEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Service
+	return s.Service
 }
 
-func (o *ServiceParentDependencyEntity) GetType() *string {
-	if o == nil {
+func (s *ServiceParentDependencyEntity) GetType() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Type
+	return s.Type
 }

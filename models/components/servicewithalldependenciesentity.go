@@ -15,23 +15,23 @@ type ServiceWithAllDependenciesEntity struct {
 	ServiceDependencies []ServiceDependency `json:"service_dependencies,omitempty"`
 }
 
-func (o *ServiceWithAllDependenciesEntity) GetChildServiceDependencies() []ServiceChildDependencyEntity {
-	if o == nil {
+func (s *ServiceWithAllDependenciesEntity) GetChildServiceDependencies() []ServiceChildDependencyEntity {
+	if s == nil {
 		return nil
 	}
-	return o.ChildServiceDependencies
+	return s.ChildServiceDependencies
 }
 
-func (o *ServiceWithAllDependenciesEntity) GetParentServiceDependencies() []ServiceParentDependencyEntity {
-	if o == nil {
+func (s *ServiceWithAllDependenciesEntity) GetParentServiceDependencies() []ServiceParentDependencyEntity {
+	if s == nil {
 		return nil
 	}
-	return o.ParentServiceDependencies
+	return s.ParentServiceDependencies
 }
 
-func (o *ServiceWithAllDependenciesEntity) GetServiceDependencies() []ServiceDependency {
-	if o == nil {
+func (s *ServiceWithAllDependenciesEntity) GetServiceDependencies() []ServiceDependency {
+	if s == nil {
 		return nil
 	}
-	return o.ServiceDependencies
+	return s.ServiceDependencies
 }

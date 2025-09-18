@@ -7,16 +7,16 @@ type GetAiIncidentSummaryVoteStatusRequest struct {
 	GeneratedSummaryID string `pathParam:"style=simple,explode=false,name=generated_summary_id"`
 }
 
-func (o *GetAiIncidentSummaryVoteStatusRequest) GetIncidentID() string {
-	if o == nil {
+func (g *GetAiIncidentSummaryVoteStatusRequest) GetIncidentID() string {
+	if g == nil {
 		return ""
 	}
-	return o.IncidentID
+	return g.IncidentID
 }
 
-func (o *GetAiIncidentSummaryVoteStatusRequest) GetGeneratedSummaryID() string {
-	if o == nil {
+func (g *GetAiIncidentSummaryVoteStatusRequest) GetGeneratedSummaryID() string {
+	if g == nil {
 		return ""
 	}
-	return o.GeneratedSummaryID
+	return g.GeneratedSummaryID
 }

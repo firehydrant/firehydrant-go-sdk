@@ -38,79 +38,79 @@ func (s *ServiceEntityLite) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ServiceEntityLite) GetID() *string {
-	if o == nil {
+func (s *ServiceEntityLite) GetID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *ServiceEntityLite) GetName() *string {
-	if o == nil {
+func (s *ServiceEntityLite) GetName() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Name
+	return s.Name
 }
 
-func (o *ServiceEntityLite) GetDescription() *string {
-	if o == nil {
+func (s *ServiceEntityLite) GetDescription() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Description
+	return s.Description
 }
 
-func (o *ServiceEntityLite) GetSlug() *string {
-	if o == nil {
+func (s *ServiceEntityLite) GetSlug() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Slug
+	return s.Slug
 }
 
-func (o *ServiceEntityLite) GetServiceTier() *int {
-	if o == nil {
+func (s *ServiceEntityLite) GetServiceTier() *int {
+	if s == nil {
 		return nil
 	}
-	return o.ServiceTier
+	return s.ServiceTier
 }
 
-func (o *ServiceEntityLite) GetCreatedAt() *time.Time {
-	if o == nil {
+func (s *ServiceEntityLite) GetCreatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return s.CreatedAt
 }
 
-func (o *ServiceEntityLite) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (s *ServiceEntityLite) GetUpdatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return s.UpdatedAt
 }
 
-func (o *ServiceEntityLite) GetAllowedParams() []string {
-	if o == nil {
+func (s *ServiceEntityLite) GetAllowedParams() []string {
+	if s == nil {
 		return nil
 	}
-	return o.AllowedParams
+	return s.AllowedParams
 }
 
-func (o *ServiceEntityLite) GetLabels() *ServiceEntityLiteLabels {
-	if o == nil {
+func (s *ServiceEntityLite) GetLabels() *ServiceEntityLiteLabels {
+	if s == nil {
 		return nil
 	}
-	return o.Labels
+	return s.Labels
 }
 
-func (o *ServiceEntityLite) GetAlertOnAdd() *bool {
-	if o == nil {
+func (s *ServiceEntityLite) GetAlertOnAdd() *bool {
+	if s == nil {
 		return nil
 	}
-	return o.AlertOnAdd
+	return s.AlertOnAdd
 }
 
-func (o *ServiceEntityLite) GetAutoAddRespondingTeam() *bool {
-	if o == nil {
+func (s *ServiceEntityLite) GetAutoAddRespondingTeam() *bool {
+	if s == nil {
 		return nil
 	}
-	return o.AutoAddRespondingTeam
+	return s.AutoAddRespondingTeam
 }

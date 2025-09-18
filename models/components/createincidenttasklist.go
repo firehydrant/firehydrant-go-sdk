@@ -10,16 +10,16 @@ type CreateIncidentTaskList struct {
 	AssigneeID *string `json:"assignee_id,omitempty"`
 }
 
-func (o *CreateIncidentTaskList) GetTaskListID() string {
-	if o == nil {
+func (c *CreateIncidentTaskList) GetTaskListID() string {
+	if c == nil {
 		return ""
 	}
-	return o.TaskListID
+	return c.TaskListID
 }
 
-func (o *CreateIncidentTaskList) GetAssigneeID() *string {
-	if o == nil {
+func (c *CreateIncidentTaskList) GetAssigneeID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AssigneeID
+	return c.AssigneeID
 }

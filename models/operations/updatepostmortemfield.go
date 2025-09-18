@@ -12,23 +12,23 @@ type UpdatePostMortemFieldRequest struct {
 	UpdatePostMortemField components.UpdatePostMortemField `request:"mediaType=application/json"`
 }
 
-func (o *UpdatePostMortemFieldRequest) GetFieldID() string {
-	if o == nil {
+func (u *UpdatePostMortemFieldRequest) GetFieldID() string {
+	if u == nil {
 		return ""
 	}
-	return o.FieldID
+	return u.FieldID
 }
 
-func (o *UpdatePostMortemFieldRequest) GetReportID() string {
-	if o == nil {
+func (u *UpdatePostMortemFieldRequest) GetReportID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ReportID
+	return u.ReportID
 }
 
-func (o *UpdatePostMortemFieldRequest) GetUpdatePostMortemField() components.UpdatePostMortemField {
-	if o == nil {
+func (u *UpdatePostMortemFieldRequest) GetUpdatePostMortemField() components.UpdatePostMortemField {
+	if u == nil {
 		return components.UpdatePostMortemField{}
 	}
-	return o.UpdatePostMortemField
+	return u.UpdatePostMortemField
 }

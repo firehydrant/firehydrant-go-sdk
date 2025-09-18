@@ -11,16 +11,16 @@ type UpdateSeverityMatrixImpactRequest struct {
 	UpdateSeverityMatrixImpact components.UpdateSeverityMatrixImpact `request:"mediaType=application/json"`
 }
 
-func (o *UpdateSeverityMatrixImpactRequest) GetImpactID() string {
-	if o == nil {
+func (u *UpdateSeverityMatrixImpactRequest) GetImpactID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ImpactID
+	return u.ImpactID
 }
 
-func (o *UpdateSeverityMatrixImpactRequest) GetUpdateSeverityMatrixImpact() components.UpdateSeverityMatrixImpact {
-	if o == nil {
+func (u *UpdateSeverityMatrixImpactRequest) GetUpdateSeverityMatrixImpact() components.UpdateSeverityMatrixImpact {
+	if u == nil {
 		return components.UpdateSeverityMatrixImpact{}
 	}
-	return o.UpdateSeverityMatrixImpact
+	return u.UpdateSeverityMatrixImpact
 }

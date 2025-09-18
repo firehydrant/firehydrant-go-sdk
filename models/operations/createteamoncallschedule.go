@@ -11,16 +11,16 @@ type CreateTeamOnCallScheduleRequest struct {
 	CreateTeamOnCallSchedule components.CreateTeamOnCallSchedule `request:"mediaType=application/json"`
 }
 
-func (o *CreateTeamOnCallScheduleRequest) GetTeamID() string {
-	if o == nil {
+func (c *CreateTeamOnCallScheduleRequest) GetTeamID() string {
+	if c == nil {
 		return ""
 	}
-	return o.TeamID
+	return c.TeamID
 }
 
-func (o *CreateTeamOnCallScheduleRequest) GetCreateTeamOnCallSchedule() components.CreateTeamOnCallSchedule {
-	if o == nil {
+func (c *CreateTeamOnCallScheduleRequest) GetCreateTeamOnCallSchedule() components.CreateTeamOnCallSchedule {
+	if c == nil {
 		return components.CreateTeamOnCallSchedule{}
 	}
-	return o.CreateTeamOnCallSchedule
+	return c.CreateTeamOnCallSchedule
 }

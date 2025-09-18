@@ -11,16 +11,16 @@ type PreviewTeamOnCallScheduleRequest struct {
 	PreviewTeamOnCallSchedule components.PreviewTeamOnCallSchedule `request:"mediaType=application/json"`
 }
 
-func (o *PreviewTeamOnCallScheduleRequest) GetTeamID() string {
-	if o == nil {
+func (p *PreviewTeamOnCallScheduleRequest) GetTeamID() string {
+	if p == nil {
 		return ""
 	}
-	return o.TeamID
+	return p.TeamID
 }
 
-func (o *PreviewTeamOnCallScheduleRequest) GetPreviewTeamOnCallSchedule() components.PreviewTeamOnCallSchedule {
-	if o == nil {
+func (p *PreviewTeamOnCallScheduleRequest) GetPreviewTeamOnCallSchedule() components.PreviewTeamOnCallSchedule {
+	if p == nil {
 		return components.PreviewTeamOnCallSchedule{}
 	}
-	return o.PreviewTeamOnCallSchedule
+	return p.PreviewTeamOnCallSchedule
 }

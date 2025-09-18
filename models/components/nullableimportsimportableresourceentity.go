@@ -59,30 +59,30 @@ func (n *NullableImportsImportableResourceEntity) UnmarshalJSON(data []byte) err
 	return nil
 }
 
-func (o *NullableImportsImportableResourceEntity) GetImportErrors() []ImportsImportErrorEntity {
-	if o == nil {
+func (n *NullableImportsImportableResourceEntity) GetImportErrors() []ImportsImportErrorEntity {
+	if n == nil {
 		return nil
 	}
-	return o.ImportErrors
+	return n.ImportErrors
 }
 
-func (o *NullableImportsImportableResourceEntity) GetImportedAt() *time.Time {
-	if o == nil {
+func (n *NullableImportsImportableResourceEntity) GetImportedAt() *time.Time {
+	if n == nil {
 		return nil
 	}
-	return o.ImportedAt
+	return n.ImportedAt
 }
 
-func (o *NullableImportsImportableResourceEntity) GetRemoteID() *string {
-	if o == nil {
+func (n *NullableImportsImportableResourceEntity) GetRemoteID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.RemoteID
+	return n.RemoteID
 }
 
-func (o *NullableImportsImportableResourceEntity) GetState() *NullableImportsImportableResourceEntityState {
-	if o == nil {
+func (n *NullableImportsImportableResourceEntity) GetState() *NullableImportsImportableResourceEntityState {
+	if n == nil {
 		return nil
 	}
-	return o.State
+	return n.State
 }

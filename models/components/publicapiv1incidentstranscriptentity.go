@@ -37,58 +37,58 @@ func (p *PublicAPIV1IncidentsTranscriptEntity) UnmarshalJSON(data []byte) error 
 	return nil
 }
 
-func (o *PublicAPIV1IncidentsTranscriptEntity) GetID() *string {
-	if o == nil {
+func (p *PublicAPIV1IncidentsTranscriptEntity) GetID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.ID
+	return p.ID
 }
 
-func (o *PublicAPIV1IncidentsTranscriptEntity) GetSpeaker() *string {
-	if o == nil {
+func (p *PublicAPIV1IncidentsTranscriptEntity) GetSpeaker() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Speaker
+	return p.Speaker
 }
 
-func (o *PublicAPIV1IncidentsTranscriptEntity) GetStart() *int {
-	if o == nil {
+func (p *PublicAPIV1IncidentsTranscriptEntity) GetStart() *int {
+	if p == nil {
 		return nil
 	}
-	return o.Start
+	return p.Start
 }
 
-func (o *PublicAPIV1IncidentsTranscriptEntity) GetUntil() *int {
-	if o == nil {
+func (p *PublicAPIV1IncidentsTranscriptEntity) GetUntil() *int {
+	if p == nil {
 		return nil
 	}
-	return o.Until
+	return p.Until
 }
 
-func (o *PublicAPIV1IncidentsTranscriptEntity) GetWords() *string {
-	if o == nil {
+func (p *PublicAPIV1IncidentsTranscriptEntity) GetWords() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Words
+	return p.Words
 }
 
-func (o *PublicAPIV1IncidentsTranscriptEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (p *PublicAPIV1IncidentsTranscriptEntity) GetCreatedAt() *time.Time {
+	if p == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return p.CreatedAt
 }
 
-func (o *PublicAPIV1IncidentsTranscriptEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (p *PublicAPIV1IncidentsTranscriptEntity) GetUpdatedAt() *time.Time {
+	if p == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return p.UpdatedAt
 }
 
-func (o *PublicAPIV1IncidentsTranscriptEntity) GetAuthor() *NullableAuthorEntity {
-	if o == nil {
+func (p *PublicAPIV1IncidentsTranscriptEntity) GetAuthor() *NullableAuthorEntity {
+	if p == nil {
 		return nil
 	}
-	return o.Author
+	return p.Author
 }

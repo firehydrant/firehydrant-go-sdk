@@ -60,23 +60,23 @@ func (l *ListInfrastructureTypeMetricsRequest) UnmarshalJSON(data []byte) error 
 	return nil
 }
 
-func (o *ListInfrastructureTypeMetricsRequest) GetInfraType() ListInfrastructureTypeMetricsInfraType {
-	if o == nil {
+func (l *ListInfrastructureTypeMetricsRequest) GetInfraType() ListInfrastructureTypeMetricsInfraType {
+	if l == nil {
 		return ListInfrastructureTypeMetricsInfraType("")
 	}
-	return o.InfraType
+	return l.InfraType
 }
 
-func (o *ListInfrastructureTypeMetricsRequest) GetStartDate() *types.Date {
-	if o == nil {
+func (l *ListInfrastructureTypeMetricsRequest) GetStartDate() *types.Date {
+	if l == nil {
 		return nil
 	}
-	return o.StartDate
+	return l.StartDate
 }
 
-func (o *ListInfrastructureTypeMetricsRequest) GetEndDate() *types.Date {
-	if o == nil {
+func (l *ListInfrastructureTypeMetricsRequest) GetEndDate() *types.Date {
+	if l == nil {
 		return nil
 	}
-	return o.EndDate
+	return l.EndDate
 }

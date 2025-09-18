@@ -11,16 +11,16 @@ type UpdateScheduledMaintenanceRequest struct {
 	UpdateScheduledMaintenance components.UpdateScheduledMaintenance `request:"mediaType=application/json"`
 }
 
-func (o *UpdateScheduledMaintenanceRequest) GetScheduledMaintenanceID() string {
-	if o == nil {
+func (u *UpdateScheduledMaintenanceRequest) GetScheduledMaintenanceID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ScheduledMaintenanceID
+	return u.ScheduledMaintenanceID
 }
 
-func (o *UpdateScheduledMaintenanceRequest) GetUpdateScheduledMaintenance() components.UpdateScheduledMaintenance {
-	if o == nil {
+func (u *UpdateScheduledMaintenanceRequest) GetUpdateScheduledMaintenance() components.UpdateScheduledMaintenance {
+	if u == nil {
 		return components.UpdateScheduledMaintenance{}
 	}
-	return o.UpdateScheduledMaintenance
+	return u.UpdateScheduledMaintenance
 }

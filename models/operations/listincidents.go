@@ -117,233 +117,233 @@ func (l *ListIncidentsRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ListIncidentsRequest) GetPage() *int {
-	if o == nil {
+func (l *ListIncidentsRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListIncidentsRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListIncidentsRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }
 
-func (o *ListIncidentsRequest) GetConditions() *string {
-	if o == nil {
+func (l *ListIncidentsRequest) GetConditions() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Conditions
+	return l.Conditions
 }
 
-func (o *ListIncidentsRequest) GetEnvironments() *string {
-	if o == nil {
+func (l *ListIncidentsRequest) GetEnvironments() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Environments
+	return l.Environments
 }
 
-func (o *ListIncidentsRequest) GetServices() *string {
-	if o == nil {
+func (l *ListIncidentsRequest) GetServices() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Services
+	return l.Services
 }
 
-func (o *ListIncidentsRequest) GetFunctionalities() *string {
-	if o == nil {
+func (l *ListIncidentsRequest) GetFunctionalities() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Functionalities
+	return l.Functionalities
 }
 
-func (o *ListIncidentsRequest) GetExcludedInfrastructureIds() *string {
-	if o == nil {
+func (l *ListIncidentsRequest) GetExcludedInfrastructureIds() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ExcludedInfrastructureIds
+	return l.ExcludedInfrastructureIds
 }
 
-func (o *ListIncidentsRequest) GetTeams() *string {
-	if o == nil {
+func (l *ListIncidentsRequest) GetTeams() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Teams
+	return l.Teams
 }
 
-func (o *ListIncidentsRequest) GetAssignedTeams() *string {
-	if o == nil {
+func (l *ListIncidentsRequest) GetAssignedTeams() *string {
+	if l == nil {
 		return nil
 	}
-	return o.AssignedTeams
+	return l.AssignedTeams
 }
 
-func (o *ListIncidentsRequest) GetStatus() *string {
-	if o == nil {
+func (l *ListIncidentsRequest) GetStatus() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Status
+	return l.Status
 }
 
-func (o *ListIncidentsRequest) GetStartDate() *time.Time {
-	if o == nil {
+func (l *ListIncidentsRequest) GetStartDate() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.StartDate
+	return l.StartDate
 }
 
-func (o *ListIncidentsRequest) GetEndDate() *time.Time {
-	if o == nil {
+func (l *ListIncidentsRequest) GetEndDate() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.EndDate
+	return l.EndDate
 }
 
-func (o *ListIncidentsRequest) GetResolvedAtOrAfter() *time.Time {
-	if o == nil {
+func (l *ListIncidentsRequest) GetResolvedAtOrAfter() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.ResolvedAtOrAfter
+	return l.ResolvedAtOrAfter
 }
 
-func (o *ListIncidentsRequest) GetResolvedAtOrBefore() *time.Time {
-	if o == nil {
+func (l *ListIncidentsRequest) GetResolvedAtOrBefore() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.ResolvedAtOrBefore
+	return l.ResolvedAtOrBefore
 }
 
-func (o *ListIncidentsRequest) GetClosedAtOrAfter() *time.Time {
-	if o == nil {
+func (l *ListIncidentsRequest) GetClosedAtOrAfter() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.ClosedAtOrAfter
+	return l.ClosedAtOrAfter
 }
 
-func (o *ListIncidentsRequest) GetClosedAtOrBefore() *time.Time {
-	if o == nil {
+func (l *ListIncidentsRequest) GetClosedAtOrBefore() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.ClosedAtOrBefore
+	return l.ClosedAtOrBefore
 }
 
-func (o *ListIncidentsRequest) GetCreatedAtOrAfter() *time.Time {
-	if o == nil {
+func (l *ListIncidentsRequest) GetCreatedAtOrAfter() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.CreatedAtOrAfter
+	return l.CreatedAtOrAfter
 }
 
-func (o *ListIncidentsRequest) GetCreatedAtOrBefore() *time.Time {
-	if o == nil {
+func (l *ListIncidentsRequest) GetCreatedAtOrBefore() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.CreatedAtOrBefore
+	return l.CreatedAtOrBefore
 }
 
-func (o *ListIncidentsRequest) GetQuery() *string {
-	if o == nil {
+func (l *ListIncidentsRequest) GetQuery() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Query
+	return l.Query
 }
 
-func (o *ListIncidentsRequest) GetName() *string {
-	if o == nil {
+func (l *ListIncidentsRequest) GetName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Name
+	return l.Name
 }
 
-func (o *ListIncidentsRequest) GetSavedSearchID() *string {
-	if o == nil {
+func (l *ListIncidentsRequest) GetSavedSearchID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.SavedSearchID
+	return l.SavedSearchID
 }
 
-func (o *ListIncidentsRequest) GetPriorities() *string {
-	if o == nil {
+func (l *ListIncidentsRequest) GetPriorities() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Priorities
+	return l.Priorities
 }
 
-func (o *ListIncidentsRequest) GetPriorityNotSet() *bool {
-	if o == nil {
+func (l *ListIncidentsRequest) GetPriorityNotSet() *bool {
+	if l == nil {
 		return nil
 	}
-	return o.PriorityNotSet
+	return l.PriorityNotSet
 }
 
-func (o *ListIncidentsRequest) GetSeverities() *string {
-	if o == nil {
+func (l *ListIncidentsRequest) GetSeverities() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Severities
+	return l.Severities
 }
 
-func (o *ListIncidentsRequest) GetSeverityNotSet() *bool {
-	if o == nil {
+func (l *ListIncidentsRequest) GetSeverityNotSet() *bool {
+	if l == nil {
 		return nil
 	}
-	return o.SeverityNotSet
+	return l.SeverityNotSet
 }
 
-func (o *ListIncidentsRequest) GetCurrentMilestones() *string {
-	if o == nil {
+func (l *ListIncidentsRequest) GetCurrentMilestones() *string {
+	if l == nil {
 		return nil
 	}
-	return o.CurrentMilestones
+	return l.CurrentMilestones
 }
 
-func (o *ListIncidentsRequest) GetTags() *string {
-	if o == nil {
+func (l *ListIncidentsRequest) GetTags() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Tags
+	return l.Tags
 }
 
-func (o *ListIncidentsRequest) GetTagMatchStrategy() *ListIncidentsTagMatchStrategy {
-	if o == nil {
+func (l *ListIncidentsRequest) GetTagMatchStrategy() *ListIncidentsTagMatchStrategy {
+	if l == nil {
 		return nil
 	}
-	return o.TagMatchStrategy
+	return l.TagMatchStrategy
 }
 
-func (o *ListIncidentsRequest) GetArchived() *bool {
-	if o == nil {
+func (l *ListIncidentsRequest) GetArchived() *bool {
+	if l == nil {
 		return nil
 	}
-	return o.Archived
+	return l.Archived
 }
 
-func (o *ListIncidentsRequest) GetUpdatedAfter() *time.Time {
-	if o == nil {
+func (l *ListIncidentsRequest) GetUpdatedAfter() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.UpdatedAfter
+	return l.UpdatedAfter
 }
 
-func (o *ListIncidentsRequest) GetUpdatedBefore() *time.Time {
-	if o == nil {
+func (l *ListIncidentsRequest) GetUpdatedBefore() *time.Time {
+	if l == nil {
 		return nil
 	}
-	return o.UpdatedBefore
+	return l.UpdatedBefore
 }
 
-func (o *ListIncidentsRequest) GetIncidentTypeID() *string {
-	if o == nil {
+func (l *ListIncidentsRequest) GetIncidentTypeID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.IncidentTypeID
+	return l.IncidentTypeID
 }
 
-func (o *ListIncidentsRequest) GetRetrospectiveTemplates() *string {
-	if o == nil {
+func (l *ListIncidentsRequest) GetRetrospectiveTemplates() *string {
+	if l == nil {
 		return nil
 	}
-	return o.RetrospectiveTemplates
+	return l.RetrospectiveTemplates
 }

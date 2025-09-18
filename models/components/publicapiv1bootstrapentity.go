@@ -7,9 +7,9 @@ type PublicAPIV1BootstrapEntity struct {
 	PosthogWriteKey *string `json:"posthog_write_key,omitempty"`
 }
 
-func (o *PublicAPIV1BootstrapEntity) GetPosthogWriteKey() *string {
-	if o == nil {
+func (p *PublicAPIV1BootstrapEntity) GetPosthogWriteKey() *string {
+	if p == nil {
 		return nil
 	}
-	return o.PosthogWriteKey
+	return p.PosthogWriteKey
 }

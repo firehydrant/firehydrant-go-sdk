@@ -8,16 +8,16 @@ type IncidentsRetrospectiveEntityPaginated struct {
 	Pagination *NullablePaginationEntity      `json:"pagination,omitempty"`
 }
 
-func (o *IncidentsRetrospectiveEntityPaginated) GetData() []IncidentsRetrospectiveEntity {
-	if o == nil {
+func (i *IncidentsRetrospectiveEntityPaginated) GetData() []IncidentsRetrospectiveEntity {
+	if i == nil {
 		return nil
 	}
-	return o.Data
+	return i.Data
 }
 
-func (o *IncidentsRetrospectiveEntityPaginated) GetPagination() *NullablePaginationEntity {
-	if o == nil {
+func (i *IncidentsRetrospectiveEntityPaginated) GetPagination() *NullablePaginationEntity {
+	if i == nil {
 		return nil
 	}
-	return o.Pagination
+	return i.Pagination
 }

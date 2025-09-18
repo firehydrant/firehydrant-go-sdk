@@ -12,51 +12,51 @@ type NullablePaginationEntity struct {
 	Next  *int `json:"next,omitempty"`
 }
 
-func (o *NullablePaginationEntity) GetCount() *int {
-	if o == nil {
+func (n *NullablePaginationEntity) GetCount() *int {
+	if n == nil {
 		return nil
 	}
-	return o.Count
+	return n.Count
 }
 
-func (o *NullablePaginationEntity) GetPage() *int {
-	if o == nil {
+func (n *NullablePaginationEntity) GetPage() *int {
+	if n == nil {
 		return nil
 	}
-	return o.Page
+	return n.Page
 }
 
-func (o *NullablePaginationEntity) GetItems() *int {
-	if o == nil {
+func (n *NullablePaginationEntity) GetItems() *int {
+	if n == nil {
 		return nil
 	}
-	return o.Items
+	return n.Items
 }
 
-func (o *NullablePaginationEntity) GetPages() *int {
-	if o == nil {
+func (n *NullablePaginationEntity) GetPages() *int {
+	if n == nil {
 		return nil
 	}
-	return o.Pages
+	return n.Pages
 }
 
-func (o *NullablePaginationEntity) GetLast() *int {
-	if o == nil {
+func (n *NullablePaginationEntity) GetLast() *int {
+	if n == nil {
 		return nil
 	}
-	return o.Last
+	return n.Last
 }
 
-func (o *NullablePaginationEntity) GetPrev() *int {
-	if o == nil {
+func (n *NullablePaginationEntity) GetPrev() *int {
+	if n == nil {
 		return nil
 	}
-	return o.Prev
+	return n.Prev
 }
 
-func (o *NullablePaginationEntity) GetNext() *int {
-	if o == nil {
+func (n *NullablePaginationEntity) GetNext() *int {
+	if n == nil {
 		return nil
 	}
-	return o.Next
+	return n.Next
 }

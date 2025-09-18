@@ -27,30 +27,30 @@ func (u *UpdateRunbookExecutionStep) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *UpdateRunbookExecutionStep) GetState() string {
-	if o == nil {
+func (u *UpdateRunbookExecutionStep) GetState() string {
+	if u == nil {
 		return ""
 	}
-	return o.State
+	return u.State
 }
 
-func (o *UpdateRunbookExecutionStep) GetScheduleFor() *time.Time {
-	if o == nil {
+func (u *UpdateRunbookExecutionStep) GetScheduleFor() *time.Time {
+	if u == nil {
 		return nil
 	}
-	return o.ScheduleFor
+	return u.ScheduleFor
 }
 
-func (o *UpdateRunbookExecutionStep) GetData() map[string]any {
-	if o == nil {
+func (u *UpdateRunbookExecutionStep) GetData() map[string]any {
+	if u == nil {
 		return nil
 	}
-	return o.Data
+	return u.Data
 }
 
-func (o *UpdateRunbookExecutionStep) GetRepeatsAt() *time.Time {
-	if o == nil {
+func (u *UpdateRunbookExecutionStep) GetRepeatsAt() *time.Time {
+	if u == nil {
 		return nil
 	}
-	return o.RepeatsAt
+	return u.RepeatsAt
 }

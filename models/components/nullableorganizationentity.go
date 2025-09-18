@@ -7,16 +7,16 @@ type NullableOrganizationEntity struct {
 	ID   *string `json:"id,omitempty"`
 }
 
-func (o *NullableOrganizationEntity) GetName() *string {
-	if o == nil {
+func (n *NullableOrganizationEntity) GetName() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Name
+	return n.Name
 }
 
-func (o *NullableOrganizationEntity) GetID() *string {
-	if o == nil {
+func (n *NullableOrganizationEntity) GetID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ID
+	return n.ID
 }

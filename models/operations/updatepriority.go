@@ -11,16 +11,16 @@ type UpdatePriorityRequest struct {
 	UpdatePriority components.UpdatePriority `request:"mediaType=application/json"`
 }
 
-func (o *UpdatePriorityRequest) GetPrioritySlug() string {
-	if o == nil {
+func (u *UpdatePriorityRequest) GetPrioritySlug() string {
+	if u == nil {
 		return ""
 	}
-	return o.PrioritySlug
+	return u.PrioritySlug
 }
 
-func (o *UpdatePriorityRequest) GetUpdatePriority() components.UpdatePriority {
-	if o == nil {
+func (u *UpdatePriorityRequest) GetUpdatePriority() components.UpdatePriority {
+	if u == nil {
 		return components.UpdatePriority{}
 	}
-	return o.UpdatePriority
+	return u.UpdatePriority
 }

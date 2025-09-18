@@ -12,37 +12,37 @@ type ConvertIncidentTask struct {
 	TagList []string `json:"tag_list,omitempty"`
 }
 
-func (o *ConvertIncidentTask) GetSummary() *string {
-	if o == nil {
+func (c *ConvertIncidentTask) GetSummary() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Summary
+	return c.Summary
 }
 
-func (o *ConvertIncidentTask) GetProjectID() *string {
-	if o == nil {
+func (c *ConvertIncidentTask) GetProjectID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ProjectID
+	return c.ProjectID
 }
 
-func (o *ConvertIncidentTask) GetDescription() *string {
-	if o == nil {
+func (c *ConvertIncidentTask) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *ConvertIncidentTask) GetState() *string {
-	if o == nil {
+func (c *ConvertIncidentTask) GetState() *string {
+	if c == nil {
 		return nil
 	}
-	return o.State
+	return c.State
 }
 
-func (o *ConvertIncidentTask) GetTagList() []string {
-	if o == nil {
+func (c *ConvertIncidentTask) GetTagList() []string {
+	if c == nil {
 		return nil
 	}
-	return o.TagList
+	return c.TagList
 }

@@ -8,23 +8,23 @@ type GetIncidentRetrospectiveFieldRequest struct {
 	IncidentID      string `pathParam:"style=simple,explode=false,name=incident_id"`
 }
 
-func (o *GetIncidentRetrospectiveFieldRequest) GetRetrospectiveID() string {
-	if o == nil {
+func (g *GetIncidentRetrospectiveFieldRequest) GetRetrospectiveID() string {
+	if g == nil {
 		return ""
 	}
-	return o.RetrospectiveID
+	return g.RetrospectiveID
 }
 
-func (o *GetIncidentRetrospectiveFieldRequest) GetFieldID() string {
-	if o == nil {
+func (g *GetIncidentRetrospectiveFieldRequest) GetFieldID() string {
+	if g == nil {
 		return ""
 	}
-	return o.FieldID
+	return g.FieldID
 }
 
-func (o *GetIncidentRetrospectiveFieldRequest) GetIncidentID() string {
-	if o == nil {
+func (g *GetIncidentRetrospectiveFieldRequest) GetIncidentID() string {
+	if g == nil {
 		return ""
 	}
-	return o.IncidentID
+	return g.IncidentID
 }

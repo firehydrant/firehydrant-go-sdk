@@ -9,23 +9,23 @@ type UpdateNuncLink struct {
 	HrefURL     *string `json:"href_url,omitempty"`
 }
 
-func (o *UpdateNuncLink) GetDisplayText() *string {
-	if o == nil {
+func (u *UpdateNuncLink) GetDisplayText() *string {
+	if u == nil {
 		return nil
 	}
-	return o.DisplayText
+	return u.DisplayText
 }
 
-func (o *UpdateNuncLink) GetIconURL() *string {
-	if o == nil {
+func (u *UpdateNuncLink) GetIconURL() *string {
+	if u == nil {
 		return nil
 	}
-	return o.IconURL
+	return u.IconURL
 }
 
-func (o *UpdateNuncLink) GetHrefURL() *string {
-	if o == nil {
+func (u *UpdateNuncLink) GetHrefURL() *string {
+	if u == nil {
 		return nil
 	}
-	return o.HrefURL
+	return u.HrefURL
 }

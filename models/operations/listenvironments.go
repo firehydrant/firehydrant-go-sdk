@@ -11,30 +11,30 @@ type ListEnvironmentsRequest struct {
 	Name *string `queryParam:"style=form,explode=true,name=name"`
 }
 
-func (o *ListEnvironmentsRequest) GetPage() *int {
-	if o == nil {
+func (l *ListEnvironmentsRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListEnvironmentsRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListEnvironmentsRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }
 
-func (o *ListEnvironmentsRequest) GetQuery() *string {
-	if o == nil {
+func (l *ListEnvironmentsRequest) GetQuery() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Query
+	return l.Query
 }
 
-func (o *ListEnvironmentsRequest) GetName() *string {
-	if o == nil {
+func (l *ListEnvironmentsRequest) GetName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Name
+	return l.Name
 }

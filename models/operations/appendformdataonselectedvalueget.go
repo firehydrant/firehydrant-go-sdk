@@ -8,23 +8,23 @@ type AppendFormDataOnSelectedValueGetRequest struct {
 	SelectedValue string `pathParam:"style=simple,explode=false,name=selected_value"`
 }
 
-func (o *AppendFormDataOnSelectedValueGetRequest) GetSlug() string {
-	if o == nil {
+func (a *AppendFormDataOnSelectedValueGetRequest) GetSlug() string {
+	if a == nil {
 		return ""
 	}
-	return o.Slug
+	return a.Slug
 }
 
-func (o *AppendFormDataOnSelectedValueGetRequest) GetFieldID() string {
-	if o == nil {
+func (a *AppendFormDataOnSelectedValueGetRequest) GetFieldID() string {
+	if a == nil {
 		return ""
 	}
-	return o.FieldID
+	return a.FieldID
 }
 
-func (o *AppendFormDataOnSelectedValueGetRequest) GetSelectedValue() string {
-	if o == nil {
+func (a *AppendFormDataOnSelectedValueGetRequest) GetSelectedValue() string {
+	if a == nil {
 		return ""
 	}
-	return o.SelectedValue
+	return a.SelectedValue
 }

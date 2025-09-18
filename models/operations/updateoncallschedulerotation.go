@@ -13,30 +13,30 @@ type UpdateOnCallScheduleRotationRequest struct {
 	UpdateOnCallScheduleRotation components.UpdateOnCallScheduleRotation `request:"mediaType=application/json"`
 }
 
-func (o *UpdateOnCallScheduleRotationRequest) GetRotationID() string {
-	if o == nil {
+func (u *UpdateOnCallScheduleRotationRequest) GetRotationID() string {
+	if u == nil {
 		return ""
 	}
-	return o.RotationID
+	return u.RotationID
 }
 
-func (o *UpdateOnCallScheduleRotationRequest) GetTeamID() string {
-	if o == nil {
+func (u *UpdateOnCallScheduleRotationRequest) GetTeamID() string {
+	if u == nil {
 		return ""
 	}
-	return o.TeamID
+	return u.TeamID
 }
 
-func (o *UpdateOnCallScheduleRotationRequest) GetScheduleID() string {
-	if o == nil {
+func (u *UpdateOnCallScheduleRotationRequest) GetScheduleID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ScheduleID
+	return u.ScheduleID
 }
 
-func (o *UpdateOnCallScheduleRotationRequest) GetUpdateOnCallScheduleRotation() components.UpdateOnCallScheduleRotation {
-	if o == nil {
+func (u *UpdateOnCallScheduleRotationRequest) GetUpdateOnCallScheduleRotation() components.UpdateOnCallScheduleRotation {
+	if u == nil {
 		return components.UpdateOnCallScheduleRotation{}
 	}
-	return o.UpdateOnCallScheduleRotation
+	return u.UpdateOnCallScheduleRotation
 }

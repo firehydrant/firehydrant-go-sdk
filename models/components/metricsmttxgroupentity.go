@@ -26,128 +26,128 @@ type MetricsMttxGroupEntity struct {
 	Healthiness      *float32      `json:"healthiness,omitempty"`
 }
 
-func (o *MetricsMttxGroupEntity) GetGroupAttributes() *string {
-	if o == nil {
+func (m *MetricsMttxGroupEntity) GetGroupAttributes() *string {
+	if m == nil {
 		return nil
 	}
-	return o.GroupAttributes
+	return m.GroupAttributes
 }
 
-func (o *MetricsMttxGroupEntity) GetFilterParams() *FilterParams {
-	if o == nil {
+func (m *MetricsMttxGroupEntity) GetFilterParams() *FilterParams {
+	if m == nil {
 		return nil
 	}
-	return o.FilterParams
+	return m.FilterParams
 }
 
-func (o *MetricsMttxGroupEntity) GetCount() *int {
-	if o == nil {
+func (m *MetricsMttxGroupEntity) GetCount() *int {
+	if m == nil {
 		return nil
 	}
-	return o.Count
+	return m.Count
 }
 
-func (o *MetricsMttxGroupEntity) GetMttd() *float32 {
-	if o == nil {
+func (m *MetricsMttxGroupEntity) GetMttd() *float32 {
+	if m == nil {
 		return nil
 	}
-	return o.Mttd
+	return m.Mttd
 }
 
-func (o *MetricsMttxGroupEntity) GetMtta() *float32 {
-	if o == nil {
+func (m *MetricsMttxGroupEntity) GetMtta() *float32 {
+	if m == nil {
 		return nil
 	}
-	return o.Mtta
+	return m.Mtta
 }
 
-func (o *MetricsMttxGroupEntity) GetMttm() *float32 {
-	if o == nil {
+func (m *MetricsMttxGroupEntity) GetMttm() *float32 {
+	if m == nil {
 		return nil
 	}
-	return o.Mttm
+	return m.Mttm
 }
 
-func (o *MetricsMttxGroupEntity) GetMttr() *float32 {
-	if o == nil {
+func (m *MetricsMttxGroupEntity) GetMttr() *float32 {
+	if m == nil {
 		return nil
 	}
-	return o.Mttr
+	return m.Mttr
 }
 
-func (o *MetricsMttxGroupEntity) GetCountDiff() *int {
-	if o == nil {
+func (m *MetricsMttxGroupEntity) GetCountDiff() *int {
+	if m == nil {
 		return nil
 	}
-	return o.CountDiff
+	return m.CountDiff
 }
 
-func (o *MetricsMttxGroupEntity) GetCountPercentDiff() *float32 {
-	if o == nil {
+func (m *MetricsMttxGroupEntity) GetCountPercentDiff() *float32 {
+	if m == nil {
 		return nil
 	}
-	return o.CountPercentDiff
+	return m.CountPercentDiff
 }
 
-func (o *MetricsMttxGroupEntity) GetMttdDiff() *float32 {
-	if o == nil {
+func (m *MetricsMttxGroupEntity) GetMttdDiff() *float32 {
+	if m == nil {
 		return nil
 	}
-	return o.MttdDiff
+	return m.MttdDiff
 }
 
-func (o *MetricsMttxGroupEntity) GetMttaDiff() *float32 {
-	if o == nil {
+func (m *MetricsMttxGroupEntity) GetMttaDiff() *float32 {
+	if m == nil {
 		return nil
 	}
-	return o.MttaDiff
+	return m.MttaDiff
 }
 
-func (o *MetricsMttxGroupEntity) GetMttmDiff() *float32 {
-	if o == nil {
+func (m *MetricsMttxGroupEntity) GetMttmDiff() *float32 {
+	if m == nil {
 		return nil
 	}
-	return o.MttmDiff
+	return m.MttmDiff
 }
 
-func (o *MetricsMttxGroupEntity) GetMttrDiff() *float32 {
-	if o == nil {
+func (m *MetricsMttxGroupEntity) GetMttrDiff() *float32 {
+	if m == nil {
 		return nil
 	}
-	return o.MttrDiff
+	return m.MttrDiff
 }
 
-func (o *MetricsMttxGroupEntity) GetMttdPercentDiff() *float32 {
-	if o == nil {
+func (m *MetricsMttxGroupEntity) GetMttdPercentDiff() *float32 {
+	if m == nil {
 		return nil
 	}
-	return o.MttdPercentDiff
+	return m.MttdPercentDiff
 }
 
-func (o *MetricsMttxGroupEntity) GetMttaPercentDiff() *float32 {
-	if o == nil {
+func (m *MetricsMttxGroupEntity) GetMttaPercentDiff() *float32 {
+	if m == nil {
 		return nil
 	}
-	return o.MttaPercentDiff
+	return m.MttaPercentDiff
 }
 
-func (o *MetricsMttxGroupEntity) GetMttmPercentDiff() *float32 {
-	if o == nil {
+func (m *MetricsMttxGroupEntity) GetMttmPercentDiff() *float32 {
+	if m == nil {
 		return nil
 	}
-	return o.MttmPercentDiff
+	return m.MttmPercentDiff
 }
 
-func (o *MetricsMttxGroupEntity) GetMttrPercentDiff() *float32 {
-	if o == nil {
+func (m *MetricsMttxGroupEntity) GetMttrPercentDiff() *float32 {
+	if m == nil {
 		return nil
 	}
-	return o.MttrPercentDiff
+	return m.MttrPercentDiff
 }
 
-func (o *MetricsMttxGroupEntity) GetHealthiness() *float32 {
-	if o == nil {
+func (m *MetricsMttxGroupEntity) GetHealthiness() *float32 {
+	if m == nil {
 		return nil
 	}
-	return o.Healthiness
+	return m.Healthiness
 }

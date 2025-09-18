@@ -7,18 +7,18 @@ type UpdateIncidentImpactPutImpact struct {
 	ConditionID string `json:"condition_id"`
 }
 
-func (o *UpdateIncidentImpactPutImpact) GetID() string {
-	if o == nil {
+func (u *UpdateIncidentImpactPutImpact) GetID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ID
+	return u.ID
 }
 
-func (o *UpdateIncidentImpactPutImpact) GetConditionID() string {
-	if o == nil {
+func (u *UpdateIncidentImpactPutImpact) GetConditionID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ConditionID
+	return u.ConditionID
 }
 
 type UpdateIncidentImpactPutStatusPage struct {
@@ -26,18 +26,18 @@ type UpdateIncidentImpactPutStatusPage struct {
 	IntegrationSlug string `json:"integration_slug"`
 }
 
-func (o *UpdateIncidentImpactPutStatusPage) GetID() string {
-	if o == nil {
+func (u *UpdateIncidentImpactPutStatusPage) GetID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ID
+	return u.ID
 }
 
-func (o *UpdateIncidentImpactPutStatusPage) GetIntegrationSlug() string {
-	if o == nil {
+func (u *UpdateIncidentImpactPutStatusPage) GetIntegrationSlug() string {
+	if u == nil {
 		return ""
 	}
-	return o.IntegrationSlug
+	return u.IntegrationSlug
 }
 
 // UpdateIncidentImpactPut - Allows updating an incident's impacted infrastructure, with the option to
@@ -54,30 +54,30 @@ type UpdateIncidentImpactPut struct {
 	StatusPages []UpdateIncidentImpactPutStatusPage `json:"status_pages,omitempty"`
 }
 
-func (o *UpdateIncidentImpactPut) GetNote() *string {
-	if o == nil {
+func (u *UpdateIncidentImpactPut) GetNote() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Note
+	return u.Note
 }
 
-func (o *UpdateIncidentImpactPut) GetMilestone() *string {
-	if o == nil {
+func (u *UpdateIncidentImpactPut) GetMilestone() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Milestone
+	return u.Milestone
 }
 
-func (o *UpdateIncidentImpactPut) GetImpact() []UpdateIncidentImpactPutImpact {
-	if o == nil {
+func (u *UpdateIncidentImpactPut) GetImpact() []UpdateIncidentImpactPutImpact {
+	if u == nil {
 		return nil
 	}
-	return o.Impact
+	return u.Impact
 }
 
-func (o *UpdateIncidentImpactPut) GetStatusPages() []UpdateIncidentImpactPutStatusPage {
-	if o == nil {
+func (u *UpdateIncidentImpactPut) GetStatusPages() []UpdateIncidentImpactPutStatusPage {
+	if u == nil {
 		return nil
 	}
-	return o.StatusPages
+	return u.StatusPages
 }

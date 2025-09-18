@@ -67,37 +67,37 @@ type ListSavedSearchesRequest struct {
 	PerPage *int    `queryParam:"style=form,explode=true,name=per_page"`
 }
 
-func (o *ListSavedSearchesRequest) GetResourceType() ListSavedSearchesResourceType {
-	if o == nil {
+func (l *ListSavedSearchesRequest) GetResourceType() ListSavedSearchesResourceType {
+	if l == nil {
 		return ListSavedSearchesResourceType("")
 	}
-	return o.ResourceType
+	return l.ResourceType
 }
 
-func (o *ListSavedSearchesRequest) GetUserID() *string {
-	if o == nil {
+func (l *ListSavedSearchesRequest) GetUserID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.UserID
+	return l.UserID
 }
 
-func (o *ListSavedSearchesRequest) GetQuery() *string {
-	if o == nil {
+func (l *ListSavedSearchesRequest) GetQuery() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Query
+	return l.Query
 }
 
-func (o *ListSavedSearchesRequest) GetPage() *int {
-	if o == nil {
+func (l *ListSavedSearchesRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListSavedSearchesRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListSavedSearchesRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }

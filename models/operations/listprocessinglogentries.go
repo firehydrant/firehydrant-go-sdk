@@ -98,44 +98,44 @@ type ListProcessingLogEntriesRequest struct {
 	ExactLevel *ExactLevel `queryParam:"style=form,explode=true,name=exact_level"`
 }
 
-func (o *ListProcessingLogEntriesRequest) GetPage() *int {
-	if o == nil {
+func (l *ListProcessingLogEntriesRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListProcessingLogEntriesRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListProcessingLogEntriesRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }
 
-func (o *ListProcessingLogEntriesRequest) GetIntegrationSlug() *string {
-	if o == nil {
+func (l *ListProcessingLogEntriesRequest) GetIntegrationSlug() *string {
+	if l == nil {
 		return nil
 	}
-	return o.IntegrationSlug
+	return l.IntegrationSlug
 }
 
-func (o *ListProcessingLogEntriesRequest) GetConnectionID() *string {
-	if o == nil {
+func (l *ListProcessingLogEntriesRequest) GetConnectionID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ConnectionID
+	return l.ConnectionID
 }
 
-func (o *ListProcessingLogEntriesRequest) GetOfLevel() *OfLevel {
-	if o == nil {
+func (l *ListProcessingLogEntriesRequest) GetOfLevel() *OfLevel {
+	if l == nil {
 		return nil
 	}
-	return o.OfLevel
+	return l.OfLevel
 }
 
-func (o *ListProcessingLogEntriesRequest) GetExactLevel() *ExactLevel {
-	if o == nil {
+func (l *ListProcessingLogEntriesRequest) GetExactLevel() *ExactLevel {
+	if l == nil {
 		return nil
 	}
-	return o.ExactLevel
+	return l.ExactLevel
 }

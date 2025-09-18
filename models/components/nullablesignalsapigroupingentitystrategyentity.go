@@ -6,9 +6,9 @@ type NullableSignalsAPIGroupingEntityStrategyEntity struct {
 	Substring *NullableSignalsAPIGroupingEntityStrategyEntitySubstringEntity `json:"substring,omitempty"`
 }
 
-func (o *NullableSignalsAPIGroupingEntityStrategyEntity) GetSubstring() *NullableSignalsAPIGroupingEntityStrategyEntitySubstringEntity {
-	if o == nil {
+func (n *NullableSignalsAPIGroupingEntityStrategyEntity) GetSubstring() *NullableSignalsAPIGroupingEntityStrategyEntitySubstringEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Substring
+	return n.Substring
 }

@@ -12,51 +12,51 @@ type ListTicketingProjectsRequest struct {
 	PerPage             *int    `queryParam:"style=form,explode=true,name=per_page"`
 }
 
-func (o *ListTicketingProjectsRequest) GetSupportsTicketTypes() *string {
-	if o == nil {
+func (l *ListTicketingProjectsRequest) GetSupportsTicketTypes() *string {
+	if l == nil {
 		return nil
 	}
-	return o.SupportsTicketTypes
+	return l.SupportsTicketTypes
 }
 
-func (o *ListTicketingProjectsRequest) GetProviders() *string {
-	if o == nil {
+func (l *ListTicketingProjectsRequest) GetProviders() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Providers
+	return l.Providers
 }
 
-func (o *ListTicketingProjectsRequest) GetConnectionIds() *string {
-	if o == nil {
+func (l *ListTicketingProjectsRequest) GetConnectionIds() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ConnectionIds
+	return l.ConnectionIds
 }
 
-func (o *ListTicketingProjectsRequest) GetConfiguredProjects() *bool {
-	if o == nil {
+func (l *ListTicketingProjectsRequest) GetConfiguredProjects() *bool {
+	if l == nil {
 		return nil
 	}
-	return o.ConfiguredProjects
+	return l.ConfiguredProjects
 }
 
-func (o *ListTicketingProjectsRequest) GetQuery() *string {
-	if o == nil {
+func (l *ListTicketingProjectsRequest) GetQuery() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Query
+	return l.Query
 }
 
-func (o *ListTicketingProjectsRequest) GetPage() *int {
-	if o == nil {
+func (l *ListTicketingProjectsRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListTicketingProjectsRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListTicketingProjectsRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }

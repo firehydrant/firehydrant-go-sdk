@@ -28,44 +28,44 @@ func (p *PriorityEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *PriorityEntity) GetSlug() *string {
-	if o == nil {
+func (p *PriorityEntity) GetSlug() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Slug
+	return p.Slug
 }
 
-func (o *PriorityEntity) GetDescription() *string {
-	if o == nil {
+func (p *PriorityEntity) GetDescription() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Description
+	return p.Description
 }
 
-func (o *PriorityEntity) GetPosition() *int {
-	if o == nil {
+func (p *PriorityEntity) GetPosition() *int {
+	if p == nil {
 		return nil
 	}
-	return o.Position
+	return p.Position
 }
 
-func (o *PriorityEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (p *PriorityEntity) GetCreatedAt() *time.Time {
+	if p == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return p.CreatedAt
 }
 
-func (o *PriorityEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (p *PriorityEntity) GetUpdatedAt() *time.Time {
+	if p == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return p.UpdatedAt
 }
 
-func (o *PriorityEntity) GetDefault() *bool {
-	if o == nil {
+func (p *PriorityEntity) GetDefault() *bool {
+	if p == nil {
 		return nil
 	}
-	return o.Default
+	return p.Default
 }

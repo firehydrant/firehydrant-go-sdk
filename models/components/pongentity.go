@@ -9,23 +9,23 @@ type PongEntity struct {
 	Organization *NullableOrganizationEntity `json:"organization,omitempty"`
 }
 
-func (o *PongEntity) GetResponse() *string {
-	if o == nil {
+func (p *PongEntity) GetResponse() *string {
+	if p == nil {
 		return nil
 	}
-	return o.Response
+	return p.Response
 }
 
-func (o *PongEntity) GetActor() *NullableActorEntity {
-	if o == nil {
+func (p *PongEntity) GetActor() *NullableActorEntity {
+	if p == nil {
 		return nil
 	}
-	return o.Actor
+	return p.Actor
 }
 
-func (o *PongEntity) GetOrganization() *NullableOrganizationEntity {
-	if o == nil {
+func (p *PongEntity) GetOrganization() *NullableOrganizationEntity {
+	if p == nil {
 		return nil
 	}
-	return o.Organization
+	return p.Organization
 }

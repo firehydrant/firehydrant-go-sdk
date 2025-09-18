@@ -112,51 +112,51 @@ type ListRunbooksRequest struct {
 	OrderDirection *OrderDirection `queryParam:"style=form,explode=true,name=order_direction"`
 }
 
-func (o *ListRunbooksRequest) GetPage() *int {
-	if o == nil {
+func (l *ListRunbooksRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListRunbooksRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListRunbooksRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }
 
-func (o *ListRunbooksRequest) GetName() *string {
-	if o == nil {
+func (l *ListRunbooksRequest) GetName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Name
+	return l.Name
 }
 
-func (o *ListRunbooksRequest) GetOwners() *string {
-	if o == nil {
+func (l *ListRunbooksRequest) GetOwners() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Owners
+	return l.Owners
 }
 
-func (o *ListRunbooksRequest) GetSort() *ListRunbooksSort {
-	if o == nil {
+func (l *ListRunbooksRequest) GetSort() *ListRunbooksSort {
+	if l == nil {
 		return nil
 	}
-	return o.Sort
+	return l.Sort
 }
 
-func (o *ListRunbooksRequest) GetOrderBy() *OrderBy {
-	if o == nil {
+func (l *ListRunbooksRequest) GetOrderBy() *OrderBy {
+	if l == nil {
 		return nil
 	}
-	return o.OrderBy
+	return l.OrderBy
 }
 
-func (o *ListRunbooksRequest) GetOrderDirection() *OrderDirection {
-	if o == nil {
+func (l *ListRunbooksRequest) GetOrderDirection() *OrderDirection {
+	if l == nil {
 		return nil
 	}
-	return o.OrderDirection
+	return l.OrderDirection
 }

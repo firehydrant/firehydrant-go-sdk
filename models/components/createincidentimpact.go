@@ -8,16 +8,16 @@ type CreateIncidentImpact struct {
 	ConditionID *string `json:"condition_id,omitempty"`
 }
 
-func (o *CreateIncidentImpact) GetID() string {
-	if o == nil {
+func (c *CreateIncidentImpact) GetID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ID
+	return c.ID
 }
 
-func (o *CreateIncidentImpact) GetConditionID() *string {
-	if o == nil {
+func (c *CreateIncidentImpact) GetConditionID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ConditionID
+	return c.ConditionID
 }

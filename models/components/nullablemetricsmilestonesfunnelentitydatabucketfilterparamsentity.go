@@ -26,16 +26,16 @@ func (n *NullableMetricsMilestonesFunnelEntityDataBucketFilterParamsEntity) Unma
 	return nil
 }
 
-func (o *NullableMetricsMilestonesFunnelEntityDataBucketFilterParamsEntity) GetStartDate() *time.Time {
-	if o == nil {
+func (n *NullableMetricsMilestonesFunnelEntityDataBucketFilterParamsEntity) GetStartDate() *time.Time {
+	if n == nil {
 		return nil
 	}
-	return o.StartDate
+	return n.StartDate
 }
 
-func (o *NullableMetricsMilestonesFunnelEntityDataBucketFilterParamsEntity) GetEndDate() *types.Date {
-	if o == nil {
+func (n *NullableMetricsMilestonesFunnelEntityDataBucketFilterParamsEntity) GetEndDate() *types.Date {
+	if n == nil {
 		return nil
 	}
-	return o.EndDate
+	return n.EndDate
 }

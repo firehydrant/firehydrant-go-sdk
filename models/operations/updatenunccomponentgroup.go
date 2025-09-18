@@ -8,25 +8,25 @@ type UpdateNuncComponentGroupRequestBody struct {
 	Position         *int    `json:"position,omitempty"`
 }
 
-func (o *UpdateNuncComponentGroupRequestBody) GetName() *string {
-	if o == nil {
+func (u *UpdateNuncComponentGroupRequestBody) GetName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Name
+	return u.Name
 }
 
-func (o *UpdateNuncComponentGroupRequestBody) GetComponentGroupID() *string {
-	if o == nil {
+func (u *UpdateNuncComponentGroupRequestBody) GetComponentGroupID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.ComponentGroupID
+	return u.ComponentGroupID
 }
 
-func (o *UpdateNuncComponentGroupRequestBody) GetPosition() *int {
-	if o == nil {
+func (u *UpdateNuncComponentGroupRequestBody) GetPosition() *int {
+	if u == nil {
 		return nil
 	}
-	return o.Position
+	return u.Position
 }
 
 type UpdateNuncComponentGroupRequest struct {
@@ -35,23 +35,23 @@ type UpdateNuncComponentGroupRequest struct {
 	RequestBody      *UpdateNuncComponentGroupRequestBody `request:"mediaType=application/json"`
 }
 
-func (o *UpdateNuncComponentGroupRequest) GetNuncConnectionID() string {
-	if o == nil {
+func (u *UpdateNuncComponentGroupRequest) GetNuncConnectionID() string {
+	if u == nil {
 		return ""
 	}
-	return o.NuncConnectionID
+	return u.NuncConnectionID
 }
 
-func (o *UpdateNuncComponentGroupRequest) GetGroupID() string {
-	if o == nil {
+func (u *UpdateNuncComponentGroupRequest) GetGroupID() string {
+	if u == nil {
 		return ""
 	}
-	return o.GroupID
+	return u.GroupID
 }
 
-func (o *UpdateNuncComponentGroupRequest) GetRequestBody() *UpdateNuncComponentGroupRequestBody {
-	if o == nil {
+func (u *UpdateNuncComponentGroupRequest) GetRequestBody() *UpdateNuncComponentGroupRequestBody {
+	if u == nil {
 		return nil
 	}
-	return o.RequestBody
+	return u.RequestBody
 }

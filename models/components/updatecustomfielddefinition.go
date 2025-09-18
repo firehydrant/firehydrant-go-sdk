@@ -12,37 +12,37 @@ type UpdateCustomFieldDefinition struct {
 	RequiredAtMilestoneID *string `json:"required_at_milestone_id,omitempty"`
 }
 
-func (o *UpdateCustomFieldDefinition) GetDescription() *string {
-	if o == nil {
+func (u *UpdateCustomFieldDefinition) GetDescription() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Description
+	return u.Description
 }
 
-func (o *UpdateCustomFieldDefinition) GetDisplayName() *string {
-	if o == nil {
+func (u *UpdateCustomFieldDefinition) GetDisplayName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.DisplayName
+	return u.DisplayName
 }
 
-func (o *UpdateCustomFieldDefinition) GetPermissibleValues() []string {
-	if o == nil {
+func (u *UpdateCustomFieldDefinition) GetPermissibleValues() []string {
+	if u == nil {
 		return nil
 	}
-	return o.PermissibleValues
+	return u.PermissibleValues
 }
 
-func (o *UpdateCustomFieldDefinition) GetRequired() *bool {
-	if o == nil {
+func (u *UpdateCustomFieldDefinition) GetRequired() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.Required
+	return u.Required
 }
 
-func (o *UpdateCustomFieldDefinition) GetRequiredAtMilestoneID() *string {
-	if o == nil {
+func (u *UpdateCustomFieldDefinition) GetRequiredAtMilestoneID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.RequiredAtMilestoneID
+	return u.RequiredAtMilestoneID
 }

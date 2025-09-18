@@ -12,23 +12,23 @@ type UpdateIncidentNoteRequest struct {
 	UpdateIncidentNote components.UpdateIncidentNote `request:"mediaType=application/json"`
 }
 
-func (o *UpdateIncidentNoteRequest) GetNoteID() string {
-	if o == nil {
+func (u *UpdateIncidentNoteRequest) GetNoteID() string {
+	if u == nil {
 		return ""
 	}
-	return o.NoteID
+	return u.NoteID
 }
 
-func (o *UpdateIncidentNoteRequest) GetIncidentID() string {
-	if o == nil {
+func (u *UpdateIncidentNoteRequest) GetIncidentID() string {
+	if u == nil {
 		return ""
 	}
-	return o.IncidentID
+	return u.IncidentID
 }
 
-func (o *UpdateIncidentNoteRequest) GetUpdateIncidentNote() components.UpdateIncidentNote {
-	if o == nil {
+func (u *UpdateIncidentNoteRequest) GetUpdateIncidentNote() components.UpdateIncidentNote {
+	if u == nil {
 		return components.UpdateIncidentNote{}
 	}
-	return o.UpdateIncidentNote
+	return u.UpdateIncidentNote
 }

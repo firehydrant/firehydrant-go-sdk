@@ -8,16 +8,16 @@ type ServiceLinkEntity struct {
 	Service    *NullableServiceEntity `json:"service,omitempty"`
 }
 
-func (o *ServiceLinkEntity) GetStatusCode() *int {
-	if o == nil {
+func (s *ServiceLinkEntity) GetStatusCode() *int {
+	if s == nil {
 		return nil
 	}
-	return o.StatusCode
+	return s.StatusCode
 }
 
-func (o *ServiceLinkEntity) GetService() *NullableServiceEntity {
-	if o == nil {
+func (s *ServiceLinkEntity) GetService() *NullableServiceEntity {
+	if s == nil {
 		return nil
 	}
-	return o.Service
+	return s.Service
 }

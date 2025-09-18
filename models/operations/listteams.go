@@ -17,51 +17,51 @@ type ListTeamsRequest struct {
 	Lite *bool `queryParam:"style=form,explode=true,name=lite"`
 }
 
-func (o *ListTeamsRequest) GetPage() *int {
-	if o == nil {
+func (l *ListTeamsRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListTeamsRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListTeamsRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }
 
-func (o *ListTeamsRequest) GetQuery() *string {
-	if o == nil {
+func (l *ListTeamsRequest) GetQuery() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Query
+	return l.Query
 }
 
-func (o *ListTeamsRequest) GetName() *string {
-	if o == nil {
+func (l *ListTeamsRequest) GetName() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Name
+	return l.Name
 }
 
-func (o *ListTeamsRequest) GetServices() *string {
-	if o == nil {
+func (l *ListTeamsRequest) GetServices() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Services
+	return l.Services
 }
 
-func (o *ListTeamsRequest) GetDefaultIncidentRole() *string {
-	if o == nil {
+func (l *ListTeamsRequest) GetDefaultIncidentRole() *string {
+	if l == nil {
 		return nil
 	}
-	return o.DefaultIncidentRole
+	return l.DefaultIncidentRole
 }
 
-func (o *ListTeamsRequest) GetLite() *bool {
-	if o == nil {
+func (l *ListTeamsRequest) GetLite() *bool {
+	if l == nil {
 		return nil
 	}
-	return o.Lite
+	return l.Lite
 }

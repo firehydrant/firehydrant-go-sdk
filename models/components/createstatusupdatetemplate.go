@@ -8,16 +8,16 @@ type CreateStatusUpdateTemplate struct {
 	Body string `json:"body"`
 }
 
-func (o *CreateStatusUpdateTemplate) GetName() string {
-	if o == nil {
+func (c *CreateStatusUpdateTemplate) GetName() string {
+	if c == nil {
 		return ""
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CreateStatusUpdateTemplate) GetBody() string {
-	if o == nil {
+func (c *CreateStatusUpdateTemplate) GetBody() string {
+	if c == nil {
 		return ""
 	}
-	return o.Body
+	return c.Body
 }

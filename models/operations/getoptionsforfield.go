@@ -7,16 +7,16 @@ type GetOptionsForFieldRequest struct {
 	TicketingProjectID string `pathParam:"style=simple,explode=false,name=ticketing_project_id"`
 }
 
-func (o *GetOptionsForFieldRequest) GetFieldID() string {
-	if o == nil {
+func (g *GetOptionsForFieldRequest) GetFieldID() string {
+	if g == nil {
 		return ""
 	}
-	return o.FieldID
+	return g.FieldID
 }
 
-func (o *GetOptionsForFieldRequest) GetTicketingProjectID() string {
-	if o == nil {
+func (g *GetOptionsForFieldRequest) GetTicketingProjectID() string {
+	if g == nil {
 		return ""
 	}
-	return o.TicketingProjectID
+	return g.TicketingProjectID
 }

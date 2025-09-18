@@ -56,30 +56,30 @@ type CreateSeverity struct {
 	Color       *CreateSeverityColor `json:"color,omitempty"`
 }
 
-func (o *CreateSeverity) GetSlug() string {
-	if o == nil {
+func (c *CreateSeverity) GetSlug() string {
+	if c == nil {
 		return ""
 	}
-	return o.Slug
+	return c.Slug
 }
 
-func (o *CreateSeverity) GetDescription() *string {
-	if o == nil {
+func (c *CreateSeverity) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *CreateSeverity) GetPosition() *int {
-	if o == nil {
+func (c *CreateSeverity) GetPosition() *int {
+	if c == nil {
 		return nil
 	}
-	return o.Position
+	return c.Position
 }
 
-func (o *CreateSeverity) GetColor() *CreateSeverityColor {
-	if o == nil {
+func (c *CreateSeverity) GetColor() *CreateSeverityColor {
+	if c == nil {
 		return nil
 	}
-	return o.Color
+	return c.Color
 }

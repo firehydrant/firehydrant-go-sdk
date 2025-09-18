@@ -7,16 +7,16 @@ type GetTicketingProjectConfigRequest struct {
 	ConfigID           string `pathParam:"style=simple,explode=false,name=config_id"`
 }
 
-func (o *GetTicketingProjectConfigRequest) GetTicketingProjectID() string {
-	if o == nil {
+func (g *GetTicketingProjectConfigRequest) GetTicketingProjectID() string {
+	if g == nil {
 		return ""
 	}
-	return o.TicketingProjectID
+	return g.TicketingProjectID
 }
 
-func (o *GetTicketingProjectConfigRequest) GetConfigID() string {
-	if o == nil {
+func (g *GetTicketingProjectConfigRequest) GetConfigID() string {
+	if g == nil {
 		return ""
 	}
-	return o.ConfigID
+	return g.ConfigID
 }

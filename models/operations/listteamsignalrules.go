@@ -10,30 +10,30 @@ type ListTeamSignalRulesRequest struct {
 	PerPage *int    `queryParam:"style=form,explode=true,name=per_page"`
 }
 
-func (o *ListTeamSignalRulesRequest) GetTeamID() string {
-	if o == nil {
+func (l *ListTeamSignalRulesRequest) GetTeamID() string {
+	if l == nil {
 		return ""
 	}
-	return o.TeamID
+	return l.TeamID
 }
 
-func (o *ListTeamSignalRulesRequest) GetQuery() *string {
-	if o == nil {
+func (l *ListTeamSignalRulesRequest) GetQuery() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Query
+	return l.Query
 }
 
-func (o *ListTeamSignalRulesRequest) GetPage() *int {
-	if o == nil {
+func (l *ListTeamSignalRulesRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListTeamSignalRulesRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListTeamSignalRulesRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }

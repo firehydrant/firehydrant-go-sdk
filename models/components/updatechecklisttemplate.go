@@ -11,25 +11,25 @@ type UpdateChecklistTemplateCheck struct {
 	Name string `json:"name"`
 }
 
-func (o *UpdateChecklistTemplateCheck) GetID() *string {
-	if o == nil {
+func (u *UpdateChecklistTemplateCheck) GetID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.ID
+	return u.ID
 }
 
-func (o *UpdateChecklistTemplateCheck) GetDescription() *string {
-	if o == nil {
+func (u *UpdateChecklistTemplateCheck) GetDescription() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Description
+	return u.Description
 }
 
-func (o *UpdateChecklistTemplateCheck) GetName() string {
-	if o == nil {
+func (u *UpdateChecklistTemplateCheck) GetName() string {
+	if u == nil {
 		return ""
 	}
-	return o.Name
+	return u.Name
 }
 
 type UpdateChecklistTemplateConnectedService struct {
@@ -38,18 +38,18 @@ type UpdateChecklistTemplateConnectedService struct {
 	Remove *bool `json:"remove,omitempty"`
 }
 
-func (o *UpdateChecklistTemplateConnectedService) GetID() string {
-	if o == nil {
+func (u *UpdateChecklistTemplateConnectedService) GetID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ID
+	return u.ID
 }
 
-func (o *UpdateChecklistTemplateConnectedService) GetRemove() *bool {
-	if o == nil {
+func (u *UpdateChecklistTemplateConnectedService) GetRemove() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.Remove
+	return u.Remove
 }
 
 // UpdateChecklistTemplate - Update a checklist templates attributes
@@ -66,44 +66,44 @@ type UpdateChecklistTemplate struct {
 	RemoveRemainingConnectedServices *bool `json:"remove_remaining_connected_services,omitempty"`
 }
 
-func (o *UpdateChecklistTemplate) GetName() *string {
-	if o == nil {
+func (u *UpdateChecklistTemplate) GetName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Name
+	return u.Name
 }
 
-func (o *UpdateChecklistTemplate) GetDescription() *string {
-	if o == nil {
+func (u *UpdateChecklistTemplate) GetDescription() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Description
+	return u.Description
 }
 
-func (o *UpdateChecklistTemplate) GetChecks() []UpdateChecklistTemplateCheck {
-	if o == nil {
+func (u *UpdateChecklistTemplate) GetChecks() []UpdateChecklistTemplateCheck {
+	if u == nil {
 		return nil
 	}
-	return o.Checks
+	return u.Checks
 }
 
-func (o *UpdateChecklistTemplate) GetTeamID() *string {
-	if o == nil {
+func (u *UpdateChecklistTemplate) GetTeamID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.TeamID
+	return u.TeamID
 }
 
-func (o *UpdateChecklistTemplate) GetConnectedServices() []UpdateChecklistTemplateConnectedService {
-	if o == nil {
+func (u *UpdateChecklistTemplate) GetConnectedServices() []UpdateChecklistTemplateConnectedService {
+	if u == nil {
 		return nil
 	}
-	return o.ConnectedServices
+	return u.ConnectedServices
 }
 
-func (o *UpdateChecklistTemplate) GetRemoveRemainingConnectedServices() *bool {
-	if o == nil {
+func (u *UpdateChecklistTemplate) GetRemoveRemainingConnectedServices() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.RemoveRemainingConnectedServices
+	return u.RemoveRemainingConnectedServices
 }

@@ -48,23 +48,23 @@ type CreateIncidentChangeEvent struct {
 	Why *string `json:"why,omitempty"`
 }
 
-func (o *CreateIncidentChangeEvent) GetChangeEventID() string {
-	if o == nil {
+func (c *CreateIncidentChangeEvent) GetChangeEventID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ChangeEventID
+	return c.ChangeEventID
 }
 
-func (o *CreateIncidentChangeEvent) GetType() CreateIncidentChangeEventType {
-	if o == nil {
+func (c *CreateIncidentChangeEvent) GetType() CreateIncidentChangeEventType {
+	if c == nil {
 		return CreateIncidentChangeEventType("")
 	}
-	return o.Type
+	return c.Type
 }
 
-func (o *CreateIncidentChangeEvent) GetWhy() *string {
-	if o == nil {
+func (c *CreateIncidentChangeEvent) GetWhy() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Why
+	return c.Why
 }

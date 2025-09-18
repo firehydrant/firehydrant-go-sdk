@@ -54,51 +54,51 @@ type CreateLifecycleMilestoneRequest struct {
 	AutoAssignTimestampOnCreate *CreateLifecycleMilestoneAutoAssignTimestampOnCreate `json:"auto_assign_timestamp_on_create,omitempty"`
 }
 
-func (o *CreateLifecycleMilestoneRequest) GetName() string {
-	if o == nil {
+func (c *CreateLifecycleMilestoneRequest) GetName() string {
+	if c == nil {
 		return ""
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CreateLifecycleMilestoneRequest) GetDescription() string {
-	if o == nil {
+func (c *CreateLifecycleMilestoneRequest) GetDescription() string {
+	if c == nil {
 		return ""
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *CreateLifecycleMilestoneRequest) GetSlug() *string {
-	if o == nil {
+func (c *CreateLifecycleMilestoneRequest) GetSlug() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Slug
+	return c.Slug
 }
 
-func (o *CreateLifecycleMilestoneRequest) GetPhaseID() string {
-	if o == nil {
+func (c *CreateLifecycleMilestoneRequest) GetPhaseID() string {
+	if c == nil {
 		return ""
 	}
-	return o.PhaseID
+	return c.PhaseID
 }
 
-func (o *CreateLifecycleMilestoneRequest) GetPosition() *int {
-	if o == nil {
+func (c *CreateLifecycleMilestoneRequest) GetPosition() *int {
+	if c == nil {
 		return nil
 	}
-	return o.Position
+	return c.Position
 }
 
-func (o *CreateLifecycleMilestoneRequest) GetRequiredAtMilestoneID() *string {
-	if o == nil {
+func (c *CreateLifecycleMilestoneRequest) GetRequiredAtMilestoneID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.RequiredAtMilestoneID
+	return c.RequiredAtMilestoneID
 }
 
-func (o *CreateLifecycleMilestoneRequest) GetAutoAssignTimestampOnCreate() *CreateLifecycleMilestoneAutoAssignTimestampOnCreate {
-	if o == nil {
+func (c *CreateLifecycleMilestoneRequest) GetAutoAssignTimestampOnCreate() *CreateLifecycleMilestoneAutoAssignTimestampOnCreate {
+	if c == nil {
 		return nil
 	}
-	return o.AutoAssignTimestampOnCreate
+	return c.AutoAssignTimestampOnCreate
 }

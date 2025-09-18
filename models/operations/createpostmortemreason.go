@@ -11,16 +11,16 @@ type CreatePostMortemReasonRequest struct {
 	CreatePostMortemReason components.CreatePostMortemReason `request:"mediaType=application/json"`
 }
 
-func (o *CreatePostMortemReasonRequest) GetReportID() string {
-	if o == nil {
+func (c *CreatePostMortemReasonRequest) GetReportID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ReportID
+	return c.ReportID
 }
 
-func (o *CreatePostMortemReasonRequest) GetCreatePostMortemReason() components.CreatePostMortemReason {
-	if o == nil {
+func (c *CreatePostMortemReasonRequest) GetCreatePostMortemReason() components.CreatePostMortemReason {
+	if c == nil {
 		return components.CreatePostMortemReason{}
 	}
-	return o.CreatePostMortemReason
+	return c.CreatePostMortemReason
 }

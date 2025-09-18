@@ -13,30 +13,30 @@ type UpdateIncidentRetrospectiveFieldRequest struct {
 	UpdateIncidentRetrospectiveField components.UpdateIncidentRetrospectiveField `request:"mediaType=application/json"`
 }
 
-func (o *UpdateIncidentRetrospectiveFieldRequest) GetRetrospectiveID() string {
-	if o == nil {
+func (u *UpdateIncidentRetrospectiveFieldRequest) GetRetrospectiveID() string {
+	if u == nil {
 		return ""
 	}
-	return o.RetrospectiveID
+	return u.RetrospectiveID
 }
 
-func (o *UpdateIncidentRetrospectiveFieldRequest) GetFieldID() string {
-	if o == nil {
+func (u *UpdateIncidentRetrospectiveFieldRequest) GetFieldID() string {
+	if u == nil {
 		return ""
 	}
-	return o.FieldID
+	return u.FieldID
 }
 
-func (o *UpdateIncidentRetrospectiveFieldRequest) GetIncidentID() string {
-	if o == nil {
+func (u *UpdateIncidentRetrospectiveFieldRequest) GetIncidentID() string {
+	if u == nil {
 		return ""
 	}
-	return o.IncidentID
+	return u.IncidentID
 }
 
-func (o *UpdateIncidentRetrospectiveFieldRequest) GetUpdateIncidentRetrospectiveField() components.UpdateIncidentRetrospectiveField {
-	if o == nil {
+func (u *UpdateIncidentRetrospectiveFieldRequest) GetUpdateIncidentRetrospectiveField() components.UpdateIncidentRetrospectiveField {
+	if u == nil {
 		return components.UpdateIncidentRetrospectiveField{}
 	}
-	return o.UpdateIncidentRetrospectiveField
+	return u.UpdateIncidentRetrospectiveField
 }

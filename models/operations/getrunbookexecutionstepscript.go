@@ -7,16 +7,16 @@ type GetRunbookExecutionStepScriptRequest struct {
 	StepID      string `pathParam:"style=simple,explode=false,name=step_id"`
 }
 
-func (o *GetRunbookExecutionStepScriptRequest) GetExecutionID() string {
-	if o == nil {
+func (g *GetRunbookExecutionStepScriptRequest) GetExecutionID() string {
+	if g == nil {
 		return ""
 	}
-	return o.ExecutionID
+	return g.ExecutionID
 }
 
-func (o *GetRunbookExecutionStepScriptRequest) GetStepID() string {
-	if o == nil {
+func (g *GetRunbookExecutionStepScriptRequest) GetStepID() string {
+	if g == nil {
 		return ""
 	}
-	return o.StepID
+	return g.StepID
 }

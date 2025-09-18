@@ -47,135 +47,135 @@ func (n *NullableRunbooksExecutionStepEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *NullableRunbooksExecutionStepEntity) GetID() *string {
-	if o == nil {
+func (n *NullableRunbooksExecutionStepEntity) GetID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ID
+	return n.ID
 }
 
-func (o *NullableRunbooksExecutionStepEntity) GetName() *string {
-	if o == nil {
+func (n *NullableRunbooksExecutionStepEntity) GetName() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Name
+	return n.Name
 }
 
-func (o *NullableRunbooksExecutionStepEntity) GetActionSlug() *string {
-	if o == nil {
+func (n *NullableRunbooksExecutionStepEntity) GetActionSlug() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ActionSlug
+	return n.ActionSlug
 }
 
-func (o *NullableRunbooksExecutionStepEntity) GetActionType() *string {
-	if o == nil {
+func (n *NullableRunbooksExecutionStepEntity) GetActionType() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ActionType
+	return n.ActionType
 }
 
-func (o *NullableRunbooksExecutionStepEntity) GetIntegrationName() *string {
-	if o == nil {
+func (n *NullableRunbooksExecutionStepEntity) GetIntegrationName() *string {
+	if n == nil {
 		return nil
 	}
-	return o.IntegrationName
+	return n.IntegrationName
 }
 
-func (o *NullableRunbooksExecutionStepEntity) GetIntegrationSlug() *string {
-	if o == nil {
+func (n *NullableRunbooksExecutionStepEntity) GetIntegrationSlug() *string {
+	if n == nil {
 		return nil
 	}
-	return o.IntegrationSlug
+	return n.IntegrationSlug
 }
 
-func (o *NullableRunbooksExecutionStepEntity) GetAutomatic() *bool {
-	if o == nil {
+func (n *NullableRunbooksExecutionStepEntity) GetAutomatic() *bool {
+	if n == nil {
 		return nil
 	}
-	return o.Automatic
+	return n.Automatic
 }
 
-func (o *NullableRunbooksExecutionStepEntity) GetConfig() *NullableRunbooksExecutionStepEntityConfig {
-	if o == nil {
+func (n *NullableRunbooksExecutionStepEntity) GetConfig() *NullableRunbooksExecutionStepEntityConfig {
+	if n == nil {
 		return nil
 	}
-	return o.Config
+	return n.Config
 }
 
-func (o *NullableRunbooksExecutionStepEntity) GetStepElements() []NullableRunbooksExecutionStepEntityStepElement {
-	if o == nil {
+func (n *NullableRunbooksExecutionStepEntity) GetStepElements() []NullableRunbooksExecutionStepEntityStepElement {
+	if n == nil {
 		return nil
 	}
-	return o.StepElements
+	return n.StepElements
 }
 
-func (o *NullableRunbooksExecutionStepEntity) GetExecutable() *bool {
-	if o == nil {
+func (n *NullableRunbooksExecutionStepEntity) GetExecutable() *bool {
+	if n == nil {
 		return nil
 	}
-	return o.Executable
+	return n.Executable
 }
 
-func (o *NullableRunbooksExecutionStepEntity) GetRepeats() *bool {
-	if o == nil {
+func (n *NullableRunbooksExecutionStepEntity) GetRepeats() *bool {
+	if n == nil {
 		return nil
 	}
-	return o.Repeats
+	return n.Repeats
 }
 
-func (o *NullableRunbooksExecutionStepEntity) GetRepeatsDuration() *string {
-	if o == nil {
+func (n *NullableRunbooksExecutionStepEntity) GetRepeatsDuration() *string {
+	if n == nil {
 		return nil
 	}
-	return o.RepeatsDuration
+	return n.RepeatsDuration
 }
 
-func (o *NullableRunbooksExecutionStepEntity) GetRepeatsAt() *time.Time {
-	if o == nil {
+func (n *NullableRunbooksExecutionStepEntity) GetRepeatsAt() *time.Time {
+	if n == nil {
 		return nil
 	}
-	return o.RepeatsAt
+	return n.RepeatsAt
 }
 
-func (o *NullableRunbooksExecutionStepEntity) GetHasBeenRerun() *bool {
-	if o == nil {
+func (n *NullableRunbooksExecutionStepEntity) GetHasBeenRerun() *bool {
+	if n == nil {
 		return nil
 	}
-	return o.HasBeenRerun
+	return n.HasBeenRerun
 }
 
-func (o *NullableRunbooksExecutionStepEntity) GetHasBeenRetried() *bool {
-	if o == nil {
+func (n *NullableRunbooksExecutionStepEntity) GetHasBeenRetried() *bool {
+	if n == nil {
 		return nil
 	}
-	return o.HasBeenRetried
+	return n.HasBeenRetried
 }
 
-func (o *NullableRunbooksExecutionStepEntity) GetExecution() *NullableRunbooksExecutionStepExecutionEntity {
-	if o == nil {
+func (n *NullableRunbooksExecutionStepEntity) GetExecution() *NullableRunbooksExecutionStepExecutionEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Execution
+	return n.Execution
 }
 
-func (o *NullableRunbooksExecutionStepEntity) GetRepeatable() *bool {
-	if o == nil {
+func (n *NullableRunbooksExecutionStepEntity) GetRepeatable() *bool {
+	if n == nil {
 		return nil
 	}
-	return o.Repeatable
+	return n.Repeatable
 }
 
-func (o *NullableRunbooksExecutionStepEntity) GetConferenceBridge() *NullableIncidentsConferenceBridgeEntity {
-	if o == nil {
+func (n *NullableRunbooksExecutionStepEntity) GetConferenceBridge() *NullableIncidentsConferenceBridgeEntity {
+	if n == nil {
 		return nil
 	}
-	return o.ConferenceBridge
+	return n.ConferenceBridge
 }
 
-func (o *NullableRunbooksExecutionStepEntity) GetRule() *NullableRulesRuleEntity {
-	if o == nil {
+func (n *NullableRunbooksExecutionStepEntity) GetRule() *NullableRulesRuleEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Rule
+	return n.Rule
 }

@@ -9,30 +9,30 @@ type SearchZendeskTicketsRequest struct {
 	PerPage      *int   `queryParam:"style=form,explode=true,name=per_page"`
 }
 
-func (o *SearchZendeskTicketsRequest) GetConnectionID() string {
-	if o == nil {
+func (s *SearchZendeskTicketsRequest) GetConnectionID() string {
+	if s == nil {
 		return ""
 	}
-	return o.ConnectionID
+	return s.ConnectionID
 }
 
-func (o *SearchZendeskTicketsRequest) GetQuery() string {
-	if o == nil {
+func (s *SearchZendeskTicketsRequest) GetQuery() string {
+	if s == nil {
 		return ""
 	}
-	return o.Query
+	return s.Query
 }
 
-func (o *SearchZendeskTicketsRequest) GetPage() *int {
-	if o == nil {
+func (s *SearchZendeskTicketsRequest) GetPage() *int {
+	if s == nil {
 		return nil
 	}
-	return o.Page
+	return s.Page
 }
 
-func (o *SearchZendeskTicketsRequest) GetPerPage() *int {
-	if o == nil {
+func (s *SearchZendeskTicketsRequest) GetPerPage() *int {
+	if s == nil {
 		return nil
 	}
-	return o.PerPage
+	return s.PerPage
 }

@@ -9,30 +9,30 @@ type SeverityMatrixItemEntity struct {
 	ImpactType  *string `json:"impact_type,omitempty"`
 }
 
-func (o *SeverityMatrixItemEntity) GetSeverity() *string {
-	if o == nil {
+func (s *SeverityMatrixItemEntity) GetSeverity() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Severity
+	return s.Severity
 }
 
-func (o *SeverityMatrixItemEntity) GetConditionID() *string {
-	if o == nil {
+func (s *SeverityMatrixItemEntity) GetConditionID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ConditionID
+	return s.ConditionID
 }
 
-func (o *SeverityMatrixItemEntity) GetImpactID() *string {
-	if o == nil {
+func (s *SeverityMatrixItemEntity) GetImpactID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ImpactID
+	return s.ImpactID
 }
 
-func (o *SeverityMatrixItemEntity) GetImpactType() *string {
-	if o == nil {
+func (s *SeverityMatrixItemEntity) GetImpactType() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ImpactType
+	return s.ImpactType
 }

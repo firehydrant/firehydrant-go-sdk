@@ -70,65 +70,65 @@ func (i *IntegrationsConnectionStatusEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *IntegrationsConnectionStatusEntity) GetCheckedAt() *time.Time {
-	if o == nil {
+func (i *IntegrationsConnectionStatusEntity) GetCheckedAt() *time.Time {
+	if i == nil {
 		return nil
 	}
-	return o.CheckedAt
+	return i.CheckedAt
 }
 
-func (o *IntegrationsConnectionStatusEntity) GetStatus() *IntegrationsConnectionStatusEntityStatus {
-	if o == nil {
+func (i *IntegrationsConnectionStatusEntity) GetStatus() *IntegrationsConnectionStatusEntityStatus {
+	if i == nil {
 		return nil
 	}
-	return o.Status
+	return i.Status
 }
 
-func (o *IntegrationsConnectionStatusEntity) GetMessage() *string {
-	if o == nil {
+func (i *IntegrationsConnectionStatusEntity) GetMessage() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Message
+	return i.Message
 }
 
-func (o *IntegrationsConnectionStatusEntity) GetCheckType() *string {
-	if o == nil {
+func (i *IntegrationsConnectionStatusEntity) GetCheckType() *string {
+	if i == nil {
 		return nil
 	}
-	return o.CheckType
+	return i.CheckType
 }
 
-func (o *IntegrationsConnectionStatusEntity) GetErrorType() *string {
-	if o == nil {
+func (i *IntegrationsConnectionStatusEntity) GetErrorType() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ErrorType
+	return i.ErrorType
 }
 
-func (o *IntegrationsConnectionStatusEntity) GetIntegrationSlug() *string {
-	if o == nil {
+func (i *IntegrationsConnectionStatusEntity) GetIntegrationSlug() *string {
+	if i == nil {
 		return nil
 	}
-	return o.IntegrationSlug
+	return i.IntegrationSlug
 }
 
-func (o *IntegrationsConnectionStatusEntity) GetConnectionID() *string {
-	if o == nil {
+func (i *IntegrationsConnectionStatusEntity) GetConnectionID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ConnectionID
+	return i.ConnectionID
 }
 
-func (o *IntegrationsConnectionStatusEntity) GetData() *IntegrationsConnectionStatusEntityData {
-	if o == nil {
+func (i *IntegrationsConnectionStatusEntity) GetData() *IntegrationsConnectionStatusEntityData {
+	if i == nil {
 		return nil
 	}
-	return o.Data
+	return i.Data
 }
 
-func (o *IntegrationsConnectionStatusEntity) GetPerformedBy() *NullableAuthorEntity {
-	if o == nil {
+func (i *IntegrationsConnectionStatusEntity) GetPerformedBy() *NullableAuthorEntity {
+	if i == nil {
 		return nil
 	}
-	return o.PerformedBy
+	return i.PerformedBy
 }

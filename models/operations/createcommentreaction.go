@@ -12,23 +12,23 @@ type CreateCommentReactionRequest struct {
 	CreateCommentReaction components.CreateCommentReaction `request:"mediaType=application/json"`
 }
 
-func (o *CreateCommentReactionRequest) GetConversationID() string {
-	if o == nil {
+func (c *CreateCommentReactionRequest) GetConversationID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ConversationID
+	return c.ConversationID
 }
 
-func (o *CreateCommentReactionRequest) GetCommentID() string {
-	if o == nil {
+func (c *CreateCommentReactionRequest) GetCommentID() string {
+	if c == nil {
 		return ""
 	}
-	return o.CommentID
+	return c.CommentID
 }
 
-func (o *CreateCommentReactionRequest) GetCreateCommentReaction() components.CreateCommentReaction {
-	if o == nil {
+func (c *CreateCommentReactionRequest) GetCreateCommentReaction() components.CreateCommentReaction {
+	if c == nil {
 		return components.CreateCommentReaction{}
 	}
-	return o.CreateCommentReaction
+	return c.CreateCommentReaction
 }

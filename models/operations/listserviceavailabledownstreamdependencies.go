@@ -6,9 +6,9 @@ type ListServiceAvailableDownstreamDependenciesRequest struct {
 	ServiceID string `pathParam:"style=simple,explode=false,name=service_id"`
 }
 
-func (o *ListServiceAvailableDownstreamDependenciesRequest) GetServiceID() string {
-	if o == nil {
+func (l *ListServiceAvailableDownstreamDependenciesRequest) GetServiceID() string {
+	if l == nil {
 		return ""
 	}
-	return o.ServiceID
+	return l.ServiceID
 }

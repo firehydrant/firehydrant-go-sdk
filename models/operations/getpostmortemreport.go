@@ -6,9 +6,9 @@ type GetPostMortemReportRequest struct {
 	ReportID string `pathParam:"style=simple,explode=false,name=report_id"`
 }
 
-func (o *GetPostMortemReportRequest) GetReportID() string {
-	if o == nil {
+func (g *GetPostMortemReportRequest) GetReportID() string {
+	if g == nil {
 		return ""
 	}
-	return o.ReportID
+	return g.ReportID
 }

@@ -32,72 +32,72 @@ func (n *NullableSignalsAPIOnCallShiftEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *NullableSignalsAPIOnCallShiftEntity) GetID() *string {
-	if o == nil {
+func (n *NullableSignalsAPIOnCallShiftEntity) GetID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ID
+	return n.ID
 }
 
-func (o *NullableSignalsAPIOnCallShiftEntity) GetUser() *NullableSuccinctEntity {
-	if o == nil {
+func (n *NullableSignalsAPIOnCallShiftEntity) GetUser() *NullableSuccinctEntity {
+	if n == nil {
 		return nil
 	}
-	return o.User
+	return n.User
 }
 
-func (o *NullableSignalsAPIOnCallShiftEntity) GetCoverageRequest() *string {
-	if o == nil {
+func (n *NullableSignalsAPIOnCallShiftEntity) GetCoverageRequest() *string {
+	if n == nil {
 		return nil
 	}
-	return o.CoverageRequest
+	return n.CoverageRequest
 }
 
-func (o *NullableSignalsAPIOnCallShiftEntity) GetColor() *string {
-	if o == nil {
+func (n *NullableSignalsAPIOnCallShiftEntity) GetColor() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Color
+	return n.Color
 }
 
-func (o *NullableSignalsAPIOnCallShiftEntity) GetTimeZone() *string {
-	if o == nil {
+func (n *NullableSignalsAPIOnCallShiftEntity) GetTimeZone() *string {
+	if n == nil {
 		return nil
 	}
-	return o.TimeZone
+	return n.TimeZone
 }
 
-func (o *NullableSignalsAPIOnCallShiftEntity) GetOnCallSchedule() *NullableSuccinctEntity {
-	if o == nil {
+func (n *NullableSignalsAPIOnCallShiftEntity) GetOnCallSchedule() *NullableSuccinctEntity {
+	if n == nil {
 		return nil
 	}
-	return o.OnCallSchedule
+	return n.OnCallSchedule
 }
 
-func (o *NullableSignalsAPIOnCallShiftEntity) GetOnCallRotation() *NullableSuccinctEntity {
-	if o == nil {
+func (n *NullableSignalsAPIOnCallShiftEntity) GetOnCallRotation() *NullableSuccinctEntity {
+	if n == nil {
 		return nil
 	}
-	return o.OnCallRotation
+	return n.OnCallRotation
 }
 
-func (o *NullableSignalsAPIOnCallShiftEntity) GetTeam() *NullableSuccinctEntity {
-	if o == nil {
+func (n *NullableSignalsAPIOnCallShiftEntity) GetTeam() *NullableSuccinctEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Team
+	return n.Team
 }
 
-func (o *NullableSignalsAPIOnCallShiftEntity) GetStartTime() *time.Time {
-	if o == nil {
+func (n *NullableSignalsAPIOnCallShiftEntity) GetStartTime() *time.Time {
+	if n == nil {
 		return nil
 	}
-	return o.StartTime
+	return n.StartTime
 }
 
-func (o *NullableSignalsAPIOnCallShiftEntity) GetEndTime() *time.Time {
-	if o == nil {
+func (n *NullableSignalsAPIOnCallShiftEntity) GetEndTime() *time.Time {
+	if n == nil {
 		return nil
 	}
-	return o.EndTime
+	return n.EndTime
 }

@@ -12,16 +12,16 @@ type UpdateStatuspageConnectionRequest struct {
 	UpdateStatuspageConnection components.UpdateStatuspageConnection `request:"mediaType=application/json"`
 }
 
-func (o *UpdateStatuspageConnectionRequest) GetConnectionID() string {
-	if o == nil {
+func (u *UpdateStatuspageConnectionRequest) GetConnectionID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ConnectionID
+	return u.ConnectionID
 }
 
-func (o *UpdateStatuspageConnectionRequest) GetUpdateStatuspageConnection() components.UpdateStatuspageConnection {
-	if o == nil {
+func (u *UpdateStatuspageConnectionRequest) GetUpdateStatuspageConnection() components.UpdateStatuspageConnection {
+	if u == nil {
 		return components.UpdateStatuspageConnection{}
 	}
-	return o.UpdateStatuspageConnection
+	return u.UpdateStatuspageConnection
 }

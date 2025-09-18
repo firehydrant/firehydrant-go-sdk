@@ -8,29 +8,29 @@ type UpdateNuncImageFile struct {
 	Content any `multipartForm:"content"`
 }
 
-func (o *UpdateNuncImageFile) GetFileName() string {
-	if o == nil {
+func (u *UpdateNuncImageFile) GetFileName() string {
+	if u == nil {
 		return ""
 	}
-	return o.FileName
+	return u.FileName
 }
 
-func (o *UpdateNuncImageFile) GetContent() any {
-	if o == nil {
+func (u *UpdateNuncImageFile) GetContent() any {
+	if u == nil {
 		return nil
 	}
-	return o.Content
+	return u.Content
 }
 
 type UpdateNuncImageRequestBody struct {
 	File *UpdateNuncImageFile `multipartForm:"file,name=file"`
 }
 
-func (o *UpdateNuncImageRequestBody) GetFile() *UpdateNuncImageFile {
-	if o == nil {
+func (u *UpdateNuncImageRequestBody) GetFile() *UpdateNuncImageFile {
+	if u == nil {
 		return nil
 	}
-	return o.File
+	return u.File
 }
 
 type UpdateNuncImageRequest struct {
@@ -39,23 +39,23 @@ type UpdateNuncImageRequest struct {
 	RequestBody      *UpdateNuncImageRequestBody `request:"mediaType=multipart/form-data"`
 }
 
-func (o *UpdateNuncImageRequest) GetNuncConnectionID() string {
-	if o == nil {
+func (u *UpdateNuncImageRequest) GetNuncConnectionID() string {
+	if u == nil {
 		return ""
 	}
-	return o.NuncConnectionID
+	return u.NuncConnectionID
 }
 
-func (o *UpdateNuncImageRequest) GetType() string {
-	if o == nil {
+func (u *UpdateNuncImageRequest) GetType() string {
+	if u == nil {
 		return ""
 	}
-	return o.Type
+	return u.Type
 }
 
-func (o *UpdateNuncImageRequest) GetRequestBody() *UpdateNuncImageRequestBody {
-	if o == nil {
+func (u *UpdateNuncImageRequest) GetRequestBody() *UpdateNuncImageRequestBody {
+	if u == nil {
 		return nil
 	}
-	return o.RequestBody
+	return u.RequestBody
 }

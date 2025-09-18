@@ -7,16 +7,16 @@ type ListPrioritiesRequest struct {
 	PerPage *int `queryParam:"style=form,explode=true,name=per_page"`
 }
 
-func (o *ListPrioritiesRequest) GetPage() *int {
-	if o == nil {
+func (l *ListPrioritiesRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListPrioritiesRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListPrioritiesRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }

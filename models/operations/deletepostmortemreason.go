@@ -7,16 +7,16 @@ type DeletePostMortemReasonRequest struct {
 	ReasonID string `pathParam:"style=simple,explode=false,name=reason_id"`
 }
 
-func (o *DeletePostMortemReasonRequest) GetReportID() string {
-	if o == nil {
+func (d *DeletePostMortemReasonRequest) GetReportID() string {
+	if d == nil {
 		return ""
 	}
-	return o.ReportID
+	return d.ReportID
 }
 
-func (o *DeletePostMortemReasonRequest) GetReasonID() string {
-	if o == nil {
+func (d *DeletePostMortemReasonRequest) GetReasonID() string {
+	if d == nil {
 		return ""
 	}
-	return o.ReasonID
+	return d.ReasonID
 }

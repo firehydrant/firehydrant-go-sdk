@@ -6,9 +6,9 @@ type GetFunctionalityRequest struct {
 	FunctionalityID string `pathParam:"style=simple,explode=false,name=functionality_id"`
 }
 
-func (o *GetFunctionalityRequest) GetFunctionalityID() string {
-	if o == nil {
+func (g *GetFunctionalityRequest) GetFunctionalityID() string {
+	if g == nil {
 		return ""
 	}
-	return o.FunctionalityID
+	return g.FunctionalityID
 }

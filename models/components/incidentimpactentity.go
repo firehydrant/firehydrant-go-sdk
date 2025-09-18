@@ -9,23 +9,23 @@ type IncidentImpactEntity struct {
 	Infrastructure *NullableSuccinctEntity `json:"infrastructure,omitempty"`
 }
 
-func (o *IncidentImpactEntity) GetID() *string {
-	if o == nil {
+func (i *IncidentImpactEntity) GetID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ID
+	return i.ID
 }
 
-func (o *IncidentImpactEntity) GetType() *string {
-	if o == nil {
+func (i *IncidentImpactEntity) GetType() *string {
+	if i == nil {
 		return nil
 	}
-	return o.Type
+	return i.Type
 }
 
-func (o *IncidentImpactEntity) GetInfrastructure() *NullableSuccinctEntity {
-	if o == nil {
+func (i *IncidentImpactEntity) GetInfrastructure() *NullableSuccinctEntity {
+	if i == nil {
 		return nil
 	}
-	return o.Infrastructure
+	return i.Infrastructure
 }

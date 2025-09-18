@@ -38,79 +38,79 @@ func (i *IntegrationsConnectionEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *IntegrationsConnectionEntity) GetID() *string {
-	if o == nil {
+func (i *IntegrationsConnectionEntity) GetID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ID
+	return i.ID
 }
 
-func (o *IntegrationsConnectionEntity) GetIntegrationSlug() *string {
-	if o == nil {
+func (i *IntegrationsConnectionEntity) GetIntegrationSlug() *string {
+	if i == nil {
 		return nil
 	}
-	return o.IntegrationSlug
+	return i.IntegrationSlug
 }
 
-func (o *IntegrationsConnectionEntity) GetIntegrationID() *string {
-	if o == nil {
+func (i *IntegrationsConnectionEntity) GetIntegrationID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.IntegrationID
+	return i.IntegrationID
 }
 
-func (o *IntegrationsConnectionEntity) GetDisplayName() *string {
-	if o == nil {
+func (i *IntegrationsConnectionEntity) GetDisplayName() *string {
+	if i == nil {
 		return nil
 	}
-	return o.DisplayName
+	return i.DisplayName
 }
 
-func (o *IntegrationsConnectionEntity) GetConfigurationURL() *string {
-	if o == nil {
+func (i *IntegrationsConnectionEntity) GetConfigurationURL() *string {
+	if i == nil {
 		return nil
 	}
-	return o.ConfigurationURL
+	return i.ConfigurationURL
 }
 
-func (o *IntegrationsConnectionEntity) GetAuthorizedBy() *string {
-	if o == nil {
+func (i *IntegrationsConnectionEntity) GetAuthorizedBy() *string {
+	if i == nil {
 		return nil
 	}
-	return o.AuthorizedBy
+	return i.AuthorizedBy
 }
 
-func (o *IntegrationsConnectionEntity) GetAuthorizedByID() *string {
-	if o == nil {
+func (i *IntegrationsConnectionEntity) GetAuthorizedByID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.AuthorizedByID
+	return i.AuthorizedByID
 }
 
-func (o *IntegrationsConnectionEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (i *IntegrationsConnectionEntity) GetCreatedAt() *time.Time {
+	if i == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return i.CreatedAt
 }
 
-func (o *IntegrationsConnectionEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (i *IntegrationsConnectionEntity) GetUpdatedAt() *time.Time {
+	if i == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return i.UpdatedAt
 }
 
-func (o *IntegrationsConnectionEntity) GetDetails() *IntegrationsConnectionEntityDetails {
-	if o == nil {
+func (i *IntegrationsConnectionEntity) GetDetails() *IntegrationsConnectionEntityDetails {
+	if i == nil {
 		return nil
 	}
-	return o.Details
+	return i.Details
 }
 
-func (o *IntegrationsConnectionEntity) GetDefaultAuthorizedActor() *NullableAuthorEntity {
-	if o == nil {
+func (i *IntegrationsConnectionEntity) GetDefaultAuthorizedActor() *NullableAuthorEntity {
+	if i == nil {
 		return nil
 	}
-	return o.DefaultAuthorizedActor
+	return i.DefaultAuthorizedActor
 }

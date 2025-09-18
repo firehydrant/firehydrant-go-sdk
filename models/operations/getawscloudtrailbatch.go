@@ -6,9 +6,9 @@ type GetAwsCloudtrailBatchRequest struct {
 	ID string `pathParam:"style=simple,explode=false,name=id"`
 }
 
-func (o *GetAwsCloudtrailBatchRequest) GetID() string {
-	if o == nil {
+func (g *GetAwsCloudtrailBatchRequest) GetID() string {
+	if g == nil {
 		return ""
 	}
-	return o.ID
+	return g.ID
 }

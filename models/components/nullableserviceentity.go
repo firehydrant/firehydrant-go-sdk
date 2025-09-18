@@ -63,170 +63,170 @@ func (n *NullableServiceEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *NullableServiceEntity) GetID() *string {
-	if o == nil {
+func (n *NullableServiceEntity) GetID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ID
+	return n.ID
 }
 
-func (o *NullableServiceEntity) GetName() *string {
-	if o == nil {
+func (n *NullableServiceEntity) GetName() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Name
+	return n.Name
 }
 
-func (o *NullableServiceEntity) GetDescription() *string {
-	if o == nil {
+func (n *NullableServiceEntity) GetDescription() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Description
+	return n.Description
 }
 
-func (o *NullableServiceEntity) GetSlug() *string {
-	if o == nil {
+func (n *NullableServiceEntity) GetSlug() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Slug
+	return n.Slug
 }
 
-func (o *NullableServiceEntity) GetServiceTier() *int {
-	if o == nil {
+func (n *NullableServiceEntity) GetServiceTier() *int {
+	if n == nil {
 		return nil
 	}
-	return o.ServiceTier
+	return n.ServiceTier
 }
 
-func (o *NullableServiceEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (n *NullableServiceEntity) GetCreatedAt() *time.Time {
+	if n == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return n.CreatedAt
 }
 
-func (o *NullableServiceEntity) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (n *NullableServiceEntity) GetUpdatedAt() *time.Time {
+	if n == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return n.UpdatedAt
 }
 
-func (o *NullableServiceEntity) GetAllowedParams() []string {
-	if o == nil {
+func (n *NullableServiceEntity) GetAllowedParams() []string {
+	if n == nil {
 		return nil
 	}
-	return o.AllowedParams
+	return n.AllowedParams
 }
 
-func (o *NullableServiceEntity) GetLabels() *NullableServiceEntityLabels {
-	if o == nil {
+func (n *NullableServiceEntity) GetLabels() *NullableServiceEntityLabels {
+	if n == nil {
 		return nil
 	}
-	return o.Labels
+	return n.Labels
 }
 
-func (o *NullableServiceEntity) GetAlertOnAdd() *bool {
-	if o == nil {
+func (n *NullableServiceEntity) GetAlertOnAdd() *bool {
+	if n == nil {
 		return nil
 	}
-	return o.AlertOnAdd
+	return n.AlertOnAdd
 }
 
-func (o *NullableServiceEntity) GetAutoAddRespondingTeam() *bool {
-	if o == nil {
+func (n *NullableServiceEntity) GetAutoAddRespondingTeam() *bool {
+	if n == nil {
 		return nil
 	}
-	return o.AutoAddRespondingTeam
+	return n.AutoAddRespondingTeam
 }
 
-func (o *NullableServiceEntity) GetActiveIncidents() []string {
-	if o == nil {
+func (n *NullableServiceEntity) GetActiveIncidents() []string {
+	if n == nil {
 		return nil
 	}
-	return o.ActiveIncidents
+	return n.ActiveIncidents
 }
 
-func (o *NullableServiceEntity) GetChecklists() []ChecklistTemplateEntity {
-	if o == nil {
+func (n *NullableServiceEntity) GetChecklists() []ChecklistTemplateEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Checklists
+	return n.Checklists
 }
 
-func (o *NullableServiceEntity) GetCompletedChecks() *int {
-	if o == nil {
+func (n *NullableServiceEntity) GetCompletedChecks() *int {
+	if n == nil {
 		return nil
 	}
-	return o.CompletedChecks
+	return n.CompletedChecks
 }
 
-func (o *NullableServiceEntity) GetExternalResources() []ExternalResourceEntity {
-	if o == nil {
+func (n *NullableServiceEntity) GetExternalResources() []ExternalResourceEntity {
+	if n == nil {
 		return nil
 	}
-	return o.ExternalResources
+	return n.ExternalResources
 }
 
-func (o *NullableServiceEntity) GetFunctionalities() []FunctionalityEntity {
-	if o == nil {
+func (n *NullableServiceEntity) GetFunctionalities() []FunctionalityEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Functionalities
+	return n.Functionalities
 }
 
-func (o *NullableServiceEntity) GetLastImport() *NullableImportsImportableResourceEntity {
-	if o == nil {
+func (n *NullableServiceEntity) GetLastImport() *NullableImportsImportableResourceEntity {
+	if n == nil {
 		return nil
 	}
-	return o.LastImport
+	return n.LastImport
 }
 
-func (o *NullableServiceEntity) GetLinks() []LinksEntity {
-	if o == nil {
+func (n *NullableServiceEntity) GetLinks() []LinksEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Links
+	return n.Links
 }
 
-func (o *NullableServiceEntity) GetManagedBy() *string {
-	if o == nil {
+func (n *NullableServiceEntity) GetManagedBy() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ManagedBy
+	return n.ManagedBy
 }
 
-func (o *NullableServiceEntity) GetManagedBySettings() *NullableServiceEntityManagedBySettings {
-	if o == nil {
+func (n *NullableServiceEntity) GetManagedBySettings() *NullableServiceEntityManagedBySettings {
+	if n == nil {
 		return nil
 	}
-	return o.ManagedBySettings
+	return n.ManagedBySettings
 }
 
-func (o *NullableServiceEntity) GetOwner() *NullableTeamEntityLite {
-	if o == nil {
+func (n *NullableServiceEntity) GetOwner() *NullableTeamEntityLite {
+	if n == nil {
 		return nil
 	}
-	return o.Owner
+	return n.Owner
 }
 
-func (o *NullableServiceEntity) GetServiceChecklistUpdatedAt() *time.Time {
-	if o == nil {
+func (n *NullableServiceEntity) GetServiceChecklistUpdatedAt() *time.Time {
+	if n == nil {
 		return nil
 	}
-	return o.ServiceChecklistUpdatedAt
+	return n.ServiceChecklistUpdatedAt
 }
 
-func (o *NullableServiceEntity) GetTeams() []TeamEntityLite {
-	if o == nil {
+func (n *NullableServiceEntity) GetTeams() []TeamEntityLite {
+	if n == nil {
 		return nil
 	}
-	return o.Teams
+	return n.Teams
 }
 
-func (o *NullableServiceEntity) GetUpdatedBy() *NullableAuthorEntity {
-	if o == nil {
+func (n *NullableServiceEntity) GetUpdatedBy() *NullableAuthorEntity {
+	if n == nil {
 		return nil
 	}
-	return o.UpdatedBy
+	return n.UpdatedBy
 }

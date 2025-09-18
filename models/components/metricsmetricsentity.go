@@ -21,51 +21,51 @@ type MetricsMetricsEntity struct {
 	Sort               *NullableMetricsMetricsEntitySortEntity `json:"sort,omitempty"`
 }
 
-func (o *MetricsMetricsEntity) GetType() *string {
-	if o == nil {
+func (m *MetricsMetricsEntity) GetType() *string {
+	if m == nil {
 		return nil
 	}
-	return o.Type
+	return m.Type
 }
 
-func (o *MetricsMetricsEntity) GetBy() *string {
-	if o == nil {
+func (m *MetricsMetricsEntity) GetBy() *string {
+	if m == nil {
 		return nil
 	}
-	return o.By
+	return m.By
 }
 
-func (o *MetricsMetricsEntity) GetBucketSize() *int {
-	if o == nil {
+func (m *MetricsMetricsEntity) GetBucketSize() *int {
+	if m == nil {
 		return nil
 	}
-	return o.BucketSize
+	return m.BucketSize
 }
 
-func (o *MetricsMetricsEntity) GetDisplayInformation() *DisplayInformation {
-	if o == nil {
+func (m *MetricsMetricsEntity) GetDisplayInformation() *DisplayInformation {
+	if m == nil {
 		return nil
 	}
-	return o.DisplayInformation
+	return m.DisplayInformation
 }
 
-func (o *MetricsMetricsEntity) GetKeys() []string {
-	if o == nil {
+func (m *MetricsMetricsEntity) GetKeys() []string {
+	if m == nil {
 		return nil
 	}
-	return o.Keys
+	return m.Keys
 }
 
-func (o *MetricsMetricsEntity) GetBuckets() []Bucket {
-	if o == nil {
+func (m *MetricsMetricsEntity) GetBuckets() []Bucket {
+	if m == nil {
 		return nil
 	}
-	return o.Buckets
+	return m.Buckets
 }
 
-func (o *MetricsMetricsEntity) GetSort() *NullableMetricsMetricsEntitySortEntity {
-	if o == nil {
+func (m *MetricsMetricsEntity) GetSort() *NullableMetricsMetricsEntitySortEntity {
+	if m == nil {
 		return nil
 	}
-	return o.Sort
+	return m.Sort
 }

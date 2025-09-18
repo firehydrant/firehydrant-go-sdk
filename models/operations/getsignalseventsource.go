@@ -6,9 +6,9 @@ type GetSignalsEventSourceRequest struct {
 	TransposerSlug string `pathParam:"style=simple,explode=false,name=transposer_slug"`
 }
 
-func (o *GetSignalsEventSourceRequest) GetTransposerSlug() string {
-	if o == nil {
+func (g *GetSignalsEventSourceRequest) GetTransposerSlug() string {
+	if g == nil {
 		return ""
 	}
-	return o.TransposerSlug
+	return g.TransposerSlug
 }

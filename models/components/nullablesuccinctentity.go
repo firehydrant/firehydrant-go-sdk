@@ -7,16 +7,16 @@ type NullableSuccinctEntity struct {
 	Name *string `json:"name,omitempty"`
 }
 
-func (o *NullableSuccinctEntity) GetID() *string {
-	if o == nil {
+func (n *NullableSuccinctEntity) GetID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ID
+	return n.ID
 }
 
-func (o *NullableSuccinctEntity) GetName() *string {
-	if o == nil {
+func (n *NullableSuccinctEntity) GetName() *string {
+	if n == nil {
 		return nil
 	}
-	return o.Name
+	return n.Name
 }

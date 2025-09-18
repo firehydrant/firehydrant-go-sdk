@@ -32,44 +32,44 @@ func (c *CreateAudienceRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CreateAudienceRequest) GetName() string {
-	if o == nil {
+func (c *CreateAudienceRequest) GetName() string {
+	if c == nil {
 		return ""
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CreateAudienceRequest) GetDescription() string {
-	if o == nil {
+func (c *CreateAudienceRequest) GetDescription() string {
+	if c == nil {
 		return ""
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *CreateAudienceRequest) GetDefault() *bool {
-	if o == nil {
+func (c *CreateAudienceRequest) GetDefault() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Default
+	return c.Default
 }
 
-func (o *CreateAudienceRequest) GetDetailsQuestion() []string {
-	if o == nil {
+func (c *CreateAudienceRequest) GetDetailsQuestion() []string {
+	if c == nil {
 		return []string{}
 	}
-	return o.DetailsQuestion
+	return c.DetailsQuestion
 }
 
-func (o *CreateAudienceRequest) GetDetailsPrompt() []string {
-	if o == nil {
+func (c *CreateAudienceRequest) GetDetailsPrompt() []string {
+	if c == nil {
 		return []string{}
 	}
-	return o.DetailsPrompt
+	return c.DetailsPrompt
 }
 
-func (o *CreateAudienceRequest) GetDetailsSlug() []string {
-	if o == nil {
+func (c *CreateAudienceRequest) GetDetailsSlug() []string {
+	if c == nil {
 		return nil
 	}
-	return o.DetailsSlug
+	return c.DetailsSlug
 }

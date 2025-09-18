@@ -9,23 +9,23 @@ type CreateIncidentStatusPage struct {
 	Title           *string `json:"title,omitempty"`
 }
 
-func (o *CreateIncidentStatusPage) GetIntegrationSlug() string {
-	if o == nil {
+func (c *CreateIncidentStatusPage) GetIntegrationSlug() string {
+	if c == nil {
 		return ""
 	}
-	return o.IntegrationSlug
+	return c.IntegrationSlug
 }
 
-func (o *CreateIncidentStatusPage) GetIntegrationID() string {
-	if o == nil {
+func (c *CreateIncidentStatusPage) GetIntegrationID() string {
+	if c == nil {
 		return ""
 	}
-	return o.IntegrationID
+	return c.IntegrationID
 }
 
-func (o *CreateIncidentStatusPage) GetTitle() *string {
-	if o == nil {
+func (c *CreateIncidentStatusPage) GetTitle() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Title
+	return c.Title
 }

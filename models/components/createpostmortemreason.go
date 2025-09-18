@@ -7,9 +7,9 @@ type CreatePostMortemReason struct {
 	Summary string `json:"summary"`
 }
 
-func (o *CreatePostMortemReason) GetSummary() string {
-	if o == nil {
+func (c *CreatePostMortemReason) GetSummary() string {
+	if c == nil {
 		return ""
 	}
-	return o.Summary
+	return c.Summary
 }

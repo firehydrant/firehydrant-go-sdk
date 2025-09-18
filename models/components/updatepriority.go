@@ -9,23 +9,23 @@ type UpdatePriority struct {
 	Default     *bool   `json:"default,omitempty"`
 }
 
-func (o *UpdatePriority) GetSlug() *string {
-	if o == nil {
+func (u *UpdatePriority) GetSlug() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Slug
+	return u.Slug
 }
 
-func (o *UpdatePriority) GetDescription() *string {
-	if o == nil {
+func (u *UpdatePriority) GetDescription() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Description
+	return u.Description
 }
 
-func (o *UpdatePriority) GetDefault() *bool {
-	if o == nil {
+func (u *UpdatePriority) GetDefault() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.Default
+	return u.Default
 }

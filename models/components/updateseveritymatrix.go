@@ -11,25 +11,25 @@ type UpdateSeverityMatrixData struct {
 	ConditionID string `json:"condition_id"`
 }
 
-func (o *UpdateSeverityMatrixData) GetSeverity() string {
-	if o == nil {
+func (u *UpdateSeverityMatrixData) GetSeverity() string {
+	if u == nil {
 		return ""
 	}
-	return o.Severity
+	return u.Severity
 }
 
-func (o *UpdateSeverityMatrixData) GetImpactID() string {
-	if o == nil {
+func (u *UpdateSeverityMatrixData) GetImpactID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ImpactID
+	return u.ImpactID
 }
 
-func (o *UpdateSeverityMatrixData) GetConditionID() string {
-	if o == nil {
+func (u *UpdateSeverityMatrixData) GetConditionID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ConditionID
+	return u.ConditionID
 }
 
 // UpdateSeverityMatrix - Update available severities and impacts in your organization's severity matrix.
@@ -38,16 +38,16 @@ type UpdateSeverityMatrix struct {
 	Data    []UpdateSeverityMatrixData `json:"data"`
 }
 
-func (o *UpdateSeverityMatrix) GetSummary() *string {
-	if o == nil {
+func (u *UpdateSeverityMatrix) GetSummary() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Summary
+	return u.Summary
 }
 
-func (o *UpdateSeverityMatrix) GetData() []UpdateSeverityMatrixData {
-	if o == nil {
+func (u *UpdateSeverityMatrix) GetData() []UpdateSeverityMatrixData {
+	if u == nil {
 		return []UpdateSeverityMatrixData{}
 	}
-	return o.Data
+	return u.Data
 }

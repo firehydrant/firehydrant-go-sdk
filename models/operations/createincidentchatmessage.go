@@ -11,16 +11,16 @@ type CreateIncidentChatMessageRequest struct {
 	CreateIncidentChatMessage components.CreateIncidentChatMessage `request:"mediaType=application/json"`
 }
 
-func (o *CreateIncidentChatMessageRequest) GetIncidentID() string {
-	if o == nil {
+func (c *CreateIncidentChatMessageRequest) GetIncidentID() string {
+	if c == nil {
 		return ""
 	}
-	return o.IncidentID
+	return c.IncidentID
 }
 
-func (o *CreateIncidentChatMessageRequest) GetCreateIncidentChatMessage() components.CreateIncidentChatMessage {
-	if o == nil {
+func (c *CreateIncidentChatMessageRequest) GetCreateIncidentChatMessage() components.CreateIncidentChatMessage {
+	if c == nil {
 		return components.CreateIncidentChatMessage{}
 	}
-	return o.CreateIncidentChatMessage
+	return c.CreateIncidentChatMessage
 }

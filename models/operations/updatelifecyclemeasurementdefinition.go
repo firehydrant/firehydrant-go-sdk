@@ -10,39 +10,39 @@ type UpdateLifecycleMeasurementDefinitionRequestBody struct {
 	EndsAtMilestoneID   *string `json:"ends_at_milestone_id,omitempty"`
 }
 
-func (o *UpdateLifecycleMeasurementDefinitionRequestBody) GetName() *string {
-	if o == nil {
+func (u *UpdateLifecycleMeasurementDefinitionRequestBody) GetName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Name
+	return u.Name
 }
 
-func (o *UpdateLifecycleMeasurementDefinitionRequestBody) GetSlug() *string {
-	if o == nil {
+func (u *UpdateLifecycleMeasurementDefinitionRequestBody) GetSlug() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Slug
+	return u.Slug
 }
 
-func (o *UpdateLifecycleMeasurementDefinitionRequestBody) GetDescription() *string {
-	if o == nil {
+func (u *UpdateLifecycleMeasurementDefinitionRequestBody) GetDescription() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Description
+	return u.Description
 }
 
-func (o *UpdateLifecycleMeasurementDefinitionRequestBody) GetStartsAtMilestoneID() *string {
-	if o == nil {
+func (u *UpdateLifecycleMeasurementDefinitionRequestBody) GetStartsAtMilestoneID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.StartsAtMilestoneID
+	return u.StartsAtMilestoneID
 }
 
-func (o *UpdateLifecycleMeasurementDefinitionRequestBody) GetEndsAtMilestoneID() *string {
-	if o == nil {
+func (u *UpdateLifecycleMeasurementDefinitionRequestBody) GetEndsAtMilestoneID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.EndsAtMilestoneID
+	return u.EndsAtMilestoneID
 }
 
 type UpdateLifecycleMeasurementDefinitionRequest struct {
@@ -50,16 +50,16 @@ type UpdateLifecycleMeasurementDefinitionRequest struct {
 	RequestBody             *UpdateLifecycleMeasurementDefinitionRequestBody `request:"mediaType=application/json"`
 }
 
-func (o *UpdateLifecycleMeasurementDefinitionRequest) GetMeasurementDefinitionID() string {
-	if o == nil {
+func (u *UpdateLifecycleMeasurementDefinitionRequest) GetMeasurementDefinitionID() string {
+	if u == nil {
 		return ""
 	}
-	return o.MeasurementDefinitionID
+	return u.MeasurementDefinitionID
 }
 
-func (o *UpdateLifecycleMeasurementDefinitionRequest) GetRequestBody() *UpdateLifecycleMeasurementDefinitionRequestBody {
-	if o == nil {
+func (u *UpdateLifecycleMeasurementDefinitionRequest) GetRequestBody() *UpdateLifecycleMeasurementDefinitionRequestBody {
+	if u == nil {
 		return nil
 	}
-	return o.RequestBody
+	return u.RequestBody
 }

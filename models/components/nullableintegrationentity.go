@@ -26,37 +26,37 @@ func (n *NullableIntegrationEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *NullableIntegrationEntity) GetID() *string {
-	if o == nil {
+func (n *NullableIntegrationEntity) GetID() *string {
+	if n == nil {
 		return nil
 	}
-	return o.ID
+	return n.ID
 }
 
-func (o *NullableIntegrationEntity) GetIntegrationName() *string {
-	if o == nil {
+func (n *NullableIntegrationEntity) GetIntegrationName() *string {
+	if n == nil {
 		return nil
 	}
-	return o.IntegrationName
+	return n.IntegrationName
 }
 
-func (o *NullableIntegrationEntity) GetIntegrationSlug() *string {
-	if o == nil {
+func (n *NullableIntegrationEntity) GetIntegrationSlug() *string {
+	if n == nil {
 		return nil
 	}
-	return o.IntegrationSlug
+	return n.IntegrationSlug
 }
 
-func (o *NullableIntegrationEntity) GetDisplayName() *string {
-	if o == nil {
+func (n *NullableIntegrationEntity) GetDisplayName() *string {
+	if n == nil {
 		return nil
 	}
-	return o.DisplayName
+	return n.DisplayName
 }
 
-func (o *NullableIntegrationEntity) GetCreatedAt() *time.Time {
-	if o == nil {
+func (n *NullableIntegrationEntity) GetCreatedAt() *time.Time {
+	if n == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return n.CreatedAt
 }

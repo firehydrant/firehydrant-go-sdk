@@ -7,16 +7,16 @@ type DeleteIncidentEventRequest struct {
 	EventID    string `pathParam:"style=simple,explode=false,name=event_id"`
 }
 
-func (o *DeleteIncidentEventRequest) GetIncidentID() string {
-	if o == nil {
+func (d *DeleteIncidentEventRequest) GetIncidentID() string {
+	if d == nil {
 		return ""
 	}
-	return o.IncidentID
+	return d.IncidentID
 }
 
-func (o *DeleteIncidentEventRequest) GetEventID() string {
-	if o == nil {
+func (d *DeleteIncidentEventRequest) GetEventID() string {
+	if d == nil {
 		return ""
 	}
-	return o.EventID
+	return d.EventID
 }

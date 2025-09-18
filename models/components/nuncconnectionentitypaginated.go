@@ -8,16 +8,16 @@ type NuncConnectionEntityPaginated struct {
 	Pagination *NullablePaginationEntity `json:"pagination,omitempty"`
 }
 
-func (o *NuncConnectionEntityPaginated) GetData() []NuncConnectionEntity {
-	if o == nil {
+func (n *NuncConnectionEntityPaginated) GetData() []NuncConnectionEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Data
+	return n.Data
 }
 
-func (o *NuncConnectionEntityPaginated) GetPagination() *NullablePaginationEntity {
-	if o == nil {
+func (n *NuncConnectionEntityPaginated) GetPagination() *NullablePaginationEntity {
+	if n == nil {
 		return nil
 	}
-	return o.Pagination
+	return n.Pagination
 }

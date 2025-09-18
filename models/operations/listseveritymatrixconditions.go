@@ -7,16 +7,16 @@ type ListSeverityMatrixConditionsRequest struct {
 	PerPage *int `queryParam:"style=form,explode=true,name=per_page"`
 }
 
-func (o *ListSeverityMatrixConditionsRequest) GetPage() *int {
-	if o == nil {
+func (l *ListSeverityMatrixConditionsRequest) GetPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.Page
+	return l.Page
 }
 
-func (o *ListSeverityMatrixConditionsRequest) GetPerPage() *int {
-	if o == nil {
+func (l *ListSeverityMatrixConditionsRequest) GetPerPage() *int {
+	if l == nil {
 		return nil
 	}
-	return o.PerPage
+	return l.PerPage
 }

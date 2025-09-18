@@ -144,79 +144,79 @@ func (g *GetSignalsMttxAnalyticsRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *GetSignalsMttxAnalyticsRequest) GetSignalRules() *string {
-	if o == nil {
+func (g *GetSignalsMttxAnalyticsRequest) GetSignalRules() *string {
+	if g == nil {
 		return nil
 	}
-	return o.SignalRules
+	return g.SignalRules
 }
 
-func (o *GetSignalsMttxAnalyticsRequest) GetTeams() *string {
-	if o == nil {
+func (g *GetSignalsMttxAnalyticsRequest) GetTeams() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Teams
+	return g.Teams
 }
 
-func (o *GetSignalsMttxAnalyticsRequest) GetEnvironments() *string {
-	if o == nil {
+func (g *GetSignalsMttxAnalyticsRequest) GetEnvironments() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Environments
+	return g.Environments
 }
 
-func (o *GetSignalsMttxAnalyticsRequest) GetServices() *string {
-	if o == nil {
+func (g *GetSignalsMttxAnalyticsRequest) GetServices() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Services
+	return g.Services
 }
 
-func (o *GetSignalsMttxAnalyticsRequest) GetTags() *string {
-	if o == nil {
+func (g *GetSignalsMttxAnalyticsRequest) GetTags() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Tags
+	return g.Tags
 }
 
-func (o *GetSignalsMttxAnalyticsRequest) GetUsers() *string {
-	if o == nil {
+func (g *GetSignalsMttxAnalyticsRequest) GetUsers() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Users
+	return g.Users
 }
 
-func (o *GetSignalsMttxAnalyticsRequest) GetGroupBy() *GetSignalsMttxAnalyticsGroupBy {
-	if o == nil {
+func (g *GetSignalsMttxAnalyticsRequest) GetGroupBy() *GetSignalsMttxAnalyticsGroupBy {
+	if g == nil {
 		return nil
 	}
-	return o.GroupBy
+	return g.GroupBy
 }
 
-func (o *GetSignalsMttxAnalyticsRequest) GetSortBy() *GetSignalsMttxAnalyticsSortBy {
-	if o == nil {
+func (g *GetSignalsMttxAnalyticsRequest) GetSortBy() *GetSignalsMttxAnalyticsSortBy {
+	if g == nil {
 		return nil
 	}
-	return o.SortBy
+	return g.SortBy
 }
 
-func (o *GetSignalsMttxAnalyticsRequest) GetSortDirection() *GetSignalsMttxAnalyticsSortDirection {
-	if o == nil {
+func (g *GetSignalsMttxAnalyticsRequest) GetSortDirection() *GetSignalsMttxAnalyticsSortDirection {
+	if g == nil {
 		return nil
 	}
-	return o.SortDirection
+	return g.SortDirection
 }
 
-func (o *GetSignalsMttxAnalyticsRequest) GetStartDate() *time.Time {
-	if o == nil {
+func (g *GetSignalsMttxAnalyticsRequest) GetStartDate() *time.Time {
+	if g == nil {
 		return nil
 	}
-	return o.StartDate
+	return g.StartDate
 }
 
-func (o *GetSignalsMttxAnalyticsRequest) GetEndDate() *time.Time {
-	if o == nil {
+func (g *GetSignalsMttxAnalyticsRequest) GetEndDate() *time.Time {
+	if g == nil {
 		return nil
 	}
-	return o.EndDate
+	return g.EndDate
 }
