@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 39357612-0c85-4a96-a549-e2d920c4a065
 management:
-  docChecksum: b64c9fecb8c502275eece775e517c520
+  docChecksum: e131d41ab1aaff9e3c2140d21f7dc61a
   docVersion: 0.0.1
-  speakeasyVersion: 1.618.1
-  generationVersion: 2.702.0
-  releaseVersion: 1.4.0
-  configChecksum: 4b91e318c6986a55914f3dfe27f1de3c
+  speakeasyVersion: 1.635.1
+  generationVersion: 2.722.2
+  releaseVersion: 1.5.0
+  configChecksum: 9b1116c971347b7650e6f466ca727155
   repoURL: https://github.com/firehydrant/firehydrant-go-sdk.git
   installationURL: https://github.com/firehydrant/firehydrant-go-sdk
 features:
   go:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.12
-    core: 3.10.0
+    core: 3.11.1
     defaultEnabledRetries: 0.2.0
     envVarSecurityUsage: 0.3.2
     flattening: 2.81.1
@@ -22,7 +22,7 @@ features:
     globalSecurityCallbacks: 0.1.0
     globalServerURLs: 2.82.3
     intellisenseMarkdownSupport: 0.1.0
-    nullables: 0.2.0
+    nullables: 0.2.1
     responseFormat: 0.1.2
     retries: 2.84.2
     sdkHooks: 0.2.0
@@ -307,6 +307,7 @@ generatedFiles:
   - /models/components/nuncnuncsubscription.go
   - /models/components/organizationscustomfielddefinitionentity.go
   - /models/components/overrideoncallschedulerotationshifts.go
+  - /models/components/patchscimgroup.go
   - /models/components/patchscimuser.go
   - /models/components/permissionentitylist.go
   - /models/components/pongentity.go
@@ -796,6 +797,7 @@ generatedFiles:
   - /models/operations/listwebhookdeliveries.go
   - /models/operations/listwebhooks.go
   - /models/operations/overrideoncallschedulerotationshifts.go
+  - /models/operations/patchscimgroup.go
   - /models/operations/patchscimuser.go
   - /models/operations/previewoncallschedulerotation.go
   - /models/operations/previewteamoncallschedule.go
@@ -1123,12 +1125,9 @@ generatedFiles:
   - docs/models/components/fieldmappingfieldmapentity.md
   - docs/models/components/fieldmappingmappablefieldentity.md
   - docs/models/components/filterparams.md
-  - docs/models/components/filtervalues.md
   - docs/models/components/formconfigurationentity.md
   - docs/models/components/functionalityentity.md
-  - docs/models/components/functionalityentitylabels.md
   - docs/models/components/functionalityentitylite.md
-  - docs/models/components/functionalityentitylitelabels.md
   - docs/models/components/functionalityentitypaginated.md
   - docs/models/components/functionalitywithallservicesentity.md
   - docs/models/components/headers.md
@@ -1267,7 +1266,6 @@ generatedFiles:
   - docs/models/components/nullableincidentsconferencebridgeentityattachment.md
   - docs/models/components/nullableincidentscontextobjectentity.md
   - docs/models/components/nullableincidenttypeentitytemplateentity.md
-  - docs/models/components/nullableincidenttypeentitytemplateentitylabels.md
   - docs/models/components/nullableincidenttypeentitytemplatevaluesentity.md
   - docs/models/components/nullableintegrationentity.md
   - docs/models/components/nullableintegrationsawsconnectionentity.md
@@ -1313,7 +1311,6 @@ generatedFiles:
   - docs/models/components/nullablerunbookswebhookdeliveryentity.md
   - docs/models/components/nullablescheduleentity.md
   - docs/models/components/nullableserviceentity.md
-  - docs/models/components/nullableserviceentitylabels.md
   - docs/models/components/nullableserviceentitymanagedbysettings.md
   - docs/models/components/nullableseveritymatrixconditionentity.md
   - docs/models/components/nullableseveritymatriximpactentity.md
@@ -1355,10 +1352,12 @@ generatedFiles:
   - docs/models/components/nuncconnectionentitypaginated.md
   - docs/models/components/nuncemailsubscribersentity.md
   - docs/models/components/nuncnuncsubscription.md
-  - docs/models/components/operation.md
   - docs/models/components/organizationscustomfielddefinitionentity.md
   - docs/models/components/overrideoncallschedulerotationshifts.md
+  - docs/models/components/patchscimgroup.md
+  - docs/models/components/patchscimgroupoperation.md
   - docs/models/components/patchscimuser.md
+  - docs/models/components/patchscimuseroperation.md
   - docs/models/components/permissionentitylist.md
   - docs/models/components/pongentity.md
   - docs/models/components/postmortemspostmortemreportentity.md
@@ -1437,10 +1436,7 @@ generatedFiles:
   - docs/models/components/servicedependencyentity.md
   - docs/models/components/serviceentity.md
   - docs/models/components/serviceentitychecklist.md
-  - docs/models/components/serviceentitychecklistlabels.md
-  - docs/models/components/serviceentitylabels.md
   - docs/models/components/serviceentitylite.md
-  - docs/models/components/serviceentitylitelabels.md
   - docs/models/components/serviceentitymanagedbysettings.md
   - docs/models/components/serviceentitypaginated.md
   - docs/models/components/servicelinkentity.md
@@ -2063,6 +2059,7 @@ generatedFiles:
   - docs/models/operations/orderby.md
   - docs/models/operations/orderdirection.md
   - docs/models/operations/overrideoncallschedulerotationshiftsrequest.md
+  - docs/models/operations/patchscimgrouprequest.md
   - docs/models/operations/patchscimuserrequest.md
   - docs/models/operations/previewoncallschedulerotationrequest.md
   - docs/models/operations/previewteamoncallschedulerequest.md
@@ -2249,7 +2246,6 @@ generatedFiles:
   - types/bigint.go
   - types/date.go
   - types/datetime.go
-  - types/decimal.go
   - types/pointers.go
   - users.go
   - webhooks.go
@@ -5728,5 +5724,12 @@ examples:
       responses:
         "201":
           application/json: {}
+  patch_scim_group:
+    speakeasy-default-patch-scim-group:
+      parameters:
+        path:
+          id: "<id>"
+      requestBody:
+        application/scim+json: {"Operations": [{"op": "<value>", "path": "/var/tmp"}]}
 examplesVersion: 1.0.2
 generatedTests: {}

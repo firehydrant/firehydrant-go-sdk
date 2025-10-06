@@ -7,10 +7,6 @@ import (
 	"time"
 )
 
-// ServiceEntityLiteLabels - An object of label key and values
-type ServiceEntityLiteLabels struct {
-}
-
 // ServiceEntityLite model
 type ServiceEntityLite struct {
 	ID            *string    `json:"id,omitempty"`
@@ -22,9 +18,9 @@ type ServiceEntityLite struct {
 	UpdatedAt     *time.Time `json:"updated_at,omitempty"`
 	AllowedParams []string   `json:"allowed_params,omitempty"`
 	// An object of label key and values
-	Labels                *ServiceEntityLiteLabels `json:"labels,omitempty"`
-	AlertOnAdd            *bool                    `json:"alert_on_add,omitempty"`
-	AutoAddRespondingTeam *bool                    `json:"auto_add_responding_team,omitempty"`
+	Labels                map[string]any `json:"labels,omitempty"`
+	AlertOnAdd            *bool          `json:"alert_on_add,omitempty"`
+	AutoAddRespondingTeam *bool          `json:"auto_add_responding_team,omitempty"`
 }
 
 func (s ServiceEntityLite) MarshalJSON() ([]byte, error) {
@@ -94,7 +90,7 @@ func (s *ServiceEntityLite) GetAllowedParams() []string {
 	return s.AllowedParams
 }
 
-func (s *ServiceEntityLite) GetLabels() *ServiceEntityLiteLabels {
+func (s *ServiceEntityLite) GetLabels() map[string]any {
 	if s == nil {
 		return nil
 	}

@@ -2,25 +2,21 @@
 
 package components
 
-// NullableIncidentTypeEntityTemplateEntityLabels - Arbitrary key:value pairs of labels for your incidents.
-type NullableIncidentTypeEntityTemplateEntityLabels struct {
-}
-
 type NullableIncidentTypeEntityTemplateEntity struct {
 	IncidentName          *string `json:"incident_name,omitempty"`
 	Summary               *string `json:"summary,omitempty"`
 	Description           *string `json:"description,omitempty"`
 	CustomerImpactSummary *string `json:"customer_impact_summary,omitempty"`
 	// Arbitrary key:value pairs of labels for your incidents.
-	Labels          *NullableIncidentTypeEntityTemplateEntityLabels `json:"labels,omitempty"`
-	Severity        *string                                         `json:"severity,omitempty"`
-	Priority        *string                                         `json:"priority,omitempty"`
-	TagList         []string                                        `json:"tag_list,omitempty"`
-	RunbookIds      []string                                        `json:"runbook_ids,omitempty"`
-	TeamIds         []string                                        `json:"team_ids,omitempty"`
-	PrivateIncident *bool                                           `json:"private_incident,omitempty"`
-	CustomFields    *string                                         `json:"custom_fields,omitempty"`
-	Impacts         []IncidentTypeEntityTemplateImpactEntity        `json:"impacts,omitempty"`
+	Labels          map[string]any                           `json:"labels,omitempty"`
+	Severity        *string                                  `json:"severity,omitempty"`
+	Priority        *string                                  `json:"priority,omitempty"`
+	TagList         []string                                 `json:"tag_list,omitempty"`
+	RunbookIds      []string                                 `json:"runbook_ids,omitempty"`
+	TeamIds         []string                                 `json:"team_ids,omitempty"`
+	PrivateIncident *bool                                    `json:"private_incident,omitempty"`
+	CustomFields    *string                                  `json:"custom_fields,omitempty"`
+	Impacts         []IncidentTypeEntityTemplateImpactEntity `json:"impacts,omitempty"`
 }
 
 func (n *NullableIncidentTypeEntityTemplateEntity) GetIncidentName() *string {
@@ -51,7 +47,7 @@ func (n *NullableIncidentTypeEntityTemplateEntity) GetCustomerImpactSummary() *s
 	return n.CustomerImpactSummary
 }
 
-func (n *NullableIncidentTypeEntityTemplateEntity) GetLabels() *NullableIncidentTypeEntityTemplateEntityLabels {
+func (n *NullableIncidentTypeEntityTemplateEntity) GetLabels() map[string]any {
 	if n == nil {
 		return nil
 	}

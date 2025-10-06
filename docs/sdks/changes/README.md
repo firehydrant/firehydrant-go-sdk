@@ -34,8 +34,8 @@ package main
 
 import(
 	"context"
-	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"log"
 )
 
@@ -87,8 +87,8 @@ package main
 
 import(
 	"context"
-	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"log"
 )
 
@@ -142,8 +142,8 @@ package main
 
 import(
 	"context"
-	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"log"
 )
 
@@ -193,8 +193,8 @@ package main
 
 import(
 	"context"
-	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"log"
 )
 
@@ -248,8 +248,8 @@ package main
 
 import(
 	"context"
-	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"log"
 )
 
@@ -304,8 +304,8 @@ package main
 
 import(
 	"context"
-	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"log"
 )
 
@@ -363,8 +363,8 @@ package main
 
 import(
 	"context"
-	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"log"
 )
 
@@ -416,8 +416,8 @@ package main
 
 import(
 	"context"
-	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"log"
 )
 
@@ -476,8 +476,8 @@ package main
 
 import(
 	"context"
-	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"github.com/firehydrant/firehydrant-go-sdk/models/operations"
 	"log"
 )
@@ -531,8 +531,8 @@ package main
 
 import(
 	"context"
-	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"log"
 )
 
@@ -587,8 +587,8 @@ package main
 
 import(
 	"context"
-	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"log"
 )
 
@@ -641,8 +641,8 @@ package main
 
 import(
 	"context"
-	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"log"
 )
 
@@ -692,8 +692,8 @@ package main
 
 import(
 	"context"
-	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"log"
 )
 
@@ -747,8 +747,8 @@ package main
 
 import(
 	"context"
-	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"log"
 )
 

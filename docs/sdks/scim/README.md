@@ -10,6 +10,7 @@ Operations related to SCIM
 * [GetScimGroup](#getscimgroup) - Get a SCIM group
 * [UpdateScimGroup](#updatescimgroup) - Update a SCIM group and assign members
 * [DeleteScimGroup](#deletescimgroup) - Delete a SCIM group
+* [PatchScimGroup](#patchscimgroup) - Partially update a SCIM group
 * [ListScimGroups](#listscimgroups) - List SCIM groups
 * [CreateScimGroup](#createscimgroup) - Create a SCIM group and assign members
 * [GetScimUser](#getscimuser) - Get a SCIM user
@@ -31,8 +32,8 @@ package main
 
 import(
 	"context"
-	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"log"
 )
 
@@ -82,8 +83,8 @@ package main
 
 import(
 	"context"
-	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"log"
 )
 
@@ -141,8 +142,8 @@ package main
 
 import(
 	"context"
-	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"log"
 )
 
@@ -180,6 +181,65 @@ func main() {
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
+## PatchScimGroup
+
+SCIM endpoint to partially update a Team (Colloquial for Group in the SCIM protocol). Supports adding, removing, or replacing members using SCIM PATCH operations.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="patch_scim_group" method="patch" path="/v1/scim/v2/Groups/{id}" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    err := s.Scim.PatchScimGroup(ctx, "<id>", components.PatchScimGroup{
+        Operations: []components.PatchScimGroupOperation{
+            components.PatchScimGroupOperation{
+                Op: "<value>",
+                Path: "/var/tmp",
+            },
+        },
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `ctx`                                                                  | [context.Context](https://pkg.go.dev/context#Context)                  | :heavy_check_mark:                                                     | The context to use for the request.                                    |
+| `id`                                                                   | *string*                                                               | :heavy_check_mark:                                                     | N/A                                                                    |
+| `patchScimGroup`                                                       | [components.PatchScimGroup](../../models/components/patchscimgroup.md) | :heavy_check_mark:                                                     | N/A                                                                    |
+| `opts`                                                                 | [][operations.Option](../../models/operations/option.md)               | :heavy_minus_sign:                                                     | The options for this request.                                          |
+
+### Response
+
+**error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
 ## ListScimGroups
 
 SCIM endpoint that lists all Teams (Colloquial for Group in the SCIM protocol)
@@ -192,8 +252,8 @@ package main
 
 import(
 	"context"
-	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"log"
 )
 
@@ -245,8 +305,8 @@ package main
 
 import(
 	"context"
-	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"log"
 )
 
@@ -303,8 +363,8 @@ package main
 
 import(
 	"context"
-	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"log"
 )
 
@@ -354,8 +414,8 @@ package main
 
 import(
 	"context"
-	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"log"
 )
 
@@ -406,8 +466,8 @@ package main
 
 import(
 	"context"
-	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"log"
 )
 
@@ -457,8 +517,8 @@ package main
 
 import(
 	"context"
-	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"log"
 )
 
@@ -472,7 +532,7 @@ func main() {
     )
 
     err := s.Scim.PatchScimUser(ctx, "<id>", components.PatchScimUser{
-        Operations: []components.Operation{},
+        Operations: []components.PatchScimUserOperation{},
     })
     if err != nil {
         log.Fatal(err)
@@ -511,8 +571,8 @@ package main
 
 import(
 	"context"
-	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"log"
 )
 
@@ -564,8 +624,8 @@ package main
 
 import(
 	"context"
-	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
 	"log"
 )
 
