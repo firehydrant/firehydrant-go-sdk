@@ -7,10 +7,6 @@ import (
 	"time"
 )
 
-// FunctionalityEntityLabels - An object of label key and values
-type FunctionalityEntityLabels struct {
-}
-
 // FunctionalityEntity model
 type FunctionalityEntity struct {
 	ID          *string    `json:"id,omitempty"`
@@ -20,7 +16,7 @@ type FunctionalityEntity struct {
 	CreatedAt   *time.Time `json:"created_at,omitempty"`
 	UpdatedAt   *time.Time `json:"updated_at,omitempty"`
 	// An object of label key and values
-	Labels *FunctionalityEntityLabels `json:"labels,omitempty"`
+	Labels map[string]any `json:"labels,omitempty"`
 	// List of active incident guids
 	ActiveIncidents []string `json:"active_incidents,omitempty"`
 	// List of links attached to this functionality.
@@ -90,7 +86,7 @@ func (f *FunctionalityEntity) GetUpdatedAt() *time.Time {
 	return f.UpdatedAt
 }
 
-func (f *FunctionalityEntity) GetLabels() *FunctionalityEntityLabels {
+func (f *FunctionalityEntity) GetLabels() map[string]any {
 	if f == nil {
 		return nil
 	}

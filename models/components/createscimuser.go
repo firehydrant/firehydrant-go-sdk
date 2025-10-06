@@ -83,6 +83,8 @@ func (c *CreateScimUserPhoneNumber) GetPrimary() *bool {
 type CreateScimUser struct {
 	// A service provider's unique identifier for the user
 	UserName string `json:"userName"`
+	// A unique identifier for the user from the external provisioning system
+	ExternalID *string `json:"externalId,omitempty"`
 	// The components of the user's name
 	Name CreateScimUserName `json:"name"`
 	// Email addresses for the User
@@ -100,6 +102,13 @@ func (c *CreateScimUser) GetUserName() string {
 		return ""
 	}
 	return c.UserName
+}
+
+func (c *CreateScimUser) GetExternalID() *string {
+	if c == nil {
+		return nil
+	}
+	return c.ExternalID
 }
 
 func (c *CreateScimUser) GetName() CreateScimUserName {

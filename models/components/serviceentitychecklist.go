@@ -7,10 +7,6 @@ import (
 	"time"
 )
 
-// ServiceEntityChecklistLabels - An object of label key and values
-type ServiceEntityChecklistLabels struct {
-}
-
 type ServiceEntityChecklist struct {
 	ID            *string    `json:"id,omitempty"`
 	Name          *string    `json:"name,omitempty"`
@@ -21,12 +17,12 @@ type ServiceEntityChecklist struct {
 	UpdatedAt     *time.Time `json:"updated_at,omitempty"`
 	AllowedParams []string   `json:"allowed_params,omitempty"`
 	// An object of label key and values
-	Labels                    *ServiceEntityChecklistLabels `json:"labels,omitempty"`
-	AlertOnAdd                *bool                         `json:"alert_on_add,omitempty"`
-	AutoAddRespondingTeam     *bool                         `json:"auto_add_responding_team,omitempty"`
-	CompletedChecks           *int                          `json:"completed_checks,omitempty"`
-	Owner                     *NullableTeamEntityLite       `json:"owner,omitempty"`
-	ServiceChecklistUpdatedAt *time.Time                    `json:"service_checklist_updated_at,omitempty"`
+	Labels                    map[string]any          `json:"labels,omitempty"`
+	AlertOnAdd                *bool                   `json:"alert_on_add,omitempty"`
+	AutoAddRespondingTeam     *bool                   `json:"auto_add_responding_team,omitempty"`
+	CompletedChecks           *int                    `json:"completed_checks,omitempty"`
+	Owner                     *NullableTeamEntityLite `json:"owner,omitempty"`
+	ServiceChecklistUpdatedAt *time.Time              `json:"service_checklist_updated_at,omitempty"`
 }
 
 func (s ServiceEntityChecklist) MarshalJSON() ([]byte, error) {
@@ -96,7 +92,7 @@ func (s *ServiceEntityChecklist) GetAllowedParams() []string {
 	return s.AllowedParams
 }
 
-func (s *ServiceEntityChecklist) GetLabels() *ServiceEntityChecklistLabels {
+func (s *ServiceEntityChecklist) GetLabels() map[string]any {
 	if s == nil {
 		return nil
 	}

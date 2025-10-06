@@ -7,10 +7,6 @@ import (
 	"time"
 )
 
-// NullableServiceEntityLabels - An object of label key and values
-type NullableServiceEntityLabels struct {
-}
-
 // NullableServiceEntityManagedBySettings - Indicates the settings of the catalog that manages this service
 type NullableServiceEntityManagedBySettings struct {
 }
@@ -26,9 +22,9 @@ type NullableServiceEntity struct {
 	UpdatedAt     *time.Time `json:"updated_at,omitempty"`
 	AllowedParams []string   `json:"allowed_params,omitempty"`
 	// An object of label key and values
-	Labels                *NullableServiceEntityLabels `json:"labels,omitempty"`
-	AlertOnAdd            *bool                        `json:"alert_on_add,omitempty"`
-	AutoAddRespondingTeam *bool                        `json:"auto_add_responding_team,omitempty"`
+	Labels                map[string]any `json:"labels,omitempty"`
+	AlertOnAdd            *bool          `json:"alert_on_add,omitempty"`
+	AutoAddRespondingTeam *bool          `json:"auto_add_responding_team,omitempty"`
 	// List of active incident guids
 	ActiveIncidents []string `json:"active_incidents,omitempty"`
 	// List of checklists associated with a service
@@ -119,7 +115,7 @@ func (n *NullableServiceEntity) GetAllowedParams() []string {
 	return n.AllowedParams
 }
 
-func (n *NullableServiceEntity) GetLabels() *NullableServiceEntityLabels {
+func (n *NullableServiceEntity) GetLabels() map[string]any {
 	if n == nil {
 		return nil
 	}

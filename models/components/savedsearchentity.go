@@ -7,10 +7,6 @@ import (
 	"time"
 )
 
-// FilterValues - An unstructured key/value pair of saved values for searching
-type FilterValues struct {
-}
-
 // SavedSearchEntity model
 type SavedSearchEntity struct {
 	ID           *string `json:"id,omitempty"`
@@ -22,7 +18,7 @@ type SavedSearchEntity struct {
 	CreatedAt *time.Time `json:"created_at,omitempty"`
 	UpdatedAt *time.Time `json:"updated_at,omitempty"`
 	// An unstructured key/value pair of saved values for searching
-	FilterValues *FilterValues `json:"filter_values,omitempty"`
+	FilterValues map[string]any `json:"filter_values,omitempty"`
 }
 
 func (s SavedSearchEntity) MarshalJSON() ([]byte, error) {
@@ -85,7 +81,7 @@ func (s *SavedSearchEntity) GetUpdatedAt() *time.Time {
 	return s.UpdatedAt
 }
 
-func (s *SavedSearchEntity) GetFilterValues() *FilterValues {
+func (s *SavedSearchEntity) GetFilterValues() map[string]any {
 	if s == nil {
 		return nil
 	}

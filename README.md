@@ -592,6 +592,7 @@ func main() {
 * [GetScimGroup](docs/sdks/scim/README.md#getscimgroup) - Get a SCIM group
 * [UpdateScimGroup](docs/sdks/scim/README.md#updatescimgroup) - Update a SCIM group and assign members
 * [DeleteScimGroup](docs/sdks/scim/README.md#deletescimgroup) - Delete a SCIM group
+* [PatchScimGroup](docs/sdks/scim/README.md#patchscimgroup) - Partially update a SCIM group
 * [ListScimGroups](docs/sdks/scim/README.md#listscimgroups) - List SCIM groups
 * [CreateScimGroup](docs/sdks/scim/README.md#createscimgroup) - Create a SCIM group and assign members
 * [GetScimUser](docs/sdks/scim/README.md#getscimuser) - Get a SCIM user
