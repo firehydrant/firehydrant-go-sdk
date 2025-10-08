@@ -64,7 +64,7 @@ func (s *Integrations) ListIntegrations(ctx context.Context, opts ...operations.
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_integrations",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -267,7 +267,7 @@ func (s *Integrations) GetIntegration(ctx context.Context, integrationID string,
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_integration",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -470,7 +470,7 @@ func (s *Integrations) UpdateFieldMap(ctx context.Context, fieldMapID string, op
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_field_map",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -673,7 +673,7 @@ func (s *Integrations) ListFieldMapAvailableFields(ctx context.Context, fieldMap
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_field_map_available_fields",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -878,7 +878,7 @@ func (s *Integrations) ListAuthedProviders(ctx context.Context, integrationSlug 
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_authed_providers",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1088,7 +1088,7 @@ func (s *Integrations) UpdateAuthedProvider(ctx context.Context, integrationSlug
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_authed_provider",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "RequestBody", "json", `request:"mediaType=application/json"`)
@@ -1298,7 +1298,7 @@ func (s *Integrations) ListConnections(ctx context.Context, integrationSlug *str
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_connections",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1505,7 +1505,7 @@ func (s *Integrations) CreateConnection(ctx context.Context, slug string, opts .
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_connection",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1709,7 +1709,7 @@ func (s *Integrations) RefreshConnection(ctx context.Context, slug string, conne
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "refresh_connection",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1913,7 +1913,7 @@ func (s *Integrations) UpdateConnection(ctx context.Context, slug string, connec
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_connection",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -2112,7 +2112,7 @@ func (s *Integrations) ListConnectionStatuses(ctx context.Context, opts ...opera
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_connection_statuses",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -2315,7 +2315,7 @@ func (s *Integrations) ListConnectionStatusesBySlug(ctx context.Context, slug st
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_connection_statuses_by_slug",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -2519,7 +2519,7 @@ func (s *Integrations) ListConnectionStatusesBySlugAndID(ctx context.Context, sl
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_connection_statuses_by_slug_and_id",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -2718,7 +2718,7 @@ func (s *Integrations) ListAwsConnections(ctx context.Context, request operation
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_aws_connections",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -2925,7 +2925,7 @@ func (s *Integrations) GetAwsConnection(ctx context.Context, id string, opts ...
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_aws_connection",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -3129,7 +3129,7 @@ func (s *Integrations) UpdateAwsConnection(ctx context.Context, id string, updat
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_aws_connection",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateAwsConnection", "json", `request:"mediaType=application/json"`)
@@ -3341,7 +3341,7 @@ func (s *Integrations) ListAwsCloudtrailBatches(ctx context.Context, page *int, 
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_aws_cloudtrail_batches",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -3548,7 +3548,7 @@ func (s *Integrations) GetAwsCloudtrailBatch(ctx context.Context, id string, opt
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_aws_cloudtrail_batch",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -3752,7 +3752,7 @@ func (s *Integrations) UpdateAwsCloudtrailBatch(ctx context.Context, id string, 
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_aws_cloudtrail_batch",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateAwsCloudtrailBatch", "json", `request:"mediaType=application/json"`)
@@ -3962,7 +3962,7 @@ func (s *Integrations) ListAwsCloudtrailBatchEvents(ctx context.Context, id stri
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_aws_cloudtrail_batch_events",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -4166,7 +4166,7 @@ func (s *Integrations) SearchConfluenceSpaces(ctx context.Context, id string, ke
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "search_confluence_spaces",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -4373,7 +4373,7 @@ func (s *Integrations) ListSlackWorkspaces(ctx context.Context, connectionID str
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_slack_workspaces",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -4572,7 +4572,7 @@ func (s *Integrations) ListSlackUsergroups(ctx context.Context, opts ...operatio
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_slack_usergroups",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -4777,7 +4777,7 @@ func (s *Integrations) ListSlackEmojiActions(ctx context.Context, connectionID s
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_slack_emoji_actions",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -4964,7 +4964,7 @@ func (s *Integrations) CreateSlackEmojiAction(ctx context.Context, connectionID 
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_slack_emoji_action",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "RequestBody", "json", `request:"mediaType=application/json"`)
@@ -5154,7 +5154,7 @@ func (s *Integrations) GetSlackEmojiAction(ctx context.Context, connectionID str
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_slack_emoji_action",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -5337,7 +5337,7 @@ func (s *Integrations) DeleteSlackEmojiAction(ctx context.Context, connectionID 
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_slack_emoji_action",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -5521,7 +5521,7 @@ func (s *Integrations) UpdateSlackEmojiAction(ctx context.Context, connectionID 
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_slack_emoji_action",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "RequestBody", "json", `request:"mediaType=application/json"`)
@@ -5711,7 +5711,7 @@ func (s *Integrations) ListStatuspageConnections(ctx context.Context, page *int,
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_statuspage_connections",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -5918,7 +5918,7 @@ func (s *Integrations) GetStatuspageConnection(ctx context.Context, connectionID
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_statuspage_connection",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -6121,7 +6121,7 @@ func (s *Integrations) DeleteStatuspageConnection(ctx context.Context, connectio
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_statuspage_connection",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -6304,7 +6304,7 @@ func (s *Integrations) UpdateStatuspageConnection(ctx context.Context, connectio
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_statuspage_connection",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateStatuspageConnection", "json", `request:"mediaType=application/json"`)
@@ -6514,7 +6514,7 @@ func (s *Integrations) ListStatuspageConnectionPages(ctx context.Context, connec
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_statuspage_connection_pages",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -6720,7 +6720,7 @@ func (s *Integrations) SearchZendeskTickets(ctx context.Context, connectionID st
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "search_zendesk_tickets",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -6928,7 +6928,7 @@ func (s *Integrations) GetZendeskCustomerSupportIssue(ctx context.Context, ticke
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_zendesk_customer_support_issue",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 

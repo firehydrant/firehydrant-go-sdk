@@ -64,7 +64,7 @@ func (s *Teams) ListTeams(ctx context.Context, request operations.ListTeamsReque
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_teams",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -267,7 +267,7 @@ func (s *Teams) CreateTeam(ctx context.Context, request components.CreateTeam, o
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_team",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -478,7 +478,7 @@ func (s *Teams) GetTeam(ctx context.Context, teamID string, lite *bool, opts ...
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_team",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -685,7 +685,7 @@ func (s *Teams) DeleteTeam(ctx context.Context, teamID string, opts ...operation
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_team",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -868,7 +868,7 @@ func (s *Teams) UpdateTeam(ctx context.Context, teamID string, updateTeam compon
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_team",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateTeam", "json", `request:"mediaType=application/json"`)
@@ -1080,7 +1080,7 @@ func (s *Teams) ListSchedules(ctx context.Context, query *string, page *int, per
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_schedules",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 

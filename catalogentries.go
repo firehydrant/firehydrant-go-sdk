@@ -71,7 +71,7 @@ func (s *CatalogEntries) ListEnvironments(ctx context.Context, page *int, perPag
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_environments",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -274,7 +274,7 @@ func (s *CatalogEntries) CreateEnvironment(ctx context.Context, request componen
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_environment",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -484,7 +484,7 @@ func (s *CatalogEntries) GetEnvironment(ctx context.Context, environmentID strin
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_environment",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -687,7 +687,7 @@ func (s *CatalogEntries) DeleteEnvironment(ctx context.Context, environmentID st
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_environment",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -870,7 +870,7 @@ func (s *CatalogEntries) UpdateEnvironment(ctx context.Context, environmentID st
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_environment",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateEnvironment", "json", `request:"mediaType=application/json"`)
@@ -1076,7 +1076,7 @@ func (s *CatalogEntries) ListServices(ctx context.Context, request operations.Li
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_services",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1279,7 +1279,7 @@ func (s *CatalogEntries) CreateService(ctx context.Context, request components.C
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_service",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -1506,7 +1506,7 @@ func (s *CatalogEntries) CreateServiceLinks(ctx context.Context, request compone
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_service_links",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -1716,7 +1716,7 @@ func (s *CatalogEntries) GetService(ctx context.Context, serviceID string, opts 
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_service",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1919,7 +1919,7 @@ func (s *CatalogEntries) DeleteService(ctx context.Context, serviceID string, op
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_service",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -2103,7 +2103,7 @@ func (s *CatalogEntries) UpdateService(ctx context.Context, serviceID string, up
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_service",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateService", "json", `request:"mediaType=application/json"`)
@@ -2314,7 +2314,7 @@ func (s *CatalogEntries) GetServiceDependencies(ctx context.Context, serviceID s
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_service_dependencies",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -2521,7 +2521,7 @@ func (s *CatalogEntries) ListServiceAvailableUpstreamDependencies(ctx context.Co
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_service_available_upstream_dependencies",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -2724,7 +2724,7 @@ func (s *CatalogEntries) ListServiceAvailableDownstreamDependencies(ctx context.
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_service_available_downstream_dependencies",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -2928,7 +2928,7 @@ func (s *CatalogEntries) DeleteServiceLink(ctx context.Context, serviceID string
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_service_link",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -3112,7 +3112,7 @@ func (s *CatalogEntries) CreateServiceChecklistResponse(ctx context.Context, ser
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_service_checklist_response",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreateServiceChecklistResponse", "json", `request:"mediaType=application/json"`)
@@ -3297,7 +3297,7 @@ func (s *CatalogEntries) CreateServiceDependency(ctx context.Context, request co
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_service_dependency",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -3507,7 +3507,7 @@ func (s *CatalogEntries) GetServiceDependency(ctx context.Context, serviceDepend
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_service_dependency",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -3710,7 +3710,7 @@ func (s *CatalogEntries) DeleteServiceDependency(ctx context.Context, serviceDep
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_service_dependency",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -3893,7 +3893,7 @@ func (s *CatalogEntries) UpdateServiceDependency(ctx context.Context, serviceDep
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_service_dependency",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateServiceDependency", "json", `request:"mediaType=application/json"`)
@@ -4099,7 +4099,7 @@ func (s *CatalogEntries) ListFunctionalities(ctx context.Context, request operat
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_functionalities",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -4302,7 +4302,7 @@ func (s *CatalogEntries) CreateFunctionality(ctx context.Context, request compon
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_functionality",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -4512,7 +4512,7 @@ func (s *CatalogEntries) GetFunctionality(ctx context.Context, functionalityID s
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_functionality",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -4715,7 +4715,7 @@ func (s *CatalogEntries) DeleteFunctionality(ctx context.Context, functionalityI
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_functionality",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -4898,7 +4898,7 @@ func (s *CatalogEntries) UpdateFunctionality(ctx context.Context, functionalityI
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_functionality",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateFunctionality", "json", `request:"mediaType=application/json"`)
@@ -5108,7 +5108,7 @@ func (s *CatalogEntries) ListFunctionalityServices(ctx context.Context, function
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_functionality_services",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -5313,7 +5313,7 @@ func (s *CatalogEntries) ListUserOwnedServices(ctx context.Context, id string, p
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_user_owned_services",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -5516,7 +5516,7 @@ func (s *CatalogEntries) ListInfrastructures(ctx context.Context, request operat
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_infrastructures",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -5723,7 +5723,7 @@ func (s *CatalogEntries) RefreshCatalog(ctx context.Context, catalogID string, o
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "refresh_catalog",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -5906,7 +5906,7 @@ func (s *CatalogEntries) IngestCatalogData(ctx context.Context, catalogID string
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "ingest_catalog_data",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "IngestCatalogData", "json", `request:"mediaType=application/json"`)

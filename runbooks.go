@@ -71,7 +71,7 @@ func (s *Runbooks) ListRunbookActions(ctx context.Context, page *int, perPage *i
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_runbook_actions",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -279,7 +279,7 @@ func (s *Runbooks) ListRunbookExecutions(ctx context.Context, page *int, perPage
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_runbook_executions",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -482,7 +482,7 @@ func (s *Runbooks) CreateRunbookExecution(ctx context.Context, request component
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_runbook_execution",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -692,7 +692,7 @@ func (s *Runbooks) GetRunbookExecution(ctx context.Context, executionID string, 
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_runbook_execution",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -896,7 +896,7 @@ func (s *Runbooks) DeleteRunbookExecution(ctx context.Context, executionID strin
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_runbook_execution",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1084,7 +1084,7 @@ func (s *Runbooks) UpdateRunbookExecutionStep(ctx context.Context, executionID s
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_runbook_execution_step",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateRunbookExecutionStep", "json", `request:"mediaType=application/json"`)
@@ -1295,7 +1295,7 @@ func (s *Runbooks) GetRunbookExecutionStepScript(ctx context.Context, executionI
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_runbook_execution_step_script",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1500,7 +1500,7 @@ func (s *Runbooks) UpdateRunbookExecutionStepScript(ctx context.Context, executi
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_runbook_execution_step_script",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1699,7 +1699,7 @@ func (s *Runbooks) GetRunbookActionFieldOptions(ctx context.Context, request ope
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_runbook_action_field_options",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1881,7 +1881,7 @@ func (s *Runbooks) ListRunbooks(ctx context.Context, request operations.ListRunb
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_runbooks",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -2084,7 +2084,7 @@ func (s *Runbooks) CreateRunbook(ctx context.Context, request components.CreateR
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_runbook",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -2294,7 +2294,7 @@ func (s *Runbooks) GetRunbook(ctx context.Context, runbookID string, opts ...ope
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_runbook",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -2499,7 +2499,7 @@ func (s *Runbooks) UpdateRunbook(ctx context.Context, runbookID string, updateRu
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_runbook",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateRunbook", "json", `request:"mediaType=application/json"`)
@@ -2709,7 +2709,7 @@ func (s *Runbooks) DeleteRunbook(ctx context.Context, runbookID string, opts ...
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_runbook",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -2894,7 +2894,7 @@ func (s *Runbooks) ListRunbookAudits(ctx context.Context, page *int, perPage *in
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_runbook_audits",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 

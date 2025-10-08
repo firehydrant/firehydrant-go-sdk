@@ -11,8 +11,8 @@ type NullableIncidentTypeEntityTemplateValuesEntity struct {
 	Functionalities []IncidentTypeEntityTemplateImpactEntity `json:"functionalities,omitempty"`
 	Environments    []IncidentTypeEntityTemplateImpactEntity `json:"environments,omitempty"`
 	// A hash mapping runbook IDs to runbook names.
-	Runbooks *Runbooks    `json:"runbooks,omitempty"`
-	Teams    []TeamEntity `json:"teams,omitempty"`
+	Runbooks *Runbooks        `json:"runbooks,omitempty"`
+	Teams    []TeamEntityLite `json:"teams,omitempty"`
 }
 
 func (n *NullableIncidentTypeEntityTemplateValuesEntity) GetServices() []IncidentTypeEntityTemplateImpactEntity {
@@ -43,7 +43,7 @@ func (n *NullableIncidentTypeEntityTemplateValuesEntity) GetRunbooks() *Runbooks
 	return n.Runbooks
 }
 
-func (n *NullableIncidentTypeEntityTemplateValuesEntity) GetTeams() []TeamEntity {
+func (n *NullableIncidentTypeEntityTemplateValuesEntity) GetTeams() []TeamEntityLite {
 	if n == nil {
 		return nil
 	}

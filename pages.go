@@ -64,7 +64,7 @@ func (s *Pages) CreateSignalsPage(ctx context.Context, request components.Create
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_signals_page",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)

@@ -69,7 +69,7 @@ func (s *IncidentSettings) ListIncidentRoles(ctx context.Context, page *int, per
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_incident_roles",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -272,7 +272,7 @@ func (s *IncidentSettings) CreateIncidentRole(ctx context.Context, request compo
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_incident_role",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -482,7 +482,7 @@ func (s *IncidentSettings) GetIncidentRole(ctx context.Context, incidentRoleID s
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_incident_role",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -685,7 +685,7 @@ func (s *IncidentSettings) DeleteIncidentRole(ctx context.Context, incidentRoleI
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_incident_role",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -868,7 +868,7 @@ func (s *IncidentSettings) UpdateIncidentRole(ctx context.Context, incidentRoleI
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_incident_role",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateIncidentRole", "json", `request:"mediaType=application/json"`)
@@ -1074,7 +1074,7 @@ func (s *IncidentSettings) ValidateIncidentTags(ctx context.Context, request []s
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "validate_incident_tags",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -1284,7 +1284,7 @@ func (s *IncidentSettings) ListIncidentTags(ctx context.Context, prefix *string,
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_incident_tags",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1493,7 +1493,7 @@ func (s *IncidentSettings) ListIncidentTypes(ctx context.Context, query *string,
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_incident_types",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1696,7 +1696,7 @@ func (s *IncidentSettings) CreateIncidentType(ctx context.Context, request compo
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_incident_type",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -1906,7 +1906,7 @@ func (s *IncidentSettings) GetIncidentType(ctx context.Context, id string, opts 
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_incident_type",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -2109,7 +2109,7 @@ func (s *IncidentSettings) DeleteIncidentType(ctx context.Context, id string, op
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_incident_type",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -2292,7 +2292,7 @@ func (s *IncidentSettings) UpdateIncidentType(ctx context.Context, id string, up
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_incident_type",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateIncidentType", "json", `request:"mediaType=application/json"`)
@@ -2503,7 +2503,7 @@ func (s *IncidentSettings) ListLifecycleMeasurementDefinitions(ctx context.Conte
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_lifecycle_measurement_definitions",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -2685,7 +2685,7 @@ func (s *IncidentSettings) CreateLifecycleMeasurementDefinition(ctx context.Cont
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_lifecycle_measurement_definition",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -2874,7 +2874,7 @@ func (s *IncidentSettings) GetLifecycleMeasurementDefinition(ctx context.Context
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_lifecycle_measurement_definition",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -3056,7 +3056,7 @@ func (s *IncidentSettings) DeleteLifecycleMeasurementDefinition(ctx context.Cont
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_lifecycle_measurement_definition",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -3239,7 +3239,7 @@ func (s *IncidentSettings) UpdateLifecycleMeasurementDefinition(ctx context.Cont
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_lifecycle_measurement_definition",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "RequestBody", "json", `request:"mediaType=application/json"`)
@@ -3424,7 +3424,7 @@ func (s *IncidentSettings) ListLifecyclePhases(ctx context.Context, opts ...oper
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_lifecycle_phases",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -3623,7 +3623,7 @@ func (s *IncidentSettings) CreateLifecycleMilestone(ctx context.Context, request
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_lifecycle_milestone",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -3833,7 +3833,7 @@ func (s *IncidentSettings) DeleteLifecycleMilestone(ctx context.Context, milesto
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_lifecycle_milestone",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -4016,7 +4016,7 @@ func (s *IncidentSettings) UpdateLifecycleMilestone(ctx context.Context, milesto
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_lifecycle_milestone",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "RequestBody", "json", `request:"mediaType=application/json"`)
@@ -4227,7 +4227,7 @@ func (s *IncidentSettings) ListPriorities(ctx context.Context, page *int, perPag
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_priorities",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -4430,7 +4430,7 @@ func (s *IncidentSettings) CreatePriority(ctx context.Context, request component
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_priority",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -4640,7 +4640,7 @@ func (s *IncidentSettings) GetPriority(ctx context.Context, prioritySlug string,
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_priority",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -4843,7 +4843,7 @@ func (s *IncidentSettings) DeletePriority(ctx context.Context, prioritySlug stri
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_priority",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -5026,7 +5026,7 @@ func (s *IncidentSettings) UpdatePriority(ctx context.Context, prioritySlug stri
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_priority",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdatePriority", "json", `request:"mediaType=application/json"`)
@@ -5237,7 +5237,7 @@ func (s *IncidentSettings) ListSeverities(ctx context.Context, page *int, perPag
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_severities",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -5440,7 +5440,7 @@ func (s *IncidentSettings) CreateSeverity(ctx context.Context, request component
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_severity",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -5650,7 +5650,7 @@ func (s *IncidentSettings) GetSeverity(ctx context.Context, severitySlug string,
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_severity",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -5853,7 +5853,7 @@ func (s *IncidentSettings) DeleteSeverity(ctx context.Context, severitySlug stri
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_severity",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -6036,7 +6036,7 @@ func (s *IncidentSettings) UpdateSeverity(ctx context.Context, severitySlug stri
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_severity",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateSeverity", "json", `request:"mediaType=application/json"`)
@@ -6242,7 +6242,7 @@ func (s *IncidentSettings) GetSeverityMatrix(ctx context.Context, opts ...operat
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_severity_matrix",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -6441,7 +6441,7 @@ func (s *IncidentSettings) UpdateSeverityMatrix(ctx context.Context, request com
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_severity_matrix",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -6652,7 +6652,7 @@ func (s *IncidentSettings) ListSeverityMatrixConditions(ctx context.Context, pag
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_severity_matrix_conditions",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -6855,7 +6855,7 @@ func (s *IncidentSettings) CreateSeverityMatrixCondition(ctx context.Context, re
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_severity_matrix_condition",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -7065,7 +7065,7 @@ func (s *IncidentSettings) GetSeverityMatrixCondition(ctx context.Context, condi
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_severity_matrix_condition",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -7268,7 +7268,7 @@ func (s *IncidentSettings) DeleteSeverityMatrixCondition(ctx context.Context, co
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_severity_matrix_condition",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -7451,7 +7451,7 @@ func (s *IncidentSettings) UpdateSeverityMatrixCondition(ctx context.Context, co
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_severity_matrix_condition",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateSeverityMatrixCondition", "json", `request:"mediaType=application/json"`)
@@ -7662,7 +7662,7 @@ func (s *IncidentSettings) ListSeverityMatrixImpacts(ctx context.Context, page *
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_severity_matrix_impacts",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -7865,7 +7865,7 @@ func (s *IncidentSettings) CreateSeverityMatrixImpact(ctx context.Context, reque
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_severity_matrix_impact",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -8075,7 +8075,7 @@ func (s *IncidentSettings) DeleteSeverityMatrixImpact(ctx context.Context, impac
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_severity_matrix_impact",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -8258,7 +8258,7 @@ func (s *IncidentSettings) UpdateSeverityMatrixImpact(ctx context.Context, impac
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_severity_matrix_impact",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateSeverityMatrixImpact", "json", `request:"mediaType=application/json"`)
@@ -8468,7 +8468,7 @@ func (s *IncidentSettings) DeleteCustomFieldDefinition(ctx context.Context, fiel
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_custom_field_definition",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -8651,7 +8651,7 @@ func (s *IncidentSettings) UpdateCustomFieldDefinition(ctx context.Context, fiel
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_custom_field_definition",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateCustomFieldDefinition", "json", `request:"mediaType=application/json"`)
@@ -8857,7 +8857,7 @@ func (s *IncidentSettings) ListCustomFieldDefinitions(ctx context.Context, opts 
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_custom_field_definitions",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -9056,7 +9056,7 @@ func (s *IncidentSettings) CreateCustomFieldDefinition(ctx context.Context, requ
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_custom_field_definition",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -9268,7 +9268,7 @@ func (s *IncidentSettings) ListCustomFieldSelectOptions(ctx context.Context, fie
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_custom_field_select_options",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -9477,7 +9477,7 @@ func (s *IncidentSettings) AppendFormDataOnSelectedValueGet(ctx context.Context,
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "append_form_data_on_selected_value_get",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -9680,7 +9680,7 @@ func (s *IncidentSettings) GetFormConfiguration(ctx context.Context, slug string
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_form_configuration",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 

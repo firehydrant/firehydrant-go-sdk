@@ -71,7 +71,7 @@ func (s *Signals) ListTeamEscalationPolicies(ctx context.Context, teamID string,
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_team_escalation_policies",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -279,7 +279,7 @@ func (s *Signals) CreateTeamEscalationPolicy(ctx context.Context, teamID string,
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_team_escalation_policy",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreateTeamEscalationPolicy", "json", `request:"mediaType=application/json"`)
@@ -490,7 +490,7 @@ func (s *Signals) GetTeamEscalationPolicy(ctx context.Context, teamID string, id
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_team_escalation_policy",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -694,7 +694,7 @@ func (s *Signals) DeleteTeamEscalationPolicy(ctx context.Context, teamID string,
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_team_escalation_policy",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -878,7 +878,7 @@ func (s *Signals) UpdateTeamEscalationPolicy(ctx context.Context, teamID string,
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_team_escalation_policy",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateTeamEscalationPolicy", "json", `request:"mediaType=application/json"`)
@@ -1089,7 +1089,7 @@ func (s *Signals) PreviewTeamOnCallSchedule(ctx context.Context, teamID string, 
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "preview_team_on_call_schedule",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "PreviewTeamOnCallSchedule", "json", `request:"mediaType=application/json"`)
@@ -1295,7 +1295,7 @@ func (s *Signals) ListTeamOnCallSchedules(ctx context.Context, request operation
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_team_on_call_schedules",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1503,7 +1503,7 @@ func (s *Signals) CreateTeamOnCallSchedule(ctx context.Context, teamID string, c
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_team_on_call_schedule",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreateTeamOnCallSchedule", "json", `request:"mediaType=application/json"`)
@@ -1716,7 +1716,7 @@ func (s *Signals) GetTeamOnCallSchedule(ctx context.Context, teamID string, sche
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_team_on_call_schedule",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1924,7 +1924,7 @@ func (s *Signals) DeleteTeamOnCallSchedule(ctx context.Context, teamID string, s
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_team_on_call_schedule",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -2110,7 +2110,7 @@ func (s *Signals) UpdateTeamOnCallSchedule(ctx context.Context, teamID string, s
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_team_on_call_schedule",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateTeamOnCallSchedule", "json", `request:"mediaType=application/json"`)
@@ -2322,7 +2322,7 @@ func (s *Signals) PreviewOnCallScheduleRotation(ctx context.Context, teamID stri
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "preview_on_call_schedule_rotation",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "PreviewOnCallScheduleRotation", "json", `request:"mediaType=application/json"`)
@@ -2534,7 +2534,7 @@ func (s *Signals) CreateOnCallScheduleRotation(ctx context.Context, teamID strin
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_on_call_schedule_rotation",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreateOnCallScheduleRotation", "json", `request:"mediaType=application/json"`)
@@ -2747,7 +2747,7 @@ func (s *Signals) CopyOnCallScheduleRotation(ctx context.Context, rotationID str
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "copy_on_call_schedule_rotation",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CopyOnCallScheduleRotation", "json", `request:"mediaType=application/json"`)
@@ -2959,7 +2959,7 @@ func (s *Signals) GetOnCallScheduleRotation(ctx context.Context, rotationID stri
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_on_call_schedule_rotation",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -3164,7 +3164,7 @@ func (s *Signals) DeleteOnCallScheduleRotation(ctx context.Context, rotationID s
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_on_call_schedule_rotation",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -3349,7 +3349,7 @@ func (s *Signals) UpdateOnCallScheduleRotation(ctx context.Context, rotationID s
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_on_call_schedule_rotation",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateOnCallScheduleRotation", "json", `request:"mediaType=application/json"`)
@@ -3562,7 +3562,7 @@ func (s *Signals) OverrideOnCallScheduleRotationShifts(ctx context.Context, rota
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "override_on_call_schedule_rotation_shifts",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "OverrideOnCallScheduleRotationShifts", "json", `request:"mediaType=application/json"`)
@@ -3774,7 +3774,7 @@ func (s *Signals) CreateOnCallShift(ctx context.Context, teamID string, schedule
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_on_call_shift",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreateOnCallShift", "json", `request:"mediaType=application/json"`)
@@ -3986,7 +3986,7 @@ func (s *Signals) GetOnCallShift(ctx context.Context, id string, teamID string, 
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_on_call_shift",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -4191,7 +4191,7 @@ func (s *Signals) DeleteOnCallShift(ctx context.Context, id string, teamID strin
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_on_call_shift",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -4376,7 +4376,7 @@ func (s *Signals) UpdateOnCallShift(ctx context.Context, id string, teamID strin
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_on_call_shift",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateOnCallShift", "json", `request:"mediaType=application/json"`)
@@ -4589,7 +4589,7 @@ func (s *Signals) ListTeamSignalRules(ctx context.Context, teamID string, query 
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_team_signal_rules",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -4797,7 +4797,7 @@ func (s *Signals) CreateTeamSignalRule(ctx context.Context, teamID string, creat
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_team_signal_rule",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreateTeamSignalRule", "json", `request:"mediaType=application/json"`)
@@ -5008,7 +5008,7 @@ func (s *Signals) GetTeamSignalRule(ctx context.Context, teamID string, id strin
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_team_signal_rule",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -5212,7 +5212,7 @@ func (s *Signals) DeleteTeamSignalRule(ctx context.Context, teamID string, id st
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_team_signal_rule",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -5396,7 +5396,7 @@ func (s *Signals) UpdateTeamSignalRule(ctx context.Context, teamID string, id st
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_team_signal_rule",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateTeamSignalRule", "json", `request:"mediaType=application/json"`)
@@ -5609,7 +5609,7 @@ func (s *Signals) ListSignalsEventSources(ctx context.Context, teamID *string, e
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_signals_event_sources",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -5812,7 +5812,7 @@ func (s *Signals) CreateSignalsEventSource(ctx context.Context, request componen
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_signals_event_source",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -6022,7 +6022,7 @@ func (s *Signals) GetSignalsEventSource(ctx context.Context, transposerSlug stri
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_signals_event_source",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -6225,7 +6225,7 @@ func (s *Signals) DeleteSignalsEventSource(ctx context.Context, transposerSlug s
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_signals_event_source",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -6403,7 +6403,7 @@ func (s *Signals) GetSignalsHackerMode(ctx context.Context, opts ...operations.O
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_signals_hacker_mode",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -6602,7 +6602,7 @@ func (s *Signals) ListSignalsAlertGroupingConfigurations(ctx context.Context, op
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_signals_alert_grouping_configurations",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -6801,7 +6801,7 @@ func (s *Signals) CreateSignalsAlertGroupingConfiguration(ctx context.Context, r
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_signals_alert_grouping_configuration",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -7011,7 +7011,7 @@ func (s *Signals) GetSignalsAlertGroupingConfiguration(ctx context.Context, id s
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_signals_alert_grouping_configuration",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -7214,7 +7214,7 @@ func (s *Signals) DeleteSignalsAlertGroupingConfiguration(ctx context.Context, i
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_signals_alert_grouping_configuration",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -7397,7 +7397,7 @@ func (s *Signals) UpdateSignalsAlertGroupingConfiguration(ctx context.Context, i
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_signals_alert_grouping_configuration",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateSignalsAlertGroupingConfiguration", "json", `request:"mediaType=application/json"`)
@@ -7607,7 +7607,7 @@ func (s *Signals) ListSignalsEmailTargets(ctx context.Context, query *string, op
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_signals_email_targets",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -7810,7 +7810,7 @@ func (s *Signals) CreateSignalsEmailTarget(ctx context.Context, request componen
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_signals_email_target",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -8020,7 +8020,7 @@ func (s *Signals) GetSignalsEmailTarget(ctx context.Context, id string, opts ...
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_signals_email_target",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -8223,7 +8223,7 @@ func (s *Signals) DeleteSignalsEmailTarget(ctx context.Context, id string, opts 
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_signals_email_target",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -8406,7 +8406,7 @@ func (s *Signals) UpdateSignalsEmailTarget(ctx context.Context, id string, updat
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_signals_email_target",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateSignalsEmailTarget", "json", `request:"mediaType=application/json"`)
@@ -8618,7 +8618,7 @@ func (s *Signals) ListSignalsWebhookTargets(ctx context.Context, query *string, 
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_signals_webhook_targets",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -8821,7 +8821,7 @@ func (s *Signals) CreateSignalsWebhookTarget(ctx context.Context, request compon
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_signals_webhook_target",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -9031,7 +9031,7 @@ func (s *Signals) GetSignalsWebhookTarget(ctx context.Context, id string, opts .
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_signals_webhook_target",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -9234,7 +9234,7 @@ func (s *Signals) DeleteSignalsWebhookTarget(ctx context.Context, id string, opt
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_signals_webhook_target",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -9417,7 +9417,7 @@ func (s *Signals) UpdateSignalsWebhookTarget(ctx context.Context, id string, upd
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_signals_webhook_target",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateSignalsWebhookTarget", "json", `request:"mediaType=application/json"`)
@@ -9628,7 +9628,7 @@ func (s *Signals) ListNotificationPolicySettings(ctx context.Context, page *int,
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_notification_policy_settings",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -9831,7 +9831,7 @@ func (s *Signals) CreateNotificationPolicy(ctx context.Context, request operatio
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_notification_policy",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -10041,7 +10041,7 @@ func (s *Signals) GetNotificationPolicy(ctx context.Context, id string, opts ...
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_notification_policy",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -10244,7 +10244,7 @@ func (s *Signals) DeleteNotificationPolicy(ctx context.Context, id string, opts 
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_notification_policy",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -10427,7 +10427,7 @@ func (s *Signals) UpdateNotificationPolicy(ctx context.Context, id string, reque
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_notification_policy",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "RequestBody", "json", `request:"mediaType=application/json"`)
@@ -10612,7 +10612,7 @@ func (s *Signals) ListSignalsTransposers(ctx context.Context, opts ...operations
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_signals_transposers",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -10818,7 +10818,7 @@ func (s *Signals) GetSignalsIngestURL(ctx context.Context, teamID *string, escal
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_signals_ingest_url",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -11021,7 +11021,7 @@ func (s *Signals) DebugSignalsExpression(ctx context.Context, request components
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "debug_signals_expression",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -11210,7 +11210,7 @@ func (s *Signals) ListOrganizationOnCallSchedules(ctx context.Context, teamID *s
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_organization_on_call_schedules",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 

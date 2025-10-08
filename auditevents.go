@@ -68,7 +68,7 @@ func (s *AuditEvents) ListAuditEvents(ctx context.Context, cursor *string, filte
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_audit_events",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -254,7 +254,7 @@ func (s *AuditEvents) GetAuditEvent(ctx context.Context, id string, opts ...oper
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_audit_event",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 

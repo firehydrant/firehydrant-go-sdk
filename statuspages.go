@@ -69,7 +69,7 @@ func (s *StatusPages) DeleteIncidentStatusPage(ctx context.Context, statusPageID
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_incident_status_page",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -247,7 +247,7 @@ func (s *StatusPages) ListNuncConnections(ctx context.Context, opts ...operation
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_nunc_connections",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -446,7 +446,7 @@ func (s *StatusPages) CreateNuncConnection(ctx context.Context, request operatio
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_nunc_connection",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -656,7 +656,7 @@ func (s *StatusPages) ListEmailSubscribers(ctx context.Context, nuncConnectionID
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_email_subscribers",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -860,7 +860,7 @@ func (s *StatusPages) CreateEmailSubscriber(ctx context.Context, nuncConnectionI
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_email_subscriber",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "RequestBody", "json", `request:"mediaType=application/json"`)
@@ -1071,7 +1071,7 @@ func (s *StatusPages) DeleteEmailSubscriber(ctx context.Context, nuncConnectionI
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_email_subscriber",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1257,7 +1257,7 @@ func (s *StatusPages) GetNuncConnection(ctx context.Context, nuncConnectionID st
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_nunc_connection",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1461,7 +1461,7 @@ func (s *StatusPages) UpdateNuncConnection(ctx context.Context, nuncConnectionID
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_nunc_connection",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "RequestBody", "json", `request:"mediaType=application/json"`)
@@ -1671,7 +1671,7 @@ func (s *StatusPages) DeleteNuncConnection(ctx context.Context, nuncConnectionID
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_nunc_connection",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1854,7 +1854,7 @@ func (s *StatusPages) DeleteNuncComponentGroup(ctx context.Context, nuncConnecti
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_nunc_component_group",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -2038,7 +2038,7 @@ func (s *StatusPages) UpdateNuncComponentGroup(ctx context.Context, nuncConnecti
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_nunc_component_group",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "RequestBody", "json", `request:"mediaType=application/json"`)
@@ -2228,7 +2228,7 @@ func (s *StatusPages) CreateNuncComponentGroup(ctx context.Context, nuncConnecti
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_nunc_component_group",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "RequestBody", "json", `request:"mediaType=application/json"`)
@@ -2439,7 +2439,7 @@ func (s *StatusPages) DeleteNuncLink(ctx context.Context, nuncConnectionID strin
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_nunc_link",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -2623,7 +2623,7 @@ func (s *StatusPages) UpdateNuncLink(ctx context.Context, nuncConnectionID strin
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_nunc_link",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateNuncLink", "json", `request:"mediaType=application/json"`)
@@ -2812,7 +2812,7 @@ func (s *StatusPages) CreateNuncLink(ctx context.Context, nuncConnectionID strin
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_nunc_link",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -3017,7 +3017,7 @@ func (s *StatusPages) UpdateNuncImage(ctx context.Context, nuncConnectionID stri
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_nunc_image",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "RequestBody", "multipart", `request:"mediaType=multipart/form-data"`)
@@ -3228,7 +3228,7 @@ func (s *StatusPages) DeleteNuncImage(ctx context.Context, nuncConnectionID stri
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_nunc_image",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -3410,7 +3410,7 @@ func (s *StatusPages) DeleteNuncSubscription(ctx context.Context, unsubscribeTok
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_nunc_subscription",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -3588,7 +3588,7 @@ func (s *StatusPages) CreateNuncSubscription(ctx context.Context, request compon
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_nunc_subscription",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)

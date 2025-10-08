@@ -68,7 +68,7 @@ func (s *Audiences) ListAudiences(ctx context.Context, includeArchived *bool, op
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_audiences",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -271,7 +271,7 @@ func (s *Audiences) CreateAudience(ctx context.Context, request operations.Creat
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_audience",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -481,7 +481,7 @@ func (s *Audiences) GetAudience(ctx context.Context, audienceID string, opts ...
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_audience",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -684,7 +684,7 @@ func (s *Audiences) ArchiveAudience(ctx context.Context, audienceID string, opts
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "archive_audience",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -867,7 +867,7 @@ func (s *Audiences) UpdateAudience(ctx context.Context, audienceID string, reque
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_audience",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "RequestBody", "json", `request:"mediaType=application/json"`)
@@ -1077,7 +1077,7 @@ func (s *Audiences) RestoreAudience(ctx context.Context, audienceID string, opts
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "restore_audience",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1280,7 +1280,7 @@ func (s *Audiences) GetMemberDefaultAudience(ctx context.Context, memberID int, 
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_member_default_audience",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1484,7 +1484,7 @@ func (s *Audiences) SetMemberDefaultAudience(ctx context.Context, memberID int, 
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "set_member_default_audience",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "RequestBody", "json", `request:"mediaType=application/json"`)
@@ -1695,7 +1695,7 @@ func (s *Audiences) GetAudienceSummary(ctx context.Context, audienceID string, i
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_audience_summary",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1900,7 +1900,7 @@ func (s *Audiences) GenerateAudienceSummary(ctx context.Context, audienceID stri
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "generate_audience_summary",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "RequestBody", "json", `request:"mediaType=application/json"`)
@@ -2110,7 +2110,7 @@ func (s *Audiences) ListAudienceSummaries(ctx context.Context, incidentID string
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_audience_summaries",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 

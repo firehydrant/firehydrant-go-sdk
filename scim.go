@@ -67,7 +67,7 @@ func (s *Scim) GetScimGroup(ctx context.Context, id string, opts ...operations.O
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_scim_group",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -250,7 +250,7 @@ func (s *Scim) UpdateScimGroup(ctx context.Context, id string, updateScimGroup c
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_scim_group",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateScimGroup", "json", `request:"mediaType=application/scim+json"`)
@@ -439,7 +439,7 @@ func (s *Scim) DeleteScimGroup(ctx context.Context, id string, opts ...operation
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_scim_group",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -622,7 +622,7 @@ func (s *Scim) PatchScimGroup(ctx context.Context, id string, patchScimGroup com
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "patch_scim_group",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "PatchScimGroup", "json", `request:"mediaType=application/scim+json"`)
@@ -813,7 +813,7 @@ func (s *Scim) ListScimGroups(ctx context.Context, startIndex *int, count *int, 
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_scim_groups",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -995,7 +995,7 @@ func (s *Scim) CreateScimGroup(ctx context.Context, request components.CreateSci
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_scim_group",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/scim+json"`)
@@ -1184,7 +1184,7 @@ func (s *Scim) GetScimUser(ctx context.Context, id string, opts ...operations.Op
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_scim_user",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1367,7 +1367,7 @@ func (s *Scim) UpdateScimUser(ctx context.Context, id string, updateScimUser com
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_scim_user",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateScimUser", "json", `request:"mediaType=application/scim+json"`)
@@ -1556,7 +1556,7 @@ func (s *Scim) DeleteScimUser(ctx context.Context, id string, opts ...operations
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_scim_user",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1739,7 +1739,7 @@ func (s *Scim) PatchScimUser(ctx context.Context, id string, patchScimUser compo
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "patch_scim_user",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "PatchScimUser", "json", `request:"mediaType=application/scim+json"`)
@@ -1930,7 +1930,7 @@ func (s *Scim) ListScimUsers(ctx context.Context, filter *string, startIndex *in
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_scim_users",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -2112,7 +2112,7 @@ func (s *Scim) CreateScimUser(ctx context.Context, request components.CreateScim
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_scim_user",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/scim+json"`)
