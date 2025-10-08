@@ -66,7 +66,7 @@ func (s *MetricsReporting) GetMeanTimeReport(ctx context.Context, request operat
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_mean_time_report",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -269,7 +269,7 @@ func (s *MetricsReporting) ListTicketFunnelMetrics(ctx context.Context, request 
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_ticket_funnel_metrics",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "RequestBody", "multipart", `request:"mediaType=multipart/form-data"`)
@@ -484,7 +484,7 @@ func (s *MetricsReporting) ListRetrospectiveMetrics(ctx context.Context, startDa
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_retrospective_metrics",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -687,7 +687,7 @@ func (s *MetricsReporting) ListMilestoneFunnelMetrics(ctx context.Context, reque
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_milestone_funnel_metrics",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "RequestBody", "multipart", `request:"mediaType=multipart/form-data"`)
@@ -897,7 +897,7 @@ func (s *MetricsReporting) ListUserInvolvementMetrics(ctx context.Context, reque
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_user_involvement_metrics",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1100,7 +1100,7 @@ func (s *MetricsReporting) ListIncidentMetrics(ctx context.Context, request oper
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_incident_metrics",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1303,7 +1303,7 @@ func (s *MetricsReporting) ListMttxMetrics(ctx context.Context, request operatio
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_mttx_metrics",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "RequestBody", "multipart", `request:"mediaType=multipart/form-data"`)
@@ -1519,7 +1519,7 @@ func (s *MetricsReporting) ListInfrastructureTypeMetrics(ctx context.Context, in
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_infrastructure_type_metrics",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1729,7 +1729,7 @@ func (s *MetricsReporting) ListInfrastructureMetrics(ctx context.Context, infraT
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_infrastructure_metrics",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1937,7 +1937,7 @@ func (s *MetricsReporting) GetSavedSearch(ctx context.Context, resourceType oper
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_saved_search",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -2141,7 +2141,7 @@ func (s *MetricsReporting) DeleteSavedSearch(ctx context.Context, resourceType o
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_saved_search",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -2325,7 +2325,7 @@ func (s *MetricsReporting) UpdateSavedSearch(ctx context.Context, resourceType o
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_saved_search",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateSavedSearch", "json", `request:"mediaType=application/json"`)
@@ -2531,7 +2531,7 @@ func (s *MetricsReporting) ListSavedSearches(ctx context.Context, request operat
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_saved_searches",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -2739,7 +2739,7 @@ func (s *MetricsReporting) CreateSavedSearch(ctx context.Context, resourceType o
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_saved_search",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreateSavedSearch", "json", `request:"mediaType=application/json"`)
@@ -2945,7 +2945,7 @@ func (s *MetricsReporting) GetSignalsTimeseriesAnalytics(ctx context.Context, re
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_signals_timeseries_analytics",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -3148,7 +3148,7 @@ func (s *MetricsReporting) GetSignalsGroupedMetrics(ctx context.Context, request
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_signals_grouped_metrics",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -3351,7 +3351,7 @@ func (s *MetricsReporting) GetSignalsMttxAnalytics(ctx context.Context, request 
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_signals_mttx_analytics",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -3554,7 +3554,7 @@ func (s *MetricsReporting) GetSignalsNoiseAnalytics(ctx context.Context, request
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_signals_noise_analytics",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -3763,7 +3763,7 @@ func (s *MetricsReporting) ExportSignalsShiftAnalytics(ctx context.Context, peri
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "export_signals_shift_analytics",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "RequestBody", "multipart", `request:"mediaType=multipart/form-data"`)

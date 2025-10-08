@@ -69,7 +69,7 @@ func (s *Tasks) CreateIncidentTaskList(ctx context.Context, incidentID string, c
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_incident_task_list",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreateIncidentTaskList", "json", `request:"mediaType=application/json"`)
@@ -281,7 +281,7 @@ func (s *Tasks) ListIncidentTasks(ctx context.Context, incidentID string, page *
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_incident_tasks",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -489,7 +489,7 @@ func (s *Tasks) CreateIncidentTask(ctx context.Context, incidentID string, creat
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_incident_task",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreateIncidentTask", "json", `request:"mediaType=application/json"`)
@@ -700,7 +700,7 @@ func (s *Tasks) GetIncidentTask(ctx context.Context, taskID string, incidentID s
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_incident_task",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -883,7 +883,7 @@ func (s *Tasks) DeleteIncidentTask(ctx context.Context, taskID string, incidentI
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_incident_task",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1067,7 +1067,7 @@ func (s *Tasks) UpdateIncidentTask(ctx context.Context, taskID string, incidentI
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_incident_task",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateIncidentTask", "json", `request:"mediaType=application/json"`)
@@ -1279,7 +1279,7 @@ func (s *Tasks) ConvertIncidentTask(ctx context.Context, taskID string, incident
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "convert_incident_task",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "ConvertIncidentTask", "json", `request:"mediaType=application/json"`)
@@ -1490,7 +1490,7 @@ func (s *Tasks) ListTaskLists(ctx context.Context, page *int, perPage *int, opts
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_task_lists",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1693,7 +1693,7 @@ func (s *Tasks) CreateTaskList(ctx context.Context, request components.CreateTas
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_task_list",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -1903,7 +1903,7 @@ func (s *Tasks) GetTaskList(ctx context.Context, taskListID string, opts ...oper
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_task_list",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -2106,7 +2106,7 @@ func (s *Tasks) DeleteTaskList(ctx context.Context, taskListID string, opts ...o
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_task_list",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -2289,7 +2289,7 @@ func (s *Tasks) UpdateTaskList(ctx context.Context, taskListID string, updateTas
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_task_list",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateTaskList", "json", `request:"mediaType=application/json"`)
@@ -2501,7 +2501,7 @@ func (s *Tasks) ListChecklistTemplates(ctx context.Context, page *int, perPage *
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_checklist_templates",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -2704,7 +2704,7 @@ func (s *Tasks) CreateChecklistTemplate(ctx context.Context, request components.
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_checklist_template",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -2935,7 +2935,7 @@ func (s *Tasks) GetChecklistTemplate(ctx context.Context, id string, opts ...ope
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_checklist_template",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -3138,7 +3138,7 @@ func (s *Tasks) DeleteChecklistTemplate(ctx context.Context, id string, opts ...
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_checklist_template",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -3321,7 +3321,7 @@ func (s *Tasks) UpdateChecklistTemplate(ctx context.Context, id string, updateCh
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_checklist_template",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateChecklistTemplate", "json", `request:"mediaType=application/json"`)

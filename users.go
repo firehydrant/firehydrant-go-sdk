@@ -71,7 +71,7 @@ func (s *Users) ListUsers(ctx context.Context, page *int, perPage *int, query *s
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_users",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -278,7 +278,7 @@ func (s *Users) GetUser(ctx context.Context, id string, opts ...operations.Optio
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_user",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -477,7 +477,7 @@ func (s *Users) GetCurrentUser(ctx context.Context, opts ...operations.Option) (
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_current_user",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 

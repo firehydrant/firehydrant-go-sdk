@@ -69,7 +69,7 @@ func (s *Conversations) GetVoteStatus(ctx context.Context, incidentID string, ev
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_vote_status",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -274,7 +274,7 @@ func (s *Conversations) UpdateVote(ctx context.Context, incidentID string, event
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_vote",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateVote", "json", `request:"mediaType=application/json"`)
@@ -486,7 +486,7 @@ func (s *Conversations) DeleteCommentReaction(ctx context.Context, reactionID st
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_comment_reaction",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -669,7 +669,7 @@ func (s *Conversations) ListCommentReactions(ctx context.Context, conversationID
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_comment_reactions",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -853,7 +853,7 @@ func (s *Conversations) CreateCommentReaction(ctx context.Context, conversationI
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_comment_reaction",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreateCommentReaction", "json", `request:"mediaType=application/json"`)
@@ -1043,7 +1043,7 @@ func (s *Conversations) GetComment(ctx context.Context, commentID string, conver
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_comment",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1226,7 +1226,7 @@ func (s *Conversations) DeleteComment(ctx context.Context, commentID string, con
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_comment",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1410,7 +1410,7 @@ func (s *Conversations) UpdateComment(ctx context.Context, commentID string, con
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_comment",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateComment", "json", `request:"mediaType=application/json"`)
@@ -1602,7 +1602,7 @@ func (s *Conversations) ListComments(ctx context.Context, conversationID string,
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_comments",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1789,7 +1789,7 @@ func (s *Conversations) CreateComment(ctx context.Context, conversationID string
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_comment",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreateComment", "json", `request:"mediaType=application/json"`)

@@ -70,7 +70,7 @@ func (s *Retrospectives) ShareIncidentRetrospectives(ctx context.Context, incide
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "share_incident_retrospectives",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "RequestBody", "json", `request:"mediaType=application/json"`)
@@ -281,7 +281,7 @@ func (s *Retrospectives) ExportIncidentRetrospectives(ctx context.Context, incid
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "export_incident_retrospectives",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "RequestBody", "json", `request:"mediaType=application/json"`)
@@ -494,7 +494,7 @@ func (s *Retrospectives) ListIncidentRetrospectives(ctx context.Context, inciden
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_incident_retrospectives",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -702,7 +702,7 @@ func (s *Retrospectives) CreateIncidentRetrospective(ctx context.Context, incide
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_incident_retrospective",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "RequestBody", "json", `request:"mediaType=application/json"`)
@@ -914,7 +914,7 @@ func (s *Retrospectives) UpdateIncidentRetrospective(ctx context.Context, retros
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_incident_retrospective",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateIncidentRetrospective", "json", `request:"mediaType=application/json"`)
@@ -1126,7 +1126,7 @@ func (s *Retrospectives) CreateIncidentRetrospectiveField(ctx context.Context, r
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_incident_retrospective_field",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "RequestBody", "json", `request:"mediaType=application/json"`)
@@ -1338,7 +1338,7 @@ func (s *Retrospectives) GetIncidentRetrospectiveField(ctx context.Context, retr
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_incident_retrospective_field",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1544,7 +1544,7 @@ func (s *Retrospectives) UpdateIncidentRetrospectiveField(ctx context.Context, r
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_incident_retrospective_field",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateIncidentRetrospectiveField", "json", `request:"mediaType=application/json"`)
@@ -1756,7 +1756,7 @@ func (s *Retrospectives) CreateIncidentRetrospectiveDynamicInput(ctx context.Con
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_incident_retrospective_dynamic_input",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1962,7 +1962,7 @@ func (s *Retrospectives) DeleteIncidentRetrospectiveDynamicInput(ctx context.Con
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_incident_retrospective_dynamic_input",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -2151,7 +2151,7 @@ func (s *Retrospectives) ListRetrospectives(ctx context.Context, page *int, perP
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_retrospectives",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -2361,7 +2361,7 @@ func (s *Retrospectives) ListPostMortemReports(ctx context.Context, page *int, p
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_post_mortem_reports",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -2564,7 +2564,7 @@ func (s *Retrospectives) CreatePostMortemReport(ctx context.Context, request com
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_post_mortem_report",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -2774,7 +2774,7 @@ func (s *Retrospectives) GetPostMortemReport(ctx context.Context, reportID strin
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_post_mortem_report",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -2978,7 +2978,7 @@ func (s *Retrospectives) UpdatePostMortemReport(ctx context.Context, reportID st
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_post_mortem_report",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdatePostMortemReport", "json", `request:"mediaType=application/json"`)
@@ -3190,7 +3190,7 @@ func (s *Retrospectives) ListPostMortemReasons(ctx context.Context, reportID str
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_post_mortem_reasons",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -3398,7 +3398,7 @@ func (s *Retrospectives) CreatePostMortemReason(ctx context.Context, reportID st
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_post_mortem_reason",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreatePostMortemReason", "json", `request:"mediaType=application/json"`)
@@ -3609,7 +3609,7 @@ func (s *Retrospectives) DeletePostMortemReason(ctx context.Context, reportID st
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_post_mortem_reason",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -3793,7 +3793,7 @@ func (s *Retrospectives) UpdatePostMortemReason(ctx context.Context, reportID st
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_post_mortem_reason",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdatePostMortemReason", "json", `request:"mediaType=application/json"`)
@@ -4004,7 +4004,7 @@ func (s *Retrospectives) ReorderPostMortemReasons(ctx context.Context, reportID 
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "reorder_post_mortem_reasons",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "ReorderPostMortemReasons", "json", `request:"mediaType=application/json"`)
@@ -4215,7 +4215,7 @@ func (s *Retrospectives) PublishPostMortemReport(ctx context.Context, reportID s
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "publish_post_mortem_report",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "PublishPostMortemReport", "json", `request:"mediaType=application/json"`)
@@ -4448,7 +4448,7 @@ func (s *Retrospectives) UpdatePostMortemField(ctx context.Context, fieldID stri
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_post_mortem_field",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdatePostMortemField", "json", `request:"mediaType=application/json"`)
@@ -4659,7 +4659,7 @@ func (s *Retrospectives) ListPostMortemQuestions(ctx context.Context, page *int,
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_post_mortem_questions",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -4862,7 +4862,7 @@ func (s *Retrospectives) UpdatePostMortemQuestions(ctx context.Context, request 
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_post_mortem_questions",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -5072,7 +5072,7 @@ func (s *Retrospectives) GetPostMortemQuestion(ctx context.Context, questionID s
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_post_mortem_question",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -5256,7 +5256,7 @@ func (s *Retrospectives) ListRetrospectiveTemplates(ctx context.Context, page *i
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_retrospective_templates",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -5459,7 +5459,7 @@ func (s *Retrospectives) CreateRetrospectiveTemplate(ctx context.Context, reques
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_retrospective_template",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -5669,7 +5669,7 @@ func (s *Retrospectives) GetRetrospectiveTemplate(ctx context.Context, retrospec
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_retrospective_template",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -5872,7 +5872,7 @@ func (s *Retrospectives) DeleteRetrospectiveTemplate(ctx context.Context, retros
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_retrospective_template",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -6055,7 +6055,7 @@ func (s *Retrospectives) UpdateRetrospectiveTemplate(ctx context.Context, retros
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_retrospective_template",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "RequestBody", "json", `request:"mediaType=application/json"`)

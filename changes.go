@@ -70,7 +70,7 @@ func (s *Changes) ListChanges(ctx context.Context, page *int, perPage *int, quer
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_changes",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -252,7 +252,7 @@ func (s *Changes) CreateChange(ctx context.Context, request components.CreateCha
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_change",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -483,7 +483,7 @@ func (s *Changes) DeleteChange(ctx context.Context, changeID string, opts ...ope
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_change",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -666,7 +666,7 @@ func (s *Changes) UpdateChange(ctx context.Context, changeID string, updateChang
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_change",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateChange", "json", `request:"mediaType=application/json"`)
@@ -878,7 +878,7 @@ func (s *Changes) ListChangeIdentities(ctx context.Context, changeID string, pag
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_change_identities",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1086,7 +1086,7 @@ func (s *Changes) CreateChangeIdentity(ctx context.Context, changeID string, cre
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_change_identity",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreateChangeIdentity", "json", `request:"mediaType=application/json"`)
@@ -1318,7 +1318,7 @@ func (s *Changes) DeleteChangeIdentity(ctx context.Context, identityID string, c
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_change_identity",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1523,7 +1523,7 @@ func (s *Changes) UpdateChangeIdentity(ctx context.Context, identityID string, c
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_change_identity",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateChangeIdentity", "json", `request:"mediaType=application/json"`)
@@ -1750,7 +1750,7 @@ func (s *Changes) ListChangeEvents(ctx context.Context, request operations.ListC
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_change_events",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1953,7 +1953,7 @@ func (s *Changes) CreateChangeEvent(ctx context.Context, request components.Crea
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_change_event",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -2163,7 +2163,7 @@ func (s *Changes) GetChangeEvent(ctx context.Context, changeEventID string, opts
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_change_event",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -2366,7 +2366,7 @@ func (s *Changes) DeleteChangeEvent(ctx context.Context, changeEventID string, o
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_change_event",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -2549,7 +2549,7 @@ func (s *Changes) UpdateChangeEvent(ctx context.Context, changeEventID string, u
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_change_event",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateChangeEvent", "json", `request:"mediaType=application/json"`)
@@ -2760,7 +2760,7 @@ func (s *Changes) ListChangeTypes(ctx context.Context, page *int, perPage *int, 
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_change_types",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 

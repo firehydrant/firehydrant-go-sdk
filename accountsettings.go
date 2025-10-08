@@ -64,7 +64,7 @@ func (s *AccountSettings) Ping(ctx context.Context, opts ...operations.Option) (
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "ping",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -268,7 +268,7 @@ func (s *AccountSettings) ListEntitlements(ctx context.Context, name *string, ty
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_entitlements",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -471,7 +471,7 @@ func (s *AccountSettings) PingNoauth(ctx context.Context, opts ...operations.Opt
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "ping_noauth",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -670,7 +670,7 @@ func (s *AccountSettings) GetBootstrap(ctx context.Context, opts ...operations.O
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_bootstrap",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -869,7 +869,7 @@ func (s *AccountSettings) GetAiPreferences(ctx context.Context, opts ...operatio
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_ai_preferences",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1068,7 +1068,7 @@ func (s *AccountSettings) UpdateAiPreferences(ctx context.Context, request *oper
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_ai_preferences",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "Request", "json", `request:"mediaType=application/json"`)

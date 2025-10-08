@@ -68,7 +68,7 @@ func (s *CallRoutes) ListTeamCallRoutes(ctx context.Context, teamID string, opts
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_team_call_routes",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -272,7 +272,7 @@ func (s *CallRoutes) CreateTeamCallRoute(ctx context.Context, teamID string, cre
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_team_call_route",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreateTeamCallRoute", "json", `request:"mediaType=application/json"`)
@@ -483,7 +483,7 @@ func (s *CallRoutes) ListCallRoutes(ctx context.Context, page *int, perPage *int
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_call_routes",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -690,7 +690,7 @@ func (s *CallRoutes) GetCallRoute(ctx context.Context, id string, opts ...operat
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_call_route",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -893,7 +893,7 @@ func (s *CallRoutes) DeleteCallRoute(ctx context.Context, id string, opts ...ope
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_call_route",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1076,7 +1076,7 @@ func (s *CallRoutes) UpdateCallRoute(ctx context.Context, id string, updateCallR
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_call_route",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateCallRoute", "json", `request:"mediaType=application/json"`)

@@ -64,7 +64,7 @@ func (s *Ticketing) ListTickets(ctx context.Context, request operations.ListTick
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_tickets",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -267,7 +267,7 @@ func (s *Ticketing) CreateTicket(ctx context.Context, request components.CreateT
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_ticket",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -477,7 +477,7 @@ func (s *Ticketing) GetTicket(ctx context.Context, ticketID string, opts ...oper
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_ticket",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -680,7 +680,7 @@ func (s *Ticketing) DeleteTicket(ctx context.Context, ticketID string, opts ...o
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_ticket",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -863,7 +863,7 @@ func (s *Ticketing) UpdateTicket(ctx context.Context, ticketID string, updateTic
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_ticket",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateTicket", "json", `request:"mediaType=application/json"`)
@@ -1069,7 +1069,7 @@ func (s *Ticketing) ListTicketingProjects(ctx context.Context, request operation
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_ticketing_projects",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1276,7 +1276,7 @@ func (s *Ticketing) GetTicketingProject(ctx context.Context, ticketingProjectID 
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_ticketing_project",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1479,7 +1479,7 @@ func (s *Ticketing) GetConfigurationOptions(ctx context.Context, ticketingProjec
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_configuration_options",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1662,7 +1662,7 @@ func (s *Ticketing) GetOptionsForField(ctx context.Context, fieldID string, tick
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_options_for_field",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1844,7 +1844,7 @@ func (s *Ticketing) ListAvailableTicketingFieldMaps(ctx context.Context, ticketi
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_available_ticketing_field_maps",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -2047,7 +2047,7 @@ func (s *Ticketing) CreateTicketingFieldMap(ctx context.Context, ticketingProjec
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_ticketing_field_map",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -2251,7 +2251,7 @@ func (s *Ticketing) GetTicketingFieldMap(ctx context.Context, mapID string, tick
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_ticketing_field_map",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -2455,7 +2455,7 @@ func (s *Ticketing) DeleteTicketingFieldMap(ctx context.Context, mapID string, t
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_ticketing_field_map",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -2638,7 +2638,7 @@ func (s *Ticketing) UpdateTicketingFieldMap(ctx context.Context, mapID string, t
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_ticketing_field_map",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -2841,7 +2841,7 @@ func (s *Ticketing) ListAvailableInboundFieldMaps(ctx context.Context, ticketing
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_available_inbound_field_maps",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -3047,7 +3047,7 @@ func (s *Ticketing) ListInboundFieldMaps(ctx context.Context, ticketingProjectID
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_inbound_field_maps",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -3254,7 +3254,7 @@ func (s *Ticketing) CreateInboundFieldMap(ctx context.Context, ticketingProjectI
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_inbound_field_map",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -3458,7 +3458,7 @@ func (s *Ticketing) GetInboundFieldMap(ctx context.Context, mapID string, ticket
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_inbound_field_map",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -3662,7 +3662,7 @@ func (s *Ticketing) UpdateInboundFieldMap(ctx context.Context, mapID string, tic
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_inbound_field_map",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -3866,7 +3866,7 @@ func (s *Ticketing) DeleteInboundFieldMap(ctx context.Context, mapID string, tic
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_inbound_field_map",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -4048,7 +4048,7 @@ func (s *Ticketing) CreateTicketingProjectConfig(ctx context.Context, ticketingP
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_ticketing_project_config",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -4252,7 +4252,7 @@ func (s *Ticketing) GetTicketingProjectConfig(ctx context.Context, ticketingProj
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_ticketing_project_config",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -4456,7 +4456,7 @@ func (s *Ticketing) DeleteTicketingProjectConfig(ctx context.Context, ticketingP
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_ticketing_project_config",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -4639,7 +4639,7 @@ func (s *Ticketing) UpdateTicketingProjectConfig(ctx context.Context, ticketingP
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_ticketing_project_config",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -4838,7 +4838,7 @@ func (s *Ticketing) ListTicketingPriorities(ctx context.Context, opts ...operati
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_ticketing_priorities",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -5037,7 +5037,7 @@ func (s *Ticketing) CreateTicketingPriority(ctx context.Context, request compone
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_ticketing_priority",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -5247,7 +5247,7 @@ func (s *Ticketing) GetTicketingPriority(ctx context.Context, id string, opts ..
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_ticketing_priority",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -5450,7 +5450,7 @@ func (s *Ticketing) DeleteTicketingPriority(ctx context.Context, id string, opts
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_ticketing_priority",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -5633,7 +5633,7 @@ func (s *Ticketing) UpdateTicketingPriority(ctx context.Context, id string, upda
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_ticketing_priority",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateTicketingPriority", "json", `request:"mediaType=application/json"`)
@@ -5843,7 +5843,7 @@ func (s *Ticketing) ListTicketTags(ctx context.Context, prefix *string, opts ...
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_ticket_tags",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 

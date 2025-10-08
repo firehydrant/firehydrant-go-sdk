@@ -64,7 +64,7 @@ func (s *Permissions) ListPermissions(ctx context.Context, opts ...operations.Op
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_permissions",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -263,7 +263,7 @@ func (s *Permissions) ListCurrentUserPermissions(ctx context.Context, opts ...op
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_current_user_permissions",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -462,7 +462,7 @@ func (s *Permissions) ListTeamPermissions(ctx context.Context, opts ...operation
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_team_permissions",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 

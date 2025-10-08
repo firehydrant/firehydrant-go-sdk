@@ -68,7 +68,7 @@ func (s *Alerts) ListIncidentAlerts(ctx context.Context, incidentID string, opts
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_incident_alerts",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -272,7 +272,7 @@ func (s *Alerts) CreateIncidentAlert(ctx context.Context, incidentID string, req
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_incident_alert",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "RequestBody", "json", `request:"mediaType=application/json"`)
@@ -463,7 +463,7 @@ func (s *Alerts) UpdateIncidentAlertPrimary(ctx context.Context, incidentAlertID
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_incident_alert_primary",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateIncidentAlertPrimary", "json", `request:"mediaType=application/json"`)
@@ -674,7 +674,7 @@ func (s *Alerts) DeleteIncidentAlert(ctx context.Context, incidentAlertID string
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_incident_alert",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -852,7 +852,7 @@ func (s *Alerts) ListAlerts(ctx context.Context, request operations.ListAlertsRe
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_alerts",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1059,7 +1059,7 @@ func (s *Alerts) GetAlert(ctx context.Context, alertID string, opts ...operation
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_alert",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1258,7 +1258,7 @@ func (s *Alerts) ListProcessingLogEntries(ctx context.Context, request operation
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_processing_log_entries",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1466,7 +1466,7 @@ func (s *Alerts) UpdateSignalsAlert(ctx context.Context, id string, updateSignal
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_signals_alert",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateSignalsAlert", "json", `request:"mediaType=application/json"`)

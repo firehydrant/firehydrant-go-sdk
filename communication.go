@@ -69,7 +69,7 @@ func (s *Communication) ListStatusUpdateTemplates(ctx context.Context, page *int
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_status_update_templates",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -272,7 +272,7 @@ func (s *Communication) CreateStatusUpdateTemplate(ctx context.Context, request 
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_status_update_template",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -482,7 +482,7 @@ func (s *Communication) GetStatusUpdateTemplate(ctx context.Context, statusUpdat
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_status_update_template",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -685,7 +685,7 @@ func (s *Communication) DeleteStatusUpdateTemplate(ctx context.Context, statusUp
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_status_update_template",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -868,7 +868,7 @@ func (s *Communication) UpdateStatusUpdateTemplate(ctx context.Context, statusUp
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_status_update_template",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateStatusUpdateTemplate", "json", `request:"mediaType=application/json"`)

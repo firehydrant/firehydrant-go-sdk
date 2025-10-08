@@ -69,7 +69,7 @@ func (s *Webhooks) ListWebhooks(ctx context.Context, page *int, perPage *int, op
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_webhooks",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -272,7 +272,7 @@ func (s *Webhooks) CreateWebhook(ctx context.Context, request components.CreateW
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "create_webhook",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -482,7 +482,7 @@ func (s *Webhooks) ListWebhookDeliveries(ctx context.Context, webhookID string, 
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "list_webhook_deliveries",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -664,7 +664,7 @@ func (s *Webhooks) GetWebhook(ctx context.Context, webhookID string, opts ...ope
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_webhook",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -867,7 +867,7 @@ func (s *Webhooks) DeleteWebhook(ctx context.Context, webhookID string, opts ...
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "delete_webhook",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1050,7 +1050,7 @@ func (s *Webhooks) UpdateWebhook(ctx context.Context, webhookID string, updateWe
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "update_webhook",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateWebhook", "json", `request:"mediaType=application/json"`)

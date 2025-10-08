@@ -199,3 +199,13 @@ Based on:
 - [go v1.5.0] .
 ### Releases
 - [Go v1.5.0] https://github.com/firehydrant/firehydrant-go-sdk/releases/tag/v1.5.0 - .
+
+## 2025-10-08 00:29:55
+### Changes
+Based on:
+- OpenAPI Doc  
+- Speakeasy CLI 1.636.0 (2.723.2) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [go v1.5.1] .
+### Releases
+- [Go v1.5.1] https://github.com/firehydrant/firehydrant-go-sdk/releases/tag/v1.5.1 - .
