@@ -1081,7 +1081,7 @@ func main() {
 
 ### Response
 
-**[*components.LifecyclesPhaseEntityList](../../models/components/lifecyclesphaseentitylist.md), error**
+**[*components.LifecyclesMilestoneEntity](../../models/components/lifecyclesmilestoneentity.md), error**
 
 ### Errors
 
@@ -1187,7 +1187,7 @@ func main() {
 
 ### Response
 
-**[*components.LifecyclesPhaseEntity](../../models/components/lifecyclesphaseentity.md), error**
+**[*components.LifecyclesMilestoneEntity](../../models/components/lifecyclesmilestoneentity.md), error**
 
 ### Errors
 

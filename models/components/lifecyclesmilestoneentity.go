@@ -7,6 +7,7 @@ import (
 	"time"
 )
 
+// LifecyclesMilestoneEntity - Lifecycles_MilestoneEntity model
 type LifecyclesMilestoneEntity struct {
 	ID                          *string               `json:"id,omitempty"`
 	Name                        *string               `json:"name,omitempty"`

@@ -1,5 +1,7 @@
 # LifecyclesMilestoneEntity
 
+Lifecycles_MilestoneEntity model
+
 
 ## Fields
 

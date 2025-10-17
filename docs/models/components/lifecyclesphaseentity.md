@@ -1,7 +1,5 @@
 # LifecyclesPhaseEntity
 
-Lifecycles_PhaseEntity model
-
 
 ## Fields
 
