@@ -3593,7 +3593,7 @@ func (s *IncidentSettings) ListLifecyclePhases(ctx context.Context, opts ...oper
 
 // CreateLifecycleMilestone - Create a milestone
 // Create a new milestone
-func (s *IncidentSettings) CreateLifecycleMilestone(ctx context.Context, request operations.CreateLifecycleMilestoneRequest, opts ...operations.Option) (*components.LifecyclesPhaseEntityList, error) {
+func (s *IncidentSettings) CreateLifecycleMilestone(ctx context.Context, request operations.CreateLifecycleMilestoneRequest, opts ...operations.Option) (*components.LifecyclesMilestoneEntity, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -3760,7 +3760,7 @@ func (s *IncidentSettings) CreateLifecycleMilestone(ctx context.Context, request
 				return nil, err
 			}
 
-			var out components.LifecyclesPhaseEntityList
+			var out components.LifecyclesMilestoneEntity
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
@@ -3981,7 +3981,7 @@ func (s *IncidentSettings) DeleteLifecycleMilestone(ctx context.Context, milesto
 
 // UpdateLifecycleMilestone - Update a milestone
 // Update a milestone
-func (s *IncidentSettings) UpdateLifecycleMilestone(ctx context.Context, milestoneID string, requestBody *operations.UpdateLifecycleMilestoneRequestBody, opts ...operations.Option) (*components.LifecyclesPhaseEntity, error) {
+func (s *IncidentSettings) UpdateLifecycleMilestone(ctx context.Context, milestoneID string, requestBody *operations.UpdateLifecycleMilestoneRequestBody, opts ...operations.Option) (*components.LifecyclesMilestoneEntity, error) {
 	request := operations.UpdateLifecycleMilestoneRequest{
 		MilestoneID: milestoneID,
 		RequestBody: requestBody,
@@ -4153,7 +4153,7 @@ func (s *IncidentSettings) UpdateLifecycleMilestone(ctx context.Context, milesto
 				return nil, err
 			}
 
-			var out components.LifecyclesPhaseEntity
+			var out components.LifecyclesMilestoneEntity
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
