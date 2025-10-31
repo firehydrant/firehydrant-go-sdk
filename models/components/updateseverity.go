@@ -54,6 +54,8 @@ type UpdateSeverity struct {
 	Description *string              `json:"description,omitempty"`
 	Position    *int                 `json:"position,omitempty"`
 	Color       *UpdateSeverityColor `json:"color,omitempty"`
+	// IDs of roles allowed to use this severity. Empty array means all roles are allowed.
+	AllowedRoleIds []string `json:"allowed_role_ids,omitempty"`
 }
 
 func (u *UpdateSeverity) GetSlug() *string {
@@ -82,4 +84,11 @@ func (u *UpdateSeverity) GetColor() *UpdateSeverityColor {
 		return nil
 	}
 	return u.Color
+}
+
+func (u *UpdateSeverity) GetAllowedRoleIds() []string {
+	if u == nil {
+		return nil
+	}
+	return u.AllowedRoleIds
 }

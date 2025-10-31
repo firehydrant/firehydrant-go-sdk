@@ -241,7 +241,7 @@ func (s *Audiences) ListAudiences(ctx context.Context, includeArchived *bool, op
 
 // CreateAudience - Create audience
 // Create a new audience
-func (s *Audiences) CreateAudience(ctx context.Context, request operations.CreateAudienceRequest, opts ...operations.Option) (*components.AudiencesEntitiesAudienceEntity, error) {
+func (s *Audiences) CreateAudience(ctx context.Context, request components.CreateAudience, opts ...operations.Option) (*components.AudiencesEntitiesAudienceEntity, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
