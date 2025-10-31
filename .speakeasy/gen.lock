@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 39357612-0c85-4a96-a549-e2d920c4a065
 management:
-  docChecksum: ca38c2616f01addeec74908d4a714b6e
+  docChecksum: 20cefa7c38c9f6254b5d9cfd7d8672ea
   docVersion: 0.0.1
-  speakeasyVersion: 1.637.0
-  generationVersion: 2.727.4
-  releaseVersion: 1.6.0
-  configChecksum: 63f3ff33248d05e600e115e756ceffcf
+  speakeasyVersion: 1.643.3
+  generationVersion: 2.731.9
+  releaseVersion: 1.6.1
+  configChecksum: aade4dd9a3ed90e1c0d6f3063f52823d
   repoURL: https://github.com/firehydrant/firehydrant-go-sdk.git
   installationURL: https://github.com/firehydrant/firehydrant-go-sdk
 features:
   go:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.12
-    core: 3.12.0
+    core: 3.12.1
     defaultEnabledRetries: 0.2.0
     envVarSecurityUsage: 0.3.2
     flattening: 2.81.1
@@ -61,6 +61,7 @@ generatedFiles:
   - /models/components/conversationsapientitiesreference.go
   - /models/components/convertincidenttask.go
   - /models/components/copyoncallschedulerotation.go
+  - /models/components/createaudience.go
   - /models/components/createchange.go
   - /models/components/createchangeevent.go
   - /models/components/createchangeidentity.go
@@ -500,7 +501,6 @@ generatedFiles:
   - /models/operations/closeincident.go
   - /models/operations/convertincidenttask.go
   - /models/operations/copyoncallschedulerotation.go
-  - /models/operations/createaudience.go
   - /models/operations/createchangeidentity.go
   - /models/operations/createcomment.go
   - /models/operations/createcommentreaction.go
@@ -952,6 +952,7 @@ generatedFiles:
   - docs/models/components/conversationsapientitiesreference.md
   - docs/models/components/convertincidenttask.md
   - docs/models/components/copyoncallschedulerotation.md
+  - docs/models/components/createaudience.md
   - docs/models/components/createchange.md
   - docs/models/components/createchangeevent.md
   - docs/models/components/createchangeeventattachment.md
@@ -1111,6 +1112,7 @@ generatedFiles:
   - docs/models/components/customfieldsfieldvalue.md
   - docs/models/components/debugsignalsexpression.md
   - docs/models/components/debugsignalsexpressionlink.md
+  - docs/models/components/detail.md
   - docs/models/components/direction.md
   - docs/models/components/displayinformation.md
   - docs/models/components/encoding.md
@@ -1131,6 +1133,7 @@ generatedFiles:
   - docs/models/components/functionalityentitypaginated.md
   - docs/models/components/functionalitywithallservicesentity.md
   - docs/models/components/headers.md
+  - docs/models/components/highvalueevents.md
   - docs/models/components/image.md
   - docs/models/components/importsimportentity.md
   - docs/models/components/importsimportentitystate.md
@@ -1222,6 +1225,7 @@ generatedFiles:
   - docs/models/components/lifecyclesphaseentitylist.md
   - docs/models/components/linksentity.md
   - docs/models/components/logic.md
+  - docs/models/components/mediumvalueevents.md
   - docs/models/components/membershipentity.md
   - docs/models/components/messagetype.md
   - docs/models/components/metricsinfrastructurelistentity.md
@@ -1442,6 +1446,7 @@ generatedFiles:
   - docs/models/components/servicelinkentity.md
   - docs/models/components/serviceparentdependencyentity.md
   - docs/models/components/servicewithalldependenciesentity.md
+  - docs/models/components/settings.md
   - docs/models/components/severityentity.md
   - docs/models/components/severityentitypaginated.md
   - docs/models/components/severitymatrixconditionentity.md
@@ -1694,7 +1699,6 @@ generatedFiles:
   - docs/models/operations/closeincidentrequest.md
   - docs/models/operations/convertincidenttaskrequest.md
   - docs/models/operations/copyoncallschedulerotationrequest.md
-  - docs/models/operations/createaudiencerequest.md
   - docs/models/operations/createchangeidentityrequest.md
   - docs/models/operations/createcommentreactionrequest.md
   - docs/models/operations/createcommentrequest.md
@@ -5444,7 +5448,7 @@ examples:
   create_audience:
     speakeasy-default-create-audience:
       requestBody:
-        application/json: {"name": "<value>", "description": "simple contractor hmph along amongst thump provision crowded fragrant and", "default": false, "details[question]": [], "details[prompt]": ["<value 1>", "<value 2>", "<value 3>"]}
+        application/json: {"name": "<value>", "description": "simple contractor hmph along amongst thump provision crowded fragrant and", "default": false}
       responses:
         "201":
           application/json: {}

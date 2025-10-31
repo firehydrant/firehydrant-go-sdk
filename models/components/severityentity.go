@@ -17,6 +17,8 @@ type SeverityEntity struct {
 	UpdatedAt    *time.Time `json:"updated_at,omitempty"`
 	SystemRecord *bool      `json:"system_record,omitempty"`
 	Color        *string    `json:"color,omitempty"`
+	// IDs of roles allowed to use this severity. Empty array means all roles are allowed.
+	AllowedRoleIds []string `json:"allowed_role_ids,omitempty"`
 }
 
 func (s SeverityEntity) MarshalJSON() ([]byte, error) {
@@ -84,4 +86,11 @@ func (s *SeverityEntity) GetColor() *string {
 		return nil
 	}
 	return s.Color
+}
+
+func (s *SeverityEntity) GetAllowedRoleIds() []string {
+	if s == nil {
+		return nil
+	}
+	return s.AllowedRoleIds
 }

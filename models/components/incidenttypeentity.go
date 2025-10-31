@@ -9,9 +9,11 @@ import (
 
 // IncidentTypeEntity model
 type IncidentTypeEntity struct {
-	ID             *string                                         `json:"id,omitempty"`
-	Name           *string                                         `json:"name,omitempty"`
-	Description    *string                                         `json:"description,omitempty"`
+	ID          *string `json:"id,omitempty"`
+	Name        *string `json:"name,omitempty"`
+	Description *string `json:"description,omitempty"`
+	// IDs of roles allowed to create incidents of this type. Empty array means all roles are allowed.
+	AllowedRoleIds []string                                        `json:"allowed_role_ids,omitempty"`
 	Template       *NullableIncidentTypeEntityTemplateEntity       `json:"template,omitempty"`
 	TemplateValues *NullableIncidentTypeEntityTemplateValuesEntity `json:"template_values,omitempty"`
 	// A list of fields that are required on incidents of this type.
@@ -50,6 +52,13 @@ func (i *IncidentTypeEntity) GetDescription() *string {
 		return nil
 	}
 	return i.Description
+}
+
+func (i *IncidentTypeEntity) GetAllowedRoleIds() []string {
+	if i == nil {
+		return nil
+	}
+	return i.AllowedRoleIds
 }
 
 func (i *IncidentTypeEntity) GetTemplate() *NullableIncidentTypeEntityTemplateEntity {
