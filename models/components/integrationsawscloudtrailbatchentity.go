@@ -46,13 +46,13 @@ func (e *IntegrationsAwsCloudtrailBatchEntityStatus) UnmarshalJSON(data []byte) 
 
 // IntegrationsAwsCloudtrailBatchEntity - Integrations_Aws_CloudtrailBatchEntity model
 type IntegrationsAwsCloudtrailBatchEntity struct {
-	ID            *string                                     `json:"id,omitempty"`
-	EventsCreated *int                                        `json:"events_created,omitempty"`
-	Status        *IntegrationsAwsCloudtrailBatchEntityStatus `json:"status,omitempty"`
-	StartsAt      *time.Time                                  `json:"starts_at,omitempty"`
-	EndsAt        *time.Time                                  `json:"ends_at,omitempty"`
-	Connection    *NullableIntegrationsAwsConnectionEntity    `json:"connection,omitempty"`
-	CreatedAt     *time.Time                                  `json:"created_at,omitempty"`
+	ID            *string                                     `json:"id,omitzero"`
+	EventsCreated *int                                        `json:"events_created,omitzero"`
+	Status        *IntegrationsAwsCloudtrailBatchEntityStatus `json:"status,omitzero"`
+	StartsAt      *time.Time                                  `json:"starts_at,omitzero"`
+	EndsAt        *time.Time                                  `json:"ends_at,omitzero"`
+	Connection    *NullableIntegrationsAwsConnectionEntity    `json:"connection,omitzero"`
+	CreatedAt     *time.Time                                  `json:"created_at,omitzero"`
 }
 
 func (i IntegrationsAwsCloudtrailBatchEntity) MarshalJSON() ([]byte, error) {

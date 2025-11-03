@@ -9,15 +9,15 @@ import (
 
 // PublicAPIV1RoleEntity - PublicAPI_V1_RoleEntity model
 type PublicAPIV1RoleEntity struct {
-	ID          *string                       `json:"id,omitempty"`
-	Name        *string                       `json:"name,omitempty"`
-	Slug        *string                       `json:"slug,omitempty"`
-	Description *string                       `json:"description,omitempty"`
-	CreatedAt   *time.Time                    `json:"created_at,omitempty"`
-	UpdatedAt   *time.Time                    `json:"updated_at,omitempty"`
-	BuiltIn     *bool                         `json:"built_in,omitempty"`
-	ReadOnly    *bool                         `json:"read_only,omitempty"`
-	Permissions []PublicAPIV1PermissionEntity `json:"permissions,omitempty"`
+	ID          *string                       `json:"id,omitzero"`
+	Name        *string                       `json:"name,omitzero"`
+	Slug        *string                       `json:"slug,omitzero"`
+	Description *string                       `json:"description,omitzero"`
+	CreatedAt   *time.Time                    `json:"created_at,omitzero"`
+	UpdatedAt   *time.Time                    `json:"updated_at,omitzero"`
+	BuiltIn     *bool                         `json:"built_in,omitzero"`
+	ReadOnly    *bool                         `json:"read_only,omitzero"`
+	Permissions []PublicAPIV1PermissionEntity `json:"permissions,omitzero"`
 }
 
 func (p PublicAPIV1RoleEntity) MarshalJSON() ([]byte, error) {

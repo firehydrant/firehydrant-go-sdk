@@ -4,9 +4,9 @@ package components
 
 // UpdateIncidentRole - Update a single incident role from its ID
 type UpdateIncidentRole struct {
-	Name        *string `json:"name,omitempty"`
-	Summary     *string `json:"summary,omitempty"`
-	Description *string `json:"description,omitempty"`
+	Name        *string `json:"name,omitzero"`
+	Summary     *string `json:"summary,omitzero"`
+	Description *string `json:"description,omitzero"`
 }
 
 func (u *UpdateIncidentRole) GetName() *string {

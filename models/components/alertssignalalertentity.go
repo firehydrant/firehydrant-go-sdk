@@ -4,9 +4,9 @@ package components
 
 // AlertsSignalAlertEntity - Alerts_SignalAlertEntity model
 type AlertsSignalAlertEntity struct {
-	ID      *string `json:"id,omitempty"`
-	Summary *string `json:"summary,omitempty"`
-	IsNoise *bool   `json:"is_noise,omitempty"`
+	ID      *string `json:"id,omitzero"`
+	Summary *string `json:"summary,omitzero"`
+	IsNoise *bool   `json:"is_noise,omitzero"`
 }
 
 func (a *AlertsSignalAlertEntity) GetID() *string {

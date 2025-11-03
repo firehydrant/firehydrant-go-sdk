@@ -5,6 +5,7 @@ package operations
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
 type SectionsSlug string
@@ -89,16 +90,27 @@ func (e *CreateRetrospectiveTemplateFieldsType) UnmarshalJSON(data []byte) error
 type CreateRetrospectiveTemplateRequest struct {
 	Name                        string                                  `json:"name"`
 	Description                 string                                  `json:"description"`
-	IsDefault                   *bool                                   `json:"is_default,omitempty"`
+	IsDefault                   *bool                                   `json:"is_default,omitzero"`
 	SectionsSlug                []SectionsSlug                          `json:"sections[slug]"`
 	SectionsElements            []string                                `json:"sections[elements]"`
 	FieldsLabel                 []string                                `json:"fields[label]"`
 	FieldsType                  []CreateRetrospectiveTemplateFieldsType `json:"fields[type]"`
-	FieldsHelpText              []string                                `json:"fields[help_text],omitempty"`
-	FieldsPermissibleValues     []string                                `json:"fields[permissible_values],omitempty"`
-	FieldsIsRequired            []bool                                  `json:"fields[is_required],omitempty"`
-	FieldsRequiredAtMilestoneID []string                                `json:"fields[required_at_milestone_id],omitempty"`
-	FieldsSchema                []string                                `json:"fields[schema],omitempty"`
+	FieldsHelpText              []string                                `json:"fields[help_text],omitzero"`
+	FieldsPermissibleValues     []string                                `json:"fields[permissible_values],omitzero"`
+	FieldsIsRequired            []bool                                  `json:"fields[is_required],omitzero"`
+	FieldsRequiredAtMilestoneID []string                                `json:"fields[required_at_milestone_id],omitzero"`
+	FieldsSchema                []string                                `json:"fields[schema],omitzero"`
+}
+
+func (c CreateRetrospectiveTemplateRequest) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *CreateRetrospectiveTemplateRequest) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"name", "description", "sections[slug]", "sections[elements]", "fields[label]", "fields[type]"}); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (c *CreateRetrospectiveTemplateRequest) GetName() string {

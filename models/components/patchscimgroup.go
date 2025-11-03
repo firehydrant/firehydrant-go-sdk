@@ -26,7 +26,7 @@ func (p *PatchScimGroupOperation) GetPath() string {
 // PatchScimGroup - SCIM endpoint to partially update a Team (Colloquial for Group in the SCIM protocol). Supports adding, removing, or replacing members using SCIM PATCH operations.
 type PatchScimGroup struct {
 	// An optional trail to log the request
-	Trail *string `json:"trail,omitempty"`
+	Trail *string `json:"trail,omitzero"`
 	// An array of operations to perform on the group
 	Operations []PatchScimGroupOperation `json:"Operations"`
 }

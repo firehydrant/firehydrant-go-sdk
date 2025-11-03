@@ -3,10 +3,10 @@
 package components
 
 type AuthorEntity struct {
-	ID     *string `json:"id,omitempty"`
-	Name   *string `json:"name,omitempty"`
-	Source *string `json:"source,omitempty"`
-	Email  *string `json:"email,omitempty"`
+	ID     *string `json:"id,omitzero"`
+	Name   *string `json:"name,omitzero"`
+	Source *string `json:"source,omitzero"`
+	Email  *string `json:"email,omitzero"`
 }
 
 func (a *AuthorEntity) GetID() *string {

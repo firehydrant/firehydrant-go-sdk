@@ -5,6 +5,7 @@ package operations
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
 // UpdateLifecycleMilestoneAutoAssignTimestampOnCreate - The setting for auto-assigning the milestone's timestamp during incident declaration
@@ -39,17 +40,17 @@ func (e *UpdateLifecycleMilestoneAutoAssignTimestampOnCreate) UnmarshalJSON(data
 
 type UpdateLifecycleMilestoneRequestBody struct {
 	// The name of the milestone
-	Name *string `json:"name,omitempty"`
+	Name *string `json:"name,omitzero"`
 	// A long-form description of the milestone's purpose
-	Description *string `json:"description,omitempty"`
+	Description *string `json:"description,omitzero"`
 	// A unique identifier for the milestone. If not provided, one will be generated from the name.
-	Slug *string `json:"slug,omitempty"`
+	Slug *string `json:"slug,omitzero"`
 	// The position of the milestone within the phase. If not provided, the milestone will be added as the last milestone in the phase.
-	Position *int `json:"position,omitempty"`
+	Position *int `json:"position,omitzero"`
 	// The ID of a later milestone that cannot be started until this milestone has a timestamp populated
-	RequiredAtMilestoneID *string `json:"required_at_milestone_id,omitempty"`
+	RequiredAtMilestoneID *string `json:"required_at_milestone_id,omitzero"`
 	// The setting for auto-assigning the milestone's timestamp during incident declaration
-	AutoAssignTimestampOnCreate *UpdateLifecycleMilestoneAutoAssignTimestampOnCreate `json:"auto_assign_timestamp_on_create,omitempty"`
+	AutoAssignTimestampOnCreate *UpdateLifecycleMilestoneAutoAssignTimestampOnCreate `json:"auto_assign_timestamp_on_create,omitzero"`
 }
 
 func (u *UpdateLifecycleMilestoneRequestBody) GetName() *string {
@@ -97,6 +98,17 @@ func (u *UpdateLifecycleMilestoneRequestBody) GetAutoAssignTimestampOnCreate() *
 type UpdateLifecycleMilestoneRequest struct {
 	MilestoneID string                               `pathParam:"style=simple,explode=false,name=milestone_id"`
 	RequestBody *UpdateLifecycleMilestoneRequestBody `request:"mediaType=application/json"`
+}
+
+func (u UpdateLifecycleMilestoneRequest) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UpdateLifecycleMilestoneRequest) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, []string{"milestone_id"}); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (u *UpdateLifecycleMilestoneRequest) GetMilestoneID() string {

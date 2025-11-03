@@ -9,14 +9,14 @@ import (
 
 // PublicAPIV1IntegrationsAuthedProviderEntity - PublicAPI_V1_Integrations_AuthedProviderEntity model
 type PublicAPIV1IntegrationsAuthedProviderEntity struct {
-	ID                 *string                 `json:"id,omitempty"`
-	User               *NullableSuccinctEntity `json:"user,omitempty"`
-	IntegrationDefault *bool                   `json:"integration_default,omitempty"`
+	ID                 *string                 `json:"id,omitzero"`
+	User               *NullableSuccinctEntity `json:"user,omitzero"`
+	IntegrationDefault *bool                   `json:"integration_default,omitzero"`
 	// The email of the user who authorized the integration
-	AuthorizedEmail *string    `json:"authorized_email,omitempty"`
-	IsExpired       *bool      `json:"is_expired,omitempty"`
-	CreatedAt       *time.Time `json:"created_at,omitempty"`
-	UpdatedAt       *time.Time `json:"updated_at,omitempty"`
+	AuthorizedEmail *string    `json:"authorized_email,omitzero"`
+	IsExpired       *bool      `json:"is_expired,omitzero"`
+	CreatedAt       *time.Time `json:"created_at,omitzero"`
+	UpdatedAt       *time.Time `json:"updated_at,omitzero"`
 }
 
 func (p PublicAPIV1IntegrationsAuthedProviderEntity) MarshalJSON() ([]byte, error) {

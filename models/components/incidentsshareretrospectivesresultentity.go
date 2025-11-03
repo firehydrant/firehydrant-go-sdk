@@ -2,12 +2,27 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // IncidentsShareRetrospectivesResultEntity - Incidents_ShareRetrospectivesResultEntity model
 type IncidentsShareRetrospectivesResultEntity struct {
 	// The IDs of the retrospectives that were shared.
-	RetrospectiveIds []string `json:"retrospective_ids,omitempty"`
+	RetrospectiveIds []string `json:"retrospective_ids,omitzero"`
 	// The IDs of the users with whom the retrospectives were shared.
-	UserIds []string `json:"user_ids,omitempty"`
+	UserIds []string `json:"user_ids,omitzero"`
+}
+
+func (i IncidentsShareRetrospectivesResultEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(i, "", false)
+}
+
+func (i *IncidentsShareRetrospectivesResultEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &i, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (i *IncidentsShareRetrospectivesResultEntity) GetRetrospectiveIds() []string {

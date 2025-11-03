@@ -12,19 +12,19 @@ type AlertsSirenAlertEntityLabels struct {
 }
 
 type AlertsSirenAlertEntity struct {
-	ID          *string    `json:"id,omitempty"`
-	Summary     *string    `json:"summary,omitempty"`
-	Description *string    `json:"description,omitempty"`
-	StartsAt    *time.Time `json:"starts_at,omitempty"`
-	EndsAt      *time.Time `json:"ends_at,omitempty"`
-	Status      *string    `json:"status,omitempty"`
-	RemoteID    *string    `json:"remote_id,omitempty"`
-	RemoteURL   *string    `json:"remote_url,omitempty"`
+	ID          *string    `json:"id,omitzero"`
+	Summary     *string    `json:"summary,omitzero"`
+	Description *string    `json:"description,omitzero"`
+	StartsAt    *time.Time `json:"starts_at,omitzero"`
+	EndsAt      *time.Time `json:"ends_at,omitzero"`
+	Status      *string    `json:"status,omitzero"`
+	RemoteID    *string    `json:"remote_id,omitzero"`
+	RemoteURL   *string    `json:"remote_url,omitzero"`
 	// Arbitrary key:value pairs of labels.
-	Labels     *AlertsSirenAlertEntityLabels `json:"labels,omitempty"`
-	Tags       []string                      `json:"tags,omitempty"`
-	SignalID   *string                       `json:"signal_id,omitempty"`
-	SignalRule *NullableSignalsAPIRuleEntity `json:"signal_rule,omitempty"`
+	Labels     *AlertsSirenAlertEntityLabels `json:"labels,omitzero"`
+	Tags       []string                      `json:"tags,omitzero"`
+	SignalID   *string                       `json:"signal_id,omitzero"`
+	SignalRule *NullableSignalsAPIRuleEntity `json:"signal_rule,omitzero"`
 }
 
 func (a AlertsSirenAlertEntity) MarshalJSON() ([]byte, error) {

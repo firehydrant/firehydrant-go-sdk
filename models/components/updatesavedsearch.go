@@ -2,11 +2,26 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // UpdateSavedSearch - Update a specific saved search
 type UpdateSavedSearch struct {
-	IsPrivate    *bool          `json:"is_private,omitempty"`
-	Name         *string        `json:"name,omitempty"`
-	FilterValues map[string]any `json:"filter_values,omitempty"`
+	IsPrivate    *bool          `json:"is_private,omitzero"`
+	Name         *string        `json:"name,omitzero"`
+	FilterValues map[string]any `json:"filter_values,omitzero"`
+}
+
+func (u UpdateSavedSearch) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UpdateSavedSearch) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (u *UpdateSavedSearch) GetIsPrivate() *bool {

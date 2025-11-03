@@ -4,9 +4,9 @@ package components
 
 // UpdateIncidentLink - Update the external incident link attributes
 type UpdateIncidentLink struct {
-	DisplayText *string `json:"display_text,omitempty"`
-	IconURL     *string `json:"icon_url,omitempty"`
-	HrefURL     *string `json:"href_url,omitempty"`
+	DisplayText *string `json:"display_text,omitzero"`
+	IconURL     *string `json:"icon_url,omitzero"`
+	HrefURL     *string `json:"href_url,omitzero"`
 }
 
 func (u *UpdateIncidentLink) GetDisplayText() *string {

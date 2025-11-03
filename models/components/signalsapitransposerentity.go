@@ -2,23 +2,38 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type SignalsAPITransposerEntityExamplePayload struct {
 }
 
 // SignalsAPITransposerEntity - Signals_API_TransposerEntity model
 type SignalsAPITransposerEntity struct {
-	Name           *string                                   `json:"name,omitempty"`
-	Slug           *string                                   `json:"slug,omitempty"`
-	ExamplePayload *SignalsAPITransposerEntityExamplePayload `json:"example_payload,omitempty"`
-	Expression     *string                                   `json:"expression,omitempty"`
-	Expected       *string                                   `json:"expected,omitempty"`
-	Website        *string                                   `json:"website,omitempty"`
-	Description    *string                                   `json:"description,omitempty"`
-	Tags           []string                                  `json:"tags,omitempty"`
-	IngestURL      *string                                   `json:"ingest_url,omitempty"`
-	Editable       *bool                                     `json:"editable,omitempty"`
-	CreatedBy      *NullableAuthorEntity                     `json:"created_by,omitempty"`
-	UpdatedBy      *NullableAuthorEntity                     `json:"updated_by,omitempty"`
+	Name           *string                                   `json:"name,omitzero"`
+	Slug           *string                                   `json:"slug,omitzero"`
+	ExamplePayload *SignalsAPITransposerEntityExamplePayload `json:"example_payload,omitzero"`
+	Expression     *string                                   `json:"expression,omitzero"`
+	Expected       *string                                   `json:"expected,omitzero"`
+	Website        *string                                   `json:"website,omitzero"`
+	Description    *string                                   `json:"description,omitzero"`
+	Tags           []string                                  `json:"tags,omitzero"`
+	IngestURL      *string                                   `json:"ingest_url,omitzero"`
+	Editable       *bool                                     `json:"editable,omitzero"`
+	CreatedBy      *NullableAuthorEntity                     `json:"created_by,omitzero"`
+	UpdatedBy      *NullableAuthorEntity                     `json:"updated_by,omitzero"`
+}
+
+func (s SignalsAPITransposerEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(s, "", false)
+}
+
+func (s *SignalsAPITransposerEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &s, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (s *SignalsAPITransposerEntity) GetName() *string {

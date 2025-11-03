@@ -16,25 +16,25 @@ type NullableChangeEventEntityLabels struct {
 
 // NullableChangeEventEntity - ChangeEventEntity model
 type NullableChangeEventEntity struct {
-	ID              *string                  `json:"id,omitempty"`
-	Summary         *string                  `json:"summary,omitempty"`
-	Description     *string                  `json:"description,omitempty"`
-	ExternalID      *string                  `json:"external_id,omitempty"`
-	CreatedAt       *time.Time               `json:"created_at,omitempty"`
-	UpdatedAt       *time.Time               `json:"updated_at,omitempty"`
-	StartsAt        *time.Time               `json:"starts_at,omitempty"`
-	EndsAt          *time.Time               `json:"ends_at,omitempty"`
-	DurationMs      *int                     `json:"duration_ms,omitempty"`
-	DurationIso8601 *string                  `json:"duration_iso8601,omitempty"`
-	Environments    []EnvironmentEntryEntity `json:"environments,omitempty"`
-	RelatedChanges  []ChangeEntity           `json:"related_changes,omitempty"`
-	Identities      []ChangeIdentityEntity   `json:"identities,omitempty"`
-	Authors         []AuthorEntity           `json:"authors,omitempty"`
+	ID              *string                  `json:"id,omitzero"`
+	Summary         *string                  `json:"summary,omitzero"`
+	Description     *string                  `json:"description,omitzero"`
+	ExternalID      *string                  `json:"external_id,omitzero"`
+	CreatedAt       *time.Time               `json:"created_at,omitzero"`
+	UpdatedAt       *time.Time               `json:"updated_at,omitzero"`
+	StartsAt        *time.Time               `json:"starts_at,omitzero"`
+	EndsAt          *time.Time               `json:"ends_at,omitzero"`
+	DurationMs      *int                     `json:"duration_ms,omitzero"`
+	DurationIso8601 *string                  `json:"duration_iso8601,omitzero"`
+	Environments    []EnvironmentEntryEntity `json:"environments,omitzero"`
+	RelatedChanges  []ChangeEntity           `json:"related_changes,omitzero"`
+	Identities      []ChangeIdentityEntity   `json:"identities,omitzero"`
+	Authors         []AuthorEntity           `json:"authors,omitzero"`
 	// A list of objects attached to this item. Can be one of: LinkEntity, CustomerSupportIssueEntity, or GenericAttachmentEntity
-	Attachments []NullableChangeEventEntityAttachment `json:"attachments,omitempty"`
+	Attachments []NullableChangeEventEntityAttachment `json:"attachments,omitzero"`
 	// An object of label key and values
-	Labels   *NullableChangeEventEntityLabels `json:"labels,omitempty"`
-	Services []ServiceEntityLite              `json:"services,omitempty"`
+	Labels   *NullableChangeEventEntityLabels `json:"labels,omitzero"`
+	Services []ServiceEntityLite              `json:"services,omitzero"`
 }
 
 func (n NullableChangeEventEntity) MarshalJSON() ([]byte, error) {

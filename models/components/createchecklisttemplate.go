@@ -2,11 +2,15 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type CreateChecklistTemplateCheck struct {
 	// The name of the check
 	Name string `json:"name"`
 	// The description of the check
-	Description *string `json:"description,omitempty"`
+	Description *string `json:"description,omitzero"`
 }
 
 func (c *CreateChecklistTemplateCheck) GetName() string {
@@ -39,11 +43,22 @@ type CreateChecklistTemplate struct {
 	Name string `json:"name"`
 	// An array of checks for the checklist template
 	Checks      []CreateChecklistTemplateCheck `json:"checks"`
-	Description *string                        `json:"description,omitempty"`
+	Description *string                        `json:"description,omitzero"`
 	// The ID of the Team that owns the checklist template
-	TeamID *string `json:"team_id,omitempty"`
+	TeamID *string `json:"team_id,omitzero"`
 	// Array of service IDs to attach checklist template to
-	ConnectedServices []CreateChecklistTemplateConnectedService `json:"connected_services,omitempty"`
+	ConnectedServices []CreateChecklistTemplateConnectedService `json:"connected_services,omitzero"`
+}
+
+func (c CreateChecklistTemplate) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *CreateChecklistTemplate) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"name", "checks"}); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (c *CreateChecklistTemplate) GetName() string {

@@ -12,11 +12,11 @@ type AlertsSirenEventEntityData struct {
 }
 
 type AlertsSirenEventEntity struct {
-	ID   *string `json:"id,omitempty"`
-	Type *string `json:"type,omitempty"`
+	ID   *string `json:"id,omitzero"`
+	Type *string `json:"type,omitzero"`
 	// The event's payload
-	Data      *AlertsSirenEventEntityData `json:"data,omitempty"`
-	CreatedAt *time.Time                  `json:"created_at,omitempty"`
+	Data      *AlertsSirenEventEntityData `json:"data,omitzero"`
+	CreatedAt *time.Time                  `json:"created_at,omitzero"`
 }
 
 func (a AlertsSirenEventEntity) MarshalJSON() ([]byte, error) {

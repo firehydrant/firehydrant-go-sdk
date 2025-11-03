@@ -9,7 +9,7 @@ type OverrideOnCallScheduleRotationShifts struct {
 	// An ISO8601 time string specifying when the override should end.
 	EndTime string `json:"end_time"`
 	// The ID of the user who should be on-call for the overridden period. If not provided, the override will be unassigned and claimable by any user.
-	UserID *string `json:"user_id,omitempty"`
+	UserID *string `json:"user_id,omitzero"`
 }
 
 func (o *OverrideOnCallScheduleRotationShifts) GetStartTime() string {

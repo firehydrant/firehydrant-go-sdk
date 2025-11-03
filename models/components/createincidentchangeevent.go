@@ -45,7 +45,7 @@ type CreateIncidentChangeEvent struct {
 	ChangeEventID string                        `json:"change_event_id"`
 	Type          CreateIncidentChangeEventType `json:"type"`
 	// A short description about why this change event is related
-	Why *string `json:"why,omitempty"`
+	Why *string `json:"why,omitzero"`
 }
 
 func (c *CreateIncidentChangeEvent) GetChangeEventID() string {

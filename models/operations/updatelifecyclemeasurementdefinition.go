@@ -2,12 +2,16 @@
 
 package operations
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type UpdateLifecycleMeasurementDefinitionRequestBody struct {
-	Name                *string `json:"name,omitempty"`
-	Slug                *string `json:"slug,omitempty"`
-	Description         *string `json:"description,omitempty"`
-	StartsAtMilestoneID *string `json:"starts_at_milestone_id,omitempty"`
-	EndsAtMilestoneID   *string `json:"ends_at_milestone_id,omitempty"`
+	Name                *string `json:"name,omitzero"`
+	Slug                *string `json:"slug,omitzero"`
+	Description         *string `json:"description,omitzero"`
+	StartsAtMilestoneID *string `json:"starts_at_milestone_id,omitzero"`
+	EndsAtMilestoneID   *string `json:"ends_at_milestone_id,omitzero"`
 }
 
 func (u *UpdateLifecycleMeasurementDefinitionRequestBody) GetName() *string {
@@ -48,6 +52,17 @@ func (u *UpdateLifecycleMeasurementDefinitionRequestBody) GetEndsAtMilestoneID()
 type UpdateLifecycleMeasurementDefinitionRequest struct {
 	MeasurementDefinitionID string                                           `pathParam:"style=simple,explode=false,name=measurement_definition_id"`
 	RequestBody             *UpdateLifecycleMeasurementDefinitionRequestBody `request:"mediaType=application/json"`
+}
+
+func (u UpdateLifecycleMeasurementDefinitionRequest) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UpdateLifecycleMeasurementDefinitionRequest) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, []string{"measurement_definition_id"}); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (u *UpdateLifecycleMeasurementDefinitionRequest) GetMeasurementDefinitionID() string {

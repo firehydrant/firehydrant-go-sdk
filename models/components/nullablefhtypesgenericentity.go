@@ -3,9 +3,9 @@
 package components
 
 type NullableFHTypesGenericEntity struct {
-	Type  *string `json:"type,omitempty"`
-	Value *string `json:"value,omitempty"`
-	Label *string `json:"label,omitempty"`
+	Type  *string `json:"type,omitzero"`
+	Value *string `json:"value,omitzero"`
+	Label *string `json:"label,omitzero"`
 }
 
 func (n *NullableFHTypesGenericEntity) GetType() *string {

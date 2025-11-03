@@ -4,13 +4,13 @@ package components
 
 type MetricsMilestonesFunnelEntityColumnEntity struct {
 	// The slug of the milestone
-	Name *string `json:"name,omitempty"`
+	Name *string `json:"name,omitzero"`
 	// The name of the milestone
-	Label *string `json:"label,omitempty"`
+	Label *string `json:"label,omitzero"`
 	// The description of the milestone
-	Tooltip *string `json:"tooltip,omitempty"`
+	Tooltip *string `json:"tooltip,omitzero"`
 	// The UUID of the milestone
-	ID *string `json:"id,omitempty"`
+	ID *string `json:"id,omitzero"`
 }
 
 func (m *MetricsMilestonesFunnelEntityColumnEntity) GetName() *string {

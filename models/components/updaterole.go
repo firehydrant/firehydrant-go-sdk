@@ -5,6 +5,7 @@ package components
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
 type UpdateRolePermission string
@@ -206,9 +207,20 @@ type UpdateRole struct {
 	// The name of the role.
 	Name string `json:"name"`
 	// A long-form description of the role's purpose.
-	Description *string `json:"description,omitempty"`
+	Description *string `json:"description,omitzero"`
 	// An array of permission slugs to assign to the role.
-	Permissions []UpdateRolePermission `json:"permissions,omitempty"`
+	Permissions []UpdateRolePermission `json:"permissions,omitzero"`
+}
+
+func (u UpdateRole) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UpdateRole) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, []string{"name"}); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (u *UpdateRole) GetName() string {

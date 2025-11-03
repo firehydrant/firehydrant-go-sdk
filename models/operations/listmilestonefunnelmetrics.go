@@ -75,6 +75,17 @@ type ListMilestoneFunnelMetricsRequestBody struct {
 	GroupBy []ListMilestoneFunnelMetricsGroupBy `multipartForm:"name=group_by"`
 }
 
+func (l ListMilestoneFunnelMetricsRequestBody) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(l, "", false)
+}
+
+func (l *ListMilestoneFunnelMetricsRequestBody) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &l, "", false, nil); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (l *ListMilestoneFunnelMetricsRequestBody) GetGroupBy() []ListMilestoneFunnelMetricsGroupBy {
 	if l == nil {
 		return nil

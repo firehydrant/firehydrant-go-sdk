@@ -2,10 +2,25 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // ServiceLinkEntity model
 type ServiceLinkEntity struct {
-	StatusCode *int                   `json:"status_code,omitempty"`
-	Service    *NullableServiceEntity `json:"service,omitempty"`
+	StatusCode *int                   `json:"status_code,omitzero"`
+	Service    *NullableServiceEntity `json:"service,omitzero"`
+}
+
+func (s ServiceLinkEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(s, "", false)
+}
+
+func (s *ServiceLinkEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &s, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (s *ServiceLinkEntity) GetStatusCode() *int {

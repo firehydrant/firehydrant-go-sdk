@@ -9,28 +9,28 @@ import (
 
 // RunbookEntity model
 type RunbookEntity struct {
-	ID                *string                   `json:"id,omitempty"`
-	Name              *string                   `json:"name,omitempty"`
-	Summary           *string                   `json:"summary,omitempty"`
-	Description       *string                   `json:"description,omitempty"`
-	Type              *string                   `json:"type,omitempty"`
-	RunbookTemplateID *string                   `json:"runbook_template_id,omitempty"`
-	CreatedAt         *time.Time                `json:"created_at,omitempty"`
-	UpdatedAt         *time.Time                `json:"updated_at,omitempty"`
-	CreatedBy         *NullableAuthorEntity     `json:"created_by,omitempty"`
-	UpdatedBy         *NullableAuthorEntity     `json:"updated_by,omitempty"`
-	Steps             []RunbookStepEntity       `json:"steps,omitempty"`
-	AttachmentRule    *NullableRulesRuleEntity  `json:"attachment_rule,omitempty"`
-	Votes             *NullableEmptyVotesEntity `json:"votes,omitempty"`
-	IsEditable        *bool                     `json:"is_editable,omitempty"`
-	Owner             *NullableTeamEntityLite   `json:"owner,omitempty"`
+	ID                *string                   `json:"id,omitzero"`
+	Name              *string                   `json:"name,omitzero"`
+	Summary           *string                   `json:"summary,omitzero"`
+	Description       *string                   `json:"description,omitzero"`
+	Type              *string                   `json:"type,omitzero"`
+	RunbookTemplateID *string                   `json:"runbook_template_id,omitzero"`
+	CreatedAt         *time.Time                `json:"created_at,omitzero"`
+	UpdatedAt         *time.Time                `json:"updated_at,omitzero"`
+	CreatedBy         *NullableAuthorEntity     `json:"created_by,omitzero"`
+	UpdatedBy         *NullableAuthorEntity     `json:"updated_by,omitzero"`
+	Steps             []RunbookStepEntity       `json:"steps,omitzero"`
+	AttachmentRule    *NullableRulesRuleEntity  `json:"attachment_rule,omitzero"`
+	Votes             *NullableEmptyVotesEntity `json:"votes,omitzero"`
+	IsEditable        *bool                     `json:"is_editable,omitzero"`
+	Owner             *NullableTeamEntityLite   `json:"owner,omitzero"`
 	// categories the runbook applies to
-	Categories                      []string `json:"categories,omitempty"`
-	AutoAttachToRestrictedIncidents *bool    `json:"auto_attach_to_restricted_incidents,omitempty"`
-	Tutorial                        *bool    `json:"tutorial,omitempty"`
+	Categories                      []string `json:"categories,omitzero"`
+	AutoAttachToRestrictedIncidents *bool    `json:"auto_attach_to_restricted_incidents,omitzero"`
+	Tutorial                        *bool    `json:"tutorial,omitzero"`
 	// The timestamp when this runbook was last executed
-	LastExecutedAt          *time.Time                                  `json:"last_executed_at,omitempty"`
-	LastExecutedForIncident *NullablePublicAPIV1IncidentsSuccinctEntity `json:"last_executed_for_incident,omitempty"`
+	LastExecutedAt          *time.Time                                  `json:"last_executed_at,omitzero"`
+	LastExecutedForIncident *NullablePublicAPIV1IncidentsSuccinctEntity `json:"last_executed_for_incident,omitzero"`
 }
 
 func (r RunbookEntity) MarshalJSON() ([]byte, error) {

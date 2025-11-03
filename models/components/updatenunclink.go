@@ -4,9 +4,9 @@ package components
 
 // UpdateNuncLink - Update a link to be displayed on a FireHydrant status page
 type UpdateNuncLink struct {
-	DisplayText *string `json:"display_text,omitempty"`
-	IconURL     *string `json:"icon_url,omitempty"`
-	HrefURL     *string `json:"href_url,omitempty"`
+	DisplayText *string `json:"display_text,omitzero"`
+	IconURL     *string `json:"icon_url,omitzero"`
+	HrefURL     *string `json:"href_url,omitzero"`
 }
 
 func (u *UpdateNuncLink) GetDisplayText() *string {

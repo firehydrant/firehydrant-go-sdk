@@ -2,13 +2,28 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // PostMortemsReasonEntity - PostMortems_ReasonEntity model
 type PostMortemsReasonEntity struct {
-	ID            *string                             `json:"id,omitempty"`
-	Summary       *string                             `json:"summary,omitempty"`
-	Position      *int                                `json:"position,omitempty"`
-	CreatedBy     *NullableAuthorEntity               `json:"created_by,omitempty"`
-	Conversations []ConversationsAPIEntitiesReference `json:"conversations,omitempty"`
+	ID            *string                             `json:"id,omitzero"`
+	Summary       *string                             `json:"summary,omitzero"`
+	Position      *int                                `json:"position,omitzero"`
+	CreatedBy     *NullableAuthorEntity               `json:"created_by,omitzero"`
+	Conversations []ConversationsAPIEntitiesReference `json:"conversations,omitzero"`
+}
+
+func (p PostMortemsReasonEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(p, "", false)
+}
+
+func (p *PostMortemsReasonEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &p, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (p *PostMortemsReasonEntity) GetID() *string {

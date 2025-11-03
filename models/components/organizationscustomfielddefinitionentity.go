@@ -2,18 +2,33 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // OrganizationsCustomFieldDefinitionEntity - Organizations_CustomFieldDefinitionEntity model
 type OrganizationsCustomFieldDefinitionEntity struct {
-	DisplayName *string `json:"display_name,omitempty"`
-	FieldID     *string `json:"field_id,omitempty"`
-	FieldType   *string `json:"field_type,omitempty"`
-	Slug        *string `json:"slug,omitempty"`
-	Description *string `json:"description,omitempty"`
+	DisplayName *string `json:"display_name,omitzero"`
+	FieldID     *string `json:"field_id,omitzero"`
+	FieldType   *string `json:"field_type,omitzero"`
+	Slug        *string `json:"slug,omitzero"`
+	Description *string `json:"description,omitzero"`
 	// Whether this field is required for all incidents.
-	Required *bool `json:"required,omitempty"`
+	Required *bool `json:"required,omitzero"`
 	// The milestone at which this field is required, if `required` is set to `true`. When null, a required field is always required.
-	RequiredAtMilestoneID *string  `json:"required_at_milestone_id,omitempty"`
-	PermissibleValues     []string `json:"permissible_values,omitempty"`
+	RequiredAtMilestoneID *string  `json:"required_at_milestone_id,omitzero"`
+	PermissibleValues     []string `json:"permissible_values,omitzero"`
+}
+
+func (o OrganizationsCustomFieldDefinitionEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(o, "", false)
+}
+
+func (o *OrganizationsCustomFieldDefinitionEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &o, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (o *OrganizationsCustomFieldDefinitionEntity) GetDisplayName() *string {

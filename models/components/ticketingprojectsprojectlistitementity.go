@@ -9,12 +9,12 @@ import (
 
 // TicketingProjectsProjectListItemEntity - Ticketing_Projects_ProjectListItemEntity model
 type TicketingProjectsProjectListItemEntity struct {
-	ID             *string                                 `json:"id,omitempty"`
-	Name           *string                                 `json:"name,omitempty"`
-	Config         *NullableTicketingProjectConfigEntity   `json:"config,omitempty"`
-	FieldMap       *NullableTicketingProjectFieldMapEntity `json:"field_map,omitempty"`
-	UpdatedAt      *time.Time                              `json:"updated_at,omitempty"`
-	ConnectionSlug *string                                 `json:"connection_slug,omitempty"`
+	ID             *string                                 `json:"id,omitzero"`
+	Name           *string                                 `json:"name,omitzero"`
+	Config         *NullableTicketingProjectConfigEntity   `json:"config,omitzero"`
+	FieldMap       *NullableTicketingProjectFieldMapEntity `json:"field_map,omitzero"`
+	UpdatedAt      *time.Time                              `json:"updated_at,omitzero"`
+	ConnectionSlug *string                                 `json:"connection_slug,omitzero"`
 }
 
 func (t TicketingProjectsProjectListItemEntity) MarshalJSON() ([]byte, error) {

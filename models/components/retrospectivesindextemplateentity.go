@@ -8,12 +8,12 @@ import (
 )
 
 type RetrospectivesIndexTemplateEntity struct {
-	ID          *string    `json:"id,omitempty"`
-	Name        *string    `json:"name,omitempty"`
-	Description *string    `json:"description,omitempty"`
-	IsDefault   *bool      `json:"is_default,omitempty"`
-	CreatedAt   *time.Time `json:"created_at,omitempty"`
-	UpdatedAt   *time.Time `json:"updated_at,omitempty"`
+	ID          *string    `json:"id,omitzero"`
+	Name        *string    `json:"name,omitzero"`
+	Description *string    `json:"description,omitzero"`
+	IsDefault   *bool      `json:"is_default,omitzero"`
+	CreatedAt   *time.Time `json:"created_at,omitzero"`
+	UpdatedAt   *time.Time `json:"updated_at,omitzero"`
 }
 
 func (r RetrospectivesIndexTemplateEntity) MarshalJSON() ([]byte, error) {

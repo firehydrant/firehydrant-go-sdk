@@ -13,39 +13,39 @@ type NullableServiceEntityManagedBySettings struct {
 
 // NullableServiceEntity - ServiceEntity model
 type NullableServiceEntity struct {
-	ID            *string    `json:"id,omitempty"`
-	Name          *string    `json:"name,omitempty"`
-	Description   *string    `json:"description,omitempty"`
-	Slug          *string    `json:"slug,omitempty"`
-	ServiceTier   *int       `json:"service_tier,omitempty"`
-	CreatedAt     *time.Time `json:"created_at,omitempty"`
-	UpdatedAt     *time.Time `json:"updated_at,omitempty"`
-	AllowedParams []string   `json:"allowed_params,omitempty"`
+	ID            *string    `json:"id,omitzero"`
+	Name          *string    `json:"name,omitzero"`
+	Description   *string    `json:"description,omitzero"`
+	Slug          *string    `json:"slug,omitzero"`
+	ServiceTier   *int       `json:"service_tier,omitzero"`
+	CreatedAt     *time.Time `json:"created_at,omitzero"`
+	UpdatedAt     *time.Time `json:"updated_at,omitzero"`
+	AllowedParams []string   `json:"allowed_params,omitzero"`
 	// An object of label key and values
-	Labels                map[string]any `json:"labels,omitempty"`
-	AlertOnAdd            *bool          `json:"alert_on_add,omitempty"`
-	AutoAddRespondingTeam *bool          `json:"auto_add_responding_team,omitempty"`
+	Labels                map[string]any `json:"labels,omitzero"`
+	AlertOnAdd            *bool          `json:"alert_on_add,omitzero"`
+	AutoAddRespondingTeam *bool          `json:"auto_add_responding_team,omitzero"`
 	// List of active incident guids
-	ActiveIncidents []string `json:"active_incidents,omitempty"`
+	ActiveIncidents []string `json:"active_incidents,omitzero"`
 	// List of checklists associated with a service
-	Checklists      []ChecklistTemplateEntity `json:"checklists,omitempty"`
-	CompletedChecks *int                      `json:"completed_checks,omitempty"`
+	Checklists      []ChecklistTemplateEntity `json:"checklists,omitzero"`
+	CompletedChecks *int                      `json:"completed_checks,omitzero"`
 	// Information about known linkages to representations of services outside of FireHydrant.
-	ExternalResources []ExternalResourceEntity `json:"external_resources,omitempty"`
+	ExternalResources []ExternalResourceEntity `json:"external_resources,omitzero"`
 	// List of functionalities attached to the service
-	Functionalities []FunctionalityEntity                    `json:"functionalities,omitempty"`
-	LastImport      *NullableImportsImportableResourceEntity `json:"last_import,omitempty"`
+	Functionalities []FunctionalityEntity                    `json:"functionalities,omitzero"`
+	LastImport      *NullableImportsImportableResourceEntity `json:"last_import,omitzero"`
 	// List of links attached to this service.
-	Links []LinksEntity `json:"links,omitempty"`
+	Links []LinksEntity `json:"links,omitzero"`
 	// If set, this field indicates that the service is managed by an integration and thus cannot be set manually
-	ManagedBy *string `json:"managed_by,omitempty"`
+	ManagedBy *string `json:"managed_by,omitzero"`
 	// Indicates the settings of the catalog that manages this service
-	ManagedBySettings         *NullableServiceEntityManagedBySettings `json:"managed_by_settings,omitempty"`
-	Owner                     *NullableTeamEntityLite                 `json:"owner,omitempty"`
-	ServiceChecklistUpdatedAt *time.Time                              `json:"service_checklist_updated_at,omitempty"`
+	ManagedBySettings         *NullableServiceEntityManagedBySettings `json:"managed_by_settings,omitzero"`
+	Owner                     *NullableTeamEntityLite                 `json:"owner,omitzero"`
+	ServiceChecklistUpdatedAt *time.Time                              `json:"service_checklist_updated_at,omitzero"`
 	// List of teams attached to the service
-	Teams     []TeamEntityLite      `json:"teams,omitempty"`
-	UpdatedBy *NullableAuthorEntity `json:"updated_by,omitempty"`
+	Teams     []TeamEntityLite      `json:"teams,omitzero"`
+	UpdatedBy *NullableAuthorEntity `json:"updated_by,omitzero"`
 }
 
 func (n NullableServiceEntity) MarshalJSON() ([]byte, error) {

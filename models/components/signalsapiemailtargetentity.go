@@ -9,22 +9,22 @@ import (
 
 // SignalsAPIEmailTargetEntity - Signals_API_EmailTargetEntity model
 type SignalsAPIEmailTargetEntity struct {
-	ID                   *string                         `json:"id,omitempty"`
-	Slug                 *string                         `json:"slug,omitempty"`
-	Name                 *string                         `json:"name,omitempty"`
-	Description          *string                         `json:"description,omitempty"`
-	Email                *string                         `json:"email,omitempty"`
-	StatusCel            *string                         `json:"status_cel,omitempty"`
-	LevelCel             *string                         `json:"level_cel,omitempty"`
-	Target               *NullableSignalsAPITargetEntity `json:"target,omitempty"`
-	AllowedSenders       []string                        `json:"allowed_senders,omitempty"`
-	Rules                []string                        `json:"rules,omitempty"`
-	RuleMatchingStrategy *string                         `json:"rule_matching_strategy,omitempty"`
-	CreatedBy            *NullableAuthorEntity           `json:"created_by,omitempty"`
-	CreatedAt            *time.Time                      `json:"created_at,omitempty"`
-	UpdatedAt            *time.Time                      `json:"updated_at,omitempty"`
+	ID                   *string                         `json:"id,omitzero"`
+	Slug                 *string                         `json:"slug,omitzero"`
+	Name                 *string                         `json:"name,omitzero"`
+	Description          *string                         `json:"description,omitzero"`
+	Email                *string                         `json:"email,omitzero"`
+	StatusCel            *string                         `json:"status_cel,omitzero"`
+	LevelCel             *string                         `json:"level_cel,omitzero"`
+	Target               *NullableSignalsAPITargetEntity `json:"target,omitzero"`
+	AllowedSenders       []string                        `json:"allowed_senders,omitzero"`
+	Rules                []string                        `json:"rules,omitzero"`
+	RuleMatchingStrategy *string                         `json:"rule_matching_strategy,omitzero"`
+	CreatedBy            *NullableAuthorEntity           `json:"created_by,omitzero"`
+	CreatedAt            *time.Time                      `json:"created_at,omitzero"`
+	UpdatedAt            *time.Time                      `json:"updated_at,omitzero"`
 	// The team ID that the email target belongs to, if applicable
-	TeamID *string `json:"team_id,omitempty"`
+	TeamID *string `json:"team_id,omitzero"`
 }
 
 func (s SignalsAPIEmailTargetEntity) MarshalJSON() ([]byte, error) {

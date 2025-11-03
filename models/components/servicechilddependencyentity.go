@@ -8,12 +8,12 @@ import (
 )
 
 type ServiceChildDependencyEntity struct {
-	ID        *string                `json:"id,omitempty"`
-	Notes     *string                `json:"notes,omitempty"`
-	CreatedAt *time.Time             `json:"created_at,omitempty"`
-	UpdatedAt *time.Time             `json:"updated_at,omitempty"`
-	Service   *NullableServiceEntity `json:"service,omitempty"`
-	Type      *string                `json:"type,omitempty"`
+	ID        *string                `json:"id,omitzero"`
+	Notes     *string                `json:"notes,omitzero"`
+	CreatedAt *time.Time             `json:"created_at,omitzero"`
+	UpdatedAt *time.Time             `json:"updated_at,omitzero"`
+	Service   *NullableServiceEntity `json:"service,omitzero"`
+	Type      *string                `json:"type,omitzero"`
 }
 
 func (s ServiceChildDependencyEntity) MarshalJSON() ([]byte, error) {

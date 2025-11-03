@@ -5,6 +5,7 @@ package components
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
 type NullableIntegrationsAwsConnectionEntityConnectionStatus string
@@ -44,16 +45,27 @@ func (e *NullableIntegrationsAwsConnectionEntityConnectionStatus) UnmarshalJSON(
 
 // NullableIntegrationsAwsConnectionEntity - Integrations_Aws_ConnectionEntity model
 type NullableIntegrationsAwsConnectionEntity struct {
-	ID                *string                                                  `json:"id,omitempty"`
-	AwsAccountID      *string                                                  `json:"aws_account_id,omitempty"`
-	TargetArn         *string                                                  `json:"target_arn,omitempty"`
-	ExternalID        *string                                                  `json:"external_id,omitempty"`
-	ConnectionStatus  *NullableIntegrationsAwsConnectionEntityConnectionStatus `json:"connection_status,omitempty"`
-	StatusText        *string                                                  `json:"status_text,omitempty"`
-	StatusDescription *string                                                  `json:"status_description,omitempty"`
-	EnvironmentID     *string                                                  `json:"environment_id,omitempty"`
-	EnvironmentName   *string                                                  `json:"environment_name,omitempty"`
-	Regions           []string                                                 `json:"regions,omitempty"`
+	ID                *string                                                  `json:"id,omitzero"`
+	AwsAccountID      *string                                                  `json:"aws_account_id,omitzero"`
+	TargetArn         *string                                                  `json:"target_arn,omitzero"`
+	ExternalID        *string                                                  `json:"external_id,omitzero"`
+	ConnectionStatus  *NullableIntegrationsAwsConnectionEntityConnectionStatus `json:"connection_status,omitzero"`
+	StatusText        *string                                                  `json:"status_text,omitzero"`
+	StatusDescription *string                                                  `json:"status_description,omitzero"`
+	EnvironmentID     *string                                                  `json:"environment_id,omitzero"`
+	EnvironmentName   *string                                                  `json:"environment_name,omitzero"`
+	Regions           []string                                                 `json:"regions,omitzero"`
+}
+
+func (n NullableIntegrationsAwsConnectionEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(n, "", false)
+}
+
+func (n *NullableIntegrationsAwsConnectionEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &n, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (n *NullableIntegrationsAwsConnectionEntity) GetID() *string {

@@ -2,17 +2,32 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type ServiceDependency struct {
 }
 
 // ServiceWithAllDependenciesEntity model
 type ServiceWithAllDependenciesEntity struct {
 	// Services that depend on this service
-	ChildServiceDependencies []ServiceChildDependencyEntity `json:"child_service_dependencies,omitempty"`
+	ChildServiceDependencies []ServiceChildDependencyEntity `json:"child_service_dependencies,omitzero"`
 	// Services that this service is dependent on
-	ParentServiceDependencies []ServiceParentDependencyEntity `json:"parent_service_dependencies,omitempty"`
+	ParentServiceDependencies []ServiceParentDependencyEntity `json:"parent_service_dependencies,omitzero"`
 	// All dependencies. Can be one of: ServiceChildDependencyEntity, ServiceParentDependencyEntity
-	ServiceDependencies []ServiceDependency `json:"service_dependencies,omitempty"`
+	ServiceDependencies []ServiceDependency `json:"service_dependencies,omitzero"`
+}
+
+func (s ServiceWithAllDependenciesEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(s, "", false)
+}
+
+func (s *ServiceWithAllDependenciesEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &s, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (s *ServiceWithAllDependenciesEntity) GetChildServiceDependencies() []ServiceChildDependencyEntity {

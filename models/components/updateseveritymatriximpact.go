@@ -4,8 +4,8 @@ package components
 
 // UpdateSeverityMatrixImpact - Update a severity matrix impact
 type UpdateSeverityMatrixImpact struct {
-	Name     *string `json:"name,omitempty"`
-	Position *int    `json:"position,omitempty"`
+	Name     *string `json:"name,omitzero"`
+	Position *int    `json:"position,omitzero"`
 }
 
 func (u *UpdateSeverityMatrixImpact) GetName() *string {

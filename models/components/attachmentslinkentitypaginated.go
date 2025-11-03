@@ -2,10 +2,25 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // AttachmentsLinkEntityPaginated - Attachments_LinkEntityPaginated model
 type AttachmentsLinkEntityPaginated struct {
-	Data       []AttachmentsLinkEntity   `json:"data,omitempty"`
-	Pagination *NullablePaginationEntity `json:"pagination,omitempty"`
+	Data       []AttachmentsLinkEntity   `json:"data,omitzero"`
+	Pagination *NullablePaginationEntity `json:"pagination,omitzero"`
+}
+
+func (a AttachmentsLinkEntityPaginated) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(a, "", false)
+}
+
+func (a *AttachmentsLinkEntityPaginated) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &a, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (a *AttachmentsLinkEntityPaginated) GetData() []AttachmentsLinkEntity {

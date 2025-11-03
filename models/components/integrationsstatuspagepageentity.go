@@ -4,8 +4,8 @@ package components
 
 // IntegrationsStatuspagePageEntity - Integrations_Statuspage_PageEntity model
 type IntegrationsStatuspagePageEntity struct {
-	ID   *string `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
+	ID   *string `json:"id,omitzero"`
+	Name *string `json:"name,omitzero"`
 }
 
 func (i *IntegrationsStatuspagePageEntity) GetID() *string {

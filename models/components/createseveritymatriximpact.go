@@ -6,7 +6,7 @@ package components
 type CreateSeverityMatrixImpact struct {
 	AffectsType string `json:"affects_type"`
 	AffectsID   string `json:"affects_id"`
-	Position    *int   `json:"position,omitempty"`
+	Position    *int   `json:"position,omitzero"`
 }
 
 func (c *CreateSeverityMatrixImpact) GetAffectsType() string {

@@ -39,8 +39,8 @@ func (e *VoteDirection) UnmarshalJSON(data []byte) error {
 type CreateIncidentChatMessage struct {
 	Body string `json:"body"`
 	// ISO8601 timestamp for when the chat message occurred
-	OccurredAt    *time.Time     `json:"occurred_at,omitempty"`
-	VoteDirection *VoteDirection `json:"vote_direction,omitempty"`
+	OccurredAt    *time.Time     `json:"occurred_at,omitzero"`
+	VoteDirection *VoteDirection `json:"vote_direction,omitzero"`
 }
 
 func (c CreateIncidentChatMessage) MarshalJSON() ([]byte, error) {

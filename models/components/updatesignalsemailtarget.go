@@ -5,6 +5,7 @@ package components
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
 // UpdateSignalsEmailTargetType - The type of target that the inbound email will notify when matched.
@@ -107,27 +108,38 @@ func (e *UpdateSignalsEmailTargetRuleMatchingStrategy) UnmarshalJSON(data []byte
 // UpdateSignalsEmailTarget - Update a Signals email target by ID
 type UpdateSignalsEmailTarget struct {
 	// The email target's name.
-	Name *string `json:"name,omitempty"`
+	Name *string `json:"name,omitzero"`
 	// The email address that will be listening to events.
-	Slug *string `json:"slug,omitempty"`
+	Slug *string `json:"slug,omitzero"`
 	// A detailed description of the email target.
-	Description *string `json:"description,omitempty"`
+	Description *string `json:"description,omitzero"`
 	// The target that the email target will notify. This object must contain a `type`
 	// field that specifies the type of target and an `id` field that specifies the ID of
 	// the target. The `type` field must be one of "escalation_policy", "on_call_schedule",
 	// "team", "user", or "slack_channel".
 	//
-	Target *UpdateSignalsEmailTargetTarget `json:"target,omitempty"`
+	Target *UpdateSignalsEmailTargetTarget `json:"target,omitzero"`
 	// A list of email addresses that are allowed to send events to the target. Must be exact match.
-	AllowedSenders []string `json:"allowed_senders,omitempty"`
+	AllowedSenders []string `json:"allowed_senders,omitzero"`
 	// The CEL expression that defines the status of an incoming email that is sent to the target.
-	StatusCel *string `json:"status_cel,omitempty"`
+	StatusCel *string `json:"status_cel,omitzero"`
 	// The CEL expression that defines the level of an incoming email that is sent to the target.
-	LevelCel *string `json:"level_cel,omitempty"`
+	LevelCel *string `json:"level_cel,omitzero"`
 	// A list of CEL expressions that should be evaluated and matched to determine if the target should be notified.
-	Rules []string `json:"rules,omitempty"`
+	Rules []string `json:"rules,omitzero"`
 	// Whether or not all rules must match, or if only one rule must match.
-	RuleMatchingStrategy *UpdateSignalsEmailTargetRuleMatchingStrategy `json:"rule_matching_strategy,omitempty"`
+	RuleMatchingStrategy *UpdateSignalsEmailTargetRuleMatchingStrategy `json:"rule_matching_strategy,omitzero"`
+}
+
+func (u UpdateSignalsEmailTarget) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UpdateSignalsEmailTarget) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (u *UpdateSignalsEmailTarget) GetName() *string {

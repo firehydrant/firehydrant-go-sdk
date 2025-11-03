@@ -4,15 +4,15 @@ package components
 
 // AttachmentsLinkEntity - Attachments_LinkEntity model
 type AttachmentsLinkEntity struct {
-	ID          *string `json:"id,omitempty"`
-	Type        *string `json:"type,omitempty"`
-	DisplayText *string `json:"display_text,omitempty"`
-	HrefURL     *string `json:"href_url,omitempty"`
-	IconURL     *string `json:"icon_url,omitempty"`
+	ID          *string `json:"id,omitzero"`
+	Type        *string `json:"type,omitzero"`
+	DisplayText *string `json:"display_text,omitzero"`
+	HrefURL     *string `json:"href_url,omitzero"`
+	IconURL     *string `json:"icon_url,omitzero"`
 	// Link can be edited
-	Editable *bool `json:"editable,omitempty"`
+	Editable *bool `json:"editable,omitzero"`
 	// Link can be deleted
-	Deletable *bool `json:"deletable,omitempty"`
+	Deletable *bool `json:"deletable,omitzero"`
 }
 
 func (a *AttachmentsLinkEntity) GetID() *string {

@@ -3,9 +3,9 @@
 package components
 
 type PublicAPIV1SimilarIncidentEntity struct {
-	ID       *string  `json:"id,omitempty"`
-	Name     *string  `json:"name,omitempty"`
-	Distance *float32 `json:"distance,omitempty"`
+	ID       *string  `json:"id,omitzero"`
+	Name     *string  `json:"name,omitzero"`
+	Distance *float32 `json:"distance,omitzero"`
 }
 
 func (p *PublicAPIV1SimilarIncidentEntity) GetID() *string {

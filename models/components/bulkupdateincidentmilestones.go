@@ -38,7 +38,7 @@ type BulkUpdateIncidentMilestonesMilestone struct {
 	// An ISO8601 formatted string for when this milestone occurred. If you are removing a milestone, this field still needs to be set to some value
 	OccurredAt time.Time `json:"occurred_at"`
 	// If set to true, the milestone will be removed from the incident
-	Remove *bool `json:"remove,omitempty"`
+	Remove *bool `json:"remove,omitzero"`
 }
 
 func (b BulkUpdateIncidentMilestonesMilestone) MarshalJSON() ([]byte, error) {
@@ -80,7 +80,7 @@ func (b *BulkUpdateIncidentMilestonesMilestone) GetRemove() *bool {
 // a 422 response will instead be returned. This includes milestones
 // not explicitly submitted or updated in this request.
 type BulkUpdateIncidentMilestones struct {
-	Bulk       *Bulk                                   `json:"bulk,omitempty"`
+	Bulk       *Bulk                                   `json:"bulk,omitzero"`
 	Milestones []BulkUpdateIncidentMilestonesMilestone `json:"milestones"`
 }
 

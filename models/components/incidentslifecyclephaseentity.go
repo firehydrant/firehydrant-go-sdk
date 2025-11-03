@@ -2,13 +2,28 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type IncidentsLifecyclePhaseEntity struct {
-	ID          *string                             `json:"id,omitempty"`
-	Name        *string                             `json:"name,omitempty"`
-	Description *string                             `json:"description,omitempty"`
-	Type        *string                             `json:"type,omitempty"`
-	Position    *int                                `json:"position,omitempty"`
-	Milestones  []IncidentsLifecycleMilestoneEntity `json:"milestones,omitempty"`
+	ID          *string                             `json:"id,omitzero"`
+	Name        *string                             `json:"name,omitzero"`
+	Description *string                             `json:"description,omitzero"`
+	Type        *string                             `json:"type,omitzero"`
+	Position    *int                                `json:"position,omitzero"`
+	Milestones  []IncidentsLifecycleMilestoneEntity `json:"milestones,omitzero"`
+}
+
+func (i IncidentsLifecyclePhaseEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(i, "", false)
+}
+
+func (i *IncidentsLifecyclePhaseEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &i, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (i *IncidentsLifecyclePhaseEntity) GetID() *string {

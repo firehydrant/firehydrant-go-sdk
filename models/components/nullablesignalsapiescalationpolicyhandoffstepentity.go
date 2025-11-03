@@ -2,9 +2,24 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type NullableSignalsAPIEscalationPolicyHandoffStepEntity struct {
-	ID     *string                         `json:"id,omitempty"`
-	Target *NullableSignalsAPITargetEntity `json:"target,omitempty"`
+	ID     *string                         `json:"id,omitzero"`
+	Target *NullableSignalsAPITargetEntity `json:"target,omitzero"`
+}
+
+func (n NullableSignalsAPIEscalationPolicyHandoffStepEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(n, "", false)
+}
+
+func (n *NullableSignalsAPIEscalationPolicyHandoffStepEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &n, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (n *NullableSignalsAPIEscalationPolicyHandoffStepEntity) GetID() *string {

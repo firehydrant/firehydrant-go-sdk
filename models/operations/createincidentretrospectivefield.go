@@ -5,6 +5,7 @@ package operations
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
 type CreateIncidentRetrospectiveFieldType string
@@ -54,11 +55,22 @@ func (e *CreateIncidentRetrospectiveFieldType) UnmarshalJSON(data []byte) error 
 type CreateIncidentRetrospectiveFieldRequestBody struct {
 	Label                 string                               `json:"label"`
 	Type                  CreateIncidentRetrospectiveFieldType `json:"type"`
-	HelpText              *string                              `json:"help_text,omitempty"`
-	PermissibleValues     []string                             `json:"permissible_values,omitempty"`
-	IsRequired            *bool                                `json:"is_required,omitempty"`
-	Schema                []string                             `json:"schema,omitempty"`
-	RequiredAtMilestoneID *string                              `json:"required_at_milestone_id,omitempty"`
+	HelpText              *string                              `json:"help_text,omitzero"`
+	PermissibleValues     []string                             `json:"permissible_values,omitzero"`
+	IsRequired            *bool                                `json:"is_required,omitzero"`
+	Schema                []string                             `json:"schema,omitzero"`
+	RequiredAtMilestoneID *string                              `json:"required_at_milestone_id,omitzero"`
+}
+
+func (c CreateIncidentRetrospectiveFieldRequestBody) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *CreateIncidentRetrospectiveFieldRequestBody) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"label", "type"}); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (c *CreateIncidentRetrospectiveFieldRequestBody) GetLabel() string {

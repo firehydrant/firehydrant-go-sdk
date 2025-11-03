@@ -2,26 +2,41 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // UpdateIncidentLabels - Key:value pairs to track custom data for the incident
 type UpdateIncidentLabels struct {
 }
 
 // UpdateIncident - Updates an incident with provided parameters
 type UpdateIncident struct {
-	Name                  *string `json:"name,omitempty"`
-	Summary               *string `json:"summary,omitempty"`
-	CustomerImpactSummary *string `json:"customer_impact_summary,omitempty"`
-	Description           *string `json:"description,omitempty"`
+	Name                  *string `json:"name,omitzero"`
+	Summary               *string `json:"summary,omitzero"`
+	CustomerImpactSummary *string `json:"customer_impact_summary,omitzero"`
+	Description           *string `json:"description,omitzero"`
 	// Key:value pairs to track custom data for the incident
-	Labels              *UpdateIncidentLabels `json:"labels,omitempty"`
-	Priority            *string               `json:"priority,omitempty"`
-	Severity            *string               `json:"severity,omitempty"`
-	SeverityConditionID *string               `json:"severity_condition_id,omitempty"`
-	SeverityImpactID    *string               `json:"severity_impact_id,omitempty"`
+	Labels              *UpdateIncidentLabels `json:"labels,omitzero"`
+	Priority            *string               `json:"priority,omitzero"`
+	Severity            *string               `json:"severity,omitzero"`
+	SeverityConditionID *string               `json:"severity_condition_id,omitzero"`
+	SeverityImpactID    *string               `json:"severity_impact_id,omitzero"`
 	// List of tags for the incident
-	TagList []string `json:"tag_list,omitempty"`
+	TagList []string `json:"tag_list,omitzero"`
 	// The ID of the incident type. This will copy values from the incident type (if any) unless they are being overridden via parameters in this request.
-	IncidentTypeID *string `json:"incident_type_id,omitempty"`
+	IncidentTypeID *string `json:"incident_type_id,omitzero"`
+}
+
+func (u UpdateIncident) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UpdateIncident) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (u *UpdateIncident) GetName() *string {

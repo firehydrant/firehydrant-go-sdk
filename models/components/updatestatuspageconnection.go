@@ -5,6 +5,7 @@ package components
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
 type UpdateStatuspageConnectionSeverity struct {
@@ -105,10 +106,21 @@ func (m *MilestoneMapping) GetStatus() UpdateStatuspageConnectionStatus {
 
 // UpdateStatuspageConnection - Update the given Statuspage integration connection.
 type UpdateStatuspageConnection struct {
-	PageID            *string                              `json:"page_id,omitempty"`
-	Severities        []UpdateStatuspageConnectionSeverity `json:"severities,omitempty"`
-	Conditions        []Condition                          `json:"conditions,omitempty"`
-	MilestoneMappings []MilestoneMapping                   `json:"milestone_mappings,omitempty"`
+	PageID            *string                              `json:"page_id,omitzero"`
+	Severities        []UpdateStatuspageConnectionSeverity `json:"severities,omitzero"`
+	Conditions        []Condition                          `json:"conditions,omitzero"`
+	MilestoneMappings []MilestoneMapping                   `json:"milestone_mappings,omitzero"`
+}
+
+func (u UpdateStatuspageConnection) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UpdateStatuspageConnection) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (u *UpdateStatuspageConnection) GetPageID() *string {

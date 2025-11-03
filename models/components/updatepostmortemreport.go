@@ -2,11 +2,15 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type UpdatePostMortemReportQuestion struct {
 	// ID of a question
-	ID *string `json:"id,omitempty"`
+	ID *string `json:"id,omitzero"`
 	// Answer to question
-	Body *string `json:"body,omitempty"`
+	Body *string `json:"body,omitzero"`
 }
 
 func (u *UpdatePostMortemReportQuestion) GetID() *string {
@@ -25,10 +29,21 @@ func (u *UpdatePostMortemReportQuestion) GetBody() *string {
 
 // UpdatePostMortemReport - Update a report
 type UpdatePostMortemReport struct {
-	Name              *string                          `json:"name,omitempty"`
-	Summary           *string                          `json:"summary,omitempty"`
-	AdditionalDetails *string                          `json:"additional_details,omitempty"`
-	Questions         []UpdatePostMortemReportQuestion `json:"questions,omitempty"`
+	Name              *string                          `json:"name,omitzero"`
+	Summary           *string                          `json:"summary,omitzero"`
+	AdditionalDetails *string                          `json:"additional_details,omitzero"`
+	Questions         []UpdatePostMortemReportQuestion `json:"questions,omitzero"`
+}
+
+func (u UpdatePostMortemReport) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UpdatePostMortemReport) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (u *UpdatePostMortemReport) GetName() *string {

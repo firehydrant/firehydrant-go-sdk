@@ -2,9 +2,24 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // SignalsAPIAnalyticsNoiseMetricsEntity - Signals_API_Analytics_NoiseMetricsEntity model
 type SignalsAPIAnalyticsNoiseMetricsEntity struct {
-	Data *NullableSignalsAPIAnalyticsNoiseMetricsEntityMetricEntity `json:"data,omitempty"`
+	Data *NullableSignalsAPIAnalyticsNoiseMetricsEntityMetricEntity `json:"data,omitzero"`
+}
+
+func (s SignalsAPIAnalyticsNoiseMetricsEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(s, "", false)
+}
+
+func (s *SignalsAPIAnalyticsNoiseMetricsEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &s, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (s *SignalsAPIAnalyticsNoiseMetricsEntity) GetData() *NullableSignalsAPIAnalyticsNoiseMetricsEntityMetricEntity {

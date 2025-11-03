@@ -2,20 +2,35 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type NullableIncidentsConferenceBridgeEntityAttachment struct {
 }
 
 // NullableIncidentsConferenceBridgeEntity - Incidents_ConferenceBridgeEntity model
 type NullableIncidentsConferenceBridgeEntity struct {
-	ID *string `json:"id,omitempty"`
+	ID *string `json:"id,omitzero"`
 	// A list of objects attached to this item. Can be one of: LinkEntity, CustomerSupportIssueEntity, or GenericAttachmentEntity
-	Attachments              []NullableIncidentsConferenceBridgeEntityAttachment `json:"attachments,omitempty"`
-	HasTranslatedTranscripts *bool                                               `json:"has_translated_transcripts,omitempty"`
+	Attachments              []NullableIncidentsConferenceBridgeEntityAttachment `json:"attachments,omitzero"`
+	HasTranslatedTranscripts *bool                                               `json:"has_translated_transcripts,omitzero"`
 	// A list of language codes that have translated transcripts for this conference bridge
-	LanguageCodes          []string `json:"language_codes,omitempty"`
-	TranscriptionStatus    *string  `json:"transcription_status,omitempty"`
-	TranscriptionSubCode   *string  `json:"transcription_sub_code,omitempty"`
-	PreviousHostAssignment *string  `json:"previous_host_assignment,omitempty"`
+	LanguageCodes          []string `json:"language_codes,omitzero"`
+	TranscriptionStatus    *string  `json:"transcription_status,omitzero"`
+	TranscriptionSubCode   *string  `json:"transcription_sub_code,omitzero"`
+	PreviousHostAssignment *string  `json:"previous_host_assignment,omitzero"`
+}
+
+func (n NullableIncidentsConferenceBridgeEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(n, "", false)
+}
+
+func (n *NullableIncidentsConferenceBridgeEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &n, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (n *NullableIncidentsConferenceBridgeEntity) GetID() *string {

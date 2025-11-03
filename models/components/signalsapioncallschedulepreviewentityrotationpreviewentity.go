@@ -2,11 +2,26 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // SignalsAPIOnCallSchedulePreviewEntityRotationPreviewEntity - Signals_API_OnCallSchedulePreviewEntity_RotationPreviewEntity model
 type SignalsAPIOnCallSchedulePreviewEntityRotationPreviewEntity struct {
-	Name   *string                                                   `json:"name,omitempty"`
-	Color  *string                                                   `json:"color,omitempty"`
-	Shifts []SignalsAPIOnCallSchedulePreviewEntityShiftPreviewEntity `json:"shifts,omitempty"`
+	Name   *string                                                   `json:"name,omitzero"`
+	Color  *string                                                   `json:"color,omitzero"`
+	Shifts []SignalsAPIOnCallSchedulePreviewEntityShiftPreviewEntity `json:"shifts,omitzero"`
+}
+
+func (s SignalsAPIOnCallSchedulePreviewEntityRotationPreviewEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(s, "", false)
+}
+
+func (s *SignalsAPIOnCallSchedulePreviewEntityRotationPreviewEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &s, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (s *SignalsAPIOnCallSchedulePreviewEntityRotationPreviewEntity) GetName() *string {

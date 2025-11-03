@@ -4,13 +4,13 @@ package components
 
 type NullableSignalsAPIAnalyticsTimeseriesPointEntityMetricEntity struct {
 	// The time bucket
-	Bucket *string `json:"bucket,omitempty"`
+	Bucket *string `json:"bucket,omitzero"`
 	// The total number of opened alerts
-	TotalOpenedAlerts *int `json:"total_opened_alerts,omitempty"`
+	TotalOpenedAlerts *int `json:"total_opened_alerts,omitzero"`
 	// The total number of acknowledged alerts
-	TotalAckedAlerts *int `json:"total_acked_alerts,omitempty"`
+	TotalAckedAlerts *int `json:"total_acked_alerts,omitzero"`
 	// The total number of incidents
-	TotalIncidents *int `json:"total_incidents,omitempty"`
+	TotalIncidents *int `json:"total_incidents,omitzero"`
 }
 
 func (n *NullableSignalsAPIAnalyticsTimeseriesPointEntityMetricEntity) GetBucket() *string {

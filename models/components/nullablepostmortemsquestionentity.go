@@ -2,16 +2,31 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type NullablePostMortemsQuestionEntity struct {
-	ID               *string                             `json:"id,omitempty"`
-	Title            *string                             `json:"title,omitempty"`
-	Body             *string                             `json:"body,omitempty"`
-	Tooltip          *string                             `json:"tooltip,omitempty"`
-	Kind             *string                             `json:"kind,omitempty"`
-	QuestionTypeID   *string                             `json:"question_type_id,omitempty"`
-	IsRequired       *bool                               `json:"is_required,omitempty"`
-	AvailableOptions []string                            `json:"available_options,omitempty"`
-	Conversations    []ConversationsAPIEntitiesReference `json:"conversations,omitempty"`
+	ID               *string                             `json:"id,omitzero"`
+	Title            *string                             `json:"title,omitzero"`
+	Body             *string                             `json:"body,omitzero"`
+	Tooltip          *string                             `json:"tooltip,omitzero"`
+	Kind             *string                             `json:"kind,omitzero"`
+	QuestionTypeID   *string                             `json:"question_type_id,omitzero"`
+	IsRequired       *bool                               `json:"is_required,omitzero"`
+	AvailableOptions []string                            `json:"available_options,omitzero"`
+	Conversations    []ConversationsAPIEntitiesReference `json:"conversations,omitzero"`
+}
+
+func (n NullablePostMortemsQuestionEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(n, "", false)
+}
+
+func (n *NullablePostMortemsQuestionEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &n, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (n *NullablePostMortemsQuestionEntity) GetID() *string {

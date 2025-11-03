@@ -2,10 +2,25 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // SeverityEntityPaginated model
 type SeverityEntityPaginated struct {
-	Data       []SeverityEntity          `json:"data,omitempty"`
-	Pagination *NullablePaginationEntity `json:"pagination,omitempty"`
+	Data       []SeverityEntity          `json:"data,omitzero"`
+	Pagination *NullablePaginationEntity `json:"pagination,omitzero"`
+}
+
+func (s SeverityEntityPaginated) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(s, "", false)
+}
+
+func (s *SeverityEntityPaginated) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &s, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (s *SeverityEntityPaginated) GetData() []SeverityEntity {

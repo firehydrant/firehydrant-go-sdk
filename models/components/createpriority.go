@@ -5,8 +5,8 @@ package components
 // CreatePriority - Create a new priority
 type CreatePriority struct {
 	Slug        string  `json:"slug"`
-	Description *string `json:"description,omitempty"`
-	Default     *bool   `json:"default,omitempty"`
+	Description *string `json:"description,omitzero"`
+	Default     *bool   `json:"default,omitzero"`
 }
 
 func (c *CreatePriority) GetSlug() string {

@@ -2,10 +2,14 @@
 
 package operations
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type UpdateNuncComponentGroupRequestBody struct {
-	Name             *string `json:"name,omitempty"`
-	ComponentGroupID *string `json:"component_group_id,omitempty"`
-	Position         *int    `json:"position,omitempty"`
+	Name             *string `json:"name,omitzero"`
+	ComponentGroupID *string `json:"component_group_id,omitzero"`
+	Position         *int    `json:"position,omitzero"`
 }
 
 func (u *UpdateNuncComponentGroupRequestBody) GetName() *string {
@@ -33,6 +37,17 @@ type UpdateNuncComponentGroupRequest struct {
 	NuncConnectionID string                               `pathParam:"style=simple,explode=false,name=nunc_connection_id"`
 	GroupID          string                               `pathParam:"style=simple,explode=false,name=group_id"`
 	RequestBody      *UpdateNuncComponentGroupRequestBody `request:"mediaType=application/json"`
+}
+
+func (u UpdateNuncComponentGroupRequest) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UpdateNuncComponentGroupRequest) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, []string{"nunc_connection_id", "group_id"}); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (u *UpdateNuncComponentGroupRequest) GetNuncConnectionID() string {

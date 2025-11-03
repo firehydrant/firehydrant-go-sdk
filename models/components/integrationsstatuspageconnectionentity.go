@@ -2,14 +2,29 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // IntegrationsStatuspageConnectionEntity - Integrations_Statuspage_ConnectionEntity model
 type IntegrationsStatuspageConnectionEntity struct {
-	ID                *string                                        `json:"id,omitempty"`
-	PageName          *string                                        `json:"page_name,omitempty"`
-	PageID            *string                                        `json:"page_id,omitempty"`
-	Conditions        []IntegrationsStatuspageConditionEntity        `json:"conditions,omitempty"`
-	Severities        []IntegrationsStatuspageSeverityEntity         `json:"severities,omitempty"`
-	MilestoneMappings []IntegrationsStatuspageMilestoneMappingEntity `json:"milestone_mappings,omitempty"`
+	ID                *string                                        `json:"id,omitzero"`
+	PageName          *string                                        `json:"page_name,omitzero"`
+	PageID            *string                                        `json:"page_id,omitzero"`
+	Conditions        []IntegrationsStatuspageConditionEntity        `json:"conditions,omitzero"`
+	Severities        []IntegrationsStatuspageSeverityEntity         `json:"severities,omitzero"`
+	MilestoneMappings []IntegrationsStatuspageMilestoneMappingEntity `json:"milestone_mappings,omitzero"`
+}
+
+func (i IntegrationsStatuspageConnectionEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(i, "", false)
+}
+
+func (i *IntegrationsStatuspageConnectionEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &i, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (i *IntegrationsStatuspageConnectionEntity) GetID() *string {

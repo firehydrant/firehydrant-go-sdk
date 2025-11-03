@@ -2,19 +2,34 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // TicketingProjectConfigEntityDetails - A config object containing details about the project config. Can be one of: Ticketing::JiraCloud::ProjectConfigEntity, Ticketing::JiraOnprem::ProjectConfigEntity, or Ticketing::Shortcut::ProjectConfigEntity
 type TicketingProjectConfigEntityDetails struct {
 }
 
 // TicketingProjectConfigEntity - Ticketing_ProjectConfigEntity model
 type TicketingProjectConfigEntity struct {
-	ID                   *string `json:"id,omitempty"`
-	ConnectionID         *string `json:"connection_id,omitempty"`
-	ConnectionType       *string `json:"connection_type,omitempty"`
-	TicketingProjectID   *string `json:"ticketing_project_id,omitempty"`
-	TicketingProjectName *string `json:"ticketing_project_name,omitempty"`
+	ID                   *string `json:"id,omitzero"`
+	ConnectionID         *string `json:"connection_id,omitzero"`
+	ConnectionType       *string `json:"connection_type,omitzero"`
+	TicketingProjectID   *string `json:"ticketing_project_id,omitzero"`
+	TicketingProjectName *string `json:"ticketing_project_name,omitzero"`
 	// A config object containing details about the project config. Can be one of: Ticketing::JiraCloud::ProjectConfigEntity, Ticketing::JiraOnprem::ProjectConfigEntity, or Ticketing::Shortcut::ProjectConfigEntity
-	Details *TicketingProjectConfigEntityDetails `json:"details,omitempty"`
+	Details *TicketingProjectConfigEntityDetails `json:"details,omitzero"`
+}
+
+func (t TicketingProjectConfigEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(t, "", false)
+}
+
+func (t *TicketingProjectConfigEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &t, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (t *TicketingProjectConfigEntity) GetID() *string {

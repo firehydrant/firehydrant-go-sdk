@@ -12,21 +12,21 @@ type ChangeEventSlimEntityLabels struct {
 }
 
 type ChangeEventSlimEntity struct {
-	ID              *string                  `json:"id,omitempty"`
-	Summary         *string                  `json:"summary,omitempty"`
-	Description     *string                  `json:"description,omitempty"`
-	ExternalID      *string                  `json:"external_id,omitempty"`
-	CreatedAt       *time.Time               `json:"created_at,omitempty"`
-	UpdatedAt       *time.Time               `json:"updated_at,omitempty"`
-	StartsAt        *time.Time               `json:"starts_at,omitempty"`
-	EndsAt          *time.Time               `json:"ends_at,omitempty"`
-	DurationMs      *int                     `json:"duration_ms,omitempty"`
-	DurationIso8601 *string                  `json:"duration_iso8601,omitempty"`
-	Environments    []EnvironmentEntryEntity `json:"environments,omitempty"`
-	Authors         []AuthorEntity           `json:"authors,omitempty"`
+	ID              *string                  `json:"id,omitzero"`
+	Summary         *string                  `json:"summary,omitzero"`
+	Description     *string                  `json:"description,omitzero"`
+	ExternalID      *string                  `json:"external_id,omitzero"`
+	CreatedAt       *time.Time               `json:"created_at,omitzero"`
+	UpdatedAt       *time.Time               `json:"updated_at,omitzero"`
+	StartsAt        *time.Time               `json:"starts_at,omitzero"`
+	EndsAt          *time.Time               `json:"ends_at,omitzero"`
+	DurationMs      *int                     `json:"duration_ms,omitzero"`
+	DurationIso8601 *string                  `json:"duration_iso8601,omitzero"`
+	Environments    []EnvironmentEntryEntity `json:"environments,omitzero"`
+	Authors         []AuthorEntity           `json:"authors,omitzero"`
 	// An object of label key and values
-	Labels   *ChangeEventSlimEntityLabels `json:"labels,omitempty"`
-	Services []ServiceEntityLite          `json:"services,omitempty"`
+	Labels   *ChangeEventSlimEntityLabels `json:"labels,omitzero"`
+	Services []ServiceEntityLite          `json:"services,omitzero"`
 }
 
 func (c ChangeEventSlimEntity) MarshalJSON() ([]byte, error) {

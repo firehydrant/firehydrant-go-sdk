@@ -8,14 +8,14 @@ import (
 )
 
 type IncidentsMilestoneEntity struct {
-	ID *string `json:"id,omitempty"`
+	ID *string `json:"id,omitzero"`
 	// The milestone's type. This will be one of the currently configured milestones for the given incident.
-	Type *string `json:"type,omitempty"`
+	Type *string `json:"type,omitzero"`
 	// How long the incident spent in this milestones, in ISO 8601 Duration Format. This will be null if the milestone is the incident's current milestone.
-	Duration   *string    `json:"duration,omitempty"`
-	OccurredAt *time.Time `json:"occurred_at,omitempty"`
-	CreatedAt  *time.Time `json:"created_at,omitempty"`
-	UpdatedAt  *time.Time `json:"updated_at,omitempty"`
+	Duration   *string    `json:"duration,omitzero"`
+	OccurredAt *time.Time `json:"occurred_at,omitzero"`
+	CreatedAt  *time.Time `json:"created_at,omitzero"`
+	UpdatedAt  *time.Time `json:"updated_at,omitzero"`
 }
 
 func (i IncidentsMilestoneEntity) MarshalJSON() ([]byte, error) {

@@ -2,9 +2,24 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // SignalsAPITransposerListEntity - Signals_API_TransposerListEntity model
 type SignalsAPITransposerListEntity struct {
-	Data *NullableSignalsAPITransposerEntity `json:"data,omitempty"`
+	Data *NullableSignalsAPITransposerEntity `json:"data,omitzero"`
+}
+
+func (s SignalsAPITransposerListEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(s, "", false)
+}
+
+func (s *SignalsAPITransposerListEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &s, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (s *SignalsAPITransposerListEntity) GetData() *NullableSignalsAPITransposerEntity {

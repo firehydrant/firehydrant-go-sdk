@@ -12,12 +12,12 @@ type Meta struct {
 
 // ErrorEntity model
 type ErrorEntity struct {
-	Detail   *string  `json:"detail,omitempty"`
-	Messages []string `json:"messages,omitempty"`
+	Detail   *string  `json:"detail,omitzero"`
+	Messages []string `json:"messages,omitzero"`
 	// An object with additional error metadata
-	Meta *Meta `json:"meta,omitempty"`
+	Meta *Meta `json:"meta,omitzero"`
 	// A stable code on which to match errors
-	Code *string `json:"code,omitempty"`
+	Code *string `json:"code,omitzero"`
 }
 
 var _ error = &ErrorEntity{}

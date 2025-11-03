@@ -5,7 +5,7 @@ package components
 // UpdateIncidentRetrospective - Update a retrospective attached to an incident
 type UpdateIncidentRetrospective struct {
 	// To hide or unhide the retrospective.
-	IsHidden *bool `json:"is_hidden,omitempty"`
+	IsHidden *bool `json:"is_hidden,omitzero"`
 }
 
 func (u *UpdateIncidentRetrospective) GetIsHidden() *bool {

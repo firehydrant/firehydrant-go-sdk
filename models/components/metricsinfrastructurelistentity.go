@@ -2,10 +2,25 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // MetricsInfrastructureListEntity - Metrics_InfrastructureListEntity model
 type MetricsInfrastructureListEntity struct {
 	// List of infrastructure metrics
-	Data []MetricsInfrastructureMetricsEntity `json:"data,omitempty"`
+	Data []MetricsInfrastructureMetricsEntity `json:"data,omitzero"`
+}
+
+func (m MetricsInfrastructureListEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(m, "", false)
+}
+
+func (m *MetricsInfrastructureListEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &m, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (m *MetricsInfrastructureListEntity) GetData() []MetricsInfrastructureMetricsEntity {

@@ -5,6 +5,7 @@ package components
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
 type StrategyEnum string
@@ -37,12 +38,23 @@ type UserData struct {
 }
 
 type TicketingProjectFieldMapBodyEntity struct {
-	Strategy      *StrategyEnum                                        `json:"strategy,omitempty"`
-	ExternalField *string                                              `json:"external_field,omitempty"`
-	ExternalValue *NullableTicketingProjectFieldMapExternalValueEntity `json:"external_value,omitempty"`
-	UserData      *UserData                                            `json:"user_data,omitempty"`
-	Cases         []TicketingProjectFieldMapCasesEntity                `json:"cases,omitempty"`
-	Else          *NullableTicketingProjectFieldMapCasesElseEntity     `json:"else,omitempty"`
+	Strategy      *StrategyEnum                                        `json:"strategy,omitzero"`
+	ExternalField *string                                              `json:"external_field,omitzero"`
+	ExternalValue *NullableTicketingProjectFieldMapExternalValueEntity `json:"external_value,omitzero"`
+	UserData      *UserData                                            `json:"user_data,omitzero"`
+	Cases         []TicketingProjectFieldMapCasesEntity                `json:"cases,omitzero"`
+	Else          *NullableTicketingProjectFieldMapCasesElseEntity     `json:"else,omitzero"`
+}
+
+func (t TicketingProjectFieldMapBodyEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(t, "", false)
+}
+
+func (t *TicketingProjectFieldMapBodyEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &t, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (t *TicketingProjectFieldMapBodyEntity) GetStrategy() *StrategyEnum {

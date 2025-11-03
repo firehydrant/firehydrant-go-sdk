@@ -9,15 +9,15 @@ import (
 
 // ChecklistTemplateEntity model
 type ChecklistTemplateEntity struct {
-	ID          *string                 `json:"id,omitempty"`
-	Name        *string                 `json:"name,omitempty"`
-	Description *string                 `json:"description,omitempty"`
-	CreatedAt   *string                 `json:"created_at,omitempty"`
-	UpdatedAt   *time.Time              `json:"updated_at,omitempty"`
-	Checks      []ChecklistCheckEntity  `json:"checks,omitempty"`
-	Owner       *NullableTeamEntityLite `json:"owner,omitempty"`
+	ID          *string                 `json:"id,omitzero"`
+	Name        *string                 `json:"name,omitzero"`
+	Description *string                 `json:"description,omitzero"`
+	CreatedAt   *string                 `json:"created_at,omitzero"`
+	UpdatedAt   *time.Time              `json:"updated_at,omitzero"`
+	Checks      []ChecklistCheckEntity  `json:"checks,omitzero"`
+	Owner       *NullableTeamEntityLite `json:"owner,omitzero"`
 	// List of services that use this checklist
-	ConnectedServices []ServiceEntityChecklist `json:"connected_services,omitempty"`
+	ConnectedServices []ServiceEntityChecklist `json:"connected_services,omitzero"`
 }
 
 func (c ChecklistTemplateEntity) MarshalJSON() ([]byte, error) {

@@ -9,28 +9,28 @@ import (
 
 // FunctionalityEntity model
 type FunctionalityEntity struct {
-	ID          *string    `json:"id,omitempty"`
-	Name        *string    `json:"name,omitempty"`
-	Slug        *string    `json:"slug,omitempty"`
-	Description *string    `json:"description,omitempty"`
-	CreatedAt   *time.Time `json:"created_at,omitempty"`
-	UpdatedAt   *time.Time `json:"updated_at,omitempty"`
+	ID          *string    `json:"id,omitzero"`
+	Name        *string    `json:"name,omitzero"`
+	Slug        *string    `json:"slug,omitzero"`
+	Description *string    `json:"description,omitzero"`
+	CreatedAt   *time.Time `json:"created_at,omitzero"`
+	UpdatedAt   *time.Time `json:"updated_at,omitzero"`
 	// An object of label key and values
-	Labels map[string]any `json:"labels,omitempty"`
+	Labels map[string]any `json:"labels,omitzero"`
 	// List of active incident guids
-	ActiveIncidents []string `json:"active_incidents,omitempty"`
+	ActiveIncidents []string `json:"active_incidents,omitzero"`
 	// List of links attached to this functionality.
-	Links                 []LinksEntity           `json:"links,omitempty"`
-	Owner                 *NullableTeamEntityLite `json:"owner,omitempty"`
-	AlertOnAdd            *bool                   `json:"alert_on_add,omitempty"`
-	AutoAddRespondingTeam *bool                   `json:"auto_add_responding_team,omitempty"`
-	UpdatedBy             *NullableAuthorEntity   `json:"updated_by,omitempty"`
+	Links                 []LinksEntity           `json:"links,omitzero"`
+	Owner                 *NullableTeamEntityLite `json:"owner,omitzero"`
+	AlertOnAdd            *bool                   `json:"alert_on_add,omitzero"`
+	AutoAddRespondingTeam *bool                   `json:"auto_add_responding_team,omitzero"`
+	UpdatedBy             *NullableAuthorEntity   `json:"updated_by,omitzero"`
 	// Services this functionality provides
-	Services []ServiceEntityLite `json:"services,omitempty"`
+	Services []ServiceEntityLite `json:"services,omitzero"`
 	// Information about known linkages to representations of services outside of FireHydrant.
-	ExternalResources []ExternalResourceEntity `json:"external_resources,omitempty"`
+	ExternalResources []ExternalResourceEntity `json:"external_resources,omitzero"`
 	// List of teams attached to the functionality
-	Teams []TeamEntityLite `json:"teams,omitempty"`
+	Teams []TeamEntityLite `json:"teams,omitzero"`
 }
 
 func (f FunctionalityEntity) MarshalJSON() ([]byte, error) {

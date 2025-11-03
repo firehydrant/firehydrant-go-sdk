@@ -9,19 +9,19 @@ import (
 
 // SignalsAPIEscalationPolicyEntity - Signals_API_EscalationPolicyEntity model
 type SignalsAPIEscalationPolicyEntity struct {
-	ID           *string                                              `json:"id,omitempty"`
-	Name         *string                                              `json:"name,omitempty"`
-	Description  *string                                              `json:"description,omitempty"`
-	Default      *bool                                                `json:"default,omitempty"`
-	Repetitions  *int                                                 `json:"repetitions,omitempty"`
-	Steps        []SignalsAPIEscalationPolicyStepEntity               `json:"steps,omitempty"`
-	HandoffStep  *NullableSignalsAPIEscalationPolicyHandoffStepEntity `json:"handoff_step,omitempty"`
-	CreatedBy    *NullableAuthorEntity                                `json:"created_by,omitempty"`
-	CreatedAt    *time.Time                                           `json:"created_at,omitempty"`
-	UpdatedAt    *time.Time                                           `json:"updated_at,omitempty"`
-	StepStrategy *string                                              `json:"step_strategy,omitempty"`
+	ID           *string                                              `json:"id,omitzero"`
+	Name         *string                                              `json:"name,omitzero"`
+	Description  *string                                              `json:"description,omitzero"`
+	Default      *bool                                                `json:"default,omitzero"`
+	Repetitions  *int                                                 `json:"repetitions,omitzero"`
+	Steps        []SignalsAPIEscalationPolicyStepEntity               `json:"steps,omitzero"`
+	HandoffStep  *NullableSignalsAPIEscalationPolicyHandoffStepEntity `json:"handoff_step,omitzero"`
+	CreatedBy    *NullableAuthorEntity                                `json:"created_by,omitzero"`
+	CreatedAt    *time.Time                                           `json:"created_at,omitzero"`
+	UpdatedAt    *time.Time                                           `json:"updated_at,omitzero"`
+	StepStrategy *string                                              `json:"step_strategy,omitzero"`
 	// Priority-specific policies for dynamic escalation policies
-	NotificationPriorityPolicies []SignalsAPINotificationPriorityPolicyEntity `json:"notification_priority_policies,omitempty"`
+	NotificationPriorityPolicies []SignalsAPINotificationPriorityPolicyEntity `json:"notification_priority_policies,omitzero"`
 }
 
 func (s SignalsAPIEscalationPolicyEntity) MarshalJSON() ([]byte, error) {

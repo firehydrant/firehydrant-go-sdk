@@ -2,9 +2,24 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type RetrospectivesTemplateEntityIncidentSectionEntity struct {
-	Slug     *string  `json:"slug,omitempty"`
-	Elements []string `json:"elements,omitempty"`
+	Slug     *string  `json:"slug,omitzero"`
+	Elements []string `json:"elements,omitzero"`
+}
+
+func (r RetrospectivesTemplateEntityIncidentSectionEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(r, "", false)
+}
+
+func (r *RetrospectivesTemplateEntityIncidentSectionEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &r, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (r *RetrospectivesTemplateEntityIncidentSectionEntity) GetSlug() *string {

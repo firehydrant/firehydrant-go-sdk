@@ -38,7 +38,7 @@ type ExportIncidentRetrospectivesRequestBody struct {
 	// The name of the integration to export the retrospective to.
 	IntegrationSlug IntegrationSlug `json:"integration_slug"`
 	// The ID of the parent page to export the retrospective to.
-	ParentPageID *string `json:"parent_page_id,omitempty"`
+	ParentPageID *string `json:"parent_page_id,omitzero"`
 }
 
 func (e *ExportIncidentRetrospectivesRequestBody) GetIntegrationSlug() IntegrationSlug {

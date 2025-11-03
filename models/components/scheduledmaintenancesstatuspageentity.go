@@ -3,10 +3,10 @@
 package components
 
 type ScheduledMaintenancesStatusPageEntity struct {
-	ID              *string `json:"id,omitempty"`
-	IntegrationID   *string `json:"integration_id,omitempty"`
-	IntegrationSlug *string `json:"integration_slug,omitempty"`
-	IntegrationName *string `json:"integration_name,omitempty"`
+	ID              *string `json:"id,omitzero"`
+	IntegrationID   *string `json:"integration_id,omitzero"`
+	IntegrationSlug *string `json:"integration_slug,omitzero"`
+	IntegrationName *string `json:"integration_name,omitzero"`
 }
 
 func (s *ScheduledMaintenancesStatusPageEntity) GetID() *string {

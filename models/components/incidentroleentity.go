@@ -9,13 +9,13 @@ import (
 
 // IncidentRoleEntity model
 type IncidentRoleEntity struct {
-	ID          *string    `json:"id,omitempty"`
-	Name        *string    `json:"name,omitempty"`
-	Summary     *string    `json:"summary,omitempty"`
-	Description *string    `json:"description,omitempty"`
-	CreatedAt   *time.Time `json:"created_at,omitempty"`
-	UpdatedAt   *time.Time `json:"updated_at,omitempty"`
-	DiscardedAt *time.Time `json:"discarded_at,omitempty"`
+	ID          *string    `json:"id,omitzero"`
+	Name        *string    `json:"name,omitzero"`
+	Summary     *string    `json:"summary,omitzero"`
+	Description *string    `json:"description,omitzero"`
+	CreatedAt   *time.Time `json:"created_at,omitzero"`
+	UpdatedAt   *time.Time `json:"updated_at,omitzero"`
+	DiscardedAt *time.Time `json:"discarded_at,omitzero"`
 }
 
 func (i IncidentRoleEntity) MarshalJSON() ([]byte, error) {

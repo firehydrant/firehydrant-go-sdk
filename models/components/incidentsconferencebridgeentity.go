@@ -2,20 +2,35 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type IncidentsConferenceBridgeEntityAttachment struct {
 }
 
 // IncidentsConferenceBridgeEntity - Incidents_ConferenceBridgeEntity model
 type IncidentsConferenceBridgeEntity struct {
-	ID *string `json:"id,omitempty"`
+	ID *string `json:"id,omitzero"`
 	// A list of objects attached to this item. Can be one of: LinkEntity, CustomerSupportIssueEntity, or GenericAttachmentEntity
-	Attachments              []IncidentsConferenceBridgeEntityAttachment `json:"attachments,omitempty"`
-	HasTranslatedTranscripts *bool                                       `json:"has_translated_transcripts,omitempty"`
+	Attachments              []IncidentsConferenceBridgeEntityAttachment `json:"attachments,omitzero"`
+	HasTranslatedTranscripts *bool                                       `json:"has_translated_transcripts,omitzero"`
 	// A list of language codes that have translated transcripts for this conference bridge
-	LanguageCodes          []string `json:"language_codes,omitempty"`
-	TranscriptionStatus    *string  `json:"transcription_status,omitempty"`
-	TranscriptionSubCode   *string  `json:"transcription_sub_code,omitempty"`
-	PreviousHostAssignment *string  `json:"previous_host_assignment,omitempty"`
+	LanguageCodes          []string `json:"language_codes,omitzero"`
+	TranscriptionStatus    *string  `json:"transcription_status,omitzero"`
+	TranscriptionSubCode   *string  `json:"transcription_sub_code,omitzero"`
+	PreviousHostAssignment *string  `json:"previous_host_assignment,omitzero"`
+}
+
+func (i IncidentsConferenceBridgeEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(i, "", false)
+}
+
+func (i *IncidentsConferenceBridgeEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &i, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (i *IncidentsConferenceBridgeEntity) GetID() *string {

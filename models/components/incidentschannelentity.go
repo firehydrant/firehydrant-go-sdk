@@ -4,14 +4,14 @@ package components
 
 // IncidentsChannelEntity - Incidents_ChannelEntity model
 type IncidentsChannelEntity struct {
-	ID         *string `json:"id,omitempty"`
-	Name       *string `json:"name,omitempty"`
-	Source     *string `json:"source,omitempty"`
-	SourceName *string `json:"source_name,omitempty"`
-	SourceID   *string `json:"source_id,omitempty"`
-	URL        *string `json:"url,omitempty"`
-	IconURL    *string `json:"icon_url,omitempty"`
-	Status     *string `json:"status,omitempty"`
+	ID         *string `json:"id,omitzero"`
+	Name       *string `json:"name,omitzero"`
+	Source     *string `json:"source,omitzero"`
+	SourceName *string `json:"source_name,omitzero"`
+	SourceID   *string `json:"source_id,omitzero"`
+	URL        *string `json:"url,omitzero"`
+	IconURL    *string `json:"icon_url,omitzero"`
+	Status     *string `json:"status,omitzero"`
 }
 
 func (i *IncidentsChannelEntity) GetID() *string {

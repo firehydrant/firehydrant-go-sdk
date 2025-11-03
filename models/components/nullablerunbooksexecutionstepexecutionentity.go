@@ -54,13 +54,13 @@ type NullableRunbooksExecutionStepExecutionEntityData struct {
 }
 
 type NullableRunbooksExecutionStepExecutionEntity struct {
-	State           *NullableRunbooksExecutionStepExecutionEntityState `json:"state,omitempty"`
-	Data            *NullableRunbooksExecutionStepExecutionEntityData  `json:"data,omitempty"`
-	PerformedBy     *NullableActorEntity                               `json:"performed_by,omitempty"`
-	PerformedAt     *time.Time                                         `json:"performed_at,omitempty"`
-	ScheduledFor    *time.Time                                         `json:"scheduled_for,omitempty"`
-	Error           *string                                            `json:"error,omitempty"`
-	WebhookDelivery *NullableRunbooksWebhookDeliveryEntity             `json:"webhook_delivery,omitempty"`
+	State           *NullableRunbooksExecutionStepExecutionEntityState `json:"state,omitzero"`
+	Data            *NullableRunbooksExecutionStepExecutionEntityData  `json:"data,omitzero"`
+	PerformedBy     *NullableActorEntity                               `json:"performed_by,omitzero"`
+	PerformedAt     *time.Time                                         `json:"performed_at,omitzero"`
+	ScheduledFor    *time.Time                                         `json:"scheduled_for,omitzero"`
+	Error           *string                                            `json:"error,omitzero"`
+	WebhookDelivery *NullableRunbooksWebhookDeliveryEntity             `json:"webhook_delivery,omitzero"`
 }
 
 func (n NullableRunbooksExecutionStepExecutionEntity) MarshalJSON() ([]byte, error) {

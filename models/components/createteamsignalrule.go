@@ -117,13 +117,13 @@ type CreateTeamSignalRule struct {
 	// The ID of the target that the rule will notify when matched.
 	TargetID string `json:"target_id"`
 	// The ID of an incident type that should be used when an alert is promoted to an incident
-	IncidentTypeID *string `json:"incident_type_id,omitempty"`
+	IncidentTypeID *string `json:"incident_type_id,omitzero"`
 	// A notification priority that will be set on the resulting alert (default: HIGH)
-	NotificationPriorityOverride *CreateTeamSignalRuleNotificationPriorityOverride `json:"notification_priority_override,omitempty"`
+	NotificationPriorityOverride *CreateTeamSignalRuleNotificationPriorityOverride `json:"notification_priority_override,omitzero"`
 	// Determines when an incident should be created when this rule is matched
-	CreateIncidentConditionWhen *CreateTeamSignalRuleCreateIncidentConditionWhen `json:"create_incident_condition_when,omitempty"`
+	CreateIncidentConditionWhen *CreateTeamSignalRuleCreateIncidentConditionWhen `json:"create_incident_condition_when,omitzero"`
 	// The amount of time alerts created from this rule will be deduplicated
-	DeduplicationExpiry *string `json:"deduplication_expiry,omitempty"`
+	DeduplicationExpiry *string `json:"deduplication_expiry,omitzero"`
 }
 
 func (c *CreateTeamSignalRule) GetName() string {

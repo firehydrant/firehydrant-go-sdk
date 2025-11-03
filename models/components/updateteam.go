@@ -2,6 +2,10 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // UpdateTeamMsTeamsChannel - MS Teams channel identity for channel associated with this team
 type UpdateTeamMsTeamsChannel struct {
 	ChannelID string `json:"channel_id"`
@@ -24,13 +28,13 @@ func (u *UpdateTeamMsTeamsChannel) GetMsTeamID() string {
 
 type UpdateTeamMembership struct {
 	// The ID of a user to add to the team. This parameter is mutually exclusive with schedule_id and signals_on_call_schedule_id.
-	UserID *string `json:"user_id,omitempty"`
+	UserID *string `json:"user_id,omitzero"`
 	// The ID of a third-party on-call schedule to add to the team, allowing you to specify that whoever is on call for this schedule when the team is assigned to an incident gets added to the incident and optionally assigned to the configured incident role. This parameter is mutually exclusive with user_id and signals_on_call_schedule_id.
-	ScheduleID *string `json:"schedule_id,omitempty"`
+	ScheduleID *string `json:"schedule_id,omitzero"`
 	// The ID of a Signals on-call schedule to add to the team, allowing you to specify that whoever is on call for this schedule when the team is assigned to an incident gets added to the incident and optionally assigned to the configured incident role.. This parameter is mutually exclusive with user_id and schedule_id.
-	SignalsOnCallScheduleID *string `json:"signals_on_call_schedule_id,omitempty"`
+	SignalsOnCallScheduleID *string `json:"signals_on_call_schedule_id,omitzero"`
 	// An incident role ID that this user will automatically assigned if this team is assigned to an incident
-	IncidentRoleID *string `json:"incident_role_id,omitempty"`
+	IncidentRoleID *string `json:"incident_role_id,omitzero"`
 }
 
 func (u *UpdateTeamMembership) GetUserID() *string {
@@ -63,17 +67,28 @@ func (u *UpdateTeamMembership) GetIncidentRoleID() *string {
 
 // UpdateTeam - Update a single team from its ID
 type UpdateTeam struct {
-	Name        *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Slug        *string `json:"slug,omitempty"`
+	Name        *string `json:"name,omitzero"`
+	Description *string `json:"description,omitzero"`
+	Slug        *string `json:"slug,omitzero"`
 	// The Slack channel ID associated with this team. This may be the reference in FireHydrant's system (i.e. UUID) or the ID value from Slack (e.g. C1234567890).
 	//
-	SlackChannelID *string `json:"slack_channel_id,omitempty"`
+	SlackChannelID *string `json:"slack_channel_id,omitzero"`
 	// MS Teams channel identity for channel associated with this team
-	MsTeamsChannel *UpdateTeamMsTeamsChannel `json:"ms_teams_channel,omitempty"`
-	Memberships    []UpdateTeamMembership    `json:"memberships,omitempty"`
+	MsTeamsChannel *UpdateTeamMsTeamsChannel `json:"ms_teams_channel,omitzero"`
+	Memberships    []UpdateTeamMembership    `json:"memberships,omitzero"`
 	// A list of email addresses to invite to join the organization and automatically add to this team. If an email already has a pending invitation, the team will be added to their existing invitation.
-	InviteEmails []string `json:"invite_emails,omitempty"`
+	InviteEmails []string `json:"invite_emails,omitzero"`
+}
+
+func (u UpdateTeam) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UpdateTeam) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (u *UpdateTeam) GetName() *string {

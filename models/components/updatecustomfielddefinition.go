@@ -2,14 +2,29 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // UpdateCustomFieldDefinition - Update a single custom field definition
 type UpdateCustomFieldDefinition struct {
-	Description       *string  `json:"description,omitempty"`
-	DisplayName       *string  `json:"display_name,omitempty"`
-	PermissibleValues []string `json:"permissible_values,omitempty"`
-	Required          *bool    `json:"required,omitempty"`
+	Description       *string  `json:"description,omitzero"`
+	DisplayName       *string  `json:"display_name,omitzero"`
+	PermissibleValues []string `json:"permissible_values,omitzero"`
+	Required          *bool    `json:"required,omitzero"`
 	// An optional milestone ID to specify when the field should become required, if `required` is set to `true`. If not provided, required fields are always required.
-	RequiredAtMilestoneID *string `json:"required_at_milestone_id,omitempty"`
+	RequiredAtMilestoneID *string `json:"required_at_milestone_id,omitzero"`
+}
+
+func (u UpdateCustomFieldDefinition) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UpdateCustomFieldDefinition) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (u *UpdateCustomFieldDefinition) GetDescription() *string {

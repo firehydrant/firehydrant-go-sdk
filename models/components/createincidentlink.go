@@ -4,8 +4,8 @@ package components
 
 // CreateIncidentLink - Allows adding adhoc links to an incident as an attachment
 type CreateIncidentLink struct {
-	DisplayText *string `json:"display_text,omitempty"`
-	IconURL     *string `json:"icon_url,omitempty"`
+	DisplayText *string `json:"display_text,omitzero"`
+	IconURL     *string `json:"icon_url,omitzero"`
 	Href        string  `json:"href"`
 }
 

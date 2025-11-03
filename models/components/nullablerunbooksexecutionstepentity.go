@@ -14,26 +14,26 @@ type NullableRunbooksExecutionStepEntityStepElement struct {
 }
 
 type NullableRunbooksExecutionStepEntity struct {
-	ID              *string                                          `json:"id,omitempty"`
-	Name            *string                                          `json:"name,omitempty"`
-	ActionSlug      *string                                          `json:"action_slug,omitempty"`
-	ActionType      *string                                          `json:"action_type,omitempty"`
-	IntegrationName *string                                          `json:"integration_name,omitempty"`
-	IntegrationSlug *string                                          `json:"integration_slug,omitempty"`
-	Automatic       *bool                                            `json:"automatic,omitempty"`
-	Config          *NullableRunbooksExecutionStepEntityConfig       `json:"config,omitempty"`
-	StepElements    []NullableRunbooksExecutionStepEntityStepElement `json:"step_elements,omitempty"`
-	Executable      *bool                                            `json:"executable,omitempty"`
-	Repeats         *bool                                            `json:"repeats,omitempty"`
+	ID              *string                                          `json:"id,omitzero"`
+	Name            *string                                          `json:"name,omitzero"`
+	ActionSlug      *string                                          `json:"action_slug,omitzero"`
+	ActionType      *string                                          `json:"action_type,omitzero"`
+	IntegrationName *string                                          `json:"integration_name,omitzero"`
+	IntegrationSlug *string                                          `json:"integration_slug,omitzero"`
+	Automatic       *bool                                            `json:"automatic,omitzero"`
+	Config          *NullableRunbooksExecutionStepEntityConfig       `json:"config,omitzero"`
+	StepElements    []NullableRunbooksExecutionStepEntityStepElement `json:"step_elements,omitzero"`
+	Executable      *bool                                            `json:"executable,omitzero"`
+	Repeats         *bool                                            `json:"repeats,omitzero"`
 	// ISO8601 formatted duration string
-	RepeatsDuration  *string                                       `json:"repeats_duration,omitempty"`
-	RepeatsAt        *time.Time                                    `json:"repeats_at,omitempty"`
-	HasBeenRerun     *bool                                         `json:"has_been_rerun,omitempty"`
-	HasBeenRetried   *bool                                         `json:"has_been_retried,omitempty"`
-	Execution        *NullableRunbooksExecutionStepExecutionEntity `json:"execution,omitempty"`
-	Repeatable       *bool                                         `json:"repeatable,omitempty"`
-	ConferenceBridge *NullableIncidentsConferenceBridgeEntity      `json:"conference_bridge,omitempty"`
-	Rule             *NullableRulesRuleEntity                      `json:"rule,omitempty"`
+	RepeatsDuration  *string                                       `json:"repeats_duration,omitzero"`
+	RepeatsAt        *time.Time                                    `json:"repeats_at,omitzero"`
+	HasBeenRerun     *bool                                         `json:"has_been_rerun,omitzero"`
+	HasBeenRetried   *bool                                         `json:"has_been_retried,omitzero"`
+	Execution        *NullableRunbooksExecutionStepExecutionEntity `json:"execution,omitzero"`
+	Repeatable       *bool                                         `json:"repeatable,omitzero"`
+	ConferenceBridge *NullableIncidentsConferenceBridgeEntity      `json:"conference_bridge,omitzero"`
+	Rule             *NullableRulesRuleEntity                      `json:"rule,omitzero"`
 }
 
 func (n NullableRunbooksExecutionStepEntity) MarshalJSON() ([]byte, error) {

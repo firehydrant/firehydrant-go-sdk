@@ -13,18 +13,18 @@ type IntegrationsConnectionEntityDetails struct {
 
 // IntegrationsConnectionEntity - Integrations_ConnectionEntity model
 type IntegrationsConnectionEntity struct {
-	ID               *string    `json:"id,omitempty"`
-	IntegrationSlug  *string    `json:"integration_slug,omitempty"`
-	IntegrationID    *string    `json:"integration_id,omitempty"`
-	DisplayName      *string    `json:"display_name,omitempty"`
-	ConfigurationURL *string    `json:"configuration_url,omitempty"`
-	AuthorizedBy     *string    `json:"authorized_by,omitempty"`
-	AuthorizedByID   *string    `json:"authorized_by_id,omitempty"`
-	CreatedAt        *time.Time `json:"created_at,omitempty"`
-	UpdatedAt        *time.Time `json:"updated_at,omitempty"`
+	ID               *string    `json:"id,omitzero"`
+	IntegrationSlug  *string    `json:"integration_slug,omitzero"`
+	IntegrationID    *string    `json:"integration_id,omitzero"`
+	DisplayName      *string    `json:"display_name,omitzero"`
+	ConfigurationURL *string    `json:"configuration_url,omitzero"`
+	AuthorizedBy     *string    `json:"authorized_by,omitzero"`
+	AuthorizedByID   *string    `json:"authorized_by_id,omitzero"`
+	CreatedAt        *time.Time `json:"created_at,omitzero"`
+	UpdatedAt        *time.Time `json:"updated_at,omitzero"`
 	// Integration-specific details of this connection. As identified by the integration_slug, this object will be represented by that integration's ConnectionEntity.
-	Details                *IntegrationsConnectionEntityDetails `json:"details,omitempty"`
-	DefaultAuthorizedActor *NullableAuthorEntity                `json:"default_authorized_actor,omitempty"`
+	Details                *IntegrationsConnectionEntityDetails `json:"details,omitzero"`
+	DefaultAuthorizedActor *NullableAuthorEntity                `json:"default_authorized_actor,omitzero"`
 }
 
 func (i IntegrationsConnectionEntity) MarshalJSON() ([]byte, error) {

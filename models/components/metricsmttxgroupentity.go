@@ -2,28 +2,43 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type FilterParams struct {
 }
 
 type MetricsMttxGroupEntity struct {
-	GroupAttributes  *string       `json:"group_attributes,omitempty"`
-	FilterParams     *FilterParams `json:"filter_params,omitempty"`
-	Count            *int          `json:"count,omitempty"`
-	Mttd             *float32      `json:"mttd,omitempty"`
-	Mtta             *float32      `json:"mtta,omitempty"`
-	Mttm             *float32      `json:"mttm,omitempty"`
-	Mttr             *float32      `json:"mttr,omitempty"`
-	CountDiff        *int          `json:"count_diff,omitempty"`
-	CountPercentDiff *float32      `json:"count_percent_diff,omitempty"`
-	MttdDiff         *float32      `json:"mttd_diff,omitempty"`
-	MttaDiff         *float32      `json:"mtta_diff,omitempty"`
-	MttmDiff         *float32      `json:"mttm_diff,omitempty"`
-	MttrDiff         *float32      `json:"mttr_diff,omitempty"`
-	MttdPercentDiff  *float32      `json:"mttd_percent_diff,omitempty"`
-	MttaPercentDiff  *float32      `json:"mtta_percent_diff,omitempty"`
-	MttmPercentDiff  *float32      `json:"mttm_percent_diff,omitempty"`
-	MttrPercentDiff  *float32      `json:"mttr_percent_diff,omitempty"`
-	Healthiness      *float32      `json:"healthiness,omitempty"`
+	GroupAttributes  *string       `json:"group_attributes,omitzero"`
+	FilterParams     *FilterParams `json:"filter_params,omitzero"`
+	Count            *int          `json:"count,omitzero"`
+	Mttd             *float32      `json:"mttd,omitzero"`
+	Mtta             *float32      `json:"mtta,omitzero"`
+	Mttm             *float32      `json:"mttm,omitzero"`
+	Mttr             *float32      `json:"mttr,omitzero"`
+	CountDiff        *int          `json:"count_diff,omitzero"`
+	CountPercentDiff *float32      `json:"count_percent_diff,omitzero"`
+	MttdDiff         *float32      `json:"mttd_diff,omitzero"`
+	MttaDiff         *float32      `json:"mtta_diff,omitzero"`
+	MttmDiff         *float32      `json:"mttm_diff,omitzero"`
+	MttrDiff         *float32      `json:"mttr_diff,omitzero"`
+	MttdPercentDiff  *float32      `json:"mttd_percent_diff,omitzero"`
+	MttaPercentDiff  *float32      `json:"mtta_percent_diff,omitzero"`
+	MttmPercentDiff  *float32      `json:"mttm_percent_diff,omitzero"`
+	MttrPercentDiff  *float32      `json:"mttr_percent_diff,omitzero"`
+	Healthiness      *float32      `json:"healthiness,omitzero"`
+}
+
+func (m MetricsMttxGroupEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(m, "", false)
+}
+
+func (m *MetricsMttxGroupEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &m, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (m *MetricsMttxGroupEntity) GetGroupAttributes() *string {

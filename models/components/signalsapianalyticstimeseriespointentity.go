@@ -2,9 +2,24 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // SignalsAPIAnalyticsTimeseriesPointEntity - Signals_API_Analytics_TimeseriesPointEntity model
 type SignalsAPIAnalyticsTimeseriesPointEntity struct {
-	Data *NullableSignalsAPIAnalyticsTimeseriesPointEntityMetricEntity `json:"data,omitempty"`
+	Data *NullableSignalsAPIAnalyticsTimeseriesPointEntityMetricEntity `json:"data,omitzero"`
+}
+
+func (s SignalsAPIAnalyticsTimeseriesPointEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(s, "", false)
+}
+
+func (s *SignalsAPIAnalyticsTimeseriesPointEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &s, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (s *SignalsAPIAnalyticsTimeseriesPointEntity) GetData() *NullableSignalsAPIAnalyticsTimeseriesPointEntityMetricEntity {

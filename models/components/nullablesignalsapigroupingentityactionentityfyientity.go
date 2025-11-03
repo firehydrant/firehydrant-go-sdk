@@ -2,8 +2,23 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type NullableSignalsAPIGroupingEntityActionEntityFyiEntity struct {
-	SlackChannels []IntegrationsSlackSlackChannelEntity `json:"slack_channels,omitempty"`
+	SlackChannels []IntegrationsSlackSlackChannelEntity `json:"slack_channels,omitzero"`
+}
+
+func (n NullableSignalsAPIGroupingEntityActionEntityFyiEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(n, "", false)
+}
+
+func (n *NullableSignalsAPIGroupingEntityActionEntityFyiEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &n, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (n *NullableSignalsAPIGroupingEntityActionEntityFyiEntity) GetSlackChannels() []IntegrationsSlackSlackChannelEntity {

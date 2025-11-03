@@ -4,8 +4,8 @@ package components
 
 // IntegrationsConfluenceCloudSpaceKeyEntity - Integrations_ConfluenceCloud_SpaceKeyEntity model
 type IntegrationsConfluenceCloudSpaceKeyEntity struct {
-	Key  *string `json:"key,omitempty"`
-	Name *string `json:"name,omitempty"`
+	Key  *string `json:"key,omitzero"`
+	Name *string `json:"name,omitzero"`
 }
 
 func (i *IntegrationsConfluenceCloudSpaceKeyEntity) GetKey() *string {

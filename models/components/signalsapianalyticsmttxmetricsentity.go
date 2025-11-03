@@ -2,9 +2,24 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // SignalsAPIAnalyticsMttxMetricsEntity - Signals_API_Analytics_MttxMetricsEntity model
 type SignalsAPIAnalyticsMttxMetricsEntity struct {
-	Data *NullableSignalsAPIAnalyticsMttxMetricsEntityMetricEntity `json:"data,omitempty"`
+	Data *NullableSignalsAPIAnalyticsMttxMetricsEntityMetricEntity `json:"data,omitzero"`
+}
+
+func (s SignalsAPIAnalyticsMttxMetricsEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(s, "", false)
+}
+
+func (s *SignalsAPIAnalyticsMttxMetricsEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &s, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (s *SignalsAPIAnalyticsMttxMetricsEntity) GetData() *NullableSignalsAPIAnalyticsMttxMetricsEntityMetricEntity {

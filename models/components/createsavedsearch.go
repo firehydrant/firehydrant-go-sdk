@@ -5,7 +5,7 @@ package components
 // CreateSavedSearch - Create a new saved search for a particular resource type
 type CreateSavedSearch struct {
 	Name         string         `json:"name"`
-	IsPrivate    *bool          `json:"is_private,omitempty"`
+	IsPrivate    *bool          `json:"is_private,omitzero"`
 	FilterValues map[string]any `json:"filter_values"`
 }
 

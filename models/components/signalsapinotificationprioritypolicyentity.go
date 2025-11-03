@@ -2,14 +2,29 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type SignalsAPINotificationPriorityPolicyEntity struct {
 	// The notification priority this policy handles (HIGH, MEDIUM, or LOW)
-	NotificationPriority *string `json:"notification_priority,omitempty"`
+	NotificationPriority *string `json:"notification_priority,omitzero"`
 	// Number of repetitions for this priority
-	Repetitions *int                                                 `json:"repetitions,omitempty"`
-	HandoffStep *NullableSignalsAPIEscalationPolicyHandoffStepEntity `json:"handoff_step,omitempty"`
+	Repetitions *int                                                 `json:"repetitions,omitzero"`
+	HandoffStep *NullableSignalsAPIEscalationPolicyHandoffStepEntity `json:"handoff_step,omitzero"`
 	// Steps for this priority
-	Steps []SignalsAPIEscalationPolicyStepEntity `json:"steps,omitempty"`
+	Steps []SignalsAPIEscalationPolicyStepEntity `json:"steps,omitzero"`
+}
+
+func (s SignalsAPINotificationPriorityPolicyEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(s, "", false)
+}
+
+func (s *SignalsAPINotificationPriorityPolicyEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &s, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (s *SignalsAPINotificationPriorityPolicyEntity) GetNotificationPriority() *string {

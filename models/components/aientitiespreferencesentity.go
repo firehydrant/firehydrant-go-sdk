@@ -4,14 +4,14 @@ package components
 
 // AIEntitiesPreferencesEntity - AI_Entities_PreferencesEntity model
 type AIEntitiesPreferencesEntity struct {
-	Ai               *bool `json:"ai,omitempty"`
-	Description      *bool `json:"description,omitempty"`
-	Followups        *bool `json:"followups,omitempty"`
-	Impact           *bool `json:"impact,omitempty"`
-	Retros           *bool `json:"retros,omitempty"`
-	SimilarIncidents *bool `json:"similar_incidents,omitempty"`
-	Summaries        *bool `json:"summaries,omitempty"`
-	Updates          *bool `json:"updates,omitempty"`
+	Ai               *bool `json:"ai,omitzero"`
+	Description      *bool `json:"description,omitzero"`
+	Followups        *bool `json:"followups,omitzero"`
+	Impact           *bool `json:"impact,omitzero"`
+	Retros           *bool `json:"retros,omitzero"`
+	SimilarIncidents *bool `json:"similar_incidents,omitzero"`
+	Summaries        *bool `json:"summaries,omitzero"`
+	Updates          *bool `json:"updates,omitzero"`
 }
 
 func (a *AIEntitiesPreferencesEntity) GetAi() *bool {

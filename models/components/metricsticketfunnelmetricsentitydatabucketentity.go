@@ -9,16 +9,16 @@ import (
 
 type MetricsTicketFunnelMetricsEntityDataBucketEntity struct {
 	// The start datetime for the period
-	TimeBucket   *time.Time                                                            `json:"time_bucket,omitempty"`
-	FilterParams *NullableMetricsTicketFunnelMetricsEntityDataBucketFilterParamsEntity `json:"filter_params,omitempty"`
+	TimeBucket   *time.Time                                                            `json:"time_bucket,omitzero"`
+	FilterParams *NullableMetricsTicketFunnelMetricsEntityDataBucketFilterParamsEntity `json:"filter_params,omitzero"`
 	// The number of tasks created
-	TasksCreated *int `json:"tasks_created,omitempty"`
+	TasksCreated *int `json:"tasks_created,omitzero"`
 	// The number of tasks completed
-	TasksDone *int `json:"tasks_done,omitempty"`
+	TasksDone *int `json:"tasks_done,omitzero"`
 	// The number of follow ups created
-	FollowUpsCreated *int `json:"follow_ups_created,omitempty"`
+	FollowUpsCreated *int `json:"follow_ups_created,omitzero"`
 	// The number of follow ups completed
-	FollowUpsDone *int `json:"follow_ups_done,omitempty"`
+	FollowUpsDone *int `json:"follow_ups_done,omitzero"`
 }
 
 func (m MetricsTicketFunnelMetricsEntityDataBucketEntity) MarshalJSON() ([]byte, error) {

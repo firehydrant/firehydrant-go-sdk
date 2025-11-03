@@ -3,9 +3,9 @@
 package components
 
 type NullablePublicAPIV1IncidentsSuccinctEntity struct {
-	ID     *string `json:"id,omitempty"`
-	Name   *string `json:"name,omitempty"`
-	Number *int    `json:"number,omitempty"`
+	ID     *string `json:"id,omitzero"`
+	Name   *string `json:"name,omitzero"`
+	Number *int    `json:"number,omitzero"`
 }
 
 func (n *NullablePublicAPIV1IncidentsSuccinctEntity) GetID() *string {

@@ -4,10 +4,10 @@ package components
 
 // SeverityMatrixConditionEntity - SeverityMatrix_ConditionEntity model
 type SeverityMatrixConditionEntity struct {
-	ID   *string `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
+	ID   *string `json:"id,omitzero"`
+	Name *string `json:"name,omitzero"`
 	// Position is used to determine ordering of conditions in API responses and dropdowns. The condition with the lowest position (typically 0) will be considered the Default Condition
-	Position *int `json:"position,omitempty"`
+	Position *int `json:"position,omitzero"`
 }
 
 func (s *SeverityMatrixConditionEntity) GetID() *string {

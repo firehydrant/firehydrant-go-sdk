@@ -2,8 +2,23 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type NullableSignalsAPIGroupingEntityStrategyEntity struct {
-	Substring *NullableSignalsAPIGroupingEntityStrategyEntitySubstringEntity `json:"substring,omitempty"`
+	Substring *NullableSignalsAPIGroupingEntityStrategyEntitySubstringEntity `json:"substring,omitzero"`
+}
+
+func (n NullableSignalsAPIGroupingEntityStrategyEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(n, "", false)
+}
+
+func (n *NullableSignalsAPIGroupingEntityStrategyEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &n, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (n *NullableSignalsAPIGroupingEntityStrategyEntity) GetSubstring() *NullableSignalsAPIGroupingEntityStrategyEntitySubstringEntity {

@@ -17,22 +17,22 @@ type RunbooksActionsEntityDefaultRuleData struct {
 }
 
 type RunbooksActionsEntity struct {
-	ID                    *string                                `json:"id,omitempty"`
-	Name                  *string                                `json:"name,omitempty"`
-	Slug                  *string                                `json:"slug,omitempty"`
-	Description           *string                                `json:"description,omitempty"`
-	Config                *NullableRunbooksActionConfigEntity    `json:"config,omitempty"`
-	Category              *string                                `json:"category,omitempty"`
-	Prerequisites         []RunbooksActionsEntityPrerequisite    `json:"prerequisites,omitempty"`
-	Integration           *NullableIntegrationsIntegrationEntity `json:"integration,omitempty"`
-	SupportedRunbookTypes []string                               `json:"supported_runbook_types,omitempty"`
-	CreatedAt             *time.Time                             `json:"created_at,omitempty"`
-	UpdatedAt             *time.Time                             `json:"updated_at,omitempty"`
-	Automatable           *bool                                  `json:"automatable,omitempty"`
-	Rerunnable            *bool                                  `json:"rerunnable,omitempty"`
-	Repeatable            *bool                                  `json:"repeatable,omitempty"`
-	DefaultLogic          *RunbooksActionsEntityDefaultLogic     `json:"default_logic,omitempty"`
-	DefaultRuleData       *RunbooksActionsEntityDefaultRuleData  `json:"default_rule_data,omitempty"`
+	ID                    *string                                `json:"id,omitzero"`
+	Name                  *string                                `json:"name,omitzero"`
+	Slug                  *string                                `json:"slug,omitzero"`
+	Description           *string                                `json:"description,omitzero"`
+	Config                *NullableRunbooksActionConfigEntity    `json:"config,omitzero"`
+	Category              *string                                `json:"category,omitzero"`
+	Prerequisites         []RunbooksActionsEntityPrerequisite    `json:"prerequisites,omitzero"`
+	Integration           *NullableIntegrationsIntegrationEntity `json:"integration,omitzero"`
+	SupportedRunbookTypes []string                               `json:"supported_runbook_types,omitzero"`
+	CreatedAt             *time.Time                             `json:"created_at,omitzero"`
+	UpdatedAt             *time.Time                             `json:"updated_at,omitzero"`
+	Automatable           *bool                                  `json:"automatable,omitzero"`
+	Rerunnable            *bool                                  `json:"rerunnable,omitzero"`
+	Repeatable            *bool                                  `json:"repeatable,omitzero"`
+	DefaultLogic          *RunbooksActionsEntityDefaultLogic     `json:"default_logic,omitzero"`
+	DefaultRuleData       *RunbooksActionsEntityDefaultRuleData  `json:"default_rule_data,omitzero"`
 }
 
 func (r RunbooksActionsEntity) MarshalJSON() ([]byte, error) {

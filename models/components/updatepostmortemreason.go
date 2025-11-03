@@ -4,7 +4,7 @@ package components
 
 // UpdatePostMortemReason - Update a contributing factor
 type UpdatePostMortemReason struct {
-	Summary *string `json:"summary,omitempty"`
+	Summary *string `json:"summary,omitzero"`
 }
 
 func (u *UpdatePostMortemReason) GetSummary() *string {

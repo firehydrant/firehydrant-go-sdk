@@ -5,6 +5,7 @@ package operations
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
 // UpdateNotificationPolicyNotificationGroupMethod - The group method of notification that will be delivered.
@@ -78,11 +79,11 @@ func (e *UpdateNotificationPolicyPriority) UnmarshalJSON(data []byte) error {
 
 type UpdateNotificationPolicyRequestBody struct {
 	// The group method of notification that will be delivered.
-	NotificationGroupMethod *UpdateNotificationPolicyNotificationGroupMethod `json:"notification_group_method,omitempty"`
+	NotificationGroupMethod *UpdateNotificationPolicyNotificationGroupMethod `json:"notification_group_method,omitzero"`
 	// An ISO8601 duration string specifying the maximum delay of the notification.
-	MaxDelay *string `json:"max_delay,omitempty"`
+	MaxDelay *string `json:"max_delay,omitzero"`
 	// The priority of the notification.
-	Priority *UpdateNotificationPolicyPriority `json:"priority,omitempty"`
+	Priority *UpdateNotificationPolicyPriority `json:"priority,omitzero"`
 }
 
 func (u *UpdateNotificationPolicyRequestBody) GetNotificationGroupMethod() *UpdateNotificationPolicyNotificationGroupMethod {
@@ -109,6 +110,17 @@ func (u *UpdateNotificationPolicyRequestBody) GetPriority() *UpdateNotificationP
 type UpdateNotificationPolicyRequest struct {
 	ID          string                               `pathParam:"style=simple,explode=false,name=id"`
 	RequestBody *UpdateNotificationPolicyRequestBody `request:"mediaType=application/json"`
+}
+
+func (u UpdateNotificationPolicyRequest) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UpdateNotificationPolicyRequest) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, []string{"id"}); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (u *UpdateNotificationPolicyRequest) GetID() string {

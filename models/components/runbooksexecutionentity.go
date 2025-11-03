@@ -9,17 +9,17 @@ import (
 
 // RunbooksExecutionEntity - Runbooks_ExecutionEntity model
 type RunbooksExecutionEntity struct {
-	ID                  *string                                           `json:"id,omitempty"`
-	Status              *string                                           `json:"status,omitempty"`
-	StatusReason        *string                                           `json:"status_reason,omitempty"`
-	StatusReasonMessage *string                                           `json:"status_reason_message,omitempty"`
-	HasBeenRerun        *bool                                             `json:"has_been_rerun,omitempty"`
-	CreatedAt           *time.Time                                        `json:"created_at,omitempty"`
-	UpdatedAt           *time.Time                                        `json:"updated_at,omitempty"`
-	CreatedBy           *string                                           `json:"created_by,omitempty"`
-	Runbook             *NullableSlimRunbookEntity                        `json:"runbook,omitempty"`
-	Steps               *NullableRunbooksExecutionStepEntity              `json:"steps,omitempty"`
-	ExecutedFor         *NullableRunbooksExecutionEntityExecutedForEntity `json:"executed_for,omitempty"`
+	ID                  *string                                           `json:"id,omitzero"`
+	Status              *string                                           `json:"status,omitzero"`
+	StatusReason        *string                                           `json:"status_reason,omitzero"`
+	StatusReasonMessage *string                                           `json:"status_reason_message,omitzero"`
+	HasBeenRerun        *bool                                             `json:"has_been_rerun,omitzero"`
+	CreatedAt           *time.Time                                        `json:"created_at,omitzero"`
+	UpdatedAt           *time.Time                                        `json:"updated_at,omitzero"`
+	CreatedBy           *string                                           `json:"created_by,omitzero"`
+	Runbook             *NullableSlimRunbookEntity                        `json:"runbook,omitzero"`
+	Steps               *NullableRunbooksExecutionStepEntity              `json:"steps,omitzero"`
+	ExecutedFor         *NullableRunbooksExecutionEntityExecutedForEntity `json:"executed_for,omitzero"`
 }
 
 func (r RunbooksExecutionEntity) MarshalJSON() ([]byte, error) {

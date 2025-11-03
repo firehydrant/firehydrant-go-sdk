@@ -9,10 +9,10 @@ import (
 
 // ReportEntity model
 type ReportEntity struct {
-	Data         []ReportsBucketEntity `json:"data,omitempty"`
-	StartDate    *types.Date           `json:"start_date,omitempty"`
-	EndDate      *types.Date           `json:"end_date,omitempty"`
-	BucketPeriod *string               `json:"bucket_period,omitempty"`
+	Data         []ReportsBucketEntity `json:"data,omitzero"`
+	StartDate    *types.Date           `json:"start_date,omitzero"`
+	EndDate      *types.Date           `json:"end_date,omitzero"`
+	BucketPeriod *string               `json:"bucket_period,omitzero"`
 }
 
 func (r ReportEntity) MarshalJSON() ([]byte, error) {

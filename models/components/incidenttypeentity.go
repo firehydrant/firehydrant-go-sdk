@@ -9,17 +9,17 @@ import (
 
 // IncidentTypeEntity model
 type IncidentTypeEntity struct {
-	ID          *string `json:"id,omitempty"`
-	Name        *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
+	ID          *string `json:"id,omitzero"`
+	Name        *string `json:"name,omitzero"`
+	Description *string `json:"description,omitzero"`
 	// IDs of roles allowed to create incidents of this type. Empty array means all roles are allowed.
-	AllowedRoleIds []string                                        `json:"allowed_role_ids,omitempty"`
-	Template       *NullableIncidentTypeEntityTemplateEntity       `json:"template,omitempty"`
-	TemplateValues *NullableIncidentTypeEntityTemplateValuesEntity `json:"template_values,omitempty"`
+	AllowedRoleIds []string                                        `json:"allowed_role_ids,omitzero"`
+	Template       *NullableIncidentTypeEntityTemplateEntity       `json:"template,omitzero"`
+	TemplateValues *NullableIncidentTypeEntityTemplateValuesEntity `json:"template_values,omitzero"`
 	// A list of fields that are required on incidents of this type.
-	RequiredFields []IncidentsRequiredFieldEntity `json:"required_fields,omitempty"`
-	CreatedAt      *time.Time                     `json:"created_at,omitempty"`
-	UpdatedAt      *time.Time                     `json:"updated_at,omitempty"`
+	RequiredFields []IncidentsRequiredFieldEntity `json:"required_fields,omitzero"`
+	CreatedAt      *time.Time                     `json:"created_at,omitzero"`
+	UpdatedAt      *time.Time                     `json:"updated_at,omitzero"`
 }
 
 func (i IncidentTypeEntity) MarshalJSON() ([]byte, error) {

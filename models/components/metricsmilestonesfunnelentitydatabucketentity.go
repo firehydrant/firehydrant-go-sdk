@@ -9,9 +9,9 @@ import (
 
 type MetricsMilestonesFunnelEntityDataBucketEntity struct {
 	// The start datetime for the period
-	TimeBucket      *time.Time                                                         `json:"time_bucket,omitempty"`
-	FilterParams    *NullableMetricsMilestonesFunnelEntityDataBucketFilterParamsEntity `json:"filter_params,omitempty"`
-	MilestoneCounts []MetricsMilestonesFunnelEntityDataBucketMilestoneCountEntity      `json:"milestone_counts,omitempty"`
+	TimeBucket      *time.Time                                                         `json:"time_bucket,omitzero"`
+	FilterParams    *NullableMetricsMilestonesFunnelEntityDataBucketFilterParamsEntity `json:"filter_params,omitzero"`
+	MilestoneCounts []MetricsMilestonesFunnelEntityDataBucketMilestoneCountEntity      `json:"milestone_counts,omitzero"`
 }
 
 func (m MetricsMilestonesFunnelEntityDataBucketEntity) MarshalJSON() ([]byte, error) {

@@ -3,10 +3,10 @@
 package components
 
 type NullableScheduleEntity struct {
-	ID          *string `json:"id,omitempty"`
-	Name        *string `json:"name,omitempty"`
-	Integration *string `json:"integration,omitempty"`
-	Discarded   *bool   `json:"discarded,omitempty"`
+	ID          *string `json:"id,omitzero"`
+	Name        *string `json:"name,omitzero"`
+	Integration *string `json:"integration,omitzero"`
+	Discarded   *bool   `json:"discarded,omitzero"`
 }
 
 func (n *NullableScheduleEntity) GetID() *string {

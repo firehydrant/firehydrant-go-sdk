@@ -9,12 +9,12 @@ import (
 
 // AIEntitiesIncidentSummaryEntity - AI_Entities_IncidentSummaryEntity model
 type AIEntitiesIncidentSummaryEntity struct {
-	ID                *string    `json:"id,omitempty"`
-	Content           *string    `json:"content,omitempty"`
-	SourceHash        *string    `json:"source_hash,omitempty"`
-	Type              *string    `json:"type,omitempty"`
-	CreatedAt         *string    `json:"created_at,omitempty"`
-	IncidentUpdatedAt *time.Time `json:"incident_updated_at,omitempty"`
+	ID                *string    `json:"id,omitzero"`
+	Content           *string    `json:"content,omitzero"`
+	SourceHash        *string    `json:"source_hash,omitzero"`
+	Type              *string    `json:"type,omitzero"`
+	CreatedAt         *string    `json:"created_at,omitzero"`
+	IncidentUpdatedAt *time.Time `json:"incident_updated_at,omitzero"`
 }
 
 func (a AIEntitiesIncidentSummaryEntity) MarshalJSON() ([]byte, error) {

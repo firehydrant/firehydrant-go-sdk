@@ -5,6 +5,7 @@ package components
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
 type PreviewTeamOnCallScheduleMember struct {
@@ -12,7 +13,7 @@ type PreviewTeamOnCallScheduleMember struct {
 	// multiple times to construct more complex rotations, and you can specify a `null` user ID to create
 	// unassigned slots in the rotation.
 	//
-	UserID *string `json:"user_id,omitempty"`
+	UserID *string `json:"user_id,omitzero"`
 }
 
 func (p *PreviewTeamOnCallScheduleMember) GetUserID() *string {
@@ -99,11 +100,11 @@ type PreviewTeamOnCallScheduleStrategy struct {
 	// The type of strategy. Must be one of "daily", "weekly", or "custom".
 	Type PreviewTeamOnCallScheduleType `json:"type"`
 	// An ISO8601 time string specifying when on-call shifts should hand off. This value is only used if the strategy type is "daily" or "weekly".
-	HandoffTime *string `json:"handoff_time,omitempty"`
+	HandoffTime *string `json:"handoff_time,omitzero"`
 	// The day of the week on which on-call shifts should hand off, as its long-form name (e.g. "monday", "tuesday", etc). This value is only used if the strategy type is "weekly".
-	HandoffDay *PreviewTeamOnCallScheduleHandoffDay `json:"handoff_day,omitempty"`
+	HandoffDay *PreviewTeamOnCallScheduleHandoffDay `json:"handoff_day,omitzero"`
 	// An ISO8601 duration string specifying how long each shift should last. This value is only used if the strategy type is "custom".
-	ShiftDuration *string `json:"shift_duration,omitempty"`
+	ShiftDuration *string `json:"shift_duration,omitzero"`
 }
 
 func (p *PreviewTeamOnCallScheduleStrategy) GetType() PreviewTeamOnCallScheduleType {
@@ -261,27 +262,38 @@ type PreviewTeamOnCallScheduleRotation struct {
 	// The name of the on-call rotation
 	Name string `json:"name"`
 	// A detailed description of the on-call schedule.
-	Description *string `json:"description,omitempty"`
+	Description *string `json:"description,omitzero"`
 	// The timezone of the on-call rotation as a string
 	TimeZone string `json:"time_zone"`
 	// The Slack Usergroup ID for the on-call rotation
-	SlackUserGroupID *string `json:"slack_user_group_id,omitempty"`
+	SlackUserGroupID *string `json:"slack_user_group_id,omitzero"`
 	// Notify the team's Slack channel when handoffs occur
-	EnableSlackChannelNotifications *bool `json:"enable_slack_channel_notifications,omitempty"`
+	EnableSlackChannelNotifications *bool `json:"enable_slack_channel_notifications,omitzero"`
 	// Prevent shifts from being deleted by users and leading to gaps in coverage.
-	PreventShiftDeletion *bool `json:"prevent_shift_deletion,omitempty"`
+	PreventShiftDeletion *bool `json:"prevent_shift_deletion,omitzero"`
 	// An ISO8601 duration string specifying that the team should be notified about gaps in coverage for the upcoming interval. Notifications are sent at 9am daily in the rotation's time zone via email and, if enabled, the team's Slack channel.
-	CoverageGapNotificationInterval *string `json:"coverage_gap_notification_interval,omitempty"`
+	CoverageGapNotificationInterval *string `json:"coverage_gap_notification_interval,omitzero"`
 	// A hex color code that will be used to represent the rotation in FireHydrant's UI.
-	Color *string `json:"color,omitempty"`
+	Color *string `json:"color,omitzero"`
 	// An ordered list of objects that specify members of the schedule's rotation.
-	Members []PreviewTeamOnCallScheduleMember `json:"members,omitempty"`
+	Members []PreviewTeamOnCallScheduleMember `json:"members,omitzero"`
 	// An object that specifies how the rotation's on-call shifts should be generated.
 	Strategy PreviewTeamOnCallScheduleStrategy `json:"strategy"`
 	// A list of objects that restrict the rotation to specific on-call periods.
-	Restrictions []PreviewTeamOnCallScheduleRestriction `json:"restrictions,omitempty"`
+	Restrictions []PreviewTeamOnCallScheduleRestriction `json:"restrictions,omitzero"`
 	// An ISO8601 time string specifying when the initial rotation should start. This value is only used if the rotation's strategy type is "custom".
-	StartTime *string `json:"start_time,omitempty"`
+	StartTime *string `json:"start_time,omitzero"`
+}
+
+func (p PreviewTeamOnCallScheduleRotation) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(p, "", false)
+}
+
+func (p *PreviewTeamOnCallScheduleRotation) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &p, "", false, []string{"name", "time_zone", "strategy"}); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (p *PreviewTeamOnCallScheduleRotation) GetName() string {
@@ -373,13 +385,13 @@ type PreviewTeamOnCallSchedule struct {
 	// The on-call schedule's name.
 	Name string `json:"name"`
 	// A detailed description of the on-call schedule.
-	Description *string `json:"description,omitempty"`
+	Description *string `json:"description,omitzero"`
 	// An array of objects that specify rotations for the schedule. If not provided, the deprecated single-rotation parameters can be used instead, with `time_zone` and `strategy` being required.
 	Rotations []PreviewTeamOnCallScheduleRotation `json:"rotations"`
 	// An ISO8601 time string specifying the start of the time window to preview. Defaults to now.
-	From *string `json:"from,omitempty"`
+	From *string `json:"from,omitzero"`
 	// An ISO8601 time string specifying the end of the time window to preview. Defaults to two weeks from now.
-	To *string `json:"to,omitempty"`
+	To *string `json:"to,omitzero"`
 }
 
 func (p *PreviewTeamOnCallSchedule) GetName() string {

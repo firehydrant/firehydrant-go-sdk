@@ -3,8 +3,8 @@
 package components
 
 type NullableRunbooksWebhookDeliveryEntity struct {
-	Headers    *string `json:"headers,omitempty"`
-	StatusCode *string `json:"status_code,omitempty"`
+	Headers    *string `json:"headers,omitzero"`
+	StatusCode *string `json:"status_code,omitzero"`
 }
 
 func (n *NullableRunbooksWebhookDeliveryEntity) GetHeaders() *string {

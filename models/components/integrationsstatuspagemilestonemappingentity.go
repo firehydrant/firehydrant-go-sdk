@@ -3,8 +3,8 @@
 package components
 
 type IntegrationsStatuspageMilestoneMappingEntity struct {
-	MilestoneID *string `json:"milestone_id,omitempty"`
-	Status      *string `json:"status,omitempty"`
+	MilestoneID *string `json:"milestone_id,omitzero"`
+	Status      *string `json:"status,omitzero"`
 }
 
 func (i *IntegrationsStatuspageMilestoneMappingEntity) GetMilestoneID() *string {

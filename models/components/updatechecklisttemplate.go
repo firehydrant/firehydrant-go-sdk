@@ -2,11 +2,15 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type UpdateChecklistTemplateCheck struct {
 	// Specify the check ID when updating an already existing check
-	ID *string `json:"id,omitempty"`
+	ID *string `json:"id,omitzero"`
 	// The description of the check
-	Description *string `json:"description,omitempty"`
+	Description *string `json:"description,omitzero"`
 	// The name of the check
 	Name string `json:"name"`
 }
@@ -35,7 +39,7 @@ func (u *UpdateChecklistTemplateCheck) GetName() string {
 type UpdateChecklistTemplateConnectedService struct {
 	ID string `json:"id"`
 	// Set to `true` to remove checklist from service
-	Remove *bool `json:"remove,omitempty"`
+	Remove *bool `json:"remove,omitzero"`
 }
 
 func (u *UpdateChecklistTemplateConnectedService) GetID() string {
@@ -54,16 +58,27 @@ func (u *UpdateChecklistTemplateConnectedService) GetRemove() *bool {
 
 // UpdateChecklistTemplate - Update a checklist templates attributes
 type UpdateChecklistTemplate struct {
-	Name        *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
+	Name        *string `json:"name,omitzero"`
+	Description *string `json:"description,omitzero"`
 	// An array of checks for the checklist template
-	Checks []UpdateChecklistTemplateCheck `json:"checks,omitempty"`
+	Checks []UpdateChecklistTemplateCheck `json:"checks,omitzero"`
 	// The ID of the Team that owns the checklist template
-	TeamID *string `json:"team_id,omitempty"`
+	TeamID *string `json:"team_id,omitzero"`
 	// Array of service IDs to attach checklist template to
-	ConnectedServices []UpdateChecklistTemplateConnectedService `json:"connected_services,omitempty"`
+	ConnectedServices []UpdateChecklistTemplateConnectedService `json:"connected_services,omitzero"`
 	// If set to true, any services tagged on the checklist that are not included in the given array will be removed. Set this to true if you want to do a replacement operation for the services
-	RemoveRemainingConnectedServices *bool `json:"remove_remaining_connected_services,omitempty"`
+	RemoveRemainingConnectedServices *bool `json:"remove_remaining_connected_services,omitzero"`
+}
+
+func (u UpdateChecklistTemplate) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UpdateChecklistTemplate) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (u *UpdateChecklistTemplate) GetName() *string {

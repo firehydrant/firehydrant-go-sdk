@@ -2,11 +2,26 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // PongEntity model
 type PongEntity struct {
-	Response     *string                     `json:"response,omitempty"`
-	Actor        *NullableActorEntity        `json:"actor,omitempty"`
-	Organization *NullableOrganizationEntity `json:"organization,omitempty"`
+	Response     *string                     `json:"response,omitzero"`
+	Actor        *NullableActorEntity        `json:"actor,omitzero"`
+	Organization *NullableOrganizationEntity `json:"organization,omitzero"`
+}
+
+func (p PongEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(p, "", false)
+}
+
+func (p *PongEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &p, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (p *PongEntity) GetResponse() *string {

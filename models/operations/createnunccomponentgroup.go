@@ -4,8 +4,8 @@ package operations
 
 type CreateNuncComponentGroupRequestBody struct {
 	Name             string  `json:"name"`
-	ComponentGroupID *string `json:"component_group_id,omitempty"`
-	Position         *int    `json:"position,omitempty"`
+	ComponentGroupID *string `json:"component_group_id,omitzero"`
+	Position         *int    `json:"position,omitzero"`
 }
 
 func (c *CreateNuncComponentGroupRequestBody) GetName() string {

@@ -5,7 +5,7 @@ package components
 // UpdateServiceDependency - Update the notes of the service dependency
 type UpdateServiceDependency struct {
 	// A note to describe the service dependency relationship
-	Notes *string `json:"notes,omitempty"`
+	Notes *string `json:"notes,omitzero"`
 }
 
 func (u *UpdateServiceDependency) GetNotes() *string {

@@ -4,15 +4,15 @@ package operations
 
 type UpdateTranscriptAttributionRequestBody struct {
 	// The speaker to attribute the transcript to.
-	FromSpeaker *string `json:"from_speaker,omitempty"`
+	FromSpeaker *string `json:"from_speaker,omitzero"`
 	// The user to attribute the transcript to.
-	FromUserID *string `json:"from_user_id,omitempty"`
+	FromUserID *string `json:"from_user_id,omitzero"`
 	// The ID of the user to attribute the transcript to.
 	ToUserID string `json:"to_user_id"`
 	// The ID of the specific transcript entry to change attribution for.
-	TranscriptID *string `json:"transcript_id,omitempty"`
+	TranscriptID *string `json:"transcript_id,omitzero"`
 	// The ID of the conference bridge to attribute the transcript to.
-	ConferenceBridgeID *string `json:"conference_bridge_id,omitempty"`
+	ConferenceBridgeID *string `json:"conference_bridge_id,omitzero"`
 }
 
 func (u *UpdateTranscriptAttributionRequestBody) GetFromSpeaker() *string {

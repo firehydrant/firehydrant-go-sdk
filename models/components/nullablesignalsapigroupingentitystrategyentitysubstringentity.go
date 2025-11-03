@@ -3,8 +3,8 @@
 package components
 
 type NullableSignalsAPIGroupingEntityStrategyEntitySubstringEntity struct {
-	FieldName *string `json:"field_name,omitempty"`
-	Value     *string `json:"value,omitempty"`
+	FieldName *string `json:"field_name,omitzero"`
+	Value     *string `json:"value,omitzero"`
 }
 
 func (n *NullableSignalsAPIGroupingEntityStrategyEntitySubstringEntity) GetFieldName() *string {

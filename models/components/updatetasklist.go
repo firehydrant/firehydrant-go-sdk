@@ -2,11 +2,15 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type UpdateTaskListTaskListItem struct {
 	// A summary of the task
 	Summary string `json:"summary"`
 	// A long-form description for the task if additional context is helpful
-	Description *string `json:"description,omitempty"`
+	Description *string `json:"description,omitzero"`
 }
 
 func (u *UpdateTaskListTaskListItem) GetSummary() string {
@@ -25,9 +29,20 @@ func (u *UpdateTaskListTaskListItem) GetDescription() *string {
 
 // UpdateTaskList - Updates a task list's attributes and task list items
 type UpdateTaskList struct {
-	Name          *string                      `json:"name,omitempty"`
-	Description   *string                      `json:"description,omitempty"`
-	TaskListItems []UpdateTaskListTaskListItem `json:"task_list_items,omitempty"`
+	Name          *string                      `json:"name,omitzero"`
+	Description   *string                      `json:"description,omitzero"`
+	TaskListItems []UpdateTaskListTaskListItem `json:"task_list_items,omitzero"`
+}
+
+func (u UpdateTaskList) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UpdateTaskList) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (u *UpdateTaskList) GetName() *string {

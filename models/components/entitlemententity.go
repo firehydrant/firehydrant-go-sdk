@@ -5,6 +5,7 @@ package components
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
 type Tier string
@@ -40,14 +41,25 @@ func (e *Tier) UnmarshalJSON(data []byte) error {
 }
 
 type EntitlementEntity struct {
-	CurrentCount *int     `json:"current_count,omitempty"`
-	Errors       []string `json:"errors,omitempty"`
-	Exists       *bool    `json:"exists,omitempty"`
-	Available    *bool    `json:"available,omitempty"`
-	Maximum      *int     `json:"maximum,omitempty"`
-	Name         *string  `json:"name,omitempty"`
-	Slug         *string  `json:"slug,omitempty"`
-	Tier         *Tier    `json:"tier,omitempty"`
+	CurrentCount *int     `json:"current_count,omitzero"`
+	Errors       []string `json:"errors,omitzero"`
+	Exists       *bool    `json:"exists,omitzero"`
+	Available    *bool    `json:"available,omitzero"`
+	Maximum      *int     `json:"maximum,omitzero"`
+	Name         *string  `json:"name,omitzero"`
+	Slug         *string  `json:"slug,omitzero"`
+	Tier         *Tier    `json:"tier,omitzero"`
+}
+
+func (e EntitlementEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(e, "", false)
+}
+
+func (e *EntitlementEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &e, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (e *EntitlementEntity) GetCurrentCount() *int {

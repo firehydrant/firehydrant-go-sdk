@@ -7,7 +7,7 @@ type CreateServiceDependency struct {
 	ServiceID          string `json:"service_id"`
 	ConnectedServiceID string `json:"connected_service_id"`
 	// A note to describe the service dependency relationship
-	Notes *string `json:"notes,omitempty"`
+	Notes *string `json:"notes,omitzero"`
 }
 
 func (c *CreateServiceDependency) GetServiceID() string {

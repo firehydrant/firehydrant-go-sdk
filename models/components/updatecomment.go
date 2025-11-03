@@ -5,7 +5,7 @@ package components
 // UpdateComment - Update a comment's attributes
 type UpdateComment struct {
 	// Text body of comment
-	Body *string `json:"body,omitempty"`
+	Body *string `json:"body,omitzero"`
 }
 
 func (u *UpdateComment) GetBody() *string {

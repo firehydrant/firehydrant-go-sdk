@@ -2,10 +2,25 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // FunctionalityWithAllServicesEntity model
 type FunctionalityWithAllServicesEntity struct {
 	// Services this functionality provides
-	Services []ServiceEntity `json:"services,omitempty"`
+	Services []ServiceEntity `json:"services,omitzero"`
+}
+
+func (f FunctionalityWithAllServicesEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(f, "", false)
+}
+
+func (f *FunctionalityWithAllServicesEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &f, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (f *FunctionalityWithAllServicesEntity) GetServices() []ServiceEntity {

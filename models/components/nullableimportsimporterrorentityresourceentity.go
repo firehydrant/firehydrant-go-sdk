@@ -3,9 +3,9 @@
 package components
 
 type NullableImportsImportErrorEntityResourceEntity struct {
-	ResourceID   *string `json:"resource_id,omitempty"`
-	ResourceType *string `json:"resource_type,omitempty"`
-	Name         *string `json:"name,omitempty"`
+	ResourceID   *string `json:"resource_id,omitzero"`
+	ResourceType *string `json:"resource_type,omitzero"`
+	Name         *string `json:"name,omitzero"`
 }
 
 func (n *NullableImportsImportErrorEntityResourceEntity) GetResourceID() *string {

@@ -3,9 +3,9 @@
 package components
 
 type NullableNuncConditionEntity struct {
-	NuncCondition *string `json:"nunc_condition,omitempty"`
-	ConditionName *string `json:"condition_name,omitempty"`
-	ConditionID   *string `json:"condition_id,omitempty"`
+	NuncCondition *string `json:"nunc_condition,omitzero"`
+	ConditionName *string `json:"condition_name,omitzero"`
+	ConditionID   *string `json:"condition_id,omitzero"`
 }
 
 func (n *NullableNuncConditionEntity) GetNuncCondition() *string {

@@ -34,7 +34,7 @@ func (u *UpdateSeverityMatrixData) GetConditionID() string {
 
 // UpdateSeverityMatrix - Update available severities and impacts in your organization's severity matrix.
 type UpdateSeverityMatrix struct {
-	Summary *string                    `json:"summary,omitempty"`
+	Summary *string                    `json:"summary,omitzero"`
 	Data    []UpdateSeverityMatrixData `json:"data"`
 }
 

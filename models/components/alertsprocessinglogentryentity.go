@@ -78,13 +78,13 @@ func (e *MessageType) UnmarshalJSON(data []byte) error {
 }
 
 type AlertsProcessingLogEntryEntity struct {
-	ID *string `json:"id,omitempty"`
+	ID *string `json:"id,omitzero"`
 	// An unstructured representation of this log entry's context.
-	Context     *Context     `json:"context,omitempty"`
-	CreatedAt   *time.Time   `json:"created_at,omitempty"`
-	Level       *Level       `json:"level,omitempty"`
-	Message     *string      `json:"message,omitempty"`
-	MessageType *MessageType `json:"message_type,omitempty"`
+	Context     *Context     `json:"context,omitzero"`
+	CreatedAt   *time.Time   `json:"created_at,omitzero"`
+	Level       *Level       `json:"level,omitzero"`
+	Message     *string      `json:"message,omitzero"`
+	MessageType *MessageType `json:"message_type,omitzero"`
 }
 
 func (a AlertsProcessingLogEntryEntity) MarshalJSON() ([]byte, error) {

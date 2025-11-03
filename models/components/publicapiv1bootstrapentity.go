@@ -4,7 +4,7 @@ package components
 
 // PublicAPIV1BootstrapEntity - PublicAPI_V1_BootstrapEntity model
 type PublicAPIV1BootstrapEntity struct {
-	PosthogWriteKey *string `json:"posthog_write_key,omitempty"`
+	PosthogWriteKey *string `json:"posthog_write_key,omitzero"`
 }
 
 func (p *PublicAPIV1BootstrapEntity) GetPosthogWriteKey() *string {

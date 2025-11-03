@@ -3,11 +3,11 @@
 package components
 
 type SignalsAPITargetEntity struct {
-	ID         *string `json:"id,omitempty"`
-	Name       *string `json:"name,omitempty"`
-	Type       *string `json:"type,omitempty"`
-	TeamID     *string `json:"team_id,omitempty"`
-	IsPageable *bool   `json:"is_pageable,omitempty"`
+	ID         *string `json:"id,omitzero"`
+	Name       *string `json:"name,omitzero"`
+	Type       *string `json:"type,omitzero"`
+	TeamID     *string `json:"team_id,omitzero"`
+	IsPageable *bool   `json:"is_pageable,omitzero"`
 }
 
 func (s *SignalsAPITargetEntity) GetID() *string {

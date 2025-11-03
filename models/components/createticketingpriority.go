@@ -6,7 +6,7 @@ package components
 type CreateTicketingPriority struct {
 	Name string `json:"name"`
 	// The position that this priority should take in your list of priorities. Priorities should be ordered from highest to lowest, with the highest priority at 0. If a position isn't specified, the new priority will be added to the end of the list; if another priority already exists at the specified position, that priority and all priorities following it will automatically be moved down the list to make room for the new priority.
-	Position *int `json:"position,omitempty"`
+	Position *int `json:"position,omitzero"`
 }
 
 func (c *CreateTicketingPriority) GetName() string {

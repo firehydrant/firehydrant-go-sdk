@@ -3,9 +3,9 @@
 package components
 
 type MetricsMttxDataEntityGroupingEntity struct {
-	Type          *string `json:"type,omitempty"`
-	IDAttribute   *string `json:"id_attribute,omitempty"`
-	NameAttribute *string `json:"name_attribute,omitempty"`
+	Type          *string `json:"type,omitzero"`
+	IDAttribute   *string `json:"id_attribute,omitzero"`
+	NameAttribute *string `json:"name_attribute,omitzero"`
 }
 
 func (m *MetricsMttxDataEntityGroupingEntity) GetType() *string {

@@ -10,13 +10,13 @@ import (
 // UpdateOnCallShift - Update a Signals on-call shift by ID
 type UpdateOnCallShift struct {
 	// The start time of the shift in ISO8601 format.
-	StartTime *time.Time `json:"start_time,omitempty"`
+	StartTime *time.Time `json:"start_time,omitzero"`
 	// The end time of the shift in ISO8601 format.
-	EndTime *time.Time `json:"end_time,omitempty"`
+	EndTime *time.Time `json:"end_time,omitzero"`
 	// The ID of the user who is on-call for the shift. If not provided, the shift will be unassigned.
-	UserID *string `json:"user_id,omitempty"`
+	UserID *string `json:"user_id,omitzero"`
 	// A description of why coverage is needed for this shift. If the shift is re-assigned, this will automatically be cleared unless provided again.
-	CoverageRequest *string `json:"coverage_request,omitempty"`
+	CoverageRequest *string `json:"coverage_request,omitzero"`
 }
 
 func (u UpdateOnCallShift) MarshalJSON() ([]byte, error) {

@@ -3,9 +3,9 @@
 package components
 
 type NullableRunbooksElementTextareaEntity struct {
-	Label        *string `json:"label,omitempty"`
-	Placeholder  *string `json:"placeholder,omitempty"`
-	DefaultValue *string `json:"default_value,omitempty"`
+	Label        *string `json:"label,omitzero"`
+	Placeholder  *string `json:"placeholder,omitzero"`
+	DefaultValue *string `json:"default_value,omitzero"`
 }
 
 func (n *NullableRunbooksElementTextareaEntity) GetLabel() *string {

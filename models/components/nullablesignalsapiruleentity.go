@@ -66,19 +66,19 @@ func (e *NullableSignalsAPIRuleEntityCreateIncidentConditionWhen) UnmarshalJSON(
 
 // NullableSignalsAPIRuleEntity - Signals_API_RuleEntity model
 type NullableSignalsAPIRuleEntity struct {
-	ID                           *string                                                   `json:"id,omitempty"`
-	Name                         *string                                                   `json:"name,omitempty"`
-	Expression                   *string                                                   `json:"expression,omitempty"`
-	TeamID                       *string                                                   `json:"team_id,omitempty"`
-	Target                       *NullableSignalsAPITargetEntity                           `json:"target,omitempty"`
-	CreatedBy                    *NullableAuthorEntity                                     `json:"created_by,omitempty"`
-	CreatedAt                    *time.Time                                                `json:"created_at,omitempty"`
-	UpdatedAt                    *time.Time                                                `json:"updated_at,omitempty"`
-	IncidentType                 *NullableSuccinctEntity                                   `json:"incident_type,omitempty"`
-	NotificationPriorityOverride *NullableSignalsAPIRuleEntityNotificationPriorityOverride `json:"notification_priority_override,omitempty"`
-	CreateIncidentConditionWhen  *NullableSignalsAPIRuleEntityCreateIncidentConditionWhen  `json:"create_incident_condition_when,omitempty"`
+	ID                           *string                                                   `json:"id,omitzero"`
+	Name                         *string                                                   `json:"name,omitzero"`
+	Expression                   *string                                                   `json:"expression,omitzero"`
+	TeamID                       *string                                                   `json:"team_id,omitzero"`
+	Target                       *NullableSignalsAPITargetEntity                           `json:"target,omitzero"`
+	CreatedBy                    *NullableAuthorEntity                                     `json:"created_by,omitzero"`
+	CreatedAt                    *time.Time                                                `json:"created_at,omitzero"`
+	UpdatedAt                    *time.Time                                                `json:"updated_at,omitzero"`
+	IncidentType                 *NullableSuccinctEntity                                   `json:"incident_type,omitzero"`
+	NotificationPriorityOverride *NullableSignalsAPIRuleEntityNotificationPriorityOverride `json:"notification_priority_override,omitzero"`
+	CreateIncidentConditionWhen  *NullableSignalsAPIRuleEntityCreateIncidentConditionWhen  `json:"create_incident_condition_when,omitzero"`
 	// Duration for deduplicating similar alerts (ISO8601 duration format e.g., 'PT30M', 'PT2H', 'P1D')
-	DeduplicationExpiry *string `json:"deduplication_expiry,omitempty"`
+	DeduplicationExpiry *string `json:"deduplication_expiry,omitzero"`
 }
 
 func (n NullableSignalsAPIRuleEntity) MarshalJSON() ([]byte, error) {

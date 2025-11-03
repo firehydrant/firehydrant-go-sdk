@@ -3,10 +3,10 @@
 package components
 
 type ChecklistCheckEntity struct {
-	ID          *string `json:"id,omitempty"`
-	Name        *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Status      *bool   `json:"status,omitempty"`
+	ID          *string `json:"id,omitzero"`
+	Name        *string `json:"name,omitzero"`
+	Description *string `json:"description,omitzero"`
+	Status      *bool   `json:"status,omitzero"`
 }
 
 func (c *ChecklistCheckEntity) GetID() *string {

@@ -12,12 +12,12 @@ type ImportsImportErrorEntityData struct {
 }
 
 type ImportsImportErrorEntity struct {
-	ID        *string    `json:"id,omitempty"`
-	Message   *string    `json:"message,omitempty"`
-	CreatedAt *time.Time `json:"created_at,omitempty"`
+	ID        *string    `json:"id,omitzero"`
+	Message   *string    `json:"message,omitzero"`
+	CreatedAt *time.Time `json:"created_at,omitzero"`
 	// Additional error data
-	Data     *ImportsImportErrorEntityData                   `json:"data,omitempty"`
-	Resource *NullableImportsImportErrorEntityResourceEntity `json:"resource,omitempty"`
+	Data     *ImportsImportErrorEntityData                   `json:"data,omitzero"`
+	Resource *NullableImportsImportErrorEntityResourceEntity `json:"resource,omitzero"`
 }
 
 func (i ImportsImportErrorEntity) MarshalJSON() ([]byte, error) {

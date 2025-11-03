@@ -2,13 +2,28 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // NullableTicketingProjectFieldMapEntity - Ticketing_ProjectFieldMapEntity model
 type NullableTicketingProjectFieldMapEntity struct {
-	ID                 *string                              `json:"id,omitempty"`
-	ConnectionID       *string                              `json:"connection_id,omitempty"`
-	ConnectionType     *string                              `json:"connection_type,omitempty"`
-	TicketingProjectID *string                              `json:"ticketing_project_id,omitempty"`
-	Body               []TicketingProjectFieldMapBodyEntity `json:"body,omitempty"`
+	ID                 *string                              `json:"id,omitzero"`
+	ConnectionID       *string                              `json:"connection_id,omitzero"`
+	ConnectionType     *string                              `json:"connection_type,omitzero"`
+	TicketingProjectID *string                              `json:"ticketing_project_id,omitzero"`
+	Body               []TicketingProjectFieldMapBodyEntity `json:"body,omitzero"`
+}
+
+func (n NullableTicketingProjectFieldMapEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(n, "", false)
+}
+
+func (n *NullableTicketingProjectFieldMapEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &n, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (n *NullableTicketingProjectFieldMapEntity) GetID() *string {

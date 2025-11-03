@@ -2,14 +2,29 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // ConvertIncidentTask - Convert a task to a follow-up
 type ConvertIncidentTask struct {
-	Summary     *string `json:"summary,omitempty"`
-	ProjectID   *string `json:"project_id,omitempty"`
-	Description *string `json:"description,omitempty"`
-	State       *string `json:"state,omitempty"`
+	Summary     *string `json:"summary,omitzero"`
+	ProjectID   *string `json:"project_id,omitzero"`
+	Description *string `json:"description,omitzero"`
+	State       *string `json:"state,omitzero"`
 	// List of tags for the ticket
-	TagList []string `json:"tag_list,omitempty"`
+	TagList []string `json:"tag_list,omitzero"`
+}
+
+func (c ConvertIncidentTask) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *ConvertIncidentTask) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (c *ConvertIncidentTask) GetSummary() *string {

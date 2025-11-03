@@ -4,7 +4,7 @@ package components
 
 // TagEntity model
 type TagEntity struct {
-	Name *string `json:"name,omitempty"`
+	Name *string `json:"name,omitzero"`
 }
 
 func (t *TagEntity) GetName() *string {

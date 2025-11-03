@@ -9,12 +9,12 @@ import (
 
 // StatusUpdateTemplateEntity model
 type StatusUpdateTemplateEntity struct {
-	ID          *string    `json:"id,omitempty"`
-	Name        *string    `json:"name,omitempty"`
-	Body        *string    `json:"body,omitempty"`
-	CreatedAt   *time.Time `json:"created_at,omitempty"`
-	UpdatedAt   *time.Time `json:"updated_at,omitempty"`
-	DiscardedAt *time.Time `json:"discarded_at,omitempty"`
+	ID          *string    `json:"id,omitzero"`
+	Name        *string    `json:"name,omitzero"`
+	Body        *string    `json:"body,omitzero"`
+	CreatedAt   *time.Time `json:"created_at,omitzero"`
+	UpdatedAt   *time.Time `json:"updated_at,omitzero"`
+	DiscardedAt *time.Time `json:"discarded_at,omitzero"`
 }
 
 func (s StatusUpdateTemplateEntity) MarshalJSON() ([]byte, error) {

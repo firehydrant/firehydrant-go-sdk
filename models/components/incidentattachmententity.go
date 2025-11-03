@@ -5,6 +5,7 @@ package components
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
 type IncidentAttachmentEntityStatus string
@@ -39,16 +40,27 @@ type Versions struct {
 
 // IncidentAttachmentEntity model
 type IncidentAttachmentEntity struct {
-	FileName        *string                         `json:"file_name,omitempty"`
-	FileContentType *string                         `json:"file_content_type,omitempty"`
-	SignedURL       *string                         `json:"signed_url,omitempty"`
-	MediaType       *string                         `json:"media_type,omitempty"`
-	Description     *string                         `json:"description,omitempty"`
-	ExternalID      *string                         `json:"external_id,omitempty"`
-	FileSize        *int                            `json:"file_size,omitempty"`
-	Status          *IncidentAttachmentEntityStatus `json:"status,omitempty"`
+	FileName        *string                         `json:"file_name,omitzero"`
+	FileContentType *string                         `json:"file_content_type,omitzero"`
+	SignedURL       *string                         `json:"signed_url,omitzero"`
+	MediaType       *string                         `json:"media_type,omitzero"`
+	Description     *string                         `json:"description,omitzero"`
+	ExternalID      *string                         `json:"external_id,omitzero"`
+	FileSize        *int                            `json:"file_size,omitzero"`
+	Status          *IncidentAttachmentEntityStatus `json:"status,omitzero"`
 	// An object with keys that designate a specific version or size of the attachment
-	Versions *Versions `json:"versions,omitempty"`
+	Versions *Versions `json:"versions,omitzero"`
+}
+
+func (i IncidentAttachmentEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(i, "", false)
+}
+
+func (i *IncidentAttachmentEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &i, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (i *IncidentAttachmentEntity) GetFileName() *string {

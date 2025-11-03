@@ -2,16 +2,31 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type CustomFieldsFieldValue struct {
-	Name        *string  `json:"name,omitempty"`
-	ValueType   *string  `json:"value_type,omitempty"`
-	DisplayName *string  `json:"display_name,omitempty"`
-	Description *string  `json:"description,omitempty"`
-	Slug        *string  `json:"slug,omitempty"`
-	FieldID     *string  `json:"field_id,omitempty"`
-	ValueArray  []string `json:"value_array,omitempty"`
-	ValueString *string  `json:"value_string,omitempty"`
-	Value       *string  `json:"value,omitempty"`
+	Name        *string  `json:"name,omitzero"`
+	ValueType   *string  `json:"value_type,omitzero"`
+	DisplayName *string  `json:"display_name,omitzero"`
+	Description *string  `json:"description,omitzero"`
+	Slug        *string  `json:"slug,omitzero"`
+	FieldID     *string  `json:"field_id,omitzero"`
+	ValueArray  []string `json:"value_array,omitzero"`
+	ValueString *string  `json:"value_string,omitzero"`
+	Value       *string  `json:"value,omitzero"`
+}
+
+func (c CustomFieldsFieldValue) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *CustomFieldsFieldValue) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (c *CustomFieldsFieldValue) GetName() *string {

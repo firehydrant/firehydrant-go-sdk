@@ -8,15 +8,15 @@ import (
 )
 
 type IncidentsLifecycleMilestoneEntity struct {
-	ID          *string               `json:"id,omitempty"`
-	Name        *string               `json:"name,omitempty"`
-	Description *string               `json:"description,omitempty"`
-	Slug        *string               `json:"slug,omitempty"`
-	Position    *int                  `json:"position,omitempty"`
-	OccurredAt  *time.Time            `json:"occurred_at,omitempty"`
-	Duration    *string               `json:"duration,omitempty"`
-	UpdatedBy   *NullableAuthorEntity `json:"updated_by,omitempty"`
-	UpdatedAt   *time.Time            `json:"updated_at,omitempty"`
+	ID          *string               `json:"id,omitzero"`
+	Name        *string               `json:"name,omitzero"`
+	Description *string               `json:"description,omitzero"`
+	Slug        *string               `json:"slug,omitzero"`
+	Position    *int                  `json:"position,omitzero"`
+	OccurredAt  *time.Time            `json:"occurred_at,omitzero"`
+	Duration    *string               `json:"duration,omitzero"`
+	UpdatedBy   *NullableAuthorEntity `json:"updated_by,omitzero"`
+	UpdatedAt   *time.Time            `json:"updated_at,omitzero"`
 }
 
 func (i IncidentsLifecycleMilestoneEntity) MarshalJSON() ([]byte, error) {

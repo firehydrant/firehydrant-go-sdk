@@ -2,6 +2,10 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // PublicAPIV1FormConfigurationsSelectedValueEntityTemplate - The template for the selected value
 type PublicAPIV1FormConfigurationsSelectedValueEntityTemplate struct {
 }
@@ -9,7 +13,18 @@ type PublicAPIV1FormConfigurationsSelectedValueEntityTemplate struct {
 // PublicAPIV1FormConfigurationsSelectedValueEntity - PublicAPI_V1_FormConfigurations_SelectedValueEntity model
 type PublicAPIV1FormConfigurationsSelectedValueEntity struct {
 	// The template for the selected value
-	Template *PublicAPIV1FormConfigurationsSelectedValueEntityTemplate `json:"template,omitempty"`
+	Template *PublicAPIV1FormConfigurationsSelectedValueEntityTemplate `json:"template,omitzero"`
+}
+
+func (p PublicAPIV1FormConfigurationsSelectedValueEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(p, "", false)
+}
+
+func (p *PublicAPIV1FormConfigurationsSelectedValueEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &p, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (p *PublicAPIV1FormConfigurationsSelectedValueEntity) GetTemplate() *PublicAPIV1FormConfigurationsSelectedValueEntityTemplate {

@@ -2,10 +2,25 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // IncidentsMilestoneEntityPaginated - Incidents_MilestoneEntityPaginated model
 type IncidentsMilestoneEntityPaginated struct {
-	Data       []IncidentsMilestoneEntity `json:"data,omitempty"`
-	Pagination *NullablePaginationEntity  `json:"pagination,omitempty"`
+	Data       []IncidentsMilestoneEntity `json:"data,omitzero"`
+	Pagination *NullablePaginationEntity  `json:"pagination,omitzero"`
+}
+
+func (i IncidentsMilestoneEntityPaginated) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(i, "", false)
+}
+
+func (i *IncidentsMilestoneEntityPaginated) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &i, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (i *IncidentsMilestoneEntityPaginated) GetData() []IncidentsMilestoneEntity {

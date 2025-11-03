@@ -2,20 +2,35 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // CreateTicket - Creates a ticket for a project
 type CreateTicket struct {
 	Summary string `json:"summary"`
 	// Which incident this ticket is related to, in the format of 'incident/UUID'
-	RelatedTo   *string `json:"related_to,omitempty"`
-	ProjectID   *string `json:"project_id,omitempty"`
-	Description *string `json:"description,omitempty"`
-	State       *string `json:"state,omitempty"`
-	Type        *string `json:"type,omitempty"`
-	PriorityID  *string `json:"priority_id,omitempty"`
+	RelatedTo   *string `json:"related_to,omitzero"`
+	ProjectID   *string `json:"project_id,omitzero"`
+	Description *string `json:"description,omitzero"`
+	State       *string `json:"state,omitzero"`
+	Type        *string `json:"type,omitzero"`
+	PriorityID  *string `json:"priority_id,omitzero"`
 	// List of tags for the ticket
-	TagList []string `json:"tag_list,omitempty"`
+	TagList []string `json:"tag_list,omitzero"`
 	// The remote URL for an existing ticket in a supported and configured ticketing integration
-	RemoteURL *string `json:"remote_url,omitempty"`
+	RemoteURL *string `json:"remote_url,omitzero"`
+}
+
+func (c CreateTicket) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *CreateTicket) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"summary"}); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (c *CreateTicket) GetSummary() string {

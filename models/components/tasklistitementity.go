@@ -3,8 +3,8 @@
 package components
 
 type TaskListItemEntity struct {
-	Summary     *string `json:"summary,omitempty"`
-	Description *string `json:"description,omitempty"`
+	Summary     *string `json:"summary,omitzero"`
+	Description *string `json:"description,omitzero"`
 }
 
 func (t *TaskListItemEntity) GetSummary() *string {

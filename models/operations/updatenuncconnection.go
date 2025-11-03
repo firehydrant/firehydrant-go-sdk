@@ -2,25 +2,40 @@
 
 package operations
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type UpdateNuncConnectionRequestBody struct {
-	CompanyName        *string `json:"company_name,omitempty"`
-	CompanyWebsite     *string `json:"company_website,omitempty"`
-	CompanyTosURL      *string `json:"company_tos_url,omitempty"`
-	GreetingTitle      *string `json:"greeting_title,omitempty"`
-	GreetingBody       *string `json:"greeting_body,omitempty"`
-	OperationalMessage *string `json:"operational_message,omitempty"`
-	Title              *string `json:"title,omitempty"`
+	CompanyName        *string `json:"company_name,omitzero"`
+	CompanyWebsite     *string `json:"company_website,omitzero"`
+	CompanyTosURL      *string `json:"company_tos_url,omitzero"`
+	GreetingTitle      *string `json:"greeting_title,omitzero"`
+	GreetingBody       *string `json:"greeting_body,omitzero"`
+	OperationalMessage *string `json:"operational_message,omitzero"`
+	Title              *string `json:"title,omitzero"`
 	// Status page condition to map your severity matrix condition to
 	ConditionsNuncCondition []string `json:"conditions[nunc_condition]"`
 	// Severity matrix condition id
 	ConditionsConditionID        []string `json:"conditions[condition_id]"`
 	ComponentsInfrastructureType []string `json:"components[infrastructure_type]"`
 	ComponentsInfrastructureID   []string `json:"components[infrastructure_id]"`
-	PrimaryColor                 *string  `json:"primary_color,omitempty"`
-	SecondaryColor               *string  `json:"secondary_color,omitempty"`
-	ExposedFields                []string `json:"exposed_fields,omitempty"`
-	EnableHistogram              *bool    `json:"enable_histogram,omitempty"`
-	UIVersion                    *int     `json:"ui_version,omitempty"`
+	PrimaryColor                 *string  `json:"primary_color,omitzero"`
+	SecondaryColor               *string  `json:"secondary_color,omitzero"`
+	ExposedFields                []string `json:"exposed_fields,omitzero"`
+	EnableHistogram              *bool    `json:"enable_histogram,omitzero"`
+	UIVersion                    *int     `json:"ui_version,omitzero"`
+}
+
+func (u UpdateNuncConnectionRequestBody) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UpdateNuncConnectionRequestBody) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, []string{"conditions[nunc_condition]", "conditions[condition_id]", "components[infrastructure_type]", "components[infrastructure_id]"}); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (u *UpdateNuncConnectionRequestBody) GetCompanyName() *string {

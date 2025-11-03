@@ -2,10 +2,25 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // IntegrationsAuthedProviderEntityPaginated - Integrations_AuthedProviderEntityPaginated model
 type IntegrationsAuthedProviderEntityPaginated struct {
-	Data       []PublicAPIV1IntegrationsAuthedProviderEntity `json:"data,omitempty"`
-	Pagination *NullablePaginationEntity                     `json:"pagination,omitempty"`
+	Data       []PublicAPIV1IntegrationsAuthedProviderEntity `json:"data,omitzero"`
+	Pagination *NullablePaginationEntity                     `json:"pagination,omitzero"`
+}
+
+func (i IntegrationsAuthedProviderEntityPaginated) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(i, "", false)
+}
+
+func (i *IntegrationsAuthedProviderEntityPaginated) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &i, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (i *IntegrationsAuthedProviderEntityPaginated) GetData() []PublicAPIV1IntegrationsAuthedProviderEntity {

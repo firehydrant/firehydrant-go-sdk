@@ -3,8 +3,8 @@
 package components
 
 type NullableOrganizationEntity struct {
-	Name *string `json:"name,omitempty"`
-	ID   *string `json:"id,omitempty"`
+	Name *string `json:"name,omitzero"`
+	ID   *string `json:"id,omitzero"`
 }
 
 func (n *NullableOrganizationEntity) GetName() *string {

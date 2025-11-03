@@ -2,10 +2,25 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // IntegrationsAwsCloudtrailBatchEntityPaginated - Integrations_Aws_CloudtrailBatchEntityPaginated model
 type IntegrationsAwsCloudtrailBatchEntityPaginated struct {
-	Data       []IntegrationsAwsCloudtrailBatchEntity `json:"data,omitempty"`
-	Pagination *NullablePaginationEntity              `json:"pagination,omitempty"`
+	Data       []IntegrationsAwsCloudtrailBatchEntity `json:"data,omitzero"`
+	Pagination *NullablePaginationEntity              `json:"pagination,omitzero"`
+}
+
+func (i IntegrationsAwsCloudtrailBatchEntityPaginated) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(i, "", false)
+}
+
+func (i *IntegrationsAwsCloudtrailBatchEntityPaginated) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &i, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (i *IntegrationsAwsCloudtrailBatchEntityPaginated) GetData() []IntegrationsAwsCloudtrailBatchEntity {

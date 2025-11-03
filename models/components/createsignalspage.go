@@ -45,7 +45,7 @@ type CreateSignalsPage struct {
 	TargetType CreateSignalsPageTargetType `json:"target_type"`
 	// The ID of the target. Should be a UUID for the target type.
 	TargetID string  `json:"target_id"`
-	Body     *string `json:"body,omitempty"`
+	Body     *string `json:"body,omitzero"`
 }
 
 func (c *CreateSignalsPage) GetSummary() string {

@@ -2,14 +2,29 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // VersionsUrls - An object with keys that can have different versions of an image
 type VersionsUrls struct {
 }
 
 type NullableMediaImageEntity struct {
-	OriginalURL *string `json:"original_url,omitempty"`
+	OriginalURL *string `json:"original_url,omitzero"`
 	// An object with keys that can have different versions of an image
-	VersionsUrls *VersionsUrls `json:"versions_urls,omitempty"`
+	VersionsUrls *VersionsUrls `json:"versions_urls,omitzero"`
+}
+
+func (n NullableMediaImageEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(n, "", false)
+}
+
+func (n *NullableMediaImageEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &n, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (n *NullableMediaImageEntity) GetOriginalURL() *string {

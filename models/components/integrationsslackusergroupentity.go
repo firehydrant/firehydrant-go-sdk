@@ -4,10 +4,10 @@ package components
 
 // IntegrationsSlackUsergroupEntity - Integrations_Slack_UsergroupEntity model
 type IntegrationsSlackUsergroupEntity struct {
-	ID         *string `json:"id,omitempty"`
-	Name       *string `json:"name,omitempty"`
-	Handle     *string `json:"handle,omitempty"`
-	IsDisabled *bool   `json:"is_disabled,omitempty"`
+	ID         *string `json:"id,omitzero"`
+	Name       *string `json:"name,omitzero"`
+	Handle     *string `json:"handle,omitzero"`
+	IsDisabled *bool   `json:"is_disabled,omitzero"`
 }
 
 func (i *IntegrationsSlackUsergroupEntity) GetID() *string {

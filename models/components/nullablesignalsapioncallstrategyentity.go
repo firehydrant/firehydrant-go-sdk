@@ -3,10 +3,10 @@
 package components
 
 type NullableSignalsAPIOnCallStrategyEntity struct {
-	Type          *string `json:"type,omitempty"`
-	HandoffTime   *string `json:"handoff_time,omitempty"`
-	HandoffDay    *string `json:"handoff_day,omitempty"`
-	ShiftDuration *string `json:"shift_duration,omitempty"`
+	Type          *string `json:"type,omitzero"`
+	HandoffTime   *string `json:"handoff_time,omitzero"`
+	HandoffDay    *string `json:"handoff_day,omitzero"`
+	ShiftDuration *string `json:"shift_duration,omitzero"`
 }
 
 func (n *NullableSignalsAPIOnCallStrategyEntity) GetType() *string {

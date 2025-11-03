@@ -3,10 +3,10 @@
 package components
 
 type NullableIncidentsContextObjectEntity struct {
-	ObjectType         *string `json:"object_type,omitempty"`
-	ObjectID           *string `json:"object_id,omitempty"`
-	ContextTag         *string `json:"context_tag,omitempty"`
-	ContextDescription *string `json:"context_description,omitempty"`
+	ObjectType         *string `json:"object_type,omitzero"`
+	ObjectID           *string `json:"object_id,omitzero"`
+	ContextTag         *string `json:"context_tag,omitzero"`
+	ContextDescription *string `json:"context_description,omitzero"`
 }
 
 func (n *NullableIncidentsContextObjectEntity) GetObjectType() *string {

@@ -2,13 +2,28 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type ConversationsAPIEntitiesReference struct {
-	ID            *string                                  `json:"id,omitempty"`
-	ResourceClass *string                                  `json:"resource_class,omitempty"`
-	ResourceID    *string                                  `json:"resource_id,omitempty"`
-	Field         *string                                  `json:"field,omitempty"`
-	CommentsURL   *string                                  `json:"comments_url,omitempty"`
-	Channel       *NullableConversationsAPIEntitiesChannel `json:"channel,omitempty"`
+	ID            *string                                  `json:"id,omitzero"`
+	ResourceClass *string                                  `json:"resource_class,omitzero"`
+	ResourceID    *string                                  `json:"resource_id,omitzero"`
+	Field         *string                                  `json:"field,omitzero"`
+	CommentsURL   *string                                  `json:"comments_url,omitzero"`
+	Channel       *NullableConversationsAPIEntitiesChannel `json:"channel,omitzero"`
+}
+
+func (c ConversationsAPIEntitiesReference) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *ConversationsAPIEntitiesReference) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (c *ConversationsAPIEntitiesReference) GetID() *string {

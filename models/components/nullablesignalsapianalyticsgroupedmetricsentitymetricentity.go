@@ -4,19 +4,19 @@ package components
 
 type NullableSignalsAPIAnalyticsGroupedMetricsEntityMetricEntity struct {
 	// The ID of the group
-	GroupedID *int `json:"grouped_id,omitempty"`
+	GroupedID *int `json:"grouped_id,omitzero"`
 	// The name of the group
-	GroupedName *string `json:"grouped_name,omitempty"`
+	GroupedName *string `json:"grouped_name,omitzero"`
 	// The total number of opened alerts
-	TotalOpenedAlerts *int `json:"total_opened_alerts,omitempty"`
+	TotalOpenedAlerts *int `json:"total_opened_alerts,omitzero"`
 	// The total number of acknowledged alerts
-	TotalAckedAlerts *int `json:"total_acked_alerts,omitempty"`
+	TotalAckedAlerts *int `json:"total_acked_alerts,omitzero"`
 	// The total number of incidents
-	TotalIncidents *int `json:"total_incidents,omitempty"`
+	TotalIncidents *int `json:"total_incidents,omitzero"`
 	// The percentage of acknowledged alerts
-	AckedPercentage *float32 `json:"acked_percentage,omitempty"`
+	AckedPercentage *float32 `json:"acked_percentage,omitzero"`
 	// The percentage of alerts that have incidents
-	IncidentsPercentage *float32 `json:"incidents_percentage,omitempty"`
+	IncidentsPercentage *float32 `json:"incidents_percentage,omitzero"`
 }
 
 func (n *NullableSignalsAPIAnalyticsGroupedMetricsEntityMetricEntity) GetGroupedID() *int {

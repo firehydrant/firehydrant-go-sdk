@@ -2,15 +2,30 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // IncidentsRetrospectiveEntity - Incidents_RetrospectiveEntity model
 type IncidentsRetrospectiveEntity struct {
-	ID          *string                                     `json:"id,omitempty"`
-	Name        *string                                     `json:"name,omitempty"`
-	Description *string                                     `json:"description,omitempty"`
-	Sections    []IncidentsRetrospectiveEntitySectionEntity `json:"sections,omitempty"`
-	IsHidden    *bool                                       `json:"is_hidden,omitempty"`
-	Fields      []IncidentsRetrospectiveFieldEntity         `json:"fields,omitempty"`
-	Exports     []string                                    `json:"exports,omitempty"`
+	ID          *string                                     `json:"id,omitzero"`
+	Name        *string                                     `json:"name,omitzero"`
+	Description *string                                     `json:"description,omitzero"`
+	Sections    []IncidentsRetrospectiveEntitySectionEntity `json:"sections,omitzero"`
+	IsHidden    *bool                                       `json:"is_hidden,omitzero"`
+	Fields      []IncidentsRetrospectiveFieldEntity         `json:"fields,omitzero"`
+	Exports     []string                                    `json:"exports,omitzero"`
+}
+
+func (i IncidentsRetrospectiveEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(i, "", false)
+}
+
+func (i *IncidentsRetrospectiveEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &i, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (i *IncidentsRetrospectiveEntity) GetID() *string {

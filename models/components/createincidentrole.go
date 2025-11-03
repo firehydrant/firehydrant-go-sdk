@@ -6,7 +6,7 @@ package components
 type CreateIncidentRole struct {
 	Name        string  `json:"name"`
 	Summary     string  `json:"summary"`
-	Description *string `json:"description,omitempty"`
+	Description *string `json:"description,omitzero"`
 }
 
 func (c *CreateIncidentRole) GetName() string {

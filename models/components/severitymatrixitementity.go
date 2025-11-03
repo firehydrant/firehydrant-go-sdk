@@ -3,10 +3,10 @@
 package components
 
 type SeverityMatrixItemEntity struct {
-	Severity    *string `json:"severity,omitempty"`
-	ConditionID *string `json:"condition_id,omitempty"`
-	ImpactID    *string `json:"impact_id,omitempty"`
-	ImpactType  *string `json:"impact_type,omitempty"`
+	Severity    *string `json:"severity,omitzero"`
+	ConditionID *string `json:"condition_id,omitzero"`
+	ImpactID    *string `json:"impact_id,omitzero"`
+	ImpactType  *string `json:"impact_type,omitzero"`
 }
 
 func (s *SeverityMatrixItemEntity) GetSeverity() *string {

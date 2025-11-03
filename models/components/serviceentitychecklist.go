@@ -8,21 +8,21 @@ import (
 )
 
 type ServiceEntityChecklist struct {
-	ID            *string    `json:"id,omitempty"`
-	Name          *string    `json:"name,omitempty"`
-	Description   *string    `json:"description,omitempty"`
-	Slug          *string    `json:"slug,omitempty"`
-	ServiceTier   *int       `json:"service_tier,omitempty"`
-	CreatedAt     *time.Time `json:"created_at,omitempty"`
-	UpdatedAt     *time.Time `json:"updated_at,omitempty"`
-	AllowedParams []string   `json:"allowed_params,omitempty"`
+	ID            *string    `json:"id,omitzero"`
+	Name          *string    `json:"name,omitzero"`
+	Description   *string    `json:"description,omitzero"`
+	Slug          *string    `json:"slug,omitzero"`
+	ServiceTier   *int       `json:"service_tier,omitzero"`
+	CreatedAt     *time.Time `json:"created_at,omitzero"`
+	UpdatedAt     *time.Time `json:"updated_at,omitzero"`
+	AllowedParams []string   `json:"allowed_params,omitzero"`
 	// An object of label key and values
-	Labels                    map[string]any          `json:"labels,omitempty"`
-	AlertOnAdd                *bool                   `json:"alert_on_add,omitempty"`
-	AutoAddRespondingTeam     *bool                   `json:"auto_add_responding_team,omitempty"`
-	CompletedChecks           *int                    `json:"completed_checks,omitempty"`
-	Owner                     *NullableTeamEntityLite `json:"owner,omitempty"`
-	ServiceChecklistUpdatedAt *time.Time              `json:"service_checklist_updated_at,omitempty"`
+	Labels                    map[string]any          `json:"labels,omitzero"`
+	AlertOnAdd                *bool                   `json:"alert_on_add,omitzero"`
+	AutoAddRespondingTeam     *bool                   `json:"auto_add_responding_team,omitzero"`
+	CompletedChecks           *int                    `json:"completed_checks,omitzero"`
+	Owner                     *NullableTeamEntityLite `json:"owner,omitzero"`
+	ServiceChecklistUpdatedAt *time.Time              `json:"service_checklist_updated_at,omitzero"`
 }
 
 func (s ServiceEntityChecklist) MarshalJSON() ([]byte, error) {

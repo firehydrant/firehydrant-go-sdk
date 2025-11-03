@@ -9,15 +9,15 @@ import (
 
 // UserEntity model
 type UserEntity struct {
-	ID                                  *string                                            `json:"id,omitempty"`
-	Name                                *string                                            `json:"name,omitempty"`
-	Email                               *string                                            `json:"email,omitempty"`
-	SlackUserID                         *string                                            `json:"slack_user_id,omitempty"`
-	SlackLinked                         *bool                                              `json:"slack_linked?,omitempty"`
-	CreatedAt                           *time.Time                                         `json:"created_at,omitempty"`
-	UpdatedAt                           *time.Time                                         `json:"updated_at,omitempty"`
-	SignalsEnabledNotificationTypes     []string                                           `json:"signals_enabled_notification_types,omitempty"`
-	SignalsNotificationPolicyCompliance []SignalsAPINotificationPolicyItemComplianceEntity `json:"signals_notification_policy_compliance,omitempty"`
+	ID                                  *string                                            `json:"id,omitzero"`
+	Name                                *string                                            `json:"name,omitzero"`
+	Email                               *string                                            `json:"email,omitzero"`
+	SlackUserID                         *string                                            `json:"slack_user_id,omitzero"`
+	SlackLinked                         *bool                                              `json:"slack_linked?,omitzero"`
+	CreatedAt                           *time.Time                                         `json:"created_at,omitzero"`
+	UpdatedAt                           *time.Time                                         `json:"updated_at,omitzero"`
+	SignalsEnabledNotificationTypes     []string                                           `json:"signals_enabled_notification_types,omitzero"`
+	SignalsNotificationPolicyCompliance []SignalsAPINotificationPolicyItemComplianceEntity `json:"signals_notification_policy_compliance,omitzero"`
 }
 
 func (u UserEntity) MarshalJSON() ([]byte, error) {

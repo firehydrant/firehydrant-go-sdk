@@ -2,15 +2,30 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type NullableRunbooksElementDynamicSelectEntity struct {
-	Label        *string                                                       `json:"label,omitempty"`
-	Placeholder  *string                                                       `json:"placeholder,omitempty"`
-	AsyncURL     *string                                                       `json:"async_url,omitempty"`
-	Required     *bool                                                         `json:"required,omitempty"`
-	Clearable    *bool                                                         `json:"clearable,omitempty"`
-	IsMulti      *bool                                                         `json:"is_multi,omitempty"`
-	DefaultValue *NullableRunbooksElementDynamicSelectEntitySelectOptionEntity `json:"default_value,omitempty"`
-	Options      []RunbooksElementDynamicSelectEntitySelectOptionEntity        `json:"options,omitempty"`
+	Label        *string                                                       `json:"label,omitzero"`
+	Placeholder  *string                                                       `json:"placeholder,omitzero"`
+	AsyncURL     *string                                                       `json:"async_url,omitzero"`
+	Required     *bool                                                         `json:"required,omitzero"`
+	Clearable    *bool                                                         `json:"clearable,omitzero"`
+	IsMulti      *bool                                                         `json:"is_multi,omitzero"`
+	DefaultValue *NullableRunbooksElementDynamicSelectEntitySelectOptionEntity `json:"default_value,omitzero"`
+	Options      []RunbooksElementDynamicSelectEntitySelectOptionEntity        `json:"options,omitzero"`
+}
+
+func (n NullableRunbooksElementDynamicSelectEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(n, "", false)
+}
+
+func (n *NullableRunbooksElementDynamicSelectEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &n, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (n *NullableRunbooksElementDynamicSelectEntity) GetLabel() *string {

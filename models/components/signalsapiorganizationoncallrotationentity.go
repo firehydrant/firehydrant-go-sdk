@@ -8,15 +8,15 @@ import (
 )
 
 type SignalsAPIOrganizationOnCallRotationEntity struct {
-	ID           *string                              `json:"id,omitempty"`
-	Name         *string                              `json:"name,omitempty"`
-	Description  *string                              `json:"description,omitempty"`
-	TimeZone     *string                              `json:"time_zone,omitempty"`
-	CurrentShift *NullableSignalsAPIOnCallShiftEntity `json:"current_shift,omitempty"`
-	NextShift    *NullableSignalsAPIOnCallShiftEntity `json:"next_shift,omitempty"`
-	CreatedBy    *NullableAuthorEntity                `json:"created_by,omitempty"`
-	CreatedAt    *time.Time                           `json:"created_at,omitempty"`
-	UpdatedAt    *time.Time                           `json:"updated_at,omitempty"`
+	ID           *string                              `json:"id,omitzero"`
+	Name         *string                              `json:"name,omitzero"`
+	Description  *string                              `json:"description,omitzero"`
+	TimeZone     *string                              `json:"time_zone,omitzero"`
+	CurrentShift *NullableSignalsAPIOnCallShiftEntity `json:"current_shift,omitzero"`
+	NextShift    *NullableSignalsAPIOnCallShiftEntity `json:"next_shift,omitzero"`
+	CreatedBy    *NullableAuthorEntity                `json:"created_by,omitzero"`
+	CreatedAt    *time.Time                           `json:"created_at,omitzero"`
+	UpdatedAt    *time.Time                           `json:"updated_at,omitzero"`
 }
 
 func (s SignalsAPIOrganizationOnCallRotationEntity) MarshalJSON() ([]byte, error) {

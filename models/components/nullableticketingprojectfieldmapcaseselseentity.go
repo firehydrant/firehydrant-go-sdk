@@ -2,8 +2,23 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type NullableTicketingProjectFieldMapCasesElseEntity struct {
-	ExternalValue *NullableTicketingProjectFieldMapExternalValueEntity `json:"external_value,omitempty"`
+	ExternalValue *NullableTicketingProjectFieldMapExternalValueEntity `json:"external_value,omitzero"`
+}
+
+func (n NullableTicketingProjectFieldMapCasesElseEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(n, "", false)
+}
+
+func (n *NullableTicketingProjectFieldMapCasesElseEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &n, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (n *NullableTicketingProjectFieldMapCasesElseEntity) GetExternalValue() *NullableTicketingProjectFieldMapExternalValueEntity {

@@ -4,11 +4,11 @@ package components
 
 // SeverityMatrixImpactEntity - SeverityMatrix_ImpactEntity model
 type SeverityMatrixImpactEntity struct {
-	ID        *string `json:"id,omitempty"`
-	Name      *string `json:"name,omitempty"`
-	Type      *string `json:"type,omitempty"`
-	AffectsID *string `json:"affects_id,omitempty"`
-	Position  *int    `json:"position,omitempty"`
+	ID        *string `json:"id,omitzero"`
+	Name      *string `json:"name,omitzero"`
+	Type      *string `json:"type,omitzero"`
+	AffectsID *string `json:"affects_id,omitzero"`
+	Position  *int    `json:"position,omitzero"`
 }
 
 func (s *SeverityMatrixImpactEntity) GetID() *string {

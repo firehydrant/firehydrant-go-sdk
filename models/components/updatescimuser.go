@@ -2,6 +2,10 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // UpdateScimUserName - The components of the user's name
 type UpdateScimUserName struct {
 	// The family name of the User, or last name in most Western languages
@@ -28,7 +32,7 @@ type UpdateScimUserEmail struct {
 	// String that represents an email address for the User
 	Value string `json:"value"`
 	// Boolean which signifies if an email is intended as the primary email for the User
-	Primary *bool `json:"primary,omitempty"`
+	Primary *bool `json:"primary,omitzero"`
 }
 
 func (u *UpdateScimUserEmail) GetValue() string {
@@ -53,9 +57,9 @@ type UpdateScimUserPhoneNumber struct {
 	// String that represents a phone number for the User
 	Value string `json:"value"`
 	// Type of phone number (mobile, work, home, etc.)
-	Type *string `json:"type,omitempty"`
+	Type *string `json:"type,omitzero"`
 	// Boolean which signifies if a phone number is intended as the primary phone for the User
-	Primary *bool `json:"primary,omitempty"`
+	Primary *bool `json:"primary,omitzero"`
 }
 
 func (u *UpdateScimUserPhoneNumber) GetValue() string {
@@ -82,17 +86,28 @@ func (u *UpdateScimUserPhoneNumber) GetPrimary() *bool {
 // UpdateScimUser - PUT SCIM endpoint to update a User. This endpoint is used to replace a resource's attributes.
 type UpdateScimUser struct {
 	// A service provider's unique identifier for the user
-	UserName *string `json:"userName,omitempty"`
+	UserName *string `json:"userName,omitzero"`
 	// The components of the user's name
-	Name *UpdateScimUserName `json:"name,omitempty"`
+	Name *UpdateScimUserName `json:"name,omitzero"`
 	// Email addresses for the User
-	Emails []UpdateScimUserEmail `json:"emails,omitempty"`
+	Emails []UpdateScimUserEmail `json:"emails,omitzero"`
 	// Roles for the User. Options are owner, member, collaborator, or viewer. Roles may be specified as strings or SCIM role objects.
-	Roles *UpdateScimUserRoles `json:"roles,omitempty"`
+	Roles *UpdateScimUserRoles `json:"roles,omitzero"`
 	// Boolean that represents whether user is active
-	Active *bool `json:"active,omitempty"`
+	Active *bool `json:"active,omitzero"`
 	// Phone numbers for the User
-	PhoneNumbers []UpdateScimUserPhoneNumber `json:"phoneNumbers,omitempty"`
+	PhoneNumbers []UpdateScimUserPhoneNumber `json:"phoneNumbers,omitzero"`
+}
+
+func (u UpdateScimUser) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UpdateScimUser) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (u *UpdateScimUser) GetUserName() *string {

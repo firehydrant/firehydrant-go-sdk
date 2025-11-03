@@ -4,9 +4,9 @@ package components
 
 type IncidentsRequiredFieldEntity struct {
 	// A unique identifier for the field. For built-in fields, this will be human-readable. For custom fields or milestone timestamps, it will be a prefixed version of the field or milestone's UUID.
-	ID *string `json:"id,omitempty"`
+	ID *string `json:"id,omitzero"`
 	// The milestone at which this field is required. If null, this field is always required.
-	RequiredAtMilestoneID *string `json:"required_at_milestone_id,omitempty"`
+	RequiredAtMilestoneID *string `json:"required_at_milestone_id,omitzero"`
 }
 
 func (i *IncidentsRequiredFieldEntity) GetID() *string {

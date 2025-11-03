@@ -8,16 +8,16 @@ import (
 )
 
 type NullableTeamEntityLite struct {
-	ID                                *string               `json:"id,omitempty"`
-	Name                              *string               `json:"name,omitempty"`
-	Description                       *string               `json:"description,omitempty"`
-	Slug                              *string               `json:"slug,omitempty"`
-	CreatedAt                         *time.Time            `json:"created_at,omitempty"`
-	UpdatedAt                         *time.Time            `json:"updated_at,omitempty"`
-	SignalsIcalURL                    *string               `json:"signals_ical_url,omitempty"`
-	CreatedBy                         *NullableAuthorEntity `json:"created_by,omitempty"`
-	InSupportHours                    *bool                 `json:"in_support_hours,omitempty"`
-	RestrictSignalsResourceManagement *bool                 `json:"restrict_signals_resource_management,omitempty"`
+	ID                                *string               `json:"id,omitzero"`
+	Name                              *string               `json:"name,omitzero"`
+	Description                       *string               `json:"description,omitzero"`
+	Slug                              *string               `json:"slug,omitzero"`
+	CreatedAt                         *time.Time            `json:"created_at,omitzero"`
+	UpdatedAt                         *time.Time            `json:"updated_at,omitzero"`
+	SignalsIcalURL                    *string               `json:"signals_ical_url,omitzero"`
+	CreatedBy                         *NullableAuthorEntity `json:"created_by,omitzero"`
+	InSupportHours                    *bool                 `json:"in_support_hours,omitzero"`
+	RestrictSignalsResourceManagement *bool                 `json:"restrict_signals_resource_management,omitzero"`
 }
 
 func (n NullableTeamEntityLite) MarshalJSON() ([]byte, error) {

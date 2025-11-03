@@ -41,9 +41,9 @@ func (e *UpdateIncidentChangeEventType) UnmarshalJSON(data []byte) error {
 
 // UpdateIncidentChangeEvent - Update a change attached to an incident
 type UpdateIncidentChangeEvent struct {
-	Type *UpdateIncidentChangeEventType `json:"type,omitempty"`
+	Type *UpdateIncidentChangeEventType `json:"type,omitzero"`
 	// A short description about why this change event is related
-	Why *string `json:"why,omitempty"`
+	Why *string `json:"why,omitzero"`
 }
 
 func (u *UpdateIncidentChangeEvent) GetType() *UpdateIncidentChangeEventType {

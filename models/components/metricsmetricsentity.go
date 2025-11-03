@@ -2,6 +2,10 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type DisplayInformation struct {
 }
 
@@ -10,15 +14,26 @@ type Bucket struct {
 
 // MetricsMetricsEntity - Metrics_MetricsEntity model
 type MetricsMetricsEntity struct {
-	Type *string `json:"type,omitempty"`
+	Type *string `json:"type,omitzero"`
 	// The field by which the metrics are grouped. Can be one of: total, severity, priority, functionality, service, environment, or user.
-	By *string `json:"by,omitempty"`
+	By *string `json:"by,omitzero"`
 	// The size of returned buckets. Can be one of: day, week, month, or all_time.
-	BucketSize         *int                                    `json:"bucket_size,omitempty"`
-	DisplayInformation *DisplayInformation                     `json:"display_information,omitempty"`
-	Keys               []string                                `json:"keys,omitempty"`
-	Buckets            []Bucket                                `json:"buckets,omitempty"`
-	Sort               *NullableMetricsMetricsEntitySortEntity `json:"sort,omitempty"`
+	BucketSize         *int                                    `json:"bucket_size,omitzero"`
+	DisplayInformation *DisplayInformation                     `json:"display_information,omitzero"`
+	Keys               []string                                `json:"keys,omitzero"`
+	Buckets            []Bucket                                `json:"buckets,omitzero"`
+	Sort               *NullableMetricsMetricsEntitySortEntity `json:"sort,omitzero"`
+}
+
+func (m MetricsMetricsEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(m, "", false)
+}
+
+func (m *MetricsMetricsEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &m, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (m *MetricsMetricsEntity) GetType() *string {

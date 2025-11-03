@@ -2,6 +2,10 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // RunbookStepEntityConfig - An unstructured object of key/value pairs describing the config settings for the step.
 type RunbookStepEntityConfig struct {
 }
@@ -13,23 +17,34 @@ type RunbookStepEntityStepElement struct {
 }
 
 type RunbookStepEntity struct {
-	Name     *string `json:"name,omitempty"`
-	ActionID *string `json:"action_id,omitempty"`
-	StepID   *string `json:"step_id,omitempty"`
+	Name     *string `json:"name,omitzero"`
+	ActionID *string `json:"action_id,omitzero"`
+	StepID   *string `json:"step_id,omitzero"`
 	// An unstructured object of key/value pairs describing the config settings for the step.
-	Config *RunbookStepEntityConfig `json:"config,omitempty"`
+	Config *RunbookStepEntityConfig `json:"config,omitzero"`
 	// A list of action elements
-	ActionElements []ActionElement `json:"action_elements,omitempty"`
+	ActionElements []ActionElement `json:"action_elements,omitzero"`
 	// A list of step elements
-	StepElements    []RunbookStepEntityStepElement `json:"step_elements,omitempty"`
-	Automatic       *bool                          `json:"automatic,omitempty"`
-	DelayDuration   *string                        `json:"delay_duration,omitempty"`
-	Action          *NullableRunbooksActionsEntity `json:"action,omitempty"`
-	Reruns          *bool                          `json:"reruns,omitempty"`
-	Repeats         *bool                          `json:"repeats,omitempty"`
-	RepeatsDuration *string                        `json:"repeats_duration,omitempty"`
-	Votes           *NullableEmptyVotesEntity      `json:"votes,omitempty"`
-	Rule            *NullableRulesRuleEntity       `json:"rule,omitempty"`
+	StepElements    []RunbookStepEntityStepElement `json:"step_elements,omitzero"`
+	Automatic       *bool                          `json:"automatic,omitzero"`
+	DelayDuration   *string                        `json:"delay_duration,omitzero"`
+	Action          *NullableRunbooksActionsEntity `json:"action,omitzero"`
+	Reruns          *bool                          `json:"reruns,omitzero"`
+	Repeats         *bool                          `json:"repeats,omitzero"`
+	RepeatsDuration *string                        `json:"repeats_duration,omitzero"`
+	Votes           *NullableEmptyVotesEntity      `json:"votes,omitzero"`
+	Rule            *NullableRulesRuleEntity       `json:"rule,omitzero"`
+}
+
+func (r RunbookStepEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(r, "", false)
+}
+
+func (r *RunbookStepEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &r, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (r *RunbookStepEntity) GetName() *string {

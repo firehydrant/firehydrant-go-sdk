@@ -9,16 +9,16 @@ import (
 
 // SignalsAPIOnCallShiftEntity - Signals_API_OnCallShiftEntity model
 type SignalsAPIOnCallShiftEntity struct {
-	ID              *string                 `json:"id,omitempty"`
-	User            *NullableSuccinctEntity `json:"user,omitempty"`
-	CoverageRequest *string                 `json:"coverage_request,omitempty"`
-	Color           *string                 `json:"color,omitempty"`
-	TimeZone        *string                 `json:"time_zone,omitempty"`
-	OnCallSchedule  *NullableSuccinctEntity `json:"on_call_schedule,omitempty"`
-	OnCallRotation  *NullableSuccinctEntity `json:"on_call_rotation,omitempty"`
-	Team            *NullableSuccinctEntity `json:"team,omitempty"`
-	StartTime       *time.Time              `json:"start_time,omitempty"`
-	EndTime         *time.Time              `json:"end_time,omitempty"`
+	ID              *string                 `json:"id,omitzero"`
+	User            *NullableSuccinctEntity `json:"user,omitzero"`
+	CoverageRequest *string                 `json:"coverage_request,omitzero"`
+	Color           *string                 `json:"color,omitzero"`
+	TimeZone        *string                 `json:"time_zone,omitzero"`
+	OnCallSchedule  *NullableSuccinctEntity `json:"on_call_schedule,omitzero"`
+	OnCallRotation  *NullableSuccinctEntity `json:"on_call_rotation,omitzero"`
+	Team            *NullableSuccinctEntity `json:"team,omitzero"`
+	StartTime       *time.Time              `json:"start_time,omitzero"`
+	EndTime         *time.Time              `json:"end_time,omitzero"`
 }
 
 func (s SignalsAPIOnCallShiftEntity) MarshalJSON() ([]byte, error) {

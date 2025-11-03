@@ -9,23 +9,23 @@ import (
 
 // SignalsAPIOnCallRotationEntity - Signals_API_OnCallRotationEntity model
 type SignalsAPIOnCallRotationEntity struct {
-	ID                              *string                                 `json:"id,omitempty"`
-	Name                            *string                                 `json:"name,omitempty"`
-	Description                     *string                                 `json:"description,omitempty"`
-	TimeZone                        *string                                 `json:"time_zone,omitempty"`
-	Color                           *string                                 `json:"color,omitempty"`
-	SlackUserGroupID                *string                                 `json:"slack_user_group_id,omitempty"`
-	EnableSlackChannelNotifications *bool                                   `json:"enable_slack_channel_notifications,omitempty"`
-	PreventShiftDeletion            *bool                                   `json:"prevent_shift_deletion,omitempty"`
-	CoverageGapNotificationInterval *string                                 `json:"coverage_gap_notification_interval,omitempty"`
-	Members                         []SuccinctEntity                        `json:"members,omitempty"`
-	Shifts                          []SignalsAPIOnCallShiftEntity           `json:"shifts,omitempty"`
-	Team                            *NullableSuccinctEntity                 `json:"team,omitempty"`
-	Strategy                        *NullableSignalsAPIOnCallStrategyEntity `json:"strategy,omitempty"`
-	Restrictions                    []SignalsAPIOnCallRestrictionEntity     `json:"restrictions,omitempty"`
-	CreatedBy                       *NullableAuthorEntity                   `json:"created_by,omitempty"`
-	CreatedAt                       *time.Time                              `json:"created_at,omitempty"`
-	UpdatedAt                       *time.Time                              `json:"updated_at,omitempty"`
+	ID                              *string                                 `json:"id,omitzero"`
+	Name                            *string                                 `json:"name,omitzero"`
+	Description                     *string                                 `json:"description,omitzero"`
+	TimeZone                        *string                                 `json:"time_zone,omitzero"`
+	Color                           *string                                 `json:"color,omitzero"`
+	SlackUserGroupID                *string                                 `json:"slack_user_group_id,omitzero"`
+	EnableSlackChannelNotifications *bool                                   `json:"enable_slack_channel_notifications,omitzero"`
+	PreventShiftDeletion            *bool                                   `json:"prevent_shift_deletion,omitzero"`
+	CoverageGapNotificationInterval *string                                 `json:"coverage_gap_notification_interval,omitzero"`
+	Members                         []SuccinctEntity                        `json:"members,omitzero"`
+	Shifts                          []SignalsAPIOnCallShiftEntity           `json:"shifts,omitzero"`
+	Team                            *NullableSuccinctEntity                 `json:"team,omitzero"`
+	Strategy                        *NullableSignalsAPIOnCallStrategyEntity `json:"strategy,omitzero"`
+	Restrictions                    []SignalsAPIOnCallRestrictionEntity     `json:"restrictions,omitzero"`
+	CreatedBy                       *NullableAuthorEntity                   `json:"created_by,omitzero"`
+	CreatedAt                       *time.Time                              `json:"created_at,omitzero"`
+	UpdatedAt                       *time.Time                              `json:"updated_at,omitzero"`
 }
 
 func (s SignalsAPIOnCallRotationEntity) MarshalJSON() ([]byte, error) {

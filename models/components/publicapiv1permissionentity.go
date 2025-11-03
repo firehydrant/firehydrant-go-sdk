@@ -2,15 +2,30 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type PublicAPIV1PermissionEntity struct {
-	Slug                *string  `json:"slug,omitempty"`
-	DisplayName         *string  `json:"display_name,omitempty"`
-	Description         *string  `json:"description,omitempty"`
-	CategoryDisplayName *string  `json:"category_display_name,omitempty"`
-	CategorySlug        *string  `json:"category_slug,omitempty"`
-	ParentSlug          *string  `json:"parent_slug,omitempty"`
-	Available           *bool    `json:"available,omitempty"`
-	DependencySlugs     []string `json:"dependency_slugs,omitempty"`
+	Slug                *string  `json:"slug,omitzero"`
+	DisplayName         *string  `json:"display_name,omitzero"`
+	Description         *string  `json:"description,omitzero"`
+	CategoryDisplayName *string  `json:"category_display_name,omitzero"`
+	CategorySlug        *string  `json:"category_slug,omitzero"`
+	ParentSlug          *string  `json:"parent_slug,omitzero"`
+	Available           *bool    `json:"available,omitzero"`
+	DependencySlugs     []string `json:"dependency_slugs,omitzero"`
+}
+
+func (p PublicAPIV1PermissionEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(p, "", false)
+}
+
+func (p *PublicAPIV1PermissionEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &p, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (p *PublicAPIV1PermissionEntity) GetSlug() *string {

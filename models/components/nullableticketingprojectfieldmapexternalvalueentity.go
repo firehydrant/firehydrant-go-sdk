@@ -37,10 +37,10 @@ func (e *NullableTicketingProjectFieldMapExternalValueEntityType) UnmarshalJSON(
 }
 
 type NullableTicketingProjectFieldMapExternalValueEntity struct {
-	Type         *NullableTicketingProjectFieldMapExternalValueEntityType `json:"type,omitempty"`
-	Value        *string                                                  `json:"value,omitempty"`
-	Attribute    *string                                                  `json:"attribute,omitempty"`
-	Presentation *string                                                  `json:"presentation,omitempty"`
+	Type         *NullableTicketingProjectFieldMapExternalValueEntityType `json:"type,omitzero"`
+	Value        *string                                                  `json:"value,omitzero"`
+	Attribute    *string                                                  `json:"attribute,omitzero"`
+	Presentation *string                                                  `json:"presentation,omitzero"`
 }
 
 func (n *NullableTicketingProjectFieldMapExternalValueEntity) GetType() *NullableTicketingProjectFieldMapExternalValueEntityType {

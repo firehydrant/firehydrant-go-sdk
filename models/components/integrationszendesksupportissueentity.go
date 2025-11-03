@@ -2,28 +2,43 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // IntegrationsZendeskSupportIssueEntityData - Raw data associated with this issue from originating system.
 type IntegrationsZendeskSupportIssueEntityData struct {
 }
 
 type IntegrationsZendeskSupportIssueEntity struct {
 	// The ID of this support issue in the system that originated this issue, eg Zendesk.
-	RemoteID *string `json:"remote_id,omitempty"`
+	RemoteID *string `json:"remote_id,omitzero"`
 	// Title or name of this issue.
-	Title *string `json:"title,omitempty"`
+	Title *string `json:"title,omitzero"`
 	// Longer description of the issue.
-	Description *string `json:"description,omitempty"`
+	Description *string `json:"description,omitzero"`
 	// Browser-accessible url for this issue in the originating system, eg Zendesk.
-	RemoteURL *string `json:"remote_url,omitempty"`
+	RemoteURL *string `json:"remote_url,omitzero"`
 	// Raw data associated with this issue from originating system.
-	Data *IntegrationsZendeskSupportIssueEntityData `json:"data,omitempty"`
+	Data *IntegrationsZendeskSupportIssueEntityData `json:"data,omitzero"`
 	// Attachment information for this issue.
-	Attachments       *string                                                      `json:"attachments,omitempty"`
-	Customers         *NullableIntegrationsZendeskSupportIssueEntityCustomerEntity `json:"customers,omitempty"`
-	Priority          *string                                                      `json:"priority,omitempty"`
-	AttachedIncidents []IncidentEntity                                             `json:"attached_incidents,omitempty"`
+	Attachments       *string                                                      `json:"attachments,omitzero"`
+	Customers         *NullableIntegrationsZendeskSupportIssueEntityCustomerEntity `json:"customers,omitzero"`
+	Priority          *string                                                      `json:"priority,omitzero"`
+	AttachedIncidents []IncidentEntity                                             `json:"attached_incidents,omitzero"`
 	// Type designator for this entity
-	Type *string `json:"type,omitempty"`
+	Type *string `json:"type,omitzero"`
+}
+
+func (i IntegrationsZendeskSupportIssueEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(i, "", false)
+}
+
+func (i *IntegrationsZendeskSupportIssueEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &i, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (i *IntegrationsZendeskSupportIssueEntity) GetRemoteID() *string {

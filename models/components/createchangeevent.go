@@ -92,24 +92,24 @@ func (a *Author) GetName() string {
 // CreateChangeEvent - Create a change event
 type CreateChangeEvent struct {
 	Summary     string            `json:"summary"`
-	Description *string           `json:"description,omitempty"`
-	Labels      map[string]string `json:"labels,omitempty"`
-	StartsAt    *time.Time        `json:"starts_at,omitempty"`
-	EndsAt      *time.Time        `json:"ends_at,omitempty"`
+	Description *string           `json:"description,omitzero"`
+	Labels      map[string]string `json:"labels,omitzero"`
+	StartsAt    *time.Time        `json:"starts_at,omitzero"`
+	EndsAt      *time.Time        `json:"ends_at,omitzero"`
 	// An array of environment IDs
-	Environments []string `json:"environments,omitempty"`
+	Environments []string `json:"environments,omitzero"`
 	// An array of service IDs
-	Services []string `json:"services,omitempty"`
+	Services []string `json:"services,omitzero"`
 	// An array of change IDs
-	Changes []string `json:"changes,omitempty"`
+	Changes []string `json:"changes,omitzero"`
 	// The ID of a change event as assigned by an external provider
-	ExternalID *string `json:"external_id,omitempty"`
+	ExternalID *string `json:"external_id,omitzero"`
 	// If provided and valid, the event will be linked to all changes that have the same identities. Identity *values* must be unique.
-	ChangeIdentities []ChangeIdentity `json:"change_identities,omitempty"`
+	ChangeIdentities []ChangeIdentity `json:"change_identities,omitzero"`
 	// JSON objects representing attachments, see attachments documentation for the schema
-	Attachments []CreateChangeEventAttachment `json:"attachments,omitempty"`
+	Attachments []CreateChangeEventAttachment `json:"attachments,omitzero"`
 	// Array of additional authors to add to the change event, the creating actor will automatically be added as an author
-	Authors []Author `json:"authors,omitempty"`
+	Authors []Author `json:"authors,omitzero"`
 }
 
 func (c CreateChangeEvent) MarshalJSON() ([]byte, error) {

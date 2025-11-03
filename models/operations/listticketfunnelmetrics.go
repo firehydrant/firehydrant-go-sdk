@@ -75,6 +75,17 @@ type ListTicketFunnelMetricsRequestBody struct {
 	GroupBy []ListTicketFunnelMetricsGroupBy `multipartForm:"name=group_by"`
 }
 
+func (l ListTicketFunnelMetricsRequestBody) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(l, "", false)
+}
+
+func (l *ListTicketFunnelMetricsRequestBody) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &l, "", false, nil); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (l *ListTicketFunnelMetricsRequestBody) GetGroupBy() []ListTicketFunnelMetricsGroupBy {
 	if l == nil {
 		return nil

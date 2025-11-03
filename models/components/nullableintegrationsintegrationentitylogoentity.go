@@ -3,7 +3,7 @@
 package components
 
 type NullableIntegrationsIntegrationEntityLogoEntity struct {
-	LogoURL *string `json:"logo_url,omitempty"`
+	LogoURL *string `json:"logo_url,omitzero"`
 }
 
 func (n *NullableIntegrationsIntegrationEntityLogoEntity) GetLogoURL() *string {

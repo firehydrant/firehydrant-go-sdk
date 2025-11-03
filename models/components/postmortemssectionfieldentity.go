@@ -4,9 +4,9 @@ package components
 
 // PostMortemsSectionFieldEntity - PostMortems_SectionFieldEntity model
 type PostMortemsSectionFieldEntity struct {
-	ID    *string `json:"id,omitempty"`
-	Name  *string `json:"name,omitempty"`
-	Value *string `json:"value,omitempty"`
+	ID    *string `json:"id,omitzero"`
+	Name  *string `json:"name,omitzero"`
+	Value *string `json:"value,omitzero"`
 }
 
 func (p *PostMortemsSectionFieldEntity) GetID() *string {

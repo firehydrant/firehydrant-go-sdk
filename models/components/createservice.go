@@ -5,6 +5,7 @@ package components
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
 // CreateServiceServiceTier - Integer representing service tier. Lower values represent higher criticality. If not specified the default value will be 5.
@@ -48,9 +49,9 @@ func (e *CreateServiceServiceTier) UnmarshalJSON(data []byte) error {
 
 type CreateServiceFunctionality struct {
 	// If you are trying to create a new functionality and attach it to this service, set the summary key
-	Summary *string `json:"summary,omitempty"`
+	Summary *string `json:"summary,omitzero"`
 	// If you are trying to reuse a functionality, you may set the ID to attach it to the service
-	ID *string `json:"id,omitempty"`
+	ID *string `json:"id,omitzero"`
 }
 
 func (c *CreateServiceFunctionality) GetSummary() *string {
@@ -73,7 +74,7 @@ type CreateServiceLink struct {
 	// URL
 	HrefURL string `json:"href_url"`
 	// An optional URL to an icon representing this link
-	IconURL *string `json:"icon_url,omitempty"`
+	IconURL *string `json:"icon_url,omitzero"`
 }
 
 func (c *CreateServiceLink) GetName() string {
@@ -123,7 +124,7 @@ func (c *CreateServiceTeam) GetID() string {
 type CreateServiceExternalResource struct {
 	RemoteID string `json:"remote_id"`
 	// The integration slug for the external resource. Can be one of: github, opsgenie, pager_duty, victorops. Not required if the resource has already been imported.
-	ConnectionType *string `json:"connection_type,omitempty"`
+	ConnectionType *string `json:"connection_type,omitzero"`
 }
 
 func (c *CreateServiceExternalResource) GetRemoteID() string {
@@ -143,23 +144,34 @@ func (c *CreateServiceExternalResource) GetConnectionType() *string {
 // CreateService - Creates a service for the organization, you may also create or attach functionalities to the service on create.
 type CreateService struct {
 	Name        string  `json:"name"`
-	Description *string `json:"description,omitempty"`
+	Description *string `json:"description,omitzero"`
 	// A hash of label keys and values
-	Labels map[string]string `json:"labels,omitempty"`
+	Labels map[string]string `json:"labels,omitzero"`
 	// Integer representing service tier. Lower values represent higher criticality. If not specified the default value will be 5.
-	ServiceTier *CreateServiceServiceTier `json:"service_tier,omitempty"`
+	ServiceTier *CreateServiceServiceTier `json:"service_tier,omitzero"`
 	// An array of functionalities
-	Functionalities []CreateServiceFunctionality `json:"functionalities,omitempty"`
+	Functionalities []CreateServiceFunctionality `json:"functionalities,omitzero"`
 	// An array of links to associate with this service
-	Links []CreateServiceLink `json:"links,omitempty"`
+	Links []CreateServiceLink `json:"links,omitzero"`
 	// An object representing a Team that owns the service
-	Owner *CreateServiceOwner `json:"owner,omitempty"`
+	Owner *CreateServiceOwner `json:"owner,omitzero"`
 	// An array of teams to attach to this service.
-	Teams                 []CreateServiceTeam `json:"teams,omitempty"`
-	AlertOnAdd            *bool               `json:"alert_on_add,omitempty"`
-	AutoAddRespondingTeam *bool               `json:"auto_add_responding_team,omitempty"`
+	Teams                 []CreateServiceTeam `json:"teams,omitzero"`
+	AlertOnAdd            *bool               `json:"alert_on_add,omitzero"`
+	AutoAddRespondingTeam *bool               `json:"auto_add_responding_team,omitzero"`
 	// An array of external resources to attach to this service.
-	ExternalResources []CreateServiceExternalResource `json:"external_resources,omitempty"`
+	ExternalResources []CreateServiceExternalResource `json:"external_resources,omitzero"`
+}
+
+func (c CreateService) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *CreateService) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"name"}); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (c *CreateService) GetName() string {

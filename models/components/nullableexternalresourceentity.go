@@ -8,15 +8,15 @@ import (
 )
 
 type NullableExternalResourceEntity struct {
-	ConnectionType           *string    `json:"connection_type,omitempty"`
-	ConnectionName           *string    `json:"connection_name,omitempty"`
-	ConnectionFullFaviconURL *string    `json:"connection_full_favicon_url,omitempty"`
-	ConnectionID             *string    `json:"connection_id,omitempty"`
-	RemoteID                 *string    `json:"remote_id,omitempty"`
-	RemoteURL                *string    `json:"remote_url,omitempty"`
-	CreatedAt                *time.Time `json:"created_at,omitempty"`
-	UpdatedAt                *time.Time `json:"updated_at,omitempty"`
-	Name                     *string    `json:"name,omitempty"`
+	ConnectionType           *string    `json:"connection_type,omitzero"`
+	ConnectionName           *string    `json:"connection_name,omitzero"`
+	ConnectionFullFaviconURL *string    `json:"connection_full_favicon_url,omitzero"`
+	ConnectionID             *string    `json:"connection_id,omitzero"`
+	RemoteID                 *string    `json:"remote_id,omitzero"`
+	RemoteURL                *string    `json:"remote_url,omitzero"`
+	CreatedAt                *time.Time `json:"created_at,omitzero"`
+	UpdatedAt                *time.Time `json:"updated_at,omitzero"`
+	Name                     *string    `json:"name,omitzero"`
 }
 
 func (n NullableExternalResourceEntity) MarshalJSON() ([]byte, error) {

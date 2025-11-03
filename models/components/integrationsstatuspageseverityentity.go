@@ -3,8 +3,8 @@
 package components
 
 type IntegrationsStatuspageSeverityEntity struct {
-	SeveritySlug *string `json:"severity_slug,omitempty"`
-	RemoteStatus *string `json:"remote_status,omitempty"`
+	SeveritySlug *string `json:"severity_slug,omitzero"`
+	RemoteStatus *string `json:"remote_status,omitzero"`
 }
 
 func (i *IntegrationsStatuspageSeverityEntity) GetSeveritySlug() *string {
