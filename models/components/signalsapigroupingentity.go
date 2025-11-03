@@ -2,12 +2,27 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // SignalsAPIGroupingEntity - Signals_API_GroupingEntity model
 type SignalsAPIGroupingEntity struct {
-	ID                       *string                                         `json:"id,omitempty"`
-	Strategy                 *NullableSignalsAPIGroupingEntityStrategyEntity `json:"strategy,omitempty"`
-	Action                   *NullableSignalsAPIGroupingEntityActionEntity   `json:"action,omitempty"`
-	ReferenceAlertTimePeriod *string                                         `json:"reference_alert_time_period,omitempty"`
+	ID                       *string                                         `json:"id,omitzero"`
+	Strategy                 *NullableSignalsAPIGroupingEntityStrategyEntity `json:"strategy,omitzero"`
+	Action                   *NullableSignalsAPIGroupingEntityActionEntity   `json:"action,omitzero"`
+	ReferenceAlertTimePeriod *string                                         `json:"reference_alert_time_period,omitzero"`
+}
+
+func (s SignalsAPIGroupingEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(s, "", false)
+}
+
+func (s *SignalsAPIGroupingEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &s, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (s *SignalsAPIGroupingEntity) GetID() *string {

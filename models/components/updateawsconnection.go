@@ -4,9 +4,9 @@ package components
 
 // UpdateAwsConnection - Update the AWS connection with the provided data.
 type UpdateAwsConnection struct {
-	AwsAccountID     *string `json:"aws_account_id,omitempty"`
-	TargetArn        *string `json:"target_arn,omitempty"`
-	ConnectionStatus *string `json:"connection_status,omitempty"`
+	AwsAccountID     *string `json:"aws_account_id,omitzero"`
+	TargetArn        *string `json:"target_arn,omitzero"`
+	ConnectionStatus *string `json:"connection_status,omitzero"`
 }
 
 func (u *UpdateAwsConnection) GetAwsAccountID() *string {

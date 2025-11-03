@@ -3,13 +3,13 @@
 package components
 
 type NullableMetricsRetrospectiveEntitySummaryEntity struct {
-	Completed            *int     `json:"completed,omitempty"`
-	Total                *int     `json:"total,omitempty"`
-	Incomplete           *int     `json:"incomplete,omitempty"`
-	Mean                 *float32 `json:"mean,omitempty"`
-	Shortest             *float32 `json:"shortest,omitempty"`
-	Longest              *float32 `json:"longest,omitempty"`
-	CompletionPercentage *float32 `json:"completion_percentage,omitempty"`
+	Completed            *int     `json:"completed,omitzero"`
+	Total                *int     `json:"total,omitzero"`
+	Incomplete           *int     `json:"incomplete,omitzero"`
+	Mean                 *float32 `json:"mean,omitzero"`
+	Shortest             *float32 `json:"shortest,omitzero"`
+	Longest              *float32 `json:"longest,omitzero"`
+	CompletionPercentage *float32 `json:"completion_percentage,omitzero"`
 }
 
 func (n *NullableMetricsRetrospectiveEntitySummaryEntity) GetCompleted() *int {

@@ -2,13 +2,17 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type UpdatePostMortemQuestionsQuestion struct {
 	// ID of a question
-	ID *string `json:"id,omitempty"`
+	ID *string `json:"id,omitzero"`
 	// title of a question
-	Title *string `json:"title,omitempty"`
+	Title *string `json:"title,omitzero"`
 	// tooltip of a question
-	Tooltip *string `json:"tooltip,omitempty"`
+	Tooltip *string `json:"tooltip,omitzero"`
 }
 
 func (u *UpdatePostMortemQuestionsQuestion) GetID() *string {
@@ -34,8 +38,19 @@ func (u *UpdatePostMortemQuestionsQuestion) GetTooltip() *string {
 
 // UpdatePostMortemQuestions - Update the questions configured to be provided and filled out on future retrospective reports.
 type UpdatePostMortemQuestions struct {
-	MakeSwaggerWork *string                             `json:"_make_swagger_work_,omitempty"`
-	Questions       []UpdatePostMortemQuestionsQuestion `json:"questions,omitempty"`
+	MakeSwaggerWork *string                             `json:"_make_swagger_work_,omitzero"`
+	Questions       []UpdatePostMortemQuestionsQuestion `json:"questions,omitzero"`
+}
+
+func (u UpdatePostMortemQuestions) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UpdatePostMortemQuestions) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (u *UpdatePostMortemQuestions) GetMakeSwaggerWork() *string {

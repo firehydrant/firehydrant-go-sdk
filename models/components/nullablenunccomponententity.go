@@ -3,11 +3,11 @@
 package components
 
 type NullableNuncComponentEntity struct {
-	InfrastructureType *string `json:"infrastructure_type,omitempty"`
-	InfrastructureID   *string `json:"infrastructure_id,omitempty"`
-	Label              *string `json:"label,omitempty"`
-	Position           *int    `json:"position,omitempty"`
-	ComponentGroupID   *string `json:"component_group_id,omitempty"`
+	InfrastructureType *string `json:"infrastructure_type,omitzero"`
+	InfrastructureID   *string `json:"infrastructure_id,omitzero"`
+	Label              *string `json:"label,omitzero"`
+	Position           *int    `json:"position,omitzero"`
+	ComponentGroupID   *string `json:"component_group_id,omitzero"`
 }
 
 func (n *NullableNuncComponentEntity) GetInfrastructureType() *string {

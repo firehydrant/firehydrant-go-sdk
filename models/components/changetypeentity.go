@@ -3,8 +3,8 @@
 package components
 
 type ChangeTypeEntity struct {
-	ID   *string `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
+	ID   *string `json:"id,omitzero"`
+	Name *string `json:"name,omitzero"`
 }
 
 func (c *ChangeTypeEntity) GetID() *string {

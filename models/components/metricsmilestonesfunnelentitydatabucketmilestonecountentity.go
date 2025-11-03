@@ -4,9 +4,9 @@ package components
 
 type MetricsMilestonesFunnelEntityDataBucketMilestoneCountEntity struct {
 	// The UUID of the milestone
-	MilestoneID *string `json:"milestone_id,omitempty"`
+	MilestoneID *string `json:"milestone_id,omitzero"`
 	// The frequency count of that milestone for the period
-	Count *int `json:"count,omitempty"`
+	Count *int `json:"count,omitzero"`
 }
 
 func (m *MetricsMilestonesFunnelEntityDataBucketMilestoneCountEntity) GetMilestoneID() *string {

@@ -2,10 +2,25 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // IntegrationsZendeskSearchTicketsPaginatedEntity - Integrations_Zendesk_SearchTickets_PaginatedEntity model
 type IntegrationsZendeskSearchTicketsPaginatedEntity struct {
-	Data       []IntegrationsZendeskSupportIssueEntity `json:"data,omitempty"`
-	Pagination *NullablePaginationEntity               `json:"pagination,omitempty"`
+	Data       []IntegrationsZendeskSupportIssueEntity `json:"data,omitzero"`
+	Pagination *NullablePaginationEntity               `json:"pagination,omitzero"`
+}
+
+func (i IntegrationsZendeskSearchTicketsPaginatedEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(i, "", false)
+}
+
+func (i *IntegrationsZendeskSearchTicketsPaginatedEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &i, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (i *IntegrationsZendeskSearchTicketsPaginatedEntity) GetData() []IntegrationsZendeskSupportIssueEntity {

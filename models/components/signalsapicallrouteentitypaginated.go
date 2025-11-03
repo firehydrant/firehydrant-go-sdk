@@ -2,10 +2,25 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // SignalsAPICallRouteEntityPaginated - Signals_API_CallRouteEntityPaginated model
 type SignalsAPICallRouteEntityPaginated struct {
-	Data       []SignalsAPICallRouteEntity `json:"data,omitempty"`
-	Pagination *NullablePaginationEntity   `json:"pagination,omitempty"`
+	Data       []SignalsAPICallRouteEntity `json:"data,omitzero"`
+	Pagination *NullablePaginationEntity   `json:"pagination,omitzero"`
+}
+
+func (s SignalsAPICallRouteEntityPaginated) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(s, "", false)
+}
+
+func (s *SignalsAPICallRouteEntityPaginated) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &s, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (s *SignalsAPICallRouteEntityPaginated) GetData() []SignalsAPICallRouteEntity {

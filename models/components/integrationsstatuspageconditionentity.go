@@ -40,9 +40,9 @@ func (e *StatuspageioCondition) UnmarshalJSON(data []byte) error {
 }
 
 type IntegrationsStatuspageConditionEntity struct {
-	ConditionID           *string                `json:"condition_id,omitempty"`
-	ConditionName         *string                `json:"condition_name,omitempty"`
-	StatuspageioCondition *StatuspageioCondition `json:"statuspageio_condition,omitempty"`
+	ConditionID           *string                `json:"condition_id,omitzero"`
+	ConditionName         *string                `json:"condition_name,omitzero"`
+	StatuspageioCondition *StatuspageioCondition `json:"statuspageio_condition,omitzero"`
 }
 
 func (i *IntegrationsStatuspageConditionEntity) GetConditionID() *string {

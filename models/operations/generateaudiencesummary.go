@@ -37,6 +37,17 @@ type GenerateAudienceSummaryRequest struct {
 	RequestBody *GenerateAudienceSummaryRequestBody `request:"mediaType=application/json"`
 }
 
+func (g GenerateAudienceSummaryRequest) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(g, "", false)
+}
+
+func (g *GenerateAudienceSummaryRequest) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &g, "", false, []string{"audience_id", "incident_id"}); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (g *GenerateAudienceSummaryRequest) GetAudienceID() string {
 	if g == nil {
 		return ""

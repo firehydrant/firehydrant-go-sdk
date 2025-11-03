@@ -12,15 +12,15 @@ type Attributes struct {
 }
 
 type AttachmentsTypedAttachmentEntity struct {
-	ID                      *string    `json:"id,omitempty"`
-	Type                    *string    `json:"type,omitempty"`
-	AttachedToID            *string    `json:"attached_to_id,omitempty"`
-	AttachedToType          *string    `json:"attached_to_type,omitempty"`
-	SecondaryAttachedToID   *string    `json:"secondary_attached_to_id,omitempty"`
-	SecondaryAttachedToType *string    `json:"secondary_attached_to_type,omitempty"`
-	CreatedAt               *time.Time `json:"created_at,omitempty"`
+	ID                      *string    `json:"id,omitzero"`
+	Type                    *string    `json:"type,omitzero"`
+	AttachedToID            *string    `json:"attached_to_id,omitzero"`
+	AttachedToType          *string    `json:"attached_to_type,omitzero"`
+	SecondaryAttachedToID   *string    `json:"secondary_attached_to_id,omitzero"`
+	SecondaryAttachedToType *string    `json:"secondary_attached_to_type,omitzero"`
+	CreatedAt               *time.Time `json:"created_at,omitzero"`
 	// Can be one of: Attachments::LinkEntity, Integrations::CustomerSupportIssueEntity, Attachments::GenericAttachmentEntity
-	Attributes *Attributes `json:"attributes,omitempty"`
+	Attributes *Attributes `json:"attributes,omitzero"`
 }
 
 func (a AttachmentsTypedAttachmentEntity) MarshalJSON() ([]byte, error) {

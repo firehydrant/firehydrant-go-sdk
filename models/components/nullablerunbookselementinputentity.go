@@ -3,10 +3,10 @@
 package components
 
 type NullableRunbooksElementInputEntity struct {
-	Label        *string `json:"label,omitempty"`
-	Placeholder  *string `json:"placeholder,omitempty"`
-	DefaultValue *string `json:"default_value,omitempty"`
-	Required     *bool   `json:"required,omitempty"`
+	Label        *string `json:"label,omitzero"`
+	Placeholder  *string `json:"placeholder,omitzero"`
+	DefaultValue *string `json:"default_value,omitzero"`
+	Required     *bool   `json:"required,omitzero"`
 }
 
 func (n *NullableRunbooksElementInputEntity) GetLabel() *string {

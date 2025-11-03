@@ -2,12 +2,27 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // IncidentsAlertEntity - Incidents_AlertEntity model
 type IncidentsAlertEntity struct {
-	ID    *string                    `json:"id,omitempty"`
-	Alert *NullableAlertsAlertEntity `json:"alert,omitempty"`
+	ID    *string                    `json:"id,omitzero"`
+	Alert *NullableAlertsAlertEntity `json:"alert,omitzero"`
 	// whether or not this is the primary alert for this incident
-	Primary *bool `json:"primary,omitempty"`
+	Primary *bool `json:"primary,omitzero"`
+}
+
+func (i IncidentsAlertEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(i, "", false)
+}
+
+func (i *IncidentsAlertEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &i, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (i *IncidentsAlertEntity) GetID() *string {

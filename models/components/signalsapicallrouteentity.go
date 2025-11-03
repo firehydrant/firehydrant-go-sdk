@@ -5,6 +5,7 @@ package components
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
 type SignalsAPICallRouteEntityRoutingMode string
@@ -61,15 +62,26 @@ func (e *SignalsAPICallRouteEntityConnectMode) UnmarshalJSON(data []byte) error 
 
 // SignalsAPICallRouteEntity - Signals_API_CallRouteEntity model
 type SignalsAPICallRouteEntity struct {
-	ID              *string                                `json:"id,omitempty"`
-	Name            *string                                `json:"name,omitempty"`
-	Description     *string                                `json:"description,omitempty"`
-	PhoneNumber     *string                                `json:"phone_number,omitempty"`
-	GreetingMessage *string                                `json:"greeting_message,omitempty"`
-	RoutingMode     *SignalsAPICallRouteEntityRoutingMode  `json:"routing_mode,omitempty"`
-	ConnectMode     *SignalsAPICallRouteEntityConnectMode  `json:"connect_mode,omitempty"`
-	Steps           *NullableSignalsAPICallRouteStepEntity `json:"steps,omitempty"`
-	Target          *NullableSignalsAPITargetEntity        `json:"target,omitempty"`
+	ID              *string                                `json:"id,omitzero"`
+	Name            *string                                `json:"name,omitzero"`
+	Description     *string                                `json:"description,omitzero"`
+	PhoneNumber     *string                                `json:"phone_number,omitzero"`
+	GreetingMessage *string                                `json:"greeting_message,omitzero"`
+	RoutingMode     *SignalsAPICallRouteEntityRoutingMode  `json:"routing_mode,omitzero"`
+	ConnectMode     *SignalsAPICallRouteEntityConnectMode  `json:"connect_mode,omitzero"`
+	Steps           *NullableSignalsAPICallRouteStepEntity `json:"steps,omitzero"`
+	Target          *NullableSignalsAPITargetEntity        `json:"target,omitzero"`
+}
+
+func (s SignalsAPICallRouteEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(s, "", false)
+}
+
+func (s *SignalsAPICallRouteEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &s, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (s *SignalsAPICallRouteEntity) GetID() *string {

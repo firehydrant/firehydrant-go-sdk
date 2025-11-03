@@ -4,13 +4,13 @@ package components
 
 type NullableSignalsAPIAnalyticsNoiseMetricsEntityMetricEntity struct {
 	// The time bucket
-	Bucket *string `json:"bucket,omitempty"`
+	Bucket *string `json:"bucket,omitzero"`
 	// The total number of alerts
-	TotalAlerts *int `json:"total_alerts,omitempty"`
+	TotalAlerts *int `json:"total_alerts,omitzero"`
 	// The number of alerts marked as noise
-	NoisyAlerts *int `json:"noisy_alerts,omitempty"`
+	NoisyAlerts *int `json:"noisy_alerts,omitzero"`
 	// The percentage of alerts that are noise
-	Percentage *float32 `json:"percentage,omitempty"`
+	Percentage *float32 `json:"percentage,omitzero"`
 }
 
 func (n *NullableSignalsAPIAnalyticsNoiseMetricsEntityMetricEntity) GetBucket() *string {

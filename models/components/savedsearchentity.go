@@ -9,16 +9,16 @@ import (
 
 // SavedSearchEntity model
 type SavedSearchEntity struct {
-	ID           *string `json:"id,omitempty"`
-	Name         *string `json:"name,omitempty"`
-	ResourceType *string `json:"resource_type,omitempty"`
-	UserID       *string `json:"user_id,omitempty"`
+	ID           *string `json:"id,omitzero"`
+	Name         *string `json:"name,omitzero"`
+	ResourceType *string `json:"resource_type,omitzero"`
+	UserID       *string `json:"user_id,omitzero"`
 	// Whether or not this saved search is private
-	IsPrivate *bool      `json:"is_private,omitempty"`
-	CreatedAt *time.Time `json:"created_at,omitempty"`
-	UpdatedAt *time.Time `json:"updated_at,omitempty"`
+	IsPrivate *bool      `json:"is_private,omitzero"`
+	CreatedAt *time.Time `json:"created_at,omitzero"`
+	UpdatedAt *time.Time `json:"updated_at,omitzero"`
 	// An unstructured key/value pair of saved values for searching
-	FilterValues map[string]any `json:"filter_values,omitempty"`
+	FilterValues map[string]any `json:"filter_values,omitzero"`
 }
 
 func (s SavedSearchEntity) MarshalJSON() ([]byte, error) {

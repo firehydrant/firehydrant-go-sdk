@@ -5,6 +5,7 @@ package components
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
 type CreateRolePermission string
@@ -206,11 +207,22 @@ type CreateRole struct {
 	// The name of the role.
 	Name string `json:"name"`
 	// A unique identifier for the role. If not provided, one will be generated from the name.
-	Slug *string `json:"slug,omitempty"`
+	Slug *string `json:"slug,omitzero"`
 	// A long-form description of the role's purpose.
-	Description *string `json:"description,omitempty"`
+	Description *string `json:"description,omitzero"`
 	// An array of permission slugs to assign to the role.
-	Permissions []CreateRolePermission `json:"permissions,omitempty"`
+	Permissions []CreateRolePermission `json:"permissions,omitzero"`
+}
+
+func (c CreateRole) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *CreateRole) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"name"}); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (c *CreateRole) GetName() string {

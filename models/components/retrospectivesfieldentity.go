@@ -5,6 +5,7 @@ package components
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
 type RetrospectivesFieldEntityType string
@@ -52,14 +53,25 @@ func (e *RetrospectivesFieldEntityType) UnmarshalJSON(data []byte) error {
 }
 
 type RetrospectivesFieldEntity struct {
-	ID                    *string                        `json:"id,omitempty"`
-	Label                 *string                        `json:"label,omitempty"`
-	Type                  *RetrospectivesFieldEntityType `json:"type,omitempty"`
-	HelpText              *string                        `json:"help_text,omitempty"`
-	PermissibleValues     []string                       `json:"permissible_values,omitempty"`
-	IsRequired            *bool                          `json:"is_required,omitempty"`
-	RequiredAtMilestoneID *string                        `json:"required_at_milestone_id,omitempty"`
-	Schema                []string                       `json:"schema,omitempty"`
+	ID                    *string                        `json:"id,omitzero"`
+	Label                 *string                        `json:"label,omitzero"`
+	Type                  *RetrospectivesFieldEntityType `json:"type,omitzero"`
+	HelpText              *string                        `json:"help_text,omitzero"`
+	PermissibleValues     []string                       `json:"permissible_values,omitzero"`
+	IsRequired            *bool                          `json:"is_required,omitzero"`
+	RequiredAtMilestoneID *string                        `json:"required_at_milestone_id,omitzero"`
+	Schema                []string                       `json:"schema,omitzero"`
+}
+
+func (r RetrospectivesFieldEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(r, "", false)
+}
+
+func (r *RetrospectivesFieldEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &r, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (r *RetrospectivesFieldEntity) GetID() *string {

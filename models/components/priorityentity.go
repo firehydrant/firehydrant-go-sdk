@@ -9,12 +9,12 @@ import (
 
 // PriorityEntity model
 type PriorityEntity struct {
-	Slug        *string    `json:"slug,omitempty"`
-	Description *string    `json:"description,omitempty"`
-	Position    *int       `json:"position,omitempty"`
-	CreatedAt   *time.Time `json:"created_at,omitempty"`
-	UpdatedAt   *time.Time `json:"updated_at,omitempty"`
-	Default     *bool      `json:"default,omitempty"`
+	Slug        *string    `json:"slug,omitzero"`
+	Description *string    `json:"description,omitzero"`
+	Position    *int       `json:"position,omitzero"`
+	CreatedAt   *time.Time `json:"created_at,omitzero"`
+	UpdatedAt   *time.Time `json:"updated_at,omitzero"`
+	Default     *bool      `json:"default,omitzero"`
 }
 
 func (p PriorityEntity) MarshalJSON() ([]byte, error) {

@@ -4,7 +4,7 @@ package components
 
 // SignalsAPIIngestKeyEntity - Signals_API_IngestKeyEntity model
 type SignalsAPIIngestKeyEntity struct {
-	URL *string `json:"url,omitempty"`
+	URL *string `json:"url,omitzero"`
 }
 
 func (s *SignalsAPIIngestKeyEntity) GetURL() *string {

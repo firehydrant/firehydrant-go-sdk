@@ -14,16 +14,16 @@ type ChangeEntityLabels struct {
 // ChangeEntity model
 type ChangeEntity struct {
 	// UUID of the Change
-	ID *string `json:"id,omitempty"`
+	ID *string `json:"id,omitzero"`
 	// Description of the Change
-	Summary *string `json:"summary,omitempty"`
+	Summary *string `json:"summary,omitzero"`
 	// The time the change entry was created
-	CreatedAt *time.Time `json:"created_at,omitempty"`
-	UpdatedAt *time.Time `json:"updated_at,omitempty"`
+	CreatedAt *time.Time `json:"created_at,omitzero"`
+	UpdatedAt *time.Time `json:"updated_at,omitzero"`
 	// Arbitrary key/value pairs of labels.
-	Labels *ChangeEntityLabels `json:"labels,omitempty"`
+	Labels *ChangeEntityLabels `json:"labels,omitzero"`
 	// Description of the Change
-	Description *string `json:"description,omitempty"`
+	Description *string `json:"description,omitzero"`
 }
 
 func (c ChangeEntity) MarshalJSON() ([]byte, error) {

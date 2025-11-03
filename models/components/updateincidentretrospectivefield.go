@@ -5,7 +5,7 @@ package components
 // UpdateIncidentRetrospectiveField - Update retrospective field value
 type UpdateIncidentRetrospectiveField struct {
 	// The ID of the dynamic input field to update.
-	DynamicInputFieldID *string `json:"dynamic_input_field_id,omitempty"`
+	DynamicInputFieldID *string `json:"dynamic_input_field_id,omitzero"`
 	// The value to set for the field.
 	Value int64 `json:"value"`
 }

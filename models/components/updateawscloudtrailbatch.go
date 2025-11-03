@@ -9,10 +9,10 @@ import (
 
 // UpdateAwsCloudtrailBatch - Update a CloudTrail batch with new information.
 type UpdateAwsCloudtrailBatch struct {
-	EventsCreated *int       `json:"events_created,omitempty"`
-	Status        *string    `json:"status,omitempty"`
-	Error         *string    `json:"error,omitempty"`
-	EndsAt        *time.Time `json:"ends_at,omitempty"`
+	EventsCreated *int       `json:"events_created,omitzero"`
+	Status        *string    `json:"status,omitzero"`
+	Error         *string    `json:"error,omitzero"`
+	EndsAt        *time.Time `json:"ends_at,omitzero"`
 }
 
 func (u UpdateAwsCloudtrailBatch) MarshalJSON() ([]byte, error) {

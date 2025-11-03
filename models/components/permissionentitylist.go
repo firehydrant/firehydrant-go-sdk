@@ -2,9 +2,24 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // PermissionEntityList model
 type PermissionEntityList struct {
-	Data []PublicAPIV1PermissionEntity `json:"data,omitempty"`
+	Data []PublicAPIV1PermissionEntity `json:"data,omitzero"`
+}
+
+func (p PermissionEntityList) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(p, "", false)
+}
+
+func (p *PermissionEntityList) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &p, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (p *PermissionEntityList) GetData() []PublicAPIV1PermissionEntity {

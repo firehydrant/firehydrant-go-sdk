@@ -2,6 +2,10 @@
 
 package operations
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type UpdateNuncImageFile struct {
 	FileName string `multipartForm:"name=fileName"`
 	// This field accepts []byte data or io.Reader implementations, such as *os.File.
@@ -26,6 +30,17 @@ type UpdateNuncImageRequestBody struct {
 	File *UpdateNuncImageFile `multipartForm:"file,name=file"`
 }
 
+func (u UpdateNuncImageRequestBody) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UpdateNuncImageRequestBody) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, nil); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (u *UpdateNuncImageRequestBody) GetFile() *UpdateNuncImageFile {
 	if u == nil {
 		return nil
@@ -37,6 +52,17 @@ type UpdateNuncImageRequest struct {
 	NuncConnectionID string                      `pathParam:"style=simple,explode=false,name=nunc_connection_id"`
 	Type             string                      `pathParam:"style=simple,explode=false,name=type"`
 	RequestBody      *UpdateNuncImageRequestBody `request:"mediaType=multipart/form-data"`
+}
+
+func (u UpdateNuncImageRequest) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UpdateNuncImageRequest) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, []string{"nunc_connection_id", "type"}); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (u *UpdateNuncImageRequest) GetNuncConnectionID() string {

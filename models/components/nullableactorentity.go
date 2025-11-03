@@ -139,10 +139,10 @@ func (e *NullableActorEntityType) UnmarshalJSON(data []byte) error {
 }
 
 type NullableActorEntity struct {
-	ID    *string                  `json:"id,omitempty"`
-	Name  *string                  `json:"name,omitempty"`
-	Email *string                  `json:"email,omitempty"`
-	Type  *NullableActorEntityType `json:"type,omitempty"`
+	ID    *string                  `json:"id,omitzero"`
+	Name  *string                  `json:"name,omitzero"`
+	Email *string                  `json:"email,omitzero"`
+	Type  *NullableActorEntityType `json:"type,omitzero"`
 }
 
 func (n *NullableActorEntity) GetID() *string {

@@ -153,6 +153,17 @@ type ListMttxMetricsRequestBody struct {
 	GroupBy []ListMttxMetricsGroupBy `multipartForm:"name=group_by"`
 }
 
+func (l ListMttxMetricsRequestBody) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(l, "", false)
+}
+
+func (l *ListMttxMetricsRequestBody) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &l, "", false, nil); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (l *ListMttxMetricsRequestBody) GetGroupBy() []ListMttxMetricsGroupBy {
 	if l == nil {
 		return nil

@@ -5,7 +5,7 @@ package components
 // CreateIncidentImpact - Add impacted infrastructure to an incident
 type CreateIncidentImpact struct {
 	ID          string  `json:"id"`
-	ConditionID *string `json:"condition_id,omitempty"`
+	ConditionID *string `json:"condition_id,omitzero"`
 }
 
 func (c *CreateIncidentImpact) GetID() string {

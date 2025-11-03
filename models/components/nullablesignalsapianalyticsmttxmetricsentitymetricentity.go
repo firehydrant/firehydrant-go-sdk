@@ -4,9 +4,9 @@ package components
 
 type NullableSignalsAPIAnalyticsMttxMetricsEntityMetricEntity struct {
 	// The mean time to acknowledge (MTTA) alerts in seconds
-	Mtta *float32 `json:"mtta,omitempty"`
+	Mtta *float32 `json:"mtta,omitzero"`
 	// The mean time to resolve (MTTR) alerts in seconds
-	Mttr *float32 `json:"mttr,omitempty"`
+	Mttr *float32 `json:"mttr,omitzero"`
 }
 
 func (n *NullableSignalsAPIAnalyticsMttxMetricsEntityMetricEntity) GetMtta() *float32 {

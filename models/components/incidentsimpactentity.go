@@ -5,6 +5,7 @@ package components
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
 type IncidentsImpactEntityType string
@@ -40,11 +41,22 @@ func (e *IncidentsImpactEntityType) UnmarshalJSON(data []byte) error {
 }
 
 type IncidentsImpactEntity struct {
-	ID            *string                                `json:"id,omitempty"`
-	Type          *IncidentsImpactEntityType             `json:"type,omitempty"`
-	Impact        *NullableSuccinctEntity                `json:"impact,omitempty"`
-	Condition     *NullableSeverityMatrixConditionEntity `json:"condition,omitempty"`
-	Conversations []ConversationsAPIEntitiesReference    `json:"conversations,omitempty"`
+	ID            *string                                `json:"id,omitzero"`
+	Type          *IncidentsImpactEntityType             `json:"type,omitzero"`
+	Impact        *NullableSuccinctEntity                `json:"impact,omitzero"`
+	Condition     *NullableSeverityMatrixConditionEntity `json:"condition,omitzero"`
+	Conversations []ConversationsAPIEntitiesReference    `json:"conversations,omitzero"`
+}
+
+func (i IncidentsImpactEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(i, "", false)
+}
+
+func (i *IncidentsImpactEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &i, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (i *IncidentsImpactEntity) GetID() *string {

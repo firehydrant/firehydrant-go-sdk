@@ -5,6 +5,7 @@ package components
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
 // CreateSignalsAlertGroupingConfigurationFieldName - The field to use for grouping alerts
@@ -62,7 +63,18 @@ func (c *CreateSignalsAlertGroupingConfigurationSubstring) GetValue() string {
 // CreateSignalsAlertGroupingConfigurationStrategy - The strategy to use for grouping alerts
 type CreateSignalsAlertGroupingConfigurationStrategy struct {
 	// The type of strategy to use for grouping alerts
-	Substring *CreateSignalsAlertGroupingConfigurationSubstring `json:"substring,omitempty"`
+	Substring *CreateSignalsAlertGroupingConfigurationSubstring `json:"substring,omitzero"`
+}
+
+func (c CreateSignalsAlertGroupingConfigurationStrategy) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *CreateSignalsAlertGroupingConfigurationStrategy) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (c *CreateSignalsAlertGroupingConfigurationStrategy) GetSubstring() *CreateSignalsAlertGroupingConfigurationSubstring {
@@ -88,9 +100,20 @@ func (c *CreateSignalsAlertGroupingConfigurationFyi) GetSlackChannelIds() []stri
 // CreateSignalsAlertGroupingConfigurationAction - The action to take when grouping alerts
 type CreateSignalsAlertGroupingConfigurationAction struct {
 	// Link the alerts and do not notify anyone
-	Link *bool `json:"link,omitempty"`
+	Link *bool `json:"link,omitzero"`
 	// Send FYI notification
-	Fyi *CreateSignalsAlertGroupingConfigurationFyi `json:"fyi,omitempty"`
+	Fyi *CreateSignalsAlertGroupingConfigurationFyi `json:"fyi,omitzero"`
+}
+
+func (c CreateSignalsAlertGroupingConfigurationAction) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *CreateSignalsAlertGroupingConfigurationAction) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (c *CreateSignalsAlertGroupingConfigurationAction) GetLink() *bool {
@@ -112,9 +135,20 @@ type CreateSignalsAlertGroupingConfiguration struct {
 	// The strategy to use for grouping alerts
 	Strategy CreateSignalsAlertGroupingConfigurationStrategy `json:"strategy"`
 	// The action to take when grouping alerts
-	Action *CreateSignalsAlertGroupingConfigurationAction `json:"action,omitempty"`
+	Action *CreateSignalsAlertGroupingConfigurationAction `json:"action,omitzero"`
 	// How long to group alerts for
 	ReferenceAlertTimePeriod string `json:"reference_alert_time_period"`
+}
+
+func (c CreateSignalsAlertGroupingConfiguration) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *CreateSignalsAlertGroupingConfiguration) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"strategy", "reference_alert_time_period"}); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (c *CreateSignalsAlertGroupingConfiguration) GetStrategy() CreateSignalsAlertGroupingConfigurationStrategy {

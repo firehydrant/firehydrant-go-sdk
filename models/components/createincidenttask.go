@@ -7,13 +7,13 @@ type CreateIncidentTask struct {
 	// The title of the task.
 	Title string `json:"title"`
 	// The state of the task. One of: open, in_progress, cancelled, done
-	State *string `json:"state,omitempty"`
+	State *string `json:"state,omitzero"`
 	// A description of what the task is for.
-	Description *string `json:"description,omitempty"`
+	Description *string `json:"description,omitzero"`
 	// The ID of the user assigned to the task.
-	AssigneeID *string `json:"assignee_id,omitempty"`
+	AssigneeID *string `json:"assignee_id,omitzero"`
 	// The due date of the task. Relative values are supported such as '5m'
-	DueAt *string `json:"due_at,omitempty"`
+	DueAt *string `json:"due_at,omitzero"`
 }
 
 func (c *CreateIncidentTask) GetTitle() string {

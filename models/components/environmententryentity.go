@@ -10,21 +10,21 @@ import (
 // EnvironmentEntryEntity model
 type EnvironmentEntryEntity struct {
 	// UUID of the Environment
-	ID *string `json:"id,omitempty"`
+	ID *string `json:"id,omitzero"`
 	// Name of the Environment
-	Name *string `json:"name,omitempty"`
+	Name *string `json:"name,omitzero"`
 	// Slug of the Environment
-	Slug *string `json:"slug,omitempty"`
+	Slug *string `json:"slug,omitzero"`
 	// Description of the Environment
-	Description *string `json:"description,omitempty"`
+	Description *string `json:"description,omitzero"`
 	// The time the environment was updated
-	UpdatedAt *time.Time `json:"updated_at,omitempty"`
+	UpdatedAt *time.Time `json:"updated_at,omitzero"`
 	// The time the environment was created
-	CreatedAt *time.Time `json:"created_at,omitempty"`
+	CreatedAt *time.Time `json:"created_at,omitzero"`
 	// List of active incident guids
-	ActiveIncidents []string `json:"active_incidents,omitempty"`
+	ActiveIncidents []string `json:"active_incidents,omitzero"`
 	// Information about known linkages to representations of services outside of FireHydrant.
-	ExternalResources []ExternalResourceEntity `json:"external_resources,omitempty"`
+	ExternalResources []ExternalResourceEntity `json:"external_resources,omitzero"`
 }
 
 func (e EnvironmentEntryEntity) MarshalJSON() ([]byte, error) {

@@ -5,21 +5,21 @@ package components
 // MetricsInfrastructureMetricsEntity - Metrics_InfrastructureMetricsEntity model
 type MetricsInfrastructureMetricsEntity struct {
 	// The UUID of the component
-	ID *string `json:"id,omitempty"`
+	ID *string `json:"id,omitzero"`
 	// The name of the component
-	Name *string `json:"name,omitempty"`
+	Name *string `json:"name,omitzero"`
 	// Mean Time To Detection (seconds) for all incidents for this component in this time period
-	Mttd *int `json:"mttd,omitempty"`
+	Mttd *int `json:"mttd,omitzero"`
 	// Mean Time To Acknowledgement (seconds) for all incidents for this component in this time period
-	Mtta *int `json:"mtta,omitempty"`
+	Mtta *int `json:"mtta,omitzero"`
 	// Mean Time To Mitigation (seconds) for all incidents for this component in this time period
-	Mttm *int `json:"mttm,omitempty"`
+	Mttm *int `json:"mttm,omitzero"`
 	// Mean Time To Resolution (seconds) for all incidents for this component in this time period
-	Mttr *int `json:"mttr,omitempty"`
+	Mttr *int `json:"mttr,omitzero"`
 	// Number of incidents in this time period for this component
-	Count *int `json:"count,omitempty"`
+	Count *int `json:"count,omitzero"`
 	// Total time (seconds) the component was impacted (MTTR x Incident Count)
-	TotalTime *int `json:"total_time,omitempty"`
+	TotalTime *int `json:"total_time,omitzero"`
 }
 
 func (m *MetricsInfrastructureMetricsEntity) GetID() *string {

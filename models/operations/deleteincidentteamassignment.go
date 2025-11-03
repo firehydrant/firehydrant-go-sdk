@@ -2,9 +2,24 @@
 
 package operations
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type DeleteIncidentTeamAssignmentRequestBody struct {
 	// Team role assignments to unassign from the incident
 	RoleAssignmentIds []string `multipartForm:"name=role_assignment_ids"`
+}
+
+func (d DeleteIncidentTeamAssignmentRequestBody) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(d, "", false)
+}
+
+func (d *DeleteIncidentTeamAssignmentRequestBody) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &d, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (d *DeleteIncidentTeamAssignmentRequestBody) GetRoleAssignmentIds() []string {
@@ -18,6 +33,17 @@ type DeleteIncidentTeamAssignmentRequest struct {
 	IncidentID       string                                   `pathParam:"style=simple,explode=false,name=incident_id"`
 	TeamAssignmentID string                                   `pathParam:"style=simple,explode=false,name=team_assignment_id"`
 	RequestBody      *DeleteIncidentTeamAssignmentRequestBody `request:"mediaType=multipart/form-data"`
+}
+
+func (d DeleteIncidentTeamAssignmentRequest) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(d, "", false)
+}
+
+func (d *DeleteIncidentTeamAssignmentRequest) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &d, "", false, []string{"incident_id", "team_assignment_id"}); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (d *DeleteIncidentTeamAssignmentRequest) GetIncidentID() string {

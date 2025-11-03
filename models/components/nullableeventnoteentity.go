@@ -9,11 +9,11 @@ import (
 
 // NullableEventNoteEntity - Event_NoteEntity model
 type NullableEventNoteEntity struct {
-	ID            *string                             `json:"id,omitempty"`
-	Body          *string                             `json:"body,omitempty"`
-	CreatedAt     *time.Time                          `json:"created_at,omitempty"`
-	StatusPages   []IncidentsStatusPageEntity         `json:"status_pages,omitempty"`
-	Conversations []ConversationsAPIEntitiesReference `json:"conversations,omitempty"`
+	ID            *string                             `json:"id,omitzero"`
+	Body          *string                             `json:"body,omitzero"`
+	CreatedAt     *time.Time                          `json:"created_at,omitzero"`
+	StatusPages   []IncidentsStatusPageEntity         `json:"status_pages,omitzero"`
+	Conversations []ConversationsAPIEntitiesReference `json:"conversations,omitzero"`
 }
 
 func (n NullableEventNoteEntity) MarshalJSON() ([]byte, error) {

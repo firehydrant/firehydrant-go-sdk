@@ -2,9 +2,24 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type NullableSignalsAPIGroupingEntityActionEntity struct {
-	Link *bool                                                  `json:"link,omitempty"`
-	Fyi  *NullableSignalsAPIGroupingEntityActionEntityFyiEntity `json:"fyi,omitempty"`
+	Link *bool                                                  `json:"link,omitzero"`
+	Fyi  *NullableSignalsAPIGroupingEntityActionEntityFyiEntity `json:"fyi,omitzero"`
+}
+
+func (n NullableSignalsAPIGroupingEntityActionEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(n, "", false)
+}
+
+func (n *NullableSignalsAPIGroupingEntityActionEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &n, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (n *NullableSignalsAPIGroupingEntityActionEntity) GetLink() *bool {

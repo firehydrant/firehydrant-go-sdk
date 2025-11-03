@@ -46,8 +46,8 @@ func (e *ImportsImportEntityState) UnmarshalJSON(data []byte) error {
 
 // ImportsImportEntity - Imports_ImportEntity model
 type ImportsImportEntity struct {
-	State     *ImportsImportEntityState `json:"state,omitempty"`
-	UpdatedAt *time.Time                `json:"updated_at,omitempty"`
+	State     *ImportsImportEntityState `json:"state,omitzero"`
+	UpdatedAt *time.Time                `json:"updated_at,omitzero"`
 }
 
 func (i ImportsImportEntity) MarshalJSON() ([]byte, error) {

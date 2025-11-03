@@ -2,18 +2,33 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // TicketingFieldMapsMappableFieldEntity - Ticketing_FieldMaps_MappableFieldEntity model
 type TicketingFieldMapsMappableFieldEntity struct {
 	// The ID of the field
-	Value *string `json:"value,omitempty"`
+	Value *string `json:"value,omitzero"`
 	// The human-readable name of the field
-	Label *string `json:"label,omitempty"`
+	Label *string `json:"label,omitzero"`
 	// The allowed type of the field
-	Type *string `json:"type,omitempty"`
+	Type *string `json:"type,omitzero"`
 	// The allowed values of the field
-	AllowedValues []string `json:"allowed_values,omitempty"`
+	AllowedValues []string `json:"allowed_values,omitzero"`
 	// If the field is required to be mapped
-	Required *string `json:"required,omitempty"`
+	Required *string `json:"required,omitzero"`
+}
+
+func (t TicketingFieldMapsMappableFieldEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(t, "", false)
+}
+
+func (t *TicketingFieldMapsMappableFieldEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &t, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (t *TicketingFieldMapsMappableFieldEntity) GetValue() *string {

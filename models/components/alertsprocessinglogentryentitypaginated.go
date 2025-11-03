@@ -2,10 +2,25 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // AlertsProcessingLogEntryEntityPaginated - Alerts_ProcessingLogEntryEntityPaginated model
 type AlertsProcessingLogEntryEntityPaginated struct {
-	Data       []AlertsProcessingLogEntryEntity `json:"data,omitempty"`
-	Pagination *NullablePaginationEntity        `json:"pagination,omitempty"`
+	Data       []AlertsProcessingLogEntryEntity `json:"data,omitzero"`
+	Pagination *NullablePaginationEntity        `json:"pagination,omitzero"`
+}
+
+func (a AlertsProcessingLogEntryEntityPaginated) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(a, "", false)
+}
+
+func (a *AlertsProcessingLogEntryEntityPaginated) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &a, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (a *AlertsProcessingLogEntryEntityPaginated) GetData() []AlertsProcessingLogEntryEntity {

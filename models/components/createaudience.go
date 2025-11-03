@@ -12,7 +12,7 @@ type Detail struct {
 	// The prompt to display when collecting this detail
 	Prompt string `json:"prompt"`
 	// Optional unique identifier for this detail
-	Slug *string `json:"slug,omitempty"`
+	Slug *string `json:"slug,omitzero"`
 }
 
 func (d *Detail) GetQuestion() string {
@@ -304,9 +304,9 @@ type CreateAudience struct {
 	Description string `json:"description"`
 	// Whether this is the default audience
 	Default *bool    `default:"false" json:"default"`
-	Details []Detail `json:"details,omitempty"`
+	Details []Detail `json:"details,omitzero"`
 	// audience settings for initial audience creation
-	Settings *Settings `json:"settings,omitempty"`
+	Settings *Settings `json:"settings,omitzero"`
 }
 
 func (c CreateAudience) MarshalJSON() ([]byte, error) {

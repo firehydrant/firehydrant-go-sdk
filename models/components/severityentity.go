@@ -9,16 +9,16 @@ import (
 
 // SeverityEntity model
 type SeverityEntity struct {
-	Slug         *string    `json:"slug,omitempty"`
-	Description  *string    `json:"description,omitempty"`
-	Type         *string    `json:"type,omitempty"`
-	Position     *int       `json:"position,omitempty"`
-	CreatedAt    *time.Time `json:"created_at,omitempty"`
-	UpdatedAt    *time.Time `json:"updated_at,omitempty"`
-	SystemRecord *bool      `json:"system_record,omitempty"`
-	Color        *string    `json:"color,omitempty"`
+	Slug         *string    `json:"slug,omitzero"`
+	Description  *string    `json:"description,omitzero"`
+	Type         *string    `json:"type,omitzero"`
+	Position     *int       `json:"position,omitzero"`
+	CreatedAt    *time.Time `json:"created_at,omitzero"`
+	UpdatedAt    *time.Time `json:"updated_at,omitzero"`
+	SystemRecord *bool      `json:"system_record,omitzero"`
+	Color        *string    `json:"color,omitzero"`
 	// IDs of roles allowed to use this severity. Empty array means all roles are allowed.
-	AllowedRoleIds []string `json:"allowed_role_ids,omitempty"`
+	AllowedRoleIds []string `json:"allowed_role_ids,omitzero"`
 }
 
 func (s SeverityEntity) MarshalJSON() ([]byte, error) {

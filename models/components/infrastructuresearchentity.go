@@ -4,8 +4,8 @@ package components
 
 // InfrastructureSearchEntity model
 type InfrastructureSearchEntity struct {
-	Type           *string `json:"type,omitempty"`
-	Infrastructure *string `json:"infrastructure,omitempty"`
+	Type           *string `json:"type,omitzero"`
+	Infrastructure *string `json:"infrastructure,omitzero"`
 }
 
 func (i *InfrastructureSearchEntity) GetType() *string {

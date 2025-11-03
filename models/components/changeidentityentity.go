@@ -9,12 +9,12 @@ import (
 
 // ChangeIdentityEntity model
 type ChangeIdentityEntity struct {
-	ID        *string    `json:"id,omitempty"`
-	Type      *string    `json:"type,omitempty"`
-	Value     *string    `json:"value,omitempty"`
-	ChangeID  *string    `json:"change_id,omitempty"`
-	CreatedAt *time.Time `json:"created_at,omitempty"`
-	UpdatedAt *time.Time `json:"updated_at,omitempty"`
+	ID        *string    `json:"id,omitzero"`
+	Type      *string    `json:"type,omitzero"`
+	Value     *string    `json:"value,omitzero"`
+	ChangeID  *string    `json:"change_id,omitzero"`
+	CreatedAt *time.Time `json:"created_at,omitzero"`
+	UpdatedAt *time.Time `json:"updated_at,omitzero"`
 }
 
 func (c ChangeIdentityEntity) MarshalJSON() ([]byte, error) {

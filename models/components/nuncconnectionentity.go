@@ -2,36 +2,51 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // NuncConnectionEntity model
 type NuncConnectionEntity struct {
-	ID                    *string                           `json:"id,omitempty"`
-	Domain                *string                           `json:"domain,omitempty"`
-	CompanyName           *string                           `json:"company_name,omitempty"`
-	CompanyWebsite        *string                           `json:"company_website,omitempty"`
-	Cname                 *string                           `json:"cname,omitempty"`
-	GreetingTitle         *string                           `json:"greeting_title,omitempty"`
-	GreetingBody          *string                           `json:"greeting_body,omitempty"`
-	OperationalMessage    *string                           `json:"operational_message,omitempty"`
-	CompanyTosURL         *string                           `json:"company_tos_url,omitempty"`
-	PrimaryColor          *string                           `json:"primary_color,omitempty"`
-	SecondaryColor        *string                           `json:"secondary_color,omitempty"`
-	ButtonBackgroundColor *string                           `json:"button_background_color,omitempty"`
-	ButtonTextColor       *string                           `json:"button_text_color,omitempty"`
-	LinkColor             *string                           `json:"link_color,omitempty"`
-	Title                 *string                           `json:"title,omitempty"`
-	ExposedFields         []string                          `json:"exposed_fields,omitempty"`
-	Conditions            *NullableNuncConditionEntity      `json:"conditions,omitempty"`
-	Components            *NullableNuncComponentEntity      `json:"components,omitempty"`
-	ComponentGroups       *NullableNuncComponentGroupEntity `json:"component_groups,omitempty"`
-	Logo                  *NullableMediaImageEntity         `json:"logo,omitempty"`
-	CoverImage            *NullableMediaImageEntity         `json:"cover_image,omitempty"`
-	Favicon               *NullableMediaImageEntity         `json:"favicon,omitempty"`
-	OpenGraphImage        *NullableMediaImageEntity         `json:"open_graph_image,omitempty"`
-	DarkLogo              *NullableMediaImageEntity         `json:"dark_logo,omitempty"`
-	EnableHistogram       *bool                             `json:"enable_histogram,omitempty"`
-	UIVersion             *int                              `json:"ui_version,omitempty"`
+	ID                    *string                           `json:"id,omitzero"`
+	Domain                *string                           `json:"domain,omitzero"`
+	CompanyName           *string                           `json:"company_name,omitzero"`
+	CompanyWebsite        *string                           `json:"company_website,omitzero"`
+	Cname                 *string                           `json:"cname,omitzero"`
+	GreetingTitle         *string                           `json:"greeting_title,omitzero"`
+	GreetingBody          *string                           `json:"greeting_body,omitzero"`
+	OperationalMessage    *string                           `json:"operational_message,omitzero"`
+	CompanyTosURL         *string                           `json:"company_tos_url,omitzero"`
+	PrimaryColor          *string                           `json:"primary_color,omitzero"`
+	SecondaryColor        *string                           `json:"secondary_color,omitzero"`
+	ButtonBackgroundColor *string                           `json:"button_background_color,omitzero"`
+	ButtonTextColor       *string                           `json:"button_text_color,omitzero"`
+	LinkColor             *string                           `json:"link_color,omitzero"`
+	Title                 *string                           `json:"title,omitzero"`
+	ExposedFields         []string                          `json:"exposed_fields,omitzero"`
+	Conditions            *NullableNuncConditionEntity      `json:"conditions,omitzero"`
+	Components            *NullableNuncComponentEntity      `json:"components,omitzero"`
+	ComponentGroups       *NullableNuncComponentGroupEntity `json:"component_groups,omitzero"`
+	Logo                  *NullableMediaImageEntity         `json:"logo,omitzero"`
+	CoverImage            *NullableMediaImageEntity         `json:"cover_image,omitzero"`
+	Favicon               *NullableMediaImageEntity         `json:"favicon,omitzero"`
+	OpenGraphImage        *NullableMediaImageEntity         `json:"open_graph_image,omitzero"`
+	DarkLogo              *NullableMediaImageEntity         `json:"dark_logo,omitzero"`
+	EnableHistogram       *bool                             `json:"enable_histogram,omitzero"`
+	UIVersion             *int                              `json:"ui_version,omitzero"`
 	// List of links attached to this status page.
-	Links []LinksEntity `json:"links,omitempty"`
+	Links []LinksEntity `json:"links,omitzero"`
+}
+
+func (n NuncConnectionEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(n, "", false)
+}
+
+func (n *NuncConnectionEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &n, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (n *NuncConnectionEntity) GetID() *string {

@@ -9,12 +9,12 @@ import (
 
 // ServiceDependencyEntity model
 type ServiceDependencyEntity struct {
-	ID               *string                `json:"id,omitempty"`
-	Notes            *string                `json:"notes,omitempty"`
-	CreatedAt        *time.Time             `json:"created_at,omitempty"`
-	UpdatedAt        *time.Time             `json:"updated_at,omitempty"`
-	Service          *NullableServiceEntity `json:"service,omitempty"`
-	ConnectedService *NullableServiceEntity `json:"connected_service,omitempty"`
+	ID               *string                `json:"id,omitzero"`
+	Notes            *string                `json:"notes,omitzero"`
+	CreatedAt        *time.Time             `json:"created_at,omitzero"`
+	UpdatedAt        *time.Time             `json:"updated_at,omitzero"`
+	Service          *NullableServiceEntity `json:"service,omitzero"`
+	ConnectedService *NullableServiceEntity `json:"connected_service,omitzero"`
 }
 
 func (s ServiceDependencyEntity) MarshalJSON() ([]byte, error) {

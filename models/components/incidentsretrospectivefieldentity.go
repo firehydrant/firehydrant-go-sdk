@@ -5,6 +5,7 @@ package components
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
 type IncidentsRetrospectiveFieldEntityType string
@@ -56,15 +57,26 @@ type Schema struct {
 
 // IncidentsRetrospectiveFieldEntity - Incidents_RetrospectiveFieldEntity model
 type IncidentsRetrospectiveFieldEntity struct {
-	ID                    *string                                `json:"id,omitempty"`
-	Label                 *string                                `json:"label,omitempty"`
-	Type                  *IncidentsRetrospectiveFieldEntityType `json:"type,omitempty"`
-	HelpText              *string                                `json:"help_text,omitempty"`
-	PermissibleValues     []string                               `json:"permissible_values,omitempty"`
-	IsRequired            *bool                                  `json:"is_required,omitempty"`
-	Value                 *string                                `json:"value,omitempty"`
-	Schema                []Schema                               `json:"schema,omitempty"`
-	RequiredAtMilestoneID *string                                `json:"required_at_milestone_id,omitempty"`
+	ID                    *string                                `json:"id,omitzero"`
+	Label                 *string                                `json:"label,omitzero"`
+	Type                  *IncidentsRetrospectiveFieldEntityType `json:"type,omitzero"`
+	HelpText              *string                                `json:"help_text,omitzero"`
+	PermissibleValues     []string                               `json:"permissible_values,omitzero"`
+	IsRequired            *bool                                  `json:"is_required,omitzero"`
+	Value                 *string                                `json:"value,omitzero"`
+	Schema                []Schema                               `json:"schema,omitzero"`
+	RequiredAtMilestoneID *string                                `json:"required_at_milestone_id,omitzero"`
+}
+
+func (i IncidentsRetrospectiveFieldEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(i, "", false)
+}
+
+func (i *IncidentsRetrospectiveFieldEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &i, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (i *IncidentsRetrospectiveFieldEntity) GetID() *string {

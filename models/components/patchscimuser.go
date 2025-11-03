@@ -6,7 +6,7 @@ type PatchScimUserOperation struct {
 	// The operation to perform on the user. Options are add, remove, replace
 	Op string `json:"op"`
 	// The path to the attribute to be modified. Optional for Okta OIN format where value contains the full update object
-	Path *string `json:"path,omitempty"`
+	Path *string `json:"path,omitzero"`
 }
 
 func (p *PatchScimUserOperation) GetOp() string {
@@ -26,7 +26,7 @@ func (p *PatchScimUserOperation) GetPath() *string {
 // PatchScimUser - PATCH SCIM endpoint to update a User. This endpoint is used to update a resource's attributes.
 type PatchScimUser struct {
 	// An optional trail to log the request
-	Trail *string `json:"trail,omitempty"`
+	Trail *string `json:"trail,omitzero"`
 	// An array of operations to perform on the user
 	Operations []PatchScimUserOperation `json:"Operations"`
 }

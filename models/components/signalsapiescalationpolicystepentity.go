@@ -5,6 +5,7 @@ package components
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
 // SignalsAPIEscalationPolicyStepEntityDistributionType - The distribution type for the step
@@ -38,16 +39,27 @@ func (e *SignalsAPIEscalationPolicyStepEntityDistributionType) UnmarshalJSON(dat
 }
 
 type SignalsAPIEscalationPolicyStepEntity struct {
-	ID             *string                  `json:"id,omitempty"`
-	Position       *int                     `json:"position,omitempty"`
-	ParentPosition *int                     `json:"parent_position,omitempty"`
-	Targets        []SignalsAPITargetEntity `json:"targets,omitempty"`
-	Timeout        *string                  `json:"timeout,omitempty"`
+	ID             *string                  `json:"id,omitzero"`
+	Position       *int                     `json:"position,omitzero"`
+	ParentPosition *int                     `json:"parent_position,omitzero"`
+	Targets        []SignalsAPITargetEntity `json:"targets,omitzero"`
+	Timeout        *string                  `json:"timeout,omitzero"`
 	// The distribution type for the step
-	DistributionType        *SignalsAPIEscalationPolicyStepEntityDistributionType `json:"distribution_type,omitempty"`
-	NextTargetForRoundRobin *NullableSignalsAPITargetEntity                       `json:"next_target_for_round_robin,omitempty"`
+	DistributionType        *SignalsAPIEscalationPolicyStepEntityDistributionType `json:"distribution_type,omitzero"`
+	NextTargetForRoundRobin *NullableSignalsAPITargetEntity                       `json:"next_target_for_round_robin,omitzero"`
 	// The notification priorities that this step is assigned to. Valid values are HIGH, MEDIUM, and LOW.
-	Priorities []string `json:"priorities,omitempty"`
+	Priorities []string `json:"priorities,omitzero"`
+}
+
+func (s SignalsAPIEscalationPolicyStepEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(s, "", false)
+}
+
+func (s *SignalsAPIEscalationPolicyStepEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &s, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (s *SignalsAPIEscalationPolicyStepEntity) GetID() *string {

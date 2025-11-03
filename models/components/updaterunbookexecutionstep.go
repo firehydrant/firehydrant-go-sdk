@@ -10,10 +10,10 @@ import (
 // UpdateRunbookExecutionStep - Updates a runbook step execution, especially for changing the state of a step execution.
 type UpdateRunbookExecutionStep struct {
 	State       string     `json:"state"`
-	ScheduleFor *time.Time `json:"schedule_for,omitempty"`
+	ScheduleFor *time.Time `json:"schedule_for,omitzero"`
 	// Data for execution of this step
-	Data      map[string]any `json:"data,omitempty"`
-	RepeatsAt *time.Time     `json:"repeats_at,omitempty"`
+	Data      map[string]any `json:"data,omitzero"`
+	RepeatsAt *time.Time     `json:"repeats_at,omitzero"`
 }
 
 func (u UpdateRunbookExecutionStep) MarshalJSON() ([]byte, error) {

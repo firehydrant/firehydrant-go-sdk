@@ -3,9 +3,9 @@
 package components
 
 type IntegrationsSlackSlackChannelEntity struct {
-	ID             *string `json:"id,omitempty"`
-	Name           *string `json:"name,omitempty"`
-	SlackChannelID *string `json:"slack_channel_id,omitempty"`
+	ID             *string `json:"id,omitzero"`
+	Name           *string `json:"name,omitzero"`
+	SlackChannelID *string `json:"slack_channel_id,omitzero"`
 }
 
 func (i *IntegrationsSlackSlackChannelEntity) GetID() *string {

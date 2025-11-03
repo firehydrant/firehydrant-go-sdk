@@ -2,13 +2,28 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // IncidentsRelationshipsEntity - Incidents_RelationshipsEntity model
 type IncidentsRelationshipsEntity struct {
-	Parent *NullablePublicAPIV1IncidentsSuccinctEntity `json:"parent,omitempty"`
+	Parent *NullablePublicAPIV1IncidentsSuccinctEntity `json:"parent,omitzero"`
 	// The root incident's child incidents.
-	Children []PublicAPIV1IncidentsSuccinctEntity `json:"children,omitempty"`
+	Children []PublicAPIV1IncidentsSuccinctEntity `json:"children,omitzero"`
 	// A list of incidents that share the root incident's parent.
-	Siblings []PublicAPIV1IncidentsSuccinctEntity `json:"siblings,omitempty"`
+	Siblings []PublicAPIV1IncidentsSuccinctEntity `json:"siblings,omitzero"`
+}
+
+func (i IncidentsRelationshipsEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(i, "", false)
+}
+
+func (i *IncidentsRelationshipsEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &i, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (i *IncidentsRelationshipsEntity) GetParent() *NullablePublicAPIV1IncidentsSuccinctEntity {

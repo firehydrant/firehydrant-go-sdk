@@ -2,11 +2,26 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // IncidentImpactEntity model
 type IncidentImpactEntity struct {
-	ID             *string                 `json:"id,omitempty"`
-	Type           *string                 `json:"type,omitempty"`
-	Infrastructure *NullableSuccinctEntity `json:"infrastructure,omitempty"`
+	ID             *string                 `json:"id,omitzero"`
+	Type           *string                 `json:"type,omitzero"`
+	Infrastructure *NullableSuccinctEntity `json:"infrastructure,omitzero"`
+}
+
+func (i IncidentImpactEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(i, "", false)
+}
+
+func (i *IncidentImpactEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &i, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (i *IncidentImpactEntity) GetID() *string {

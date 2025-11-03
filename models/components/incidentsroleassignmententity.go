@@ -37,12 +37,12 @@ func (e *IncidentsRoleAssignmentEntityStatus) UnmarshalJSON(data []byte) error {
 
 // IncidentsRoleAssignmentEntity - Incidents_RoleAssignmentEntity model
 type IncidentsRoleAssignmentEntity struct {
-	ID           *string                              `json:"id,omitempty"`
-	Status       *IncidentsRoleAssignmentEntityStatus `json:"status,omitempty"`
-	CreatedAt    *time.Time                           `json:"created_at,omitempty"`
-	UpdatedAt    *time.Time                           `json:"updated_at,omitempty"`
-	IncidentRole *NullableIncidentRoleEntity          `json:"incident_role,omitempty"`
-	User         *NullableUserEntity                  `json:"user,omitempty"`
+	ID           *string                              `json:"id,omitzero"`
+	Status       *IncidentsRoleAssignmentEntityStatus `json:"status,omitzero"`
+	CreatedAt    *time.Time                           `json:"created_at,omitzero"`
+	UpdatedAt    *time.Time                           `json:"updated_at,omitzero"`
+	IncidentRole *NullableIncidentRoleEntity          `json:"incident_role,omitzero"`
+	User         *NullableUserEntity                  `json:"user,omitzero"`
 }
 
 func (i IncidentsRoleAssignmentEntity) MarshalJSON() ([]byte, error) {

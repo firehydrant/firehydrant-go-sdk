@@ -3,8 +3,8 @@
 package components
 
 type RunbooksElementDynamicSelectEntitySelectOptionEntity struct {
-	Label *string `json:"label,omitempty"`
-	Value *string `json:"value,omitempty"`
+	Label *string `json:"label,omitzero"`
+	Value *string `json:"value,omitzero"`
 }
 
 func (r *RunbooksElementDynamicSelectEntitySelectOptionEntity) GetLabel() *string {

@@ -47,16 +47,16 @@ type IntegrationsConnectionStatusEntityData struct {
 
 // IntegrationsConnectionStatusEntity - Integrations_ConnectionStatusEntity model
 type IntegrationsConnectionStatusEntity struct {
-	CheckedAt       *time.Time                                `json:"checked_at,omitempty"`
-	Status          *IntegrationsConnectionStatusEntityStatus `json:"status,omitempty"`
-	Message         *string                                   `json:"message,omitempty"`
-	CheckType       *string                                   `json:"check_type,omitempty"`
-	ErrorType       *string                                   `json:"error_type,omitempty"`
-	IntegrationSlug *string                                   `json:"integration_slug,omitempty"`
-	ConnectionID    *string                                   `json:"connection_id,omitempty"`
+	CheckedAt       *time.Time                                `json:"checked_at,omitzero"`
+	Status          *IntegrationsConnectionStatusEntityStatus `json:"status,omitzero"`
+	Message         *string                                   `json:"message,omitzero"`
+	CheckType       *string                                   `json:"check_type,omitzero"`
+	ErrorType       *string                                   `json:"error_type,omitzero"`
+	IntegrationSlug *string                                   `json:"integration_slug,omitzero"`
+	ConnectionID    *string                                   `json:"connection_id,omitzero"`
 	// Additional unstructured data about the status check.
-	Data        *IntegrationsConnectionStatusEntityData `json:"data,omitempty"`
-	PerformedBy *NullableAuthorEntity                   `json:"performed_by,omitempty"`
+	Data        *IntegrationsConnectionStatusEntityData `json:"data,omitzero"`
+	PerformedBy *NullableAuthorEntity                   `json:"performed_by,omitzero"`
 }
 
 func (i IntegrationsConnectionStatusEntity) MarshalJSON() ([]byte, error) {

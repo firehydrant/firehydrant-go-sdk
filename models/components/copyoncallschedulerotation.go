@@ -7,7 +7,7 @@ type CopyOnCallScheduleRotation struct {
 	// The ID of the schedule to clone the rotation into
 	TargetScheduleID string `json:"target_schedule_id"`
 	// The name of the on-call rotation
-	Name *string `json:"name,omitempty"`
+	Name *string `json:"name,omitzero"`
 }
 
 func (c *CopyOnCallScheduleRotation) GetTargetScheduleID() string {

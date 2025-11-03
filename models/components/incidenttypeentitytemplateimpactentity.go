@@ -40,11 +40,11 @@ func (e *IncidentTypeEntityTemplateImpactEntityType) UnmarshalJSON(data []byte) 
 }
 
 type IncidentTypeEntityTemplateImpactEntity struct {
-	ID            *string                                     `json:"id,omitempty"`
-	Name          *string                                     `json:"name,omitempty"`
-	ConditionID   *string                                     `json:"condition_id,omitempty"`
-	ConditionName *string                                     `json:"condition_name,omitempty"`
-	Type          *IncidentTypeEntityTemplateImpactEntityType `json:"type,omitempty"`
+	ID            *string                                     `json:"id,omitzero"`
+	Name          *string                                     `json:"name,omitzero"`
+	ConditionID   *string                                     `json:"condition_id,omitzero"`
+	ConditionName *string                                     `json:"condition_name,omitzero"`
+	Type          *IncidentTypeEntityTemplateImpactEntityType `json:"type,omitzero"`
 }
 
 func (i *IncidentTypeEntityTemplateImpactEntity) GetID() *string {

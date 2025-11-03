@@ -5,6 +5,7 @@ package components
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
 type Publish string
@@ -32,11 +33,22 @@ func (e *Publish) UnmarshalJSON(data []byte) error {
 
 // PublishPostMortemReport - Marks an incident retrospective as published and emails all of the participants in the report the summary
 type PublishPostMortemReport struct {
-	Publish *Publish `json:"publish,omitempty"`
+	Publish *Publish `json:"publish,omitzero"`
 	// An array of user IDs with whom to share the report
-	UserIds []string `json:"user_ids,omitempty"`
+	UserIds []string `json:"user_ids,omitzero"`
 	// An array of team IDs with whom to share the report
-	TeamIds []string `json:"team_ids,omitempty"`
+	TeamIds []string `json:"team_ids,omitzero"`
+}
+
+func (p PublishPostMortemReport) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(p, "", false)
+}
+
+func (p *PublishPostMortemReport) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &p, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (p *PublishPostMortemReport) GetPublish() *Publish {

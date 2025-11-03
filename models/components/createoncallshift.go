@@ -14,9 +14,9 @@ type CreateOnCallShift struct {
 	// The end time of the shift in ISO8601 format.
 	EndTime time.Time `json:"end_time"`
 	// The ID of the user who is on-call for the shift. If not provided, the shift will be unassigned.
-	UserID *string `json:"user_id,omitempty"`
+	UserID *string `json:"user_id,omitzero"`
 	// The ID of the on-call rotation you want to create the shift in. This parameter is optional for backwards compatibility but must be provided if the schedule has multiple rotations.
-	RotationID *string `json:"rotation_id,omitempty"`
+	RotationID *string `json:"rotation_id,omitzero"`
 }
 
 func (c CreateOnCallShift) MarshalJSON() ([]byte, error) {

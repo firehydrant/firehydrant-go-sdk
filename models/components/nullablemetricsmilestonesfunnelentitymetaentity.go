@@ -2,9 +2,24 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type NullableMetricsMilestonesFunnelEntityMetaEntity struct {
-	DeletedMilestones []string `json:"deleted_milestones,omitempty"`
-	AddedMilestones   []string `json:"added_milestones,omitempty"`
+	DeletedMilestones []string `json:"deleted_milestones,omitzero"`
+	AddedMilestones   []string `json:"added_milestones,omitzero"`
+}
+
+func (n NullableMetricsMilestonesFunnelEntityMetaEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(n, "", false)
+}
+
+func (n *NullableMetricsMilestonesFunnelEntityMetaEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &n, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (n *NullableMetricsMilestonesFunnelEntityMetaEntity) GetDeletedMilestones() []string {

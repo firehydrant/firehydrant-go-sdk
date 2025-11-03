@@ -2,6 +2,10 @@
 
 package operations
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type ListServicesRequest struct {
 	Page    *int `queryParam:"style=form,explode=true,name=page"`
 	PerPage *int `queryParam:"style=form,explode=true,name=per_page"`
@@ -29,6 +33,17 @@ type ListServicesRequest struct {
 	Lite *bool `queryParam:"style=form,explode=true,name=lite"`
 	// Use in conjunction with lite param to specify additional attributes to include
 	Include []string `queryParam:"style=form,explode=false,name=include"`
+}
+
+func (l ListServicesRequest) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(l, "", false)
+}
+
+func (l *ListServicesRequest) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &l, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (l *ListServicesRequest) GetPage() *int {

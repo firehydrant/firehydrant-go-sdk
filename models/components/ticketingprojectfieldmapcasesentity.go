@@ -2,14 +2,29 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // Logic - An unstructured object of key/value pairs describing the logic for applying the rule.
 type Logic struct {
 }
 
 type TicketingProjectFieldMapCasesEntity struct {
 	// An unstructured object of key/value pairs describing the logic for applying the rule.
-	Logic         *Logic                                               `json:"logic,omitempty"`
-	ExternalValue *NullableTicketingProjectFieldMapExternalValueEntity `json:"external_value,omitempty"`
+	Logic         *Logic                                               `json:"logic,omitzero"`
+	ExternalValue *NullableTicketingProjectFieldMapExternalValueEntity `json:"external_value,omitzero"`
+}
+
+func (t TicketingProjectFieldMapCasesEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(t, "", false)
+}
+
+func (t *TicketingProjectFieldMapCasesEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &t, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (t *TicketingProjectFieldMapCasesEntity) GetLogic() *Logic {

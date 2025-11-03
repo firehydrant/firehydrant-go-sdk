@@ -5,12 +5,13 @@ package components
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
 type Checklist struct {
 	ID string `json:"id"`
 	// Set to `true` to remove checklist from service
-	Remove *bool `json:"remove,omitempty"`
+	Remove *bool `json:"remove,omitzero"`
 }
 
 func (c *Checklist) GetID() string {
@@ -30,9 +31,9 @@ func (c *Checklist) GetRemove() *bool {
 type UpdateServiceExternalResource struct {
 	RemoteID string `json:"remote_id"`
 	// The integration slug for the external resource. Can be one of: github, opsgenie, pager_duty, victorops. Not required if the resource has already been imported.
-	ConnectionType *string `json:"connection_type,omitempty"`
+	ConnectionType *string `json:"connection_type,omitzero"`
 	// If you are trying to remove an external resource from a service, set this to 'true'.
-	Remove *bool `json:"remove,omitempty"`
+	Remove *bool `json:"remove,omitzero"`
 }
 
 func (u *UpdateServiceExternalResource) GetRemoteID() string {
@@ -58,11 +59,11 @@ func (u *UpdateServiceExternalResource) GetRemove() *bool {
 
 type UpdateServiceFunctionality struct {
 	// If you are trying to reuse a functionality, you may set the ID to attach it to the service
-	ID *string `json:"id,omitempty"`
+	ID *string `json:"id,omitzero"`
 	// If you are trying to remove a functionality from a service, set this to 'true'
-	Remove *bool `json:"remove,omitempty"`
+	Remove *bool `json:"remove,omitzero"`
 	// If you are trying to create a new functionality and attach it to this service, set the summary key
-	Summary *string `json:"summary,omitempty"`
+	Summary *string `json:"summary,omitzero"`
 }
 
 func (u *UpdateServiceFunctionality) GetID() *string {
@@ -92,11 +93,11 @@ type UpdateServiceLink struct {
 	// Short name used to display and identify this link
 	Name string `json:"name"`
 	// An optional URL to an icon representing this link
-	IconURL *string `json:"icon_url,omitempty"`
+	IconURL *string `json:"icon_url,omitzero"`
 	// If you are trying to remove a link, set this to 'true'
-	Remove *bool `json:"remove,omitempty"`
+	Remove *bool `json:"remove,omitzero"`
 	// If updating an existing link, specify it's id.
-	ID *string `json:"id,omitempty"`
+	ID *string `json:"id,omitzero"`
 }
 
 func (u *UpdateServiceLink) GetHrefURL() string {
@@ -188,7 +189,7 @@ func (e *UpdateServiceServiceTier) UnmarshalJSON(data []byte) error {
 type UpdateServiceTeam struct {
 	ID string `json:"id"`
 	// If you are trying to remove a team from a service, set this to 'true'
-	Remove *bool `json:"remove,omitempty"`
+	Remove *bool `json:"remove,omitzero"`
 }
 
 func (u *UpdateServiceTeam) GetID() string {
@@ -208,36 +209,47 @@ func (u *UpdateServiceTeam) GetRemove() *bool {
 // UpdateService - Update a services attributes, you may also add or remove functionalities from the service as well.
 // Note: You may not remove or add individual label key/value pairs. You must include the entire object to override label values.
 type UpdateService struct {
-	AlertOnAdd            *bool `json:"alert_on_add,omitempty"`
-	AutoAddRespondingTeam *bool `json:"auto_add_responding_team,omitempty"`
+	AlertOnAdd            *bool `json:"alert_on_add,omitzero"`
+	AutoAddRespondingTeam *bool `json:"auto_add_responding_team,omitzero"`
 	// Array of checklist IDs to attach to the service
-	Checklists  []Checklist `json:"checklists,omitempty"`
-	Description *string     `json:"description,omitempty"`
+	Checklists  []Checklist `json:"checklists,omitzero"`
+	Description *string     `json:"description,omitzero"`
 	// An array of external resources to attach to this service.
-	ExternalResources []UpdateServiceExternalResource `json:"external_resources,omitempty"`
+	ExternalResources []UpdateServiceExternalResource `json:"external_resources,omitzero"`
 	// An array of functionalities
-	Functionalities []UpdateServiceFunctionality `json:"functionalities,omitempty"`
+	Functionalities []UpdateServiceFunctionality `json:"functionalities,omitzero"`
 	// A hash of label keys and values
-	Labels map[string]string `json:"labels,omitempty"`
+	Labels map[string]string `json:"labels,omitzero"`
 	// An array of links to associate with this service. This will remove all links not present in the patch. Only acts if 'links' key is included in the payload.
-	Links []UpdateServiceLink `json:"links,omitempty"`
-	Name  *string             `json:"name,omitempty"`
+	Links []UpdateServiceLink `json:"links,omitzero"`
+	Name  *string             `json:"name,omitzero"`
 	// An object representing a Team that owns the service
-	Owner *UpdateServiceOwner `json:"owner,omitempty"`
+	Owner *UpdateServiceOwner `json:"owner,omitzero"`
 	// If you are trying to remove a team as an owner from a service, set this to 'true'
-	RemoveOwner *bool `json:"remove_owner,omitempty"`
+	RemoveOwner *bool `json:"remove_owner,omitzero"`
 	// If set to true, any checklists tagged on the service that are not included in the given array will be removed. Set this to true if you want to do a replacement operation for the checklists
-	RemoveRemainingChecklists *bool `json:"remove_remaining_checklists,omitempty"`
+	RemoveRemainingChecklists *bool `json:"remove_remaining_checklists,omitzero"`
 	// If set to true, any external_resources tagged on the service that are not included in the given array will be removed. Set this to true if you want to do a replacement operation for the external_resources
-	RemoveRemainingExternalResources *bool `json:"remove_remaining_external_resources,omitempty"`
+	RemoveRemainingExternalResources *bool `json:"remove_remaining_external_resources,omitzero"`
 	// If set to true, any functionalities tagged on the service that are not included in the given array will be removed. Set this to true if you want to do a replacement operation for the functionalities
-	RemoveRemainingFunctionalities *bool `json:"remove_remaining_functionalities,omitempty"`
+	RemoveRemainingFunctionalities *bool `json:"remove_remaining_functionalities,omitzero"`
 	// If set to true, any teams tagged on the service that are not included in the given array will be removed. Set this to true if you want to do a replacement operation for the teams
-	RemoveRemainingTeams *bool `json:"remove_remaining_teams,omitempty"`
+	RemoveRemainingTeams *bool `json:"remove_remaining_teams,omitzero"`
 	// Integer representing service tier
-	ServiceTier *UpdateServiceServiceTier `json:"service_tier,omitempty"`
+	ServiceTier *UpdateServiceServiceTier `json:"service_tier,omitzero"`
 	// An array of teams to attach to this service.
-	Teams []UpdateServiceTeam `json:"teams,omitempty"`
+	Teams []UpdateServiceTeam `json:"teams,omitzero"`
+}
+
+func (u UpdateService) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UpdateService) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (u *UpdateService) GetAlertOnAdd() *bool {

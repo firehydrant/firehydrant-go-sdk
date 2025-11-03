@@ -5,6 +5,7 @@ package operations
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
 type UpdateRetrospectiveTemplateFieldsType string
@@ -52,19 +53,30 @@ func (e *UpdateRetrospectiveTemplateFieldsType) UnmarshalJSON(data []byte) error
 }
 
 type UpdateRetrospectiveTemplateRequestBody struct {
-	Name                        *string                                 `json:"name,omitempty"`
-	Description                 *string                                 `json:"description,omitempty"`
-	IsDefault                   *bool                                   `json:"is_default,omitempty"`
+	Name                        *string                                 `json:"name,omitzero"`
+	Description                 *string                                 `json:"description,omitzero"`
+	IsDefault                   *bool                                   `json:"is_default,omitzero"`
 	SectionsSlug                []string                                `json:"sections[slug]"`
 	SectionsElements            []string                                `json:"sections[elements]"`
-	FieldsID                    []string                                `json:"fields[id],omitempty"`
+	FieldsID                    []string                                `json:"fields[id],omitzero"`
 	FieldsLabel                 []string                                `json:"fields[label]"`
 	FieldsType                  []UpdateRetrospectiveTemplateFieldsType `json:"fields[type]"`
-	FieldsHelpText              []string                                `json:"fields[help_text],omitempty"`
-	FieldsPermissibleValues     []string                                `json:"fields[permissible_values],omitempty"`
-	FieldsIsRequired            []bool                                  `json:"fields[is_required],omitempty"`
-	FieldsRequiredAtMilestoneID []string                                `json:"fields[required_at_milestone_id],omitempty"`
-	FieldsSchema                []string                                `json:"fields[schema],omitempty"`
+	FieldsHelpText              []string                                `json:"fields[help_text],omitzero"`
+	FieldsPermissibleValues     []string                                `json:"fields[permissible_values],omitzero"`
+	FieldsIsRequired            []bool                                  `json:"fields[is_required],omitzero"`
+	FieldsRequiredAtMilestoneID []string                                `json:"fields[required_at_milestone_id],omitzero"`
+	FieldsSchema                []string                                `json:"fields[schema],omitzero"`
+}
+
+func (u UpdateRetrospectiveTemplateRequestBody) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UpdateRetrospectiveTemplateRequestBody) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, []string{"sections[slug]", "sections[elements]", "fields[label]", "fields[type]"}); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (u *UpdateRetrospectiveTemplateRequestBody) GetName() *string {

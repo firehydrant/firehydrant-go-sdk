@@ -2,23 +2,38 @@
 
 package operations
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type UpdateAudienceRequestBody struct {
 	// Name of the audience (max 255 characters)
-	Name *string `json:"name,omitempty"`
+	Name *string `json:"name,omitzero"`
 	// Description of the audience (max 4000 characters)
-	Description *string `json:"description,omitempty"`
+	Description *string `json:"description,omitzero"`
 	// Whether this is the default audience
-	Default *bool `json:"default,omitempty"`
+	Default *bool `json:"default,omitzero"`
 	// Whether the audience is active or discarded
-	Active *bool `json:"active,omitempty"`
+	Active *bool `json:"active,omitzero"`
 	// The incident detail question (max 255 characters)
-	DetailsQuestion []string `json:"details[question],omitempty"`
+	DetailsQuestion []string `json:"details[question],omitzero"`
 	// The prompt to display when collecting this detail
-	DetailsPrompt []string `json:"details[prompt],omitempty"`
+	DetailsPrompt []string `json:"details[prompt],omitzero"`
 	// Optional unique identifier for this detail
-	DetailsSlug []string `json:"details[slug],omitempty"`
+	DetailsSlug []string `json:"details[slug],omitzero"`
 	// Position of the question in the list (1-based indexing)
-	DetailsPosition []int `json:"details[position],omitempty"`
+	DetailsPosition []int `json:"details[position],omitzero"`
+}
+
+func (u UpdateAudienceRequestBody) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UpdateAudienceRequestBody) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (u *UpdateAudienceRequestBody) GetName() *string {
@@ -81,6 +96,17 @@ type UpdateAudienceRequest struct {
 	// Unique identifier of the audience
 	AudienceID  string                     `pathParam:"style=simple,explode=false,name=audience_id"`
 	RequestBody *UpdateAudienceRequestBody `request:"mediaType=application/json"`
+}
+
+func (u UpdateAudienceRequest) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UpdateAudienceRequest) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, []string{"audience_id"}); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (u *UpdateAudienceRequest) GetAudienceID() string {

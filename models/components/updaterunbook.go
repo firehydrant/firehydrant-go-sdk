@@ -2,9 +2,13 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // UpdateRunbookOwner - An object representing a Team that owns the runbook
 type UpdateRunbookOwner struct {
-	ID *string `json:"id,omitempty"`
+	ID *string `json:"id,omitzero"`
 }
 
 func (u *UpdateRunbookOwner) GetID() *string {
@@ -15,7 +19,7 @@ func (u *UpdateRunbookOwner) GetID() *string {
 }
 
 type UpdateRunbookSeverity struct {
-	ID *string `json:"id,omitempty"`
+	ID *string `json:"id,omitzero"`
 }
 
 func (u *UpdateRunbookSeverity) GetID() *string {
@@ -26,7 +30,7 @@ func (u *UpdateRunbookSeverity) GetID() *string {
 }
 
 type UpdateRunbookService struct {
-	ID *string `json:"id,omitempty"`
+	ID *string `json:"id,omitzero"`
 }
 
 func (u *UpdateRunbookService) GetID() *string {
@@ -37,7 +41,7 @@ func (u *UpdateRunbookService) GetID() *string {
 }
 
 type Environment struct {
-	ID *string `json:"id,omitempty"`
+	ID *string `json:"id,omitzero"`
 }
 
 func (e *Environment) GetID() *string {
@@ -51,7 +55,7 @@ type UpdateRunbookAttachmentRule struct {
 	// The JSON logic for the attaching the runbook
 	Logic string `json:"logic"`
 	// The user data for the rule
-	UserData *string `json:"user_data,omitempty"`
+	UserData *string `json:"user_data,omitzero"`
 }
 
 func (u *UpdateRunbookAttachmentRule) GetLogic() string {
@@ -72,7 +76,7 @@ type UpdateRunbookRule struct {
 	// The JSON logic for the rule
 	Logic string `json:"logic"`
 	// The user data for the rule
-	UserData *string `json:"user_data,omitempty"`
+	UserData *string `json:"user_data,omitzero"`
 }
 
 func (u *UpdateRunbookRule) GetLogic() string {
@@ -91,12 +95,23 @@ func (u *UpdateRunbookRule) GetUserData() *string {
 
 type UpdateRunbookStep struct {
 	// ID of step to be updated
-	StepID *string `json:"step_id,omitempty"`
+	StepID *string `json:"step_id,omitzero"`
 	// Name for step
 	Name string `json:"name"`
 	// ID of action to use for this step.
 	ActionID string             `json:"action_id"`
-	Rule     *UpdateRunbookRule `json:"rule,omitempty"`
+	Rule     *UpdateRunbookRule `json:"rule,omitzero"`
+}
+
+func (u UpdateRunbookStep) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UpdateRunbookStep) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, []string{"name", "action_id"}); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (u *UpdateRunbookStep) GetStepID() *string {
@@ -130,20 +145,31 @@ func (u *UpdateRunbookStep) GetRule() *UpdateRunbookRule {
 // UpdateRunbook - Update a runbook and any attachment rules associated with it. This endpoint is used to configure nearly everything
 // about a runbook, including but not limited to the steps, environments, attachment rules, and severities.
 type UpdateRunbook struct {
-	Name        *string `json:"name,omitempty"`
-	Summary     *string `json:"summary,omitempty"`
-	Description *string `json:"description,omitempty"`
+	Name        *string `json:"name,omitzero"`
+	Summary     *string `json:"summary,omitzero"`
+	Description *string `json:"description,omitzero"`
 	// Whether or not this runbook is a tutorial runbook
-	Tutorial *bool `json:"tutorial,omitempty"`
+	Tutorial *bool `json:"tutorial,omitzero"`
 	// An object representing a Team that owns the runbook
-	Owner          *UpdateRunbookOwner          `json:"owner,omitempty"`
-	Severities     []UpdateRunbookSeverity      `json:"severities,omitempty"`
-	Services       []UpdateRunbookService       `json:"services,omitempty"`
-	Environments   []Environment                `json:"environments,omitempty"`
-	AttachmentRule *UpdateRunbookAttachmentRule `json:"attachment_rule,omitempty"`
-	Steps          []UpdateRunbookStep          `json:"steps,omitempty"`
+	Owner          *UpdateRunbookOwner          `json:"owner,omitzero"`
+	Severities     []UpdateRunbookSeverity      `json:"severities,omitzero"`
+	Services       []UpdateRunbookService       `json:"services,omitzero"`
+	Environments   []Environment                `json:"environments,omitzero"`
+	AttachmentRule *UpdateRunbookAttachmentRule `json:"attachment_rule,omitzero"`
+	Steps          []UpdateRunbookStep          `json:"steps,omitzero"`
 	// Whether or not this runbook should be automatically attached to restricted incidents. Note that setting this to `true` will prevent it from being attached to public incidents, even manually. Defaults to `false`.
-	AutoAttachToRestrictedIncidents *bool `json:"auto_attach_to_restricted_incidents,omitempty"`
+	AutoAttachToRestrictedIncidents *bool `json:"auto_attach_to_restricted_incidents,omitzero"`
+}
+
+func (u UpdateRunbook) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UpdateRunbook) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (u *UpdateRunbook) GetName() *string {

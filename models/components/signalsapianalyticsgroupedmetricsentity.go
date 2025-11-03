@@ -2,9 +2,24 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // SignalsAPIAnalyticsGroupedMetricsEntity - Signals_API_Analytics_GroupedMetricsEntity model
 type SignalsAPIAnalyticsGroupedMetricsEntity struct {
-	Data *NullableSignalsAPIAnalyticsGroupedMetricsEntityMetricEntity `json:"data,omitempty"`
+	Data *NullableSignalsAPIAnalyticsGroupedMetricsEntityMetricEntity `json:"data,omitzero"`
+}
+
+func (s SignalsAPIAnalyticsGroupedMetricsEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(s, "", false)
+}
+
+func (s *SignalsAPIAnalyticsGroupedMetricsEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &s, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (s *SignalsAPIAnalyticsGroupedMetricsEntity) GetData() *NullableSignalsAPIAnalyticsGroupedMetricsEntityMetricEntity {

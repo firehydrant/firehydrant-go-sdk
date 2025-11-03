@@ -4,9 +4,9 @@ package components
 
 // SignalsAPIHackerModeEntity - Signals_API_HackerModeEntity model
 type SignalsAPIHackerModeEntity struct {
-	Enabled *bool   `json:"enabled,omitempty"`
-	URLKey  *string `json:"url_key,omitempty"`
-	URL     *string `json:"url,omitempty"`
+	Enabled *bool   `json:"enabled,omitzero"`
+	URLKey  *string `json:"url_key,omitzero"`
+	URL     *string `json:"url,omitzero"`
 }
 
 func (s *SignalsAPIHackerModeEntity) GetEnabled() *bool {

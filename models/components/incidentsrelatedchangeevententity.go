@@ -43,15 +43,15 @@ func (e *IncidentsRelatedChangeEventEntityType) UnmarshalJSON(data []byte) error
 
 // IncidentsRelatedChangeEventEntity - Incidents_RelatedChangeEventEntity model
 type IncidentsRelatedChangeEventEntity struct {
-	ID        *string    `json:"id,omitempty"`
-	CreatedAt *time.Time `json:"created_at,omitempty"`
-	UpdatedAt *time.Time `json:"updated_at,omitempty"`
+	ID        *string    `json:"id,omitzero"`
+	CreatedAt *time.Time `json:"created_at,omitzero"`
+	UpdatedAt *time.Time `json:"updated_at,omitzero"`
 	// The reason why this change event is related to this incident
-	Why         *string                                `json:"why,omitempty"`
-	Type        *IncidentsRelatedChangeEventEntityType `json:"type,omitempty"`
-	ChangeEvent *NullableChangeEventEntity             `json:"change_event,omitempty"`
-	IncidentID  *string                                `json:"incident_id,omitempty"`
-	CreatedBy   *NullableAuthorEntity                  `json:"created_by,omitempty"`
+	Why         *string                                `json:"why,omitzero"`
+	Type        *IncidentsRelatedChangeEventEntityType `json:"type,omitzero"`
+	ChangeEvent *NullableChangeEventEntity             `json:"change_event,omitzero"`
+	IncidentID  *string                                `json:"incident_id,omitzero"`
+	CreatedBy   *NullableAuthorEntity                  `json:"created_by,omitzero"`
 }
 
 func (i IncidentsRelatedChangeEventEntity) MarshalJSON() ([]byte, error) {

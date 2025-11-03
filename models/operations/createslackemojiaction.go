@@ -6,7 +6,7 @@ type CreateSlackEmojiActionRequestBody struct {
 	// The name of the emoji to associate with this action
 	EmojiName string `json:"emoji_name"`
 	// The ID of the incident type to associate with this emoji action
-	IncidentTypeID *string `json:"incident_type_id,omitempty"`
+	IncidentTypeID *string `json:"incident_type_id,omitzero"`
 }
 
 func (c *CreateSlackEmojiActionRequestBody) GetEmojiName() string {

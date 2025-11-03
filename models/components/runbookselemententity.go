@@ -2,14 +2,29 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type RunbooksElementEntity struct {
-	ID            *string                                     `json:"id,omitempty"`
-	Type          *string                                     `json:"type,omitempty"`
-	Markdown      *NullableRunbooksElementMarkdownEntity      `json:"markdown,omitempty"`
-	Textarea      *NullableRunbooksElementTextareaEntity      `json:"textarea,omitempty"`
-	Input         *NullableRunbooksElementInputEntity         `json:"input,omitempty"`
-	PlainText     *NullableRunbooksElementMarkdownEntity      `json:"plain_text,omitempty"`
-	DynamicSelect *NullableRunbooksElementDynamicSelectEntity `json:"dynamic_select,omitempty"`
+	ID            *string                                     `json:"id,omitzero"`
+	Type          *string                                     `json:"type,omitzero"`
+	Markdown      *NullableRunbooksElementMarkdownEntity      `json:"markdown,omitzero"`
+	Textarea      *NullableRunbooksElementTextareaEntity      `json:"textarea,omitzero"`
+	Input         *NullableRunbooksElementInputEntity         `json:"input,omitzero"`
+	PlainText     *NullableRunbooksElementMarkdownEntity      `json:"plain_text,omitzero"`
+	DynamicSelect *NullableRunbooksElementDynamicSelectEntity `json:"dynamic_select,omitzero"`
+}
+
+func (r RunbooksElementEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(r, "", false)
+}
+
+func (r *RunbooksElementEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &r, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (r *RunbooksElementEntity) GetID() *string {

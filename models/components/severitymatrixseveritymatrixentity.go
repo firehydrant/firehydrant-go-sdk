@@ -2,11 +2,26 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // SeverityMatrixSeverityMatrixEntity - SeverityMatrix_SeverityMatrixEntity model
 type SeverityMatrixSeverityMatrixEntity struct {
-	Matrix     []SeverityMatrixItemEntity      `json:"matrix,omitempty"`
-	Impacts    []SeverityMatrixImpactEntity    `json:"impacts,omitempty"`
-	Conditions []SeverityMatrixConditionEntity `json:"conditions,omitempty"`
+	Matrix     []SeverityMatrixItemEntity      `json:"matrix,omitzero"`
+	Impacts    []SeverityMatrixImpactEntity    `json:"impacts,omitzero"`
+	Conditions []SeverityMatrixConditionEntity `json:"conditions,omitzero"`
+}
+
+func (s SeverityMatrixSeverityMatrixEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(s, "", false)
+}
+
+func (s *SeverityMatrixSeverityMatrixEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &s, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (s *SeverityMatrixSeverityMatrixEntity) GetMatrix() []SeverityMatrixItemEntity {

@@ -2,9 +2,24 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type ReportsBucketEntity struct {
-	Bucket *string                  `json:"bucket,omitempty"`
-	Points []ReportsDataPointEntity `json:"points,omitempty"`
+	Bucket *string                  `json:"bucket,omitzero"`
+	Points []ReportsDataPointEntity `json:"points,omitzero"`
+}
+
+func (r ReportsBucketEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(r, "", false)
+}
+
+func (r *ReportsBucketEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &r, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (r *ReportsBucketEntity) GetBucket() *string {

@@ -2,11 +2,15 @@
 
 package operations
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type UpdateSlackEmojiActionRequestBody struct {
 	// The name of the emoji to associate with this action
-	EmojiName *string `json:"emoji_name,omitempty"`
+	EmojiName *string `json:"emoji_name,omitzero"`
 	// The ID of the incident type to associate with this emoji action
-	IncidentTypeID *string `json:"incident_type_id,omitempty"`
+	IncidentTypeID *string `json:"incident_type_id,omitzero"`
 }
 
 func (u *UpdateSlackEmojiActionRequestBody) GetEmojiName() *string {
@@ -28,6 +32,17 @@ type UpdateSlackEmojiActionRequest struct {
 	ConnectionID  string                             `pathParam:"style=simple,explode=false,name=connection_id"`
 	EmojiActionID string                             `pathParam:"style=simple,explode=false,name=emoji_action_id"`
 	RequestBody   *UpdateSlackEmojiActionRequestBody `request:"mediaType=application/json"`
+}
+
+func (u UpdateSlackEmojiActionRequest) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UpdateSlackEmojiActionRequest) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, []string{"connection_id", "emoji_action_id"}); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (u *UpdateSlackEmojiActionRequest) GetConnectionID() string {

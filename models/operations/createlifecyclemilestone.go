@@ -43,15 +43,15 @@ type CreateLifecycleMilestoneRequest struct {
 	// A long-form description of the milestone's purpose
 	Description string `json:"description"`
 	// A unique identifier for the milestone. If not provided, one will be generated from the name.
-	Slug *string `json:"slug,omitempty"`
+	Slug *string `json:"slug,omitzero"`
 	// The ID of the phase to which the milestone should belong
 	PhaseID string `json:"phase_id"`
 	// The position of the milestone within the phase. If not provided, the milestone will be added as the last milestone in the phase.
-	Position *int `json:"position,omitempty"`
+	Position *int `json:"position,omitzero"`
 	// The ID of a later milestone that cannot be started until this milestone has a timestamp populated
-	RequiredAtMilestoneID *string `json:"required_at_milestone_id,omitempty"`
+	RequiredAtMilestoneID *string `json:"required_at_milestone_id,omitzero"`
 	// The setting for auto-assigning the milestone's timestamp during incident declaration
-	AutoAssignTimestampOnCreate *CreateLifecycleMilestoneAutoAssignTimestampOnCreate `json:"auto_assign_timestamp_on_create,omitempty"`
+	AutoAssignTimestampOnCreate *CreateLifecycleMilestoneAutoAssignTimestampOnCreate `json:"auto_assign_timestamp_on_create,omitzero"`
 }
 
 func (c *CreateLifecycleMilestoneRequest) GetName() string {

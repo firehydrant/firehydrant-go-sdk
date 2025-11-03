@@ -8,20 +8,20 @@ import (
 )
 
 type NullableSlimRunbookEntity struct {
-	ID             *string                  `json:"id,omitempty"`
-	Name           *string                  `json:"name,omitempty"`
-	Summary        *string                  `json:"summary,omitempty"`
-	Description    *string                  `json:"description,omitempty"`
-	Type           *string                  `json:"type,omitempty"`
-	CreatedAt      *time.Time               `json:"created_at,omitempty"`
-	UpdatedAt      *time.Time               `json:"updated_at,omitempty"`
-	AttachmentRule *NullableRulesRuleEntity `json:"attachment_rule,omitempty"`
-	Owner          *NullableTeamEntityLite  `json:"owner,omitempty"`
+	ID             *string                  `json:"id,omitzero"`
+	Name           *string                  `json:"name,omitzero"`
+	Summary        *string                  `json:"summary,omitzero"`
+	Description    *string                  `json:"description,omitzero"`
+	Type           *string                  `json:"type,omitzero"`
+	CreatedAt      *time.Time               `json:"created_at,omitzero"`
+	UpdatedAt      *time.Time               `json:"updated_at,omitzero"`
+	AttachmentRule *NullableRulesRuleEntity `json:"attachment_rule,omitzero"`
+	Owner          *NullableTeamEntityLite  `json:"owner,omitzero"`
 	// categories the runbook applies to
-	Categories []string `json:"categories,omitempty"`
+	Categories []string `json:"categories,omitzero"`
 	// The timestamp when this runbook was last executed
-	LastExecutedAt          *time.Time                                  `json:"last_executed_at,omitempty"`
-	LastExecutedForIncident *NullablePublicAPIV1IncidentsSuccinctEntity `json:"last_executed_for_incident,omitempty"`
+	LastExecutedAt          *time.Time                                  `json:"last_executed_at,omitzero"`
+	LastExecutedForIncident *NullablePublicAPIV1IncidentsSuccinctEntity `json:"last_executed_for_incident,omitzero"`
 }
 
 func (n NullableSlimRunbookEntity) MarshalJSON() ([]byte, error) {

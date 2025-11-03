@@ -3,7 +3,7 @@
 package components
 
 type NullableRunbooksElementMarkdownEntity struct {
-	Text *string `json:"text,omitempty"`
+	Text *string `json:"text,omitzero"`
 }
 
 func (n *NullableRunbooksElementMarkdownEntity) GetText() *string {

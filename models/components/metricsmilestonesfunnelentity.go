@@ -2,12 +2,27 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // MetricsMilestonesFunnelEntity - Metrics_MilestonesFunnelEntity model
 type MetricsMilestonesFunnelEntity struct {
-	Data      []MetricsMilestonesFunnelEntityDataBucketEntity       `json:"data,omitempty"`
-	Columns   []MetricsMilestonesFunnelEntityColumnEntity           `json:"columns,omitempty"`
-	Groupings *NullableMetricsMilestonesFunnelEntityGroupingsEntity `json:"groupings,omitempty"`
-	Meta      *NullableMetricsMilestonesFunnelEntityMetaEntity      `json:"meta,omitempty"`
+	Data      []MetricsMilestonesFunnelEntityDataBucketEntity       `json:"data,omitzero"`
+	Columns   []MetricsMilestonesFunnelEntityColumnEntity           `json:"columns,omitzero"`
+	Groupings *NullableMetricsMilestonesFunnelEntityGroupingsEntity `json:"groupings,omitzero"`
+	Meta      *NullableMetricsMilestonesFunnelEntityMetaEntity      `json:"meta,omitzero"`
+}
+
+func (m MetricsMilestonesFunnelEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(m, "", false)
+}
+
+func (m *MetricsMilestonesFunnelEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &m, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (m *MetricsMilestonesFunnelEntity) GetData() []MetricsMilestonesFunnelEntityDataBucketEntity {

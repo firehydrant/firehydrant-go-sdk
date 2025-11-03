@@ -14,6 +14,17 @@ type ExportSignalsShiftAnalyticsRequestBody struct {
 	TeamIds []string `multipartForm:"name=team_ids"`
 }
 
+func (e ExportSignalsShiftAnalyticsRequestBody) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(e, "", false)
+}
+
+func (e *ExportSignalsShiftAnalyticsRequestBody) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &e, "", false, nil); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (e *ExportSignalsShiftAnalyticsRequestBody) GetUserIds() []string {
 	if e == nil {
 		return nil

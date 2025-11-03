@@ -2,9 +2,13 @@
 
 package operations
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type UpdateAuthedProviderRequestBody struct {
 	// Set as the default integration for the account
-	IntegrationDefault *bool `json:"integration_default,omitempty"`
+	IntegrationDefault *bool `json:"integration_default,omitzero"`
 }
 
 func (u *UpdateAuthedProviderRequestBody) GetIntegrationDefault() *bool {
@@ -22,6 +26,17 @@ type UpdateAuthedProviderRequest struct {
 	// Authed provider ID
 	AuthedProviderID string                           `pathParam:"style=simple,explode=false,name=authed_provider_id"`
 	RequestBody      *UpdateAuthedProviderRequestBody `request:"mediaType=application/json"`
+}
+
+func (u UpdateAuthedProviderRequest) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UpdateAuthedProviderRequest) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, []string{"integration_slug", "connection_id", "authed_provider_id"}); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (u *UpdateAuthedProviderRequest) GetIntegrationSlug() string {

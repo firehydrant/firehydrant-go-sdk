@@ -2,19 +2,34 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type Body struct {
 }
 
 // FieldMappingFieldMapEntity - FieldMapping_FieldMapEntity model
 type FieldMappingFieldMapEntity struct {
-	ID                 *string `json:"id,omitempty"`
-	ConnectionID       *string `json:"connection_id,omitempty"`
-	ConnectionType     *string `json:"connection_type,omitempty"`
-	EntityID           *string `json:"entity_id,omitempty"`
-	EntityType         *string `json:"entity_type,omitempty"`
-	Body               *Body   `json:"body,omitempty"`
-	AvailableFieldsURL *string `json:"available_fields_url,omitempty"`
-	DataBagURL         *string `json:"data_bag_url,omitempty"`
+	ID                 *string `json:"id,omitzero"`
+	ConnectionID       *string `json:"connection_id,omitzero"`
+	ConnectionType     *string `json:"connection_type,omitzero"`
+	EntityID           *string `json:"entity_id,omitzero"`
+	EntityType         *string `json:"entity_type,omitzero"`
+	Body               *Body   `json:"body,omitzero"`
+	AvailableFieldsURL *string `json:"available_fields_url,omitzero"`
+	DataBagURL         *string `json:"data_bag_url,omitzero"`
+}
+
+func (f FieldMappingFieldMapEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(f, "", false)
+}
+
+func (f *FieldMappingFieldMapEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &f, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (f *FieldMappingFieldMapEntity) GetID() *string {

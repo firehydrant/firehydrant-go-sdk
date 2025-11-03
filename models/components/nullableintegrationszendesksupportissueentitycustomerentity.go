@@ -4,9 +4,9 @@ package components
 
 type NullableIntegrationsZendeskSupportIssueEntityCustomerEntity struct {
 	// UUID of the Customer
-	ID *string `json:"id,omitempty"`
+	ID *string `json:"id,omitzero"`
 	// Name of the Customer
-	Name *string `json:"name,omitempty"`
+	Name *string `json:"name,omitzero"`
 }
 
 func (n *NullableIntegrationsZendeskSupportIssueEntityCustomerEntity) GetID() *string {

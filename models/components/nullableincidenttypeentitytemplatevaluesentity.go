@@ -2,17 +2,32 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // Runbooks - A hash mapping runbook IDs to runbook names.
 type Runbooks struct {
 }
 
 type NullableIncidentTypeEntityTemplateValuesEntity struct {
-	Services        []IncidentTypeEntityTemplateImpactEntity `json:"services,omitempty"`
-	Functionalities []IncidentTypeEntityTemplateImpactEntity `json:"functionalities,omitempty"`
-	Environments    []IncidentTypeEntityTemplateImpactEntity `json:"environments,omitempty"`
+	Services        []IncidentTypeEntityTemplateImpactEntity `json:"services,omitzero"`
+	Functionalities []IncidentTypeEntityTemplateImpactEntity `json:"functionalities,omitzero"`
+	Environments    []IncidentTypeEntityTemplateImpactEntity `json:"environments,omitzero"`
 	// A hash mapping runbook IDs to runbook names.
-	Runbooks *Runbooks        `json:"runbooks,omitempty"`
-	Teams    []TeamEntityLite `json:"teams,omitempty"`
+	Runbooks *Runbooks        `json:"runbooks,omitzero"`
+	Teams    []TeamEntityLite `json:"teams,omitzero"`
+}
+
+func (n NullableIncidentTypeEntityTemplateValuesEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(n, "", false)
+}
+
+func (n *NullableIncidentTypeEntityTemplateValuesEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &n, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (n *NullableIncidentTypeEntityTemplateValuesEntity) GetServices() []IncidentTypeEntityTemplateImpactEntity {

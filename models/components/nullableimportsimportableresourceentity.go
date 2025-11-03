@@ -42,10 +42,10 @@ func (e *NullableImportsImportableResourceEntityState) UnmarshalJSON(data []byte
 }
 
 type NullableImportsImportableResourceEntity struct {
-	ImportErrors []ImportsImportErrorEntity                    `json:"import_errors,omitempty"`
-	ImportedAt   *time.Time                                    `json:"imported_at,omitempty"`
-	RemoteID     *string                                       `json:"remote_id,omitempty"`
-	State        *NullableImportsImportableResourceEntityState `json:"state,omitempty"`
+	ImportErrors []ImportsImportErrorEntity                    `json:"import_errors,omitzero"`
+	ImportedAt   *time.Time                                    `json:"imported_at,omitzero"`
+	RemoteID     *string                                       `json:"remote_id,omitzero"`
+	State        *NullableImportsImportableResourceEntityState `json:"state,omitzero"`
 }
 
 func (n NullableImportsImportableResourceEntity) MarshalJSON() ([]byte, error) {

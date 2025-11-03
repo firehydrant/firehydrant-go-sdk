@@ -2,10 +2,25 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // MetricsTicketFunnelMetricsEntity - Metrics_TicketFunnelMetricsEntity model
 type MetricsTicketFunnelMetricsEntity struct {
-	Data      []MetricsTicketFunnelMetricsEntityDataBucketEntity       `json:"data,omitempty"`
-	Groupings *NullableMetricsTicketFunnelMetricsEntityGroupingsEntity `json:"groupings,omitempty"`
+	Data      []MetricsTicketFunnelMetricsEntityDataBucketEntity       `json:"data,omitzero"`
+	Groupings *NullableMetricsTicketFunnelMetricsEntityGroupingsEntity `json:"groupings,omitzero"`
+}
+
+func (m MetricsTicketFunnelMetricsEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(m, "", false)
+}
+
+func (m *MetricsTicketFunnelMetricsEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &m, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (m *MetricsTicketFunnelMetricsEntity) GetData() []MetricsTicketFunnelMetricsEntityDataBucketEntity {

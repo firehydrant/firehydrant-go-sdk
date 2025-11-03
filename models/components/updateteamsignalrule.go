@@ -109,21 +109,21 @@ func (e *UpdateTeamSignalRuleCreateIncidentConditionWhen) UnmarshalJSON(data []b
 // UpdateTeamSignalRule - Update a Signals rule by ID
 type UpdateTeamSignalRule struct {
 	// The rule's name.
-	Name *string `json:"name,omitempty"`
+	Name *string `json:"name,omitzero"`
 	// The CEL expression that defines the rule.
-	Expression *string `json:"expression,omitempty"`
+	Expression *string `json:"expression,omitzero"`
 	// The type of target that the rule will notify when matched.
-	TargetType *UpdateTeamSignalRuleTargetType `json:"target_type,omitempty"`
+	TargetType *UpdateTeamSignalRuleTargetType `json:"target_type,omitzero"`
 	// The ID of the target that the rule will notify when matched.
-	TargetID *string `json:"target_id,omitempty"`
+	TargetID *string `json:"target_id,omitzero"`
 	// The ID of an incident type that should be used when an alert is promoted to an incident
-	IncidentTypeID *string `json:"incident_type_id,omitempty"`
+	IncidentTypeID *string `json:"incident_type_id,omitzero"`
 	// A notification priority that will be set on the resulting alert (default: HIGH)
-	NotificationPriorityOverride *UpdateTeamSignalRuleNotificationPriorityOverride `json:"notification_priority_override,omitempty"`
+	NotificationPriorityOverride *UpdateTeamSignalRuleNotificationPriorityOverride `json:"notification_priority_override,omitzero"`
 	// Determines when an incident should be created when this rule is matched
-	CreateIncidentConditionWhen *UpdateTeamSignalRuleCreateIncidentConditionWhen `json:"create_incident_condition_when,omitempty"`
+	CreateIncidentConditionWhen *UpdateTeamSignalRuleCreateIncidentConditionWhen `json:"create_incident_condition_when,omitzero"`
 	// The amount of time alerts created from this rule will be deduplicated
-	DeduplicationExpiry *string `json:"deduplication_expiry,omitempty"`
+	DeduplicationExpiry *string `json:"deduplication_expiry,omitzero"`
 }
 
 func (u *UpdateTeamSignalRule) GetName() *string {

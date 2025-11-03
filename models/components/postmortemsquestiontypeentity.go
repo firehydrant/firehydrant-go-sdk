@@ -2,14 +2,29 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // PostMortemsQuestionTypeEntity - PostMortems_QuestionTypeEntity model
 type PostMortemsQuestionTypeEntity struct {
-	ID               *string  `json:"id,omitempty"`
-	Title            *string  `json:"title,omitempty"`
-	Tooltip          *string  `json:"tooltip,omitempty"`
-	Kind             *string  `json:"kind,omitempty"`
-	IsRequired       *bool    `json:"is_required,omitempty"`
-	AvailableOptions []string `json:"available_options,omitempty"`
+	ID               *string  `json:"id,omitzero"`
+	Title            *string  `json:"title,omitzero"`
+	Tooltip          *string  `json:"tooltip,omitzero"`
+	Kind             *string  `json:"kind,omitzero"`
+	IsRequired       *bool    `json:"is_required,omitzero"`
+	AvailableOptions []string `json:"available_options,omitzero"`
+}
+
+func (p PostMortemsQuestionTypeEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(p, "", false)
+}
+
+func (p *PostMortemsQuestionTypeEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &p, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (p *PostMortemsQuestionTypeEntity) GetID() *string {

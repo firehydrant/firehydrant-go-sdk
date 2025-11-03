@@ -8,11 +8,11 @@ import (
 )
 
 type NullableIntegrationEntity struct {
-	ID              *string    `json:"id,omitempty"`
-	IntegrationName *string    `json:"integration_name,omitempty"`
-	IntegrationSlug *string    `json:"integration_slug,omitempty"`
-	DisplayName     *string    `json:"display_name,omitempty"`
-	CreatedAt       *time.Time `json:"created_at,omitempty"`
+	ID              *string    `json:"id,omitzero"`
+	IntegrationName *string    `json:"integration_name,omitzero"`
+	IntegrationSlug *string    `json:"integration_slug,omitzero"`
+	DisplayName     *string    `json:"display_name,omitzero"`
+	CreatedAt       *time.Time `json:"created_at,omitzero"`
 }
 
 func (n NullableIntegrationEntity) MarshalJSON() ([]byte, error) {

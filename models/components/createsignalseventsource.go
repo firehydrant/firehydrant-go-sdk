@@ -2,6 +2,10 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // Headers - Hash of HTTP headers with values as Array, e.g. { 'Content-Type' => ['application/json'] }
 type Headers struct {
 }
@@ -13,9 +17,20 @@ type CreateSignalsEventSourceData struct {
 // CreateSignalsEventSourceExamplePayload - Example payload as input to transpose function
 type CreateSignalsEventSourceExamplePayload struct {
 	// Hash of HTTP headers with values as Array, e.g. { 'Content-Type' => ['application/json'] }
-	Headers *Headers `json:"headers,omitempty"`
+	Headers *Headers `json:"headers,omitzero"`
 	// JSON body of request.
-	Data *CreateSignalsEventSourceData `json:"data,omitempty"`
+	Data *CreateSignalsEventSourceData `json:"data,omitzero"`
+}
+
+func (c CreateSignalsEventSourceExamplePayload) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *CreateSignalsEventSourceExamplePayload) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (c *CreateSignalsEventSourceExamplePayload) GetHeaders() *Headers {
@@ -37,7 +52,7 @@ type CreateSignalsEventSource struct {
 	// Name of the transposer
 	Name string `json:"name"`
 	// Description of the transposer
-	Description *string `json:"description,omitempty"`
+	Description *string `json:"description,omitzero"`
 	// Slug of the transposer
 	Slug string `json:"slug"`
 	// Example payload as input to transpose function

@@ -8,9 +8,9 @@ import (
 )
 
 type SignalsAPIOnCallSchedulePreviewEntityShiftPreviewEntity struct {
-	StartTime *time.Time              `json:"start_time,omitempty"`
-	EndTime   *time.Time              `json:"end_time,omitempty"`
-	User      *NullableSuccinctEntity `json:"user,omitempty"`
+	StartTime *time.Time              `json:"start_time,omitzero"`
+	EndTime   *time.Time              `json:"end_time,omitzero"`
+	User      *NullableSuccinctEntity `json:"user,omitzero"`
 }
 
 func (s SignalsAPIOnCallSchedulePreviewEntityShiftPreviewEntity) MarshalJSON() ([]byte, error) {

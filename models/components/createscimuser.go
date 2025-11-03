@@ -2,6 +2,10 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // CreateScimUserName - The components of the user's name
 type CreateScimUserName struct {
 	// The family name of the User, or last name in most Western languages
@@ -53,9 +57,9 @@ type CreateScimUserPhoneNumber struct {
 	// String that represents a phone number for the User
 	Value string `json:"value"`
 	// Type of phone number (mobile, work, home, etc.)
-	Type *string `json:"type,omitempty"`
+	Type *string `json:"type,omitzero"`
 	// Boolean which signifies if a phone number is intended as the primary phone for the User
-	Primary *bool `json:"primary,omitempty"`
+	Primary *bool `json:"primary,omitzero"`
 }
 
 func (c *CreateScimUserPhoneNumber) GetValue() string {
@@ -84,17 +88,28 @@ type CreateScimUser struct {
 	// A service provider's unique identifier for the user
 	UserName string `json:"userName"`
 	// A unique identifier for the user from the external provisioning system
-	ExternalID *string `json:"externalId,omitempty"`
+	ExternalID *string `json:"externalId,omitzero"`
 	// The components of the user's name
 	Name CreateScimUserName `json:"name"`
 	// Email addresses for the User
 	Emails []CreateScimUserEmail `json:"emails"`
 	// Roles for the User. Options are owner, member, collaborator, or viewer. Roles may be specified as strings or SCIM role objects.
-	Roles *CreateScimUserRoles `json:"roles,omitempty"`
+	Roles *CreateScimUserRoles `json:"roles,omitzero"`
 	// This attribute is intended to be used as a means to set, replace, or compare (i.e., filter for equality) a password
-	Password *string `json:"password,omitempty"`
+	Password *string `json:"password,omitzero"`
 	// Phone numbers for the User
-	PhoneNumbers []CreateScimUserPhoneNumber `json:"phoneNumbers,omitempty"`
+	PhoneNumbers []CreateScimUserPhoneNumber `json:"phoneNumbers,omitzero"`
+}
+
+func (c CreateScimUser) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *CreateScimUser) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"userName", "name", "emails"}); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (c *CreateScimUser) GetUserName() string {

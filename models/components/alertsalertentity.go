@@ -13,37 +13,37 @@ type AlertsAlertEntityLabels struct {
 
 // AlertsAlertEntity - Alerts_AlertEntity model
 type AlertsAlertEntity struct {
-	ID              *string    `json:"id,omitempty"`
-	Summary         *string    `json:"summary,omitempty"`
-	Description     *string    `json:"description,omitempty"`
-	Priority        *string    `json:"priority,omitempty"`
-	IntegrationName *string    `json:"integration_name,omitempty"`
-	StartsAt        *time.Time `json:"starts_at,omitempty"`
-	EndsAt          *time.Time `json:"ends_at,omitempty"`
-	DurationMs      *int       `json:"duration_ms,omitempty"`
-	DurationIso8601 *string    `json:"duration_iso8601,omitempty"`
-	Status          *string    `json:"status,omitempty"`
-	RemoteID        *string    `json:"remote_id,omitempty"`
-	RemoteURL       *string    `json:"remote_url,omitempty"`
+	ID              *string    `json:"id,omitzero"`
+	Summary         *string    `json:"summary,omitzero"`
+	Description     *string    `json:"description,omitzero"`
+	Priority        *string    `json:"priority,omitzero"`
+	IntegrationName *string    `json:"integration_name,omitzero"`
+	StartsAt        *time.Time `json:"starts_at,omitzero"`
+	EndsAt          *time.Time `json:"ends_at,omitzero"`
+	DurationMs      *int       `json:"duration_ms,omitzero"`
+	DurationIso8601 *string    `json:"duration_iso8601,omitzero"`
+	Status          *string    `json:"status,omitzero"`
+	RemoteID        *string    `json:"remote_id,omitzero"`
+	RemoteURL       *string    `json:"remote_url,omitzero"`
 	// Arbitrary key:value pairs of labels.
-	Labels        *AlertsAlertEntityLabels             `json:"labels,omitempty"`
-	Environments  []SuccinctEntity                     `json:"environments,omitempty"`
-	Services      []SuccinctEntity                     `json:"services,omitempty"`
-	Tags          []string                             `json:"tags,omitempty"`
-	SourceIcon    *string                              `json:"source_icon,omitempty"`
-	SignalID      *string                              `json:"signal_id,omitempty"`
-	SignalRule    *NullableSignalsAPIRuleEntity        `json:"signal_rule,omitempty"`
-	SignalTarget  *NullableSignalsAPITargetEntity      `json:"signal_target,omitempty"`
-	TeamName      *string                              `json:"team_name,omitempty"`
-	TeamID        *string                              `json:"team_id,omitempty"`
-	Position      *int                                 `json:"position,omitempty"`
-	Incidents     []PublicAPIV1IncidentsSuccinctEntity `json:"incidents,omitempty"`
-	Events        []AlertsSirenEventEntity             `json:"events,omitempty"`
-	IsExpired     *bool                                `json:"is_expired,omitempty"`
-	IsNoise       *bool                                `json:"is_noise,omitempty"`
-	ParentAlerts  []AlertsSirenAlertEntity             `json:"parent_alerts,omitempty"`
-	ChildAlerts   []AlertsSirenAlertEntity             `json:"child_alerts,omitempty"`
-	Conversations []ConversationsAPIEntitiesReference  `json:"conversations,omitempty"`
+	Labels        *AlertsAlertEntityLabels             `json:"labels,omitzero"`
+	Environments  []SuccinctEntity                     `json:"environments,omitzero"`
+	Services      []SuccinctEntity                     `json:"services,omitzero"`
+	Tags          []string                             `json:"tags,omitzero"`
+	SourceIcon    *string                              `json:"source_icon,omitzero"`
+	SignalID      *string                              `json:"signal_id,omitzero"`
+	SignalRule    *NullableSignalsAPIRuleEntity        `json:"signal_rule,omitzero"`
+	SignalTarget  *NullableSignalsAPITargetEntity      `json:"signal_target,omitzero"`
+	TeamName      *string                              `json:"team_name,omitzero"`
+	TeamID        *string                              `json:"team_id,omitzero"`
+	Position      *int                                 `json:"position,omitzero"`
+	Incidents     []PublicAPIV1IncidentsSuccinctEntity `json:"incidents,omitzero"`
+	Events        []AlertsSirenEventEntity             `json:"events,omitzero"`
+	IsExpired     *bool                                `json:"is_expired,omitzero"`
+	IsNoise       *bool                                `json:"is_noise,omitzero"`
+	ParentAlerts  []AlertsSirenAlertEntity             `json:"parent_alerts,omitzero"`
+	ChildAlerts   []AlertsSirenAlertEntity             `json:"child_alerts,omitzero"`
+	Conversations []ConversationsAPIEntitiesReference  `json:"conversations,omitzero"`
 }
 
 func (a AlertsAlertEntity) MarshalJSON() ([]byte, error) {

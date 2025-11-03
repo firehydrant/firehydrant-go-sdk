@@ -4,9 +4,9 @@ package components
 
 // UpdatePriority - Update a specific priority
 type UpdatePriority struct {
-	Slug        *string `json:"slug,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Default     *bool   `json:"default,omitempty"`
+	Slug        *string `json:"slug,omitzero"`
+	Description *string `json:"description,omitzero"`
+	Default     *bool   `json:"default,omitzero"`
 }
 
 func (u *UpdatePriority) GetSlug() *string {

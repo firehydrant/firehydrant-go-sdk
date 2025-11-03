@@ -13,19 +13,19 @@ type ScheduledMaintenanceEntityLabels struct {
 
 // ScheduledMaintenanceEntity model
 type ScheduledMaintenanceEntity struct {
-	ID          *string                                 `json:"id,omitempty"`
-	Name        *string                                 `json:"name,omitempty"`
-	Summary     *string                                 `json:"summary,omitempty"`
-	Description *string                                 `json:"description,omitempty"`
-	CreatedAt   *time.Time                              `json:"created_at,omitempty"`
-	UpdatedAt   *time.Time                              `json:"updated_at,omitempty"`
-	StartsAt    *time.Time                              `json:"starts_at,omitempty"`
-	EndsAt      *time.Time                              `json:"ends_at,omitempty"`
-	Incident    *NullableIncidentEntity                 `json:"incident,omitempty"`
-	StatusPages []ScheduledMaintenancesStatusPageEntity `json:"status_pages,omitempty"`
-	Impacts     []ScheduledMaintenancesImpactEntity     `json:"impacts,omitempty"`
+	ID          *string                                 `json:"id,omitzero"`
+	Name        *string                                 `json:"name,omitzero"`
+	Summary     *string                                 `json:"summary,omitzero"`
+	Description *string                                 `json:"description,omitzero"`
+	CreatedAt   *time.Time                              `json:"created_at,omitzero"`
+	UpdatedAt   *time.Time                              `json:"updated_at,omitzero"`
+	StartsAt    *time.Time                              `json:"starts_at,omitzero"`
+	EndsAt      *time.Time                              `json:"ends_at,omitzero"`
+	Incident    *NullableIncidentEntity                 `json:"incident,omitzero"`
+	StatusPages []ScheduledMaintenancesStatusPageEntity `json:"status_pages,omitzero"`
+	Impacts     []ScheduledMaintenancesImpactEntity     `json:"impacts,omitzero"`
 	// An object of label key and values
-	Labels *ScheduledMaintenanceEntityLabels `json:"labels,omitempty"`
+	Labels *ScheduledMaintenanceEntityLabels `json:"labels,omitzero"`
 }
 
 func (s ScheduledMaintenanceEntity) MarshalJSON() ([]byte, error) {

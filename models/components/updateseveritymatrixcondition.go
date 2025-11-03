@@ -4,9 +4,9 @@ package components
 
 // UpdateSeverityMatrixCondition - Update a severity matrix condition
 type UpdateSeverityMatrixCondition struct {
-	Name *string `json:"name,omitempty"`
+	Name *string `json:"name,omitzero"`
 	// Position is used to determine ordering of conditions in API responses and dropdowns. The condition with the lowest position (typically 0) will be considered the Default Condition
-	Position *int `json:"position,omitempty"`
+	Position *int `json:"position,omitzero"`
 }
 
 func (u *UpdateSeverityMatrixCondition) GetName() *string {

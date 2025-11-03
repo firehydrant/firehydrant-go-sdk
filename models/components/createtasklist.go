@@ -6,7 +6,7 @@ type CreateTaskListTaskListItem struct {
 	// A summary of the task
 	Summary string `json:"summary"`
 	// A long-form description for the task if additional context is helpful
-	Description *string `json:"description,omitempty"`
+	Description *string `json:"description,omitzero"`
 }
 
 func (c *CreateTaskListTaskListItem) GetSummary() string {
@@ -26,7 +26,7 @@ func (c *CreateTaskListTaskListItem) GetDescription() *string {
 // CreateTaskList - Creates a new task list
 type CreateTaskList struct {
 	Name          string                       `json:"name"`
-	Description   *string                      `json:"description,omitempty"`
+	Description   *string                      `json:"description,omitzero"`
 	TaskListItems []CreateTaskListTaskListItem `json:"task_list_items"`
 }
 

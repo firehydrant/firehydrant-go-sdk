@@ -2,14 +2,29 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // RetrospectivesTemplateEntity - Retrospectives_TemplateEntity model
 type RetrospectivesTemplateEntity struct {
-	ID          *string                                             `json:"id,omitempty"`
-	Name        *string                                             `json:"name,omitempty"`
-	Description *string                                             `json:"description,omitempty"`
-	IsDefault   *bool                                               `json:"is_default,omitempty"`
-	Sections    []RetrospectivesTemplateEntityIncidentSectionEntity `json:"sections,omitempty"`
-	Fields      []RetrospectivesFieldEntity                         `json:"fields,omitempty"`
+	ID          *string                                             `json:"id,omitzero"`
+	Name        *string                                             `json:"name,omitzero"`
+	Description *string                                             `json:"description,omitzero"`
+	IsDefault   *bool                                               `json:"is_default,omitzero"`
+	Sections    []RetrospectivesTemplateEntityIncidentSectionEntity `json:"sections,omitzero"`
+	Fields      []RetrospectivesFieldEntity                         `json:"fields,omitzero"`
+}
+
+func (r RetrospectivesTemplateEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(r, "", false)
+}
+
+func (r *RetrospectivesTemplateEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &r, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (r *RetrospectivesTemplateEntity) GetID() *string {

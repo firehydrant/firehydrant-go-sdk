@@ -4,21 +4,21 @@ package operations
 
 type UpdateAiPreferencesRequest struct {
 	// Whether to enable AI features
-	Ai *bool `json:"ai,omitempty"`
+	Ai *bool `json:"ai,omitzero"`
 	// Whether to enable incident summaries
-	Summaries *bool `json:"summaries,omitempty"`
+	Summaries *bool `json:"summaries,omitzero"`
 	// Whether to enable incident descriptions
-	Description *bool `json:"description,omitempty"`
+	Description *bool `json:"description,omitzero"`
 	// Whether to enable incident impact
-	Impact *bool `json:"impact,omitempty"`
+	Impact *bool `json:"impact,omitzero"`
 	// Whether to enable incident updates
-	Updates *bool `json:"updates,omitempty"`
+	Updates *bool `json:"updates,omitzero"`
 	// Whether to enable incident retrospectives
-	Retros *bool `json:"retros,omitempty"`
+	Retros *bool `json:"retros,omitzero"`
 	// Whether to enable incident followups
-	Followups *bool `json:"followups,omitempty"`
+	Followups *bool `json:"followups,omitzero"`
 	// Whether to enable similar incidents
-	SimilarIncidents *bool `json:"similar_incidents,omitempty"`
+	SimilarIncidents *bool `json:"similar_incidents,omitzero"`
 }
 
 func (u *UpdateAiPreferencesRequest) GetAi() *bool {

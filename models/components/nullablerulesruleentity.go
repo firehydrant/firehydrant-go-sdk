@@ -2,10 +2,25 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type NullableRulesRuleEntity struct {
 	// JSON stringified object of key/value pairs describing the logic for applying the rule.
-	Logic    *string                       `json:"logic,omitempty"`
-	UserData *NullableFHTypesGenericEntity `json:"user_data,omitempty"`
+	Logic    *string                       `json:"logic,omitzero"`
+	UserData *NullableFHTypesGenericEntity `json:"user_data,omitzero"`
+}
+
+func (n NullableRulesRuleEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(n, "", false)
+}
+
+func (n *NullableRulesRuleEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &n, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (n *NullableRulesRuleEntity) GetLogic() *string {

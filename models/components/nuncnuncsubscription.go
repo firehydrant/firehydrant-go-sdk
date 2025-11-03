@@ -4,7 +4,7 @@ package components
 
 // NuncNuncSubscription - Nunc_NuncSubscription model
 type NuncNuncSubscription struct {
-	Response *string `json:"response,omitempty"`
+	Response *string `json:"response,omitzero"`
 }
 
 func (n *NuncNuncSubscription) GetResponse() *string {

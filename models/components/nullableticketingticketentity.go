@@ -75,31 +75,31 @@ type NullableTicketingTicketEntityAttachment struct {
 
 // NullableTicketingTicketEntity - Ticketing_TicketEntity model
 type NullableTicketingTicketEntity struct {
-	ID          *string                             `json:"id,omitempty"`
-	Summary     *string                             `json:"summary,omitempty"`
-	Description *string                             `json:"description,omitempty"`
-	State       *NullableTicketingTicketEntityState `json:"state,omitempty"`
-	Type        *NullableTicketingTicketEntityType  `json:"type,omitempty"`
-	Assignees   []AuthorEntity                      `json:"assignees,omitempty"`
-	Priority    *NullableTicketingPriorityEntity    `json:"priority,omitempty"`
-	CreatedBy   *NullableAuthorEntity               `json:"created_by,omitempty"`
+	ID          *string                             `json:"id,omitzero"`
+	Summary     *string                             `json:"summary,omitzero"`
+	Description *string                             `json:"description,omitzero"`
+	State       *NullableTicketingTicketEntityState `json:"state,omitzero"`
+	Type        *NullableTicketingTicketEntityType  `json:"type,omitzero"`
+	Assignees   []AuthorEntity                      `json:"assignees,omitzero"`
+	Priority    *NullableTicketingPriorityEntity    `json:"priority,omitzero"`
+	CreatedBy   *NullableAuthorEntity               `json:"created_by,omitzero"`
 	// A list of objects attached to this item. Can be one of: LinkEntity, CustomerSupportIssueEntity, or GenericAttachmentEntity
-	Attachments []NullableTicketingTicketEntityAttachment `json:"attachments,omitempty"`
-	CreatedAt   *time.Time                                `json:"created_at,omitempty"`
-	UpdatedAt   *time.Time                                `json:"updated_at,omitempty"`
-	TagList     []string                                  `json:"tag_list,omitempty"`
+	Attachments []NullableTicketingTicketEntityAttachment `json:"attachments,omitzero"`
+	CreatedAt   *time.Time                                `json:"created_at,omitzero"`
+	UpdatedAt   *time.Time                                `json:"updated_at,omitzero"`
+	TagList     []string                                  `json:"tag_list,omitzero"`
 	// ID of incident that this ticket is related to
-	IncidentID *string `json:"incident_id,omitempty"`
+	IncidentID *string `json:"incident_id,omitzero"`
 	// Name of incident that this ticket is related to
-	IncidentName *string `json:"incident_name,omitempty"`
+	IncidentName *string `json:"incident_name,omitzero"`
 	// Milestone of incident that this ticket is related to
-	IncidentCurrentMilestone *string `json:"incident_current_milestone,omitempty"`
+	IncidentCurrentMilestone *string `json:"incident_current_milestone,omitzero"`
 	// ID of task that this ticket is related to
-	TaskID *string    `json:"task_id,omitempty"`
-	DueAt  *time.Time `json:"due_at,omitempty"`
+	TaskID *string    `json:"task_id,omitzero"`
+	DueAt  *time.Time `json:"due_at,omitzero"`
 	// Error message from syncing this ticket to integrations
-	SyncErrorMessage *string                        `json:"sync_error_message,omitempty"`
-	Link             *NullableAttachmentsLinkEntity `json:"link,omitempty"`
+	SyncErrorMessage *string                        `json:"sync_error_message,omitzero"`
+	Link             *NullableAttachmentsLinkEntity `json:"link,omitzero"`
 }
 
 func (n NullableTicketingTicketEntity) MarshalJSON() ([]byte, error) {

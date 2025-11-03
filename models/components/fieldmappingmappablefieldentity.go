@@ -2,20 +2,35 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // FieldMappingMappableFieldEntity - FieldMapping_MappableFieldEntity model
 type FieldMappingMappableFieldEntity struct {
 	// The ID of the field
-	Value *string `json:"value,omitempty"`
+	Value *string `json:"value,omitzero"`
 	// The human-readable name of the field
-	Label *string `json:"label,omitempty"`
+	Label *string `json:"label,omitzero"`
 	// The allowed type of the field
-	Type *string `json:"type,omitempty"`
+	Type *string `json:"type,omitzero"`
 	// The allowed values of the field
-	AllowedValues []string `json:"allowed_values,omitempty"`
+	AllowedValues []string `json:"allowed_values,omitzero"`
 	// If the field is required to be mapped
-	Required *string `json:"required,omitempty"`
+	Required *string `json:"required,omitzero"`
 	// Short, inline documentation for the present field
-	HelpText *string `json:"help_text,omitempty"`
+	HelpText *string `json:"help_text,omitzero"`
+}
+
+func (f FieldMappingMappableFieldEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(f, "", false)
+}
+
+func (f *FieldMappingMappableFieldEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &f, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (f *FieldMappingMappableFieldEntity) GetValue() *string {

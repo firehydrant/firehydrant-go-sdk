@@ -104,9 +104,20 @@ type CreateTeamEscalationPolicyStep struct {
 	// An ISO8601 duration string specifying how long to wait before moving on to the next step. For the last step, this value specifies how long to wait before the escalation policy should repeat, if it repeats.
 	Timeout string `json:"timeout"`
 	// The round robin configuration for the step. One of 'unspecified', 'round_robin_by_alert', or 'round_robin_by_escalation_policy'.
-	DistributionType *CreateTeamEscalationPolicyDistributionType `json:"distribution_type,omitempty"`
+	DistributionType *CreateTeamEscalationPolicyDistributionType `json:"distribution_type,omitzero"`
 	// A list of priorities (HIGH, MEDIUM, LOW) to which the step applies when using a dynamic escalation policy.
-	Priorities []string `json:"priorities,omitempty"`
+	Priorities []string `json:"priorities,omitzero"`
+}
+
+func (c CreateTeamEscalationPolicyStep) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *CreateTeamEscalationPolicyStep) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"targets", "timeout"}); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (c *CreateTeamEscalationPolicyStep) GetTargets() []CreateTeamEscalationPolicyTarget {
@@ -235,9 +246,20 @@ func (c *CreateTeamEscalationPolicyHighHandoffStep) GetTargetID() string {
 // CreateTeamEscalationPolicyHigh - Settings for HIGH priority alerts
 type CreateTeamEscalationPolicyHigh struct {
 	// Number of repetitions for HIGH priority alerts
-	Repetitions *int `json:"repetitions,omitempty"`
+	Repetitions *int `json:"repetitions,omitzero"`
 	// Handoff step for HIGH priority alerts
-	HandoffStep *CreateTeamEscalationPolicyHighHandoffStep `json:"handoff_step,omitempty"`
+	HandoffStep *CreateTeamEscalationPolicyHighHandoffStep `json:"handoff_step,omitzero"`
+}
+
+func (c CreateTeamEscalationPolicyHigh) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *CreateTeamEscalationPolicyHigh) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (c *CreateTeamEscalationPolicyHigh) GetRepetitions() *int {
@@ -303,9 +325,20 @@ func (c *CreateTeamEscalationPolicyMediumHandoffStep) GetTargetID() string {
 // CreateTeamEscalationPolicyMedium - Settings for MEDIUM priority alerts
 type CreateTeamEscalationPolicyMedium struct {
 	// Number of repetitions for MEDIUM priority alerts
-	Repetitions *int `json:"repetitions,omitempty"`
+	Repetitions *int `json:"repetitions,omitzero"`
 	// Handoff step for MEDIUM priority alerts
-	HandoffStep *CreateTeamEscalationPolicyMediumHandoffStep `json:"handoff_step,omitempty"`
+	HandoffStep *CreateTeamEscalationPolicyMediumHandoffStep `json:"handoff_step,omitzero"`
+}
+
+func (c CreateTeamEscalationPolicyMedium) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *CreateTeamEscalationPolicyMedium) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (c *CreateTeamEscalationPolicyMedium) GetRepetitions() *int {
@@ -371,9 +404,20 @@ func (c *CreateTeamEscalationPolicyLowHandoffStep) GetTargetID() string {
 // CreateTeamEscalationPolicyLow - Settings for LOW priority alerts
 type CreateTeamEscalationPolicyLow struct {
 	// Number of repetitions for LOW priority alerts
-	Repetitions *int `json:"repetitions,omitempty"`
+	Repetitions *int `json:"repetitions,omitzero"`
 	// Handoff step for LOW priority alerts
-	HandoffStep *CreateTeamEscalationPolicyLowHandoffStep `json:"handoff_step,omitempty"`
+	HandoffStep *CreateTeamEscalationPolicyLowHandoffStep `json:"handoff_step,omitzero"`
+}
+
+func (c CreateTeamEscalationPolicyLow) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *CreateTeamEscalationPolicyLow) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (c *CreateTeamEscalationPolicyLow) GetRepetitions() *int {
@@ -393,11 +437,22 @@ func (c *CreateTeamEscalationPolicyLow) GetHandoffStep() *CreateTeamEscalationPo
 // CreateTeamEscalationPolicyPrioritizedSettings - Priority-specific settings for dynamic escalation policies
 type CreateTeamEscalationPolicyPrioritizedSettings struct {
 	// Settings for HIGH priority alerts
-	High *CreateTeamEscalationPolicyHigh `json:"high,omitempty"`
+	High *CreateTeamEscalationPolicyHigh `json:"high,omitzero"`
 	// Settings for MEDIUM priority alerts
-	Medium *CreateTeamEscalationPolicyMedium `json:"medium,omitempty"`
+	Medium *CreateTeamEscalationPolicyMedium `json:"medium,omitzero"`
 	// Settings for LOW priority alerts
-	Low *CreateTeamEscalationPolicyLow `json:"low,omitempty"`
+	Low *CreateTeamEscalationPolicyLow `json:"low,omitzero"`
+}
+
+func (c CreateTeamEscalationPolicyPrioritizedSettings) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *CreateTeamEscalationPolicyPrioritizedSettings) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (c *CreateTeamEscalationPolicyPrioritizedSettings) GetHigh() *CreateTeamEscalationPolicyHigh {
@@ -426,19 +481,19 @@ type CreateTeamEscalationPolicy struct {
 	// The escalation policy's name.
 	Name string `json:"name"`
 	// A detailed description of the escalation policy.
-	Description *string `json:"description,omitempty"`
+	Description *string `json:"description,omitzero"`
 	// The number of times that the escalation policy should repeat before an alert is dropped.
 	Repetitions *int `default:"0" json:"repetitions"`
 	// Whether this escalation policy should be the default for the team.
 	Default *bool `default:"false" json:"default"`
 	// The strategy for handling steps in the escalation policy. Can be "static" or "dynamic_by_priority".
-	StepStrategy *string `json:"step_strategy,omitempty"`
+	StepStrategy *string `json:"step_strategy,omitzero"`
 	// A list of steps that define how an alert should escalate through the policy.
 	Steps []CreateTeamEscalationPolicyStep `json:"steps"`
 	// A step that defines where an alert should be sent when the policy is exhausted and the alert is still unacknowledged.
-	HandoffStep *CreateTeamEscalationPolicyHandoffStep `json:"handoff_step,omitempty"`
+	HandoffStep *CreateTeamEscalationPolicyHandoffStep `json:"handoff_step,omitzero"`
 	// Priority-specific settings for dynamic escalation policies
-	PrioritizedSettings *CreateTeamEscalationPolicyPrioritizedSettings `json:"prioritized_settings,omitempty"`
+	PrioritizedSettings *CreateTeamEscalationPolicyPrioritizedSettings `json:"prioritized_settings,omitzero"`
 }
 
 func (c CreateTeamEscalationPolicy) MarshalJSON() ([]byte, error) {

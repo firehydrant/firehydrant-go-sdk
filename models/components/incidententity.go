@@ -17,73 +17,73 @@ type IncidentEntityRetroExport struct {
 // IncidentEntity model
 type IncidentEntity struct {
 	// UUID of the Incident
-	ID *string `json:"id,omitempty"`
+	ID *string `json:"id,omitzero"`
 	// Name of the incident
-	Name *string `json:"name,omitempty"`
+	Name *string `json:"name,omitzero"`
 	// The time the incident was opened
-	CreatedAt *time.Time `json:"created_at,omitempty"`
+	CreatedAt *time.Time `json:"created_at,omitzero"`
 	// The time the incident started
-	StartedAt *time.Time `json:"started_at,omitempty"`
+	StartedAt *time.Time `json:"started_at,omitzero"`
 	// The time the incident was archived
-	DiscardedAt           *time.Time `json:"discarded_at,omitempty"`
-	Summary               *string    `json:"summary,omitempty"`
-	CustomerImpactSummary *string    `json:"customer_impact_summary,omitempty"`
-	Description           *string    `json:"description,omitempty"`
+	DiscardedAt           *time.Time `json:"discarded_at,omitzero"`
+	Summary               *string    `json:"summary,omitzero"`
+	CustomerImpactSummary *string    `json:"customer_impact_summary,omitzero"`
+	Description           *string    `json:"description,omitzero"`
 	// The type/slug of the current milestone. Will be one of the currently configured milestones for the given incident.
-	CurrentMilestone *string `json:"current_milestone,omitempty"`
+	CurrentMilestone *string `json:"current_milestone,omitzero"`
 	// Incident number
-	Number                  *int                                   `json:"number,omitempty"`
-	Priority                *string                                `json:"priority,omitempty"`
-	Severity                *string                                `json:"severity,omitempty"`
-	SeverityColor           *string                                `json:"severity_color,omitempty"`
-	SeverityImpact          *string                                `json:"severity_impact,omitempty"`
-	SeverityCondition       *string                                `json:"severity_condition,omitempty"`
-	TagList                 []string                               `json:"tag_list,omitempty"`
-	IncidentType            *NullableSuccinctEntity                `json:"incident_type,omitempty"`
-	SeverityImpactObject    *NullableSeverityMatrixImpactEntity    `json:"severity_impact_object,omitempty"`
-	SeverityConditionObject *NullableSeverityMatrixConditionEntity `json:"severity_condition_object,omitempty"`
-	PrivateID               *string                                `json:"private_id,omitempty"`
-	OrganizationID          *string                                `json:"organization_id,omitempty"`
+	Number                  *int                                   `json:"number,omitzero"`
+	Priority                *string                                `json:"priority,omitzero"`
+	Severity                *string                                `json:"severity,omitzero"`
+	SeverityColor           *string                                `json:"severity_color,omitzero"`
+	SeverityImpact          *string                                `json:"severity_impact,omitzero"`
+	SeverityCondition       *string                                `json:"severity_condition,omitzero"`
+	TagList                 []string                               `json:"tag_list,omitzero"`
+	IncidentType            *NullableSuccinctEntity                `json:"incident_type,omitzero"`
+	SeverityImpactObject    *NullableSeverityMatrixImpactEntity    `json:"severity_impact_object,omitzero"`
+	SeverityConditionObject *NullableSeverityMatrixConditionEntity `json:"severity_condition_object,omitzero"`
+	PrivateID               *string                                `json:"private_id,omitzero"`
+	OrganizationID          *string                                `json:"organization_id,omitzero"`
 	// DEPRECATED: Please use lifecycle phases instead
-	Milestones            []IncidentsMilestoneEntity            `json:"milestones,omitempty"`
-	LifecyclePhases       []IncidentsLifecyclePhaseEntity       `json:"lifecycle_phases,omitempty"`
-	LifecycleMeasurements []IncidentsLifecycleMeasurementEntity `json:"lifecycle_measurements,omitempty"`
-	Active                *bool                                 `json:"active,omitempty"`
+	Milestones            []IncidentsMilestoneEntity            `json:"milestones,omitzero"`
+	LifecyclePhases       []IncidentsLifecyclePhaseEntity       `json:"lifecycle_phases,omitzero"`
+	LifecycleMeasurements []IncidentsLifecycleMeasurementEntity `json:"lifecycle_measurements,omitzero"`
+	Active                *bool                                 `json:"active,omitzero"`
 	// A key/value of labels
-	Labels               *IncidentEntityLabels           `json:"labels,omitempty"`
-	RoleAssignments      []IncidentsRoleAssignmentEntity `json:"role_assignments,omitempty"`
-	StatusPages          []IncidentsStatusPageEntity     `json:"status_pages,omitempty"`
-	IncidentURL          *string                         `json:"incident_url,omitempty"`
-	PrivateStatusPageURL *string                         `json:"private_status_page_url,omitempty"`
-	Organization         *NullableOrganizationEntity     `json:"organization,omitempty"`
-	CustomersImpacted    *int                            `json:"customers_impacted,omitempty"`
-	MonetaryImpact       *int                            `json:"monetary_impact,omitempty"`
-	MonetaryImpactCents  *int                            `json:"monetary_impact_cents,omitempty"`
-	LastUpdate           *string                         `json:"last_update,omitempty"`
-	LastNote             *NullableEventNoteEntity        `json:"last_note,omitempty"`
-	ReportID             *string                         `json:"report_id,omitempty"`
-	AiIncidentSummary    *string                         `json:"ai_incident_summary,omitempty"`
-	Services             []SuccinctEntity                `json:"services,omitempty"`
-	Environments         []SuccinctEntity                `json:"environments,omitempty"`
-	Functionalities      []SuccinctEntity                `json:"functionalities,omitempty"`
-	ChannelName          *string                         `json:"channel_name,omitempty"`
-	ChannelReference     *string                         `json:"channel_reference,omitempty"`
-	ChannelID            *string                         `json:"channel_id,omitempty"`
+	Labels               *IncidentEntityLabels           `json:"labels,omitzero"`
+	RoleAssignments      []IncidentsRoleAssignmentEntity `json:"role_assignments,omitzero"`
+	StatusPages          []IncidentsStatusPageEntity     `json:"status_pages,omitzero"`
+	IncidentURL          *string                         `json:"incident_url,omitzero"`
+	PrivateStatusPageURL *string                         `json:"private_status_page_url,omitzero"`
+	Organization         *NullableOrganizationEntity     `json:"organization,omitzero"`
+	CustomersImpacted    *int                            `json:"customers_impacted,omitzero"`
+	MonetaryImpact       *int                            `json:"monetary_impact,omitzero"`
+	MonetaryImpactCents  *int                            `json:"monetary_impact_cents,omitzero"`
+	LastUpdate           *string                         `json:"last_update,omitzero"`
+	LastNote             *NullableEventNoteEntity        `json:"last_note,omitzero"`
+	ReportID             *string                         `json:"report_id,omitzero"`
+	AiIncidentSummary    *string                         `json:"ai_incident_summary,omitzero"`
+	Services             []SuccinctEntity                `json:"services,omitzero"`
+	Environments         []SuccinctEntity                `json:"environments,omitzero"`
+	Functionalities      []SuccinctEntity                `json:"functionalities,omitzero"`
+	ChannelName          *string                         `json:"channel_name,omitzero"`
+	ChannelReference     *string                         `json:"channel_reference,omitzero"`
+	ChannelID            *string                         `json:"channel_id,omitzero"`
 	// inoperative: 0, operational: 1, archived: 2
-	ChannelStatus     *string                           `json:"channel_status,omitempty"`
-	IncidentTickets   []TicketingTicketEntity           `json:"incident_tickets,omitempty"`
-	Ticket            *NullableTicketingTicketEntity    `json:"ticket,omitempty"`
-	Impacts           []IncidentsImpactEntity           `json:"impacts,omitempty"`
-	ConferenceBridges []IncidentsConferenceBridgeEntity `json:"conference_bridges,omitempty"`
-	IncidentChannels  []IncidentsChannelEntity          `json:"incident_channels,omitempty"`
+	ChannelStatus     *string                           `json:"channel_status,omitzero"`
+	IncidentTickets   []TicketingTicketEntity           `json:"incident_tickets,omitzero"`
+	Ticket            *NullableTicketingTicketEntity    `json:"ticket,omitzero"`
+	Impacts           []IncidentsImpactEntity           `json:"impacts,omitzero"`
+	ConferenceBridges []IncidentsConferenceBridgeEntity `json:"conference_bridges,omitzero"`
+	IncidentChannels  []IncidentsChannelEntity          `json:"incident_channels,omitzero"`
 	// A list of objects attached to this item. Can be one of: LinkEntity, CustomerSupportIssueEntity, or GenericAttachmentEntity
-	RetroExports      []IncidentEntityRetroExport            `json:"retro_exports,omitempty"`
-	CreatedBy         *NullableAuthorEntity                  `json:"created_by,omitempty"`
-	ContextObject     *NullableIncidentsContextObjectEntity  `json:"context_object,omitempty"`
-	TeamAssignments   []IncidentsTeamAssignmentEntityLite    `json:"team_assignments,omitempty"`
-	Conversations     []ConversationsAPIEntitiesReference    `json:"conversations,omitempty"`
-	CustomFields      []CustomFieldsFieldValue               `json:"custom_fields,omitempty"`
-	FieldRequirements []IncidentEntityFieldRequirementEntity `json:"field_requirements,omitempty"`
+	RetroExports      []IncidentEntityRetroExport            `json:"retro_exports,omitzero"`
+	CreatedBy         *NullableAuthorEntity                  `json:"created_by,omitzero"`
+	ContextObject     *NullableIncidentsContextObjectEntity  `json:"context_object,omitzero"`
+	TeamAssignments   []IncidentsTeamAssignmentEntityLite    `json:"team_assignments,omitzero"`
+	Conversations     []ConversationsAPIEntitiesReference    `json:"conversations,omitzero"`
+	CustomFields      []CustomFieldsFieldValue               `json:"custom_fields,omitzero"`
+	FieldRequirements []IncidentEntityFieldRequirementEntity `json:"field_requirements,omitzero"`
 }
 
 func (i IncidentEntity) MarshalJSON() ([]byte, error) {

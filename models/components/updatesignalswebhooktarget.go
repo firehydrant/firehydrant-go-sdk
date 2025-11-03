@@ -5,16 +5,16 @@ package components
 // UpdateSignalsWebhookTarget - Update a Signals webhook target by ID
 type UpdateSignalsWebhookTarget struct {
 	// The webhook target's name.
-	Name *string `json:"name,omitempty"`
+	Name *string `json:"name,omitzero"`
 	// An optional detailed description of the webhook target.
-	Description *string `json:"description,omitempty"`
+	Description *string `json:"description,omitzero"`
 	// The URL that the webhook target will notify.
-	URL *string `json:"url,omitempty"`
+	URL *string `json:"url,omitzero"`
 	// An optional secret we will provide in the `FH-Signature` header
 	// when sending a payload to the webhook target. This key will not be
 	// shown in any response once configured.
 	//
-	SigningKey *string `json:"signing_key,omitempty"`
+	SigningKey *string `json:"signing_key,omitzero"`
 }
 
 func (u *UpdateSignalsWebhookTarget) GetName() *string {

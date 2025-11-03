@@ -3,8 +3,8 @@
 package components
 
 type ReportsDataPointEntity struct {
-	Key   *string `json:"key,omitempty"`
-	Value *int    `json:"value,omitempty"`
+	Key   *string `json:"key,omitzero"`
+	Value *int    `json:"value,omitzero"`
 }
 
 func (r *ReportsDataPointEntity) GetKey() *string {

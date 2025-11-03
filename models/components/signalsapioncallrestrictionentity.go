@@ -3,10 +3,10 @@
 package components
 
 type SignalsAPIOnCallRestrictionEntity struct {
-	StartDay  *string `json:"start_day,omitempty"`
-	StartTime *string `json:"start_time,omitempty"`
-	EndDay    *string `json:"end_day,omitempty"`
-	EndTime   *string `json:"end_time,omitempty"`
+	StartDay  *string `json:"start_day,omitzero"`
+	StartTime *string `json:"start_time,omitzero"`
+	EndDay    *string `json:"end_day,omitzero"`
+	EndTime   *string `json:"end_time,omitzero"`
 }
 
 func (s *SignalsAPIOnCallRestrictionEntity) GetStartDay() *string {

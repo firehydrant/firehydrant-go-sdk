@@ -4,9 +4,9 @@ package components
 
 // UpdateTicketingPriority - Update a single ticketing priority's attributes
 type UpdateTicketingPriority struct {
-	Name *string `json:"name,omitempty"`
+	Name *string `json:"name,omitzero"`
 	// The position that this priority should take in your list of priorities. Priorities should be ordered from highest to lowest, with the highest priority at 0. If a position isn't specified, the new priority will be added to the end of the list; if another priority already exists at the specified position, this priority will shift that priority and all priorities down the list.
-	Position *int `json:"position,omitempty"`
+	Position *int `json:"position,omitzero"`
 }
 
 func (u *UpdateTicketingPriority) GetName() *string {

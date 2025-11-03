@@ -5,7 +5,7 @@ package components
 // CreateEnvironment - Creates an environment for the organization
 type CreateEnvironment struct {
 	Name        string  `json:"name"`
-	Description *string `json:"description,omitempty"`
+	Description *string `json:"description,omitzero"`
 }
 
 func (c *CreateEnvironment) GetName() string {

@@ -9,13 +9,13 @@ import (
 
 // TaskListEntity model
 type TaskListEntity struct {
-	ID            *string               `json:"id,omitempty"`
-	Name          *string               `json:"name,omitempty"`
-	Description   *string               `json:"description,omitempty"`
-	CreatedAt     *time.Time            `json:"created_at,omitempty"`
-	UpdatedAt     *time.Time            `json:"updated_at,omitempty"`
-	CreatedBy     *NullableAuthorEntity `json:"created_by,omitempty"`
-	TaskListItems []TaskListItemEntity  `json:"task_list_items,omitempty"`
+	ID            *string               `json:"id,omitzero"`
+	Name          *string               `json:"name,omitzero"`
+	Description   *string               `json:"description,omitzero"`
+	CreatedAt     *time.Time            `json:"created_at,omitzero"`
+	UpdatedAt     *time.Time            `json:"updated_at,omitzero"`
+	CreatedBy     *NullableAuthorEntity `json:"created_by,omitzero"`
+	TaskListItems []TaskListItemEntity  `json:"task_list_items,omitzero"`
 }
 
 func (t TaskListEntity) MarshalJSON() ([]byte, error) {

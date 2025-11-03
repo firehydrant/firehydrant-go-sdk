@@ -2,15 +2,30 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // UpdateTicket - Update a ticket's attributes
 type UpdateTicket struct {
-	Summary     *string `json:"summary,omitempty"`
-	Description *string `json:"description,omitempty"`
-	State       *string `json:"state,omitempty"`
-	Type        *string `json:"type,omitempty"`
-	PriorityID  *string `json:"priority_id,omitempty"`
+	Summary     *string `json:"summary,omitzero"`
+	Description *string `json:"description,omitzero"`
+	State       *string `json:"state,omitzero"`
+	Type        *string `json:"type,omitzero"`
+	PriorityID  *string `json:"priority_id,omitzero"`
 	// List of tags for the ticket
-	TagList []string `json:"tag_list,omitempty"`
+	TagList []string `json:"tag_list,omitzero"`
+}
+
+func (u UpdateTicket) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UpdateTicket) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (u *UpdateTicket) GetSummary() *string {

@@ -4,9 +4,9 @@ package components
 
 // AudiencesEntitiesAudienceSummariesEntity - Audiences_Entities_AudienceSummariesEntity model
 type AudiencesEntitiesAudienceSummariesEntity struct {
-	IncidentID *string `json:"incident_id,omitempty"`
+	IncidentID *string `json:"incident_id,omitzero"`
 	// JSON-encoded map of audience summaries
-	Audiences *string `json:"audiences,omitempty"`
+	Audiences *string `json:"audiences,omitzero"`
 }
 
 func (a *AudiencesEntitiesAudienceSummariesEntity) GetIncidentID() *string {

@@ -7,7 +7,7 @@ type CreateIncidentTaskList struct {
 	// The id of the task list.
 	TaskListID string `json:"task_list_id"`
 	// The ID of the user assigned to the tasks in this list.
-	AssigneeID *string `json:"assignee_id,omitempty"`
+	AssigneeID *string `json:"assignee_id,omitzero"`
 }
 
 func (c *CreateIncidentTaskList) GetTaskListID() string {

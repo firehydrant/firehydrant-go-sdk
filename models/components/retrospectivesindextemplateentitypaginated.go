@@ -2,10 +2,25 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // RetrospectivesIndexTemplateEntityPaginated - Retrospectives_IndexTemplateEntityPaginated model
 type RetrospectivesIndexTemplateEntityPaginated struct {
-	Data       []RetrospectivesIndexTemplateEntity `json:"data,omitempty"`
-	Pagination *NullablePaginationEntity           `json:"pagination,omitempty"`
+	Data       []RetrospectivesIndexTemplateEntity `json:"data,omitzero"`
+	Pagination *NullablePaginationEntity           `json:"pagination,omitzero"`
+}
+
+func (r RetrospectivesIndexTemplateEntityPaginated) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(r, "", false)
+}
+
+func (r *RetrospectivesIndexTemplateEntityPaginated) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &r, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (r *RetrospectivesIndexTemplateEntityPaginated) GetData() []RetrospectivesIndexTemplateEntity {

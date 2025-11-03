@@ -10,11 +10,11 @@ import (
 // NuncEmailSubscribersEntity model
 type NuncEmailSubscribersEntity struct {
 	// UUID of the subscriber
-	ID *string `json:"id,omitempty"`
+	ID *string `json:"id,omitzero"`
 	// Email of the subscriber
-	Email *string `json:"email,omitempty"`
+	Email *string `json:"email,omitzero"`
 	// The time the subscriber was created
-	CreatedAt *time.Time `json:"created_at,omitempty"`
+	CreatedAt *time.Time `json:"created_at,omitzero"`
 }
 
 func (n NuncEmailSubscribersEntity) MarshalJSON() ([]byte, error) {

@@ -3,13 +3,13 @@
 package components
 
 type NullablePaginationEntity struct {
-	Count *int `json:"count,omitempty"`
-	Page  *int `json:"page,omitempty"`
-	Items *int `json:"items,omitempty"`
-	Pages *int `json:"pages,omitempty"`
-	Last  *int `json:"last,omitempty"`
-	Prev  *int `json:"prev,omitempty"`
-	Next  *int `json:"next,omitempty"`
+	Count *int `json:"count,omitzero"`
+	Page  *int `json:"page,omitzero"`
+	Items *int `json:"items,omitzero"`
+	Pages *int `json:"pages,omitzero"`
+	Last  *int `json:"last,omitzero"`
+	Prev  *int `json:"prev,omitzero"`
+	Next  *int `json:"next,omitzero"`
 }
 
 func (n *NullablePaginationEntity) GetCount() *int {

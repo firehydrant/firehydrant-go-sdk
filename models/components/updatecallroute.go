@@ -5,6 +5,7 @@ package components
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
 // UpdateCallRouteRoutingMode - Routing mode for the call route
@@ -96,7 +97,7 @@ type UpdateCallRouteStep struct {
 	// Timeout in seconds for the step
 	Timeout string `json:"timeout"`
 	// The ID of a specific on-call rotation that should be routed to if the `target_type` is `OnCallSchedule`. If not provided, the schedule's first rotation will be used.
-	OnCallRotationID *string `json:"on_call_rotation_id,omitempty"`
+	OnCallRotationID *string `json:"on_call_rotation_id,omitzero"`
 }
 
 func (u *UpdateCallRouteStep) GetTargetType() UpdateCallRouteTargetType {
@@ -191,19 +192,30 @@ func (u *UpdateCallRouteTarget) GetID() string {
 // UpdateCallRoute - Update a call route by ID
 type UpdateCallRoute struct {
 	// Name of the call route
-	Name *string `json:"name,omitempty"`
+	Name *string `json:"name,omitzero"`
 	// Routing mode for the call route
-	RoutingMode *UpdateCallRouteRoutingMode `json:"routing_mode,omitempty"`
+	RoutingMode *UpdateCallRouteRoutingMode `json:"routing_mode,omitzero"`
 	// Connect mode for the call route
-	ConnectMode *UpdateCallRouteConnectMode `json:"connect_mode,omitempty"`
+	ConnectMode *UpdateCallRouteConnectMode `json:"connect_mode,omitzero"`
 	// Description of the call route
-	Description *string `json:"description,omitempty"`
+	Description *string `json:"description,omitzero"`
 	// Greeting message for the call route
-	GreetingMessage *string `json:"greeting_message,omitempty"`
+	GreetingMessage *string `json:"greeting_message,omitzero"`
 	// Steps for the call route
-	Steps []UpdateCallRouteStep `json:"steps,omitempty"`
+	Steps []UpdateCallRouteStep `json:"steps,omitzero"`
 	// Target for the call route (required unless connect_mode is direct_dial)
-	Target *UpdateCallRouteTarget `json:"target,omitempty"`
+	Target *UpdateCallRouteTarget `json:"target,omitzero"`
+}
+
+func (u UpdateCallRoute) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UpdateCallRoute) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (u *UpdateCallRoute) GetName() *string {

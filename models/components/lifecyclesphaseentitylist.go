@@ -2,9 +2,24 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // LifecyclesPhaseEntityList - Lifecycles_PhaseEntityList model
 type LifecyclesPhaseEntityList struct {
-	Data []LifecyclesPhaseEntity `json:"data,omitempty"`
+	Data []LifecyclesPhaseEntity `json:"data,omitzero"`
+}
+
+func (l LifecyclesPhaseEntityList) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(l, "", false)
+}
+
+func (l *LifecyclesPhaseEntityList) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &l, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (l *LifecyclesPhaseEntityList) GetData() []LifecyclesPhaseEntity {

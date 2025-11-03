@@ -10,20 +10,20 @@ import (
 // PublicAPIV1IncidentsTranscriptEntity - PublicAPI_V1_Incidents_TranscriptEntity model
 type PublicAPIV1IncidentsTranscriptEntity struct {
 	// The unique identifier for the transcript entry
-	ID *string `json:"id,omitempty"`
+	ID *string `json:"id,omitzero"`
 	// The speaker for the transcript entry
-	Speaker *string `json:"speaker,omitempty"`
+	Speaker *string `json:"speaker,omitzero"`
 	// The start time for the transcript entry
-	Start *int `json:"start,omitempty"`
+	Start *int `json:"start,omitzero"`
 	// The end time for the transcript entry
-	Until *int `json:"until,omitempty"`
+	Until *int `json:"until,omitzero"`
 	// The words spoken for the transcript entry
-	Words *string `json:"words,omitempty"`
+	Words *string `json:"words,omitzero"`
 	// The time the transcript entry was created
-	CreatedAt *time.Time `json:"created_at,omitempty"`
+	CreatedAt *time.Time `json:"created_at,omitzero"`
 	// The time the transcript entry was last updated
-	UpdatedAt *time.Time            `json:"updated_at,omitempty"`
-	Author    *NullableAuthorEntity `json:"author,omitempty"`
+	UpdatedAt *time.Time            `json:"updated_at,omitzero"`
+	Author    *NullableAuthorEntity `json:"author,omitzero"`
 }
 
 func (p PublicAPIV1IncidentsTranscriptEntity) MarshalJSON() ([]byte, error) {

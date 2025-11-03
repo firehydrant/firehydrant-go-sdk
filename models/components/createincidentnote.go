@@ -61,9 +61,9 @@ func (c *CreateIncidentNoteStatusPage) GetIntegrationSlug() string {
 type CreateIncidentNote struct {
 	Body string `json:"body"`
 	// ISO8601 timestamp for when the note occurred
-	OccurredAt  *time.Time                     `json:"occurred_at,omitempty"`
+	OccurredAt  *time.Time                     `json:"occurred_at,omitzero"`
 	Visibility  *CreateIncidentNoteVisibility  `default:"private_to_org" json:"visibility"`
-	StatusPages []CreateIncidentNoteStatusPage `json:"status_pages,omitempty"`
+	StatusPages []CreateIncidentNoteStatusPage `json:"status_pages,omitzero"`
 }
 
 func (c CreateIncidentNote) MarshalJSON() ([]byte, error) {

@@ -3,8 +3,8 @@
 package components
 
 type MetricsRetrospectiveEntityDataEntity struct {
-	X *string  `json:"x,omitempty"`
-	Y *float32 `json:"y,omitempty"`
+	X *string  `json:"x,omitzero"`
+	Y *float32 `json:"y,omitzero"`
 }
 
 func (m *MetricsRetrospectiveEntityDataEntity) GetX() *string {

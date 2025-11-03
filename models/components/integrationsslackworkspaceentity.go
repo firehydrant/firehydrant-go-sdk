@@ -4,9 +4,9 @@ package components
 
 // IntegrationsSlackWorkspaceEntity - Integrations_Slack_WorkspaceEntity model
 type IntegrationsSlackWorkspaceEntity struct {
-	ID     *string `json:"id,omitempty"`
-	TeamID *string `json:"team_id,omitempty"`
-	Name   *string `json:"name,omitempty"`
+	ID     *string `json:"id,omitzero"`
+	TeamID *string `json:"team_id,omitzero"`
+	Name   *string `json:"name,omitzero"`
 }
 
 func (i *IntegrationsSlackWorkspaceEntity) GetID() *string {

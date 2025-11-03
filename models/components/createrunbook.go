@@ -5,6 +5,7 @@ package components
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
 // CreateRunbookType - Deprecated, but still required. Please just use 'incident'
@@ -56,7 +57,7 @@ type CreateRunbookAttachmentRule struct {
 	// The JSON logic for the attaching the runbook
 	Logic string `json:"logic"`
 	// The user data for the rule
-	UserData *string `json:"user_data,omitempty"`
+	UserData *string `json:"user_data,omitzero"`
 }
 
 func (c *CreateRunbookAttachmentRule) GetLogic() string {
@@ -77,7 +78,7 @@ type CreateRunbookRule struct {
 	// The JSON logic for the rule
 	Logic string `json:"logic"`
 	// The user data for the rule
-	UserData *string `json:"user_data,omitempty"`
+	UserData *string `json:"user_data,omitzero"`
 }
 
 func (c *CreateRunbookRule) GetLogic() string {
@@ -99,7 +100,18 @@ type CreateRunbookStep struct {
 	Name string `json:"name"`
 	// ID of action to use for this step.
 	ActionID string             `json:"action_id"`
-	Rule     *CreateRunbookRule `json:"rule,omitempty"`
+	Rule     *CreateRunbookRule `json:"rule,omitzero"`
+}
+
+func (c CreateRunbookStep) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *CreateRunbookStep) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"name", "action_id"}); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (c *CreateRunbookStep) GetName() string {
@@ -129,17 +141,28 @@ type CreateRunbook struct {
 	// Deprecated, but still required. Please just use 'incident'
 	Type CreateRunbookType `json:"type"`
 	// Deprecated. Use description
-	Summary *string `json:"summary,omitempty"`
+	Summary *string `json:"summary,omitzero"`
 	// A longer description about the Runbook. Supports markdown format
-	Description *string `json:"description,omitempty"`
+	Description *string `json:"description,omitzero"`
 	// Whether or not this runbook should be automatically attached to restricted incidents. Note that setting this to `true` will prevent it from being attached to public incidents, even manually. Defaults to `false`.
-	AutoAttachToRestrictedIncidents *bool `json:"auto_attach_to_restricted_incidents,omitempty"`
+	AutoAttachToRestrictedIncidents *bool `json:"auto_attach_to_restricted_incidents,omitzero"`
 	// Whether or not this runbook is a tutorial runbook
-	Tutorial *bool `json:"tutorial,omitempty"`
+	Tutorial *bool `json:"tutorial,omitzero"`
 	// An object representing a Team that owns the runbook
-	Owner          *CreateRunbookOwner          `json:"owner,omitempty"`
-	AttachmentRule *CreateRunbookAttachmentRule `json:"attachment_rule,omitempty"`
-	Steps          []CreateRunbookStep          `json:"steps,omitempty"`
+	Owner          *CreateRunbookOwner          `json:"owner,omitzero"`
+	AttachmentRule *CreateRunbookAttachmentRule `json:"attachment_rule,omitzero"`
+	Steps          []CreateRunbookStep          `json:"steps,omitzero"`
+}
+
+func (c CreateRunbook) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *CreateRunbook) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"name", "type"}); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (c *CreateRunbook) GetName() string {

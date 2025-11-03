@@ -2,10 +2,25 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // PostMortemsReasonEntityPaginated - PostMortems_ReasonEntityPaginated model
 type PostMortemsReasonEntityPaginated struct {
-	Data       []PostMortemsReasonEntity `json:"data,omitempty"`
-	Pagination *NullablePaginationEntity `json:"pagination,omitempty"`
+	Data       []PostMortemsReasonEntity `json:"data,omitzero"`
+	Pagination *NullablePaginationEntity `json:"pagination,omitzero"`
+}
+
+func (p PostMortemsReasonEntityPaginated) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(p, "", false)
+}
+
+func (p *PostMortemsReasonEntityPaginated) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &p, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (p *PostMortemsReasonEntityPaginated) GetData() []PostMortemsReasonEntity {

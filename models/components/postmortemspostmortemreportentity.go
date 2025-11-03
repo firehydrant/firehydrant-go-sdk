@@ -9,20 +9,20 @@ import (
 
 // PostMortemsPostMortemReportEntity - PostMortems_PostMortemReportEntity model
 type PostMortemsPostMortemReportEntity struct {
-	ID                *string                            `json:"id,omitempty"`
-	Name              *string                            `json:"name,omitempty"`
-	Summary           *string                            `json:"summary,omitempty"`
-	IncidentID        *string                            `json:"incident_id,omitempty"`
-	CreatedAt         *time.Time                         `json:"created_at,omitempty"`
-	UpdatedAt         *time.Time                         `json:"updated_at,omitempty"`
-	TagList           []string                           `json:"tag_list,omitempty"`
-	AdditionalDetails []string                           `json:"additional_details,omitempty"`
-	Incident          *NullableIncidentEntity            `json:"incident,omitempty"`
-	Questions         *NullablePostMortemsQuestionEntity `json:"questions,omitempty"`
-	CalendarEvents    *NullableCalendarsEventEntity      `json:"calendar_events,omitempty"`
-	RetrospectiveShim *bool                              `json:"retrospective_shim,omitempty"`
-	RetrospectiveID   *string                            `json:"retrospective_id,omitempty"`
-	RetrospectiveNote *string                            `json:"retrospective_note,omitempty"`
+	ID                *string                            `json:"id,omitzero"`
+	Name              *string                            `json:"name,omitzero"`
+	Summary           *string                            `json:"summary,omitzero"`
+	IncidentID        *string                            `json:"incident_id,omitzero"`
+	CreatedAt         *time.Time                         `json:"created_at,omitzero"`
+	UpdatedAt         *time.Time                         `json:"updated_at,omitzero"`
+	TagList           []string                           `json:"tag_list,omitzero"`
+	AdditionalDetails []string                           `json:"additional_details,omitzero"`
+	Incident          *NullableIncidentEntity            `json:"incident,omitzero"`
+	Questions         *NullablePostMortemsQuestionEntity `json:"questions,omitzero"`
+	CalendarEvents    *NullableCalendarsEventEntity      `json:"calendar_events,omitzero"`
+	RetrospectiveShim *bool                              `json:"retrospective_shim,omitzero"`
+	RetrospectiveID   *string                            `json:"retrospective_id,omitzero"`
+	RetrospectiveNote *string                            `json:"retrospective_note,omitzero"`
 }
 
 func (p PostMortemsPostMortemReportEntity) MarshalJSON() ([]byte, error) {

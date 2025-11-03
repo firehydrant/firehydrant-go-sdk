@@ -2,12 +2,16 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type Annotations struct {
 }
 
 type Image struct {
-	Src *string `json:"src,omitempty"`
-	Alt *string `json:"alt,omitempty"`
+	Src *string `json:"src,omitzero"`
+	Alt *string `json:"alt,omitzero"`
 }
 
 func (i *Image) GetSrc() *string {
@@ -25,8 +29,8 @@ func (i *Image) GetAlt() *string {
 }
 
 type DebugSignalsExpressionLink struct {
-	Href *string `json:"href,omitempty"`
-	Text *string `json:"text,omitempty"`
+	Href *string `json:"href,omitzero"`
+	Text *string `json:"text,omitzero"`
 }
 
 func (d *DebugSignalsExpressionLink) GetHref() *string {
@@ -44,15 +48,26 @@ func (d *DebugSignalsExpressionLink) GetText() *string {
 }
 
 type Signal struct {
-	ID             *string                      `json:"id,omitempty"`
-	OrganizationID *string                      `json:"organization_id,omitempty"`
-	Summary        *string                      `json:"summary,omitempty"`
-	Body           *string                      `json:"body,omitempty"`
-	Level          *string                      `json:"level,omitempty"`
-	Annotations    *Annotations                 `json:"annotations,omitempty"`
-	Tags           []string                     `json:"tags,omitempty"`
-	Images         []Image                      `json:"images,omitempty"`
-	Links          []DebugSignalsExpressionLink `json:"links,omitempty"`
+	ID             *string                      `json:"id,omitzero"`
+	OrganizationID *string                      `json:"organization_id,omitzero"`
+	Summary        *string                      `json:"summary,omitzero"`
+	Body           *string                      `json:"body,omitzero"`
+	Level          *string                      `json:"level,omitzero"`
+	Annotations    *Annotations                 `json:"annotations,omitzero"`
+	Tags           []string                     `json:"tags,omitzero"`
+	Images         []Image                      `json:"images,omitzero"`
+	Links          []DebugSignalsExpressionLink `json:"links,omitzero"`
+}
+
+func (s Signal) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(s, "", false)
+}
+
+func (s *Signal) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &s, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (s *Signal) GetID() *string {

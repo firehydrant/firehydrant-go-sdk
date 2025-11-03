@@ -2,9 +2,24 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // IncidentsExportRetrospectivesResultEntity - Incidents_ExportRetrospectivesResultEntity model
 type IncidentsExportRetrospectivesResultEntity struct {
-	ExternalResource *NullableExternalResourceEntity `json:"external_resource,omitempty"`
+	ExternalResource *NullableExternalResourceEntity `json:"external_resource,omitzero"`
+}
+
+func (i IncidentsExportRetrospectivesResultEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(i, "", false)
+}
+
+func (i *IncidentsExportRetrospectivesResultEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &i, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (i *IncidentsExportRetrospectivesResultEntity) GetExternalResource() *NullableExternalResourceEntity {

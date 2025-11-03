@@ -5,6 +5,7 @@ package components
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
 // CreateTeamCallRouteRoutingMode - Routing mode for the call route
@@ -96,7 +97,7 @@ type CreateTeamCallRouteStep struct {
 	// Timeout in seconds for the step
 	Timeout string `json:"timeout"`
 	// The ID of a specific on-call rotation that should be routed to if the `target_type` is `OnCallSchedule`. If not provided, the schedule's first rotation will be used.
-	OnCallRotationID *string `json:"on_call_rotation_id,omitempty"`
+	OnCallRotationID *string `json:"on_call_rotation_id,omitzero"`
 }
 
 func (c *CreateTeamCallRouteStep) GetTargetType() CreateTeamCallRouteTargetType {
@@ -158,15 +159,26 @@ type CreateTeamCallRoute struct {
 	// Routing mode for the call route
 	RoutingMode CreateTeamCallRouteRoutingMode `json:"routing_mode"`
 	// Connect mode for the call route
-	ConnectMode *CreateTeamCallRouteConnectMode `json:"connect_mode,omitempty"`
+	ConnectMode *CreateTeamCallRouteConnectMode `json:"connect_mode,omitzero"`
 	// Description of the call route
-	Description *string `json:"description,omitempty"`
+	Description *string `json:"description,omitzero"`
 	// Greeting message for the call route
-	GreetingMessage *string `json:"greeting_message,omitempty"`
+	GreetingMessage *string `json:"greeting_message,omitzero"`
 	// Steps for the call route
-	Steps []CreateTeamCallRouteStep `json:"steps,omitempty"`
+	Steps []CreateTeamCallRouteStep `json:"steps,omitzero"`
 	// Target for the call route (required unless connect_mode is direct_dial)
-	Target *CreateTeamCallRouteTarget `json:"target,omitempty"`
+	Target *CreateTeamCallRouteTarget `json:"target,omitzero"`
+}
+
+func (c CreateTeamCallRoute) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *CreateTeamCallRoute) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"name", "phone_number", "routing_mode"}); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (c *CreateTeamCallRoute) GetName() string {

@@ -2,11 +2,26 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type NullableSignalsAPICallRouteStepEntity struct {
-	Target         *NullableSignalsAPITargetEntity `json:"target,omitempty"`
-	Position       *int                            `json:"position,omitempty"`
-	Timeout        *string                         `json:"timeout,omitempty"`
-	OnCallRotation *NullableSuccinctEntity         `json:"on_call_rotation,omitempty"`
+	Target         *NullableSignalsAPITargetEntity `json:"target,omitzero"`
+	Position       *int                            `json:"position,omitzero"`
+	Timeout        *string                         `json:"timeout,omitzero"`
+	OnCallRotation *NullableSuccinctEntity         `json:"on_call_rotation,omitzero"`
+}
+
+func (n NullableSignalsAPICallRouteStepEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(n, "", false)
+}
+
+func (n *NullableSignalsAPICallRouteStepEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &n, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (n *NullableSignalsAPICallRouteStepEntity) GetTarget() *NullableSignalsAPITargetEntity {

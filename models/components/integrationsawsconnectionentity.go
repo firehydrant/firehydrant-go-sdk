@@ -5,6 +5,7 @@ package components
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
 type IntegrationsAwsConnectionEntityConnectionStatus string
@@ -44,16 +45,27 @@ func (e *IntegrationsAwsConnectionEntityConnectionStatus) UnmarshalJSON(data []b
 
 // IntegrationsAwsConnectionEntity - Integrations_Aws_ConnectionEntity model
 type IntegrationsAwsConnectionEntity struct {
-	ID                *string                                          `json:"id,omitempty"`
-	AwsAccountID      *string                                          `json:"aws_account_id,omitempty"`
-	TargetArn         *string                                          `json:"target_arn,omitempty"`
-	ExternalID        *string                                          `json:"external_id,omitempty"`
-	ConnectionStatus  *IntegrationsAwsConnectionEntityConnectionStatus `json:"connection_status,omitempty"`
-	StatusText        *string                                          `json:"status_text,omitempty"`
-	StatusDescription *string                                          `json:"status_description,omitempty"`
-	EnvironmentID     *string                                          `json:"environment_id,omitempty"`
-	EnvironmentName   *string                                          `json:"environment_name,omitempty"`
-	Regions           []string                                         `json:"regions,omitempty"`
+	ID                *string                                          `json:"id,omitzero"`
+	AwsAccountID      *string                                          `json:"aws_account_id,omitzero"`
+	TargetArn         *string                                          `json:"target_arn,omitzero"`
+	ExternalID        *string                                          `json:"external_id,omitzero"`
+	ConnectionStatus  *IntegrationsAwsConnectionEntityConnectionStatus `json:"connection_status,omitzero"`
+	StatusText        *string                                          `json:"status_text,omitzero"`
+	StatusDescription *string                                          `json:"status_description,omitzero"`
+	EnvironmentID     *string                                          `json:"environment_id,omitzero"`
+	EnvironmentName   *string                                          `json:"environment_name,omitzero"`
+	Regions           []string                                         `json:"regions,omitzero"`
+}
+
+func (i IntegrationsAwsConnectionEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(i, "", false)
+}
+
+func (i *IntegrationsAwsConnectionEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &i, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (i *IntegrationsAwsConnectionEntity) GetID() *string {

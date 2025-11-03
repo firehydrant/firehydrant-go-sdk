@@ -2,9 +2,13 @@
 
 package operations
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type ResolveIncidentRequestBody struct {
 	// The slug of any milestone in the post-incident or closed phase to set on the incident (and its children, if `resolve_children` os set). Must be one of the configured milestones available on this incident.
-	Milestone *string `json:"milestone,omitempty"`
+	Milestone *string `json:"milestone,omitzero"`
 }
 
 func (r *ResolveIncidentRequestBody) GetMilestone() *string {
@@ -17,6 +21,17 @@ func (r *ResolveIncidentRequestBody) GetMilestone() *string {
 type ResolveIncidentRequest struct {
 	IncidentID  string                      `pathParam:"style=simple,explode=false,name=incident_id"`
 	RequestBody *ResolveIncidentRequestBody `request:"mediaType=application/json"`
+}
+
+func (r ResolveIncidentRequest) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(r, "", false)
+}
+
+func (r *ResolveIncidentRequest) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &r, "", false, []string{"incident_id"}); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (r *ResolveIncidentRequest) GetIncidentID() string {

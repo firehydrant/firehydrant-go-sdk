@@ -35,8 +35,8 @@ func (e *UpdateWebhookState) UnmarshalJSON(data []byte) error {
 
 // UpdateWebhook - Update a specific webhook
 type UpdateWebhook struct {
-	URL   *string             `json:"url,omitempty"`
-	State *UpdateWebhookState `json:"state,omitempty"`
+	URL   *string             `json:"url,omitzero"`
+	State *UpdateWebhookState `json:"state,omitzero"`
 }
 
 func (u *UpdateWebhook) GetURL() *string {

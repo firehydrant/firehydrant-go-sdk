@@ -3,10 +3,10 @@
 package components
 
 type LinksEntity struct {
-	ID      *string `json:"id,omitempty"`
-	HrefURL *string `json:"href_url,omitempty"`
-	IconURL *string `json:"icon_url,omitempty"`
-	Name    *string `json:"name,omitempty"`
+	ID      *string `json:"id,omitzero"`
+	HrefURL *string `json:"href_url,omitzero"`
+	IconURL *string `json:"icon_url,omitzero"`
+	Name    *string `json:"name,omitzero"`
 }
 
 func (l *LinksEntity) GetID() *string {

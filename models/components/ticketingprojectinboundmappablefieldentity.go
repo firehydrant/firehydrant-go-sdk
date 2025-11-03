@@ -5,9 +5,9 @@ package components
 // TicketingProjectInboundMappableFieldEntity - Ticketing_ProjectInboundMappableFieldEntity model
 type TicketingProjectInboundMappableFieldEntity struct {
 	// The ID of the field
-	Value *string `json:"value,omitempty"`
+	Value *string `json:"value,omitzero"`
 	// The human-readable name of the field
-	Label *string `json:"label,omitempty"`
+	Label *string `json:"label,omitzero"`
 }
 
 func (t *TicketingProjectInboundMappableFieldEntity) GetValue() *string {

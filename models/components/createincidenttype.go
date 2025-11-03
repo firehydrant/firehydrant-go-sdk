@@ -2,6 +2,10 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type CreateIncidentTypeImpact struct {
 	// The id of impact
 	ID string `json:"id"`
@@ -24,21 +28,32 @@ func (c *CreateIncidentTypeImpact) GetConditionID() string {
 }
 
 type CreateIncidentTypeTemplate struct {
-	Description           *string `json:"description,omitempty"`
-	CustomerImpactSummary *string `json:"customer_impact_summary,omitempty"`
+	Description           *string `json:"description,omitzero"`
+	CustomerImpactSummary *string `json:"customer_impact_summary,omitzero"`
 	// A labels hash of keys and values
-	Labels   map[string]string `json:"labels,omitempty"`
-	Severity *string           `json:"severity,omitempty"`
-	Priority *string           `json:"priority,omitempty"`
+	Labels   map[string]string `json:"labels,omitzero"`
+	Severity *string           `json:"severity,omitzero"`
+	Priority *string           `json:"priority,omitzero"`
 	// List of tags for the incident
-	TagList []string `json:"tag_list,omitempty"`
+	TagList []string `json:"tag_list,omitzero"`
 	// List of ids of Runbooks to attach to incidents created from this type
-	RunbookIds      []string `json:"runbook_ids,omitempty"`
-	PrivateIncident *bool    `json:"private_incident,omitempty"`
+	RunbookIds      []string `json:"runbook_ids,omitzero"`
+	PrivateIncident *bool    `json:"private_incident,omitzero"`
 	// List of ids of teams to be assigned to incidents
-	TeamIds []string `json:"team_ids,omitempty"`
+	TeamIds []string `json:"team_ids,omitzero"`
 	// An array of impact/condition combinations
-	Impacts []CreateIncidentTypeImpact `json:"impacts,omitempty"`
+	Impacts []CreateIncidentTypeImpact `json:"impacts,omitzero"`
+}
+
+func (c CreateIncidentTypeTemplate) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *CreateIncidentTypeTemplate) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (c *CreateIncidentTypeTemplate) GetDescription() *string {
@@ -115,7 +130,7 @@ func (c *CreateIncidentTypeTemplate) GetImpacts() []CreateIncidentTypeImpact {
 type CreateIncidentType struct {
 	Name string `json:"name"`
 	// A description of the incident type
-	Description *string                    `json:"description,omitempty"`
+	Description *string                    `json:"description,omitzero"`
 	Template    CreateIncidentTypeTemplate `json:"template"`
 }
 

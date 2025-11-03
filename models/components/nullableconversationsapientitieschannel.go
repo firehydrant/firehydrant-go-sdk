@@ -3,7 +3,7 @@
 package components
 
 type NullableConversationsAPIEntitiesChannel struct {
-	Name *string `json:"name,omitempty"`
+	Name *string `json:"name,omitzero"`
 }
 
 func (n *NullableConversationsAPIEntitiesChannel) GetName() *string {

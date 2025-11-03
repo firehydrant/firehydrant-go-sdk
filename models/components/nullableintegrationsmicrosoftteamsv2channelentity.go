@@ -2,15 +2,30 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type NullableIntegrationsMicrosoftTeamsV2ChannelEntity struct {
-	ID          *string                 `json:"id,omitempty"`
-	ChannelID   *string                 `json:"channel_id,omitempty"`
-	ChannelName *string                 `json:"channel_name,omitempty"`
-	MsTeamID    *string                 `json:"ms_team_id,omitempty"`
-	TeamName    *string                 `json:"team_name,omitempty"`
-	ChannelURL  *string                 `json:"channel_url,omitempty"`
-	Status      *string                 `json:"status,omitempty"`
-	Incident    *NullableIncidentEntity `json:"incident,omitempty"`
+	ID          *string                 `json:"id,omitzero"`
+	ChannelID   *string                 `json:"channel_id,omitzero"`
+	ChannelName *string                 `json:"channel_name,omitzero"`
+	MsTeamID    *string                 `json:"ms_team_id,omitzero"`
+	TeamName    *string                 `json:"team_name,omitzero"`
+	ChannelURL  *string                 `json:"channel_url,omitzero"`
+	Status      *string                 `json:"status,omitzero"`
+	Incident    *NullableIncidentEntity `json:"incident,omitzero"`
+}
+
+func (n NullableIntegrationsMicrosoftTeamsV2ChannelEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(n, "", false)
+}
+
+func (n *NullableIntegrationsMicrosoftTeamsV2ChannelEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &n, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (n *NullableIntegrationsMicrosoftTeamsV2ChannelEntity) GetID() *string {

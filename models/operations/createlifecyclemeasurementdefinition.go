@@ -4,8 +4,8 @@ package operations
 
 type CreateLifecycleMeasurementDefinitionRequest struct {
 	Name                string  `json:"name"`
-	Slug                *string `json:"slug,omitempty"`
-	Description         *string `json:"description,omitempty"`
+	Slug                *string `json:"slug,omitzero"`
+	Description         *string `json:"description,omitzero"`
 	StartsAtMilestoneID string  `json:"starts_at_milestone_id"`
 	EndsAtMilestoneID   string  `json:"ends_at_milestone_id"`
 }

@@ -2,13 +2,28 @@
 
 package operations
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type ShareIncidentRetrospectivesRequestBody struct {
 	// An array of user IDs with whom to share the report
-	UserIds []string `json:"user_ids,omitempty"`
+	UserIds []string `json:"user_ids,omitzero"`
 	// An array of team IDs with whom to share the report
-	TeamIds []string `json:"team_ids,omitempty"`
+	TeamIds []string `json:"team_ids,omitzero"`
 	// An array of retrospective IDs to share
 	RetrospectiveIds []string `json:"retrospective_ids"`
+}
+
+func (s ShareIncidentRetrospectivesRequestBody) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(s, "", false)
+}
+
+func (s *ShareIncidentRetrospectivesRequestBody) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &s, "", false, []string{"retrospective_ids"}); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (s *ShareIncidentRetrospectivesRequestBody) GetUserIds() []string {

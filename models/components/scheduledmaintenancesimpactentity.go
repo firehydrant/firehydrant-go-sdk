@@ -2,11 +2,26 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type ScheduledMaintenancesImpactEntity struct {
-	ID        *string                                `json:"id,omitempty"`
-	Type      *string                                `json:"type,omitempty"`
-	Impact    *NullableSuccinctEntity                `json:"impact,omitempty"`
-	Condition *NullableSeverityMatrixConditionEntity `json:"condition,omitempty"`
+	ID        *string                                `json:"id,omitzero"`
+	Type      *string                                `json:"type,omitzero"`
+	Impact    *NullableSuccinctEntity                `json:"impact,omitzero"`
+	Condition *NullableSeverityMatrixConditionEntity `json:"condition,omitzero"`
+}
+
+func (s ScheduledMaintenancesImpactEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(s, "", false)
+}
+
+func (s *ScheduledMaintenancesImpactEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &s, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (s *ScheduledMaintenancesImpactEntity) GetID() *string {

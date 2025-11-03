@@ -2,14 +2,29 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // IncidentsStatusPageEntity - Incidents_StatusPageEntity model
 type IncidentsStatusPageEntity struct {
-	ID          *string                    `json:"id,omitempty"`
-	URL         *string                    `json:"url,omitempty"`
-	ExternalID  *string                    `json:"external_id,omitempty"`
-	Name        *string                    `json:"name,omitempty"`
-	DisplayName *string                    `json:"display_name,omitempty"`
-	Integration *NullableIntegrationEntity `json:"integration,omitempty"`
+	ID          *string                    `json:"id,omitzero"`
+	URL         *string                    `json:"url,omitzero"`
+	ExternalID  *string                    `json:"external_id,omitzero"`
+	Name        *string                    `json:"name,omitzero"`
+	DisplayName *string                    `json:"display_name,omitzero"`
+	Integration *NullableIntegrationEntity `json:"integration,omitzero"`
+}
+
+func (i IncidentsStatusPageEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(i, "", false)
+}
+
+func (i *IncidentsStatusPageEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &i, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (i *IncidentsStatusPageEntity) GetID() *string {

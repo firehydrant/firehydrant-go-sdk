@@ -4,8 +4,8 @@ package components
 
 // UpdateStatusUpdateTemplate - Update a single status update template
 type UpdateStatusUpdateTemplate struct {
-	Name *string `json:"name,omitempty"`
-	Body *string `json:"body,omitempty"`
+	Name *string `json:"name,omitzero"`
+	Body *string `json:"body,omitzero"`
 }
 
 func (u *UpdateStatusUpdateTemplate) GetName() *string {

@@ -2,10 +2,25 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // MetricsRetrospectiveEntity - Metrics_RetrospectiveEntity model
 type MetricsRetrospectiveEntity struct {
-	Data    []MetricsRetrospectiveEntityDataEntity           `json:"data,omitempty"`
-	Summary *NullableMetricsRetrospectiveEntitySummaryEntity `json:"summary,omitempty"`
+	Data    []MetricsRetrospectiveEntityDataEntity           `json:"data,omitzero"`
+	Summary *NullableMetricsRetrospectiveEntitySummaryEntity `json:"summary,omitzero"`
+}
+
+func (m MetricsRetrospectiveEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(m, "", false)
+}
+
+func (m *MetricsRetrospectiveEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &m, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (m *MetricsRetrospectiveEntity) GetData() []MetricsRetrospectiveEntityDataEntity {

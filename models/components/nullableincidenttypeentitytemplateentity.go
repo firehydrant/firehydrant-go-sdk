@@ -2,21 +2,36 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type NullableIncidentTypeEntityTemplateEntity struct {
-	IncidentName          *string `json:"incident_name,omitempty"`
-	Summary               *string `json:"summary,omitempty"`
-	Description           *string `json:"description,omitempty"`
-	CustomerImpactSummary *string `json:"customer_impact_summary,omitempty"`
+	IncidentName          *string `json:"incident_name,omitzero"`
+	Summary               *string `json:"summary,omitzero"`
+	Description           *string `json:"description,omitzero"`
+	CustomerImpactSummary *string `json:"customer_impact_summary,omitzero"`
 	// Arbitrary key:value pairs of labels for your incidents.
-	Labels          map[string]any                           `json:"labels,omitempty"`
-	Severity        *string                                  `json:"severity,omitempty"`
-	Priority        *string                                  `json:"priority,omitempty"`
-	TagList         []string                                 `json:"tag_list,omitempty"`
-	RunbookIds      []string                                 `json:"runbook_ids,omitempty"`
-	TeamIds         []string                                 `json:"team_ids,omitempty"`
-	PrivateIncident *bool                                    `json:"private_incident,omitempty"`
-	CustomFields    *string                                  `json:"custom_fields,omitempty"`
-	Impacts         []IncidentTypeEntityTemplateImpactEntity `json:"impacts,omitempty"`
+	Labels          map[string]any                           `json:"labels,omitzero"`
+	Severity        *string                                  `json:"severity,omitzero"`
+	Priority        *string                                  `json:"priority,omitzero"`
+	TagList         []string                                 `json:"tag_list,omitzero"`
+	RunbookIds      []string                                 `json:"runbook_ids,omitzero"`
+	TeamIds         []string                                 `json:"team_ids,omitzero"`
+	PrivateIncident *bool                                    `json:"private_incident,omitzero"`
+	CustomFields    *string                                  `json:"custom_fields,omitzero"`
+	Impacts         []IncidentTypeEntityTemplateImpactEntity `json:"impacts,omitzero"`
+}
+
+func (n NullableIncidentTypeEntityTemplateEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(n, "", false)
+}
+
+func (n *NullableIncidentTypeEntityTemplateEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &n, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (n *NullableIncidentTypeEntityTemplateEntity) GetIncidentName() *string {

@@ -38,13 +38,13 @@ func (e *TicketType) UnmarshalJSON(data []byte) error {
 
 // TicketingProjectInboundFieldMapEntity - Ticketing_ProjectInboundFieldMapEntity model
 type TicketingProjectInboundFieldMapEntity struct {
-	ID                 *string     `json:"id,omitempty"`
-	ConnectionID       *string     `json:"connection_id,omitempty"`
-	ConnectionType     *string     `json:"connection_type,omitempty"`
-	TicketingProjectID *string     `json:"ticketing_project_id,omitempty"`
-	ExternalFieldName  *string     `json:"external_field_name,omitempty"`
-	InternalFieldName  *string     `json:"internal_field_name,omitempty"`
-	TicketType         *TicketType `json:"ticket_type,omitempty"`
+	ID                 *string     `json:"id,omitzero"`
+	ConnectionID       *string     `json:"connection_id,omitzero"`
+	ConnectionType     *string     `json:"connection_type,omitzero"`
+	TicketingProjectID *string     `json:"ticketing_project_id,omitzero"`
+	ExternalFieldName  *string     `json:"external_field_name,omitzero"`
+	InternalFieldName  *string     `json:"internal_field_name,omitzero"`
+	TicketType         *TicketType `json:"ticket_type,omitzero"`
 }
 
 func (t *TicketingProjectInboundFieldMapEntity) GetID() *string {

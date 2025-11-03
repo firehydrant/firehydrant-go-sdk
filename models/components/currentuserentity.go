@@ -2,17 +2,32 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // CurrentUserEntity model
 type CurrentUserEntity struct {
-	ID               *string          `json:"id,omitempty"`
-	Name             *string          `json:"name,omitempty"`
-	Source           *string          `json:"source,omitempty"`
-	Email            *string          `json:"email,omitempty"`
-	Role             *string          `json:"role,omitempty"`
-	Teams            []SuccinctEntity `json:"teams,omitempty"`
-	OrganizationID   *string          `json:"organization_id,omitempty"`
-	OrganizationName *string          `json:"organization_name,omitempty"`
-	AccountID        *int             `json:"account_id,omitempty"`
+	ID               *string          `json:"id,omitzero"`
+	Name             *string          `json:"name,omitzero"`
+	Source           *string          `json:"source,omitzero"`
+	Email            *string          `json:"email,omitzero"`
+	Role             *string          `json:"role,omitzero"`
+	Teams            []SuccinctEntity `json:"teams,omitzero"`
+	OrganizationID   *string          `json:"organization_id,omitzero"`
+	OrganizationName *string          `json:"organization_name,omitzero"`
+	AccountID        *int             `json:"account_id,omitzero"`
+}
+
+func (c CurrentUserEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *CurrentUserEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (c *CurrentUserEntity) GetID() *string {

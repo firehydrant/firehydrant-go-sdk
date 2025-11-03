@@ -3,24 +3,24 @@ id: 39357612-0c85-4a96-a549-e2d920c4a065
 management:
   docChecksum: 20cefa7c38c9f6254b5d9cfd7d8672ea
   docVersion: 0.0.1
-  speakeasyVersion: 1.643.3
-  generationVersion: 2.731.9
-  releaseVersion: 1.6.1
-  configChecksum: aade4dd9a3ed90e1c0d6f3063f52823d
+  speakeasyVersion: 1.646.0
+  generationVersion: 2.735.1
+  releaseVersion: 1.7.0
+  configChecksum: a2acad6c31941d378d53195200244241
   repoURL: https://github.com/firehydrant/firehydrant-go-sdk.git
   installationURL: https://github.com/firehydrant/firehydrant-go-sdk
 features:
   go:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.12
-    core: 3.12.1
+    core: 3.13.0
     defaultEnabledRetries: 0.2.0
     envVarSecurityUsage: 0.3.2
     flattening: 2.81.1
     getRequestBodies: 2.81.1
     globalSecurity: 2.82.12
     globalSecurityCallbacks: 0.1.0
-    globalServerURLs: 2.82.3
+    globalServerURLs: 2.83.0
     intellisenseMarkdownSupport: 0.1.0
     nullables: 0.2.1
     responseFormat: 0.1.2

@@ -3,9 +3,9 @@
 package components
 
 type NullableMetricsMetricsEntitySortEntity struct {
-	Field     *string `json:"field,omitempty"`
-	Direction *string `json:"direction,omitempty"`
-	Limit     *int    `json:"limit,omitempty"`
+	Field     *string `json:"field,omitzero"`
+	Direction *string `json:"direction,omitzero"`
+	Limit     *int    `json:"limit,omitzero"`
 }
 
 func (n *NullableMetricsMetricsEntitySortEntity) GetField() *string {

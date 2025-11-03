@@ -2,6 +2,10 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type UpdateIncidentImpactPatchImpact struct {
 	ID          string `json:"id"`
 	ConditionID string `json:"condition_id"`
@@ -48,10 +52,21 @@ func (u *UpdateIncidentImpactPatchStatusPage) GetIntegrationSlug() string {
 // all impacts). If this method is requested with the PATCH verb, the provided
 // impacts will be added or updated, but no impacts will be removed.
 type UpdateIncidentImpactPatch struct {
-	Note        *string                               `json:"note,omitempty"`
-	Milestone   *string                               `json:"milestone,omitempty"`
-	Impact      []UpdateIncidentImpactPatchImpact     `json:"impact,omitempty"`
-	StatusPages []UpdateIncidentImpactPatchStatusPage `json:"status_pages,omitempty"`
+	Note        *string                               `json:"note,omitzero"`
+	Milestone   *string                               `json:"milestone,omitzero"`
+	Impact      []UpdateIncidentImpactPatchImpact     `json:"impact,omitzero"`
+	StatusPages []UpdateIncidentImpactPatchStatusPage `json:"status_pages,omitzero"`
+}
+
+func (u UpdateIncidentImpactPatch) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UpdateIncidentImpactPatch) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (u *UpdateIncidentImpactPatch) GetNote() *string {

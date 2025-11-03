@@ -78,13 +78,13 @@ func (e *Priority) UnmarshalJSON(data []byte) error {
 
 // SignalsAPINotificationPolicyItemEntity - Signals_API_NotificationPolicyItemEntity model
 type SignalsAPINotificationPolicyItemEntity struct {
-	ID                      *string                  `json:"id,omitempty"`
-	NotificationGroupMethod *NotificationGroupMethod `json:"notification_group_method,omitempty"`
+	ID                      *string                  `json:"id,omitzero"`
+	NotificationGroupMethod *NotificationGroupMethod `json:"notification_group_method,omitzero"`
 	// The maximum delay for notifications
-	MaxDelay  *string    `json:"max_delay,omitempty"`
-	Priority  *Priority  `json:"priority,omitempty"`
-	CreatedAt *time.Time `json:"created_at,omitempty"`
-	UpdatedAt *time.Time `json:"updated_at,omitempty"`
+	MaxDelay  *string    `json:"max_delay,omitzero"`
+	Priority  *Priority  `json:"priority,omitzero"`
+	CreatedAt *time.Time `json:"created_at,omitzero"`
+	UpdatedAt *time.Time `json:"updated_at,omitzero"`
 }
 
 func (s SignalsAPINotificationPolicyItemEntity) MarshalJSON() ([]byte, error) {

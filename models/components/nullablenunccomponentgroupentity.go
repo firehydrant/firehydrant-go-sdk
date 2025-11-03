@@ -3,10 +3,10 @@
 package components
 
 type NullableNuncComponentGroupEntity struct {
-	ID               *string `json:"id,omitempty"`
-	ComponentGroupID *string `json:"component_group_id,omitempty"`
-	Name             *string `json:"name,omitempty"`
-	Position         *int    `json:"position,omitempty"`
+	ID               *string `json:"id,omitzero"`
+	ComponentGroupID *string `json:"component_group_id,omitzero"`
+	Name             *string `json:"name,omitzero"`
+	Position         *int    `json:"position,omitzero"`
 }
 
 func (n *NullableNuncComponentGroupEntity) GetID() *string {

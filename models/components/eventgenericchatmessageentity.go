@@ -9,9 +9,9 @@ import (
 
 // EventGenericChatMessageEntity - Event_GenericChatMessageEntity model
 type EventGenericChatMessageEntity struct {
-	ID        *string    `json:"id,omitempty"`
-	Body      *string    `json:"body,omitempty"`
-	CreatedAt *time.Time `json:"created_at,omitempty"`
+	ID        *string    `json:"id,omitzero"`
+	Body      *string    `json:"body,omitzero"`
+	CreatedAt *time.Time `json:"created_at,omitzero"`
 }
 
 func (e EventGenericChatMessageEntity) MarshalJSON() ([]byte, error) {

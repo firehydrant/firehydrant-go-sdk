@@ -2,11 +2,26 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type NullableRunbooksActionConfigEntity struct {
 	// A list of elements that can be used in this action configuration
-	Elements []RunbooksElementEntity `json:"elements,omitempty"`
+	Elements []RunbooksElementEntity `json:"elements,omitzero"`
 	// Location of documentation for this action
-	DocumentationURL *string `json:"documentation_url,omitempty"`
+	DocumentationURL *string `json:"documentation_url,omitzero"`
+}
+
+func (n NullableRunbooksActionConfigEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(n, "", false)
+}
+
+func (n *NullableRunbooksActionConfigEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &n, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (n *NullableRunbooksActionConfigEntity) GetElements() []RunbooksElementEntity {

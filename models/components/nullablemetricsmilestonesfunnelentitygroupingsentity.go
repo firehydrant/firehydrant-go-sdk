@@ -4,7 +4,7 @@ package components
 
 type NullableMetricsMilestonesFunnelEntityGroupingsEntity struct {
 	// The bucket size for the data
-	BucketSize *string `json:"bucket_size,omitempty"`
+	BucketSize *string `json:"bucket_size,omitzero"`
 }
 
 func (n *NullableMetricsMilestonesFunnelEntityGroupingsEntity) GetBucketSize() *string {

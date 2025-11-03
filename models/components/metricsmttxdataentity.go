@@ -2,10 +2,25 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // MetricsMttxDataEntity - Metrics_MttxDataEntity model
 type MetricsMttxDataEntity struct {
-	Groupings []MetricsMttxDataEntityGroupingEntity `json:"groupings,omitempty"`
-	Data      []MetricsMttxGroupEntity              `json:"data,omitempty"`
+	Groupings []MetricsMttxDataEntityGroupingEntity `json:"groupings,omitzero"`
+	Data      []MetricsMttxGroupEntity              `json:"data,omitzero"`
+}
+
+func (m MetricsMttxDataEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(m, "", false)
+}
+
+func (m *MetricsMttxDataEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &m, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (m *MetricsMttxDataEntity) GetGroupings() []MetricsMttxDataEntityGroupingEntity {

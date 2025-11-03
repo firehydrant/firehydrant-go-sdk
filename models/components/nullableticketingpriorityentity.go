@@ -9,11 +9,11 @@ import (
 
 // NullableTicketingPriorityEntity - Ticketing_PriorityEntity model
 type NullableTicketingPriorityEntity struct {
-	ID        *string    `json:"id,omitempty"`
-	Name      *string    `json:"name,omitempty"`
-	Position  *int       `json:"position,omitempty"`
-	CreatedAt *time.Time `json:"created_at,omitempty"`
-	UpdatedAt *time.Time `json:"updated_at,omitempty"`
+	ID        *string    `json:"id,omitzero"`
+	Name      *string    `json:"name,omitzero"`
+	Position  *int       `json:"position,omitzero"`
+	CreatedAt *time.Time `json:"created_at,omitzero"`
+	UpdatedAt *time.Time `json:"updated_at,omitzero"`
 }
 
 func (n NullableTicketingPriorityEntity) MarshalJSON() ([]byte, error) {

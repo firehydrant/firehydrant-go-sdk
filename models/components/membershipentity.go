@@ -2,11 +2,26 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type MembershipEntity struct {
-	User                  *NullableUserEntity         `json:"user,omitempty"`
-	Schedule              *NullableScheduleEntity     `json:"schedule,omitempty"`
-	SignalsOnCallSchedule *NullableSuccinctEntity     `json:"signals_on_call_schedule,omitempty"`
-	DefaultIncidentRole   *NullableIncidentRoleEntity `json:"default_incident_role,omitempty"`
+	User                  *NullableUserEntity         `json:"user,omitzero"`
+	Schedule              *NullableScheduleEntity     `json:"schedule,omitzero"`
+	SignalsOnCallSchedule *NullableSuccinctEntity     `json:"signals_on_call_schedule,omitzero"`
+	DefaultIncidentRole   *NullableIncidentRoleEntity `json:"default_incident_role,omitzero"`
+}
+
+func (m MembershipEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(m, "", false)
+}
+
+func (m *MembershipEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &m, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (m *MembershipEntity) GetUser() *NullableUserEntity {

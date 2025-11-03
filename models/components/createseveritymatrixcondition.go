@@ -6,7 +6,7 @@ package components
 type CreateSeverityMatrixCondition struct {
 	Name string `json:"name"`
 	// Position is used to determine ordering of conditions in API responses and dropdowns. The condition with the lowest position (typically 0) will be considered the Default Condition
-	Position *int `json:"position,omitempty"`
+	Position *int `json:"position,omitzero"`
 }
 
 func (c *CreateSeverityMatrixCondition) GetName() string {

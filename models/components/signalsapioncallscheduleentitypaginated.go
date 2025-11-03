@@ -2,10 +2,25 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // SignalsAPIOnCallScheduleEntityPaginated - Signals_API_OnCallScheduleEntityPaginated model
 type SignalsAPIOnCallScheduleEntityPaginated struct {
-	Data       []SignalsAPIOnCallScheduleEntity `json:"data,omitempty"`
-	Pagination *NullablePaginationEntity        `json:"pagination,omitempty"`
+	Data       []SignalsAPIOnCallScheduleEntity `json:"data,omitzero"`
+	Pagination *NullablePaginationEntity        `json:"pagination,omitzero"`
+}
+
+func (s SignalsAPIOnCallScheduleEntityPaginated) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(s, "", false)
+}
+
+func (s *SignalsAPIOnCallScheduleEntityPaginated) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &s, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (s *SignalsAPIOnCallScheduleEntityPaginated) GetData() []SignalsAPIOnCallScheduleEntity {

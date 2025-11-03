@@ -3,15 +3,15 @@
 package components
 
 type NullableCalendarsEventEntity struct {
-	ID              *string `json:"id,omitempty"`
-	Summary         *string `json:"summary,omitempty"`
-	Description     *string `json:"description,omitempty"`
-	StartsAt        *string `json:"starts_at,omitempty"`
-	EndsAt          *string `json:"ends_at,omitempty"`
-	CreatedAt       *string `json:"created_at,omitempty"`
-	UpdatedAt       *string `json:"updated_at,omitempty"`
-	ProviderURL     *string `json:"provider_url,omitempty"`
-	ProviderIconURL *string `json:"provider_icon_url,omitempty"`
+	ID              *string `json:"id,omitzero"`
+	Summary         *string `json:"summary,omitzero"`
+	Description     *string `json:"description,omitzero"`
+	StartsAt        *string `json:"starts_at,omitzero"`
+	EndsAt          *string `json:"ends_at,omitzero"`
+	CreatedAt       *string `json:"created_at,omitzero"`
+	UpdatedAt       *string `json:"updated_at,omitzero"`
+	ProviderURL     *string `json:"provider_url,omitzero"`
+	ProviderIconURL *string `json:"provider_icon_url,omitzero"`
 }
 
 func (n *NullableCalendarsEventEntity) GetID() *string {

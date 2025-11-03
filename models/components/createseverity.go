@@ -5,6 +5,7 @@ package components
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
 type CreateSeverityColor string
@@ -51,11 +52,22 @@ func (e *CreateSeverityColor) UnmarshalJSON(data []byte) error {
 // CreateSeverity - Create a new severity
 type CreateSeverity struct {
 	Slug        string               `json:"slug"`
-	Description *string              `json:"description,omitempty"`
-	Position    *int                 `json:"position,omitempty"`
-	Color       *CreateSeverityColor `json:"color,omitempty"`
+	Description *string              `json:"description,omitzero"`
+	Position    *int                 `json:"position,omitzero"`
+	Color       *CreateSeverityColor `json:"color,omitzero"`
 	// IDs of roles allowed to use this severity. Empty array means all roles are allowed.
-	AllowedRoleIds []string `json:"allowed_role_ids,omitempty"`
+	AllowedRoleIds []string `json:"allowed_role_ids,omitzero"`
+}
+
+func (c CreateSeverity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *CreateSeverity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"slug"}); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (c *CreateSeverity) GetSlug() string {

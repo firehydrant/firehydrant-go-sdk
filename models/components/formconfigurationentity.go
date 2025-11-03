@@ -4,8 +4,8 @@ package components
 
 // FormConfigurationEntity model
 type FormConfigurationEntity struct {
-	Fields            *string `json:"fields,omitempty"`
-	ShowIncidentTypes *string `json:"show_incident_types,omitempty"`
+	Fields            *string `json:"fields,omitzero"`
+	ShowIncidentTypes *string `json:"show_incident_types,omitzero"`
 }
 
 func (f *FormConfigurationEntity) GetFields() *string {

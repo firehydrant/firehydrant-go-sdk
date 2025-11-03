@@ -5,13 +5,13 @@ package components
 // NullableVotesEntity - VotesEntity model
 type NullableVotesEntity struct {
 	// Whether or not the current actor has voted
-	Voted *bool `json:"voted,omitempty"`
+	Voted *bool `json:"voted,omitzero"`
 	// Whether or not the current actor has voted positively
-	Liked *bool `json:"liked,omitempty"`
+	Liked *bool `json:"liked,omitzero"`
 	// Whether or not the current actor has voted negatively
-	Disliked *bool `json:"disliked,omitempty"`
-	Likes    *int  `json:"likes,omitempty"`
-	Dislikes *int  `json:"dislikes,omitempty"`
+	Disliked *bool `json:"disliked,omitzero"`
+	Likes    *int  `json:"likes,omitzero"`
+	Dislikes *int  `json:"dislikes,omitzero"`
 }
 
 func (n *NullableVotesEntity) GetVoted() *bool {

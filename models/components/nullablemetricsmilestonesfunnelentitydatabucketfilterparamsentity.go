@@ -10,9 +10,9 @@ import (
 
 type NullableMetricsMilestonesFunnelEntityDataBucketFilterParamsEntity struct {
 	// The start datetime for the period
-	StartDate *time.Time `json:"start_date,omitempty"`
+	StartDate *time.Time `json:"start_date,omitzero"`
 	// The end datetime for the period not inclusive
-	EndDate *types.Date `json:"end_date,omitempty"`
+	EndDate *types.Date `json:"end_date,omitzero"`
 }
 
 func (n NullableMetricsMilestonesFunnelEntityDataBucketFilterParamsEntity) MarshalJSON() ([]byte, error) {

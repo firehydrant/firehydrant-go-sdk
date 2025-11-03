@@ -45,17 +45,17 @@ func (u *UpdateChangeEventAttachment) GetType() UpdateChangeEventType {
 
 // UpdateChangeEvent - Update a change event
 type UpdateChangeEvent struct {
-	Summary     *string           `json:"summary,omitempty"`
-	Description *string           `json:"description,omitempty"`
-	Labels      map[string]string `json:"labels,omitempty"`
-	StartsAt    *time.Time        `json:"starts_at,omitempty"`
-	EndsAt      *time.Time        `json:"ends_at,omitempty"`
+	Summary     *string           `json:"summary,omitzero"`
+	Description *string           `json:"description,omitzero"`
+	Labels      map[string]string `json:"labels,omitzero"`
+	StartsAt    *time.Time        `json:"starts_at,omitzero"`
+	EndsAt      *time.Time        `json:"ends_at,omitzero"`
 	// An array of environment IDs (setting this will overwrite the current environments)
-	Environments []string `json:"environments,omitempty"`
+	Environments []string `json:"environments,omitzero"`
 	// An array of service IDs (setting this will overwrite the current services)
-	Services []string `json:"services,omitempty"`
+	Services []string `json:"services,omitzero"`
 	// JSON objects representing attachments, see attachments documentation for the schema
-	Attachments []UpdateChangeEventAttachment `json:"attachments,omitempty"`
+	Attachments []UpdateChangeEventAttachment `json:"attachments,omitzero"`
 }
 
 func (u UpdateChangeEvent) MarshalJSON() ([]byte, error) {

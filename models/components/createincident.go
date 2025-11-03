@@ -77,9 +77,20 @@ type CustomField struct {
 	// The ID of the custom field you wish to set.
 	FieldID string `json:"field_id"`
 	// The value you wish to set on the custom field if the type of the field accepts string values
-	ValueString *string `json:"value_string,omitempty"`
+	ValueString *string `json:"value_string,omitzero"`
 	// The value you wish to set on the custom field if the type of the field accepts array values
-	ValueArray []string `json:"value_array,omitempty"`
+	ValueArray []string `json:"value_array,omitzero"`
+}
+
+func (c CustomField) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *CustomField) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"field_id"}); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (c *CustomField) GetFieldID() string {
@@ -106,33 +117,33 @@ func (c *CustomField) GetValueArray() []string {
 // CreateIncident - Create a new incident
 type CreateIncident struct {
 	Name                  string  `json:"name"`
-	Summary               *string `json:"summary,omitempty"`
-	CustomerImpactSummary *string `json:"customer_impact_summary,omitempty"`
-	Description           *string `json:"description,omitempty"`
-	Priority              *string `json:"priority,omitempty"`
-	Severity              *string `json:"severity,omitempty"`
-	SeverityConditionID   *string `json:"severity_condition_id,omitempty"`
-	SeverityImpactID      *string `json:"severity_impact_id,omitempty"`
+	Summary               *string `json:"summary,omitzero"`
+	CustomerImpactSummary *string `json:"customer_impact_summary,omitzero"`
+	Description           *string `json:"description,omitzero"`
+	Priority              *string `json:"priority,omitzero"`
+	Severity              *string `json:"severity,omitzero"`
+	SeverityConditionID   *string `json:"severity_condition_id,omitzero"`
+	SeverityImpactID      *string `json:"severity_impact_id,omitzero"`
 	// List of alert IDs that this incident should be associated to
-	AlertIds []string `json:"alert_ids,omitempty"`
+	AlertIds []string `json:"alert_ids,omitzero"`
 	// Key:value pairs to track custom data for the incident
-	Labels *CreateIncidentLabels `json:"labels,omitempty"`
+	Labels *CreateIncidentLabels `json:"labels,omitzero"`
 	// List of ids of Runbooks to attach to this incident. Foregoes any conditions these Runbooks may have guarding automatic attachment.
-	RunbookIds []string `json:"runbook_ids,omitempty"`
+	RunbookIds []string `json:"runbook_ids,omitzero"`
 	// List of tags for the incident
-	TagList []string `json:"tag_list,omitempty"`
+	TagList []string `json:"tag_list,omitzero"`
 	// An array of impacted infrastructure
-	Impacts []CreateIncidentImpact1 `json:"impacts,omitempty"`
+	Impacts []CreateIncidentImpact1 `json:"impacts,omitzero"`
 	// An array of milestones to set on an incident. This can be used to create an already-resolved incident.
-	Milestones []CreateIncidentMilestone `json:"milestones,omitempty"`
-	Restricted *bool                     `json:"restricted,omitempty"`
+	Milestones []CreateIncidentMilestone `json:"milestones,omitzero"`
+	Restricted *bool                     `json:"restricted,omitzero"`
 	// IDs of teams you wish to assign to this incident.
-	TeamIds []string `json:"team_ids,omitempty"`
+	TeamIds []string `json:"team_ids,omitzero"`
 	// An array of custom fields to set on the incident.
-	CustomFields  []CustomField `json:"custom_fields,omitempty"`
-	ExternalLinks *string       `json:"external_links,omitempty"`
+	CustomFields  []CustomField `json:"custom_fields,omitzero"`
+	ExternalLinks *string       `json:"external_links,omitzero"`
 	// The ID of the incident type. This will copy values from the incident type (if any) unless they are being overridden via parameters in this request.
-	IncidentTypeID *string `json:"incident_type_id,omitempty"`
+	IncidentTypeID *string `json:"incident_type_id,omitzero"`
 	// If true, the incident type values will not be copied to the incident. This is useful when creating an incident from an incident type, but you want to set the values manually.
 	SkipIncidentTypeValues *bool `default:"false" json:"skip_incident_type_values"`
 }

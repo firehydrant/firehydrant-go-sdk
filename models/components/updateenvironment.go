@@ -5,7 +5,7 @@ package components
 // UpdateEnvironment - Update a environments attributes
 type UpdateEnvironment struct {
 	Name        string  `json:"name"`
-	Description *string `json:"description,omitempty"`
+	Description *string `json:"description,omitzero"`
 }
 
 func (u *UpdateEnvironment) GetName() string {

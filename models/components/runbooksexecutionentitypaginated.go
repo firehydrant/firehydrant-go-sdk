@@ -2,10 +2,25 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // RunbooksExecutionEntityPaginated - Runbooks_ExecutionEntityPaginated model
 type RunbooksExecutionEntityPaginated struct {
-	Data       []RunbooksExecutionEntity `json:"data,omitempty"`
-	Pagination *NullablePaginationEntity `json:"pagination,omitempty"`
+	Data       []RunbooksExecutionEntity `json:"data,omitzero"`
+	Pagination *NullablePaginationEntity `json:"pagination,omitzero"`
+}
+
+func (r RunbooksExecutionEntityPaginated) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(r, "", false)
+}
+
+func (r *RunbooksExecutionEntityPaginated) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &r, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (r *RunbooksExecutionEntityPaginated) GetData() []RunbooksExecutionEntity {

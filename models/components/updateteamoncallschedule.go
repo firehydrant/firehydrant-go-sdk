@@ -5,6 +5,7 @@ package components
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
 type UpdateTeamOnCallScheduleMember struct {
@@ -12,7 +13,7 @@ type UpdateTeamOnCallScheduleMember struct {
 	// multiple times to construct more complex rotations, and you can specify a `null` user ID to create
 	// unassigned slots in the rotation.
 	//
-	UserID *string `json:"user_id,omitempty"`
+	UserID *string `json:"user_id,omitzero"`
 }
 
 func (u *UpdateTeamOnCallScheduleMember) GetUserID() *string {
@@ -99,11 +100,11 @@ type UpdateTeamOnCallScheduleStrategy struct {
 	// The type of strategy. Must be one of "daily", "weekly", or "custom".
 	Type UpdateTeamOnCallScheduleType `json:"type"`
 	// An ISO8601 time string specifying when on-call shifts should hand off. This value is only used if the strategy type is "daily" or "weekly".
-	HandoffTime *string `json:"handoff_time,omitempty"`
+	HandoffTime *string `json:"handoff_time,omitzero"`
 	// The day of the week on which on-call shifts should hand off, as its long-form name (e.g. "monday", "tuesday", etc). This value is only used if the strategy type is "weekly".
-	HandoffDay *UpdateTeamOnCallScheduleHandoffDay `json:"handoff_day,omitempty"`
+	HandoffDay *UpdateTeamOnCallScheduleHandoffDay `json:"handoff_day,omitzero"`
 	// An ISO8601 duration string specifying how long each shift should last. This value is only used if the strategy type is "custom".
-	ShiftDuration *string `json:"shift_duration,omitempty"`
+	ShiftDuration *string `json:"shift_duration,omitzero"`
 }
 
 func (u *UpdateTeamOnCallScheduleStrategy) GetType() UpdateTeamOnCallScheduleType {
@@ -262,32 +263,43 @@ func (u *UpdateTeamOnCallScheduleRestriction) GetEndTime() string {
 // has only one rotation, you can continue to update that rotation using the rotation-specific parameters.
 type UpdateTeamOnCallSchedule struct {
 	// A new name for the on-call schedule.
-	Name *string `json:"name,omitempty"`
+	Name *string `json:"name,omitzero"`
 	// A new, detailed description for the on-call schedule.
-	Description *string `json:"description,omitempty"`
+	Description *string `json:"description,omitzero"`
 	// A new name for the schedule's rotation.
-	RotationName *string `json:"rotation_name,omitempty"`
+	RotationName *string `json:"rotation_name,omitzero"`
 	// A new, detailed description for the schedule's rotation.
-	RotationDescription *string `json:"rotation_description,omitempty"`
+	RotationDescription *string `json:"rotation_description,omitzero"`
 	// A hex color code that will be used to represent the schedule's rotation in FireHydrant's UI.
-	Color *string `json:"color,omitempty"`
+	Color *string `json:"color,omitzero"`
 	// The time zone in which the on-call schedule's rotation will operate. This value must be a valid IANA time zone name.
-	TimeZone *string `json:"time_zone,omitempty"`
+	TimeZone *string `json:"time_zone,omitzero"`
 	// The ID of a Slack user group to sync the rotation's on-call members to.
-	SlackUserGroupID *string `json:"slack_user_group_id,omitempty"`
+	SlackUserGroupID *string `json:"slack_user_group_id,omitzero"`
 	// An ordered list of objects that specify members of the schedule's rotation.
-	Members []UpdateTeamOnCallScheduleMember `json:"members,omitempty"`
+	Members []UpdateTeamOnCallScheduleMember `json:"members,omitzero"`
 	// An object that specifies how the rotation's on-call shifts should be generated.
-	Strategy *UpdateTeamOnCallScheduleStrategy `json:"strategy,omitempty"`
+	Strategy *UpdateTeamOnCallScheduleStrategy `json:"strategy,omitzero"`
 	// A list of objects that restrict the schedule's rotation to specific on-call periods.
-	Restrictions []UpdateTeamOnCallScheduleRestriction `json:"restrictions,omitempty"`
+	Restrictions []UpdateTeamOnCallScheduleRestriction `json:"restrictions,omitzero"`
 	// An ISO8601 time string specifying when the updated schedule should take effect. This
 	// value must be provided if editing an attribute that would affect how the schedule's
 	// shifts are generated, such as the time zone, members, strategy, or restrictions.
 	//
-	EffectiveAt *string `json:"effective_at,omitempty"`
+	EffectiveAt *string `json:"effective_at,omitzero"`
 	// This parameter is deprecated; use `members` instead.
-	MemberIds []string `json:"member_ids,omitempty"`
+	MemberIds []string `json:"member_ids,omitzero"`
+}
+
+func (u UpdateTeamOnCallSchedule) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UpdateTeamOnCallSchedule) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (u *UpdateTeamOnCallSchedule) GetName() *string {

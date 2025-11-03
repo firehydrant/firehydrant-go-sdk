@@ -6,7 +6,7 @@ package components
 type CreateIncidentStatusPage struct {
 	IntegrationSlug string  `json:"integration_slug"`
 	IntegrationID   string  `json:"integration_id"`
-	Title           *string `json:"title,omitempty"`
+	Title           *string `json:"title,omitzero"`
 }
 
 func (c *CreateIncidentStatusPage) GetIntegrationSlug() string {

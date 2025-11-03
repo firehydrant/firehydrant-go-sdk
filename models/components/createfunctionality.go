@@ -2,6 +2,10 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type CreateFunctionalityService struct {
 	// ID of a service
 	ID string `json:"id"`
@@ -17,7 +21,7 @@ func (c *CreateFunctionalityService) GetID() string {
 type CreateFunctionalityExternalResource struct {
 	RemoteID string `json:"remote_id"`
 	// The integration slug for the external resource. Can be one of: github, opsgenie, pager_duty, statuspage, victorops. Not required if the resource has already been imported.
-	ConnectionType *string `json:"connection_type,omitempty"`
+	ConnectionType *string `json:"connection_type,omitzero"`
 }
 
 func (c *CreateFunctionalityExternalResource) GetRemoteID() string {
@@ -40,7 +44,7 @@ type CreateFunctionalityLink struct {
 	// URL
 	HrefURL string `json:"href_url"`
 	// An optional URL to an icon representing this link
-	IconURL *string `json:"icon_url,omitempty"`
+	IconURL *string `json:"icon_url,omitzero"`
 }
 
 func (c *CreateFunctionalityLink) GetName() string {
@@ -90,20 +94,31 @@ func (c *CreateFunctionalityTeam) GetID() string {
 // CreateFunctionality - Creates a functionality for the organization
 type CreateFunctionality struct {
 	Name        string                       `json:"name"`
-	Description *string                      `json:"description,omitempty"`
-	Services    []CreateFunctionalityService `json:"services,omitempty"`
+	Description *string                      `json:"description,omitzero"`
+	Services    []CreateFunctionalityService `json:"services,omitzero"`
 	// A hash of label keys and values
-	Labels                map[string]string `json:"labels,omitempty"`
-	AlertOnAdd            *bool             `json:"alert_on_add,omitempty"`
-	AutoAddRespondingTeam *bool             `json:"auto_add_responding_team,omitempty"`
+	Labels                map[string]string `json:"labels,omitzero"`
+	AlertOnAdd            *bool             `json:"alert_on_add,omitzero"`
+	AutoAddRespondingTeam *bool             `json:"auto_add_responding_team,omitzero"`
 	// An array of external resources to attach to this service.
-	ExternalResources []CreateFunctionalityExternalResource `json:"external_resources,omitempty"`
+	ExternalResources []CreateFunctionalityExternalResource `json:"external_resources,omitzero"`
 	// An array of links to associate with this service
-	Links []CreateFunctionalityLink `json:"links,omitempty"`
+	Links []CreateFunctionalityLink `json:"links,omitzero"`
 	// An object representing a Team that owns the service
-	Owner *CreateFunctionalityOwner `json:"owner,omitempty"`
+	Owner *CreateFunctionalityOwner `json:"owner,omitzero"`
 	// An array of teams to attach to this service.
-	Teams []CreateFunctionalityTeam `json:"teams,omitempty"`
+	Teams []CreateFunctionalityTeam `json:"teams,omitzero"`
+}
+
+func (c CreateFunctionality) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *CreateFunctionality) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"name"}); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (c *CreateFunctionality) GetName() string {

@@ -44,17 +44,17 @@ func (e *IncidentEventEntityVisibility) UnmarshalJSON(data []byte) error {
 
 // IncidentEventEntity model
 type IncidentEventEntity struct {
-	ID         *string `json:"id,omitempty"`
-	IncidentID *string `json:"incident_id,omitempty"`
-	Type       *string `json:"type,omitempty"`
-	Context    *string `json:"context,omitempty"`
+	ID         *string `json:"id,omitzero"`
+	IncidentID *string `json:"incident_id,omitzero"`
+	Type       *string `json:"type,omitzero"`
+	Context    *string `json:"context,omitzero"`
 	// Can be one of: NoteEntity, TourStepEntity, RootCauseEntity, ChangeTypeEntity, RoleUpdateEntity, TaskUpdateEntity, AlertLinkedEntity, ChatMessageEntity, AddTaskListEntity, ImpactUpdateEntity, TicketUpdateEntity, GeneralUpdateEntity, ChangelogEntryEntity, IncidentStatusEntity, TeamAssignmentEntity, BulkUpdateEntity
-	Data          *IncidentEventEntityData            `json:"data,omitempty"`
-	OccurredAt    *time.Time                          `json:"occurred_at,omitempty"`
-	Visibility    *IncidentEventEntityVisibility      `json:"visibility,omitempty"`
-	Author        *NullableAuthorEntity               `json:"author,omitempty"`
-	Votes         *NullableVotesEntity                `json:"votes,omitempty"`
-	Conversations []ConversationsAPIEntitiesReference `json:"conversations,omitempty"`
+	Data          *IncidentEventEntityData            `json:"data,omitzero"`
+	OccurredAt    *time.Time                          `json:"occurred_at,omitzero"`
+	Visibility    *IncidentEventEntityVisibility      `json:"visibility,omitzero"`
+	Author        *NullableAuthorEntity               `json:"author,omitzero"`
+	Votes         *NullableVotesEntity                `json:"votes,omitzero"`
+	Conversations []ConversationsAPIEntitiesReference `json:"conversations,omitzero"`
 }
 
 func (i IncidentEventEntity) MarshalJSON() ([]byte, error) {

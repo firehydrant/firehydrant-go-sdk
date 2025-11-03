@@ -3,8 +3,8 @@
 package components
 
 type SignalsAPINotificationPolicyItemComplianceEntity struct {
-	NotificationPolicyItemID *string `json:"notification_policy_item_id,omitempty"`
-	IsCompliant              *bool   `json:"is_compliant,omitempty"`
+	NotificationPolicyItemID *string `json:"notification_policy_item_id,omitzero"`
+	IsCompliant              *bool   `json:"is_compliant,omitzero"`
 }
 
 func (s *SignalsAPINotificationPolicyItemComplianceEntity) GetNotificationPolicyItemID() *string {

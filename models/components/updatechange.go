@@ -2,11 +2,26 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 // UpdateChange - Update a change entry
 type UpdateChange struct {
-	Summary     *string           `json:"summary,omitempty"`
-	Description *string           `json:"description,omitempty"`
-	Labels      map[string]string `json:"labels,omitempty"`
+	Summary     *string           `json:"summary,omitzero"`
+	Description *string           `json:"description,omitzero"`
+	Labels      map[string]string `json:"labels,omitzero"`
+}
+
+func (u UpdateChange) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UpdateChange) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (u *UpdateChange) GetSummary() *string {

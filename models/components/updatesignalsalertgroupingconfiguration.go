@@ -5,6 +5,7 @@ package components
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
 // UpdateSignalsAlertGroupingConfigurationFieldName - The field to use for grouping alerts
@@ -62,7 +63,18 @@ func (u *UpdateSignalsAlertGroupingConfigurationSubstring) GetValue() string {
 // UpdateSignalsAlertGroupingConfigurationStrategy - The strategy to use for grouping alerts
 type UpdateSignalsAlertGroupingConfigurationStrategy struct {
 	// The type of strategy to use for grouping alerts
-	Substring *UpdateSignalsAlertGroupingConfigurationSubstring `json:"substring,omitempty"`
+	Substring *UpdateSignalsAlertGroupingConfigurationSubstring `json:"substring,omitzero"`
+}
+
+func (u UpdateSignalsAlertGroupingConfigurationStrategy) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UpdateSignalsAlertGroupingConfigurationStrategy) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (u *UpdateSignalsAlertGroupingConfigurationStrategy) GetSubstring() *UpdateSignalsAlertGroupingConfigurationSubstring {
@@ -88,9 +100,20 @@ func (u *UpdateSignalsAlertGroupingConfigurationFyi) GetSlackChannelIds() []stri
 // UpdateSignalsAlertGroupingConfigurationAction - The action to take when grouping alerts
 type UpdateSignalsAlertGroupingConfigurationAction struct {
 	// Link the alerts and do not notify anyone
-	Link *bool `json:"link,omitempty"`
+	Link *bool `json:"link,omitzero"`
 	// Send FYI notification
-	Fyi *UpdateSignalsAlertGroupingConfigurationFyi `json:"fyi,omitempty"`
+	Fyi *UpdateSignalsAlertGroupingConfigurationFyi `json:"fyi,omitzero"`
+}
+
+func (u UpdateSignalsAlertGroupingConfigurationAction) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UpdateSignalsAlertGroupingConfigurationAction) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (u *UpdateSignalsAlertGroupingConfigurationAction) GetLink() *bool {
@@ -110,11 +133,22 @@ func (u *UpdateSignalsAlertGroupingConfigurationAction) GetFyi() *UpdateSignalsA
 // UpdateSignalsAlertGroupingConfiguration - Update a Signals alert grouping rule for the organization.
 type UpdateSignalsAlertGroupingConfiguration struct {
 	// The strategy to use for grouping alerts
-	Strategy *UpdateSignalsAlertGroupingConfigurationStrategy `json:"strategy,omitempty"`
+	Strategy *UpdateSignalsAlertGroupingConfigurationStrategy `json:"strategy,omitzero"`
 	// The action to take when grouping alerts
-	Action *UpdateSignalsAlertGroupingConfigurationAction `json:"action,omitempty"`
+	Action *UpdateSignalsAlertGroupingConfigurationAction `json:"action,omitzero"`
 	// How long to group alerts for
-	ReferenceAlertTimePeriod *string `json:"reference_alert_time_period,omitempty"`
+	ReferenceAlertTimePeriod *string `json:"reference_alert_time_period,omitzero"`
+}
+
+func (u UpdateSignalsAlertGroupingConfiguration) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UpdateSignalsAlertGroupingConfiguration) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (u *UpdateSignalsAlertGroupingConfiguration) GetStrategy() *UpdateSignalsAlertGroupingConfigurationStrategy {

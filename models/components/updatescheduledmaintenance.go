@@ -9,7 +9,7 @@ import (
 
 type UpdateScheduledMaintenanceStatusPage struct {
 	// The slug identifying the type of status page
-	IntegrationSlug *string `json:"integration_slug,omitempty"`
+	IntegrationSlug *string `json:"integration_slug,omitzero"`
 	// The UUID of the status page to display this maintenance on
 	ConnectionID string `json:"connection_id"`
 }
@@ -60,19 +60,19 @@ func (u *UpdateScheduledMaintenanceImpact) GetConditionID() string {
 
 // UpdateScheduledMaintenance - Change the conditions of a scheduled maintenance event, including updating any status page announcements of changes.
 type UpdateScheduledMaintenance struct {
-	Name    *string `json:"name,omitempty"`
-	Summary *string `json:"summary,omitempty"`
+	Name    *string `json:"name,omitzero"`
+	Summary *string `json:"summary,omitzero"`
 	// ISO8601 timestamp for the start time of the scheduled maintenance
-	StartsAt *time.Time `json:"starts_at,omitempty"`
+	StartsAt *time.Time `json:"starts_at,omitzero"`
 	// ISO8601 timestamp for the end time of the scheduled maintenance
-	EndsAt      *time.Time `json:"ends_at,omitempty"`
-	Description *string    `json:"description,omitempty"`
+	EndsAt      *time.Time `json:"ends_at,omitzero"`
+	Description *string    `json:"description,omitzero"`
 	// A json object of label keys and values
-	Labels map[string]string `json:"labels,omitempty"`
+	Labels map[string]string `json:"labels,omitzero"`
 	// An array of status pages to display this maintenance on
-	StatusPages []UpdateScheduledMaintenanceStatusPage `json:"status_pages,omitempty"`
+	StatusPages []UpdateScheduledMaintenanceStatusPage `json:"status_pages,omitzero"`
 	// An array of impact/condition combinations
-	Impacts []UpdateScheduledMaintenanceImpact `json:"impacts,omitempty"`
+	Impacts []UpdateScheduledMaintenanceImpact `json:"impacts,omitzero"`
 }
 
 func (u UpdateScheduledMaintenance) MarshalJSON() ([]byte, error) {

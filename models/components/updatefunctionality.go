@@ -10,7 +10,7 @@ type UpdateFunctionalityService struct {
 	// ID of a service
 	ID string `json:"id"`
 	// Set to true if you want to remove the given service from the functionality
-	Remove *bool `json:"remove,omitempty"`
+	Remove *bool `json:"remove,omitzero"`
 }
 
 func (u *UpdateFunctionalityService) GetID() string {
@@ -33,11 +33,11 @@ type UpdateFunctionalityLink struct {
 	// Short name used to display and identify this link
 	Name string `json:"name"`
 	// An optional URL to an icon representing this link
-	IconURL *string `json:"icon_url,omitempty"`
+	IconURL *string `json:"icon_url,omitzero"`
 	// If you are trying to remove a link, set this to 'true'
-	Remove *bool `json:"remove,omitempty"`
+	Remove *bool `json:"remove,omitzero"`
 	// If updating an existing link, specify it's id.
-	ID *string `json:"id,omitempty"`
+	ID *string `json:"id,omitzero"`
 }
 
 func (u *UpdateFunctionalityLink) GetHrefURL() string {
@@ -90,7 +90,7 @@ func (u *UpdateFunctionalityOwner) GetID() string {
 type UpdateFunctionalityTeam struct {
 	ID string `json:"id"`
 	// If you are trying to remove a team from a functionality, set this to 'true'
-	Remove *bool `json:"remove,omitempty"`
+	Remove *bool `json:"remove,omitzero"`
 }
 
 func (u *UpdateFunctionalityTeam) GetID() string {
@@ -110,9 +110,9 @@ func (u *UpdateFunctionalityTeam) GetRemove() *bool {
 type UpdateFunctionalityExternalResource struct {
 	RemoteID string `json:"remote_id"`
 	// The integration slug for the external resource. Can be one of: github, opsgenie, pager_duty, statuspage, victorops. Not required if the resource has already been imported.
-	ConnectionType *string `json:"connection_type,omitempty"`
+	ConnectionType *string `json:"connection_type,omitzero"`
 	// If you are trying to remove an external resource from a service, set this to 'true'.
-	Remove *bool `json:"remove,omitempty"`
+	Remove *bool `json:"remove,omitzero"`
 }
 
 func (u *UpdateFunctionalityExternalResource) GetRemoteID() string {
@@ -138,27 +138,27 @@ func (u *UpdateFunctionalityExternalResource) GetRemove() *bool {
 
 // UpdateFunctionality - Update a functionalities attributes
 type UpdateFunctionality struct {
-	Name        *string                      `json:"name,omitempty"`
-	Description *string                      `json:"description,omitempty"`
-	Services    []UpdateFunctionalityService `json:"services,omitempty"`
+	Name        *string                      `json:"name,omitzero"`
+	Description *string                      `json:"description,omitzero"`
+	Services    []UpdateFunctionalityService `json:"services,omitzero"`
 	// An array of links to associate with this functionality. This will remove all links not present in the patch. Only acts if 'links' key is included in the payload.
-	Links []UpdateFunctionalityLink `json:"links,omitempty"`
+	Links []UpdateFunctionalityLink `json:"links,omitzero"`
 	// An object representing a Team that owns the functionality
-	Owner *UpdateFunctionalityOwner `json:"owner,omitempty"`
+	Owner *UpdateFunctionalityOwner `json:"owner,omitzero"`
 	// If you are trying to remove a team as an owner from a functionality, set this to 'true'
-	RemoveOwner *bool `json:"remove_owner,omitempty"`
+	RemoveOwner *bool `json:"remove_owner,omitzero"`
 	// An array of teams to attach to this functionality.
-	Teams []UpdateFunctionalityTeam `json:"teams,omitempty"`
+	Teams []UpdateFunctionalityTeam `json:"teams,omitzero"`
 	// If set to true, any teams tagged on the service that are not included in the given array will be removed. Set this to true if you want to do a replacement operation for the teams
-	RemoveRemainingTeams *bool `json:"remove_remaining_teams,omitempty"`
+	RemoveRemainingTeams *bool `json:"remove_remaining_teams,omitzero"`
 	// An array of external resources to attach to this service.
-	ExternalResources []UpdateFunctionalityExternalResource `json:"external_resources,omitempty"`
+	ExternalResources []UpdateFunctionalityExternalResource `json:"external_resources,omitzero"`
 	// If set to true, any external_resources tagged on the service that are not included in the given array will be removed. Set this to true if you want to do a replacement operation for the external_resources
-	RemoveRemainingExternalResources *bool `json:"remove_remaining_external_resources,omitempty"`
+	RemoveRemainingExternalResources *bool `json:"remove_remaining_external_resources,omitzero"`
 	// A hash of label keys and values
-	Labels                map[string]string `json:"labels,omitempty"`
-	AlertOnAdd            *bool             `json:"alert_on_add,omitempty"`
-	AutoAddRespondingTeam *bool             `json:"auto_add_responding_team,omitempty"`
+	Labels                map[string]string `json:"labels,omitzero"`
+	AlertOnAdd            *bool             `json:"alert_on_add,omitzero"`
+	AutoAddRespondingTeam *bool             `json:"auto_add_responding_team,omitzero"`
 	// Set this to true if you want to remove all of the services that are not included in the services array from the functionality
 	RemoveRemainingServices *bool `default:"false" json:"remove_remaining_services"`
 }

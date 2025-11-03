@@ -9,16 +9,16 @@ import (
 
 // LifecyclesMilestoneEntity - Lifecycles_MilestoneEntity model
 type LifecyclesMilestoneEntity struct {
-	ID                          *string               `json:"id,omitempty"`
-	Name                        *string               `json:"name,omitempty"`
-	Description                 *string               `json:"description,omitempty"`
-	Slug                        *string               `json:"slug,omitempty"`
-	AutoAssignTimestampOnCreate *string               `json:"auto_assign_timestamp_on_create,omitempty"`
-	Position                    *int                  `json:"position,omitempty"`
-	CreatedBy                   *NullableAuthorEntity `json:"created_by,omitempty"`
-	UpdatedBy                   *NullableAuthorEntity `json:"updated_by,omitempty"`
-	CreatedAt                   *time.Time            `json:"created_at,omitempty"`
-	UpdatedAt                   *time.Time            `json:"updated_at,omitempty"`
+	ID                          *string               `json:"id,omitzero"`
+	Name                        *string               `json:"name,omitzero"`
+	Description                 *string               `json:"description,omitzero"`
+	Slug                        *string               `json:"slug,omitzero"`
+	AutoAssignTimestampOnCreate *string               `json:"auto_assign_timestamp_on_create,omitzero"`
+	Position                    *int                  `json:"position,omitzero"`
+	CreatedBy                   *NullableAuthorEntity `json:"created_by,omitzero"`
+	UpdatedBy                   *NullableAuthorEntity `json:"updated_by,omitzero"`
+	CreatedAt                   *time.Time            `json:"created_at,omitzero"`
+	UpdatedAt                   *time.Time            `json:"updated_at,omitzero"`
 }
 
 func (l LifecyclesMilestoneEntity) MarshalJSON() ([]byte, error) {
