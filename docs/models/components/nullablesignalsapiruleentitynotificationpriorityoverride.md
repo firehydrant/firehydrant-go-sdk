@@ -3,8 +3,9 @@
 
 ## Values
 
-| Name                                                             | Value                                                            |
-| ---------------------------------------------------------------- | ---------------------------------------------------------------- |
-| `NullableSignalsAPIRuleEntityNotificationPriorityOverrideHigh`   | HIGH                                                             |
-| `NullableSignalsAPIRuleEntityNotificationPriorityOverrideMedium` | MEDIUM                                                           |
-| `NullableSignalsAPIRuleEntityNotificationPriorityOverrideLow`    | LOW                                                              |
+| Name                                                              | Value                                                             |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `NullableSignalsAPIRuleEntityNotificationPriorityOverrideHigh`    | HIGH                                                              |
+| `NullableSignalsAPIRuleEntityNotificationPriorityOverrideMedium`  | MEDIUM                                                            |
+| `NullableSignalsAPIRuleEntityNotificationPriorityOverrideLow`     | LOW                                                               |
+| `NullableSignalsAPIRuleEntityNotificationPriorityOverrideUnknown` |                                                                   |
