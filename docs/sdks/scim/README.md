@@ -211,7 +211,7 @@ func main() {
         Operations: []components.PatchScimGroupOperation{
             components.PatchScimGroupOperation{
                 Op: "<value>",
-                Path: "/var/tmp",
+                Path: firehydrantgosdk.Pointer("/var/tmp"),
             },
         },
     })

@@ -2,9 +2,26 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
 type NullableSignalsAPIGroupingEntityStrategyEntitySubstringEntity struct {
-	FieldName *string `json:"field_name,omitzero"`
-	Value     *string `json:"value,omitzero"`
+	FieldName *string  `json:"field_name,omitzero"`
+	Value     *string  `json:"value,omitzero"`
+	Values    []string `json:"values,omitzero"`
+	MatchType *string  `json:"match_type,omitzero"`
+}
+
+func (n NullableSignalsAPIGroupingEntityStrategyEntitySubstringEntity) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(n, "", false)
+}
+
+func (n *NullableSignalsAPIGroupingEntityStrategyEntitySubstringEntity) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &n, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (n *NullableSignalsAPIGroupingEntityStrategyEntitySubstringEntity) GetFieldName() *string {
@@ -19,4 +36,18 @@ func (n *NullableSignalsAPIGroupingEntityStrategyEntitySubstringEntity) GetValue
 		return nil
 	}
 	return n.Value
+}
+
+func (n *NullableSignalsAPIGroupingEntityStrategyEntitySubstringEntity) GetValues() []string {
+	if n == nil {
+		return nil
+	}
+	return n.Values
+}
+
+func (n *NullableSignalsAPIGroupingEntityStrategyEntitySubstringEntity) GetMatchType() *string {
+	if n == nil {
+		return nil
+	}
+	return n.MatchType
 }

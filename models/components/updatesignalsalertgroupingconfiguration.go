@@ -38,12 +38,41 @@ func (e *UpdateSignalsAlertGroupingConfigurationFieldName) UnmarshalJSON(data []
 	}
 }
 
+// UpdateSignalsAlertGroupingConfigurationMatchType - Match type for multiple values
+type UpdateSignalsAlertGroupingConfigurationMatchType string
+
+const (
+	UpdateSignalsAlertGroupingConfigurationMatchTypeAnd UpdateSignalsAlertGroupingConfigurationMatchType = "and"
+	UpdateSignalsAlertGroupingConfigurationMatchTypeOr  UpdateSignalsAlertGroupingConfigurationMatchType = "or"
+)
+
+func (e UpdateSignalsAlertGroupingConfigurationMatchType) ToPointer() *UpdateSignalsAlertGroupingConfigurationMatchType {
+	return &e
+}
+func (e *UpdateSignalsAlertGroupingConfigurationMatchType) UnmarshalJSON(data []byte) error {
+	var v string
+	if err := json.Unmarshal(data, &v); err != nil {
+		return err
+	}
+	switch v {
+	case "and":
+		fallthrough
+	case "or":
+		*e = UpdateSignalsAlertGroupingConfigurationMatchType(v)
+		return nil
+	default:
+		return fmt.Errorf("invalid value for UpdateSignalsAlertGroupingConfigurationMatchType: %v", v)
+	}
+}
+
 // UpdateSignalsAlertGroupingConfigurationSubstring - The type of strategy to use for grouping alerts
 type UpdateSignalsAlertGroupingConfigurationSubstring struct {
 	// The field to use for grouping alerts
 	FieldName UpdateSignalsAlertGroupingConfigurationFieldName `json:"field_name"`
-	// The value to use for grouping alerts
-	Value string `json:"value"`
+	// Multiple values to use for grouping alerts
+	Values []string `json:"values"`
+	// Match type for multiple values
+	MatchType *UpdateSignalsAlertGroupingConfigurationMatchType `json:"match_type,omitzero"`
 }
 
 func (u *UpdateSignalsAlertGroupingConfigurationSubstring) GetFieldName() UpdateSignalsAlertGroupingConfigurationFieldName {
@@ -53,11 +82,18 @@ func (u *UpdateSignalsAlertGroupingConfigurationSubstring) GetFieldName() Update
 	return u.FieldName
 }
 
-func (u *UpdateSignalsAlertGroupingConfigurationSubstring) GetValue() string {
+func (u *UpdateSignalsAlertGroupingConfigurationSubstring) GetValues() []string {
 	if u == nil {
-		return ""
+		return []string{}
 	}
-	return u.Value
+	return u.Values
+}
+
+func (u *UpdateSignalsAlertGroupingConfigurationSubstring) GetMatchType() *UpdateSignalsAlertGroupingConfigurationMatchType {
+	if u == nil {
+		return nil
+	}
+	return u.MatchType
 }
 
 // UpdateSignalsAlertGroupingConfigurationStrategy - The strategy to use for grouping alerts

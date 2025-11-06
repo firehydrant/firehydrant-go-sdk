@@ -3,8 +3,9 @@
 
 ## Values
 
-| Name                                                     | Value                                                    |
-| -------------------------------------------------------- | -------------------------------------------------------- |
-| `SignalsAPIRuleEntityNotificationPriorityOverrideHigh`   | HIGH                                                     |
-| `SignalsAPIRuleEntityNotificationPriorityOverrideMedium` | MEDIUM                                                   |
-| `SignalsAPIRuleEntityNotificationPriorityOverrideLow`    | LOW                                                      |
+| Name                                                      | Value                                                     |
+| --------------------------------------------------------- | --------------------------------------------------------- |
+| `SignalsAPIRuleEntityNotificationPriorityOverrideHigh`    | HIGH                                                      |
+| `SignalsAPIRuleEntityNotificationPriorityOverrideMedium`  | MEDIUM                                                    |
+| `SignalsAPIRuleEntityNotificationPriorityOverrideLow`     | LOW                                                       |
+| `SignalsAPIRuleEntityNotificationPriorityOverrideUnknown` |                                                           |

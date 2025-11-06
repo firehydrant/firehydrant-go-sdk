@@ -6,7 +6,7 @@ type PatchScimGroupOperation struct {
 	// The operation to perform. Options are add, remove, replace
 	Op string `json:"op"`
 	// The path to the attribute to be modified
-	Path string `json:"path"`
+	Path *string `json:"path,omitzero"`
 }
 
 func (p *PatchScimGroupOperation) GetOp() string {
@@ -16,9 +16,9 @@ func (p *PatchScimGroupOperation) GetOp() string {
 	return p.Op
 }
 
-func (p *PatchScimGroupOperation) GetPath() string {
+func (p *PatchScimGroupOperation) GetPath() *string {
 	if p == nil {
-		return ""
+		return nil
 	}
 	return p.Path
 }

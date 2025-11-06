@@ -12,9 +12,10 @@ import (
 type SignalsAPIRuleEntityNotificationPriorityOverride string
 
 const (
-	SignalsAPIRuleEntityNotificationPriorityOverrideHigh   SignalsAPIRuleEntityNotificationPriorityOverride = "HIGH"
-	SignalsAPIRuleEntityNotificationPriorityOverrideMedium SignalsAPIRuleEntityNotificationPriorityOverride = "MEDIUM"
-	SignalsAPIRuleEntityNotificationPriorityOverrideLow    SignalsAPIRuleEntityNotificationPriorityOverride = "LOW"
+	SignalsAPIRuleEntityNotificationPriorityOverrideHigh    SignalsAPIRuleEntityNotificationPriorityOverride = "HIGH"
+	SignalsAPIRuleEntityNotificationPriorityOverrideMedium  SignalsAPIRuleEntityNotificationPriorityOverride = "MEDIUM"
+	SignalsAPIRuleEntityNotificationPriorityOverrideLow     SignalsAPIRuleEntityNotificationPriorityOverride = "LOW"
+	SignalsAPIRuleEntityNotificationPriorityOverrideUnknown SignalsAPIRuleEntityNotificationPriorityOverride = ""
 )
 
 func (e SignalsAPIRuleEntityNotificationPriorityOverride) ToPointer() *SignalsAPIRuleEntityNotificationPriorityOverride {
@@ -31,6 +32,8 @@ func (e *SignalsAPIRuleEntityNotificationPriorityOverride) UnmarshalJSON(data []
 	case "MEDIUM":
 		fallthrough
 	case "LOW":
+		fallthrough
+	case "":
 		*e = SignalsAPIRuleEntityNotificationPriorityOverride(v)
 		return nil
 	default:
