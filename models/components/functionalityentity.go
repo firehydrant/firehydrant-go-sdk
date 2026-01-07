@@ -20,11 +20,13 @@ type FunctionalityEntity struct {
 	// List of active incident guids
 	ActiveIncidents []string `json:"active_incidents,omitzero"`
 	// List of links attached to this functionality.
-	Links                 []LinksEntity           `json:"links,omitzero"`
-	Owner                 *NullableTeamEntityLite `json:"owner,omitzero"`
-	AlertOnAdd            *bool                   `json:"alert_on_add,omitzero"`
-	AutoAddRespondingTeam *bool                   `json:"auto_add_responding_team,omitzero"`
-	UpdatedBy             *NullableAuthorEntity   `json:"updated_by,omitzero"`
+	Links []LinksEntity           `json:"links,omitzero"`
+	Owner *NullableTeamEntityLite `json:"owner,omitzero"`
+	// Integer representing functionality tier (0-5, lower is more critical)
+	ServiceTier           *int                  `json:"service_tier,omitzero"`
+	AlertOnAdd            *bool                 `json:"alert_on_add,omitzero"`
+	AutoAddRespondingTeam *bool                 `json:"auto_add_responding_team,omitzero"`
+	UpdatedBy             *NullableAuthorEntity `json:"updated_by,omitzero"`
 	// Services this functionality provides
 	Services []ServiceEntityLite `json:"services,omitzero"`
 	// Information about known linkages to representations of services outside of FireHydrant.
@@ -112,6 +114,13 @@ func (f *FunctionalityEntity) GetOwner() *NullableTeamEntityLite {
 		return nil
 	}
 	return f.Owner
+}
+
+func (f *FunctionalityEntity) GetServiceTier() *int {
+	if f == nil {
+		return nil
+	}
+	return f.ServiceTier
 }
 
 func (f *FunctionalityEntity) GetAlertOnAdd() *bool {

@@ -43,6 +43,7 @@ const (
 	CreateRolePermissionManageIncidents                        CreateRolePermission = "manage_incidents"
 	CreateRolePermissionCreateIncidents                        CreateRolePermission = "create_incidents"
 	CreateRolePermissionReadIncidents                          CreateRolePermission = "read_incidents"
+	CreateRolePermissionUpdateIncidents                        CreateRolePermission = "update_incidents"
 	CreateRolePermissionManageIncidentSettings                 CreateRolePermission = "manage_incident_settings"
 	CreateRolePermissionReadIncidentSettings                   CreateRolePermission = "read_incident_settings"
 	CreateRolePermissionManageIntegrations                     CreateRolePermission = "manage_integrations"
@@ -144,6 +145,8 @@ func (e *CreateRolePermission) UnmarshalJSON(data []byte) error {
 		fallthrough
 	case "read_incidents":
 		fallthrough
+	case "update_incidents":
+		fallthrough
 	case "manage_incident_settings":
 		fallthrough
 	case "read_incident_settings":
@@ -219,7 +222,7 @@ func (c CreateRole) MarshalJSON() ([]byte, error) {
 }
 
 func (c *CreateRole) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"name"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
 		return err
 	}
 	return nil

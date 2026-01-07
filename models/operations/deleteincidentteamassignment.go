@@ -40,7 +40,7 @@ func (d DeleteIncidentTeamAssignmentRequest) MarshalJSON() ([]byte, error) {
 }
 
 func (d *DeleteIncidentTeamAssignmentRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &d, "", false, []string{"incident_id", "team_assignment_id"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &d, "", false, nil); err != nil {
 		return err
 	}
 	return nil

@@ -103,7 +103,7 @@ func (u UpdateAudienceRequest) MarshalJSON() ([]byte, error) {
 }
 
 func (u *UpdateAudienceRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &u, "", false, []string{"audience_id"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &u, "", false, nil); err != nil {
 		return err
 	}
 	return nil

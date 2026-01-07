@@ -1,5 +1,4 @@
 # IncidentSettings
-(*IncidentSettings*)
 
 ## Overview
 

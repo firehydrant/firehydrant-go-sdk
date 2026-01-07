@@ -80,7 +80,7 @@ func (c CreateScheduledMaintenance) MarshalJSON() ([]byte, error) {
 }
 
 func (c *CreateScheduledMaintenance) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"name", "starts_at", "ends_at"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
 		return err
 	}
 	return nil

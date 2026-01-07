@@ -23,7 +23,7 @@ func (c CreateCustomFieldDefinition) MarshalJSON() ([]byte, error) {
 }
 
 func (c *CreateCustomFieldDefinition) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"display_name", "field_type"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
 		return err
 	}
 	return nil

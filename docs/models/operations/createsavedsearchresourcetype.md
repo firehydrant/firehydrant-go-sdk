@@ -14,4 +14,5 @@
 | `CreateSavedSearchResourceTypeAnalytics`             | analytics                                            |
 | `CreateSavedSearchResourceTypeImpactAnalytics`       | impact_analytics                                     |
 | `CreateSavedSearchResourceTypeAlerts`                | alerts                                               |
+| `CreateSavedSearchResourceTypeAlertAnalytics`        | alert_analytics                                      |
 | `CreateSavedSearchResourceTypeIncidentEvents`        | incident_events                                      |

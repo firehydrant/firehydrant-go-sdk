@@ -235,9 +235,11 @@ type ListMttxMetricsRequest struct {
 	// A comma separated list of incident type IDs
 	IncidentTypeID *string `queryParam:"style=form,explode=true,name=incident_type_id"`
 	// A comma separated list of retrospective template IDs
-	RetrospectiveTemplates *string                `queryParam:"style=form,explode=true,name=retrospective_templates"`
-	CustomFieldID          *string                `queryParam:"style=form,explode=true,name=custom_field_id"`
-	SortBy                 *ListMttxMetricsSortBy `queryParam:"style=form,explode=true,name=sort_by"`
+	RetrospectiveTemplates *string `queryParam:"style=form,explode=true,name=retrospective_templates"`
+	// A comma separated list of runbook IDs
+	AttachedRunbooks *string                `queryParam:"style=form,explode=true,name=attached_runbooks"`
+	CustomFieldID    *string                `queryParam:"style=form,explode=true,name=custom_field_id"`
+	SortBy           *ListMttxMetricsSortBy `queryParam:"style=form,explode=true,name=sort_by"`
 	// Comma-separated list of measurements to include in the response
 	Measurements *string `queryParam:"style=form,explode=true,name=measurements"`
 	// Comma-separated list of label key / values in the format of 'key=value,key2=value2'
@@ -254,7 +256,7 @@ func (l ListMttxMetricsRequest) MarshalJSON() ([]byte, error) {
 }
 
 func (l *ListMttxMetricsRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &l, "", false, []string{"start_date", "end_date"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &l, "", false, nil); err != nil {
 		return err
 	}
 	return nil
@@ -489,6 +491,13 @@ func (l *ListMttxMetricsRequest) GetRetrospectiveTemplates() *string {
 		return nil
 	}
 	return l.RetrospectiveTemplates
+}
+
+func (l *ListMttxMetricsRequest) GetAttachedRunbooks() *string {
+	if l == nil {
+		return nil
+	}
+	return l.AttachedRunbooks
 }
 
 func (l *ListMttxMetricsRequest) GetCustomFieldID() *string {

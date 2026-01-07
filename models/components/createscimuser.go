@@ -106,7 +106,7 @@ func (c CreateScimUser) MarshalJSON() ([]byte, error) {
 }
 
 func (c *CreateScimUser) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"userName", "name", "emails"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
 		return err
 	}
 	return nil

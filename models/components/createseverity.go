@@ -64,7 +64,7 @@ func (c CreateSeverity) MarshalJSON() ([]byte, error) {
 }
 
 func (c *CreateSeverity) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"slug"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
 		return err
 	}
 	return nil

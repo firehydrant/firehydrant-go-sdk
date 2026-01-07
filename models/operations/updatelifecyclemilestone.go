@@ -105,7 +105,7 @@ func (u UpdateLifecycleMilestoneRequest) MarshalJSON() ([]byte, error) {
 }
 
 func (u *UpdateLifecycleMilestoneRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &u, "", false, []string{"milestone_id"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &u, "", false, nil); err != nil {
 		return err
 	}
 	return nil

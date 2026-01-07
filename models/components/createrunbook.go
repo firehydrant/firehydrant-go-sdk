@@ -108,7 +108,7 @@ func (c CreateRunbookStep) MarshalJSON() ([]byte, error) {
 }
 
 func (c *CreateRunbookStep) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"name", "action_id"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
 		return err
 	}
 	return nil
@@ -159,7 +159,7 @@ func (c CreateRunbook) MarshalJSON() ([]byte, error) {
 }
 
 func (c *CreateRunbook) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"name", "type"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
 		return err
 	}
 	return nil

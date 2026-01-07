@@ -1,5 +1,4 @@
 # Integrations
-(*Integrations*)
 
 ## Overview
 
@@ -1181,7 +1180,7 @@ func main() {
 
 ### Response
 
-**[*components.IntegrationsConfluenceCloudSpaceKeyEntity](../../models/components/integrationsconfluencecloudspacekeyentity.md), error**
+**[*components.IntegrationsConfluenceCloudSpaceEntity](../../models/components/integrationsconfluencecloudspaceentity.md), error**
 
 ### Errors
 

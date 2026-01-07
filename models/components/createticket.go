@@ -6,6 +6,27 @@ import (
 	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
+type CreateTicketAssignee struct {
+	// The source of the assignee
+	Source *string `json:"source,omitzero"`
+	// The uesr id of the assignee
+	ID string `json:"id"`
+}
+
+func (c *CreateTicketAssignee) GetSource() *string {
+	if c == nil {
+		return nil
+	}
+	return c.Source
+}
+
+func (c *CreateTicketAssignee) GetID() string {
+	if c == nil {
+		return ""
+	}
+	return c.ID
+}
+
 // CreateTicket - Creates a ticket for a project
 type CreateTicket struct {
 	Summary string `json:"summary"`
@@ -20,6 +41,8 @@ type CreateTicket struct {
 	TagList []string `json:"tag_list,omitzero"`
 	// The remote URL for an existing ticket in a supported and configured ticketing integration
 	RemoteURL *string `json:"remote_url,omitzero"`
+	// An array of assignees for the ticket
+	Assignees []CreateTicketAssignee `json:"assignees,omitzero"`
 }
 
 func (c CreateTicket) MarshalJSON() ([]byte, error) {
@@ -27,7 +50,7 @@ func (c CreateTicket) MarshalJSON() ([]byte, error) {
 }
 
 func (c *CreateTicket) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"summary"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
 		return err
 	}
 	return nil
@@ -94,4 +117,11 @@ func (c *CreateTicket) GetRemoteURL() *string {
 		return nil
 	}
 	return c.RemoteURL
+}
+
+func (c *CreateTicket) GetAssignees() []CreateTicketAssignee {
+	if c == nil {
+		return nil
+	}
+	return c.Assignees
 }

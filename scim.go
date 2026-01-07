@@ -835,7 +835,7 @@ func (s *Scim) ListScimGroups(ctx context.Context, startIndex *int, count *int, 
 	req.Header.Set("Accept", "*/*")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	if err := utils.PopulateQueryParams(ctx, req, request, nil); err != nil {
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
 		return fmt.Errorf("error populating query params: %w", err)
 	}
 
@@ -1952,7 +1952,7 @@ func (s *Scim) ListScimUsers(ctx context.Context, filter *string, startIndex *in
 	req.Header.Set("Accept", "*/*")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	if err := utils.PopulateQueryParams(ctx, req, request, nil); err != nil {
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
 		return fmt.Errorf("error populating query params: %w", err)
 	}
 

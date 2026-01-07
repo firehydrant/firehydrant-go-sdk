@@ -290,7 +290,7 @@ func (p PreviewTeamOnCallScheduleRotation) MarshalJSON() ([]byte, error) {
 }
 
 func (p *PreviewTeamOnCallScheduleRotation) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &p, "", false, []string{"name", "time_zone", "strategy"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &p, "", false, nil); err != nil {
 		return err
 	}
 	return nil

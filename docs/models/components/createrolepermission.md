@@ -37,6 +37,7 @@
 | `CreateRolePermissionManageIncidents`                        | manage_incidents                                             |
 | `CreateRolePermissionCreateIncidents`                        | create_incidents                                             |
 | `CreateRolePermissionReadIncidents`                          | read_incidents                                               |
+| `CreateRolePermissionUpdateIncidents`                        | update_incidents                                             |
 | `CreateRolePermissionManageIncidentSettings`                 | manage_incident_settings                                     |
 | `CreateRolePermissionReadIncidentSettings`                   | read_incident_settings                                       |
 | `CreateRolePermissionManageIntegrations`                     | manage_integrations                                          |

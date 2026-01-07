@@ -28,7 +28,7 @@ func (r ResolveIncidentRequest) MarshalJSON() ([]byte, error) {
 }
 
 func (r *ResolveIncidentRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &r, "", false, []string{"incident_id"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &r, "", false, nil); err != nil {
 		return err
 	}
 	return nil

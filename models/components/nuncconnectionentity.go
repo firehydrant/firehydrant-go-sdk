@@ -3,8 +3,36 @@
 package components
 
 import (
+	"encoding/json"
+	"fmt"
 	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
+
+type PublishState string
+
+const (
+	PublishStatePublished   PublishState = "published"
+	PublishStateUnpublished PublishState = "unpublished"
+)
+
+func (e PublishState) ToPointer() *PublishState {
+	return &e
+}
+func (e *PublishState) UnmarshalJSON(data []byte) error {
+	var v string
+	if err := json.Unmarshal(data, &v); err != nil {
+		return err
+	}
+	switch v {
+	case "published":
+		fallthrough
+	case "unpublished":
+		*e = PublishState(v)
+		return nil
+	default:
+		return fmt.Errorf("invalid value for PublishState: %v", v)
+	}
+}
 
 // NuncConnectionEntity model
 type NuncConnectionEntity struct {
@@ -35,7 +63,12 @@ type NuncConnectionEntity struct {
 	EnableHistogram       *bool                             `json:"enable_histogram,omitzero"`
 	UIVersion             *int                              `json:"ui_version,omitzero"`
 	// List of links attached to this status page.
-	Links []LinksEntity `json:"links,omitzero"`
+	Links                    []LinksEntity                               `json:"links,omitzero"`
+	IsDNSVerified            *bool                                       `json:"is_dns_verified,omitzero"`
+	PublishState             *PublishState                               `json:"publish_state,omitzero"`
+	AuthenticationMethod     *string                                     `json:"authentication_method,omitzero"`
+	OidcAuthenticationConfig *NullableNuncOidcAuthenticationConfigEntity `json:"oidc_authentication_config,omitzero"`
+	HasCustomConfiguration   *bool                                       `json:"has_custom_configuration,omitzero"`
 }
 
 func (n NuncConnectionEntity) MarshalJSON() ([]byte, error) {
@@ -236,4 +269,39 @@ func (n *NuncConnectionEntity) GetLinks() []LinksEntity {
 		return nil
 	}
 	return n.Links
+}
+
+func (n *NuncConnectionEntity) GetIsDNSVerified() *bool {
+	if n == nil {
+		return nil
+	}
+	return n.IsDNSVerified
+}
+
+func (n *NuncConnectionEntity) GetPublishState() *PublishState {
+	if n == nil {
+		return nil
+	}
+	return n.PublishState
+}
+
+func (n *NuncConnectionEntity) GetAuthenticationMethod() *string {
+	if n == nil {
+		return nil
+	}
+	return n.AuthenticationMethod
+}
+
+func (n *NuncConnectionEntity) GetOidcAuthenticationConfig() *NullableNuncOidcAuthenticationConfigEntity {
+	if n == nil {
+		return nil
+	}
+	return n.OidcAuthenticationConfig
+}
+
+func (n *NuncConnectionEntity) GetHasCustomConfiguration() *bool {
+	if n == nil {
+		return nil
+	}
+	return n.HasCustomConfiguration
 }

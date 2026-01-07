@@ -1,5 +1,4 @@
 # Incidents
-(*Incidents*)
 
 ## Overview
 

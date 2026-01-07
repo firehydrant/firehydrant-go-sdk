@@ -5,6 +5,8 @@ package operations
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+	"time"
 )
 
 // ListAlertsTagMatchStrategy - The strategy to match tags. `any` will return alerts that have at least one of the supplied tags, `match_all` will return only alerts that have all of the supplied tags, and `exclude` will only return alerts that have none of the supplied tags. This currently only works for Signals alerts.
@@ -60,6 +62,25 @@ type ListAlertsRequest struct {
 	TagMatchStrategy *ListAlertsTagMatchStrategy `queryParam:"style=form,explode=true,name=tag_match_strategy"`
 	// A comma separated list of statuses to filter by. Valid statuses are: opened, acknowledged, resolved, ignored, expired, linked, or snoozed
 	Statuses *string `queryParam:"style=form,explode=true,name=statuses"`
+	// Filters for alerts that started on or after the beginning of this date
+	StartDate *time.Time `queryParam:"style=form,explode=true,name=start_date"`
+	// Filters for alerts that started on or before the end of this date
+	EndDate *time.Time `queryParam:"style=form,explode=true,name=end_date"`
+	// Filters for alerts that started at or after this exact datetime
+	StartDatetime *time.Time `queryParam:"style=form,explode=true,name=start_datetime"`
+	// Filters for alerts that started at or before this exact datetime
+	EndDatetime *time.Time `queryParam:"style=form,explode=true,name=end_datetime"`
+}
+
+func (l ListAlertsRequest) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(l, "", false)
+}
+
+func (l *ListAlertsRequest) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &l, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (l *ListAlertsRequest) GetPage() *int {
@@ -144,4 +165,32 @@ func (l *ListAlertsRequest) GetStatuses() *string {
 		return nil
 	}
 	return l.Statuses
+}
+
+func (l *ListAlertsRequest) GetStartDate() *time.Time {
+	if l == nil {
+		return nil
+	}
+	return l.StartDate
+}
+
+func (l *ListAlertsRequest) GetEndDate() *time.Time {
+	if l == nil {
+		return nil
+	}
+	return l.EndDate
+}
+
+func (l *ListAlertsRequest) GetStartDatetime() *time.Time {
+	if l == nil {
+		return nil
+	}
+	return l.StartDatetime
+}
+
+func (l *ListAlertsRequest) GetEndDatetime() *time.Time {
+	if l == nil {
+		return nil
+	}
+	return l.EndDatetime
 }

@@ -1,5 +1,4 @@
 # Scim
-(*Scim*)
 
 ## Overview
 

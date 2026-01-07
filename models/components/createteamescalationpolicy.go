@@ -114,7 +114,7 @@ func (c CreateTeamEscalationPolicyStep) MarshalJSON() ([]byte, error) {
 }
 
 func (c *CreateTeamEscalationPolicyStep) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"targets", "timeout"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
 		return err
 	}
 	return nil
@@ -501,7 +501,7 @@ func (c CreateTeamEscalationPolicy) MarshalJSON() ([]byte, error) {
 }
 
 func (c *CreateTeamEscalationPolicy) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"name", "steps"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
 		return err
 	}
 	return nil

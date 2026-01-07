@@ -52,7 +52,7 @@ func (e ExportSignalsShiftAnalyticsRequest) MarshalJSON() ([]byte, error) {
 }
 
 func (e *ExportSignalsShiftAnalyticsRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &e, "", false, []string{"period_start", "period_end"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &e, "", false, nil); err != nil {
 		return err
 	}
 	return nil

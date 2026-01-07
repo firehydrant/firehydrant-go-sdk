@@ -90,7 +90,7 @@ func (s *Audiences) ListAudiences(ctx context.Context, includeArchived *bool, op
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	if err := utils.PopulateQueryParams(ctx, req, request, nil); err != nil {
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
@@ -1862,9 +1862,9 @@ func (s *Audiences) GetAudienceSummary(ctx context.Context, audienceID string, i
 
 }
 
-// GenerateAudienceSummary - Generate summary
-// Generate a new audience-specific summary for an incident
-func (s *Audiences) GenerateAudienceSummary(ctx context.Context, audienceID string, incidentID string, requestBody *operations.GenerateAudienceSummaryRequestBody, opts ...operations.Option) (*components.AIEntitiesIncidentSummaryEntity, error) {
+// GenerateAudienceSummary - Generate summary (async)
+// Initiates asynchronous generation of a new audience-specific summary for an incident. This is an async operation that can take up to 60 seconds to complete. The response includes a WebSocket topic name for internal use. After initiating generation, use the GET endpoint to poll for the completed summary.
+func (s *Audiences) GenerateAudienceSummary(ctx context.Context, audienceID string, incidentID string, requestBody *operations.GenerateAudienceSummaryRequestBody, opts ...operations.Option) error {
 	request := operations.GenerateAudienceSummaryRequest{
 		AudienceID:  audienceID,
 		IncidentID:  incidentID,
@@ -1879,7 +1879,7 @@ func (s *Audiences) GenerateAudienceSummary(ctx context.Context, audienceID stri
 
 	for _, opt := range opts {
 		if err := opt(&o, supportedOptions...); err != nil {
-			return nil, fmt.Errorf("error applying option: %w", err)
+			return fmt.Errorf("error applying option: %w", err)
 		}
 	}
 
@@ -1891,7 +1891,7 @@ func (s *Audiences) GenerateAudienceSummary(ctx context.Context, audienceID stri
 	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/v1/audiences/{audience_id}/summaries/{incident_id}", request, nil)
 	if err != nil {
-		return nil, fmt.Errorf("error generating URL: %w", err)
+		return fmt.Errorf("error generating URL: %w", err)
 	}
 
 	hookCtx := hooks.HookContext{
@@ -1905,7 +1905,7 @@ func (s *Audiences) GenerateAudienceSummary(ctx context.Context, audienceID stri
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "RequestBody", "json", `request:"mediaType=application/json"`)
 	if err != nil {
-		return nil, err
+		return err
 	}
 
 	timeout := o.Timeout
@@ -1921,16 +1921,16 @@ func (s *Audiences) GenerateAudienceSummary(ctx context.Context, audienceID stri
 
 	req, err := http.NewRequestWithContext(ctx, "POST", opURL, bodyReader)
 	if err != nil {
-		return nil, fmt.Errorf("error creating request: %w", err)
+		return fmt.Errorf("error creating request: %w", err)
 	}
-	req.Header.Set("Accept", "application/json")
+	req.Header.Set("Accept", "*/*")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
-		return nil, err
+		return err
 	}
 
 	for k, v := range o.SetHeaders {
@@ -1990,17 +1990,17 @@ func (s *Audiences) GenerateAudienceSummary(ctx context.Context, audienceID stri
 		})
 
 		if err != nil {
-			return nil, err
+			return err
 		} else {
 			httpRes, err = s.hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 			if err != nil {
-				return nil, err
+				return err
 			}
 		}
 	} else {
 		req, err = s.hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 		if err != nil {
-			return nil, err
+			return err
 		}
 
 		httpRes, err = s.sdkConfiguration.Client.Do(req)
@@ -2012,66 +2012,47 @@ func (s *Audiences) GenerateAudienceSummary(ctx context.Context, audienceID stri
 			}
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
-			return nil, err
-		} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
+			return err
+		} else if utils.MatchStatusCodes([]string{"404", "4XX", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
-				return nil, err
+				return err
 			} else if _httpRes != nil {
 				httpRes = _httpRes
 			}
 		} else {
 			httpRes, err = s.hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 			if err != nil {
-				return nil, err
+				return err
 			}
 		}
 	}
 
 	switch {
-	case httpRes.StatusCode == 201:
-		switch {
-		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
-			rawBody, err := utils.ConsumeRawBody(httpRes)
-			if err != nil {
-				return nil, err
-			}
-
-			var out components.AIEntitiesIncidentSummaryEntity
-			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
-				return nil, err
-			}
-
-			return &out, nil
-		default:
-			rawBody, err := utils.ConsumeRawBody(httpRes)
-			if err != nil {
-				return nil, err
-			}
-			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
-		}
+	case httpRes.StatusCode == 202:
+	case httpRes.StatusCode == 404:
+		fallthrough
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return nil, err
+			return err
 		}
-		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
+		return sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return nil, err
+			return err
 		}
-		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
+		return sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	default:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return nil, err
+			return err
 		}
-		return nil, sdkerrors.NewSDKError("unknown status code returned", httpRes.StatusCode, string(rawBody), httpRes)
+		return sdkerrors.NewSDKError("unknown status code returned", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
-	return nil, nil
-
+	return nil
 }
 
 // ListAudienceSummaries - List audience summaries

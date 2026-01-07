@@ -20,7 +20,7 @@ func (s ShareIncidentRetrospectivesRequestBody) MarshalJSON() ([]byte, error) {
 }
 
 func (s *ShareIncidentRetrospectivesRequestBody) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &s, "", false, []string{"retrospective_ids"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &s, "", false, nil); err != nil {
 		return err
 	}
 	return nil

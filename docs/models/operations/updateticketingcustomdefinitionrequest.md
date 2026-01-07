@@ -1,0 +1,9 @@
+# UpdateTicketingCustomDefinitionRequest
+
+
+## Fields
+
+| Field                                                                                                    | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `FieldID`                                                                                                | *string*                                                                                                 | :heavy_check_mark:                                                                                       | N/A                                                                                                      |
+| `UpdateTicketingCustomDefinition`                                                                        | [components.UpdateTicketingCustomDefinition](../../models/components/updateticketingcustomdefinition.md) | :heavy_check_mark:                                                                                       | N/A                                                                                                      |

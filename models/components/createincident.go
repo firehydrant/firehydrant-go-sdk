@@ -53,7 +53,7 @@ func (c CreateIncidentMilestone) MarshalJSON() ([]byte, error) {
 }
 
 func (c *CreateIncidentMilestone) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"type", "occurred_at"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
 		return err
 	}
 	return nil
@@ -87,7 +87,7 @@ func (c CustomField) MarshalJSON() ([]byte, error) {
 }
 
 func (c *CustomField) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"field_id"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
 		return err
 	}
 	return nil
@@ -153,7 +153,7 @@ func (c CreateIncident) MarshalJSON() ([]byte, error) {
 }
 
 func (c *CreateIncident) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"name"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
 		return err
 	}
 	return nil

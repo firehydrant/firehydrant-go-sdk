@@ -104,6 +104,8 @@ type ListIncidentsRequest struct {
 	IncidentTypeID *string `queryParam:"style=form,explode=true,name=incident_type_id"`
 	// A comma separated list of retrospective template IDs
 	RetrospectiveTemplates *string `queryParam:"style=form,explode=true,name=retrospective_templates"`
+	// A comma separated list of runbook IDs
+	AttachedRunbooks *string `queryParam:"style=form,explode=true,name=attached_runbooks"`
 }
 
 func (l ListIncidentsRequest) MarshalJSON() ([]byte, error) {
@@ -346,4 +348,11 @@ func (l *ListIncidentsRequest) GetRetrospectiveTemplates() *string {
 		return nil
 	}
 	return l.RetrospectiveTemplates
+}
+
+func (l *ListIncidentsRequest) GetAttachedRunbooks() *string {
+	if l == nil {
+		return nil
+	}
+	return l.AttachedRunbooks
 }
