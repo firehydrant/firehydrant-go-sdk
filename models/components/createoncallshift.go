@@ -24,7 +24,7 @@ func (c CreateOnCallShift) MarshalJSON() ([]byte, error) {
 }
 
 func (c *CreateOnCallShift) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"start_time", "end_time"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
 		return err
 	}
 	return nil

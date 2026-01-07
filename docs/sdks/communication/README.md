@@ -1,5 +1,4 @@
 # Communication
-(*Communication*)
 
 ## Overview
 

@@ -900,7 +900,7 @@ func (s *Integrations) ListAuthedProviders(ctx context.Context, integrationSlug 
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	if err := utils.PopulateQueryParams(ctx, req, request, nil); err != nil {
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
@@ -1320,7 +1320,7 @@ func (s *Integrations) ListConnections(ctx context.Context, integrationSlug *str
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	if err := utils.PopulateQueryParams(ctx, req, request, nil); err != nil {
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
@@ -2740,7 +2740,7 @@ func (s *Integrations) ListAwsConnections(ctx context.Context, request operation
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	if err := utils.PopulateQueryParams(ctx, req, request, nil); err != nil {
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
@@ -3363,7 +3363,7 @@ func (s *Integrations) ListAwsCloudtrailBatches(ctx context.Context, page *int, 
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	if err := utils.PopulateQueryParams(ctx, req, request, nil); err != nil {
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
@@ -4131,7 +4131,7 @@ func (s *Integrations) ListAwsCloudtrailBatchEvents(ctx context.Context, id stri
 
 // SearchConfluenceSpaces - List Confluence spaces
 // Lists available space keys for the Confluence integration connection.
-func (s *Integrations) SearchConfluenceSpaces(ctx context.Context, id string, keyword *string, opts ...operations.Option) (*components.IntegrationsConfluenceCloudSpaceKeyEntity, error) {
+func (s *Integrations) SearchConfluenceSpaces(ctx context.Context, id string, keyword *string, opts ...operations.Option) (*components.IntegrationsConfluenceCloudSpaceEntity, error) {
 	request := operations.SearchConfluenceSpacesRequest{
 		ID:      id,
 		Keyword: keyword,
@@ -4188,7 +4188,7 @@ func (s *Integrations) SearchConfluenceSpaces(ctx context.Context, id string, ke
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	if err := utils.PopulateQueryParams(ctx, req, request, nil); err != nil {
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
@@ -4300,7 +4300,7 @@ func (s *Integrations) SearchConfluenceSpaces(ctx context.Context, id string, ke
 				return nil, err
 			}
 
-			var out components.IntegrationsConfluenceCloudSpaceKeyEntity
+			var out components.IntegrationsConfluenceCloudSpaceEntity
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
@@ -4799,7 +4799,7 @@ func (s *Integrations) ListSlackEmojiActions(ctx context.Context, connectionID s
 	req.Header.Set("Accept", "*/*")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	if err := utils.PopulateQueryParams(ctx, req, request, nil); err != nil {
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
 		return fmt.Errorf("error populating query params: %w", err)
 	}
 
@@ -5733,7 +5733,7 @@ func (s *Integrations) ListStatuspageConnections(ctx context.Context, page *int,
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	if err := utils.PopulateQueryParams(ctx, req, request, nil); err != nil {
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
@@ -6742,7 +6742,7 @@ func (s *Integrations) SearchZendeskTickets(ctx context.Context, connectionID st
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	if err := utils.PopulateQueryParams(ctx, req, request, nil); err != nil {
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
@@ -6950,7 +6950,7 @@ func (s *Integrations) GetZendeskCustomerSupportIssue(ctx context.Context, ticke
 	req.Header.Set("Accept", "*/*")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	if err := utils.PopulateQueryParams(ctx, req, request, nil); err != nil {
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
 		return fmt.Errorf("error populating query params: %w", err)
 	}
 

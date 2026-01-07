@@ -90,7 +90,7 @@ func (s *AuditEvents) ListAuditEvents(ctx context.Context, cursor *string, filte
 	req.Header.Set("Accept", "*/*")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	if err := utils.PopulateQueryParams(ctx, req, request, nil); err != nil {
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
 		return fmt.Errorf("error populating query params: %w", err)
 	}
 

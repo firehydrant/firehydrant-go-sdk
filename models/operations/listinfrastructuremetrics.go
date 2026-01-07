@@ -56,7 +56,7 @@ func (l ListInfrastructureMetricsRequest) MarshalJSON() ([]byte, error) {
 }
 
 func (l *ListInfrastructureMetricsRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &l, "", false, []string{"infra_type", "infra_id"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &l, "", false, nil); err != nil {
 		return err
 	}
 	return nil

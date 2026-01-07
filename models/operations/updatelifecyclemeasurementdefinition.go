@@ -59,7 +59,7 @@ func (u UpdateLifecycleMeasurementDefinitionRequest) MarshalJSON() ([]byte, erro
 }
 
 func (u *UpdateLifecycleMeasurementDefinitionRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &u, "", false, []string{"measurement_definition_id"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &u, "", false, nil); err != nil {
 		return err
 	}
 	return nil

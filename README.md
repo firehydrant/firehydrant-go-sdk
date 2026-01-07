@@ -258,7 +258,7 @@ func main() {
 * [GetMemberDefaultAudience](docs/sdks/audiences/README.md#getmemberdefaultaudience) - Get default audience
 * [SetMemberDefaultAudience](docs/sdks/audiences/README.md#setmemberdefaultaudience) - Set default audience
 * [GetAudienceSummary](docs/sdks/audiences/README.md#getaudiencesummary) - Get latest summary
-* [GenerateAudienceSummary](docs/sdks/audiences/README.md#generateaudiencesummary) - Generate summary
+* [GenerateAudienceSummary](docs/sdks/audiences/README.md#generateaudiencesummary) - Generate summary (async)
 * [ListAudienceSummaries](docs/sdks/audiences/README.md#listaudiencesummaries) - List audience summaries
 
 ### [AuditEvents](docs/sdks/auditevents/README.md)
@@ -346,6 +346,58 @@ func main() {
 * [ListComments](docs/sdks/conversations/README.md#listcomments) - List comments for a conversation
 * [CreateComment](docs/sdks/conversations/README.md#createcomment) - Create a conversation comment
 
+### [IncidentSettings](docs/sdks/incidentsettings/README.md)
+
+* [ListIncidentRoles](docs/sdks/incidentsettings/README.md#listincidentroles) - List incident roles
+* [CreateIncidentRole](docs/sdks/incidentsettings/README.md#createincidentrole) - Create an incident role
+* [GetIncidentRole](docs/sdks/incidentsettings/README.md#getincidentrole) - Get an incident role
+* [DeleteIncidentRole](docs/sdks/incidentsettings/README.md#deleteincidentrole) - Archive an incident role
+* [UpdateIncidentRole](docs/sdks/incidentsettings/README.md#updateincidentrole) - Update an incident role
+* [ValidateIncidentTags](docs/sdks/incidentsettings/README.md#validateincidenttags) - Validate incident tags
+* [ListIncidentTags](docs/sdks/incidentsettings/README.md#listincidenttags) - List incident tags
+* [ListIncidentTypes](docs/sdks/incidentsettings/README.md#listincidenttypes) - List incident types
+* [CreateIncidentType](docs/sdks/incidentsettings/README.md#createincidenttype) - Create an incident type
+* [GetIncidentType](docs/sdks/incidentsettings/README.md#getincidenttype) - Get an incident type
+* [DeleteIncidentType](docs/sdks/incidentsettings/README.md#deleteincidenttype) - Archive an incident type
+* [UpdateIncidentType](docs/sdks/incidentsettings/README.md#updateincidenttype) - Update an incident type
+* [ListLifecycleMeasurementDefinitions](docs/sdks/incidentsettings/README.md#listlifecyclemeasurementdefinitions) - List measurement definitions
+* [CreateLifecycleMeasurementDefinition](docs/sdks/incidentsettings/README.md#createlifecyclemeasurementdefinition) - Create a measurement definition
+* [GetLifecycleMeasurementDefinition](docs/sdks/incidentsettings/README.md#getlifecyclemeasurementdefinition) - Get a measurement definition
+* [DeleteLifecycleMeasurementDefinition](docs/sdks/incidentsettings/README.md#deletelifecyclemeasurementdefinition) - Archive a measurement definition
+* [UpdateLifecycleMeasurementDefinition](docs/sdks/incidentsettings/README.md#updatelifecyclemeasurementdefinition) - Update a measurement definition
+* [ListLifecyclePhases](docs/sdks/incidentsettings/README.md#listlifecyclephases) - List phases and milestones
+* [CreateLifecycleMilestone](docs/sdks/incidentsettings/README.md#createlifecyclemilestone) - Create a milestone
+* [DeleteLifecycleMilestone](docs/sdks/incidentsettings/README.md#deletelifecyclemilestone) - Delete a milestone
+* [UpdateLifecycleMilestone](docs/sdks/incidentsettings/README.md#updatelifecyclemilestone) - Update a milestone
+* [ListPriorities](docs/sdks/incidentsettings/README.md#listpriorities) - List priorities
+* [CreatePriority](docs/sdks/incidentsettings/README.md#createpriority) - Create a priority
+* [GetPriority](docs/sdks/incidentsettings/README.md#getpriority) - Get a priority
+* [DeletePriority](docs/sdks/incidentsettings/README.md#deletepriority) - Delete a priority
+* [UpdatePriority](docs/sdks/incidentsettings/README.md#updatepriority) - Update a priority
+* [ListSeverities](docs/sdks/incidentsettings/README.md#listseverities) - List severities
+* [CreateSeverity](docs/sdks/incidentsettings/README.md#createseverity) - Create a severity
+* [GetSeverity](docs/sdks/incidentsettings/README.md#getseverity) - Get a severity
+* [DeleteSeverity](docs/sdks/incidentsettings/README.md#deleteseverity) - Delete a severity
+* [UpdateSeverity](docs/sdks/incidentsettings/README.md#updateseverity) - Update a severity
+* [GetSeverityMatrix](docs/sdks/incidentsettings/README.md#getseveritymatrix) - Get severity matrix
+* [UpdateSeverityMatrix](docs/sdks/incidentsettings/README.md#updateseveritymatrix) - Update severity matrix
+* [ListSeverityMatrixConditions](docs/sdks/incidentsettings/README.md#listseveritymatrixconditions) - List severity matrix conditions
+* [CreateSeverityMatrixCondition](docs/sdks/incidentsettings/README.md#createseveritymatrixcondition) - Create a severity matrix condition
+* [GetSeverityMatrixCondition](docs/sdks/incidentsettings/README.md#getseveritymatrixcondition) - Get a severity matrix condition
+* [DeleteSeverityMatrixCondition](docs/sdks/incidentsettings/README.md#deleteseveritymatrixcondition) - Delete a severity matrix condition
+* [UpdateSeverityMatrixCondition](docs/sdks/incidentsettings/README.md#updateseveritymatrixcondition) - Update a severity matrix condition
+* [ListSeverityMatrixImpacts](docs/sdks/incidentsettings/README.md#listseveritymatriximpacts) - List severity matrix impacts
+* [CreateSeverityMatrixImpact](docs/sdks/incidentsettings/README.md#createseveritymatriximpact) - Create a severity matrix impact
+* [DeleteSeverityMatrixImpact](docs/sdks/incidentsettings/README.md#deleteseveritymatriximpact) - Delete a severity matrix impact
+* [UpdateSeverityMatrixImpact](docs/sdks/incidentsettings/README.md#updateseveritymatriximpact) - Update a severity matrix impact
+* [DeleteCustomFieldDefinition](docs/sdks/incidentsettings/README.md#deletecustomfielddefinition) - Delete a custom field definition
+* [UpdateCustomFieldDefinition](docs/sdks/incidentsettings/README.md#updatecustomfielddefinition) - Update a custom field definition
+* [ListCustomFieldDefinitions](docs/sdks/incidentsettings/README.md#listcustomfielddefinitions) - List custom field definitions
+* [CreateCustomFieldDefinition](docs/sdks/incidentsettings/README.md#createcustomfielddefinition) - Create a custom field definition
+* [ListCustomFieldSelectOptions](docs/sdks/incidentsettings/README.md#listcustomfieldselectoptions) - Get available values for a custom field
+* [AppendFormDataOnSelectedValueGet](docs/sdks/incidentsettings/README.md#appendformdataonselectedvalueget) - Get data for a form field on select
+* [GetFormConfiguration](docs/sdks/incidentsettings/README.md#getformconfiguration) - Get a form configuration
+
 ### [Incidents](docs/sdks/incidents/README.md)
 
 * [ListIncidents](docs/sdks/incidents/README.md#listincidents) - List incidents
@@ -404,58 +456,6 @@ func main() {
 * [UpdateScheduledMaintenance](docs/sdks/incidents/README.md#updatescheduledmaintenance) - Update a scheduled maintenance event
 * [GetAiIncidentSummaryVoteStatus](docs/sdks/incidents/README.md#getaiincidentsummaryvotestatus) - Get the current user's vote status for an AI-generated incident summary
 * [VoteAiIncidentSummary](docs/sdks/incidents/README.md#voteaiincidentsummary) - Vote on an AI-generated incident summary
-
-### [IncidentSettings](docs/sdks/incidentsettings/README.md)
-
-* [ListIncidentRoles](docs/sdks/incidentsettings/README.md#listincidentroles) - List incident roles
-* [CreateIncidentRole](docs/sdks/incidentsettings/README.md#createincidentrole) - Create an incident role
-* [GetIncidentRole](docs/sdks/incidentsettings/README.md#getincidentrole) - Get an incident role
-* [DeleteIncidentRole](docs/sdks/incidentsettings/README.md#deleteincidentrole) - Archive an incident role
-* [UpdateIncidentRole](docs/sdks/incidentsettings/README.md#updateincidentrole) - Update an incident role
-* [ValidateIncidentTags](docs/sdks/incidentsettings/README.md#validateincidenttags) - Validate incident tags
-* [ListIncidentTags](docs/sdks/incidentsettings/README.md#listincidenttags) - List incident tags
-* [ListIncidentTypes](docs/sdks/incidentsettings/README.md#listincidenttypes) - List incident types
-* [CreateIncidentType](docs/sdks/incidentsettings/README.md#createincidenttype) - Create an incident type
-* [GetIncidentType](docs/sdks/incidentsettings/README.md#getincidenttype) - Get an incident type
-* [DeleteIncidentType](docs/sdks/incidentsettings/README.md#deleteincidenttype) - Archive an incident type
-* [UpdateIncidentType](docs/sdks/incidentsettings/README.md#updateincidenttype) - Update an incident type
-* [ListLifecycleMeasurementDefinitions](docs/sdks/incidentsettings/README.md#listlifecyclemeasurementdefinitions) - List measurement definitions
-* [CreateLifecycleMeasurementDefinition](docs/sdks/incidentsettings/README.md#createlifecyclemeasurementdefinition) - Create a measurement definition
-* [GetLifecycleMeasurementDefinition](docs/sdks/incidentsettings/README.md#getlifecyclemeasurementdefinition) - Get a measurement definition
-* [DeleteLifecycleMeasurementDefinition](docs/sdks/incidentsettings/README.md#deletelifecyclemeasurementdefinition) - Archive a measurement definition
-* [UpdateLifecycleMeasurementDefinition](docs/sdks/incidentsettings/README.md#updatelifecyclemeasurementdefinition) - Update a measurement definition
-* [ListLifecyclePhases](docs/sdks/incidentsettings/README.md#listlifecyclephases) - List phases and milestones
-* [CreateLifecycleMilestone](docs/sdks/incidentsettings/README.md#createlifecyclemilestone) - Create a milestone
-* [DeleteLifecycleMilestone](docs/sdks/incidentsettings/README.md#deletelifecyclemilestone) - Delete a milestone
-* [UpdateLifecycleMilestone](docs/sdks/incidentsettings/README.md#updatelifecyclemilestone) - Update a milestone
-* [ListPriorities](docs/sdks/incidentsettings/README.md#listpriorities) - List priorities
-* [CreatePriority](docs/sdks/incidentsettings/README.md#createpriority) - Create a priority
-* [GetPriority](docs/sdks/incidentsettings/README.md#getpriority) - Get a priority
-* [DeletePriority](docs/sdks/incidentsettings/README.md#deletepriority) - Delete a priority
-* [UpdatePriority](docs/sdks/incidentsettings/README.md#updatepriority) - Update a priority
-* [ListSeverities](docs/sdks/incidentsettings/README.md#listseverities) - List severities
-* [CreateSeverity](docs/sdks/incidentsettings/README.md#createseverity) - Create a severity
-* [GetSeverity](docs/sdks/incidentsettings/README.md#getseverity) - Get a severity
-* [DeleteSeverity](docs/sdks/incidentsettings/README.md#deleteseverity) - Delete a severity
-* [UpdateSeverity](docs/sdks/incidentsettings/README.md#updateseverity) - Update a severity
-* [GetSeverityMatrix](docs/sdks/incidentsettings/README.md#getseveritymatrix) - Get severity matrix
-* [UpdateSeverityMatrix](docs/sdks/incidentsettings/README.md#updateseveritymatrix) - Update severity matrix
-* [ListSeverityMatrixConditions](docs/sdks/incidentsettings/README.md#listseveritymatrixconditions) - List severity matrix conditions
-* [CreateSeverityMatrixCondition](docs/sdks/incidentsettings/README.md#createseveritymatrixcondition) - Create a severity matrix condition
-* [GetSeverityMatrixCondition](docs/sdks/incidentsettings/README.md#getseveritymatrixcondition) - Get a severity matrix condition
-* [DeleteSeverityMatrixCondition](docs/sdks/incidentsettings/README.md#deleteseveritymatrixcondition) - Delete a severity matrix condition
-* [UpdateSeverityMatrixCondition](docs/sdks/incidentsettings/README.md#updateseveritymatrixcondition) - Update a severity matrix condition
-* [ListSeverityMatrixImpacts](docs/sdks/incidentsettings/README.md#listseveritymatriximpacts) - List severity matrix impacts
-* [CreateSeverityMatrixImpact](docs/sdks/incidentsettings/README.md#createseveritymatriximpact) - Create a severity matrix impact
-* [DeleteSeverityMatrixImpact](docs/sdks/incidentsettings/README.md#deleteseveritymatriximpact) - Delete a severity matrix impact
-* [UpdateSeverityMatrixImpact](docs/sdks/incidentsettings/README.md#updateseveritymatriximpact) - Update a severity matrix impact
-* [DeleteCustomFieldDefinition](docs/sdks/incidentsettings/README.md#deletecustomfielddefinition) - Delete a custom field definition
-* [UpdateCustomFieldDefinition](docs/sdks/incidentsettings/README.md#updatecustomfielddefinition) - Update a custom field definition
-* [ListCustomFieldDefinitions](docs/sdks/incidentsettings/README.md#listcustomfielddefinitions) - List custom field definitions
-* [CreateCustomFieldDefinition](docs/sdks/incidentsettings/README.md#createcustomfielddefinition) - Create a custom field definition
-* [ListCustomFieldSelectOptions](docs/sdks/incidentsettings/README.md#listcustomfieldselectoptions) - Get available values for a custom field
-* [AppendFormDataOnSelectedValueGet](docs/sdks/incidentsettings/README.md#appendformdataonselectedvalueget) - Get data for a form field on select
-* [GetFormConfiguration](docs/sdks/incidentsettings/README.md#getformconfiguration) - Get a form configuration
 
 ### [Integrations](docs/sdks/integrations/README.md)
 
@@ -559,6 +559,7 @@ func main() {
 * [GetRetrospectiveTemplate](docs/sdks/retrospectives/README.md#getretrospectivetemplate) - Get a retrospective template
 * [DeleteRetrospectiveTemplate](docs/sdks/retrospectives/README.md#deleteretrospectivetemplate) - Delete a retrospective template
 * [UpdateRetrospectiveTemplate](docs/sdks/retrospectives/README.md#updateretrospectivetemplate) - Update a retrospective template
+* [GetRetrospectiveReportTemplate](docs/sdks/retrospectives/README.md#getretrospectivereporttemplate) - Get a retrospective report template
 
 ### [Roles](docs/sdks/roles/README.md)
 
@@ -671,6 +672,8 @@ func main() {
 * [GetNuncConnection](docs/sdks/statuspages/README.md#getnuncconnection) - Get a status page
 * [UpdateNuncConnection](docs/sdks/statuspages/README.md#updatenuncconnection) - Update a status page
 * [DeleteNuncConnection](docs/sdks/statuspages/README.md#deletenuncconnection) - Delete a status page
+* [UnpublishNuncConnection](docs/sdks/statuspages/README.md#unpublishnuncconnection) - Unpublish a status page
+* [PublishNuncConnection](docs/sdks/statuspages/README.md#publishnuncconnection) - Publish a status page
 * [DeleteNuncComponentGroup](docs/sdks/statuspages/README.md#deletenunccomponentgroup) - Delete a status page component group
 * [UpdateNuncComponentGroup](docs/sdks/statuspages/README.md#updatenunccomponentgroup) - Update a status page component group
 * [CreateNuncComponentGroup](docs/sdks/statuspages/README.md#createnunccomponentgroup) - Create a component group for a status page
@@ -743,6 +746,11 @@ func main() {
 * [DeleteTicketingPriority](docs/sdks/ticketing/README.md#deleteticketingpriority) - Delete a ticketing priority
 * [UpdateTicketingPriority](docs/sdks/ticketing/README.md#updateticketingpriority) - Update a ticketing priority
 * [ListTicketTags](docs/sdks/ticketing/README.md#listtickettags) - List ticket tags
+* [GetTicketingFormConfiguration](docs/sdks/ticketing/README.md#getticketingformconfiguration) - Get the ticketing form configuration
+* [ListTicketingCustomDefinitions](docs/sdks/ticketing/README.md#listticketingcustomdefinitions) - List ticketing custom fields
+* [CreateTicketingCustomDefinition](docs/sdks/ticketing/README.md#createticketingcustomdefinition) - Create a ticketing custom field
+* [DeleteTicketingCustomDefinition](docs/sdks/ticketing/README.md#deleteticketingcustomdefinition) - Delete a ticketing custom field
+* [UpdateTicketingCustomDefinition](docs/sdks/ticketing/README.md#updateticketingcustomdefinition) - Update a ticketing custom field
 
 ### [Users](docs/sdks/users/README.md)
 

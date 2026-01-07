@@ -3,6 +3,8 @@
 package components
 
 import (
+	"encoding/json"
+	"fmt"
 	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
@@ -16,6 +18,45 @@ func (c *CreateFunctionalityService) GetID() string {
 		return ""
 	}
 	return c.ID
+}
+
+// CreateFunctionalityServiceTier - Integer representing functionality tier. Lower values represent higher criticality. Default is 5.
+type CreateFunctionalityServiceTier int
+
+const (
+	CreateFunctionalityServiceTierZero  CreateFunctionalityServiceTier = 0
+	CreateFunctionalityServiceTierOne   CreateFunctionalityServiceTier = 1
+	CreateFunctionalityServiceTierTwo   CreateFunctionalityServiceTier = 2
+	CreateFunctionalityServiceTierThree CreateFunctionalityServiceTier = 3
+	CreateFunctionalityServiceTierFour  CreateFunctionalityServiceTier = 4
+	CreateFunctionalityServiceTierFive  CreateFunctionalityServiceTier = 5
+)
+
+func (e CreateFunctionalityServiceTier) ToPointer() *CreateFunctionalityServiceTier {
+	return &e
+}
+func (e *CreateFunctionalityServiceTier) UnmarshalJSON(data []byte) error {
+	var v int
+	if err := json.Unmarshal(data, &v); err != nil {
+		return err
+	}
+	switch v {
+	case 0:
+		fallthrough
+	case 1:
+		fallthrough
+	case 2:
+		fallthrough
+	case 3:
+		fallthrough
+	case 4:
+		fallthrough
+	case 5:
+		*e = CreateFunctionalityServiceTier(v)
+		return nil
+	default:
+		return fmt.Errorf("invalid value for CreateFunctionalityServiceTier: %v", v)
+	}
 }
 
 type CreateFunctionalityExternalResource struct {
@@ -97,9 +138,11 @@ type CreateFunctionality struct {
 	Description *string                      `json:"description,omitzero"`
 	Services    []CreateFunctionalityService `json:"services,omitzero"`
 	// A hash of label keys and values
-	Labels                map[string]string `json:"labels,omitzero"`
-	AlertOnAdd            *bool             `json:"alert_on_add,omitzero"`
-	AutoAddRespondingTeam *bool             `json:"auto_add_responding_team,omitzero"`
+	Labels map[string]string `json:"labels,omitzero"`
+	// Integer representing functionality tier. Lower values represent higher criticality. Default is 5.
+	ServiceTier           *CreateFunctionalityServiceTier `json:"service_tier,omitzero"`
+	AlertOnAdd            *bool                           `json:"alert_on_add,omitzero"`
+	AutoAddRespondingTeam *bool                           `json:"auto_add_responding_team,omitzero"`
 	// An array of external resources to attach to this service.
 	ExternalResources []CreateFunctionalityExternalResource `json:"external_resources,omitzero"`
 	// An array of links to associate with this service
@@ -115,7 +158,7 @@ func (c CreateFunctionality) MarshalJSON() ([]byte, error) {
 }
 
 func (c *CreateFunctionality) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"name"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
 		return err
 	}
 	return nil
@@ -147,6 +190,13 @@ func (c *CreateFunctionality) GetLabels() map[string]string {
 		return nil
 	}
 	return c.Labels
+}
+
+func (c *CreateFunctionality) GetServiceTier() *CreateFunctionalityServiceTier {
+	if c == nil {
+		return nil
+	}
+	return c.ServiceTier
 }
 
 func (c *CreateFunctionality) GetAlertOnAdd() *bool {

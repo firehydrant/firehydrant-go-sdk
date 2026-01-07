@@ -52,6 +52,38 @@ func (e *UpdateRetrospectiveTemplateFieldsType) UnmarshalJSON(data []byte) error
 	}
 }
 
+type ReportElementsType string
+
+const (
+	ReportElementsTypeIncidentData       ReportElementsType = "incident_data"
+	ReportElementsTypeRetrospectiveField ReportElementsType = "retrospective_field"
+	ReportElementsTypeProsemirrorContent ReportElementsType = "prosemirror_content"
+	ReportElementsTypeDivider            ReportElementsType = "divider"
+)
+
+func (e ReportElementsType) ToPointer() *ReportElementsType {
+	return &e
+}
+func (e *ReportElementsType) UnmarshalJSON(data []byte) error {
+	var v string
+	if err := json.Unmarshal(data, &v); err != nil {
+		return err
+	}
+	switch v {
+	case "incident_data":
+		fallthrough
+	case "retrospective_field":
+		fallthrough
+	case "prosemirror_content":
+		fallthrough
+	case "divider":
+		*e = ReportElementsType(v)
+		return nil
+	default:
+		return fmt.Errorf("invalid value for ReportElementsType: %v", v)
+	}
+}
+
 type UpdateRetrospectiveTemplateRequestBody struct {
 	Name                        *string                                 `json:"name,omitzero"`
 	Description                 *string                                 `json:"description,omitzero"`
@@ -66,6 +98,7 @@ type UpdateRetrospectiveTemplateRequestBody struct {
 	FieldsIsRequired            []bool                                  `json:"fields[is_required],omitzero"`
 	FieldsRequiredAtMilestoneID []string                                `json:"fields[required_at_milestone_id],omitzero"`
 	FieldsSchema                []string                                `json:"fields[schema],omitzero"`
+	ReportElementsType          ReportElementsType                      `json:"report_elements[type]"`
 }
 
 func (u UpdateRetrospectiveTemplateRequestBody) MarshalJSON() ([]byte, error) {
@@ -73,7 +106,7 @@ func (u UpdateRetrospectiveTemplateRequestBody) MarshalJSON() ([]byte, error) {
 }
 
 func (u *UpdateRetrospectiveTemplateRequestBody) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &u, "", false, []string{"sections[slug]", "sections[elements]", "fields[label]", "fields[type]"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &u, "", false, nil); err != nil {
 		return err
 	}
 	return nil
@@ -168,6 +201,13 @@ func (u *UpdateRetrospectiveTemplateRequestBody) GetFieldsSchema() []string {
 		return nil
 	}
 	return u.FieldsSchema
+}
+
+func (u *UpdateRetrospectiveTemplateRequestBody) GetReportElementsType() ReportElementsType {
+	if u == nil {
+		return ReportElementsType("")
+	}
+	return u.ReportElementsType
 }
 
 type UpdateRetrospectiveTemplateRequest struct {

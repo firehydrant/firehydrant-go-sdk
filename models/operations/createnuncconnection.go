@@ -33,7 +33,7 @@ func (c CreateNuncConnectionRequest) MarshalJSON() ([]byte, error) {
 }
 
 func (c *CreateNuncConnectionRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"domain", "conditions[nunc_condition]", "conditions[condition_id]", "components[infrastructure_type]", "components[infrastructure_id]"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
 		return err
 	}
 	return nil

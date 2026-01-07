@@ -1,5 +1,4 @@
 # CatalogEntries
-(*CatalogEntries*)
 
 ## Overview
 

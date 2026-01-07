@@ -290,7 +290,7 @@ func (c CreateTeamOnCallScheduleRotation) MarshalJSON() ([]byte, error) {
 }
 
 func (c *CreateTeamOnCallScheduleRotation) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"name", "time_zone", "strategy"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
 		return err
 	}
 	return nil
@@ -665,7 +665,7 @@ func (c CreateTeamOnCallSchedule) MarshalJSON() ([]byte, error) {
 }
 
 func (c *CreateTeamOnCallSchedule) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"name"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
 		return err
 	}
 	return nil

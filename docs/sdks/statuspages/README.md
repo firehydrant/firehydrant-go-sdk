@@ -1,5 +1,4 @@
 # StatusPages
-(*StatusPages*)
 
 ## Overview
 
@@ -16,6 +15,8 @@ Operations related to Status Pages
 * [GetNuncConnection](#getnuncconnection) - Get a status page
 * [UpdateNuncConnection](#updatenuncconnection) - Update a status page
 * [DeleteNuncConnection](#deletenuncconnection) - Delete a status page
+* [UnpublishNuncConnection](#unpublishnuncconnection) - Unpublish a status page
+* [PublishNuncConnection](#publishnuncconnection) - Publish a status page
 * [DeleteNuncComponentGroup](#deletenunccomponentgroup) - Delete a status page component group
 * [UpdateNuncComponentGroup](#updatenunccomponentgroup) - Update a status page component group
 * [CreateNuncComponentGroup](#createnunccomponentgroup) - Create a component group for a status page
@@ -531,6 +532,114 @@ func main() {
 ### Response
 
 **error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## UnpublishNuncConnection
+
+Unpublish a FireHydrant hosted status page
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="unpublish_nunc_connection" method="post" path="/v1/nunc_connections/{nunc_connection_id}/unpublish" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.StatusPages.UnpublishNuncConnection(ctx, "<id>")
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `nuncConnectionID`                                       | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.NuncConnectionEntity](../../models/components/nuncconnectionentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## PublishNuncConnection
+
+Publish a FireHydrant hosted status page
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="publish_nunc_connection" method="post" path="/v1/nunc_connections/{nunc_connection_id}/publish" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.StatusPages.PublishNuncConnection(ctx, "<id>")
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `nuncConnectionID`                                       | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.NuncConnectionEntity](../../models/components/nuncconnectionentity.md), error**
 
 ### Errors
 

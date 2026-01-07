@@ -8,13 +8,14 @@ import (
 
 // IncidentsRetrospectiveEntity - Incidents_RetrospectiveEntity model
 type IncidentsRetrospectiveEntity struct {
-	ID          *string                                     `json:"id,omitzero"`
-	Name        *string                                     `json:"name,omitzero"`
-	Description *string                                     `json:"description,omitzero"`
-	Sections    []IncidentsRetrospectiveEntitySectionEntity `json:"sections,omitzero"`
-	IsHidden    *bool                                       `json:"is_hidden,omitzero"`
-	Fields      []IncidentsRetrospectiveFieldEntity         `json:"fields,omitzero"`
-	Exports     []string                                    `json:"exports,omitzero"`
+	ID                      *string                                     `json:"id,omitzero"`
+	Name                    *string                                     `json:"name,omitzero"`
+	Description             *string                                     `json:"description,omitzero"`
+	Sections                []IncidentsRetrospectiveEntitySectionEntity `json:"sections,omitzero"`
+	IsHidden                *bool                                       `json:"is_hidden,omitzero"`
+	Fields                  []IncidentsRetrospectiveFieldEntity         `json:"fields,omitzero"`
+	Exports                 []string                                    `json:"exports,omitzero"`
+	RetrospectiveTemplateID *string                                     `json:"retrospective_template_id,omitzero"`
 }
 
 func (i IncidentsRetrospectiveEntity) MarshalJSON() ([]byte, error) {
@@ -75,4 +76,11 @@ func (i *IncidentsRetrospectiveEntity) GetExports() []string {
 		return nil
 	}
 	return i.Exports
+}
+
+func (i *IncidentsRetrospectiveEntity) GetRetrospectiveTemplateID() *string {
+	if i == nil {
+		return nil
+	}
+	return i.RetrospectiveTemplateID
 }

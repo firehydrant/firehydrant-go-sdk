@@ -33,7 +33,7 @@ func (u UpdateAuthedProviderRequest) MarshalJSON() ([]byte, error) {
 }
 
 func (u *UpdateAuthedProviderRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &u, "", false, []string{"integration_slug", "connection_id", "authed_provider_id"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &u, "", false, nil); err != nil {
 		return err
 	}
 	return nil

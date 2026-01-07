@@ -1,0 +1,16 @@
+# OrganizationsTicketingCustomFieldDefinitionEntity
+
+Organizations_TicketingCustomFieldDefinitionEntity model
+
+
+## Fields
+
+| Field                                                                                | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `DisplayName`                                                                        | **string*                                                                            | :heavy_minus_sign:                                                                   | The display name of the custom field                                                 |
+| `FieldID`                                                                            | **string*                                                                            | :heavy_minus_sign:                                                                   | The field id of the custom field                                                     |
+| `FieldType`                                                                          | **string*                                                                            | :heavy_minus_sign:                                                                   | The type of the custom field (datetime, string, single_select, or multi_select)      |
+| `Required`                                                                           | **string*                                                                            | :heavy_minus_sign:                                                                   | Whether this field is required for all follow-up tickets                             |
+| `Slug`                                                                               | **string*                                                                            | :heavy_minus_sign:                                                                   | The slug of the custom field                                                         |
+| `Description`                                                                        | **string*                                                                            | :heavy_minus_sign:                                                                   | The description of the custom field                                                  |
+| `PermissibleValues`                                                                  | []*string*                                                                           | :heavy_minus_sign:                                                                   | An array of strings representing selections for single_select or multi_select fields |

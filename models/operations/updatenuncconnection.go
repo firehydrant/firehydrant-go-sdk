@@ -32,7 +32,7 @@ func (u UpdateNuncConnectionRequestBody) MarshalJSON() ([]byte, error) {
 }
 
 func (u *UpdateNuncConnectionRequestBody) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &u, "", false, []string{"conditions[nunc_condition]", "conditions[condition_id]", "components[infrastructure_type]", "components[infrastructure_id]"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &u, "", false, nil); err != nil {
 		return err
 	}
 	return nil

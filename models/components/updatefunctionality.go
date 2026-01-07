@@ -3,8 +3,49 @@
 package components
 
 import (
+	"encoding/json"
+	"fmt"
 	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
+
+// UpdateFunctionalityServiceTier - Integer representing functionality tier
+type UpdateFunctionalityServiceTier int
+
+const (
+	UpdateFunctionalityServiceTierZero  UpdateFunctionalityServiceTier = 0
+	UpdateFunctionalityServiceTierOne   UpdateFunctionalityServiceTier = 1
+	UpdateFunctionalityServiceTierTwo   UpdateFunctionalityServiceTier = 2
+	UpdateFunctionalityServiceTierThree UpdateFunctionalityServiceTier = 3
+	UpdateFunctionalityServiceTierFour  UpdateFunctionalityServiceTier = 4
+	UpdateFunctionalityServiceTierFive  UpdateFunctionalityServiceTier = 5
+)
+
+func (e UpdateFunctionalityServiceTier) ToPointer() *UpdateFunctionalityServiceTier {
+	return &e
+}
+func (e *UpdateFunctionalityServiceTier) UnmarshalJSON(data []byte) error {
+	var v int
+	if err := json.Unmarshal(data, &v); err != nil {
+		return err
+	}
+	switch v {
+	case 0:
+		fallthrough
+	case 1:
+		fallthrough
+	case 2:
+		fallthrough
+	case 3:
+		fallthrough
+	case 4:
+		fallthrough
+	case 5:
+		*e = UpdateFunctionalityServiceTier(v)
+		return nil
+	default:
+		return fmt.Errorf("invalid value for UpdateFunctionalityServiceTier: %v", v)
+	}
+}
 
 type UpdateFunctionalityService struct {
 	// ID of a service
@@ -138,9 +179,11 @@ func (u *UpdateFunctionalityExternalResource) GetRemove() *bool {
 
 // UpdateFunctionality - Update a functionalities attributes
 type UpdateFunctionality struct {
-	Name        *string                      `json:"name,omitzero"`
-	Description *string                      `json:"description,omitzero"`
-	Services    []UpdateFunctionalityService `json:"services,omitzero"`
+	Name        *string `json:"name,omitzero"`
+	Description *string `json:"description,omitzero"`
+	// Integer representing functionality tier
+	ServiceTier *UpdateFunctionalityServiceTier `json:"service_tier,omitzero"`
+	Services    []UpdateFunctionalityService    `json:"services,omitzero"`
 	// An array of links to associate with this functionality. This will remove all links not present in the patch. Only acts if 'links' key is included in the payload.
 	Links []UpdateFunctionalityLink `json:"links,omitzero"`
 	// An object representing a Team that owns the functionality
@@ -186,6 +229,13 @@ func (u *UpdateFunctionality) GetDescription() *string {
 		return nil
 	}
 	return u.Description
+}
+
+func (u *UpdateFunctionality) GetServiceTier() *UpdateFunctionalityServiceTier {
+	if u == nil {
+		return nil
+	}
+	return u.ServiceTier
 }
 
 func (u *UpdateFunctionality) GetServices() []UpdateFunctionalityService {

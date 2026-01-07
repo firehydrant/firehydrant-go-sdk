@@ -155,8 +155,10 @@ type ListMilestoneFunnelMetricsRequest struct {
 	// A comma separated list of incident type IDs
 	IncidentTypeID *string `queryParam:"style=form,explode=true,name=incident_type_id"`
 	// A comma separated list of retrospective template IDs
-	RetrospectiveTemplates *string                                `queryParam:"style=form,explode=true,name=retrospective_templates"`
-	RequestBody            *ListMilestoneFunnelMetricsRequestBody `request:"mediaType=multipart/form-data"`
+	RetrospectiveTemplates *string `queryParam:"style=form,explode=true,name=retrospective_templates"`
+	// A comma separated list of runbook IDs
+	AttachedRunbooks *string                                `queryParam:"style=form,explode=true,name=attached_runbooks"`
+	RequestBody      *ListMilestoneFunnelMetricsRequestBody `request:"mediaType=multipart/form-data"`
 }
 
 func (l ListMilestoneFunnelMetricsRequest) MarshalJSON() ([]byte, error) {
@@ -385,6 +387,13 @@ func (l *ListMilestoneFunnelMetricsRequest) GetRetrospectiveTemplates() *string 
 		return nil
 	}
 	return l.RetrospectiveTemplates
+}
+
+func (l *ListMilestoneFunnelMetricsRequest) GetAttachedRunbooks() *string {
+	if l == nil {
+		return nil
+	}
+	return l.AttachedRunbooks
 }
 
 func (l *ListMilestoneFunnelMetricsRequest) GetRequestBody() *ListMilestoneFunnelMetricsRequestBody {

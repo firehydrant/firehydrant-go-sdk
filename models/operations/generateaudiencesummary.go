@@ -42,7 +42,7 @@ func (g GenerateAudienceSummaryRequest) MarshalJSON() ([]byte, error) {
 }
 
 func (g *GenerateAudienceSummaryRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &g, "", false, []string{"audience_id", "incident_id"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &g, "", false, nil); err != nil {
 		return err
 	}
 	return nil

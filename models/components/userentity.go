@@ -13,6 +13,7 @@ type UserEntity struct {
 	Name                                *string                                            `json:"name,omitzero"`
 	Email                               *string                                            `json:"email,omitzero"`
 	SlackUserID                         *string                                            `json:"slack_user_id,omitzero"`
+	Role                                *string                                            `json:"role,omitzero"`
 	SlackLinked                         *bool                                              `json:"slack_linked?,omitzero"`
 	CreatedAt                           *time.Time                                         `json:"created_at,omitzero"`
 	UpdatedAt                           *time.Time                                         `json:"updated_at,omitzero"`
@@ -57,6 +58,13 @@ func (u *UserEntity) GetSlackUserID() *string {
 		return nil
 	}
 	return u.SlackUserID
+}
+
+func (u *UserEntity) GetRole() *string {
+	if u == nil {
+		return nil
+	}
+	return u.Role
 }
 
 func (u *UserEntity) GetSlackLinked() *bool {

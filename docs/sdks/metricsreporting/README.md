@@ -1,5 +1,4 @@
 # MetricsReporting
-(*MetricsReporting*)
 
 ## Overview
 

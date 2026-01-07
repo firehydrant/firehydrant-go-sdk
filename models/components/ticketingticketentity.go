@@ -98,8 +98,9 @@ type TicketingTicketEntity struct {
 	TaskID *string    `json:"task_id,omitzero"`
 	DueAt  *time.Time `json:"due_at,omitzero"`
 	// Error message from syncing this ticket to integrations
-	SyncErrorMessage *string                        `json:"sync_error_message,omitzero"`
-	Link             *NullableAttachmentsLinkEntity `json:"link,omitzero"`
+	SyncErrorMessage      *string                           `json:"sync_error_message,omitzero"`
+	TicketingCustomFields []TicketingCustomFieldsFieldValue `json:"ticketing_custom_fields,omitzero"`
+	Link                  *NullableAttachmentsLinkEntity    `json:"link,omitzero"`
 }
 
 func (t TicketingTicketEntity) MarshalJSON() ([]byte, error) {
@@ -237,6 +238,13 @@ func (t *TicketingTicketEntity) GetSyncErrorMessage() *string {
 		return nil
 	}
 	return t.SyncErrorMessage
+}
+
+func (t *TicketingTicketEntity) GetTicketingCustomFields() []TicketingCustomFieldsFieldValue {
+	if t == nil {
+		return nil
+	}
+	return t.TicketingCustomFields
 }
 
 func (t *TicketingTicketEntity) GetLink() *NullableAttachmentsLinkEntity {

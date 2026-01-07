@@ -1,5 +1,4 @@
 # Audiences
-(*Audiences*)
 
 ## Overview
 
@@ -16,7 +15,7 @@ Operations related to Audiences
 * [GetMemberDefaultAudience](#getmemberdefaultaudience) - Get default audience
 * [SetMemberDefaultAudience](#setmemberdefaultaudience) - Set default audience
 * [GetAudienceSummary](#getaudiencesummary) - Get latest summary
-* [GenerateAudienceSummary](#generateaudiencesummary) - Generate summary
+* [GenerateAudienceSummary](#generateaudiencesummary) - Generate summary (async)
 * [ListAudienceSummaries](#listaudiencesummaries) - List audience summaries
 
 ## ListAudiences
@@ -513,7 +512,7 @@ func main() {
 
 ## GenerateAudienceSummary
 
-Generate a new audience-specific summary for an incident
+Initiates asynchronous generation of a new audience-specific summary for an incident. This is an async operation that can take up to 60 seconds to complete. The response includes a WebSocket topic name for internal use. After initiating generation, use the GET endpoint to poll for the completed summary.
 
 ### Example Usage
 
@@ -537,12 +536,9 @@ func main() {
         }),
     )
 
-    res, err := s.Audiences.GenerateAudienceSummary(ctx, "<id>", "<id>", nil)
+    err := s.Audiences.GenerateAudienceSummary(ctx, "<id>", "<id>", nil)
     if err != nil {
         log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
     }
 }
 ```
@@ -559,7 +555,7 @@ func main() {
 
 ### Response
 
-**[*components.AIEntitiesIncidentSummaryEntity](../../models/components/aientitiesincidentsummaryentity.md), error**
+**error**
 
 ### Errors
 

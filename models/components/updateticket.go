@@ -6,6 +6,27 @@ import (
 	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
+type UpdateTicketAssignee struct {
+	// The source of the assignee
+	Source *string `json:"source,omitzero"`
+	// The uesr id of the assignee
+	ID string `json:"id"`
+}
+
+func (u *UpdateTicketAssignee) GetSource() *string {
+	if u == nil {
+		return nil
+	}
+	return u.Source
+}
+
+func (u *UpdateTicketAssignee) GetID() string {
+	if u == nil {
+		return ""
+	}
+	return u.ID
+}
+
 // UpdateTicket - Update a ticket's attributes
 type UpdateTicket struct {
 	Summary     *string `json:"summary,omitzero"`
@@ -15,6 +36,8 @@ type UpdateTicket struct {
 	PriorityID  *string `json:"priority_id,omitzero"`
 	// List of tags for the ticket
 	TagList []string `json:"tag_list,omitzero"`
+	// An array of assignees for the ticket
+	Assignees []UpdateTicketAssignee `json:"assignees,omitzero"`
 }
 
 func (u UpdateTicket) MarshalJSON() ([]byte, error) {
@@ -68,4 +91,11 @@ func (u *UpdateTicket) GetTagList() []string {
 		return nil
 	}
 	return u.TagList
+}
+
+func (u *UpdateTicket) GetAssignees() []UpdateTicketAssignee {
+	if u == nil {
+		return nil
+	}
+	return u.Assignees
 }

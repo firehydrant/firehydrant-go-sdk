@@ -20,6 +20,7 @@ const (
 	CreateSavedSearchResourceTypeAnalytics             CreateSavedSearchResourceType = "analytics"
 	CreateSavedSearchResourceTypeImpactAnalytics       CreateSavedSearchResourceType = "impact_analytics"
 	CreateSavedSearchResourceTypeAlerts                CreateSavedSearchResourceType = "alerts"
+	CreateSavedSearchResourceTypeAlertAnalytics        CreateSavedSearchResourceType = "alert_analytics"
 	CreateSavedSearchResourceTypeIncidentEvents        CreateSavedSearchResourceType = "incident_events"
 )
 
@@ -49,6 +50,8 @@ func (e *CreateSavedSearchResourceType) UnmarshalJSON(data []byte) error {
 	case "impact_analytics":
 		fallthrough
 	case "alerts":
+		fallthrough
+	case "alert_analytics":
 		fallthrough
 	case "incident_events":
 		*e = CreateSavedSearchResourceType(v)

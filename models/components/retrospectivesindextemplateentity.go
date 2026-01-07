@@ -8,12 +8,13 @@ import (
 )
 
 type RetrospectivesIndexTemplateEntity struct {
-	ID          *string    `json:"id,omitzero"`
-	Name        *string    `json:"name,omitzero"`
-	Description *string    `json:"description,omitzero"`
-	IsDefault   *bool      `json:"is_default,omitzero"`
-	CreatedAt   *time.Time `json:"created_at,omitzero"`
-	UpdatedAt   *time.Time `json:"updated_at,omitzero"`
+	ID             *string                                           `json:"id,omitzero"`
+	Name           *string                                           `json:"name,omitzero"`
+	Description    *string                                           `json:"description,omitzero"`
+	IsDefault      *bool                                             `json:"is_default,omitzero"`
+	CreatedAt      *time.Time                                        `json:"created_at,omitzero"`
+	UpdatedAt      *time.Time                                        `json:"updated_at,omitzero"`
+	ReportElements []RetrospectivesTemplateEntityReportElementEntity `json:"report_elements,omitzero"`
 }
 
 func (r RetrospectivesIndexTemplateEntity) MarshalJSON() ([]byte, error) {
@@ -67,4 +68,11 @@ func (r *RetrospectivesIndexTemplateEntity) GetUpdatedAt() *time.Time {
 		return nil
 	}
 	return r.UpdatedAt
+}
+
+func (r *RetrospectivesIndexTemplateEntity) GetReportElements() []RetrospectivesTemplateEntityReportElementEntity {
+	if r == nil {
+		return nil
+	}
+	return r.ReportElements
 }

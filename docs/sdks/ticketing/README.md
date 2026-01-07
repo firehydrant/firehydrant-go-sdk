@@ -1,5 +1,4 @@
 # Ticketing
-(*Ticketing*)
 
 ## Overview
 
@@ -37,6 +36,11 @@ Operations related to Ticketing
 * [DeleteTicketingPriority](#deleteticketingpriority) - Delete a ticketing priority
 * [UpdateTicketingPriority](#updateticketingpriority) - Update a ticketing priority
 * [ListTicketTags](#listtickettags) - List ticket tags
+* [GetTicketingFormConfiguration](#getticketingformconfiguration) - Get the ticketing form configuration
+* [ListTicketingCustomDefinitions](#listticketingcustomdefinitions) - List ticketing custom fields
+* [CreateTicketingCustomDefinition](#createticketingcustomdefinition) - Create a ticketing custom field
+* [DeleteTicketingCustomDefinition](#deleteticketingcustomdefinition) - Delete a ticketing custom field
+* [UpdateTicketingCustomDefinition](#updateticketingcustomdefinition) - Update a ticketing custom field
 
 ## ListTickets
 
@@ -1650,6 +1654,275 @@ func main() {
 ### Response
 
 **[*components.TagEntityPaginated](../../models/components/tagentitypaginated.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## GetTicketingFormConfiguration
+
+Get the ticketing form configuration
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="get_ticketing_form_configuration" method="get" path="/v1/ticketing/form_configurations" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Ticketing.GetTicketingFormConfiguration(ctx)
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.TicketingTicketFormConfigurationEntity](../../models/components/ticketingticketformconfigurationentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## ListTicketingCustomDefinitions
+
+List all ticketing custom fields available to the organization
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="list_ticketing_custom_definitions" method="get" path="/v1/ticketing/custom_fields/definitions" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Ticketing.ListTicketingCustomDefinitions(ctx)
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.OrganizationsTicketingCustomFieldDefinitionEntity](../../models/components/organizationsticketingcustomfielddefinitionentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## CreateTicketingCustomDefinition
+
+Creates a ticketing custom field for the organization
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="create_ticketing_custom_definition" method="post" path="/v1/ticketing/custom_fields/definitions" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Ticketing.CreateTicketingCustomDefinition(ctx, components.CreateTicketingCustomDefinition{
+        DisplayName: "Rigoberto.Will15",
+        FieldType: "<value>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                    | :heavy_check_mark:                                                                                       | The context to use for the request.                                                                      |
+| `request`                                                                                                | [components.CreateTicketingCustomDefinition](../../models/components/createticketingcustomdefinition.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `opts`                                                                                                   | [][operations.Option](../../models/operations/option.md)                                                 | :heavy_minus_sign:                                                                                       | The options for this request.                                                                            |
+
+### Response
+
+**[*components.OrganizationsTicketingCustomFieldDefinitionEntity](../../models/components/organizationsticketingcustomfielddefinitionentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## DeleteTicketingCustomDefinition
+
+Deletes a ticketing custom field for the organization
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="delete_ticketing_custom_definition" method="delete" path="/v1/ticketing/custom_fields/definitions/{field_id}" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    err := s.Ticketing.DeleteTicketingCustomDefinition(ctx, "<id>")
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `fieldID`                                                | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## UpdateTicketingCustomDefinition
+
+Update a ticketing custom field for the organization
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="update_ticketing_custom_definition" method="patch" path="/v1/ticketing/custom_fields/definitions/{field_id}" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Ticketing.UpdateTicketingCustomDefinition(ctx, "<id>", components.UpdateTicketingCustomDefinition{})
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                    | :heavy_check_mark:                                                                                       | The context to use for the request.                                                                      |
+| `fieldID`                                                                                                | *string*                                                                                                 | :heavy_check_mark:                                                                                       | N/A                                                                                                      |
+| `updateTicketingCustomDefinition`                                                                        | [components.UpdateTicketingCustomDefinition](../../models/components/updateticketingcustomdefinition.md) | :heavy_check_mark:                                                                                       | N/A                                                                                                      |
+| `opts`                                                                                                   | [][operations.Option](../../models/operations/option.md)                                                 | :heavy_minus_sign:                                                                                       | The options for this request.                                                                            |
+
+### Response
+
+**[*components.OrganizationsTicketingCustomFieldDefinitionEntity](../../models/components/organizationsticketingcustomfielddefinitionentity.md), error**
 
 ### Errors
 
