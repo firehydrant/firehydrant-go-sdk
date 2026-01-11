@@ -559,7 +559,6 @@ func main() {
 * [GetRetrospectiveTemplate](docs/sdks/retrospectives/README.md#getretrospectivetemplate) - Get a retrospective template
 * [DeleteRetrospectiveTemplate](docs/sdks/retrospectives/README.md#deleteretrospectivetemplate) - Delete a retrospective template
 * [UpdateRetrospectiveTemplate](docs/sdks/retrospectives/README.md#updateretrospectivetemplate) - Update a retrospective template
-* [GetRetrospectiveReportTemplate](docs/sdks/retrospectives/README.md#getretrospectivereporttemplate) - Get a retrospective report template
 
 ### [Roles](docs/sdks/roles/README.md)
 
