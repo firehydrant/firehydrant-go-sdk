@@ -36,7 +36,6 @@ Operations related to Retrospectives
 * [GetRetrospectiveTemplate](#getretrospectivetemplate) - Get a retrospective template
 * [DeleteRetrospectiveTemplate](#deleteretrospectivetemplate) - Delete a retrospective template
 * [UpdateRetrospectiveTemplate](#updateretrospectivetemplate) - Update a retrospective template
-* [GetRetrospectiveReportTemplate](#getretrospectivereporttemplate) - Get a retrospective report template
 
 ## ShareIncidentRetrospectives
 
@@ -1739,60 +1738,6 @@ func main() {
 ### Response
 
 **[*components.RetrospectivesTemplateEntity](../../models/components/retrospectivestemplateentity.md), error**
-
-### Errors
-
-| Error Type         | Status Code        | Content Type       |
-| ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
-
-## GetRetrospectiveReportTemplate
-
-Retrieve a single retrospective report template by ID
-
-### Example Usage
-
-<!-- UsageSnippet language="go" operationID="get_retrospective_report_template" method="get" path="/v1/retrospective_report_templates/{id}" -->
-```go
-package main
-
-import(
-	"context"
-	"github.com/firehydrant/firehydrant-go-sdk/models/components"
-	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-
-    s := firehydrantgosdk.New(
-        firehydrantgosdk.WithSecurity(components.Security{
-            APIKey: "<YOUR_API_KEY_HERE>",
-        }),
-    )
-
-    res, err := s.Retrospectives.GetRetrospectiveReportTemplate(ctx, "<id>")
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
-| `id`                                                     | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
-| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
-
-### Response
-
-**[*components.RetrospectivesReportTemplateEntity](../../models/components/retrospectivesreporttemplateentity.md), error**
 
 ### Errors
 
