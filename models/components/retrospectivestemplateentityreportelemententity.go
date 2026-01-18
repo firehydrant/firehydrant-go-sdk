@@ -6,15 +6,15 @@ import (
 	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
-type RetrospectivesTemplateEntityReportElementEntityContent struct {
+type Content struct {
 }
 
 type RetrospectivesTemplateEntityReportElementEntity struct {
-	Type    *string                                                 `json:"type,omitzero"`
-	Data    *string                                                 `json:"data,omitzero"`
-	ID      *string                                                 `json:"id,omitzero"`
-	Label   *string                                                 `json:"label,omitzero"`
-	Content *RetrospectivesTemplateEntityReportElementEntityContent `json:"content,omitzero"`
+	Type    *string  `json:"type,omitzero"`
+	Data    *string  `json:"data,omitzero"`
+	ID      *string  `json:"id,omitzero"`
+	Label   *string  `json:"label,omitzero"`
+	Content *Content `json:"content,omitzero"`
 }
 
 func (r RetrospectivesTemplateEntityReportElementEntity) MarshalJSON() ([]byte, error) {
@@ -56,7 +56,7 @@ func (r *RetrospectivesTemplateEntityReportElementEntity) GetLabel() *string {
 	return r.Label
 }
 
-func (r *RetrospectivesTemplateEntityReportElementEntity) GetContent() *RetrospectivesTemplateEntityReportElementEntityContent {
+func (r *RetrospectivesTemplateEntityReportElementEntity) GetContent() *Content {
 	if r == nil {
 		return nil
 	}

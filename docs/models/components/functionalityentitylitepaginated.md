@@ -1,0 +1,11 @@
+# FunctionalityEntityLitePaginated
+
+FunctionalityEntityLitePaginated model
+
+
+## Fields
+
+| Field                                                                                       | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `Data`                                                                                      | [][components.FunctionalityEntityLite](../../models/components/functionalityentitylite.md)  | :heavy_minus_sign:                                                                          | N/A                                                                                         |
+| `Pagination`                                                                                | [*components.NullablePaginationEntity](../../models/components/nullablepaginationentity.md) | :heavy_minus_sign:                                                                          | N/A                                                                                         |

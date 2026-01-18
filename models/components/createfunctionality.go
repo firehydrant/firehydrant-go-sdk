@@ -20,6 +20,18 @@ func (c *CreateFunctionalityService) GetID() string {
 	return c.ID
 }
 
+type CreateFunctionalityEnvironment struct {
+	// ID of an environment
+	ID string `json:"id"`
+}
+
+func (c *CreateFunctionalityEnvironment) GetID() string {
+	if c == nil {
+		return ""
+	}
+	return c.ID
+}
+
 // CreateFunctionalityServiceTier - Integer representing functionality tier. Lower values represent higher criticality. Default is 5.
 type CreateFunctionalityServiceTier int
 
@@ -134,9 +146,10 @@ func (c *CreateFunctionalityTeam) GetID() string {
 
 // CreateFunctionality - Creates a functionality for the organization
 type CreateFunctionality struct {
-	Name        string                       `json:"name"`
-	Description *string                      `json:"description,omitzero"`
-	Services    []CreateFunctionalityService `json:"services,omitzero"`
+	Name         string                           `json:"name"`
+	Description  *string                          `json:"description,omitzero"`
+	Services     []CreateFunctionalityService     `json:"services,omitzero"`
+	Environments []CreateFunctionalityEnvironment `json:"environments,omitzero"`
 	// A hash of label keys and values
 	Labels map[string]string `json:"labels,omitzero"`
 	// Integer representing functionality tier. Lower values represent higher criticality. Default is 5.
@@ -183,6 +196,13 @@ func (c *CreateFunctionality) GetServices() []CreateFunctionalityService {
 		return nil
 	}
 	return c.Services
+}
+
+func (c *CreateFunctionality) GetEnvironments() []CreateFunctionalityEnvironment {
+	if c == nil {
+		return nil
+	}
+	return c.Environments
 }
 
 func (c *CreateFunctionality) GetLabels() map[string]string {
