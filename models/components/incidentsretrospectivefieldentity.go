@@ -64,6 +64,7 @@ type IncidentsRetrospectiveFieldEntity struct {
 	PermissibleValues     []string                               `json:"permissible_values,omitzero"`
 	IsRequired            *bool                                  `json:"is_required,omitzero"`
 	Value                 *string                                `json:"value,omitzero"`
+	RetrospectiveFieldID  *string                                `json:"retrospective_field_id,omitzero"`
 	Schema                []Schema                               `json:"schema,omitzero"`
 	RequiredAtMilestoneID *string                                `json:"required_at_milestone_id,omitzero"`
 }
@@ -126,6 +127,13 @@ func (i *IncidentsRetrospectiveFieldEntity) GetValue() *string {
 		return nil
 	}
 	return i.Value
+}
+
+func (i *IncidentsRetrospectiveFieldEntity) GetRetrospectiveFieldID() *string {
+	if i == nil {
+		return nil
+	}
+	return i.RetrospectiveFieldID
 }
 
 func (i *IncidentsRetrospectiveFieldEntity) GetSchema() []Schema {

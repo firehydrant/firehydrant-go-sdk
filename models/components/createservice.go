@@ -68,6 +68,18 @@ func (c *CreateServiceFunctionality) GetID() *string {
 	return c.ID
 }
 
+type CreateServiceEnvironment struct {
+	// ID of an environment
+	ID string `json:"id"`
+}
+
+func (c *CreateServiceEnvironment) GetID() string {
+	if c == nil {
+		return ""
+	}
+	return c.ID
+}
+
 type CreateServiceLink struct {
 	// Short name used to display and identify this link
 	Name string `json:"name"`
@@ -151,6 +163,7 @@ type CreateService struct {
 	ServiceTier *CreateServiceServiceTier `json:"service_tier,omitzero"`
 	// An array of functionalities
 	Functionalities []CreateServiceFunctionality `json:"functionalities,omitzero"`
+	Environments    []CreateServiceEnvironment   `json:"environments,omitzero"`
 	// An array of links to associate with this service
 	Links []CreateServiceLink `json:"links,omitzero"`
 	// An object representing a Team that owns the service
@@ -207,6 +220,13 @@ func (c *CreateService) GetFunctionalities() []CreateServiceFunctionality {
 		return nil
 	}
 	return c.Functionalities
+}
+
+func (c *CreateService) GetEnvironments() []CreateServiceEnvironment {
+	if c == nil {
+		return nil
+	}
+	return c.Environments
 }
 
 func (c *CreateService) GetLinks() []CreateServiceLink {

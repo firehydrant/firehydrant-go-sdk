@@ -282,12 +282,15 @@ func main() {
 * [GetEnvironment](docs/sdks/catalogentries/README.md#getenvironment) - Get an environment
 * [DeleteEnvironment](docs/sdks/catalogentries/README.md#deleteenvironment) - Archive an environment
 * [UpdateEnvironment](docs/sdks/catalogentries/README.md#updateenvironment) - Update an environment
+* [ListEnvironmentServices](docs/sdks/catalogentries/README.md#listenvironmentservices) - List services for an environment
+* [ListEnvironmentFunctionalities](docs/sdks/catalogentries/README.md#listenvironmentfunctionalities) - List functionalities for an environment
 * [ListServices](docs/sdks/catalogentries/README.md#listservices) - List services
 * [CreateService](docs/sdks/catalogentries/README.md#createservice) - Create a service
 * [CreateServiceLinks](docs/sdks/catalogentries/README.md#createservicelinks) - Create multiple services linked to external services
 * [GetService](docs/sdks/catalogentries/README.md#getservice) - Get a service
 * [DeleteService](docs/sdks/catalogentries/README.md#deleteservice) - Delete a service
 * [UpdateService](docs/sdks/catalogentries/README.md#updateservice) - Update a service
+* [ListServiceEnvironments](docs/sdks/catalogentries/README.md#listserviceenvironments) - List environments for a service
 * [GetServiceDependencies](docs/sdks/catalogentries/README.md#getservicedependencies) - List dependencies for a service
 * [ListServiceAvailableUpstreamDependencies](docs/sdks/catalogentries/README.md#listserviceavailableupstreamdependencies) - List available upstream service dependencies
 * [ListServiceAvailableDownstreamDependencies](docs/sdks/catalogentries/README.md#listserviceavailabledownstreamdependencies) - List available downstream service dependencies
@@ -302,6 +305,7 @@ func main() {
 * [GetFunctionality](docs/sdks/catalogentries/README.md#getfunctionality) - Get a functionality
 * [DeleteFunctionality](docs/sdks/catalogentries/README.md#deletefunctionality) - Archive a functionality
 * [UpdateFunctionality](docs/sdks/catalogentries/README.md#updatefunctionality) - Update a functionality
+* [ListFunctionalityEnvironments](docs/sdks/catalogentries/README.md#listfunctionalityenvironments) - List environments for a functionality
 * [ListFunctionalityServices](docs/sdks/catalogentries/README.md#listfunctionalityservices) - List services for a functionality
 * [ListUserOwnedServices](docs/sdks/catalogentries/README.md#listuserownedservices) - List services owned by a user's teams
 * [ListInfrastructures](docs/sdks/catalogentries/README.md#listinfrastructures) - Lists functionality, service and environment objects
@@ -559,7 +563,6 @@ func main() {
 * [GetRetrospectiveTemplate](docs/sdks/retrospectives/README.md#getretrospectivetemplate) - Get a retrospective template
 * [DeleteRetrospectiveTemplate](docs/sdks/retrospectives/README.md#deleteretrospectivetemplate) - Delete a retrospective template
 * [UpdateRetrospectiveTemplate](docs/sdks/retrospectives/README.md#updateretrospectivetemplate) - Update a retrospective template
-* [GetRetrospectiveReportTemplate](docs/sdks/retrospectives/README.md#getretrospectivereporttemplate) - Get a retrospective report template
 
 ### [Roles](docs/sdks/roles/README.md)
 
