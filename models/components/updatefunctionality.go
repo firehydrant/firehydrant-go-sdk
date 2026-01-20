@@ -68,6 +68,27 @@ func (u *UpdateFunctionalityService) GetRemove() *bool {
 	return u.Remove
 }
 
+type UpdateFunctionalityEnvironment struct {
+	// ID of an environment
+	ID string `json:"id"`
+	// Set to true if you want to remove the given environment from the functionality
+	Remove *bool `json:"remove,omitzero"`
+}
+
+func (u *UpdateFunctionalityEnvironment) GetID() string {
+	if u == nil {
+		return ""
+	}
+	return u.ID
+}
+
+func (u *UpdateFunctionalityEnvironment) GetRemove() *bool {
+	if u == nil {
+		return nil
+	}
+	return u.Remove
+}
+
 type UpdateFunctionalityLink struct {
 	// URL
 	HrefURL string `json:"href_url"`
@@ -184,6 +205,11 @@ type UpdateFunctionality struct {
 	// Integer representing functionality tier
 	ServiceTier *UpdateFunctionalityServiceTier `json:"service_tier,omitzero"`
 	Services    []UpdateFunctionalityService    `json:"services,omitzero"`
+	// Set this to true if you want to remove all of the services that are not included in the services array from the functionality
+	RemoveRemainingServices *bool                            `default:"false" json:"remove_remaining_services"`
+	Environments            []UpdateFunctionalityEnvironment `json:"environments,omitzero"`
+	// Set this to true if you want to remove all of the environments that are not included in the environments array from the functionality
+	RemoveRemainingEnvironments *bool `default:"false" json:"remove_remaining_environments"`
 	// An array of links to associate with this functionality. This will remove all links not present in the patch. Only acts if 'links' key is included in the payload.
 	Links []UpdateFunctionalityLink `json:"links,omitzero"`
 	// An object representing a Team that owns the functionality
@@ -202,8 +228,6 @@ type UpdateFunctionality struct {
 	Labels                map[string]string `json:"labels,omitzero"`
 	AlertOnAdd            *bool             `json:"alert_on_add,omitzero"`
 	AutoAddRespondingTeam *bool             `json:"auto_add_responding_team,omitzero"`
-	// Set this to true if you want to remove all of the services that are not included in the services array from the functionality
-	RemoveRemainingServices *bool `default:"false" json:"remove_remaining_services"`
 }
 
 func (u UpdateFunctionality) MarshalJSON() ([]byte, error) {
@@ -243,6 +267,27 @@ func (u *UpdateFunctionality) GetServices() []UpdateFunctionalityService {
 		return nil
 	}
 	return u.Services
+}
+
+func (u *UpdateFunctionality) GetRemoveRemainingServices() *bool {
+	if u == nil {
+		return nil
+	}
+	return u.RemoveRemainingServices
+}
+
+func (u *UpdateFunctionality) GetEnvironments() []UpdateFunctionalityEnvironment {
+	if u == nil {
+		return nil
+	}
+	return u.Environments
+}
+
+func (u *UpdateFunctionality) GetRemoveRemainingEnvironments() *bool {
+	if u == nil {
+		return nil
+	}
+	return u.RemoveRemainingEnvironments
 }
 
 func (u *UpdateFunctionality) GetLinks() []UpdateFunctionalityLink {
@@ -313,11 +358,4 @@ func (u *UpdateFunctionality) GetAutoAddRespondingTeam() *bool {
 		return nil
 	}
 	return u.AutoAddRespondingTeam
-}
-
-func (u *UpdateFunctionality) GetRemoveRemainingServices() *bool {
-	if u == nil {
-		return nil
-	}
-	return u.RemoveRemainingServices
 }

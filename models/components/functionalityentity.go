@@ -29,6 +29,8 @@ type FunctionalityEntity struct {
 	UpdatedBy             *NullableAuthorEntity `json:"updated_by,omitzero"`
 	// Services this functionality provides
 	Services []ServiceEntityLite `json:"services,omitzero"`
+	// Environments related to this functionality
+	Environments []EnvironmentEntryEntity `json:"environments,omitzero"`
 	// Information about known linkages to representations of services outside of FireHydrant.
 	ExternalResources []ExternalResourceEntity `json:"external_resources,omitzero"`
 	// List of teams attached to the functionality
@@ -149,6 +151,13 @@ func (f *FunctionalityEntity) GetServices() []ServiceEntityLite {
 		return nil
 	}
 	return f.Services
+}
+
+func (f *FunctionalityEntity) GetEnvironments() []EnvironmentEntryEntity {
+	if f == nil {
+		return nil
+	}
+	return f.Environments
 }
 
 func (f *FunctionalityEntity) GetExternalResources() []ExternalResourceEntity {

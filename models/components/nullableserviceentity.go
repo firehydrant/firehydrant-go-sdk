@@ -33,8 +33,10 @@ type NullableServiceEntity struct {
 	// Information about known linkages to representations of services outside of FireHydrant.
 	ExternalResources []ExternalResourceEntity `json:"external_resources,omitzero"`
 	// List of functionalities attached to the service
-	Functionalities []FunctionalityEntity                    `json:"functionalities,omitzero"`
-	LastImport      *NullableImportsImportableResourceEntity `json:"last_import,omitzero"`
+	Functionalities []FunctionalityEntity `json:"functionalities,omitzero"`
+	// Environments related to this service
+	Environments []EnvironmentEntryEntity                 `json:"environments,omitzero"`
+	LastImport   *NullableImportsImportableResourceEntity `json:"last_import,omitzero"`
 	// List of links attached to this service.
 	Links []LinksEntity `json:"links,omitzero"`
 	// If set, this field indicates that the service is managed by an integration and thus cannot be set manually
@@ -169,6 +171,13 @@ func (n *NullableServiceEntity) GetFunctionalities() []FunctionalityEntity {
 		return nil
 	}
 	return n.Functionalities
+}
+
+func (n *NullableServiceEntity) GetEnvironments() []EnvironmentEntryEntity {
+	if n == nil {
+		return nil
+	}
+	return n.Environments
 }
 
 func (n *NullableServiceEntity) GetLastImport() *NullableImportsImportableResourceEntity {

@@ -25,6 +25,10 @@ type EnvironmentEntryEntity struct {
 	ActiveIncidents []string `json:"active_incidents,omitzero"`
 	// Information about known linkages to representations of services outside of FireHydrant.
 	ExternalResources []ExternalResourceEntity `json:"external_resources,omitzero"`
+	// Functionalities related to this environment
+	Functionalities []FunctionalityEntityLite `json:"functionalities,omitzero"`
+	// Services related to this environment
+	Services []ServiceEntityLite `json:"services,omitzero"`
 }
 
 func (e EnvironmentEntryEntity) MarshalJSON() ([]byte, error) {
@@ -92,4 +96,18 @@ func (e *EnvironmentEntryEntity) GetExternalResources() []ExternalResourceEntity
 		return nil
 	}
 	return e.ExternalResources
+}
+
+func (e *EnvironmentEntryEntity) GetFunctionalities() []FunctionalityEntityLite {
+	if e == nil {
+		return nil
+	}
+	return e.Functionalities
+}
+
+func (e *EnvironmentEntryEntity) GetServices() []ServiceEntityLite {
+	if e == nil {
+		return nil
+	}
+	return e.Services
 }

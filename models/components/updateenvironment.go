@@ -2,15 +2,78 @@
 
 package components
 
-// UpdateEnvironment - Update a environments attributes
-type UpdateEnvironment struct {
-	Name        string  `json:"name"`
-	Description *string `json:"description,omitzero"`
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
+type UpdateEnvironmentFunctionality struct {
+	// ID of a functionality
+	ID string `json:"id"`
+	// Set to true if you want to remove the given functionality from the environment
+	Remove *bool `json:"remove,omitzero"`
 }
 
-func (u *UpdateEnvironment) GetName() string {
+func (u *UpdateEnvironmentFunctionality) GetID() string {
 	if u == nil {
 		return ""
+	}
+	return u.ID
+}
+
+func (u *UpdateEnvironmentFunctionality) GetRemove() *bool {
+	if u == nil {
+		return nil
+	}
+	return u.Remove
+}
+
+type UpdateEnvironmentService struct {
+	// ID of a service
+	ID string `json:"id"`
+	// Set to true if you want to remove the given service from the environment
+	Remove *bool `json:"remove,omitzero"`
+}
+
+func (u *UpdateEnvironmentService) GetID() string {
+	if u == nil {
+		return ""
+	}
+	return u.ID
+}
+
+func (u *UpdateEnvironmentService) GetRemove() *bool {
+	if u == nil {
+		return nil
+	}
+	return u.Remove
+}
+
+// UpdateEnvironment - Update a environments attributes
+type UpdateEnvironment struct {
+	Name            *string                          `json:"name,omitzero"`
+	Description     *string                          `json:"description,omitzero"`
+	Functionalities []UpdateEnvironmentFunctionality `json:"functionalities,omitzero"`
+	// Set this to true if you want to remove all of the functionalities that are not included in the functionalities array from the environment
+	RemoveRemainingFunctionalities *bool                      `default:"false" json:"remove_remaining_functionalities"`
+	Services                       []UpdateEnvironmentService `json:"services,omitzero"`
+	// Set this to true if you want to remove all of the services that are not included in the services array from the environment
+	RemoveRemainingServices *bool `default:"false" json:"remove_remaining_services"`
+}
+
+func (u UpdateEnvironment) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UpdateEnvironment) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, nil); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (u *UpdateEnvironment) GetName() *string {
+	if u == nil {
+		return nil
 	}
 	return u.Name
 }
@@ -20,4 +83,32 @@ func (u *UpdateEnvironment) GetDescription() *string {
 		return nil
 	}
 	return u.Description
+}
+
+func (u *UpdateEnvironment) GetFunctionalities() []UpdateEnvironmentFunctionality {
+	if u == nil {
+		return nil
+	}
+	return u.Functionalities
+}
+
+func (u *UpdateEnvironment) GetRemoveRemainingFunctionalities() *bool {
+	if u == nil {
+		return nil
+	}
+	return u.RemoveRemainingFunctionalities
+}
+
+func (u *UpdateEnvironment) GetServices() []UpdateEnvironmentService {
+	if u == nil {
+		return nil
+	}
+	return u.Services
+}
+
+func (u *UpdateEnvironment) GetRemoveRemainingServices() *bool {
+	if u == nil {
+		return nil
+	}
+	return u.RemoveRemainingServices
 }

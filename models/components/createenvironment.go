@@ -2,10 +2,51 @@
 
 package components
 
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+)
+
+type CreateEnvironmentFunctionality struct {
+	// ID of a functionality
+	ID string `json:"id"`
+}
+
+func (c *CreateEnvironmentFunctionality) GetID() string {
+	if c == nil {
+		return ""
+	}
+	return c.ID
+}
+
+type CreateEnvironmentService struct {
+	// ID of a service
+	ID string `json:"id"`
+}
+
+func (c *CreateEnvironmentService) GetID() string {
+	if c == nil {
+		return ""
+	}
+	return c.ID
+}
+
 // CreateEnvironment - Creates an environment for the organization
 type CreateEnvironment struct {
-	Name        string  `json:"name"`
-	Description *string `json:"description,omitzero"`
+	Name            string                           `json:"name"`
+	Description     *string                          `json:"description,omitzero"`
+	Functionalities []CreateEnvironmentFunctionality `json:"functionalities,omitzero"`
+	Services        []CreateEnvironmentService       `json:"services,omitzero"`
+}
+
+func (c CreateEnvironment) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *CreateEnvironment) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (c *CreateEnvironment) GetName() string {
@@ -20,4 +61,18 @@ func (c *CreateEnvironment) GetDescription() *string {
 		return nil
 	}
 	return c.Description
+}
+
+func (c *CreateEnvironment) GetFunctionalities() []CreateEnvironmentFunctionality {
+	if c == nil {
+		return nil
+	}
+	return c.Functionalities
+}
+
+func (c *CreateEnvironment) GetServices() []CreateEnvironmentService {
+	if c == nil {
+		return nil
+	}
+	return c.Services
 }
