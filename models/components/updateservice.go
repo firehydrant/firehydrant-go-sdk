@@ -87,6 +87,27 @@ func (u *UpdateServiceFunctionality) GetSummary() *string {
 	return u.Summary
 }
 
+type UpdateServiceEnvironment struct {
+	// ID of an environment
+	ID string `json:"id"`
+	// Set to true if you want to remove the given environment from the service
+	Remove *bool `json:"remove,omitzero"`
+}
+
+func (u *UpdateServiceEnvironment) GetID() string {
+	if u == nil {
+		return ""
+	}
+	return u.ID
+}
+
+func (u *UpdateServiceEnvironment) GetRemove() *bool {
+	if u == nil {
+		return nil
+	}
+	return u.Remove
+}
+
 type UpdateServiceLink struct {
 	// URL
 	HrefURL string `json:"href_url"`
@@ -218,6 +239,11 @@ type UpdateService struct {
 	ExternalResources []UpdateServiceExternalResource `json:"external_resources,omitzero"`
 	// An array of functionalities
 	Functionalities []UpdateServiceFunctionality `json:"functionalities,omitzero"`
+	// If set to true, any functionalities tagged on the service that are not included in the given array will be removed. Set this to true if you want to do a replacement operation for the functionalities
+	RemoveRemainingFunctionalities *bool                      `json:"remove_remaining_functionalities,omitzero"`
+	Environments                   []UpdateServiceEnvironment `json:"environments,omitzero"`
+	// Set this to true if you want to remove all of the environments that are not included in the environments array from the service
+	RemoveRemainingEnvironments *bool `default:"false" json:"remove_remaining_environments"`
 	// A hash of label keys and values
 	Labels map[string]string `json:"labels,omitzero"`
 	// An array of links to associate with this service. This will remove all links not present in the patch. Only acts if 'links' key is included in the payload.
@@ -231,8 +257,6 @@ type UpdateService struct {
 	RemoveRemainingChecklists *bool `json:"remove_remaining_checklists,omitzero"`
 	// If set to true, any external_resources tagged on the service that are not included in the given array will be removed. Set this to true if you want to do a replacement operation for the external_resources
 	RemoveRemainingExternalResources *bool `json:"remove_remaining_external_resources,omitzero"`
-	// If set to true, any functionalities tagged on the service that are not included in the given array will be removed. Set this to true if you want to do a replacement operation for the functionalities
-	RemoveRemainingFunctionalities *bool `json:"remove_remaining_functionalities,omitzero"`
 	// If set to true, any teams tagged on the service that are not included in the given array will be removed. Set this to true if you want to do a replacement operation for the teams
 	RemoveRemainingTeams *bool `json:"remove_remaining_teams,omitzero"`
 	// Integer representing service tier
@@ -294,6 +318,27 @@ func (u *UpdateService) GetFunctionalities() []UpdateServiceFunctionality {
 	return u.Functionalities
 }
 
+func (u *UpdateService) GetRemoveRemainingFunctionalities() *bool {
+	if u == nil {
+		return nil
+	}
+	return u.RemoveRemainingFunctionalities
+}
+
+func (u *UpdateService) GetEnvironments() []UpdateServiceEnvironment {
+	if u == nil {
+		return nil
+	}
+	return u.Environments
+}
+
+func (u *UpdateService) GetRemoveRemainingEnvironments() *bool {
+	if u == nil {
+		return nil
+	}
+	return u.RemoveRemainingEnvironments
+}
+
 func (u *UpdateService) GetLabels() map[string]string {
 	if u == nil {
 		return nil
@@ -341,13 +386,6 @@ func (u *UpdateService) GetRemoveRemainingExternalResources() *bool {
 		return nil
 	}
 	return u.RemoveRemainingExternalResources
-}
-
-func (u *UpdateService) GetRemoveRemainingFunctionalities() *bool {
-	if u == nil {
-		return nil
-	}
-	return u.RemoveRemainingFunctionalities
 }
 
 func (u *UpdateService) GetRemoveRemainingTeams() *bool {

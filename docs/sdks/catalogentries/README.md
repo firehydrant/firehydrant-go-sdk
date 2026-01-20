@@ -11,12 +11,15 @@ Operations related to Catalog Entries
 * [GetEnvironment](#getenvironment) - Get an environment
 * [DeleteEnvironment](#deleteenvironment) - Archive an environment
 * [UpdateEnvironment](#updateenvironment) - Update an environment
+* [ListEnvironmentServices](#listenvironmentservices) - List services for an environment
+* [ListEnvironmentFunctionalities](#listenvironmentfunctionalities) - List functionalities for an environment
 * [ListServices](#listservices) - List services
 * [CreateService](#createservice) - Create a service
 * [CreateServiceLinks](#createservicelinks) - Create multiple services linked to external services
 * [GetService](#getservice) - Get a service
 * [DeleteService](#deleteservice) - Delete a service
 * [UpdateService](#updateservice) - Update a service
+* [ListServiceEnvironments](#listserviceenvironments) - List environments for a service
 * [GetServiceDependencies](#getservicedependencies) - List dependencies for a service
 * [ListServiceAvailableUpstreamDependencies](#listserviceavailableupstreamdependencies) - List available upstream service dependencies
 * [ListServiceAvailableDownstreamDependencies](#listserviceavailabledownstreamdependencies) - List available downstream service dependencies
@@ -31,6 +34,7 @@ Operations related to Catalog Entries
 * [GetFunctionality](#getfunctionality) - Get a functionality
 * [DeleteFunctionality](#deletefunctionality) - Archive a functionality
 * [UpdateFunctionality](#updatefunctionality) - Update a functionality
+* [ListFunctionalityEnvironments](#listfunctionalityenvironments) - List environments for a functionality
 * [ListFunctionalityServices](#listfunctionalityservices) - List services for a functionality
 * [ListUserOwnedServices](#listuserownedservices) - List services owned by a user's teams
 * [ListInfrastructures](#listinfrastructures) - Lists functionality, service and environment objects
@@ -281,9 +285,7 @@ func main() {
         }),
     )
 
-    res, err := s.CatalogEntries.UpdateEnvironment(ctx, "<id>", components.UpdateEnvironment{
-        Name: "<value>",
-    })
+    res, err := s.CatalogEntries.UpdateEnvironment(ctx, "<id>", components.UpdateEnvironment{})
     if err != nil {
         log.Fatal(err)
     }
@@ -305,6 +307,118 @@ func main() {
 ### Response
 
 **[*components.EnvironmentEntryEntity](../../models/components/environmententryentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## ListEnvironmentServices
+
+List services for an environment
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="list_environment_services" method="get" path="/v1/environments/{environment_id}/services" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.CatalogEntries.ListEnvironmentServices(ctx, "<id>", nil, nil)
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `environmentID`                                          | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `page`                                                   | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
+| `perPage`                                                | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.ServiceEntityLitePaginated](../../models/components/serviceentitylitepaginated.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## ListEnvironmentFunctionalities
+
+List functionalities for an environment
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="list_environment_functionalities" method="get" path="/v1/environments/{environment_id}/functionalities" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.CatalogEntries.ListEnvironmentFunctionalities(ctx, "<id>", nil, nil)
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `environmentID`                                          | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `page`                                                   | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
+| `perPage`                                                | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.FunctionalityEntityLitePaginated](../../models/components/functionalityentitylitepaginated.md), error**
 
 ### Errors
 
@@ -637,6 +751,62 @@ func main() {
 ### Response
 
 **[*components.ServiceEntity](../../models/components/serviceentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## ListServiceEnvironments
+
+List environments for a service
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="list_service_environments" method="get" path="/v1/services/{service_id}/environments" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.CatalogEntries.ListServiceEnvironments(ctx, "<id>", nil, nil)
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `serviceID`                                              | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `page`                                                   | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
+| `perPage`                                                | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.EnvironmentEntryEntityPaginated](../../models/components/environmententryentitypaginated.md), error**
 
 ### Errors
 
@@ -1396,6 +1566,62 @@ func main() {
 ### Response
 
 **[*components.FunctionalityEntity](../../models/components/functionalityentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## ListFunctionalityEnvironments
+
+List environments for a functionality
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="list_functionality_environments" method="get" path="/v1/functionalities/{functionality_id}/environments" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.CatalogEntries.ListFunctionalityEnvironments(ctx, "<id>", nil, nil)
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `functionalityID`                                        | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `page`                                                   | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
+| `perPage`                                                | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.EnvironmentEntryEntityPaginated](../../models/components/environmententryentitypaginated.md), error**
 
 ### Errors
 

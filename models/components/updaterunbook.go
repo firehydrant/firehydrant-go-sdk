@@ -40,15 +40,15 @@ func (u *UpdateRunbookService) GetID() *string {
 	return u.ID
 }
 
-type Environment struct {
+type UpdateRunbookEnvironment struct {
 	ID *string `json:"id,omitzero"`
 }
 
-func (e *Environment) GetID() *string {
-	if e == nil {
+func (u *UpdateRunbookEnvironment) GetID() *string {
+	if u == nil {
 		return nil
 	}
-	return e.ID
+	return u.ID
 }
 
 type UpdateRunbookAttachmentRule struct {
@@ -154,7 +154,7 @@ type UpdateRunbook struct {
 	Owner          *UpdateRunbookOwner          `json:"owner,omitzero"`
 	Severities     []UpdateRunbookSeverity      `json:"severities,omitzero"`
 	Services       []UpdateRunbookService       `json:"services,omitzero"`
-	Environments   []Environment                `json:"environments,omitzero"`
+	Environments   []UpdateRunbookEnvironment   `json:"environments,omitzero"`
 	AttachmentRule *UpdateRunbookAttachmentRule `json:"attachment_rule,omitzero"`
 	Steps          []UpdateRunbookStep          `json:"steps,omitzero"`
 	// Whether or not this runbook should be automatically attached to restricted incidents. Note that setting this to `true` will prevent it from being attached to public incidents, even manually. Defaults to `false`.
@@ -221,7 +221,7 @@ func (u *UpdateRunbook) GetServices() []UpdateRunbookService {
 	return u.Services
 }
 
-func (u *UpdateRunbook) GetEnvironments() []Environment {
+func (u *UpdateRunbook) GetEnvironments() []UpdateRunbookEnvironment {
 	if u == nil {
 		return nil
 	}
