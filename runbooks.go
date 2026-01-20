@@ -1851,7 +1851,7 @@ func (s *Runbooks) GetRunbookActionFieldOptions(ctx context.Context, request ope
 
 // ListRunbooks - List runbooks
 // Lists all available runbooks.
-func (s *Runbooks) ListRunbooks(ctx context.Context, request operations.ListRunbooksRequest, opts ...operations.Option) (*components.RunbookEntity, error) {
+func (s *Runbooks) ListRunbooks(ctx context.Context, request operations.ListRunbooksRequest, opts ...operations.Option) (*components.SlimRunbookEntityPaginated, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -2015,7 +2015,7 @@ func (s *Runbooks) ListRunbooks(ctx context.Context, request operations.ListRunb
 				return nil, err
 			}
 
-			var out components.RunbookEntity
+			var out components.SlimRunbookEntityPaginated
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}

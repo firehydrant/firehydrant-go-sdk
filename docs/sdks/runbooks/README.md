@@ -569,7 +569,7 @@ func main() {
 
 ### Response
 
-**[*components.RunbookEntity](../../models/components/runbookentity.md), error**
+**[*components.SlimRunbookEntityPaginated](../../models/components/slimrunbookentitypaginated.md), error**
 
 ### Errors
 
