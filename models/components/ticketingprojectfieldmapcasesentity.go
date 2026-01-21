@@ -6,13 +6,13 @@ import (
 	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
-// Logic - An unstructured object of key/value pairs describing the logic for applying the rule.
-type Logic struct {
+// TicketingProjectFieldMapCasesEntityLogic - An unstructured object of key/value pairs describing the logic for applying the rule.
+type TicketingProjectFieldMapCasesEntityLogic struct {
 }
 
 type TicketingProjectFieldMapCasesEntity struct {
 	// An unstructured object of key/value pairs describing the logic for applying the rule.
-	Logic         *Logic                                               `json:"logic,omitzero"`
+	Logic         *TicketingProjectFieldMapCasesEntityLogic            `json:"logic,omitzero"`
 	ExternalValue *NullableTicketingProjectFieldMapExternalValueEntity `json:"external_value,omitzero"`
 }
 
@@ -27,7 +27,7 @@ func (t *TicketingProjectFieldMapCasesEntity) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (t *TicketingProjectFieldMapCasesEntity) GetLogic() *Logic {
+func (t *TicketingProjectFieldMapCasesEntity) GetLogic() *TicketingProjectFieldMapCasesEntityLogic {
 	if t == nil {
 		return nil
 	}

@@ -1,18 +1,18 @@
 lockVersion: 2.0.0
 id: 39357612-0c85-4a96-a549-e2d920c4a065
 management:
-  docChecksum: 6e07dedff1403bc6e6b814007fb6d89b
+  docChecksum: 5cb4d95332b846e4fd8bf9bc3372aeec
   docVersion: 0.0.1
-  speakeasyVersion: 1.691.0
+  speakeasyVersion: 1.692.0
   generationVersion: 2.797.1
-  releaseVersion: 1.8.3
-  configChecksum: 3af8da76d0d31f0c349483e4c30db4af
+  releaseVersion: 1.8.4
+  configChecksum: d066565479c44d993308a792c7f9bbaa
   repoURL: https://github.com/firehydrant/firehydrant-go-sdk.git
   installationURL: https://github.com/firehydrant/firehydrant-go-sdk
 persistentEdits:
-  generation_id: 94ce5444-9043-4a25-a44d-9829811304f7
-  pristine_commit_hash: 00c429d71054daefc98c0c537d184937b25e9903
-  pristine_tree_hash: 2051a23918bf5840ba03cc4ae2c0b64f4c3b3a56
+  generation_id: 42d853cf-cefe-4d64-874e-c2e89ae427b4
+  pristine_commit_hash: 577fce75001b33942f3397cb2d7e0a1c55bbc52d
+  pristine_tree_hash: b58a617cc2627da98ce35c9487a3357df1df7095
 features:
   go:
     additionalDependencies: 0.1.0
@@ -1404,10 +1404,6 @@ trackedFiles:
     id: cab7008d93a6
     last_write_checksum: sha1:a60ffd8eafbfe74a112b573a573c289d3e3c1380
     pristine_git_object: a0b5d8f78350a15c72e97624b979c491a687855a
-  docs/models/components/logic.md:
-    id: 316142189e5b
-    last_write_checksum: sha1:66846daf0cfae27506dcf85b2c87967627559777
-    pristine_git_object: 75f5c89192f9780b16c69230ea881aa95c5d310f
   docs/models/components/mediumvalueevents.md:
     id: 0d398aaeb87a
     last_write_checksum: sha1:491296e4426d7f5c61e3946ad998d0c63fa49e4f
@@ -1690,8 +1686,12 @@ trackedFiles:
     pristine_git_object: a6e8c804a2fd1c27da957ca183ada537035fea76
   docs/models/components/nullablerulesruleentity.md:
     id: de4d9982d49b
-    last_write_checksum: sha1:859d1ebefc881544263409afc68a0a372b663f83
-    pristine_git_object: 9a4da1c888e2839d650d50625d01b6d772a9f831
+    last_write_checksum: sha1:f32cc5243f876bef05582a79d5eaaa5c90907b8f
+    pristine_git_object: cbf7c0abec94057891f5ee0f930ac0bf2de5a1ae
+  docs/models/components/nullablerulesruleentitylogic.md:
+    id: aa14bc1a38b1
+    last_write_checksum: sha1:f8be57aa781a79fcd560a87efad7206b9de76987
+    pristine_git_object: 3a6794ab41de23d38808acd8407a0a5cc2661a78
   docs/models/components/nullablerunbooksactionconfigentity.md:
     id: 16c89c358dc8
     last_write_checksum: sha1:87c41dd2f9826434637e9ebe742328bb84a83d05
@@ -2602,8 +2602,12 @@ trackedFiles:
     pristine_git_object: 2624e2b80b438203462d3d3e6683844cf3c9d328
   docs/models/components/ticketingprojectfieldmapcasesentity.md:
     id: d52730d03326
-    last_write_checksum: sha1:84aa98f08d72bc9744b8d2daa2858e3b5bafea92
-    pristine_git_object: 89217b7bb8256a522176927a8f471b05658ba7c4
+    last_write_checksum: sha1:81af8f4e88d73d49b633a6a7888a4dfcce6c26fc
+    pristine_git_object: 7240cdfbef6cee9aa1a924bd1e9f0e75aba91214
+  docs/models/components/ticketingprojectfieldmapcasesentitylogic.md:
+    id: 607942dd476e
+    last_write_checksum: sha1:f114c17c891207d8a68d84de35674b4aaaba6677
+    pristine_git_object: 5c6eee5812045045cf80b649ac714d3d27a3cf4d
   docs/models/components/ticketingprojectfieldmapentity.md:
     id: 7ae7458b9c83
     last_write_checksum: sha1:144ce306a38e1a157c98f4d64a631977fb6ad951
@@ -5454,8 +5458,8 @@ trackedFiles:
     pristine_git_object: 3d83ed2f48ff36968042694693ec08d892ef94fe
   firehydrant.go:
     id: 4d108d66c915
-    last_write_checksum: sha1:d1b70e6731c8d88123b2e3eed8327342b732260b
-    pristine_git_object: 83c1cf1bdb491ae70ef09b57f30b8a46517c16bc
+    last_write_checksum: sha1:e92eeeb4fbd54be7410bba4dd62a597c2b598968
+    pristine_git_object: 09a9585393d9b8c6a71bde612a18d24778f564e7
   go.mod:
     id: c47645c391ad
     last_write_checksum: sha1:f83197e7310a8a571b1391181e7036782c48335a
@@ -6474,8 +6478,8 @@ trackedFiles:
     pristine_git_object: 78febf66dbfa51d8fd68ff10ca30dd1129ef2f51
   models/components/nullablerulesruleentity.go:
     id: daec65ca1ad9
-    last_write_checksum: sha1:b28a35f1f1720c09900bb896a1cd1639292723ac
-    pristine_git_object: af10669b087209f0a9ccc9eeefe5b27a65f30c35
+    last_write_checksum: sha1:94d9a3ee1b29daced5cc7772df94b0462319886c
+    pristine_git_object: c9609bea4b7c4cb00827d099a447d924a02a6bf1
   models/components/nullablerunbooksactionconfigentity.go:
     id: 401bbbf6dc4b
     last_write_checksum: sha1:e9030f27ee00117388beeaf138fc6670cf1f0e28
@@ -7150,8 +7154,8 @@ trackedFiles:
     pristine_git_object: 417f17393a6c84a9b907bd05273a88975d822c96
   models/components/ticketingprojectfieldmapcasesentity.go:
     id: ab81ed1d877c
-    last_write_checksum: sha1:70bc27bc9f551bb7c83a90aa0bab316f483773b8
-    pristine_git_object: 40c0ae23b766cc43b2a13fdb40a382ce178015f6
+    last_write_checksum: sha1:04f44f201f576831f263b32f18ac14aeb3a58f95
+    pristine_git_object: 4d5a3c7de4a710551be67fd9009a276e5d49ba5a
   models/components/ticketingprojectfieldmapentity.go:
     id: eeac1e138ad7
     last_write_checksum: sha1:f57c3f406c0a47b37e180c3e37ea0beae9838b9e
