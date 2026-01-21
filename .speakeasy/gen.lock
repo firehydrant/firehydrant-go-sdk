@@ -1,18 +1,18 @@
 lockVersion: 2.0.0
 id: 39357612-0c85-4a96-a549-e2d920c4a065
 management:
-  docChecksum: 2597fa37e421e77c48dcfb3ef300f374
+  docChecksum: 6e07dedff1403bc6e6b814007fb6d89b
   docVersion: 0.0.1
   speakeasyVersion: 1.691.0
   generationVersion: 2.797.1
-  releaseVersion: 1.8.2
-  configChecksum: a182ff0d403788c30d6a54e28e4a50ed
+  releaseVersion: 1.8.3
+  configChecksum: 3af8da76d0d31f0c349483e4c30db4af
   repoURL: https://github.com/firehydrant/firehydrant-go-sdk.git
   installationURL: https://github.com/firehydrant/firehydrant-go-sdk
 persistentEdits:
-  generation_id: d0a05c3d-5afd-4078-b5e1-e6209225b234
-  pristine_commit_hash: ac3590c2c3dec645afc7dcf45a7266b10bd86e3c
-  pristine_tree_hash: 1132e8c2446a966b5d03531d98bff8be3fbc84f3
+  generation_id: 94ce5444-9043-4a25-a44d-9829811304f7
+  pristine_commit_hash: 00c429d71054daefc98c0c537d184937b25e9903
+  pristine_tree_hash: 2051a23918bf5840ba03cc4ae2c0b64f4c3b3a56
 features:
   go:
     additionalDependencies: 0.1.0
@@ -1714,12 +1714,8 @@ trackedFiles:
     pristine_git_object: f00a48ef94f2730d2947f67bbcb434e67a6e09f3
   docs/models/components/nullablerunbookselementdynamicselectentity.md:
     id: 9ace8a626db6
-    last_write_checksum: sha1:d7f3f1d87b51aab08b594c1037687d8ef37dd357
-    pristine_git_object: da8e695520205e7fd3a81ad4d3bb29105959ef6a
-  docs/models/components/nullablerunbookselementdynamicselectentityselectoptionentity.md:
-    id: 85a7d6b7ca2d
-    last_write_checksum: sha1:c0e9f49384dfec719b30bfb1554566d6276213c5
-    pristine_git_object: 14956355b0500e6e1601318983c5378e006f04b1
+    last_write_checksum: sha1:93e9d7249bc2a23f3bcb40f94e9a62f6e868c864
+    pristine_git_object: dc84c7c3663f7babd4457e3f96f6d294a9178152
   docs/models/components/nullablerunbookselementinputentity.md:
     id: f6ac7c241e51
     last_write_checksum: sha1:c81a0c67bc4a7b3ac7aad157cf158b950271dc90
@@ -5458,8 +5454,8 @@ trackedFiles:
     pristine_git_object: 3d83ed2f48ff36968042694693ec08d892ef94fe
   firehydrant.go:
     id: 4d108d66c915
-    last_write_checksum: sha1:8b0e6adc463201a200d8fefe8472c281d069dec2
-    pristine_git_object: e0e24ae5713062147d7ba7b30d840e984fdca075
+    last_write_checksum: sha1:d1b70e6731c8d88123b2e3eed8327342b732260b
+    pristine_git_object: 83c1cf1bdb491ae70ef09b57f30b8a46517c16bc
   go.mod:
     id: c47645c391ad
     last_write_checksum: sha1:f83197e7310a8a571b1391181e7036782c48335a
@@ -6490,12 +6486,8 @@ trackedFiles:
     pristine_git_object: f311b480f36eee593719b111fbdc868288b9ca2e
   models/components/nullablerunbookselementdynamicselectentity.go:
     id: 4e7df45a495b
-    last_write_checksum: sha1:8ba401bd35d3736d896592d05d60aa781e297e3e
-    pristine_git_object: 67001e003fc83908dee326f28e0e91c636b9637f
-  models/components/nullablerunbookselementdynamicselectentityselectoptionentity.go:
-    id: 24e02fd2b9e0
-    last_write_checksum: sha1:9d39f8afb28f3a97ff06da53fb7b3a795ad962f7
-    pristine_git_object: 1c988560b3f0502a41e4103b2535e8a548da260a
+    last_write_checksum: sha1:efc93373edf540369bfa7d85b3995875f4c2857f
+    pristine_git_object: 8e249e32b6fc0569a6cbf8b8764e5c8a0aed4962
   models/components/nullablerunbookselementinputentity.go:
     id: bb50d8156b15
     last_write_checksum: sha1:97b3d2cc83940e6d9d748d328745000eac8744a3

@@ -7,14 +7,13 @@ import (
 )
 
 type NullableRunbooksElementDynamicSelectEntity struct {
-	Label        *string                                                       `json:"label,omitzero"`
-	Placeholder  *string                                                       `json:"placeholder,omitzero"`
-	AsyncURL     *string                                                       `json:"async_url,omitzero"`
-	Required     *bool                                                         `json:"required,omitzero"`
-	Clearable    *bool                                                         `json:"clearable,omitzero"`
-	IsMulti      *bool                                                         `json:"is_multi,omitzero"`
-	DefaultValue *NullableRunbooksElementDynamicSelectEntitySelectOptionEntity `json:"default_value,omitzero"`
-	Options      []RunbooksElementDynamicSelectEntitySelectOptionEntity        `json:"options,omitzero"`
+	Label       *string                                                `json:"label,omitzero"`
+	Placeholder *string                                                `json:"placeholder,omitzero"`
+	AsyncURL    *string                                                `json:"async_url,omitzero"`
+	Required    *bool                                                  `json:"required,omitzero"`
+	Clearable   *bool                                                  `json:"clearable,omitzero"`
+	IsMulti     *bool                                                  `json:"is_multi,omitzero"`
+	Options     []RunbooksElementDynamicSelectEntitySelectOptionEntity `json:"options,omitzero"`
 }
 
 func (n NullableRunbooksElementDynamicSelectEntity) MarshalJSON() ([]byte, error) {
@@ -68,13 +67,6 @@ func (n *NullableRunbooksElementDynamicSelectEntity) GetIsMulti() *bool {
 		return nil
 	}
 	return n.IsMulti
-}
-
-func (n *NullableRunbooksElementDynamicSelectEntity) GetDefaultValue() *NullableRunbooksElementDynamicSelectEntitySelectOptionEntity {
-	if n == nil {
-		return nil
-	}
-	return n.DefaultValue
 }
 
 func (n *NullableRunbooksElementDynamicSelectEntity) GetOptions() []RunbooksElementDynamicSelectEntitySelectOptionEntity {
