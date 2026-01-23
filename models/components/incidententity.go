@@ -24,6 +24,8 @@ type IncidentEntity struct {
 	CreatedAt *time.Time `json:"created_at,omitzero"`
 	// The time the incident started
 	StartedAt *time.Time `json:"started_at,omitzero"`
+	// The time the incident was updated
+	UpdatedAt *time.Time `json:"updated_at,omitzero"`
 	// The time the incident was archived
 	DiscardedAt           *time.Time `json:"discarded_at,omitzero"`
 	Summary               *string    `json:"summary,omitzero"`
@@ -123,6 +125,13 @@ func (i *IncidentEntity) GetStartedAt() *time.Time {
 		return nil
 	}
 	return i.StartedAt
+}
+
+func (i *IncidentEntity) GetUpdatedAt() *time.Time {
+	if i == nil {
+		return nil
+	}
+	return i.UpdatedAt
 }
 
 func (i *IncidentEntity) GetDiscardedAt() *time.Time {
