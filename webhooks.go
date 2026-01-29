@@ -34,7 +34,7 @@ func newWebhooks(rootSDK *FireHydrant, sdkConfig config.SDKConfiguration, hooks 
 
 // ListWebhooks - List webhooks
 // Lists webhooks
-func (s *Webhooks) ListWebhooks(ctx context.Context, page *int, perPage *int, opts ...operations.Option) (*components.WebhooksEntitiesWebhookEntity, error) {
+func (s *Webhooks) ListWebhooks(ctx context.Context, page *int, perPage *int, opts ...operations.Option) (*components.WebhooksEntitiesWebhookEntityPaginated, error) {
 	request := operations.ListWebhooksRequest{
 		Page:    page,
 		PerPage: perPage,
@@ -203,7 +203,7 @@ func (s *Webhooks) ListWebhooks(ctx context.Context, page *int, perPage *int, op
 				return nil, err
 			}
 
-			var out components.WebhooksEntitiesWebhookEntity
+			var out components.WebhooksEntitiesWebhookEntityPaginated
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
@@ -448,9 +448,11 @@ func (s *Webhooks) CreateWebhook(ctx context.Context, request components.CreateW
 
 // ListWebhookDeliveries - List webhook deliveries
 // Get webhook deliveries
-func (s *Webhooks) ListWebhookDeliveries(ctx context.Context, webhookID string, opts ...operations.Option) error {
+func (s *Webhooks) ListWebhookDeliveries(ctx context.Context, webhookID string, page *int, perPage *int, opts ...operations.Option) (*components.WebhooksEntitiesDeliveryEntityPaginated, error) {
 	request := operations.ListWebhookDeliveriesRequest{
 		WebhookID: webhookID,
+		Page:      page,
+		PerPage:   perPage,
 	}
 
 	o := operations.Options{}
@@ -461,7 +463,7 @@ func (s *Webhooks) ListWebhookDeliveries(ctx context.Context, webhookID string, 
 
 	for _, opt := range opts {
 		if err := opt(&o, supportedOptions...); err != nil {
-			return fmt.Errorf("error applying option: %w", err)
+			return nil, fmt.Errorf("error applying option: %w", err)
 		}
 	}
 
@@ -473,7 +475,7 @@ func (s *Webhooks) ListWebhookDeliveries(ctx context.Context, webhookID string, 
 	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/v1/webhooks/{webhook_id}/deliveries", request, nil)
 	if err != nil {
-		return fmt.Errorf("error generating URL: %w", err)
+		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
 	hookCtx := hooks.HookContext{
@@ -499,13 +501,17 @@ func (s *Webhooks) ListWebhookDeliveries(ctx context.Context, webhookID string, 
 
 	req, err := http.NewRequestWithContext(ctx, "GET", opURL, nil)
 	if err != nil {
-		return fmt.Errorf("error creating request: %w", err)
+		return nil, fmt.Errorf("error creating request: %w", err)
 	}
-	req.Header.Set("Accept", "*/*")
+	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
+
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
-		return err
+		return nil, err
 	}
 
 	for k, v := range o.SetHeaders {
@@ -565,17 +571,17 @@ func (s *Webhooks) ListWebhookDeliveries(ctx context.Context, webhookID string, 
 		})
 
 		if err != nil {
-			return err
+			return nil, err
 		} else {
 			httpRes, err = s.hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 			if err != nil {
-				return err
+				return nil, err
 			}
 		}
 	} else {
 		req, err = s.hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 		if err != nil {
-			return err
+			return nil, err
 		}
 
 		httpRes, err = s.sdkConfiguration.Client.Do(req)
@@ -587,45 +593,66 @@ func (s *Webhooks) ListWebhookDeliveries(ctx context.Context, webhookID string, 
 			}
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
-			return err
+			return nil, err
 		} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
-				return err
+				return nil, err
 			} else if _httpRes != nil {
 				httpRes = _httpRes
 			}
 		} else {
 			httpRes, err = s.hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 			if err != nil {
-				return err
+				return nil, err
 			}
 		}
 	}
 
 	switch {
 	case httpRes.StatusCode == 200:
+		switch {
+		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
+			rawBody, err := utils.ConsumeRawBody(httpRes)
+			if err != nil {
+				return nil, err
+			}
+
+			var out components.WebhooksEntitiesDeliveryEntityPaginated
+			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
+				return nil, err
+			}
+
+			return &out, nil
+		default:
+			rawBody, err := utils.ConsumeRawBody(httpRes)
+			if err != nil {
+				return nil, err
+			}
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
+		}
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return err
+			return nil, err
 		}
-		return sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return err
+			return nil, err
 		}
-		return sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	default:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
-			return err
+			return nil, err
 		}
-		return sdkerrors.NewSDKError("unknown status code returned", httpRes.StatusCode, string(rawBody), httpRes)
+		return nil, sdkerrors.NewSDKError("unknown status code returned", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
-	return nil
+	return nil, nil
+
 }
 
 // GetWebhook - Get a webhook

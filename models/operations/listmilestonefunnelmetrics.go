@@ -152,8 +152,12 @@ type ListMilestoneFunnelMetricsRequest struct {
 	UpdatedAfter *time.Time `queryParam:"style=form,explode=true,name=updated_after"`
 	// Filters for incidents that were updated before this date
 	UpdatedBefore *time.Time `queryParam:"style=form,explode=true,name=updated_before"`
-	// A comma separated list of incident type IDs
+	// A comma separated list of incident type IDs or 'is_empty' to filter for incidents with no incident type
 	IncidentTypeID *string `queryParam:"style=form,explode=true,name=incident_type_id"`
+	// Custom field ID to filter on
+	CustomFieldsFieldID []string `queryParam:"style=form,explode=false,name=custom_fields[field_id]"`
+	// Custom field value (empty means no value set)
+	CustomFieldsValue []string `queryParam:"style=form,explode=false,name=custom_fields[value]"`
 	// A comma separated list of retrospective template IDs
 	RetrospectiveTemplates *string `queryParam:"style=form,explode=true,name=retrospective_templates"`
 	// A comma separated list of runbook IDs
@@ -380,6 +384,20 @@ func (l *ListMilestoneFunnelMetricsRequest) GetIncidentTypeID() *string {
 		return nil
 	}
 	return l.IncidentTypeID
+}
+
+func (l *ListMilestoneFunnelMetricsRequest) GetCustomFieldsFieldID() []string {
+	if l == nil {
+		return nil
+	}
+	return l.CustomFieldsFieldID
+}
+
+func (l *ListMilestoneFunnelMetricsRequest) GetCustomFieldsValue() []string {
+	if l == nil {
+		return nil
+	}
+	return l.CustomFieldsValue
 }
 
 func (l *ListMilestoneFunnelMetricsRequest) GetRetrospectiveTemplates() *string {
