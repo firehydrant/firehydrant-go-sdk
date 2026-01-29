@@ -195,7 +195,7 @@ func main() {
 | Parameter                                                | Type                                                     | Required                                                 | Description                                              |
 | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
 | `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
-| `environmentID`                                          | *string*                                                 | :heavy_check_mark:                                       | Environment UUID                                         |
+| `environmentID`                                          | *string*                                                 | :heavy_check_mark:                                       | Environment UUID or slug                                 |
 | `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
 
 ### Response
@@ -246,7 +246,7 @@ func main() {
 | Parameter                                                | Type                                                     | Required                                                 | Description                                              |
 | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
 | `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
-| `environmentID`                                          | *string*                                                 | :heavy_check_mark:                                       | Environment UUID                                         |
+| `environmentID`                                          | *string*                                                 | :heavy_check_mark:                                       | Environment UUID or slug                                 |
 | `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
 
 ### Response
@@ -300,7 +300,7 @@ func main() {
 | Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
 | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
 | `ctx`                                                                        | [context.Context](https://pkg.go.dev/context#Context)                        | :heavy_check_mark:                                                           | The context to use for the request.                                          |
-| `environmentID`                                                              | *string*                                                                     | :heavy_check_mark:                                                           | Environment UUID                                                             |
+| `environmentID`                                                              | *string*                                                                     | :heavy_check_mark:                                                           | Environment UUID or slug                                                     |
 | `updateEnvironment`                                                          | [components.UpdateEnvironment](../../models/components/updateenvironment.md) | :heavy_check_mark:                                                           | N/A                                                                          |
 | `opts`                                                                       | [][operations.Option](../../models/operations/option.md)                     | :heavy_minus_sign:                                                           | The options for this request.                                                |
 
@@ -637,7 +637,7 @@ func main() {
 | Parameter                                                | Type                                                     | Required                                                 | Description                                              |
 | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
 | `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
-| `serviceID`                                              | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `serviceID`                                              | *string*                                                 | :heavy_check_mark:                                       | Service UUID or slug                                     |
 | `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
 
 ### Response
@@ -1454,7 +1454,7 @@ func main() {
 | Parameter                                                | Type                                                     | Required                                                 | Description                                              |
 | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
 | `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
-| `functionalityID`                                        | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `functionalityID`                                        | *string*                                                 | :heavy_check_mark:                                       | Functionality UUID or slug                               |
 | `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
 
 ### Response

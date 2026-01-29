@@ -654,6 +654,13 @@ func main() {
 * [GetSignalsWebhookTarget](docs/sdks/signals/README.md#getsignalswebhooktarget) - Get a webhook target
 * [DeleteSignalsWebhookTarget](docs/sdks/signals/README.md#deletesignalswebhooktarget) - Delete a webhook target
 * [UpdateSignalsWebhookTarget](docs/sdks/signals/README.md#updatesignalswebhooktarget) - Update a webhook target
+* [ListSignalsHeartbeatEndpointConfigurations](docs/sdks/signals/README.md#listsignalsheartbeatendpointconfigurations) - List heartbeat endpoint configurations
+* [CreateSignalsHeartbeatEndpointConfiguration](docs/sdks/signals/README.md#createsignalsheartbeatendpointconfiguration) - Create a heartbeat endpoint configuration
+* [GetSignalsHeartbeatEndpointStatus](docs/sdks/signals/README.md#getsignalsheartbeatendpointstatus) - Get heartbeat endpoint status
+* [GetSignalsHeartbeatEndpointURL](docs/sdks/signals/README.md#getsignalsheartbeatendpointurl) - Get heartbeat endpoint URL
+* [GetSignalsHeartbeatEndpointConfiguration](docs/sdks/signals/README.md#getsignalsheartbeatendpointconfiguration) - Get a heartbeat endpoint configuration
+* [DeleteSignalsHeartbeatEndpointConfiguration](docs/sdks/signals/README.md#deletesignalsheartbeatendpointconfiguration) - Delete a heartbeat endpoint configuration
+* [UpdateSignalsHeartbeatEndpointConfiguration](docs/sdks/signals/README.md#updatesignalsheartbeatendpointconfiguration) - Update a heartbeat endpoint configuration
 * [ListNotificationPolicySettings](docs/sdks/signals/README.md#listnotificationpolicysettings) - List notification policies
 * [CreateNotificationPolicy](docs/sdks/signals/README.md#createnotificationpolicy) - Create a notification policy
 * [GetNotificationPolicy](docs/sdks/signals/README.md#getnotificationpolicy) - Get a notification policy
