@@ -53,11 +53,19 @@ Operations related to Signals
 * [GetSignalsWebhookTarget](#getsignalswebhooktarget) - Get a webhook target
 * [DeleteSignalsWebhookTarget](#deletesignalswebhooktarget) - Delete a webhook target
 * [UpdateSignalsWebhookTarget](#updatesignalswebhooktarget) - Update a webhook target
+* [ListSignalsHeartbeatEndpointConfigurations](#listsignalsheartbeatendpointconfigurations) - List heartbeat endpoint configurations
+* [CreateSignalsHeartbeatEndpointConfiguration](#createsignalsheartbeatendpointconfiguration) - Create a heartbeat endpoint configuration
+* [GetSignalsHeartbeatEndpointStatus](#getsignalsheartbeatendpointstatus) - Get heartbeat endpoint status
+* [GetSignalsHeartbeatEndpointURL](#getsignalsheartbeatendpointurl) - Get heartbeat endpoint URL
+* [GetSignalsHeartbeatEndpointConfiguration](#getsignalsheartbeatendpointconfiguration) - Get a heartbeat endpoint configuration
+* [DeleteSignalsHeartbeatEndpointConfiguration](#deletesignalsheartbeatendpointconfiguration) - Delete a heartbeat endpoint configuration
+* [UpdateSignalsHeartbeatEndpointConfiguration](#updatesignalsheartbeatendpointconfiguration) - Update a heartbeat endpoint configuration
 * [ListNotificationPolicySettings](#listnotificationpolicysettings) - List notification policies
 * [CreateNotificationPolicy](#createnotificationpolicy) - Create a notification policy
 * [GetNotificationPolicy](#getnotificationpolicy) - Get a notification policy
 * [DeleteNotificationPolicy](#deletenotificationpolicy) - Delete a notification policy
 * [UpdateNotificationPolicy](#updatenotificationpolicy) - Update a notification policy
+* [ListUserNotificationSettingsByUserID](#listusernotificationsettingsbyuserid) - List notification settings for a user
 * [ListSignalsTransposers](#listsignalstransposers) - List signal transposers
 * [GetSignalsIngestURL](#getsignalsingesturl) - Get the signals ingestion URL
 * [DebugSignalsExpression](#debugsignalsexpression) - Debug Signals expressions
@@ -1898,7 +1906,7 @@ func main() {
         }),
     )
 
-    res, err := s.Signals.ListSignalsAlertGroupingConfigurations(ctx)
+    res, err := s.Signals.ListSignalsAlertGroupingConfigurations(ctx, nil, nil)
     if err != nil {
         log.Fatal(err)
     }
@@ -1913,6 +1921,8 @@ func main() {
 | Parameter                                                | Type                                                     | Required                                                 | Description                                              |
 | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
 | `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `page`                                                   | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
+| `perPage`                                                | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
 | `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
 
 ### Response
@@ -2685,6 +2695,375 @@ func main() {
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
+## ListSignalsHeartbeatEndpointConfigurations
+
+Retrieve all heartbeat endpoint configurations for your organization
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="list_signals_heartbeat_endpoint_configurations" method="get" path="/v1/signals/heartbeat_endpoints" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    err := s.Signals.ListSignalsHeartbeatEndpointConfigurations(ctx)
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## CreateSignalsHeartbeatEndpointConfiguration
+
+Create a new heartbeat endpoint configuration for your organization
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="create_signals_heartbeat_endpoint_configuration" method="post" path="/v1/signals/heartbeat_endpoints" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    err := s.Signals.CreateSignalsHeartbeatEndpointConfiguration(ctx, components.CreateSignalsHeartbeatEndpointConfiguration{
+        Slug: "<value>",
+        Enabled: false,
+        ExpectInterval: "<value>",
+        TemplateSignal: components.CreateSignalsHeartbeatEndpointConfigurationTemplateSignal{},
+        Kind: components.CreateSignalsHeartbeatEndpointConfigurationKindEmail,
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
+| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                                                            | :heavy_check_mark:                                                                                                               | The context to use for the request.                                                                                              |
+| `request`                                                                                                                        | [components.CreateSignalsHeartbeatEndpointConfiguration](../../models/components/createsignalsheartbeatendpointconfiguration.md) | :heavy_check_mark:                                                                                                               | The request object to use for the request.                                                                                       |
+| `opts`                                                                                                                           | [][operations.Option](../../models/operations/option.md)                                                                         | :heavy_minus_sign:                                                                                                               | The options for this request.                                                                                                    |
+
+### Response
+
+**error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## GetSignalsHeartbeatEndpointStatus
+
+Check the current status of a heartbeat endpoint
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="get_signals_heartbeat_endpoint_status" method="get" path="/v1/signals/heartbeat_endpoints/statuses" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"github.com/firehydrant/firehydrant-go-sdk/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    err := s.Signals.GetSignalsHeartbeatEndpointStatus(ctx, operations.GetSignalsHeartbeatEndpointStatusRequest{
+        Ids: []string{},
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                  | Type                                                                                                                       | Required                                                                                                                   | Description                                                                                                                |
+| -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                      | [context.Context](https://pkg.go.dev/context#Context)                                                                      | :heavy_check_mark:                                                                                                         | The context to use for the request.                                                                                        |
+| `request`                                                                                                                  | [operations.GetSignalsHeartbeatEndpointStatusRequest](../../models/operations/getsignalsheartbeatendpointstatusrequest.md) | :heavy_check_mark:                                                                                                         | The request object to use for the request.                                                                                 |
+| `opts`                                                                                                                     | [][operations.Option](../../models/operations/option.md)                                                                   | :heavy_minus_sign:                                                                                                         | The options for this request.                                                                                              |
+
+### Response
+
+**error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## GetSignalsHeartbeatEndpointURL
+
+Retrieve the URL for a heartbeat endpoint
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="get_signals_heartbeat_endpoint_url" method="get" path="/v1/signals/heartbeat_endpoints/addresses" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"github.com/firehydrant/firehydrant-go-sdk/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    err := s.Signals.GetSignalsHeartbeatEndpointURL(ctx, operations.GetSignalsHeartbeatEndpointURLRequest{
+        Ids: []string{},
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
+| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                                                | :heavy_check_mark:                                                                                                   | The context to use for the request.                                                                                  |
+| `request`                                                                                                            | [operations.GetSignalsHeartbeatEndpointURLRequest](../../models/operations/getsignalsheartbeatendpointurlrequest.md) | :heavy_check_mark:                                                                                                   | The request object to use for the request.                                                                           |
+| `opts`                                                                                                               | [][operations.Option](../../models/operations/option.md)                                                             | :heavy_minus_sign:                                                                                                   | The options for this request.                                                                                        |
+
+### Response
+
+**error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## GetSignalsHeartbeatEndpointConfiguration
+
+Retrieve a single heartbeat endpoint configuration
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="get_signals_heartbeat_endpoint_configuration" method="get" path="/v1/signals/heartbeat_endpoints/{id}" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    err := s.Signals.GetSignalsHeartbeatEndpointConfiguration(ctx, "<id>")
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `id`                                                     | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## DeleteSignalsHeartbeatEndpointConfiguration
+
+Delete a heartbeat endpoint configuration
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="delete_signals_heartbeat_endpoint_configuration" method="delete" path="/v1/signals/heartbeat_endpoints/{id}" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    err := s.Signals.DeleteSignalsHeartbeatEndpointConfiguration(ctx, "<id>")
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `id`                                                     | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## UpdateSignalsHeartbeatEndpointConfiguration
+
+Update an existing heartbeat endpoint configuration
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="update_signals_heartbeat_endpoint_configuration" method="patch" path="/v1/signals/heartbeat_endpoints/{id}" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    err := s.Signals.UpdateSignalsHeartbeatEndpointConfiguration(ctx, "<id>", components.UpdateSignalsHeartbeatEndpointConfiguration{})
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
+| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                                                            | :heavy_check_mark:                                                                                                               | The context to use for the request.                                                                                              |
+| `id`                                                                                                                             | *string*                                                                                                                         | :heavy_check_mark:                                                                                                               | N/A                                                                                                                              |
+| `updateSignalsHeartbeatEndpointConfiguration`                                                                                    | [components.UpdateSignalsHeartbeatEndpointConfiguration](../../models/components/updatesignalsheartbeatendpointconfiguration.md) | :heavy_check_mark:                                                                                                               | N/A                                                                                                                              |
+| `opts`                                                                                                                           | [][operations.Option](../../models/operations/option.md)                                                                         | :heavy_minus_sign:                                                                                                               | The options for this request.                                                                                                    |
+
+### Response
+
+**error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
 ## ListNotificationPolicySettings
 
 List all Signals notification policies.
@@ -2955,6 +3334,64 @@ func main() {
 | Error Type         | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## ListUserNotificationSettingsByUserID
+
+List all Signals notification settings for a specific user. Requires an API key with PII access enabled.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="list_user_notification_settings_by_user_id" method="get" path="/v1/signals/users/{user_id}/notification_settings" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Signals.ListUserNotificationSettingsByUserID(ctx, "<id>", nil, nil, nil)
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `ctx`                                                                               | [context.Context](https://pkg.go.dev/context#Context)                               | :heavy_check_mark:                                                                  | The context to use for the request.                                                 |
+| `userID`                                                                            | *string*                                                                            | :heavy_check_mark:                                                                  | N/A                                                                                 |
+| `page`                                                                              | **int*                                                                              | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `perPage`                                                                           | **int*                                                                              | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `notificationPriority`                                                              | [*operations.NotificationPriority](../../models/operations/notificationpriority.md) | :heavy_minus_sign:                                                                  | The level of priority for the notification setting.                                 |
+| `opts`                                                                              | [][operations.Option](../../models/operations/option.md)                            | :heavy_minus_sign:                                                                  | The options for this request.                                                       |
+
+### Response
+
+**[*components.SignalsAPIUserNotificationSettingEntityPaginated](../../models/components/signalsapiusernotificationsettingentitypaginated.md), error**
+
+### Errors
+
+| Error Type            | Status Code           | Content Type          |
+| --------------------- | --------------------- | --------------------- |
+| sdkerrors.ErrorEntity | 403                   | application/json      |
+| sdkerrors.SDKError    | 4XX, 5XX              | \*/\*                 |
 
 ## ListSignalsTransposers
 
