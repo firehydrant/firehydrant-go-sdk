@@ -3,6 +3,7 @@
 package operations
 
 type GetServiceRequest struct {
+	// Service UUID or slug
 	ServiceID string `pathParam:"style=simple,explode=false,name=service_id"`
 }
 

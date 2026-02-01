@@ -7,7 +7,7 @@ import (
 )
 
 type UpdateEnvironmentRequest struct {
-	// Environment UUID
+	// Environment UUID or slug
 	EnvironmentID     string                       `pathParam:"style=simple,explode=false,name=environment_id"`
 	UpdateEnvironment components.UpdateEnvironment `request:"mediaType=application/json"`
 }

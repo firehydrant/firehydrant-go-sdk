@@ -60,7 +60,7 @@ func main() {
 
 ### Response
 
-**[*components.WebhooksEntitiesWebhookEntity](../../models/components/webhooksentitieswebhookentity.md), error**
+**[*components.WebhooksEntitiesWebhookEntityPaginated](../../models/components/webhooksentitieswebhookentitypaginated.md), error**
 
 ### Errors
 
@@ -150,9 +150,12 @@ func main() {
         }),
     )
 
-    err := s.Webhooks.ListWebhookDeliveries(ctx, "<id>")
+    res, err := s.Webhooks.ListWebhookDeliveries(ctx, "<id>", nil, nil)
     if err != nil {
         log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
     }
 }
 ```
@@ -163,11 +166,13 @@ func main() {
 | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
 | `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
 | `webhookID`                                              | *string*                                                 | :heavy_check_mark:                                       | ID of a webhook                                          |
+| `page`                                                   | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
+| `perPage`                                                | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
 | `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
 
 ### Response
 
-**error**
+**[*components.WebhooksEntitiesDeliveryEntityPaginated](../../models/components/webhooksentitiesdeliveryentitypaginated.md), error**
 
 ### Errors
 
