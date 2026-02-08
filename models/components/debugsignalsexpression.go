@@ -6,7 +6,7 @@ import (
 	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
-type Annotations struct {
+type DebugSignalsExpressionAnnotations struct {
 }
 
 type Image struct {
@@ -48,15 +48,15 @@ func (d *DebugSignalsExpressionLink) GetText() *string {
 }
 
 type Signal struct {
-	ID             *string                      `json:"id,omitzero"`
-	OrganizationID *string                      `json:"organization_id,omitzero"`
-	Summary        *string                      `json:"summary,omitzero"`
-	Body           *string                      `json:"body,omitzero"`
-	Level          *string                      `json:"level,omitzero"`
-	Annotations    *Annotations                 `json:"annotations,omitzero"`
-	Tags           []string                     `json:"tags,omitzero"`
-	Images         []Image                      `json:"images,omitzero"`
-	Links          []DebugSignalsExpressionLink `json:"links,omitzero"`
+	ID             *string                            `json:"id,omitzero"`
+	OrganizationID *string                            `json:"organization_id,omitzero"`
+	Summary        *string                            `json:"summary,omitzero"`
+	Body           *string                            `json:"body,omitzero"`
+	Level          *string                            `json:"level,omitzero"`
+	Annotations    *DebugSignalsExpressionAnnotations `json:"annotations,omitzero"`
+	Tags           []string                           `json:"tags,omitzero"`
+	Images         []Image                            `json:"images,omitzero"`
+	Links          []DebugSignalsExpressionLink       `json:"links,omitzero"`
 }
 
 func (s Signal) MarshalJSON() ([]byte, error) {
@@ -105,7 +105,7 @@ func (s *Signal) GetLevel() *string {
 	return s.Level
 }
 
-func (s *Signal) GetAnnotations() *Annotations {
+func (s *Signal) GetAnnotations() *DebugSignalsExpressionAnnotations {
 	if s == nil {
 		return nil
 	}

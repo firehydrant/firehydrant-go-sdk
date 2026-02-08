@@ -21,13 +21,14 @@ generation:
   schemas:
     allOfMergeStrategy: shallowMerge
   requestBodyFieldName: ""
+  versioningStrategy: automatic
   persistentEdits: {}
   tests:
     generateTests: true
     generateNewTests: false
     skipResponseBodyAssertions: false
 go:
-  version: 1.8.4
+  version: 1.8.5
   additionalDependencies: {}
   allowUnknownFieldsInWeakUnions: false
   baseErrorName: FireHydrantError
@@ -54,6 +55,7 @@ go:
   outputModelSuffix: output
   packageName: github.com/firehydrant/firehydrant-go-sdk
   respectRequiredFields: false
+  respectTitlesForPrimitiveUnionMembers: false
   responseFormat: flat
   sdkPackageName: ""
   templateVersion: v2

@@ -4131,12 +4131,7 @@ func (s *Integrations) ListAwsCloudtrailBatchEvents(ctx context.Context, id stri
 
 // SearchConfluenceSpaces - List Confluence spaces
 // Lists available space keys for the Confluence integration connection.
-func (s *Integrations) SearchConfluenceSpaces(ctx context.Context, id string, keyword *string, opts ...operations.Option) (*components.IntegrationsConfluenceCloudSpaceEntity, error) {
-	request := operations.SearchConfluenceSpacesRequest{
-		ID:      id,
-		Keyword: keyword,
-	}
-
+func (s *Integrations) SearchConfluenceSpaces(ctx context.Context, request operations.SearchConfluenceSpacesRequest, opts ...operations.Option) (*components.IntegrationsConfluenceCloudSpaceEntity, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,

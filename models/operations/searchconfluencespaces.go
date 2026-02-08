@@ -4,8 +4,12 @@ package operations
 
 type SearchConfluenceSpacesRequest struct {
 	ID string `pathParam:"style=simple,explode=false,name=id"`
-	// Space Key
+	// Space Key (Deprecated)
 	Keyword *string `queryParam:"style=form,explode=true,name=keyword"`
+	// Space name query
+	Query   *string `queryParam:"style=form,explode=true,name=query"`
+	Page    *int    `queryParam:"style=form,explode=true,name=page"`
+	PerPage *int    `queryParam:"style=form,explode=true,name=per_page"`
 }
 
 func (s *SearchConfluenceSpacesRequest) GetID() string {
@@ -20,4 +24,25 @@ func (s *SearchConfluenceSpacesRequest) GetKeyword() *string {
 		return nil
 	}
 	return s.Keyword
+}
+
+func (s *SearchConfluenceSpacesRequest) GetQuery() *string {
+	if s == nil {
+		return nil
+	}
+	return s.Query
+}
+
+func (s *SearchConfluenceSpacesRequest) GetPage() *int {
+	if s == nil {
+		return nil
+	}
+	return s.Page
+}
+
+func (s *SearchConfluenceSpacesRequest) GetPerPage() *int {
+	if s == nil {
+		return nil
+	}
+	return s.PerPage
 }

@@ -57,6 +57,7 @@ type ReportElementsType string
 const (
 	ReportElementsTypeIncidentData       ReportElementsType = "incident_data"
 	ReportElementsTypeRetrospectiveField ReportElementsType = "retrospective_field"
+	ReportElementsTypeCustomField        ReportElementsType = "custom_field"
 	ReportElementsTypeProsemirrorContent ReportElementsType = "prosemirror_content"
 	ReportElementsTypeDivider            ReportElementsType = "divider"
 )
@@ -73,6 +74,8 @@ func (e *ReportElementsType) UnmarshalJSON(data []byte) error {
 	case "incident_data":
 		fallthrough
 	case "retrospective_field":
+		fallthrough
+	case "custom_field":
 		fallthrough
 	case "prosemirror_content":
 		fallthrough

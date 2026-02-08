@@ -3,6 +3,7 @@
 package operations
 
 type GetFunctionalityRequest struct {
+	// Functionality UUID or slug
 	FunctionalityID string `pathParam:"style=simple,explode=false,name=functionality_id"`
 }
 
