@@ -62,13 +62,14 @@ type NullableIncidentEntity struct {
 	LastUpdate           *string                         `json:"last_update,omitzero"`
 	LastNote             *NullableEventNoteEntity        `json:"last_note,omitzero"`
 	ReportID             *string                         `json:"report_id,omitzero"`
-	AiIncidentSummary    *string                         `json:"ai_incident_summary,omitzero"`
-	Services             []SuccinctEntity                `json:"services,omitzero"`
-	Environments         []SuccinctEntity                `json:"environments,omitzero"`
-	Functionalities      []SuccinctEntity                `json:"functionalities,omitzero"`
-	ChannelName          *string                         `json:"channel_name,omitzero"`
-	ChannelReference     *string                         `json:"channel_reference,omitzero"`
-	ChannelID            *string                         `json:"channel_id,omitzero"`
+	// DEPRECATED: this field is deprecated and will be removed in a future version. Please use the `/v1/audiences/summaries/:incident_id` endpoint instead.
+	AiIncidentSummary *string          `json:"ai_incident_summary,omitzero"`
+	Services          []SuccinctEntity `json:"services,omitzero"`
+	Environments      []SuccinctEntity `json:"environments,omitzero"`
+	Functionalities   []SuccinctEntity `json:"functionalities,omitzero"`
+	ChannelName       *string          `json:"channel_name,omitzero"`
+	ChannelReference  *string          `json:"channel_reference,omitzero"`
+	ChannelID         *string          `json:"channel_id,omitzero"`
 	// inoperative: 0, operational: 1, archived: 2
 	ChannelStatus     *string                           `json:"channel_status,omitzero"`
 	IncidentTickets   []TicketingTicketEntity           `json:"incident_tickets,omitzero"`

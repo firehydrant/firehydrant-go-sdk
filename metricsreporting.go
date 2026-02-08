@@ -3727,11 +3727,12 @@ func (s *MetricsReporting) GetSignalsNoiseAnalytics(ctx context.Context, request
 
 // ExportSignalsShiftAnalytics - Export on-call hours report
 // Export on-call hours report for users/teams during a time period
-func (s *MetricsReporting) ExportSignalsShiftAnalytics(ctx context.Context, periodStart time.Time, periodEnd time.Time, requestBody *operations.ExportSignalsShiftAnalyticsRequestBody, opts ...operations.Option) error {
+func (s *MetricsReporting) ExportSignalsShiftAnalytics(ctx context.Context, periodStart time.Time, periodEnd time.Time, userIds []string, teamIds []string, opts ...operations.Option) error {
 	request := operations.ExportSignalsShiftAnalyticsRequest{
+		UserIds:     userIds,
+		TeamIds:     teamIds,
 		PeriodStart: periodStart,
 		PeriodEnd:   periodEnd,
-		RequestBody: requestBody,
 	}
 
 	o := operations.Options{}
@@ -3766,10 +3767,6 @@ func (s *MetricsReporting) ExportSignalsShiftAnalytics(ctx context.Context, peri
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "RequestBody", "multipart", `request:"mediaType=multipart/form-data"`)
-	if err != nil {
-		return err
-	}
 
 	timeout := o.Timeout
 	if timeout == nil {
@@ -3782,15 +3779,12 @@ func (s *MetricsReporting) ExportSignalsShiftAnalytics(ctx context.Context, peri
 		defer cancel()
 	}
 
-	req, err := http.NewRequestWithContext(ctx, "GET", opURL, bodyReader)
+	req, err := http.NewRequestWithContext(ctx, "GET", opURL, nil)
 	if err != nil {
 		return fmt.Errorf("error creating request: %w", err)
 	}
 	req.Header.Set("Accept", "*/*")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
-	if reqContentType != "" {
-		req.Header.Set("Content-Type", reqContentType)
-	}
 
 	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
 		return fmt.Errorf("error populating query params: %w", err)

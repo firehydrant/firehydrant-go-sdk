@@ -1,0 +1,11 @@
+# SignalsAPIUserNotificationSettingEntityPaginated
+
+Signals_API_UserNotificationSettingEntityPaginated model
+
+
+## Fields
+
+| Field                                                                                                                      | Type                                                                                                                       | Required                                                                                                                   | Description                                                                                                                |
+| -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `Data`                                                                                                                     | [][components.SignalsAPIUserNotificationSettingEntity](../../models/components/signalsapiusernotificationsettingentity.md) | :heavy_minus_sign:                                                                                                         | N/A                                                                                                                        |
+| `Pagination`                                                                                                               | [*components.NullablePaginationEntity](../../models/components/nullablepaginationentity.md)                                | :heavy_minus_sign:                                                                                                         | N/A                                                                                                                        |

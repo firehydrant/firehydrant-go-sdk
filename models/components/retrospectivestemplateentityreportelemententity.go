@@ -13,6 +13,7 @@ type RetrospectivesTemplateEntityReportElementEntity struct {
 	Type    *string  `json:"type,omitzero"`
 	Data    *string  `json:"data,omitzero"`
 	ID      *string  `json:"id,omitzero"`
+	FieldID *string  `json:"field_id,omitzero"`
 	Label   *string  `json:"label,omitzero"`
 	Content *Content `json:"content,omitzero"`
 }
@@ -47,6 +48,13 @@ func (r *RetrospectivesTemplateEntityReportElementEntity) GetID() *string {
 		return nil
 	}
 	return r.ID
+}
+
+func (r *RetrospectivesTemplateEntityReportElementEntity) GetFieldID() *string {
+	if r == nil {
+		return nil
+	}
+	return r.FieldID
 }
 
 func (r *RetrospectivesTemplateEntityReportElementEntity) GetLabel() *string {

@@ -5,6 +5,8 @@ package operations
 type ListWebhookDeliveriesRequest struct {
 	// ID of a webhook
 	WebhookID string `pathParam:"style=simple,explode=false,name=webhook_id"`
+	Page      *int   `queryParam:"style=form,explode=true,name=page"`
+	PerPage   *int   `queryParam:"style=form,explode=true,name=per_page"`
 }
 
 func (l *ListWebhookDeliveriesRequest) GetWebhookID() string {
@@ -12,4 +14,18 @@ func (l *ListWebhookDeliveriesRequest) GetWebhookID() string {
 		return ""
 	}
 	return l.WebhookID
+}
+
+func (l *ListWebhookDeliveriesRequest) GetPage() *int {
+	if l == nil {
+		return nil
+	}
+	return l.Page
+}
+
+func (l *ListWebhookDeliveriesRequest) GetPerPage() *int {
+	if l == nil {
+		return nil
+	}
+	return l.PerPage
 }
