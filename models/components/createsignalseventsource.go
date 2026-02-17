@@ -6,8 +6,8 @@ import (
 	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
 )
 
-// Headers - Hash of HTTP headers with values as Array, e.g. { 'Content-Type' => ['application/json'] }
-type Headers struct {
+// CreateSignalsEventSourceHeaders - Hash of HTTP headers with values as Array, e.g. { 'Content-Type' => ['application/json'] }
+type CreateSignalsEventSourceHeaders struct {
 }
 
 // CreateSignalsEventSourceData - JSON body of request.
@@ -17,7 +17,7 @@ type CreateSignalsEventSourceData struct {
 // CreateSignalsEventSourceExamplePayload - Example payload as input to transpose function
 type CreateSignalsEventSourceExamplePayload struct {
 	// Hash of HTTP headers with values as Array, e.g. { 'Content-Type' => ['application/json'] }
-	Headers *Headers `json:"headers,omitzero"`
+	Headers *CreateSignalsEventSourceHeaders `json:"headers,omitzero"`
 	// JSON body of request.
 	Data *CreateSignalsEventSourceData `json:"data,omitzero"`
 }
@@ -33,7 +33,7 @@ func (c *CreateSignalsEventSourceExamplePayload) UnmarshalJSON(data []byte) erro
 	return nil
 }
 
-func (c *CreateSignalsEventSourceExamplePayload) GetHeaders() *Headers {
+func (c *CreateSignalsEventSourceExamplePayload) GetHeaders() *CreateSignalsEventSourceHeaders {
 	if c == nil {
 		return nil
 	}

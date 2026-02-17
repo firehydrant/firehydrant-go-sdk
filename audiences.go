@@ -34,8 +34,10 @@ func newAudiences(rootSDK *FireHydrant, sdkConfig config.SDKConfiguration, hooks
 
 // ListAudiences - List audiences
 // List all audiences
-func (s *Audiences) ListAudiences(ctx context.Context, includeArchived *bool, opts ...operations.Option) (*components.AudiencesEntitiesAudienceEntity, error) {
+func (s *Audiences) ListAudiences(ctx context.Context, page *int, perPage *int, includeArchived *bool, opts ...operations.Option) (*components.AudiencesEntitiesAudienceEntityPaginated, error) {
 	request := operations.ListAudiencesRequest{
+		Page:            page,
+		PerPage:         perPage,
 		IncludeArchived: includeArchived,
 	}
 
@@ -202,7 +204,7 @@ func (s *Audiences) ListAudiences(ctx context.Context, includeArchived *bool, op
 				return nil, err
 			}
 
-			var out components.AudiencesEntitiesAudienceEntity
+			var out components.AudiencesEntitiesAudienceEntityPaginated
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}

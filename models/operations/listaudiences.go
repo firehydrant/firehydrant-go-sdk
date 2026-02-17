@@ -7,6 +7,8 @@ import (
 )
 
 type ListAudiencesRequest struct {
+	Page    *int `queryParam:"style=form,explode=true,name=page"`
+	PerPage *int `queryParam:"style=form,explode=true,name=per_page"`
 	// Include archived (discarded) audiences
 	IncludeArchived *bool `default:"false" queryParam:"style=form,explode=true,name=include_archived"`
 }
@@ -20,6 +22,20 @@ func (l *ListAudiencesRequest) UnmarshalJSON(data []byte) error {
 		return err
 	}
 	return nil
+}
+
+func (l *ListAudiencesRequest) GetPage() *int {
+	if l == nil {
+		return nil
+	}
+	return l.Page
+}
+
+func (l *ListAudiencesRequest) GetPerPage() *int {
+	if l == nil {
+		return nil
+	}
+	return l.PerPage
 }
 
 func (l *ListAudiencesRequest) GetIncludeArchived() *bool {

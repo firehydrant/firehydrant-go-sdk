@@ -17,14 +17,18 @@ type UpdateNuncConnectionRequestBody struct {
 	// Status page condition to map your severity matrix condition to
 	ConditionsNuncCondition []string `json:"conditions[nunc_condition]"`
 	// Severity matrix condition id
-	ConditionsConditionID        []string `json:"conditions[condition_id]"`
-	ComponentsInfrastructureType []string `json:"components[infrastructure_type]"`
-	ComponentsInfrastructureID   []string `json:"components[infrastructure_id]"`
-	PrimaryColor                 *string  `json:"primary_color,omitzero"`
-	SecondaryColor               *string  `json:"secondary_color,omitzero"`
-	ExposedFields                []string `json:"exposed_fields,omitzero"`
-	EnableHistogram              *bool    `json:"enable_histogram,omitzero"`
-	UIVersion                    *int     `json:"ui_version,omitzero"`
+	ConditionsConditionID                []string `json:"conditions[condition_id]"`
+	ComponentsInfrastructureType         []string `json:"components[infrastructure_type]"`
+	ComponentsInfrastructureID           []string `json:"components[infrastructure_id]"`
+	PrimaryColor                         *string  `json:"primary_color,omitzero"`
+	SecondaryColor                       *string  `json:"secondary_color,omitzero"`
+	ExposedFields                        []string `json:"exposed_fields,omitzero"`
+	EnableHistogram                      *bool    `json:"enable_histogram,omitzero"`
+	UIVersion                            *int     `json:"ui_version,omitzero"`
+	AuthenticationMethod                 *string  `json:"authentication_method,omitzero"`
+	OidcAuthenticationConfigIssuerURL    *string  `json:"oidc_authentication_config[issuer_url],omitzero"`
+	OidcAuthenticationConfigClientID     *string  `json:"oidc_authentication_config[client_id],omitzero"`
+	OidcAuthenticationConfigClientSecret *string  `json:"oidc_authentication_config[client_secret],omitzero"`
 }
 
 func (u UpdateNuncConnectionRequestBody) MarshalJSON() ([]byte, error) {
@@ -148,6 +152,34 @@ func (u *UpdateNuncConnectionRequestBody) GetUIVersion() *int {
 		return nil
 	}
 	return u.UIVersion
+}
+
+func (u *UpdateNuncConnectionRequestBody) GetAuthenticationMethod() *string {
+	if u == nil {
+		return nil
+	}
+	return u.AuthenticationMethod
+}
+
+func (u *UpdateNuncConnectionRequestBody) GetOidcAuthenticationConfigIssuerURL() *string {
+	if u == nil {
+		return nil
+	}
+	return u.OidcAuthenticationConfigIssuerURL
+}
+
+func (u *UpdateNuncConnectionRequestBody) GetOidcAuthenticationConfigClientID() *string {
+	if u == nil {
+		return nil
+	}
+	return u.OidcAuthenticationConfigClientID
+}
+
+func (u *UpdateNuncConnectionRequestBody) GetOidcAuthenticationConfigClientSecret() *string {
+	if u == nil {
+		return nil
+	}
+	return u.OidcAuthenticationConfigClientSecret
 }
 
 type UpdateNuncConnectionRequest struct {
