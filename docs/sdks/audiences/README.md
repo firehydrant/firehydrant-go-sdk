@@ -44,7 +44,7 @@ func main() {
         }),
     )
 
-    res, err := s.Audiences.ListAudiences(ctx, firehydrantgosdk.Pointer(false))
+    res, err := s.Audiences.ListAudiences(ctx, nil, nil, firehydrantgosdk.Pointer(false))
     if err != nil {
         log.Fatal(err)
     }
@@ -59,12 +59,14 @@ func main() {
 | Parameter                                                | Type                                                     | Required                                                 | Description                                              |
 | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
 | `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `page`                                                   | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
+| `perPage`                                                | **int*                                                   | :heavy_minus_sign:                                       | N/A                                                      |
 | `includeArchived`                                        | **bool*                                                  | :heavy_minus_sign:                                       | Include archived (discarded) audiences                   |
 | `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
 
 ### Response
 
-**[*components.AudiencesEntitiesAudienceEntity](../../models/components/audiencesentitiesaudienceentity.md), error**
+**[*components.AudiencesEntitiesAudienceEntityPaginated](../../models/components/audiencesentitiesaudienceentitypaginated.md), error**
 
 ### Errors
 

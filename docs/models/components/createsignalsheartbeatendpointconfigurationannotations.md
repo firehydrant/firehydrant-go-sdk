@@ -1,6 +1,4 @@
-# Headers
-
-Hash of HTTP headers with values as Array, e.g. { 'Content-Type' => ['application/json'] }
+# CreateSignalsHeartbeatEndpointConfigurationAnnotations
 
 
 ## Fields

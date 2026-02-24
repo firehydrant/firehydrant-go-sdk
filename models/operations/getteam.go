@@ -3,6 +3,7 @@
 package operations
 
 type GetTeamRequest struct {
+	// Team UUID or slug
 	TeamID string `pathParam:"style=simple,explode=false,name=team_id"`
 	// Boolean to determine whether to return a slimified version of the teams object
 	Lite *bool `queryParam:"style=form,explode=true,name=lite"`

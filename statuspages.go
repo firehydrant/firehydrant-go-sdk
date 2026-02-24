@@ -192,6 +192,7 @@ func (s *StatusPages) DeleteIncidentStatusPage(ctx context.Context, statusPageID
 
 	switch {
 	case httpRes.StatusCode == 204:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
@@ -1198,6 +1199,7 @@ func (s *StatusPages) DeleteEmailSubscriber(ctx context.Context, nuncConnectionI
 
 	switch {
 	case httpRes.StatusCode == 204:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
@@ -1794,6 +1796,7 @@ func (s *StatusPages) DeleteNuncConnection(ctx context.Context, nuncConnectionID
 
 	switch {
 	case httpRes.StatusCode == 204:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
@@ -2383,6 +2386,7 @@ func (s *StatusPages) DeleteNuncComponentGroup(ctx context.Context, nuncConnecti
 
 	switch {
 	case httpRes.StatusCode == 204:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
@@ -2574,6 +2578,7 @@ func (s *StatusPages) UpdateNuncComponentGroup(ctx context.Context, nuncConnecti
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
@@ -2968,6 +2973,7 @@ func (s *StatusPages) DeleteNuncLink(ctx context.Context, nuncConnectionID strin
 
 	switch {
 	case httpRes.StatusCode == 204:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
@@ -3159,6 +3165,7 @@ func (s *StatusPages) UpdateNuncLink(ctx context.Context, nuncConnectionID strin
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
@@ -3757,6 +3764,7 @@ func (s *StatusPages) DeleteNuncImage(ctx context.Context, nuncConnectionID stri
 
 	switch {
 	case httpRes.StatusCode == 204:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
@@ -3939,6 +3947,7 @@ func (s *StatusPages) DeleteNuncSubscription(ctx context.Context, unsubscribeTok
 
 	switch {
 	case httpRes.StatusCode == 204:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {

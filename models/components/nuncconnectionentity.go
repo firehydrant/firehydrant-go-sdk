@@ -6,6 +6,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/firehydrant/firehydrant-go-sdk/internal/utils"
+	"time"
 )
 
 type PublishState string
@@ -69,6 +70,8 @@ type NuncConnectionEntity struct {
 	AuthenticationMethod     *string                                     `json:"authentication_method,omitzero"`
 	OidcAuthenticationConfig *NullableNuncOidcAuthenticationConfigEntity `json:"oidc_authentication_config,omitzero"`
 	HasCustomConfiguration   *bool                                       `json:"has_custom_configuration,omitzero"`
+	AutoPublish              *bool                                       `json:"auto_publish,omitzero"`
+	LastVerifiedAt           *time.Time                                  `json:"last_verified_at,omitzero"`
 }
 
 func (n NuncConnectionEntity) MarshalJSON() ([]byte, error) {
@@ -304,4 +307,18 @@ func (n *NuncConnectionEntity) GetHasCustomConfiguration() *bool {
 		return nil
 	}
 	return n.HasCustomConfiguration
+}
+
+func (n *NuncConnectionEntity) GetAutoPublish() *bool {
+	if n == nil {
+		return nil
+	}
+	return n.AutoPublish
+}
+
+func (n *NuncConnectionEntity) GetLastVerifiedAt() *time.Time {
+	if n == nil {
+		return nil
+	}
+	return n.LastVerifiedAt
 }

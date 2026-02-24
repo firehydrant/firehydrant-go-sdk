@@ -106,7 +106,7 @@ func (e *CreateTeamSignalRuleCreateIncidentConditionWhen) UnmarshalJSON(data []b
 	}
 }
 
-// CreateTeamSignalRule - Create a Signals rule for a team.
+// CreateTeamSignalRule - Create a Signals rule for a team. We support up to 2000 rules per organization.
 type CreateTeamSignalRule struct {
 	// The rule's name.
 	Name string `json:"name"`
