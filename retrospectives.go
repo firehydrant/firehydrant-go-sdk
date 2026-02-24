@@ -2089,6 +2089,7 @@ func (s *Retrospectives) DeleteIncidentRetrospectiveDynamicInput(ctx context.Con
 
 	switch {
 	case httpRes.StatusCode == 204:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
@@ -3732,6 +3733,7 @@ func (s *Retrospectives) DeletePostMortemReason(ctx context.Context, reportID st
 
 	switch {
 	case httpRes.StatusCode == 204:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
@@ -5195,6 +5197,7 @@ func (s *Retrospectives) GetPostMortemQuestion(ctx context.Context, questionID s
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
@@ -5995,6 +5998,7 @@ func (s *Retrospectives) DeleteRetrospectiveTemplate(ctx context.Context, retros
 
 	switch {
 	case httpRes.StatusCode == 204:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {

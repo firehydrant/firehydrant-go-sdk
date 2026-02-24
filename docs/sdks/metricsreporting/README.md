@@ -1061,7 +1061,7 @@ func main() {
         }),
     )
 
-    err := s.MetricsReporting.ExportSignalsShiftAnalytics(ctx, types.MustTimeFromString("2025-01-17T01:07:20.168Z"), types.MustTimeFromString("2024-10-08T06:33:20.543Z"), nil)
+    err := s.MetricsReporting.ExportSignalsShiftAnalytics(ctx, types.MustTimeFromString("2025-01-17T01:07:20.168Z"), types.MustTimeFromString("2024-10-08T06:33:20.543Z"), nil, nil)
     if err != nil {
         log.Fatal(err)
     }
@@ -1070,13 +1070,14 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                               | Type                                                                                                                    | Required                                                                                                                | Description                                                                                                             |
-| ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                                   | [context.Context](https://pkg.go.dev/context#Context)                                                                   | :heavy_check_mark:                                                                                                      | The context to use for the request.                                                                                     |
-| `periodStart`                                                                                                           | [time.Time](https://pkg.go.dev/time#Time)                                                                               | :heavy_check_mark:                                                                                                      | Start of the period to fetch hours for (UTC)                                                                            |
-| `periodEnd`                                                                                                             | [time.Time](https://pkg.go.dev/time#Time)                                                                               | :heavy_check_mark:                                                                                                      | End of the period to fetch hours for (UTC)                                                                              |
-| `requestBody`                                                                                                           | [*operations.ExportSignalsShiftAnalyticsRequestBody](../../models/operations/exportsignalsshiftanalyticsrequestbody.md) | :heavy_minus_sign:                                                                                                      | N/A                                                                                                                     |
-| `opts`                                                                                                                  | [][operations.Option](../../models/operations/option.md)                                                                | :heavy_minus_sign:                                                                                                      | The options for this request.                                                                                           |
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `periodStart`                                            | [time.Time](https://pkg.go.dev/time#Time)                | :heavy_check_mark:                                       | Start of the period to fetch hours for (UTC)             |
+| `periodEnd`                                              | [time.Time](https://pkg.go.dev/time#Time)                | :heavy_check_mark:                                       | End of the period to fetch hours for (UTC)               |
+| `userIds`                                                | []*string*                                               | :heavy_minus_sign:                                       | Array of user IDs to fetch oncall hours for              |
+| `teamIds`                                                | []*string*                                               | :heavy_minus_sign:                                       | Array of team IDs to fetch oncall hours for              |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
 
 ### Response
 

@@ -34,8 +34,10 @@ func newAudiences(rootSDK *FireHydrant, sdkConfig config.SDKConfiguration, hooks
 
 // ListAudiences - List audiences
 // List all audiences
-func (s *Audiences) ListAudiences(ctx context.Context, includeArchived *bool, opts ...operations.Option) (*components.AudiencesEntitiesAudienceEntity, error) {
+func (s *Audiences) ListAudiences(ctx context.Context, page *int, perPage *int, includeArchived *bool, opts ...operations.Option) (*components.AudiencesEntitiesAudienceEntityPaginated, error) {
 	request := operations.ListAudiencesRequest{
+		Page:            page,
+		PerPage:         perPage,
 		IncludeArchived: includeArchived,
 	}
 
@@ -202,7 +204,7 @@ func (s *Audiences) ListAudiences(ctx context.Context, includeArchived *bool, op
 				return nil, err
 			}
 
-			var out components.AudiencesEntitiesAudienceEntity
+			var out components.AudiencesEntitiesAudienceEntityPaginated
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
@@ -807,6 +809,7 @@ func (s *Audiences) ArchiveAudience(ctx context.Context, audienceID string, opts
 
 	switch {
 	case httpRes.StatusCode == 204:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
@@ -2030,6 +2033,7 @@ func (s *Audiences) GenerateAudienceSummary(ctx context.Context, audienceID stri
 
 	switch {
 	case httpRes.StatusCode == 202:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode == 404:
 		fallthrough
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:

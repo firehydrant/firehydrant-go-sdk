@@ -809,6 +809,7 @@ func (s *Roles) DeleteRole(ctx context.Context, id string, opts ...operations.Op
 
 	switch {
 	case httpRes.StatusCode == 204:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {

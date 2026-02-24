@@ -7,44 +7,15 @@ import (
 	"time"
 )
 
-type ExportSignalsShiftAnalyticsRequestBody struct {
-	// Array of user IDs to fetch oncall hours for
-	UserIds []string `multipartForm:"name=user_ids"`
-	// Array of team IDs to fetch oncall hours for
-	TeamIds []string `multipartForm:"name=team_ids"`
-}
-
-func (e ExportSignalsShiftAnalyticsRequestBody) MarshalJSON() ([]byte, error) {
-	return utils.MarshalJSON(e, "", false)
-}
-
-func (e *ExportSignalsShiftAnalyticsRequestBody) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &e, "", false, nil); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (e *ExportSignalsShiftAnalyticsRequestBody) GetUserIds() []string {
-	if e == nil {
-		return nil
-	}
-	return e.UserIds
-}
-
-func (e *ExportSignalsShiftAnalyticsRequestBody) GetTeamIds() []string {
-	if e == nil {
-		return nil
-	}
-	return e.TeamIds
-}
-
 type ExportSignalsShiftAnalyticsRequest struct {
+	// Array of user IDs to fetch oncall hours for
+	UserIds []string `queryParam:"style=form,explode=false,name=user_ids"`
+	// Array of team IDs to fetch oncall hours for
+	TeamIds []string `queryParam:"style=form,explode=false,name=team_ids"`
 	// Start of the period to fetch hours for (UTC)
 	PeriodStart time.Time `queryParam:"style=form,explode=true,name=period_start"`
 	// End of the period to fetch hours for (UTC)
-	PeriodEnd   time.Time                               `queryParam:"style=form,explode=true,name=period_end"`
-	RequestBody *ExportSignalsShiftAnalyticsRequestBody `request:"mediaType=multipart/form-data"`
+	PeriodEnd time.Time `queryParam:"style=form,explode=true,name=period_end"`
 }
 
 func (e ExportSignalsShiftAnalyticsRequest) MarshalJSON() ([]byte, error) {
@@ -56,6 +27,20 @@ func (e *ExportSignalsShiftAnalyticsRequest) UnmarshalJSON(data []byte) error {
 		return err
 	}
 	return nil
+}
+
+func (e *ExportSignalsShiftAnalyticsRequest) GetUserIds() []string {
+	if e == nil {
+		return nil
+	}
+	return e.UserIds
+}
+
+func (e *ExportSignalsShiftAnalyticsRequest) GetTeamIds() []string {
+	if e == nil {
+		return nil
+	}
+	return e.TeamIds
 }
 
 func (e *ExportSignalsShiftAnalyticsRequest) GetPeriodStart() time.Time {
@@ -70,11 +55,4 @@ func (e *ExportSignalsShiftAnalyticsRequest) GetPeriodEnd() time.Time {
 		return time.Time{}
 	}
 	return e.PeriodEnd
-}
-
-func (e *ExportSignalsShiftAnalyticsRequest) GetRequestBody() *ExportSignalsShiftAnalyticsRequestBody {
-	if e == nil {
-		return nil
-	}
-	return e.RequestBody
 }

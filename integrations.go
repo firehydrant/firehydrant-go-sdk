@@ -4131,12 +4131,7 @@ func (s *Integrations) ListAwsCloudtrailBatchEvents(ctx context.Context, id stri
 
 // SearchConfluenceSpaces - List Confluence spaces
 // Lists available space keys for the Confluence integration connection.
-func (s *Integrations) SearchConfluenceSpaces(ctx context.Context, id string, keyword *string, opts ...operations.Option) (*components.IntegrationsConfluenceCloudSpaceEntity, error) {
-	request := operations.SearchConfluenceSpacesRequest{
-		ID:      id,
-		Keyword: keyword,
-	}
-
+func (s *Integrations) SearchConfluenceSpaces(ctx context.Context, request operations.SearchConfluenceSpacesRequest, opts ...operations.Option) (*components.IntegrationsConfluenceCloudSpaceEntity, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -4904,6 +4899,7 @@ func (s *Integrations) ListSlackEmojiActions(ctx context.Context, connectionID s
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
@@ -5094,6 +5090,7 @@ func (s *Integrations) CreateSlackEmojiAction(ctx context.Context, connectionID 
 
 	switch {
 	case httpRes.StatusCode == 201:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
@@ -5277,6 +5274,7 @@ func (s *Integrations) GetSlackEmojiAction(ctx context.Context, connectionID str
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
@@ -5460,6 +5458,7 @@ func (s *Integrations) DeleteSlackEmojiAction(ctx context.Context, connectionID 
 
 	switch {
 	case httpRes.StatusCode == 204:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
@@ -5651,6 +5650,7 @@ func (s *Integrations) UpdateSlackEmojiAction(ctx context.Context, connectionID 
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
@@ -6244,6 +6244,7 @@ func (s *Integrations) DeleteStatuspageConnection(ctx context.Context, connectio
 
 	switch {
 	case httpRes.StatusCode == 204:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
@@ -7055,6 +7056,7 @@ func (s *Integrations) GetZendeskCustomerSupportIssue(ctx context.Context, ticke
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {

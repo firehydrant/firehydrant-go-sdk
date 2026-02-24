@@ -195,6 +195,7 @@ func (s *AuditEvents) ListAuditEvents(ctx context.Context, cursor *string, filte
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
@@ -377,6 +378,7 @@ func (s *AuditEvents) GetAuditEvent(ctx context.Context, id string, opts ...oper
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {

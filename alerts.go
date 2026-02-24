@@ -402,6 +402,7 @@ func (s *Alerts) CreateIncidentAlert(ctx context.Context, incidentID string, req
 
 	switch {
 	case httpRes.StatusCode == 204:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
@@ -797,6 +798,7 @@ func (s *Alerts) DeleteIncidentAlert(ctx context.Context, incidentAlertID string
 
 	switch {
 	case httpRes.StatusCode == 204:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {

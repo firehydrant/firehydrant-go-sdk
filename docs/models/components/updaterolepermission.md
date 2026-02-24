@@ -22,6 +22,7 @@
 | `UpdateRolePermissionReadOnCallSchedules`                    | read_on_call_schedules                                       |
 | `UpdateRolePermissionManageOnCallShifts`                     | manage_on_call_shifts                                        |
 | `UpdateRolePermissionClaimOnCallShifts`                      | claim_on_call_shifts                                         |
+| `UpdateRolePermissionReadSignalsPii`                         | read_signals_pii                                             |
 | `UpdateRolePermissionManageOrganizationNotificationPolicies` | manage_organization_notification_policies                    |
 | `UpdateRolePermissionReadNotificationPolicyCompliance`       | read_notification_policy_compliance                          |
 | `UpdateRolePermissionManageWebhookTargets`                   | manage_webhook_targets                                       |
