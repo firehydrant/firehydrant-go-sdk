@@ -5,4 +5,4 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `TaskListID`       | *string*           | :heavy_check_mark: | N/A                |
+| `TaskListID`       | `string`           | :heavy_check_mark: | N/A                |

@@ -83,3 +83,6 @@ func (p *PublicAPIV1PermissionEntity) GetDependencySlugs() []string {
 	}
 	return p.DependencySlugs
 }
+
+// #region class-body-publicapiv1permissionentity
+// #endregion class-body-publicapiv1permissionentity

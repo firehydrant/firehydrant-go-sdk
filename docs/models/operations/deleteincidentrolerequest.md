@@ -5,4 +5,4 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `IncidentRoleID`   | *string*           | :heavy_check_mark: | N/A                |
+| `IncidentRoleID`   | `string`           | :heavy_check_mark: | N/A                |

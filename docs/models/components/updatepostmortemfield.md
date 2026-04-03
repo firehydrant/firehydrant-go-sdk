@@ -7,4 +7,4 @@ Update a field value on a post mortem report
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `Value`            | *string*           | :heavy_check_mark: | N/A                |
+| `Value`            | `string`           | :heavy_check_mark: | N/A                |

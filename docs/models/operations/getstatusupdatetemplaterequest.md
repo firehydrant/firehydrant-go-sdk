@@ -5,4 +5,4 @@
 
 | Field                    | Type                     | Required                 | Description              |
 | ------------------------ | ------------------------ | ------------------------ | ------------------------ |
-| `StatusUpdateTemplateID` | *string*                 | :heavy_check_mark:       | N/A                      |
+| `StatusUpdateTemplateID` | `string`                 | :heavy_check_mark:       | N/A                      |

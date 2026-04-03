@@ -8,15 +8,17 @@ import (
 
 // CurrentUserEntity model
 type CurrentUserEntity struct {
-	ID               *string          `json:"id,omitzero"`
-	Name             *string          `json:"name,omitzero"`
-	Source           *string          `json:"source,omitzero"`
-	Email            *string          `json:"email,omitzero"`
-	Role             *string          `json:"role,omitzero"`
-	Teams            []SuccinctEntity `json:"teams,omitzero"`
-	OrganizationID   *string          `json:"organization_id,omitzero"`
-	OrganizationName *string          `json:"organization_name,omitzero"`
-	AccountID        *int             `json:"account_id,omitzero"`
+	ID               *string                     `json:"id,omitzero"`
+	Name             *string                     `json:"name,omitzero"`
+	Source           *string                     `json:"source,omitzero"`
+	Email            *string                     `json:"email,omitzero"`
+	Role             *string                     `json:"role,omitzero"`
+	Teams            []SuccinctEntity            `json:"teams,omitzero"`
+	OrganizationID   *string                     `json:"organization_id,omitzero"`
+	OrganizationName *string                     `json:"organization_name,omitzero"`
+	AccountID        *int                        `json:"account_id,omitzero"`
+	Region           *string                     `json:"region,omitzero"`
+	Organization     *NullableOrganizationEntity `json:"organization,omitzero"`
 }
 
 func (c CurrentUserEntity) MarshalJSON() ([]byte, error) {
@@ -91,4 +93,18 @@ func (c *CurrentUserEntity) GetAccountID() *int {
 		return nil
 	}
 	return c.AccountID
+}
+
+func (c *CurrentUserEntity) GetRegion() *string {
+	if c == nil {
+		return nil
+	}
+	return c.Region
+}
+
+func (c *CurrentUserEntity) GetOrganization() *NullableOrganizationEntity {
+	if c == nil {
+		return nil
+	}
+	return c.Organization
 }

@@ -7,6 +7,6 @@ Update a specific priority
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `Slug`             | **string*          | :heavy_minus_sign: | N/A                |
-| `Description`      | **string*          | :heavy_minus_sign: | N/A                |
-| `Default`          | **bool*            | :heavy_minus_sign: | N/A                |
+| `Slug`             | `*string`          | :heavy_minus_sign: | N/A                |
+| `Description`      | `*string`          | :heavy_minus_sign: | N/A                |
+| `Default`          | `*bool`            | :heavy_minus_sign: | N/A                |

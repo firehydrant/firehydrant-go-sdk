@@ -28,3 +28,6 @@ func (p *PublicAPIV1SimilarIncidentEntity) GetDistance() *float32 {
 	}
 	return p.Distance
 }
+
+// #region class-body-publicapiv1similarincidententity
+// #endregion class-body-publicapiv1similarincidententity

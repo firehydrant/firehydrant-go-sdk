@@ -534,6 +534,7 @@ func main() {
 ### [Retrospectives](docs/sdks/retrospectives/README.md)
 
 * [ShareIncidentRetrospectives](docs/sdks/retrospectives/README.md#shareincidentretrospectives) - Share an incident's retrospective
+* [ExportIncidentRetrospectivesMarkdown](docs/sdks/retrospectives/README.md#exportincidentretrospectivesmarkdown) - Export an incident's retrospective(s) as markdown
 * [ExportIncidentRetrospectives](docs/sdks/retrospectives/README.md#exportincidentretrospectives) - Export an incident's retrospective(s)
 * [ListIncidentRetrospectives](docs/sdks/retrospectives/README.md#listincidentretrospectives) - All attached retrospectives for an incident
 * [CreateIncidentRetrospective](docs/sdks/retrospectives/README.md#createincidentretrospective) - Create a new retrospective on the incident using the template

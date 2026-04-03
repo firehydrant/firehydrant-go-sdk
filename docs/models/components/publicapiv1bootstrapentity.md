@@ -7,4 +7,4 @@ PublicAPI_V1_BootstrapEntity model
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `PosthogWriteKey`  | **string*          | :heavy_minus_sign: | N/A                |
+| `PosthogWriteKey`  | `*string`          | :heavy_minus_sign: | N/A                |

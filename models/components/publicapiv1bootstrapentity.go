@@ -13,3 +13,6 @@ func (p *PublicAPIV1BootstrapEntity) GetPosthogWriteKey() *string {
 	}
 	return p.PosthogWriteKey
 }
+
+// #region class-body-publicapiv1bootstrapentity
+// #endregion class-body-publicapiv1bootstrapentity

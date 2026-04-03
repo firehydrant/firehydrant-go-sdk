@@ -5,5 +5,5 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `TranscriptID`     | *string*           | :heavy_check_mark: | N/A                |
-| `IncidentID`       | *string*           | :heavy_check_mark: | N/A                |
+| `TranscriptID`     | `string`           | :heavy_check_mark: | N/A                |
+| `IncidentID`       | `string`           | :heavy_check_mark: | N/A                |

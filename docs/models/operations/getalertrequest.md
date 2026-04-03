@@ -5,4 +5,4 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `AlertID`          | *string*           | :heavy_check_mark: | N/A                |
+| `AlertID`          | `string`           | :heavy_check_mark: | N/A                |

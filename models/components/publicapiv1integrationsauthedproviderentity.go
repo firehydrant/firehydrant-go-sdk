@@ -78,3 +78,6 @@ func (p *PublicAPIV1IntegrationsAuthedProviderEntity) GetUpdatedAt() *time.Time 
 	}
 	return p.UpdatedAt
 }
+
+// #region class-body-publicapiv1integrationsauthedproviderentity
+// #endregion class-body-publicapiv1integrationsauthedproviderentity

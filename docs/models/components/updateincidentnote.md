@@ -7,4 +7,4 @@ Updates the body of a note
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `Body`             | *string*           | :heavy_check_mark: | N/A                |
+| `Body`             | `string`           | :heavy_check_mark: | N/A                |

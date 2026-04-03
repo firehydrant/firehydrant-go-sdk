@@ -18,6 +18,8 @@ type TicketingFieldMapsMappableFieldEntity struct {
 	AllowedValues []string `json:"allowed_values,omitzero"`
 	// If the field is required to be mapped
 	Required *string `json:"required,omitzero"`
+	// If the field type is supported for mapping
+	Supported *bool `json:"supported,omitzero"`
 }
 
 func (t TicketingFieldMapsMappableFieldEntity) MarshalJSON() ([]byte, error) {
@@ -64,4 +66,11 @@ func (t *TicketingFieldMapsMappableFieldEntity) GetRequired() *string {
 		return nil
 	}
 	return t.Required
+}
+
+func (t *TicketingFieldMapsMappableFieldEntity) GetSupported() *bool {
+	if t == nil {
+		return nil
+	}
+	return t.Supported
 }

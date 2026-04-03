@@ -7,5 +7,5 @@ InfrastructureSearchEntity model
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `Type`             | **string*          | :heavy_minus_sign: | N/A                |
-| `Infrastructure`   | **string*          | :heavy_minus_sign: | N/A                |
+| `Type`             | `*string`          | :heavy_minus_sign: | N/A                |
+| `Infrastructure`   | `*string`          | :heavy_minus_sign: | N/A                |

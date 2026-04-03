@@ -5,4 +5,4 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `FieldMapID`       | *string*           | :heavy_check_mark: | N/A                |
+| `FieldMapID`       | `string`           | :heavy_check_mark: | N/A                |

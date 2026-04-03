@@ -7,5 +7,5 @@ FormConfigurationEntity model
 
 | Field               | Type                | Required            | Description         |
 | ------------------- | ------------------- | ------------------- | ------------------- |
-| `Fields`            | **string*           | :heavy_minus_sign:  | N/A                 |
-| `ShowIncidentTypes` | **string*           | :heavy_minus_sign:  | N/A                 |
+| `Fields`            | `*string`           | :heavy_minus_sign:  | N/A                 |
+| `ShowIncidentTypes` | `*string`           | :heavy_minus_sign:  | N/A                 |

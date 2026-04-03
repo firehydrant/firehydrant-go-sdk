@@ -5,4 +5,4 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `RunbookID`        | *string*           | :heavy_check_mark: | N/A                |
+| `RunbookID`        | `string`           | :heavy_check_mark: | N/A                |

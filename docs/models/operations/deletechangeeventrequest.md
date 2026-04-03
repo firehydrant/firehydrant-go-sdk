@@ -5,4 +5,4 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `ChangeEventID`    | *string*           | :heavy_check_mark: | N/A                |
+| `ChangeEventID`    | `string`           | :heavy_check_mark: | N/A                |

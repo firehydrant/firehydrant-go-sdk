@@ -5,6 +5,6 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `FunctionalityID`  | *string*           | :heavy_check_mark: | N/A                |
-| `Page`             | **int*             | :heavy_minus_sign: | N/A                |
-| `PerPage`          | **int*             | :heavy_minus_sign: | N/A                |
+| `FunctionalityID`  | `string`           | :heavy_check_mark: | N/A                |
+| `Page`             | `*int`             | :heavy_minus_sign: | N/A                |
+| `PerPage`          | `*int`             | :heavy_minus_sign: | N/A                |

@@ -7,4 +7,4 @@ Add a new contributing factor to an incident
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `Summary`          | *string*           | :heavy_check_mark: | N/A                |
+| `Summary`          | `string`           | :heavy_check_mark: | N/A                |

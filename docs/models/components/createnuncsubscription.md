@@ -7,4 +7,4 @@ Subscribe to status page updates
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `Email`            | *string*           | :heavy_check_mark: | N/A                |
+| `Email`            | `string`           | :heavy_check_mark: | N/A                |

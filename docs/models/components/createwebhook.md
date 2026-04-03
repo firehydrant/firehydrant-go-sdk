@@ -7,4 +7,4 @@ Create a new webhook
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `URL`              | *string*           | :heavy_check_mark: | N/A                |
+| `URL`              | `string`           | :heavy_check_mark: | N/A                |

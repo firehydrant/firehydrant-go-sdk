@@ -26,24 +26,25 @@ type AlertsAlertEntity struct {
 	RemoteID        *string    `json:"remote_id,omitzero"`
 	RemoteURL       *string    `json:"remote_url,omitzero"`
 	// Arbitrary key:value pairs of labels.
-	Labels        *AlertsAlertEntityLabels             `json:"labels,omitzero"`
-	Environments  []SuccinctEntity                     `json:"environments,omitzero"`
-	Services      []SuccinctEntity                     `json:"services,omitzero"`
-	Tags          []string                             `json:"tags,omitzero"`
-	SourceIcon    *string                              `json:"source_icon,omitzero"`
-	SignalID      *string                              `json:"signal_id,omitzero"`
-	SignalRule    *NullableSignalsAPIRuleEntity        `json:"signal_rule,omitzero"`
-	SignalTarget  *NullableSignalsAPITargetEntity      `json:"signal_target,omitzero"`
-	TeamName      *string                              `json:"team_name,omitzero"`
-	TeamID        *string                              `json:"team_id,omitzero"`
-	Position      *int                                 `json:"position,omitzero"`
-	Incidents     []PublicAPIV1IncidentsSuccinctEntity `json:"incidents,omitzero"`
-	Events        []AlertsSirenEventEntity             `json:"events,omitzero"`
-	IsExpired     *bool                                `json:"is_expired,omitzero"`
-	IsNoise       *bool                                `json:"is_noise,omitzero"`
-	ParentAlerts  []AlertsSirenAlertEntity             `json:"parent_alerts,omitzero"`
-	ChildAlerts   []AlertsSirenAlertEntity             `json:"child_alerts,omitzero"`
-	Conversations []ConversationsAPIEntitiesReference  `json:"conversations,omitzero"`
+	Labels               *AlertsAlertEntityLabels             `json:"labels,omitzero"`
+	Environments         []SuccinctEntity                     `json:"environments,omitzero"`
+	Services             []SuccinctEntity                     `json:"services,omitzero"`
+	Tags                 []string                             `json:"tags,omitzero"`
+	SourceIcon           *string                              `json:"source_icon,omitzero"`
+	SignalID             *string                              `json:"signal_id,omitzero"`
+	SignalRule           *NullableSignalsAPIRuleEntity        `json:"signal_rule,omitzero"`
+	SignalTarget         *NullableSignalsAPITargetEntity      `json:"signal_target,omitzero"`
+	TeamName             *string                              `json:"team_name,omitzero"`
+	TeamID               *string                              `json:"team_id,omitzero"`
+	Position             *int                                 `json:"position,omitzero"`
+	NotificationPriority *string                              `json:"notification_priority,omitzero"`
+	Incidents            []PublicAPIV1IncidentsSuccinctEntity `json:"incidents,omitzero"`
+	Events               []AlertsSirenEventEntity             `json:"events,omitzero"`
+	IsExpired            *bool                                `json:"is_expired,omitzero"`
+	IsNoise              *bool                                `json:"is_noise,omitzero"`
+	ParentAlerts         []AlertsSirenAlertEntity             `json:"parent_alerts,omitzero"`
+	ChildAlerts          []AlertsSirenAlertEntity             `json:"child_alerts,omitzero"`
+	Conversations        []ConversationsAPIEntitiesReference  `json:"conversations,omitzero"`
 }
 
 func (a AlertsAlertEntity) MarshalJSON() ([]byte, error) {
@@ -216,6 +217,13 @@ func (a *AlertsAlertEntity) GetPosition() *int {
 		return nil
 	}
 	return a.Position
+}
+
+func (a *AlertsAlertEntity) GetNotificationPriority() *string {
+	if a == nil {
+		return nil
+	}
+	return a.NotificationPriority
 }
 
 func (a *AlertsAlertEntity) GetIncidents() []PublicAPIV1IncidentsSuccinctEntity {

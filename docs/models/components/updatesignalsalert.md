@@ -7,4 +7,4 @@ Update a Signal alert
 
 | Field                      | Type                       | Required                   | Description                |
 | -------------------------- | -------------------------- | -------------------------- | -------------------------- |
-| `Noise`                    | *bool*                     | :heavy_check_mark:         | Whether the alert is noisy |
+| `Noise`                    | `bool`                     | :heavy_check_mark:         | Whether the alert is noisy |
