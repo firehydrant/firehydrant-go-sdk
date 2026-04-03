@@ -5,4 +5,4 @@
 
 | Field                     | Type                      | Required                  | Description               |
 | ------------------------- | ------------------------- | ------------------------- | ------------------------- |
-| `RetrospectiveTemplateID` | *string*                  | :heavy_check_mark:        | N/A                       |
+| `RetrospectiveTemplateID` | `string`                  | :heavy_check_mark:        | N/A                       |

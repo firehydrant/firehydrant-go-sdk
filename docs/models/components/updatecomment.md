@@ -7,4 +7,4 @@ Update a comment's attributes
 
 | Field                | Type                 | Required             | Description          |
 | -------------------- | -------------------- | -------------------- | -------------------- |
-| `Body`               | **string*            | :heavy_minus_sign:   | Text body of comment |
+| `Body`               | `*string`            | :heavy_minus_sign:   | Text body of comment |

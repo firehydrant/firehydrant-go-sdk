@@ -5,4 +5,4 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `UnsubscribeToken` | *string*           | :heavy_check_mark: | N/A                |
+| `UnsubscribeToken` | `string`           | :heavy_check_mark: | N/A                |

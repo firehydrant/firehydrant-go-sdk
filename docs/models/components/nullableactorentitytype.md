@@ -1,5 +1,15 @@
 # NullableActorEntityType
 
+## Example Usage
+
+```go
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+)
+
+value := components.NullableActorEntityTypeFirehydrantUser
+```
+
 
 ## Values
 
@@ -42,3 +52,4 @@
 | `NullableActorEntityTypeZoomV2`           | zoom_v2                                   |
 | `NullableActorEntityTypeLinear`           | linear                                    |
 | `NullableActorEntityTypeCortex`           | cortex                                    |
+| `NullableActorEntityTypeFreshservice`     | freshservice                              |

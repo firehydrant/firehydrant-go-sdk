@@ -2,6 +2,16 @@
 
 Integer representing service tier. Lower values represent higher criticality. If not specified the default value will be 5.
 
+## Example Usage
+
+```go
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+)
+
+value := components.CreateServiceServiceTierZero
+```
+
 
 ## Values
 

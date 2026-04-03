@@ -41,6 +41,9 @@ func (c *CreateIncidentImpact1) GetConditionID() string {
 	return c.ConditionID
 }
 
+// #region class-body-createincidentimpact1
+// #endregion class-body-createincidentimpact1
+
 type CreateIncidentMilestone struct {
 	// The type/slug of the milestone. Must be one of the currently configured milestones.
 	Type string `json:"type"`

@@ -47,6 +47,7 @@ const (
 	NullableActorEntityTypeZoomV2           NullableActorEntityType = "zoom_v2"
 	NullableActorEntityTypeLinear           NullableActorEntityType = "linear"
 	NullableActorEntityTypeCortex           NullableActorEntityType = "cortex"
+	NullableActorEntityTypeFreshservice     NullableActorEntityType = "freshservice"
 )
 
 func (e NullableActorEntityType) ToPointer() *NullableActorEntityType {
@@ -131,6 +132,8 @@ func (e *NullableActorEntityType) UnmarshalJSON(data []byte) error {
 	case "linear":
 		fallthrough
 	case "cortex":
+		fallthrough
+	case "freshservice":
 		*e = NullableActorEntityType(v)
 		return nil
 	default:

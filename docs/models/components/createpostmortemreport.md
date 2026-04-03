@@ -7,4 +7,4 @@ Create a report
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `IncidentID`       | *string*           | :heavy_check_mark: | N/A                |
+| `IncidentID`       | `string`           | :heavy_check_mark: | N/A                |

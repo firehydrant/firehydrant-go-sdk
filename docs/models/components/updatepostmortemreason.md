@@ -7,4 +7,4 @@ Update a contributing factor
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `Summary`          | **string*          | :heavy_minus_sign: | N/A                |
+| `Summary`          | `*string`          | :heavy_minus_sign: | N/A                |

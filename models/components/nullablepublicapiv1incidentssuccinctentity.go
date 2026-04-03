@@ -28,3 +28,6 @@ func (n *NullablePublicAPIV1IncidentsSuccinctEntity) GetNumber() *int {
 	}
 	return n.Number
 }
+
+// #region class-body-nullablepublicapiv1incidentssuccinctentity
+// #endregion class-body-nullablepublicapiv1incidentssuccinctentity

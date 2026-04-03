@@ -10,6 +10,9 @@ import (
 type PublicAPIV1FormConfigurationsSelectedValueEntityTemplate struct {
 }
 
+// #region class-body-publicapiv1formconfigurationsselectedvalueentitytemplate
+// #endregion class-body-publicapiv1formconfigurationsselectedvalueentitytemplate
+
 // PublicAPIV1FormConfigurationsSelectedValueEntity - PublicAPI_V1_FormConfigurations_SelectedValueEntity model
 type PublicAPIV1FormConfigurationsSelectedValueEntity struct {
 	// The template for the selected value
@@ -33,3 +36,6 @@ func (p *PublicAPIV1FormConfigurationsSelectedValueEntity) GetTemplate() *Public
 	}
 	return p.Template
 }
+
+// #region class-body-publicapiv1formconfigurationsselectedvalueentity
+// #endregion class-body-publicapiv1formconfigurationsselectedvalueentity

@@ -83,3 +83,6 @@ func (n *NullableIntegrationsMicrosoftTeamsV2ChannelEntity) GetIncident() *Nulla
 	}
 	return n.Incident
 }
+
+// #region class-body-nullableintegrationsmicrosoftteamsv2channelentity
+// #endregion class-body-nullableintegrationsmicrosoftteamsv2channelentity

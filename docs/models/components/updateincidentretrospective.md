@@ -7,4 +7,4 @@ Update a retrospective attached to an incident
 
 | Field                                | Type                                 | Required                             | Description                          |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| `IsHidden`                           | **bool*                              | :heavy_minus_sign:                   | To hide or unhide the retrospective. |
+| `IsHidden`                           | `*bool`                              | :heavy_minus_sign:                   | To hide or unhide the retrospective. |

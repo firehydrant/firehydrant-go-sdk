@@ -7,6 +7,6 @@ Update the AWS connection with the provided data.
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `AwsAccountID`     | **string*          | :heavy_minus_sign: | N/A                |
-| `TargetArn`        | **string*          | :heavy_minus_sign: | N/A                |
-| `ConnectionStatus` | **string*          | :heavy_minus_sign: | N/A                |
+| `AwsAccountID`     | `*string`          | :heavy_minus_sign: | N/A                |
+| `TargetArn`        | `*string`          | :heavy_minus_sign: | N/A                |
+| `ConnectionStatus` | `*string`          | :heavy_minus_sign: | N/A                |

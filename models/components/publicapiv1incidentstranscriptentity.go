@@ -92,3 +92,6 @@ func (p *PublicAPIV1IncidentsTranscriptEntity) GetAuthor() *NullableAuthorEntity
 	}
 	return p.Author
 }
+
+// #region class-body-publicapiv1incidentstranscriptentity
+// #endregion class-body-publicapiv1incidentstranscriptentity

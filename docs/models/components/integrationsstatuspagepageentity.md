@@ -7,5 +7,5 @@ Integrations_Statuspage_PageEntity model
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `ID`               | **string*          | :heavy_minus_sign: | N/A                |
-| `Name`             | **string*          | :heavy_minus_sign: | N/A                |
+| `ID`               | `*string`          | :heavy_minus_sign: | N/A                |
+| `Name`             | `*string`          | :heavy_minus_sign: | N/A                |

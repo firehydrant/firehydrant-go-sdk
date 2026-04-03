@@ -2,6 +2,16 @@
 
 Sort runbooks by their updated date or name. Accepts 'updated_at', 'name', 'owner', 'last_executed_at', and 'created_at'.
 
+## Example Usage
+
+```go
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/models/operations"
+)
+
+value := operations.OrderByUpdatedAt
+```
+
 
 ## Values
 

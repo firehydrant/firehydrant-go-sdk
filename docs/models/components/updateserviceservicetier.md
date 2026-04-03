@@ -2,6 +2,16 @@
 
 Integer representing service tier
 
+## Example Usage
+
+```go
+import (
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+)
+
+value := components.UpdateServiceServiceTierZero
+```
+
 
 ## Values
 

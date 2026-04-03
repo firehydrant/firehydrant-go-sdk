@@ -7,4 +7,4 @@ Setting an alert as primary will overwrite milestone times in the FireHydrant in
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `Primary`          | *bool*             | :heavy_check_mark: | N/A                |
+| `Primary`          | `bool`             | :heavy_check_mark: | N/A                |

@@ -2,7 +2,7 @@
 
 package firehydrantgosdk
 
-// Generated from OpenAPI doc version 0.0.1 and generator version 2.836.5
+// Generated from OpenAPI doc version 0.0.1 and generator version 2.879.6
 
 import (
 	"context"
@@ -207,7 +207,7 @@ type FireHydrant struct {
 
 type SDKOption func(*FireHydrant)
 
-// WithServerURL allows the overriding of the default server URL
+// WithServerURL allows providing an alternative server URL
 func WithServerURL(serverURL string) SDKOption {
 	return func(sdk *FireHydrant) {
 		sdk.sdkConfiguration.ServerURL = serverURL
@@ -275,9 +275,9 @@ func WithTimeout(timeout time.Duration) SDKOption {
 // New creates a new instance of the SDK with the provided options
 func New(opts ...SDKOption) *FireHydrant {
 	sdk := &FireHydrant{
-		SDKVersion: "1.8.5",
+		SDKVersion: "1.8.6",
 		sdkConfiguration: config.SDKConfiguration{
-			UserAgent:  "speakeasy-sdk/go 1.8.5 2.836.5 0.0.1 github.com/firehydrant/firehydrant-go-sdk",
+			UserAgent:  "speakeasy-sdk/go 1.8.6 2.879.6 0.0.1 github.com/firehydrant/firehydrant-go-sdk",
 			ServerList: ServerList,
 		},
 		hooks: hooks.New(),

@@ -7,5 +7,5 @@ Update retrospective field value
 
 | Field                                        | Type                                         | Required                                     | Description                                  |
 | -------------------------------------------- | -------------------------------------------- | -------------------------------------------- | -------------------------------------------- |
-| `DynamicInputFieldID`                        | **string*                                    | :heavy_minus_sign:                           | The ID of the dynamic input field to update. |
-| `Value`                                      | *int64*                                      | :heavy_check_mark:                           | The value to set for the field.              |
+| `DynamicInputFieldID`                        | `*string`                                    | :heavy_minus_sign:                           | The ID of the dynamic input field to update. |
+| `Value`                                      | `int64`                                      | :heavy_check_mark:                           | The value to set for the field.              |

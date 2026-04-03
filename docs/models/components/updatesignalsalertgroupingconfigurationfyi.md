@@ -7,4 +7,4 @@ Send FYI notification
 
 | Field                                             | Type                                              | Required                                          | Description                                       |
 | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
-| `SlackChannelIds`                                 | []*string*                                        | :heavy_check_mark:                                | The slack channel ids to send the notification to |
+| `SlackChannelIds`                                 | []`string`                                        | :heavy_check_mark:                                | The slack channel ids to send the notification to |

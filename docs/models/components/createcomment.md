@@ -7,4 +7,4 @@ Creates a comment for a project
 
 | Field                | Type                 | Required             | Description          |
 | -------------------- | -------------------- | -------------------- | -------------------- |
-| `Body`               | *string*             | :heavy_check_mark:   | Text body of comment |
+| `Body`               | `string`             | :heavy_check_mark:   | Text body of comment |

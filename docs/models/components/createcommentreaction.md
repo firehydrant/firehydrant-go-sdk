@@ -7,4 +7,4 @@ Create a reaction on a comment
 
 | Field                             | Type                              | Required                          | Description                       |
 | --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
-| `Reaction`                        | *string*                          | :heavy_check_mark:                | CLDR short name of Unicode emojis |
+| `Reaction`                        | `string`                          | :heavy_check_mark:                | CLDR short name of Unicode emojis |

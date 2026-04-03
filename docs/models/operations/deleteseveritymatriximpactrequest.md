@@ -5,4 +5,4 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `ImpactID`         | *string*           | :heavy_check_mark: | N/A                |
+| `ImpactID`         | `string`           | :heavy_check_mark: | N/A                |

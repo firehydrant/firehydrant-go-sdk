@@ -5,4 +5,4 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `TicketID`         | *string*           | :heavy_check_mark: | N/A                |
+| `TicketID`         | `string`           | :heavy_check_mark: | N/A                |

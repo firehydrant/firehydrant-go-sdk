@@ -5,4 +5,4 @@
 
 | Field                   | Type                    | Required                | Description             |
 | ----------------------- | ----------------------- | ----------------------- | ----------------------- |
-| `ID`                    | *string*                | :heavy_check_mark:      | Checklist Template UUID |
+| `ID`                    | `string`                | :heavy_check_mark:      | Checklist Template UUID |

@@ -5,4 +5,4 @@
 
 | Field                      | Type                       | Required                   | Description                |
 | -------------------------- | -------------------------- | -------------------------- | -------------------------- |
-| `FunctionalityID`          | *string*                   | :heavy_check_mark:         | Functionality UUID or slug |
+| `FunctionalityID`          | `string`                   | :heavy_check_mark:         | Functionality UUID or slug |

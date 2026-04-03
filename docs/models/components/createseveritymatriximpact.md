@@ -7,6 +7,6 @@ Create a new impact
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `AffectsType`      | *string*           | :heavy_check_mark: | N/A                |
-| `AffectsID`        | *string*           | :heavy_check_mark: | N/A                |
-| `Position`         | **int*             | :heavy_minus_sign: | N/A                |
+| `AffectsType`      | `string`           | :heavy_check_mark: | N/A                |
+| `AffectsID`        | `string`           | :heavy_check_mark: | N/A                |
+| `Position`         | `*int`             | :heavy_minus_sign: | N/A                |

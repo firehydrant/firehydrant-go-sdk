@@ -93,3 +93,6 @@ func (p *PublicAPIV1RoleEntity) GetPermissions() []PublicAPIV1PermissionEntity {
 	}
 	return p.Permissions
 }
+
+// #region class-body-publicapiv1roleentity
+// #endregion class-body-publicapiv1roleentity
