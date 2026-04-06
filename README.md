@@ -19,6 +19,7 @@ FireHydrant API: The FireHydrant API is based around REST. It uses Bearer token 
 ## Base API endpoint
 
 [https://api.firehydrant.io/v1](https://api.firehydrant.io/v1)
+For EU customers, this can be overridden to `https://api.eu.firehydrant.io` via `WithServerURL(serverURL string)`.  See [Server Selection](#server-selection).
 
 ## Current version
 
