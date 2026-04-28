@@ -19,7 +19,6 @@ FireHydrant API: The FireHydrant API is based around REST. It uses Bearer token 
 ## Base API endpoint
 
 [https://api.firehydrant.io/v1](https://api.firehydrant.io/v1)
-For EU customers, this can be overridden to `https://api.eu.firehydrant.io` via `WithServerURL(serverURL string)`.  See [Server Selection](#server-selection).
 
 ## Current version
 
@@ -609,6 +608,9 @@ func main() {
 
 ### [Signals](docs/sdks/signals/README.md)
 
+* [GetSupportHoursSchedule](docs/sdks/signals/README.md#getsupporthoursschedule) - Get support hours schedule
+* [DeleteSupportHoursSchedule](docs/sdks/signals/README.md#deletesupporthoursschedule) - Delete a specific support hours schedule
+* [UpdateSupportHoursSchedule](docs/sdks/signals/README.md#updatesupporthoursschedule) - Update support hours schedule
 * [ListTeamEscalationPolicies](docs/sdks/signals/README.md#listteamescalationpolicies) - List escalation policies for a team
 * [CreateTeamEscalationPolicy](docs/sdks/signals/README.md#createteamescalationpolicy) - Create an escalation policy for a team
 * [GetTeamEscalationPolicy](docs/sdks/signals/README.md#getteamescalationpolicy) - Get an escalation policy for a team

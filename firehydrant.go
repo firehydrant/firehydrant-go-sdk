@@ -2,7 +2,7 @@
 
 package firehydrantgosdk
 
-// Generated from OpenAPI doc version 0.0.1 and generator version 2.879.6
+// Generated from OpenAPI doc version 0.0.1 and generator version 2.881.4
 
 import (
 	"context"
@@ -154,10 +154,10 @@ type FireHydrant struct {
 	CatalogEntries *CatalogEntries
 	// Operations related to Teams
 	Teams *Teams
-	// Operations about Call Routes
-	CallRoutes *CallRoutes
 	// Operations related to Signals
 	Signals *Signals
+	// Operations about Call Routes
+	CallRoutes *CallRoutes
 	// Operations related to Changes
 	Changes *Changes
 	// Operations related to Incidents
@@ -275,9 +275,9 @@ func WithTimeout(timeout time.Duration) SDKOption {
 // New creates a new instance of the SDK with the provided options
 func New(opts ...SDKOption) *FireHydrant {
 	sdk := &FireHydrant{
-		SDKVersion: "1.8.6",
+		SDKVersion: "1.8.7",
 		sdkConfiguration: config.SDKConfiguration{
-			UserAgent:  "speakeasy-sdk/go 1.8.6 2.879.6 0.0.1 github.com/firehydrant/firehydrant-go-sdk",
+			UserAgent:  "speakeasy-sdk/go 1.8.7 2.881.4 0.0.1 github.com/firehydrant/firehydrant-go-sdk",
 			ServerList: ServerList,
 		},
 		hooks: hooks.New(),
@@ -301,8 +301,8 @@ func New(opts ...SDKOption) *FireHydrant {
 	sdk.AccountSettings = newAccountSettings(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.CatalogEntries = newCatalogEntries(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.Teams = newTeams(sdk, sdk.sdkConfiguration, sdk.hooks)
-	sdk.CallRoutes = newCallRoutes(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.Signals = newSignals(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.CallRoutes = newCallRoutes(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.Changes = newChanges(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.Incidents = newIncidents(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.Alerts = newAlerts(sdk, sdk.sdkConfiguration, sdk.hooks)

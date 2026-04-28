@@ -20,5 +20,6 @@ value := operations.GetSignalsMttxAnalyticsSortByTotalOpenedAlerts
 | `GetSignalsMttxAnalyticsSortByTotalOpenedAlerts`   | total_opened_alerts                                |
 | `GetSignalsMttxAnalyticsSortByTotalAckedAlerts`    | total_acked_alerts                                 |
 | `GetSignalsMttxAnalyticsSortByTotalIncidents`      | total_incidents                                    |
+| `GetSignalsMttxAnalyticsSortByTotalBillableAlerts` | total_billable_alerts                              |
 | `GetSignalsMttxAnalyticsSortByAckedPercentage`     | acked_percentage                                   |
 | `GetSignalsMttxAnalyticsSortByIncidentsPercentage` | incidents_percentage                               |
