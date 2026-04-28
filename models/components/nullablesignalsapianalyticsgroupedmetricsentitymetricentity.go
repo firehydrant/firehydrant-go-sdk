@@ -13,6 +13,8 @@ type NullableSignalsAPIAnalyticsGroupedMetricsEntityMetricEntity struct {
 	TotalAckedAlerts *int `json:"total_acked_alerts,omitzero"`
 	// The total number of incidents
 	TotalIncidents *int `json:"total_incidents,omitzero"`
+	// The total number of billable alerts (SMS/voice notifications sent)
+	TotalBillableAlerts *int `json:"total_billable_alerts,omitzero"`
 	// The percentage of acknowledged alerts
 	AckedPercentage *float32 `json:"acked_percentage,omitzero"`
 	// The percentage of alerts that have incidents
@@ -52,6 +54,13 @@ func (n *NullableSignalsAPIAnalyticsGroupedMetricsEntityMetricEntity) GetTotalIn
 		return nil
 	}
 	return n.TotalIncidents
+}
+
+func (n *NullableSignalsAPIAnalyticsGroupedMetricsEntityMetricEntity) GetTotalBillableAlerts() *int {
+	if n == nil {
+		return nil
+	}
+	return n.TotalBillableAlerts
 }
 
 func (n *NullableSignalsAPIAnalyticsGroupedMetricsEntityMetricEntity) GetAckedPercentage() *float32 {
