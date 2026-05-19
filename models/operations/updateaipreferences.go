@@ -19,6 +19,10 @@ type UpdateAiPreferencesRequest struct {
 	Followups *bool `json:"followups,omitzero"`
 	// Whether to enable similar incidents
 	SimilarIncidents *bool `json:"similar_incidents,omitzero"`
+	// Minimum minutes between related-incident posts per incident. 0 disables the cooldown. Null = no cooldown.
+	SimilarIncidentsCooldownMinutes *int `json:"similar_incidents_cooldown_minutes,omitzero"`
+	// Maximum related-incident posts per incident lifetime. 0 disables related-incident posts entirely. Null = no cap.
+	SimilarIncidentsMaxPerIncident *int `json:"similar_incidents_max_per_incident,omitzero"`
 }
 
 func (u *UpdateAiPreferencesRequest) GetAi() *bool {
@@ -75,4 +79,18 @@ func (u *UpdateAiPreferencesRequest) GetSimilarIncidents() *bool {
 		return nil
 	}
 	return u.SimilarIncidents
+}
+
+func (u *UpdateAiPreferencesRequest) GetSimilarIncidentsCooldownMinutes() *int {
+	if u == nil {
+		return nil
+	}
+	return u.SimilarIncidentsCooldownMinutes
+}
+
+func (u *UpdateAiPreferencesRequest) GetSimilarIncidentsMaxPerIncident() *int {
+	if u == nil {
+		return nil
+	}
+	return u.SimilarIncidentsMaxPerIncident
 }
