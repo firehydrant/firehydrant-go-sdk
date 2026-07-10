@@ -19,7 +19,6 @@ FireHydrant API: The FireHydrant API is based around REST. It uses Bearer token 
 ## Base API endpoint
 
 [https://api.firehydrant.io/v1](https://api.firehydrant.io/v1)
-For EU customers, this can be overridden to `https://api.eu.firehydrant.io` via `WithServerURL(serverURL string)`.  See [Server Selection](#server-selection).
 
 ## Current version
 
@@ -472,7 +471,7 @@ func main() {
 * [UpdateAuthedProvider](docs/sdks/integrations/README.md#updateauthedprovider) - Get an authed provider
 * [ListConnections](docs/sdks/integrations/README.md#listconnections) - List integration connections
 * [CreateConnection](docs/sdks/integrations/README.md#createconnection) - Create a new integration connection
-* [RefreshConnection](docs/sdks/integrations/README.md#refreshconnection) - Refresh an integration connection
+* [RefreshConnection](docs/sdks/integrations/README.md#refreshconnection) - Refresh an integration connection's incident role schedules
 * [UpdateConnection](docs/sdks/integrations/README.md#updateconnection) - Update an integration connection
 * [ListConnectionStatuses](docs/sdks/integrations/README.md#listconnectionstatuses) - Get integration connection status
 * [ListConnectionStatusesBySlug](docs/sdks/integrations/README.md#listconnectionstatusesbyslug) - Get an integration connection status
@@ -486,6 +485,8 @@ func main() {
 * [ListAwsCloudtrailBatchEvents](docs/sdks/integrations/README.md#listawscloudtrailbatchevents) - List events for an AWS CloudTrail batch
 * [SearchConfluenceSpaces](docs/sdks/integrations/README.md#searchconfluencespaces) - List Confluence spaces
 * [ListSlackWorkspaces](docs/sdks/integrations/README.md#listslackworkspaces) - List Slack workspaces
+* [SearchSlackChannels](docs/sdks/integrations/README.md#searchslackchannels) - List Slack channels
+* [TestSlackChannel](docs/sdks/integrations/README.md#testslackchannel) - Test a Slack channel
 * [ListSlackUsergroups](docs/sdks/integrations/README.md#listslackusergroups) - List Slack user groups
 * [ListSlackEmojiActions](docs/sdks/integrations/README.md#listslackemojiactions) - List Slack emoji actions
 * [CreateSlackEmojiAction](docs/sdks/integrations/README.md#createslackemojiaction) - Create a new Slack emoji action
@@ -609,6 +610,9 @@ func main() {
 
 ### [Signals](docs/sdks/signals/README.md)
 
+* [GetSupportHoursSchedule](docs/sdks/signals/README.md#getsupporthoursschedule) - Get support hours schedule
+* [DeleteSupportHoursSchedule](docs/sdks/signals/README.md#deletesupporthoursschedule) - Delete a specific support hours schedule
+* [UpdateSupportHoursSchedule](docs/sdks/signals/README.md#updatesupporthoursschedule) - Update support hours schedule
 * [ListTeamEscalationPolicies](docs/sdks/signals/README.md#listteamescalationpolicies) - List escalation policies for a team
 * [CreateTeamEscalationPolicy](docs/sdks/signals/README.md#createteamescalationpolicy) - Create an escalation policy for a team
 * [GetTeamEscalationPolicy](docs/sdks/signals/README.md#getteamescalationpolicy) - Get an escalation policy for a team

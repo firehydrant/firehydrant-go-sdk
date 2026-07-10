@@ -6,6 +6,9 @@ Operations related to Signals
 
 ### Available Operations
 
+* [GetSupportHoursSchedule](#getsupporthoursschedule) - Get support hours schedule
+* [DeleteSupportHoursSchedule](#deletesupporthoursschedule) - Delete a specific support hours schedule
+* [UpdateSupportHoursSchedule](#updatesupporthoursschedule) - Update support hours schedule
 * [ListTeamEscalationPolicies](#listteamescalationpolicies) - List escalation policies for a team
 * [CreateTeamEscalationPolicy](#createteamescalationpolicy) - Create an escalation policy for a team
 * [GetTeamEscalationPolicy](#getteamescalationpolicy) - Get an escalation policy for a team
@@ -70,6 +73,166 @@ Operations related to Signals
 * [GetSignalsIngestURL](#getsignalsingesturl) - Get the signals ingestion URL
 * [DebugSignalsExpression](#debugsignalsexpression) - Debug Signals expressions
 * [ListOrganizationOnCallSchedules](#listorganizationoncallschedules) - List who's on call for the organization
+
+## GetSupportHoursSchedule
+
+Get support hours schedule for the team
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="get_support_hours_schedule" method="get" path="/v1/teams/{team_id}/support_hours_schedule" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Signals.GetSupportHoursSchedule(ctx, "<id>")
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `teamID`                                                 | `string`                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**[*components.SupportHoursScheduleEntity](../../models/components/supporthoursscheduleentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## DeleteSupportHoursSchedule
+
+Delete a specific support hours schedule
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="delete_support_hours_schedule" method="delete" path="/v1/teams/{team_id}/support_hours_schedule" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    err := s.Signals.DeleteSupportHoursSchedule(ctx, "<id>")
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
+| `teamID`                                                 | `string`                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+
+### Response
+
+**error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## UpdateSupportHoursSchedule
+
+Update the team's support hours schedule
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="update_support_hours_schedule" method="patch" path="/v1/teams/{team_id}/support_hours_schedule" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/firehydrant/firehydrant-go-sdk/models/components"
+	firehydrantgosdk "github.com/firehydrant/firehydrant-go-sdk"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := firehydrantgosdk.New(
+        firehydrantgosdk.WithSecurity(components.Security{
+            APIKey: "<YOUR_API_KEY_HERE>",
+        }),
+    )
+
+    res, err := s.Signals.UpdateSupportHoursSchedule(ctx, "<id>", components.UpdateSupportHoursSchedule{})
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                          | :heavy_check_mark:                                                                             | The context to use for the request.                                                            |
+| `teamID`                                                                                       | `string`                                                                                       | :heavy_check_mark:                                                                             | N/A                                                                                            |
+| `updateSupportHoursSchedule`                                                                   | [components.UpdateSupportHoursSchedule](../../models/components/updatesupporthoursschedule.md) | :heavy_check_mark:                                                                             | N/A                                                                                            |
+| `opts`                                                                                         | [][operations.Option](../../models/operations/option.md)                                       | :heavy_minus_sign:                                                                             | The options for this request.                                                                  |
+
+### Response
+
+**[*components.SupportHoursScheduleEntity](../../models/components/supporthoursscheduleentity.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## ListTeamEscalationPolicies
 
