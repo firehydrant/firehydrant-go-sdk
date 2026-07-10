@@ -43,18 +43,22 @@ func (e *ListMttxMetricsTagMatchStrategy) UnmarshalJSON(data []byte) error {
 type ListMttxMetricsSortBy string
 
 const (
-	ListMttxMetricsSortByCountAsc        ListMttxMetricsSortBy = "count_asc"
-	ListMttxMetricsSortByMttrAsc         ListMttxMetricsSortBy = "mttr_asc"
-	ListMttxMetricsSortByMttaAsc         ListMttxMetricsSortBy = "mtta_asc"
-	ListMttxMetricsSortByMttdAsc         ListMttxMetricsSortBy = "mttd_asc"
-	ListMttxMetricsSortByMttmAsc         ListMttxMetricsSortBy = "mttm_asc"
-	ListMttxMetricsSortByHealthinessAsc  ListMttxMetricsSortBy = "healthiness_asc"
-	ListMttxMetricsSortByCountDesc       ListMttxMetricsSortBy = "count_desc"
-	ListMttxMetricsSortByMttrDesc        ListMttxMetricsSortBy = "mttr_desc"
-	ListMttxMetricsSortByMttaDesc        ListMttxMetricsSortBy = "mtta_desc"
-	ListMttxMetricsSortByMttdDesc        ListMttxMetricsSortBy = "mttd_desc"
-	ListMttxMetricsSortByMttmDesc        ListMttxMetricsSortBy = "mttm_desc"
-	ListMttxMetricsSortByHealthinessDesc ListMttxMetricsSortBy = "healthiness_desc"
+	ListMttxMetricsSortByCountAsc         ListMttxMetricsSortBy = "count_asc"
+	ListMttxMetricsSortByMttrAsc          ListMttxMetricsSortBy = "mttr_asc"
+	ListMttxMetricsSortByMttaAsc          ListMttxMetricsSortBy = "mtta_asc"
+	ListMttxMetricsSortByMttdAsc          ListMttxMetricsSortBy = "mttd_asc"
+	ListMttxMetricsSortByMttmAsc          ListMttxMetricsSortBy = "mttm_asc"
+	ListMttxMetricsSortByHealthinessAsc   ListMttxMetricsSortBy = "healthiness_asc"
+	ListMttxMetricsSortByDurationAsc      ListMttxMetricsSortBy = "duration_asc"
+	ListMttxMetricsSortByInteractionsAsc  ListMttxMetricsSortBy = "interactions_asc"
+	ListMttxMetricsSortByCountDesc        ListMttxMetricsSortBy = "count_desc"
+	ListMttxMetricsSortByMttrDesc         ListMttxMetricsSortBy = "mttr_desc"
+	ListMttxMetricsSortByMttaDesc         ListMttxMetricsSortBy = "mtta_desc"
+	ListMttxMetricsSortByMttdDesc         ListMttxMetricsSortBy = "mttd_desc"
+	ListMttxMetricsSortByMttmDesc         ListMttxMetricsSortBy = "mttm_desc"
+	ListMttxMetricsSortByHealthinessDesc  ListMttxMetricsSortBy = "healthiness_desc"
+	ListMttxMetricsSortByDurationDesc     ListMttxMetricsSortBy = "duration_desc"
+	ListMttxMetricsSortByInteractionsDesc ListMttxMetricsSortBy = "interactions_desc"
 )
 
 func (e ListMttxMetricsSortBy) ToPointer() *ListMttxMetricsSortBy {
@@ -78,6 +82,10 @@ func (e *ListMttxMetricsSortBy) UnmarshalJSON(data []byte) error {
 		fallthrough
 	case "healthiness_asc":
 		fallthrough
+	case "duration_asc":
+		fallthrough
+	case "interactions_asc":
+		fallthrough
 	case "count_desc":
 		fallthrough
 	case "mttr_desc":
@@ -89,6 +97,10 @@ func (e *ListMttxMetricsSortBy) UnmarshalJSON(data []byte) error {
 	case "mttm_desc":
 		fallthrough
 	case "healthiness_desc":
+		fallthrough
+	case "duration_desc":
+		fallthrough
+	case "interactions_desc":
 		*e = ListMttxMetricsSortBy(v)
 		return nil
 	default:
